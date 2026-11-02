@@ -1,0 +1,96 @@
+{
+ "note": "Running hybrid incident log. One entry per incident; append new ones each run, update attr when attribution changes.",
+ "incidents": [
+  {
+   "id": "2026-11-01-be-cyb-coldchain",
+   "date": "2026-11-01",
+   "code": "CYB",
+   "attr": "A0",
+   "local": true,
+   "country": "BE",
+   "place": "Belgium: Flanders, Wallonia, Brussels; Hoepertingen (BE Limburg)",
+   "lat": 50.8,
+   "lon": 5.28,
+   "summary": "Store refrigeration controllers. About 40 Delhaize, 15 Carrefour, about 15 Intermarché and 5 Spar stores plus IKEA Mons. Stock discarded; one store lost at least €60k; freezers at 15 °C instead of −22 °C.",
+   "edition": "2026-11-02"
+  },
+  {
+   "id": "2026-11-01-nl-cyb-coldchain",
+   "date": "2026-11-01",
+   "code": "CYB",
+   "attr": "A0",
+   "local": false,
+   "country": "NL",
+   "place": "Netherlands: regions not named",
+   "lat": 52.1,
+   "lon": 5.3,
+   "summary": "Danfoss systems at 17 firms (butchers, small shops, one cold store found at −10 °C against −20 °C). Large chains unaffected.",
+   "edition": "2026-11-02"
+  },
+  {
+   "id": "2026-11-01-se-cyb-coldchain",
+   "date": "2026-11-01",
+   "code": "CYB",
+   "attr": "A0",
+   "local": false,
+   "country": "SE",
+   "place": "Sweden, Luxembourg, Ireland, Estonia, Finland",
+   "lat": 57.7,
+   "lon": 12.0,
+   "summary": "Same method. Six Coop stores and an Axfood distribution centre near Gothenburg (SE); 13 of 223 SuperValu stores (IE); a Selver freezer set to +50 °C (EE).",
+   "edition": "2026-11-02"
+  },
+  {
+   "id": "2026-11-01-ua-cyb-alertapps",
+   "date": "2026-11-01",
+   "code": "CYB",
+   "attr": "A1",
+   "local": false,
+   "country": "UA",
+   "place": "Ukraine and Russia",
+   "lat": 50.45,
+   "lon": 30.5,
+   "summary": "National air-raid alert apps pushed false nuclear and chemical alerts for about an hour. Ukraine's app suspended; Russia's emergencies app hit hours later.",
+   "edition": "2026-11-02"
+  },
+  {
+   "id": "2026-11-01-pl-sab-kaliningrad",
+   "date": "2026-11-01",
+   "code": "SAB",
+   "attr": "A1",
+   "local": false,
+   "country": "PL",
+   "place": "Poland: Podlasie, Warmia-Masuria",
+   "lat": 53.9,
+   "lon": 21.0,
+   "summary": "Sabotage threat. National police full readiness 2–8 Nov; counter-terrorism units deployed to the Kaliningrad border.",
+   "edition": "2026-11-02"
+  },
+  {
+   "id": "2026-10-31-se-sea-gotland",
+   "date": "2026-10-31",
+   "code": "SEA",
+   "attr": "A1",
+   "local": false,
+   "country": "SE",
+   "place": "Sweden: off Gotland",
+   "lat": 57.4,
+   "lon": 18.3,
+   "summary": "Police boarded a Russia-linked cargo ship and checked crew papers. No arrests.",
+   "edition": "2026-11-02"
+  },
+  {
+   "id": "2026-10-31-je-uas-airport",
+   "date": "2026-10-31",
+   "code": "UAS",
+   "attr": "A0",
+   "local": false,
+   "country": "JE",
+   "place": "Jersey (UK)",
+   "lat": 49.2,
+   "lon": -2.1,
+   "summary": "Drone reports closed the airport on two nights; flights cancelled or diverted.",
+   "edition": "2026-11-02"
+  }
+ ]
+}
