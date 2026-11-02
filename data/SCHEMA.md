@@ -81,7 +81,7 @@ The standing files are the Readbook's memory. The page reads them; it never writ
 ### Changes from v2.5
 
 - `planner.threads` and `planner.horizon` are gone; threads and horizon live in `threads.json` and `horizon.json`.
-- `today.fx` is gone; the Today strip and the EUR/USD tracker read `fx.json`.
+- `today.fx` is gone; the Today strip and the USD/EUR tracker read `fx.json`.
 - `hockey.canes.record` is no longer needed; the season strip and record line come from `canes.json`. The run appends the game to `canes.json` instead.
 - `money.cards` rows gain an optional seventh field, `series`: a key into `series.json` (`"spx"`, `"ndx"`, `"aex"`, `"brent"`, `"ttf"`). The card then shows a 30-day sparkline. Example: `["S&P 500", "7,580.07", "−1.8%", "down", "Fri close", 56, "spx"]`. The page also accepts the key in the sixth position when a card has no source number, and falls back to matching the label (S&P 500, Nasdaq, AEX, Brent, Dutch TTF) when the field is absent.
 - `five[].part` may be `"watch"` for a Watchlist item.
@@ -119,7 +119,7 @@ The standing files are the Readbook's memory. The page reads them; it never writ
   "pair": "EUR/USD", "updated": "2026-11-02", "series": [ ["2024-11-01", 1.0885], ... ascending, one value per ECB business day ] }
 ```
 
-Two years of history are kept. Values are USD per euro; up means the euro strengthened. See README for extending it by hand.
+Two years of history are kept. Values are stored exactly as the ECB quotes them, US dollars per euro. The page inverts them and shows euros per dollar (USD/EUR), so up means dollar pay buys more euros. See README for extending it by hand.
 
 ### `data/series.json`
 
@@ -151,5 +151,5 @@ The Hybrid section lists the last 7 days of `attrLog` under "Attribution moves" 
 ## Compatibility
 
 - A v2.5 edition that carries `planner.threads` or `planner.horizon` renders them under the Watchlist when `threads.json` or `horizon.json` is absent or empty; when the standing files have content, they win.
-- When `fx.json` is missing or empty the EUR/USD tracker and the strip tile are hidden.
+- When `fx.json` is missing or empty the USD/EUR tracker and the strip tile are hidden.
 - When `series.json` lacks a key, the card shows no sparkline. When `canes.json` is missing, the Hockey part falls back to the edition's `hockey.canes.record`.

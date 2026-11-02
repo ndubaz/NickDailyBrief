@@ -22,12 +22,12 @@ The edition is a daily snapshot. The standing files under `data/` are the Readbo
 | `data/threads.json` | Tracked threads with a dated log per thread and the sources behind each entry | Watchlist · Tracked threads |
 | `data/horizon.json` | Dated upcoming events with status and sources | Watchlist · Horizon |
 | `data/incidents.json` | Running hybrid incident log plus `attrLog`, the attribution changes | Hybrid map, 30-day charts, Attribution moves, Within 100 km |
-| `data/fx.json` | Two years of ECB EUR/USD reference rates | Today strip tile and the EUR/USD tracker in Money |
+| `data/fx.json` | Two years of ECB reference rates, stored as dollars per euro; the page shows euros per dollar (USD/EUR) | Today strip tile and the USD/EUR tracker in Money |
 | `data/series.json` | Thirty trading days per market series | Sparklines on the market cards |
 | `data/canes.json` | Carolina's regular-season results, record, points and Metro position | Season strip and record line in Hockey |
 | `data/bins.json` | Rd4 collection dates | Bin day tile |
 
-Editions in the 2.5 format still render: when the standing files are missing or empty, the page falls back to the edition's own threads and horizon, hides the EUR/USD tracker and skips the sparklines.
+Editions in the 2.5 format still render: when the standing files are missing or empty, the page falls back to the edition's own threads and horizon, hides the USD/EUR tracker and skips the sparklines.
 
 ## One-time setup
 
@@ -40,7 +40,7 @@ Editions in the 2.5 format still render: when the standing files are missing or 
 
 The morning run appends one row per ECB business day from the ECB history ZIP (`https://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist.zip`; the `.csv` at the same path has served a stale test file, so use the ZIP). If the download fails, add the missing days yourself:
 
-1. Read the rate from the ECB's daily page: https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/eurofxref-graph-usd.en.html (USD per euro, four decimals).
+1. Read the rate from the ECB's daily page: https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/eurofxref-graph-usd.en.html (US dollars per euro, four decimals, as the ECB quotes it; do not invert, the page does that).
 2. Append `["YYYY-MM-DD", 1.1216]` to the end of `series` in `data/fx.json`, one entry per business day, in date order, no duplicates. Skip weekends and ECB holidays.
 3. Set `updated` to the last date you added, then validate: `python3 -c "import json; json.load(open('data/fx.json'))"`.
 

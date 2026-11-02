@@ -163,7 +163,7 @@
     var pad = (hi - lo) * 0.08 || 0.01; lo -= pad; hi += pad;
     function X(i) { return L + i / (view.length - 1) * (W - L - R); }
     function Y(v) { return T + (1 - (v - lo) / (hi - lo)) * (H - T - B); }
-    var s = '<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="EUR/USD, last ' + days + ' days">';
+    var s = '<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="USD/EUR, euros per dollar, last ' + days + ' days">';
     niceTicks(lo, hi).forEach(function (t) { var y = Y(t); s += '<line x1="' + L + '" y1="' + y.toFixed(1) + '" x2="' + (W - R) + '" y2="' + y.toFixed(1) + '" stroke="var(--line)" stroke-width="1"/>' + svgText(L - 6, y + 3.5, t.toFixed(Math.round(t * 1000) % 10 ? 3 : 2), "end", 10.5); });
     if (avg != null) { var ya = Y(avg); s += '<line x1="' + L + '" y1="' + ya.toFixed(1) + '" x2="' + (W - R) + '" y2="' + ya.toFixed(1) + '" stroke="var(--muted)" stroke-width="1" stroke-dasharray="2 3"/>' + svgText(W - R, ya - 4, "1y avg " + avg.toFixed(4), "end", 10, true); }
     var pts = view.map(function (p, i) { return X(i).toFixed(1) + "," + Y(p[1]).toFixed(1); });
@@ -184,14 +184,15 @@
     return s + "</svg>";
   }
   function fxStats(series, asOf) {
-    var s = series.filter(function (p) { return p[0] <= asOf && typeof p[1] === "number"; });
+    /* fx.json stores the ECB rate as US dollars per euro; the page shows euros per dollar, so up means the dollar buys more euros. */
+    var s = series.filter(function (p) { return p[0] <= asOf && typeof p[1] === "number" && p[1] > 0; }).map(function (p) { return [p[0], 1 / p[1]]; });
     if (s.length < 2) return null;
     var last = s[s.length - 1], prev = s[s.length - 2];
     function at(daysBack) { var k = addDays(last[0], -daysBack), v = null; s.forEach(function (p) { if (p[0] <= k) v = p; }); return v; }
     var m = at(30), yearFrom = addDays(last[0], -365), year = s.filter(function (p) { return p[0] > yearFrom; }), last30 = s.filter(function (p) { return p[0] > addDays(last[0], -30); });
     var avg = year.reduce(function (a, p) { return a + p[1]; }, 0) / year.length;
     var hi30 = last30.reduce(function (a, p) { return !a || p[1] > a[1] ? p : a; }, null), lo30 = last30.reduce(function (a, p) { return !a || p[1] < a[1] ? p : a; }, null);
-    var best = year.reduce(function (a, p) { return !a || p[1] < a[1] ? p : a; }, null), worst = year.reduce(function (a, p) { return !a || p[1] > a[1] ? p : a; }, null);
+    var best = year.reduce(function (a, p) { return !a || p[1] > a[1] ? p : a; }, null), worst = year.reduce(function (a, p) { return !a || p[1] < a[1] ? p : a; }, null);
     return { series: s, last: last, prev: prev, month: m, d1: last[1] - prev[1], d30: m ? last[1] - m[1] : null, avg: avg, hi30: hi30, lo30: lo30, best: best, worst: worst };
   }
 
@@ -286,7 +287,7 @@
     if (T.canes) h += '<div class="tile hockey"><div class="lbl">Hurricanes</div><div class="val">' + esc(T.canes.line) + "</div><p>" + esc(T.canes.sub) + cite(T.canes.src) + "</p></div>";
     else if (CV) { var lg = CV.games[CV.games.length - 1]; h += '<div class="tile hockey"><div class="lbl">Hurricanes</div><div class="val">' + esc(lg.res + " " + lg.gf + "–" + lg.ga + (lg.home ? " vs " : " at ") + lg.opp) + "</div><p>" + esc(CV.record + " · " + CV.points + " pts") + "</p></div>"; }
     if (T.markets) h += '<div class="tile"><div class="lbl">Markets</div><div class="mini-mk">' + T.markets.map(function (m) { return "<span>" + esc(m[0]) + '</span><span class="chg ' + esc(m[2]) + '">' + esc(m[1]) + "</span>"; }).join("") + "</div></div>";
-    if (FX) h += '<div class="tile money"><div class="lbl">EUR/USD · ECB</div><div class="val">' + FX.last[1].toFixed(4) + '</div><p><span class="chg ' + dir(FX.d1) + '">' + signed(FX.d1, 4) + " (" + signed(FX.d1 / FX.prev[1] * 100, 2, "%") + ")</span> vs " + esc(fmtShort(FX.prev[0])) + "</p></div>";
+    if (FX) h += '<div class="tile money"><div class="lbl">USD/EUR · ECB</div><div class="val">' + FX.last[1].toFixed(4) + '</div><p><span class="chg ' + dir(FX.d1) + '">' + signed(FX.d1, 4) + " (" + signed(FX.d1 / FX.prev[1] * 100, 2, "%") + ")</span> vs " + esc(fmtShort(FX.prev[0])) + "</p></div>";
     h += '<div class="tile" id="bins"><div class="lbl">Bin day</div><div class="val">…</div><p></p></div>';
     h += '<button type="button" class="tile newcount" id="newcount" title="Show only new and updated items"><div class="lbl">This edition</div><div class="val"><span id="nnew">…</span><small id="nupd"></small></div><p>Tap to show only what changed</p></button>';
     h += "</div>";
@@ -422,16 +423,16 @@
     h += "</section>";
     if (FX) {
       var range = store("rb:fx:range") === "1y" ? 365 : 90;
-      h += '<section id="fx" class="money"><h2>EUR/USD <span class="num">ECB reference rate</span></h2><div class="fx">';
-      h += '<div class="fx-top"><span class="big tab">' + FX.last[1].toFixed(4) + '</span><span class="asof">' + esc(fmtLong(FX.last[0])) + " · $ per €</span></div>";
+      h += '<section id="fx" class="money"><h2>USD/EUR <span class="num">euros per dollar · ECB</span></h2><div class="fx">';
+      h += '<div class="fx-top"><span class="big tab">' + FX.last[1].toFixed(4) + '</span><span class="asof">' + esc(fmtLong(FX.last[0])) + " · € per $</span></div>";
       h += '<div class="fx-ch"><div><div class="lbl">Since ' + esc(fmtShort(FX.prev[0])) + '</div><div class="v chg ' + dir(FX.d1) + '">' + signed(FX.d1, 4) + '</div><div class="p chg ' + dir(FX.d1) + '">' + signed(FX.d1 / FX.prev[1] * 100, 2, "%") + "</div></div>";
       if (FX.month) h += '<div><div class="lbl">Since ' + esc(fmtShort(FX.month[0])) + '</div><div class="v chg ' + dir(FX.d30) + '">' + signed(FX.d30, 4) + '</div><div class="p chg ' + dir(FX.d30) + '">' + signed(FX.d30 / FX.month[1] * 100, 2, "%") + "</div></div>";
       h += '<div><div class="lbl">30-day range</div><div class="v">' + FX.lo30[1].toFixed(4) + '</div><div class="p">to ' + FX.hi30[1].toFixed(4) + "</div></div></div>";
       h += '<div class="fx-tools"><button type="button" data-range="90" aria-pressed="' + (range === 90) + '">90 days</button><button type="button" data-range="365" aria-pressed="' + (range === 365) + '">1 year</button></div>';
       h += '<div class="chart" id="fxchart" data-range="' + range + '"></div>';
-      var eu = function (r) { return "€" + num(1000 / r, 0); };
-      h += '<p class="pay"><b class="l">Pay</b>$1,000 is ' + eu(FX.last[1]) + " today" + (FX.month ? ", " + eu(FX.month[1]) + " a month ago" : "") + "; 12-month best " + eu(FX.best[1]) + " (" + esc(fmtShort(FX.best[0])) + "), worst " + eu(FX.worst[1]) + " (" + esc(fmtShort(FX.worst[0])) + "). Up means the euro strengthened.</p>";
-      h += '<p class="small" style="margin:8px 0 0"><a href="' + esc(ctx.fx.url || "https://www.ecb.europa.eu/stats/eurofxref/") + '" target="_blank" rel="noopener">' + esc(ctx.fx.source || "ECB") + "</a>, one value per ECB business day.</p></div></section>";
+      var eu = function (r) { return "€" + num(1000 * r, 0); };
+      h += '<p class="pay"><b class="l">Pay</b>$1,000 is ' + eu(FX.last[1]) + " today" + (FX.month ? ", " + eu(FX.month[1]) + " a month ago" : "") + "; 12-month best " + eu(FX.best[1]) + " (" + esc(fmtShort(FX.best[0])) + "), worst " + eu(FX.worst[1]) + " (" + esc(fmtShort(FX.worst[0])) + "). Up means the dollar buys more euros.</p>";
+      h += '<p class="small" style="margin:8px 0 0"><a href="' + esc(ctx.fx.url || "https://www.ecb.europa.eu/stats/eurofxref/") + '" target="_blank" rel="noopener">' + esc(ctx.fx.source || "ECB") + "</a>, one value per ECB business day, inverted from the ECB's dollars-per-euro quote.</p></div></section>";
     }
     h += '<section id="rates" class="money">';
     if (M.rates) h += "<h2>Rates and prices</h2>" + table(["Measure", "Latest", "Note"], M.rates.map(function (r) { return "<tr><td>" + esc(r[0]) + '</td><td class="d">' + esc(r[1]) + "</td><td>" + rich(r[2]) + "</td></tr>"; }).join(""), "lbl1");
