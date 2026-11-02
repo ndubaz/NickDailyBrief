@@ -1,0 +1,273 @@
+{
+ "note": "Standing horizon of dated events. The morning run adds events (added = today), sets updated when it changes one, and removes events after they pass. Events without a firm date carry date as the first day of their window and dateText as the human text.",
+ "events": [
+  {
+   "id": "pl-police-readiness",
+   "date": "2026-11-02",
+   "dateText": "2–8 Nov",
+   "t": "Polish police full readiness",
+   "n": "Sabotage warning period",
+   "h": true,
+   "status": "confirmed",
+   "added": "2026-11-02",
+   "src": [
+    [
+     11,
+     "Poland launches operation along Russian border",
+     "Notes from Poland",
+     "https://notesfrompoland.com/2026/11/02/poland-launches-operation-along-russian-border-in-response-to-reports-of-planned-sabotage/"
+    ]
+   ]
+  },
+  {
+   "id": "us-midterms-2026",
+   "date": "2026-11-03",
+   "dateText": "3 Nov",
+   "t": "US midterm elections",
+   "n": "Posture, NATO rhetoric, Iran timing",
+   "h": true,
+   "status": "confirmed",
+   "added": "2026-11-02",
+   "src": [
+    [
+     28,
+     "Early Edition: November 2, 2026",
+     "Just Security",
+     "https://www.justsecurity.org/162991/early-edition-november-2-2026/"
+    ]
+   ]
+  },
+  {
+   "id": "tk-budget-debate",
+   "date": "2026-11-04",
+   "dateText": "4 Nov",
+   "t": "Tweede Kamer budget debate",
+   "n": "Dutch defence and resilience funding",
+   "h": false,
+   "status": "confirmed",
+   "added": "2026-11-02",
+   "src": [
+    [
+     30,
+     "No sign of deal on budget ahead of crucial week",
+     "DutchNews",
+     "https://www.dutchnews.nl/2026/11/no-sign-of-deal-on-budget-ahead-of-crucial-week-in-parliament/"
+    ]
+   ]
+  },
+  {
+   "id": "abu-dhabi-talks",
+   "date": "2026-11-05",
+   "dateText": "after 4 Nov (reported ~10 Nov)",
+   "t": "US–Russia–Ukraine talks, Abu Dhabi",
+   "n": "Energy truce, gas transit",
+   "h": true,
+   "status": "reported",
+   "added": "2026-11-02",
+   "src": [
+    [
+     27,
+     "Kremlin: Abu Dhabi talks after November 4",
+     "Meduza",
+     "https://meduza.io/en/news/2026/10/29/kremlin-says-u-s-russia-ukraine-peace-talks-will-take-place-in-abu-dhabi-after-november-4-depending-on-battlefield-conditions"
+    ],
+    [
+     26,
+     "WSJ: US pitches Russian gas through Ukraine's pipelines",
+     "Euromaidan Press",
+     "https://euromaidanpress.com/2026/11/02/wsj-us-pitches-russian-gas-through-ukraines-pipelines-as-moscows-incentive-for-an-energy-truce/"
+    ]
+   ]
+  },
+  {
+   "id": "posture-options-due",
+   "date": "2026-11-06",
+   "dateText": "6 Nov",
+   "t": "Posture option sets due to Hegseth",
+   "n": "US footprint in Europe",
+   "h": false,
+   "status": "reported",
+   "added": "2026-11-02",
+   "src": [
+    [
+     22,
+     "Pentagon Europe posture review terms of reference",
+     "Grosswald",
+     "https://www.grosswald.org/pentagon-europe-posture-review-terms-of-reference-four-option-sets-6-november/"
+    ],
+    [
+     23,
+     "Pentagon's NATO review preparing troop options by November 6",
+     "Defense News / Reuters",
+     "https://www.defensenews.com/pentagon/2026/08/27/pentagons-nato-review-preparing-troop-options-for-hegseth-by-november-6/"
+    ]
+   ]
+  },
+  {
+   "id": "us-congress-returns",
+   "date": "2026-11-09",
+   "dateText": "9 Nov",
+   "t": "US Congress returns",
+   "n": "NDAA, appropriations",
+   "h": false,
+   "status": "confirmed",
+   "added": "2026-11-02",
+   "src": [
+    [
+     24,
+     "NDAA FY2027 and Dec. 11 funding deadline",
+     "Buffalo Chronicle (thin source)",
+     "https://buffalochronicle.com/2026/10/24/ndaa-fy2027-lame-duck-dec-11-funding-deadline-niagara-falls/"
+    ]
+   ]
+  },
+  {
+   "id": "nl-budget-votes",
+   "date": "2026-11-12",
+   "dateText": "12 Nov",
+   "t": "Dutch budget votes",
+   "n": "Fuel duty, Box 3",
+   "h": false,
+   "status": "confirmed",
+   "added": "2026-11-02",
+   "src": [
+    [
+     30,
+     "No sign of deal on budget ahead of crucial week",
+     "DutchNews",
+     "https://www.dutchnews.nl/2026/11/no-sign-of-deal-on-budget-ahead-of-crucial-week-in-parliament/"
+    ]
+   ]
+  },
+  {
+   "id": "posture-review-complete",
+   "date": "2026-12-01",
+   "dateText": "December",
+   "t": "Posture review complete",
+   "n": "Basing decisions",
+   "h": false,
+   "status": "reported",
+   "added": "2026-11-02",
+   "src": [
+    [
+     23,
+     "Pentagon's NATO review preparing troop options by November 6",
+     "Defense News / Reuters",
+     "https://www.defensenews.com/pentagon/2026/08/27/pentagons-nato-review-preparing-troop-options-for-hegseth-by-november-6/"
+    ]
+   ]
+  },
+  {
+   "id": "us-cr-expires",
+   "date": "2026-12-11",
+   "dateText": "11 Dec",
+   "t": "US continuing resolution expires",
+   "n": "DoD new-start ban until then",
+   "h": false,
+   "status": "confirmed",
+   "added": "2026-11-02",
+   "src": [
+    [
+     24,
+     "NDAA FY2027 and Dec. 11 funding deadline",
+     "Buffalo Chronicle (thin source)",
+     "https://buffalochronicle.com/2026/10/24/ndaa-fy2027-lame-duck-dec-11-funding-deadline-niagara-falls/"
+    ]
+   ]
+  },
+  {
+   "id": "ecb-dec-2026",
+   "date": "2026-12-17",
+   "dateText": "17 Dec",
+   "t": "ECB rate decision",
+   "n": "Hike risk with inflation near 4%",
+   "h": false,
+   "status": "confirmed",
+   "added": "2026-11-02",
+   "src": [
+    [
+     61,
+     "ECB holds rates unchanged, EURUSD down",
+     "XTB",
+     "https://www.xtb.com/en/market-analysis/ecb-holds-rates-unchanged-eurusd-down"
+    ]
+   ]
+  },
+  {
+   "id": "pl-4th-brigade-refit",
+   "date": "2026-12-31",
+   "dateText": "end 2026",
+   "t": "Polish 4th Brigade border refit done",
+   "n": "Suwałki Gap posture",
+   "h": true,
+   "status": "reported",
+   "added": "2026-11-02",
+   "src": [
+    [
+     12,
+     "Poland forming brigade to defend border with Kaliningrad",
+     "RTÉ",
+     "https://www.rte.ie/news/a-european-perspective/2026/1102/1597651-poland-border/"
+    ]
+   ]
+  },
+  {
+   "id": "eu-lng-ban",
+   "date": "2027-01-01",
+   "dateText": "1 Jan 2027",
+   "t": "EU ban on Russian LNG takes effect",
+   "n": "Energy leverage",
+   "h": false,
+   "status": "confirmed",
+   "added": "2026-11-02",
+   "src": []
+  },
+  {
+   "id": "nl-food-security-plan",
+   "date": "2027-01-01",
+   "dateText": "early 2027",
+   "t": "NL national food-security crisis plan",
+   "n": "Baseline requirement 4",
+   "h": false,
+   "status": "reported",
+   "added": "2026-11-02",
+   "src": [
+    [
+     32,
+     "Dutch supermarkets work together to set up emergency stores",
+     "RetailDetail (citing FD)",
+     "https://www.retaildetail.eu/news/food/dutch-supermarkets-are-working-together-to-set-up-emergency-stores/"
+    ]
+   ]
+  },
+  {
+   "id": "steadfast-defender-2027",
+   "date": "2027-01-01",
+   "dateText": "2027",
+   "t": "Steadfast Defender 2027",
+   "n": "Live test of Avenger Triad concepts",
+   "h": false,
+   "status": "confirmed",
+   "added": "2026-11-02",
+   "src": [
+    [
+     46,
+     "USAREUR-AF, NATO Allies conclude Exercise Avenger Triad 26",
+     "army.mil",
+     "https://www.army.mil/article/296123/usareur_af_nato_allies_conclude_exercise_avenger_triad_26"
+    ]
+   ]
+  },
+  {
+   "id": "eu-pipeline-gas-ban",
+   "date": "2027-09-01",
+   "dateText": "autumn 2027",
+   "t": "EU ban on Russian pipeline gas",
+   "n": "Energy leverage",
+   "h": false,
+   "status": "confirmed",
+   "added": "2026-11-02",
+   "src": []
+  }
+ ]
+}

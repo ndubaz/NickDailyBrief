@@ -1,0 +1,148 @@
+{
+ "note": "Standing memory of tracked threads. The morning run appends to log (newest last), sets status, and never deletes entries. Citations [n] in t refer to the edition that added the entry; the same sources are copied into src so links keep working.",
+ "threads": [
+  {
+   "id": "cold-chain",
+   "name": "Cold-chain attacks",
+   "status": "moving",
+   "opened": "2026-11-02",
+   "log": [
+    {
+     "date": "2026-11-02",
+     "t": "France 11–12 Oct, then seven countries 1–2 Nov including a SE distribution centre. Belgian criminal case open. [2, 45]",
+     "src": [
+      [
+       2,
+       "Federaal parket opent strafonderzoek (liveblog)",
+       "VRT NWS",
+       "https://www.vrt.be/vrtnws/nl/liveblog/federaal-parket-opent-strafonderzoek-na-cyberaanval-bij-verschil~1793610043244/"
+      ],
+      [
+       45,
+       "Suspected cyberattacks trigger supermarket fridge failures across Europe",
+       "Al Jazeera",
+       "https://www.aljazeera.com/news/2026/11/2/freezers-in-sweden-belgium-overheat-following-possible-cyberattacks"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "starlink-arson",
+   "name": "Starlink arson network",
+   "status": "moving",
+   "opened": "2026-11-02",
+   "log": [
+    {
+     "date": "2026-11-02",
+     "t": "No new arrests in the window; extraditions from Germany pending. Lithuania filed terrorism charges and Turkey detained 85 on 27 Oct. [16, 17, 18]",
+     "src": [
+      [
+       16,
+       "Three arson attacks on Starlink gateways linked",
+       "Tech Times",
+       "https://www.techtimes.com/articles/329872/20261102/three-arson-attacks-starlink-gateways-linked-one-network-lithuania-files-terrorism-charges.htm"
+      ],
+      [
+       17,
+       "Turkey detains 85 in raids on gang suspected in Poland Starlink sabotage",
+       "Turkish Minute",
+       "https://turkishminute.com/2026/10/27/turkey-detains-85-in-raids-on-gang-suspected-in-poland-starlink-sabotage/?r=1"
+      ],
+      [
+       18,
+       "2 Belarusians arrested in Germany over alleged sabotage",
+       "Anadolu",
+       "https://www.aa.com.tr/en/europe/2-belarusians-arrested-in-germany-over-alleged-sabotage-for-russia/4104268"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "us-europe-posture",
+   "name": "US Europe posture review",
+   "status": "moving",
+   "opened": "2026-11-02",
+   "log": [
+    {
+     "date": "2026-11-02",
+     "t": "Option sets due to Hegseth 6 Nov; review completes in December. [22, 23]",
+     "src": [
+      [
+       22,
+       "Pentagon Europe posture review terms of reference",
+       "Grosswald",
+       "https://www.grosswald.org/pentagon-europe-posture-review-terms-of-reference-four-option-sets-6-november/"
+      ],
+      [
+       23,
+       "Pentagon's NATO review preparing troop options by November 6",
+       "Defense News / Reuters",
+       "https://www.defensenews.com/pentagon/2026/08/27/pentagons-nato-review-preparing-troop-options-for-hegseth-by-november-6/"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "russia-ukraine-talks",
+   "name": "Russia–Ukraine talks",
+   "status": "moving",
+   "opened": "2026-11-02",
+   "log": [
+    {
+     "date": "2026-11-02",
+     "t": "Oleshky truce over; Abu Dhabi talks after 4 Nov (date unconfirmed, Zelensky suggests 10 Nov). [25, 27]",
+     "src": [
+      [
+       25,
+       "Kherson braces as localised truce ends",
+       "Al Jazeera",
+       "https://www.aljazeera.com/news/2026/11/1/ukraine-evacuates-civilians-in-kherson-region-as-localised-ceasefire-ends"
+      ],
+      [
+       27,
+       "Kremlin: Abu Dhabi talks after November 4",
+       "Meduza",
+       "https://meduza.io/en/news/2026/10/29/kremlin-says-u-s-russia-ukraine-peace-talks-will-take-place-in-abu-dhabi-after-november-4-depending-on-battlefield-conditions"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "pl-tribunal",
+   "name": "Polish Constitutional Tribunal",
+   "status": "moving",
+   "opened": "2026-11-02",
+   "log": [
+    {
+     "date": "2026-11-02",
+     "t": "Contested; the justice minister seeks to lift the tribunal leaders' immunity. [13]",
+     "src": [
+      [
+       13,
+       "Polish president rushes home as court showdown sparks clashes",
+       "i24NEWS",
+       "https://www.i24news.tv/en/news/international/europe/artc-polish-president-rushes-home-as-court-showdown-sparks-clashes-coup-accusations"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "nord-stream-trial",
+   "name": "Nord Stream trial (DE)",
+   "status": "moving",
+   "opened": "2026-11-02",
+   "log": [
+    {
+     "date": "2026-11-02",
+     "t": "Under way; the court refused to end it on 27 Oct.",
+     "src": []
+    }
+   ]
+  }
+ ]
+}

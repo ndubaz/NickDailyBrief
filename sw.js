@@ -1,7 +1,9 @@
-/* Readbook service worker: app shell cached; editions fetched fresh, with the last good copy kept for offline reading. */
-const SHELL = "rb-shell-v1";
-const DATA = "rb-data-v1";
+/* Readbook service worker: app shell cached; data files fetched network-first, with the last good copy kept for offline reading. */
+const SHELL = "rb-shell-v3";
+const DATA = "rb-data-v3";
 const SHELL_FILES = ["./", "index.html", "styles.css", "app.js", "manifest.webmanifest", "icons/icon-192.png", "icons/apple-touch-icon.png"];
+/* Network-first data: index.json, editions/*.json and the standing files incidents.json, bins.json, threads.json, horizon.json, fx.json, series.json, canes.json. Anything under /data/ follows the same rule. */
+const DATA_FILES = ["data/index.json", "data/incidents.json", "data/bins.json", "data/threads.json", "data/horizon.json", "data/fx.json", "data/series.json", "data/canes.json"];
 
 self.addEventListener("install", (e) => {
   e.waitUntil(caches.open(SHELL).then((c) => c.addAll(SHELL_FILES)).then(() => self.skipWaiting()));
@@ -12,7 +14,7 @@ self.addEventListener("activate", (e) => {
 self.addEventListener("fetch", (e) => {
   const url = new URL(e.request.url);
   if (e.request.method !== "GET" || url.origin !== location.origin) return;
-  const isData = url.pathname.includes("/data/");
+  const isData = url.pathname.includes("/data/") || DATA_FILES.some((f) => url.pathname.endsWith("/" + f));
   const isShell = SHELL_FILES.some((f) => url.pathname.endsWith(f.replace("./", "/")) || url.pathname === "/");
   if (isData || isShell) {
     // network first, fall back to the last cached copy when offline

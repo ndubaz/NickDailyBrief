@@ -1,5 +1,5 @@
 {
- "note": "Running hybrid incident log. One entry per incident; append new ones each run, update attr when attribution changes.",
+ "note": "Running hybrid incident log. One entry per incident; append new ones each run, update attr when attribution changes and record the move in attrLog.",
  "incidents": [
   {
    "id": "2026-11-01-be-cyb-coldchain",
@@ -92,5 +92,7 @@
    "summary": "Drone reports closed the airport on two nights; flights cancelled or diverted.",
    "edition": "2026-11-02"
   }
- ]
+ ],
+ "attrLog": [],
+ "attrLogNote": "One entry per attribution change: {id (incident id), date, from (A0..A5), to (A0..A5), t (what moved), src (optional [[n,title,outlet,url]])}. The page lists the last 7 days under Attribution moves."
 }
