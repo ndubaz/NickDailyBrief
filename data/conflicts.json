@@ -99,7 +99,26 @@
    "name": "Gaza and Lebanon",
    "lat": 32.5,
    "lon": 35.0,
-   "log": [],
+   "log": [
+    {
+     "date": "2026-11-03",
+     "t": "Gaza civil defence said Israeli attacks killed five people on 2 Nov in Khan Younis, Gaza City and central Gaza; health officials count at least 1,580 killed since the October 2025 ceasefire. Israel's military said it killed six Hamas members for ceasefire violations. [102, 103]",
+     "src": [
+      [
+       102,
+       "Israeli attacks kill five in Gaza Strip",
+       "The New Arab",
+       "https://www.newarab.com/news/israeli-attacks-kill-five-gaza-strip"
+      ],
+      [
+       103,
+       "Liveblog, 1–2 November 2026",
+       "Times of Israel",
+       "https://www.timesofisrael.com/liveblog-november-1-2026-2/"
+      ]
+     ]
+    }
+   ],
    "short": "Gaza · Lebanon",
    "lp": "left"
   },
@@ -108,7 +127,32 @@
    "name": "Red Sea and Yemen",
    "lat": 14.0,
    "lon": 43.0,
-   "log": [],
+   "log": [
+    {
+     "date": "2026-11-03",
+     "t": "The Saudi-led coalition intercepted a Houthi drone and a ballistic missile aimed at southern Saudi Arabia on 1 Nov; Houthi media reported airstrikes on Ras Isa port and a telecoms site near Saada, with seven wounded at Ras Isa and the Bajil oil facility. Saudi Defence Minister Khalid bin Salman raised the Houthi attacks with Hegseth on 3 Nov. [104, 105, 106]",
+     "src": [
+      [
+       104,
+       "Houthis report airstrikes on Red Sea oil port, telecom facility in Yemen",
+       "Xinhua",
+       "https://english.news.cn/20261102/f2b0a52f64004b76b5d065af417aee14/c.html"
+      ],
+      [
+       105,
+       "Saudi forces launch airstrike on port of Ras Isa, Yemen",
+       "The Maritime Executive",
+       "https://maritime-executive.com/article/saudi-forces-launch-airstrike-on-port-of-ras-isa-yemen"
+      ],
+      [
+       106,
+       "Liveblog, 3 November 2026",
+       "Times of Israel",
+       "https://www.timesofisrael.com/liveblog-november-03-2026/"
+      ]
+     ]
+    }
+   ],
    "short": "Red Sea",
    "lp": "right"
   },
@@ -129,6 +173,30 @@
        "https://www.aei.org/commentary/china-taiwan-update-october-30-2026/"
       ]
      ]
+    },
+    {
+     "date": "2026-11-03",
+     "t": "Taiwan's air force holds its annual Sky Dragon drills 2–6 Nov, and Kinmen held live-fire drills on 3 Nov. Premier Cho Jung-tai said Taiwan is still seeking a formal invitation to the APEC leaders' meeting in Shenzhen on 18–19 Nov. [28, 29, 107]",
+     "src": [
+      [
+       28,
+       "Taiwan air force holds annual Sky Dragon drills",
+       "Focus Taiwan",
+       "https://focustaiwan.tw/politics/202611010005"
+      ],
+      [
+       29,
+       "Taiwan seeking formal APEC invitation from China: Premier",
+       "Focus Taiwan",
+       "https://focustaiwan.tw/politics/202611030015"
+      ],
+      [
+       107,
+       "Kinmen holds live-fire drills",
+       "Taipei Times",
+       "https://taipeitimes.com/News/taiwan/archives/2026/11/03/2003867080"
+      ]
+     ]
     }
    ],
    "short": "Taiwan",
@@ -139,7 +207,26 @@
    "name": "Korean peninsula",
    "lat": 38.5,
    "lon": 127.0,
-   "log": [],
+   "log": [
+    {
+     "date": "2026-11-03",
+     "t": "North Korea fired a tactical ballistic missile with a cluster-bomb warhead on 31 Oct and strategic cruise missiles with a cluster warhead on 2 Nov, according to KCNA, while the US–South Korean Freedom Flag exercise runs at Kunsan to 6 Nov. [26, 27]",
+     "src": [
+      [
+       26,
+       "North Korea tests missile with cluster-bomb warhead",
+       "Stars and Stripes",
+       "https://www.stripes.com/theaters/asia_pacific/2026-11-02/north-korea-cluster-bomb-warhead-23335418.html"
+      ],
+      [
+       27,
+       "North Korea test-fires strategic cruise missiles: KCNA",
+       "AFP via Manila Times",
+       "https://www.manilatimes.net/2026/11/03/world/asia-oceania/north-korea-test-fires-strategic-cruise-missiles-kcna/2460150"
+      ]
+     ]
+    }
+   ],
    "short": "Korea",
    "lp": "above"
   },
@@ -158,6 +245,24 @@
        "Sudan's power grid nears collapse as drone strikes target electric stations",
        "AP via News4Jax",
        "https://www.news4jax.com/news/world/2026/11/01/sudans-power-grid-nears-collapse-as-drone-strikes-blamed-on-rsf-target-electric-stations/"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-03",
+     "t": "Drones hit the New Halfa and Aroma stations in Kassala state and Al-Ghazali near Merowe on 2 Nov, a day after Abu Hamad and Al-Dabbah; Anadolu counts at least 16 stations hit in a week. Sudan filed complaints against Ethiopia at the UN Security Council and the African Union over drone attacks it says were launched from Ethiopian territory. [24, 25]",
+     "src": [
+      [
+       24,
+       "Drone attacks hit 3 power stations in Sudan, trigger widespread outages",
+       "Anadolu",
+       "https://www.aa.com.tr/en/world/drone-attacks-hit-3-power-stations-in-sudan-trigger-widespread-outages/4108387"
+      ],
+      [
+       25,
+       "Sudan files complaints against Ethiopia with UN over deadly drone spree",
+       "Al Jazeera",
+       "https://www.aljazeera.com/news/2026/11/2/sudan-files-complaints-against-ethiopia-with-un-over-deadly-drone-spree"
       ]
      ]
     }

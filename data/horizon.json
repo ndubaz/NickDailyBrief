@@ -38,11 +38,29 @@
    ]
   },
   {
+   "id": "pl-us-base-meeting",
+   "date": "2026-11-03",
+   "dateText": "3 Nov",
+   "t": "Polish national security meeting on a permanent US base",
+   "n": "Warsaw would pay $3–4 billion; up to 5,000 more permanent troops",
+   "h": true,
+   "status": "confirmed",
+   "added": "2026-11-03",
+   "src": [
+    [
+     4,
+     "Poland calls security meeting on permanent US military base",
+     "Stars and Stripes",
+     "https://www.stripes.com/theaters/europe/2026-10-29/poland-new-american-military-base-23296978.html"
+    ]
+   ]
+  },
+  {
    "id": "tk-budget-debate",
    "date": "2026-11-04",
    "dateText": "4 Nov",
    "t": "Tweede Kamer tax-plan debate",
-   "n": "Wednesday evening; no majority yet; fuel-duty cut at stake",
+   "n": "Wednesday evening; cabinet signed off the plan on 3 Nov; no majority yet; fuel-duty cut at stake",
    "h": false,
    "status": "confirmed",
    "added": "2026-11-02",
@@ -58,6 +76,12 @@
      "Geen deal met oppositie over belastingplan, woensdag debat in Tweede Kamer",
      "NOS",
      "https://nos.nl/artikel/2637476-geen-deal-met-oppositie-over-belastingplan-woensdag-debat-in-tweede-kamer"
+    ],
+    [
+     82,
+     "Kabinet eens over koers Belastingplan 2027",
+     "Salaris Vanmorgen",
+     "https://www.salarisvanmorgen.nl/2026/11/03/kabinet-eens-over-koers-belastingplan-2027"
     ]
    ],
    "updated": "2026-11-03"
@@ -186,6 +210,60 @@
      "Carolina, Seattle to play in 2026 Global Series Finland",
      "NHL.com",
      "https://www.nhl.com/news/carolina-seattle-to-play-in-2026-global-series-finland"
+    ]
+   ]
+  },
+  {
+   "id": "nl-bus-strikes",
+   "date": "2026-11-17",
+   "dateText": "from 17 Nov",
+   "t": "Dutch regional bus strikes possible",
+   "n": "Members vote on the final offer the week of 9 Nov",
+   "h": false,
+   "status": "reported",
+   "added": "2026-11-03",
+   "src": [
+    [
+     84,
+     "Vakbonden verwachten nieuwe stakingen in streekvervoer",
+     "RTV Noord",
+     "https://rtvnoord.nl/verkeer/1449544/vakbonden-verwachten-nieuwe-stakingen-in-streekvervoer"
+    ]
+   ]
+  },
+  {
+   "id": "apec-shenzhen",
+   "date": "2026-11-18",
+   "dateText": "18–19 Nov",
+   "t": "APEC leaders' meeting, Shenzhen",
+   "n": "Taipei still seeking a formal invitation",
+   "h": false,
+   "status": "confirmed",
+   "added": "2026-11-03",
+   "src": [
+    [
+     29,
+     "Taiwan seeking formal APEC invitation from China: Premier",
+     "Focus Taiwan",
+     "https://focustaiwan.tw/politics/202611030015"
+    ]
+   ]
+  },
+  {
+   "id": "be-national-demo",
+   "date": "2026-11-23",
+   "dateText": "23 Nov",
+   "t": "Belgian national union demonstration, Brussels",
+   "n": "ACV/CSC, ABVV/FGTB and Synova; expect travel disruption",
+   "h": false,
+   "status": "confirmed",
+   "added": "2026-11-03",
+   "src": [
+    [
+     108,
+     "Brussel op maandag 23 november andermaal decor van nationale betoging",
+     "Bruzz",
+     "https://www.bruzz.be/actua/politiek/brussel-op-maandag-23-november-andermaal-decor-van-nationale-betoging-2026-10-21"
     ]
    ]
   },

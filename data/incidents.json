@@ -117,6 +117,45 @@
    "lon": 26.1,
    "summary": "Fridges in six stores heated up overnight and staff found them at 08:00. The National Cyber Security Directorate (DNSC) says the controllers sat behind cellular (GSM) routers with fixed IP addresses, reachable from the internet, on old software.",
    "edition": "2026-11-03"
+  },
+  {
+   "id": "2026-11-02-de-cyb-coldchain",
+   "date": "2026-11-02",
+   "code": "CYB",
+   "attr": "A0",
+   "local": false,
+   "country": "DE",
+   "place": "Germany: Wuppertal and Raesfeld (North Rhine-Westphalia); Reisbach (Bavaria)",
+   "lat": 51.26,
+   "lon": 7.15,
+   "summary": "Germany's first cold-chain cases: refrigeration heated to about +50 °C at an Edeka in Reisbach, a CAP-Markt in Wuppertal and a Rewe in Raesfeld (Danfoss controls set to defrost); stock discarded, police complaint in Wuppertal.",
+   "edition": "2026-11-03"
+  },
+  {
+   "id": "2026-11-02-pt-cyb-coldchain",
+   "date": "2026-11-02",
+   "code": "CYB",
+   "attr": "A0",
+   "local": false,
+   "country": "PT",
+   "place": "Portugal: seven Intermarché stores",
+   "lat": 38.72,
+   "lon": -9.14,
+   "summary": "Seven Intermarché stores hit, reportedly through an outside refrigeration contractor (AFP, single source).",
+   "edition": "2026-11-03"
+  },
+  {
+   "id": "2026-11-01-lv-uas-kraslava",
+   "date": "2026-11-01",
+   "code": "UAS",
+   "attr": "A0",
+   "local": false,
+   "country": "LV",
+   "place": "Latvia: Krāslava and Ludza",
+   "lat": 55.9,
+   "lon": 27.17,
+   "summary": "Unidentified drone entered from the east at 18:59; orange alert; a Blaze interceptor drone launched and self-destructed short of the Russian border; the object left after about 17 minutes.",
+   "edition": "2026-11-03"
   }
  ],
  "attrLog": [],
