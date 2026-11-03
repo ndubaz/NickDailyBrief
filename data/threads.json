@@ -24,6 +24,30 @@
        "https://www.aljazeera.com/news/2026/11/2/freezers-in-sweden-belgium-overheat-following-possible-cyberattacks"
       ]
      ]
+    },
+    {
+     "date": "2026-11-03",
+     "t": "Wave widened to Italy and Romania; nine countries on the night of 1–2 Nov. Italy's prime minister's office meets intelligence chiefs on 3 Nov; the Pentagon's DCIS is probing August commissary outages. [3, 4, 7]",
+     "src": [
+      [
+       3,
+       "Anche l'Italia colpita dagli attacchi hacker ai supermercati: Chigi convoca un vertice d'urgenza",
+       "Open",
+       "https://www.open.online/2026/11/02/supermercati-frigoriferi-hacker-italia-sicilia/"
+      ],
+      [
+       4,
+       "Frigiderele din 6 magazine din România, posibil vizate în noul atac",
+       "HotNews.ro",
+       "https://hotnews.ro/frigiderele-din-6-magazine-din-romania-ale-aceluiasi-lant-de-supermarketuri-posibil-vizate-in-noul-atac-care-a-ridicat-temperaturile-la-50-de-grade-2393059"
+      ],
+      [
+       7,
+       "Hackers pushed freezers at French supermarkets to 122 degrees. Now the Pentagon is asking whether the same thing hit U.S. military bases",
+       "Fortune",
+       "https://fortune.com/2026/11/01/hackers-pushed-freezers-at-hundreds-of-french-supermarkets-to-122-degrees-pentagon-investigating-us-military-bases/"
+      ]
+     ]
     }
    ]
   },
@@ -82,6 +106,24 @@
        "https://www.defensenews.com/pentagon/2026/08/27/pentagons-nato-review-preparing-troop-options-for-hegseth-by-november-6/"
       ]
      ]
+    },
+    {
+     "date": "2026-11-03",
+     "t": "Election day: five NATO diplomats fear more troop cuts, lower common funding and PURL limits if Republicans lose; option sets still due 6 Nov. [12, 13]",
+     "src": [
+      [
+       12,
+       "NATO allies fear Trump could target alliance after potential US midterm defeat: report",
+       "Anadolu (citing POLITICO)",
+       "https://m.aa.com.tr/en/world/nato-allies-fear-trump-could-target-alliance-after-potential-us-midterm-defeat-report/4108932"
+      ],
+      [
+       13,
+       "Pentagon Europe posture review terms of reference",
+       "Grosswald",
+       "https://www.grosswald.org/pentagon-europe-posture-review-terms-of-reference-four-option-sets-6-november/"
+      ]
+     ]
     }
    ]
   },
@@ -106,6 +148,24 @@
        "Kremlin: Abu Dhabi talks after November 4",
        "Meduza",
        "https://meduza.io/en/news/2026/10/29/kremlin-says-u-s-russia-ukraine-peace-talks-will-take-place-in-abu-dhabi-after-november-4-depending-on-battlefield-conditions"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-03",
+     "t": "Witkoff: Abu Dhabi talks on 10–11 Nov; US meets France, Germany, UK, EU and NATO in Brussels this week; Moscow says Europe's role needs all three sides' agreement. [14, 10]",
+     "src": [
+      [
+       14,
+       "U.S. to mediate new Ukraine-Russia talks in Abu Dhabi next week",
+       "Xinhua",
+       "https://english.news.cn/20261103/caa9492cf0a74a6b97db0fe7ba3781fc/c.html"
+      ],
+      [
+       10,
+       "Top security official comments on West (Shoigu press conference)",
+       "TASS",
+       "https://tass.com/russias-foreign-policy/2211895"
       ]
      ]
     }
@@ -141,6 +201,38 @@
      "date": "2026-11-02",
      "t": "Under way; the court refused to end it on 27 Oct.",
      "src": []
+    }
+   ]
+  },
+  {
+   "id": "iran-hormuz",
+   "name": "Iran war and Hormuz",
+   "status": "moving",
+   "opened": "2026-11-03",
+   "log": [
+    {
+     "date": "2026-11-03",
+     "t": "US struck radar and missile launchers on Qeshm on 2 Nov; Iran offers a conditional two-day Hormuz reopening; Brent −7.6% to $104.77. [16, 17, 27]",
+     "src": [
+      [
+       16,
+       "US strikes Iran's Qeshm Island on eve of midterm elections",
+       "Yahoo News",
+       "https://www.yahoo.com/news/politics/articles/us-strikes-irans-qeshm-island-035152273.html"
+      ],
+      [
+       17,
+       "Oil slides on Hormuz deal hopes but Trump keeps Iran strikes on the table",
+       "Euronews",
+       "https://www.euronews.com/2026/11/02/oil-slides-on-hormuz-deal-hopes-but-trump-keeps-iran-strikes-on-the-table"
+      ],
+      [
+       27,
+       "Crude oil prices sell off more than 7% on Iran peace talk hopes ahead of U.S. midterms",
+       "CNBC",
+       "https://cnbc.com/2026/11/02/oil-prices-fall-as-iran-us-pursue-diplomacy.html"
+      ]
+     ]
     }
    ]
   }

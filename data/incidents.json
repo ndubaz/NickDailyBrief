@@ -91,6 +91,32 @@
    "lon": -2.1,
    "summary": "Drone reports closed the airport on two nights; flights cancelled or diverted.",
    "edition": "2026-11-02"
+  },
+  {
+   "id": "2026-11-02-it-cyb-coldchain",
+   "date": "2026-11-02",
+   "code": "CYB",
+   "attr": "A0",
+   "local": false,
+   "country": "IT",
+   "place": "Italy: Catania and Palermo (Sicily); cases also in Tuscany and Emilia-Romagna",
+   "lat": 37.5,
+   "lon": 15.09,
+   "summary": "Display-case controllers at three Coop-brand stores in Catania and one in Palermo were reset remotely around 04:00; trade sources say at least 12 Sicilian stores. Italy's National Cybersecurity Agency (ACN) also found a catering firm in Tuscany and a frozen-food producer in Emilia-Romagna hit.",
+   "edition": "2026-11-03"
+  },
+  {
+   "id": "2026-11-02-ro-cyb-coldchain",
+   "date": "2026-11-02",
+   "code": "CYB",
+   "attr": "A0",
+   "local": false,
+   "country": "RO",
+   "place": "Romania: six stores of one chain (cities not named)",
+   "lat": 44.43,
+   "lon": 26.1,
+   "summary": "Fridges in six stores heated up overnight and staff found them at 08:00. The National Cyber Security Directorate (DNSC) says the controllers sat behind cellular (GSM) routers with fixed IP addresses, reachable from the internet, on old software.",
+   "edition": "2026-11-03"
   }
  ],
  "attrLog": [],
