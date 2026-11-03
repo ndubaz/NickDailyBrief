@@ -500,6 +500,60 @@
     return { from: from, to: to, ticks: ticks, rows: rows, all: all };
   }
 
+  /* ---------- health checks: when to remodel ---------- */
+  var PAGE_V = "5.0";
+  function health(E, ctx, TD, words) {
+    var rows = [], realToday = key(new Date());
+    function add(name, level, detail) { rows.push([name, level, detail]); }
+    function lastDate(list, f) { var m = ""; (list || []).forEach(function (x) { var d = f(x); if (d && d > m) m = d; }); return m; }
+    function age(d) { return d ? daysBetween(d, TD) : null; }
+    function fresh(name, d, warn, act, what) { var a = age(d); if (a == null) add(name, "act", "no dated entry at all"); else add(name, a >= act ? "act" : a >= warn ? "watch" : "ok", (what || "last entry") + " " + fmtShort(d) + (a ? ", " + a + (a === 1 ? " day" : " days") + " ago" : ", today")); }
+    /* format and cadence */
+    var ev = parseFloat(E.v || "0"); add("Edition format", ev < parseFloat(PAGE_V) ? "act" : "ok", "edition " + (E.v || "?") + " on page " + PAGE_V + (ev < parseFloat(PAGE_V) ? ": the task prompt is behind the page" : ""));
+    var lag = daysBetween(ctx.index.latest, realToday); add("Morning run", lag <= 0 ? "ok" : lag === 1 ? "watch" : "act", "latest edition " + fmtShort(ctx.index.latest) + (lag > 0 ? ", " + lag + " day" + (lag > 1 ? "s" : "") + " behind today" : ", today"));
+    var mins = Math.round(words / 230); add("Read time", mins < 15 || mins > 45 ? "act" : mins < 24 || mins > 36 ? "watch" : "ok", "≈ " + mins + " min against a 30-minute budget");
+    /* empty sections today and over the last week */
+    var AR = E.army || {}, WO = Array.isArray(E.world) ? { items: E.world } : (E.world || {});
+    var secs = [["World", (WO.items || []).length], ["World feature", WO.feature ? 1 : 0], ["Hybrid incidents", ((E.hybrid || {}).incidents || []).length], ["Europe", (E.europe || []).length], ["Euregio", (E.euregio || []).length], ["DoD", (AR.dod || []).length], ["Army", (AR.news || AR.items || []).length], ["Congress", (AR.congress || []).length], ["Career", ((AR.career || {}).items || []).length], ["NATO", ((E.nato || {}).items || []).length], ["Defence tech", ((E.deftech || {}).items || []).length], ["Frontier", ((E.frontier || {}).items || []).length], ["Netherlands", ((E.nl || {}).items || []).length], ["Out and about picks", ((E.offduty || {}).items || []).length], ["NHL news", ((E.hockey || {}).news || []).length]];
+    var empty = secs.filter(function (x) { return !x[1]; }).map(function (x) { return x[0]; });
+    add("Empty sections today", empty.length > 4 ? "act" : empty.length > 1 ? "watch" : "ok", empty.length ? empty.join(", ") : "none");
+    var SI = ctx.searchIndex && ctx.searchIndex.editions ? ctx.searchIndex.editions.filter(function (b) { return b.date <= TD; }).sort(function (a, b) { return a.date < b.date ? 1 : -1; }).slice(0, 7) : [];
+    if (SI.length >= 3) {
+      var groups = ["World", "Europe", "Euregio", "DoD", "Army", "Congress", "Career", "NATO", "Defence tech", "Frontier", "Netherlands", "Out and about", "NHL", "Taal"], dead = groups.filter(function (g) { return SI.every(function (b) { return !b.hits.some(function (h) { return h.w === g; }); }); });
+      add("Quiet all week", dead.length > 2 ? "act" : dead.length ? "watch" : "ok", dead.length ? dead.join(", ") + " had no headline in the last " + SI.length + " editions: re-scope or drop" : "every section produced headlines in the last " + SI.length + " editions");
+    } else add("Quiet all week", "watch", "needs three editions in the search index before it can judge");
+    /* standing files */
+    fresh("Conflict board", lastDate(ctx.conflicts, function (t) { return lastDate(t.log, function (e) { return e.date; }); }), 2, 4);
+    var quietT = (ctx.conflicts || []).filter(function (t) { var d = lastDate(t.log, function (e) { return e.date; }); return !d || daysBetween(d, TD) > 30; }).map(function (t) { return t.short || t.name; });
+    add("Theatres without an entry in 30 days", quietT.length > 5 ? "act" : quietT.length > 2 ? "watch" : "ok", quietT.length ? quietT.join(", ") : "none");
+    fresh("Tracked threads", lastDate(ctx.threads, function (t) { return lastDate(t.log, function (e) { return e.date; }); }), 3, 7);
+    var hz = (ctx.horizon || []).filter(function (e) { return e.date >= TD && daysBetween(TD, e.date) <= 14; }).length; add("Horizon, next 14 days", hz ? "ok" : "watch", hz + " dated event" + (hz === 1 ? "" : "s"));
+    fresh("Incident log", lastDate(ctx.incidents, function (i) { return i.date; }), 7, 14, "last incident");
+    fresh("USD/EUR series", ctx.fx && ctx.fx.series.length ? ctx.fx.series[ctx.fx.series.length - 1][0] : "", 4, 7, "last ECB day");
+    var serOld = Object.keys(ctx.series || {}).filter(function (k) { return k[0] !== "_" && (ctx.series[k] || []).length && daysBetween(ctx.series[k][ctx.series[k].length - 1][0], TD) > 5; });
+    add("Market series", serOld.length ? "act" : "ok", serOld.length ? "stale: " + serOld.join(", ") : "all five within 5 days");
+    var WS = ctx.worldSeries || { meta: {}, series: {} }, wsRows = Object.keys(WS.series || {}).map(function (k) { var sr = WS.series[k] || [], m = (WS.meta || {})[k] || {}, last = sr.length ? sr[sr.length - 1][0] : null, lim = m.cadence === "weekly" ? 10 : 3; return [k, last, last ? daysBetween(last, TD) > lim : true]; });
+    var wsBad = wsRows.filter(function (r) { return r[2]; }).map(function (r) { return r[0] + (r[1] ? " (" + fmtShort(r[1]) + ")" : " (empty)"); });
+    add("World series", wsBad.length >= wsRows.length ? "act" : wsBad.length ? "watch" : "ok", wsBad.length ? "not kept up: " + wsBad.join(", ") : wsRows.length + " series current");
+    if (ctx.canes) fresh("Canes results", ctx.canes.updated || lastDate(ctx.canes.games, function (g) { return g.date; }), 4, 8, "last game logged");
+    var unv = (ctx.leaders || []).filter(function (l) { return l.name && l.verified === false; }).length, empt = (ctx.leaders || []).filter(function (l) { return !l.name; }).length;
+    add("Leadership board", unv + empt > 6 ? "act" : unv + empt ? "watch" : "ok", unv + " to confirm, " + empt + " empty");
+    var exUp = (ctx.exercises || []).filter(function (x) { return x.to >= TD; }).length; add("Exercise calendar", exUp ? "ok" : "watch", exUp + " announced");
+    var rel = ((ctx.releases || {}).releases || []).filter(function (r) { return daysBetween(r.date, TD) <= 45 && r.date <= TD; }).length, sota = (ctx.releases || {}).sota || {};
+    add("Frontier log", rel ? (sota.asof && daysBetween(sota.asof, TD) <= 10 ? "ok" : "watch") : "act", rel + " releases in 45 days; state-of-the-art table " + (sota.asof ? "as of " + fmtShort(sota.asof) : "never written"));
+    var evLive = (ctx.events || []).filter(function (e) { return e.to >= TD; }).length; add("Events list", evLive < 6 ? "act" : evLive < 12 ? "watch" : "ok", evLive + " live events (aim for 20 to 40)");
+    var ID = (ctx.idioms || []).filter(function (i) { return i.date <= TD; }).sort(function (a, b) { return a.date < b.date ? 1 : -1; }), idOK = ID.length && ID[0].date === TD, rot = ID.length > 1 && ID[0].lang === ID[1].lang;
+    add("Idiom of the day", !ID.length ? "act" : idOK && !rot ? "ok" : "watch", ID.length ? (idOK ? "today's is " + ID[0].lang : "last one " + fmtShort(ID[0].date)) + (rot ? ", rotation broken (" + ID[0].lang + " twice)" : "") : "none");
+    var SK = ctx.ski, md = TD.slice(5), inSeason = SK && SK.season && (md >= SK.season[0] || md <= SK.season[1]), skAsof = SK && SK.snow ? lastDate(Object.keys(SK.snow), function (k) { return SK.snow[k].asof; }) : "";
+    add("Snow report", !inSeason ? "ok" : skAsof && daysBetween(skAsof, TD) <= 1 ? "ok" : "act", inSeason ? (skAsof ? "as of " + fmtShort(skAsof) : "no data") : "out of season (1 Dec to 31 Mar)" + (skAsof ? ", last fetch " + fmtShort(skAsof) : ""));
+    var cal = ctx.calendar, covEnd = cal ? lastDate(Object.keys(cal.school || {}), function (k) { return lastDate(cal.school[k].segs, function (g) { return g[1]; }); }) : "", covMin = cal ? Object.keys(cal.school || {}).map(function (k) { return [cal.school[k].name, lastDate(cal.school[k].segs, function (g) { return g[1]; })]; }).sort(function (a, b) { return a[1] < b[1] ? -1 : 1; })[0] : null;
+    add("School calendar coverage", !covMin ? "act" : daysBetween(TD, covMin[1]) < 60 ? "act" : daysBetween(TD, covMin[1]) < 120 ? "watch" : "ok", covMin ? "shortest: " + covMin[0] + " to " + fmtShort(covMin[1]) + " " + covMin[1].slice(0, 4) : "no calendar");
+    var binLast = lastDate((ctx.bins || {}).dates, function (b) { return b[0]; }); add("Bin calendar", !binLast ? "act" : daysBetween(TD, binLast) < 14 ? "act" : daysBetween(TD, binLast) < 45 ? "watch" : "ok", binLast ? "loaded to " + fmtShort(binLast) : "not loaded");
+    var dl = ((ctx.deadlines || {}).items || []).length; add("Deadlines", dl ? "ok" : "watch", dl ? dl + " listed" : "empty: add yours to data/deadlines.json");
+    var siToday = ctx.searchIndex && ctx.searchIndex.editions && ctx.searchIndex.editions.some(function (b) { return b.date === TD; }); add("Search index", siToday ? "ok" : "watch", siToday ? "has today's edition" : "today's edition not indexed yet");
+    return rows;
+  }
+
   /* ---------- main render ---------- */
   function render(E, ctx) {
     var today = pd(E.date), TD = E.date, h = "";
@@ -913,6 +967,7 @@
     h += '<div class="search"><form id="searchform" role="search"><label class="small" for="q">Archive search</label><input id="q" type="search" placeholder="Search headlines in every edition" autocomplete="off"><button type="submit">Search</button></form><div id="hits" class="small"></div></div>';
     if (E.changelog) h += '<div><div class="small"><b>What changed in the Readbook</b></div><ul class="clean small" style="margin-top:6px">' + E.changelog.map(function (c) { return "<li>" + esc(c[0]) + ": " + rich(c[1]) + "</li>"; }).join("") + "</ul></div>";
     h += '<p class="small">Open sources only. Personal reading; not an official product.</p></div></section>';
+    h += '<section id="health" class="plan"><h2>Readbook health <span class="num">when to remodel</span></h2><p class="small">Computed on the page from the edition and the standing files. Act = the data model or the task prompt needs work; watch = keep an eye on it.</p><div id="healthbody"></div></section>';
     h += '<button type="button" class="totop" id="totop" aria-label="Back to top">Top</button>';
 
     app.innerHTML = h;
@@ -975,6 +1030,12 @@
       bt.querySelector(".val").textContent = "Not loaded";
       bt.querySelector("p").textContent = (ctx.bins && ctx.bins.note) || "Add the Rd4 calendar to data/bins.json.";
     }
+
+    /* health */
+    var words0 = 0, stop0 = false;
+    Array.prototype.forEach.call(app.children, function (el) { if (stop0 || el.id === "p-plan" || el.id === "sources") { stop0 = true; return; } if (el.id !== "slim") words0 += (el.textContent || "").split(/\s+/).length; });
+    var HR = health(E, ctx, TD, words0), nAct = HR.filter(function (r) { return r[1] === "act"; }).length, nWatch = HR.filter(function (r) { return r[1] === "watch"; }).length;
+    document.getElementById("healthbody").innerHTML = '<p class="hsum"><span class="chip hs ' + (nAct ? "act" : nWatch ? "watch" : "ok") + '">' + (nAct ? nAct + " to act on" : nWatch ? "nothing to act on" : "all clear") + "</span> " + HR.length + " checks · " + nWatch + " to watch · " + (HR.length - nAct - nWatch) + " ok</p>" + table(["Check", "Detail"], HR.map(function (r) { return '<tr class="h-' + r[1] + '"><td><b>' + esc(r[0]) + '</b><div><span class="chip hs ' + r[1] + '">' + r[1] + "</span></div></td><td>" + esc(r[2]) + "</td></tr>"; }).join(""));
 
     /* new / updated count */
     document.getElementById("nnew").textContent = app.querySelectorAll(".badge.new").length + " new";

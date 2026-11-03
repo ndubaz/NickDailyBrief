@@ -17,6 +17,8 @@ The World part is facts and summaries only: the board (ten theatres on a schemat
 
 The exchange rate is shown everywhere as USD/EUR, euros per dollar. The three typefaces are self-hosted in `fonts/` (all SIL Open Font License) and precached, so the page looks the same offline. The masthead has a theme control (auto, light, dark) and a status line that says when the data was loaded and whether the phone is offline.
 
+The footer ends with **Readbook health**: 24 checks computed on the page (format drift, run cadence, read time, empty and quiet sections, freshness of every standing file, coverage running out). "Act" means the data model or the task prompt needs work.
+
 `node tools/validate.js` checks the latest edition and every standing file (citations, jump ids, the USD/EUR rule, the no-assessment rule for the World part, record and series lengths). The morning run executes it before committing.
 
 ## The memory model
