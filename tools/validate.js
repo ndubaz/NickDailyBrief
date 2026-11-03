@@ -30,7 +30,7 @@ if (E) {
   if (E.world && E.world.feature && E.world.feature.rota) { const d = new Date(E.date + "T12:00:00"); const wd = ["sun","mon","tue","wed","thu","fri","sat"][d.getDay()]; if (E.world.feature.rota !== wd) errors.push("world.feature.rota " + E.world.feature.rota + " does not match weekday " + wd); }
 }
 /* standing files */
-const files = { "conflicts.json": "theatres", "threads.json": "threads", "horizon.json": "events", "incidents.json": "incidents", "exercises.json": "exercises", "events.json": "events", "idioms.json": "idioms", "leaders.json": "posts", "releases.json": "releases" };
+const files = { "conflicts.json": "theatres", "threads.json": "threads", "horizon.json": "events", "incidents.json": "incidents", "exercises.json": "exercises", "events.json": "events", "idioms.json": "idioms", "confirmations.json": "nominations", "releases.json": "releases" };
 Object.keys(files).forEach((f) => { const j = load(D(f)); if (!j) return; if (!Array.isArray(j[files[f]])) errors.push(f + ": missing array " + files[f]); });
 const fx = load(D("fx.json")); if (fx && fx.series) { let prev = ""; fx.series.forEach((p) => { if (p[0] <= prev) errors.push("fx.json not ascending at " + p[0]); prev = p[0]; if (!(p[1] > 0.8 && p[1] < 1.7)) errors.push("fx.json value out of range at " + p[0]); }); }
 const ser = load(D("series.json")); if (ser) Object.keys(ser).filter((k) => k[0] !== "_").forEach((k) => { if (ser[k].length > 30) warns.push("series.json " + k + " has " + ser[k].length + " rows (keep 30)"); });

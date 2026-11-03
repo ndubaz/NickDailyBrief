@@ -16,7 +16,7 @@ The site is static. `index.html` + `app.js` + `styles.css` never change day to d
 | `data/fx.json` | Append the ECB EUR reference rate for each business day not yet listed (the ECB publishes about 16:00 CET, so a morning run appends yesterday). Stored exactly as the ECB quotes it, US dollars per euro; the page inverts to euros per dollar. |
 | `data/series.json` | Append the last close for each series key; keep the last 30 trading days per key. |
 | `data/canes.json` | Append each completed Carolina game; refresh `upcoming` (next 15 scheduled games with UTC start); update `record`, `points`, `metro`. |
-| `data/leaders.json` | When a post changes hands: set `name`, `since`, `acting`, `verified: true`, `src`, `updated`. Fill empty posts the same way. Never delete posts. |
+| `data/confirmations.json` | Add a row when a defence post falls vacant or a nominee is announced; move `stage` and add the date to `dates` as the Senate acts; set `updated`; copy cited source rows into `src`. Never delete rows. |
 | `data/exercises.json` | Add announced NATO and allied exercises; set `updated` when dates change; never delete (the page hides those older than 60 days). |
 | `data/releases.json` | Append one entry per AI, chip, robotics or autonomy release, published result or shipped capability (`kind`, `t`, `lab`, `n`, `date`, `src`). On Fridays rewrite `sota` (leading system per domain) with sources. |
 | `data/events.json` | Add events within about 90 minutes of Hoensbroek with a source; prune events whose `to` has passed; set `updated` when details change. |
@@ -121,7 +121,7 @@ The World feature rota: Monday "Theatre in numbers" (table), Tuesday "Actor on t
 
 ### Changes from v4.0
 
-- New edition objects: `nato`, `deftech`, `frontier`, `army.depth`. Jump ids added: `leaders`, `nato`, `exercises`, `deftech`, `frontier`, `releases`, `sota`, `snow`.
+- New edition objects: `nato`, `deftech`, `frontier`, `army.depth`. Jump ids added: `confirmations`, `nato`, `exercises`, `deftech`, `frontier`, `releases`, `sota`, `snow`.
 - The Off duty section became Out and about: events live in `events.json`; `offduty.items` are editor's picks only.
 - Dutch corner became Taal: the idiom of the day comes from `idioms.json`; `nl.lees` and `nl.phrase` stay.
 - `five[].part` may be `"frontier"`.
@@ -138,9 +138,9 @@ The World feature rota: Monday "Theatre in numbers" (table), Tuesday "Actor on t
 
 ## Standing files
 
-### `data/leaders.json`
+### `data/confirmations.json`
 
-`{ "posts": [ {"id","post","org","name","since","acting":bool,"verified":bool,"src":[[n,title,outlet,url]],"updated"} ] }`. Eleven posts; a name with `verified: false` shows "to confirm" until the run sources it.
+`{ "nominations": [ {"id","post","org","nominee"|null,"stage":"vacant|announced|nominated|hearing|committee|floor|confirmed|withdrawn","dates":{"<stage>":"YYYY-MM-DD"},"committee","next","added","updated","src"} ] }`. Defence posts that matter: service secretaries and chiefs, the Joint Staff, combatant and NATO commanders, OSD posts, ambassadors to NATO and the host nations. The page draws a seven-step pipeline per row, hides confirmed rows after 30 days and withdrawn rows after 14, and shows NEW or UPDATED from `added` and `updated`.
 
 ### `data/exercises.json`
 

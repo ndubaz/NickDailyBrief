@@ -1,6 +1,6 @@
 /* Nick's Daily Readbook v5.0 renderer.
    Reads data/index.json, then data/editions/<date>.json, plus the standing files:
-   incidents, bins, threads, horizon, fx, series, canes, conflicts, world-series, calendar, deadlines, leaders, exercises, releases, events, idioms, ski, search-index.
+   incidents, bins, threads, horizon, fx, series, canes, conflicts, world-series, calendar, deadlines, confirmations, exercises, releases, events, idioms, ski, search-index.
    All content lives in the JSON files; this file only draws it. Editions in the 2.5 and 3.0 formats still render.
    Everything renders expanded; nothing is folded by default. */
 (function () {
@@ -536,8 +536,8 @@
     var wsBad = wsRows.filter(function (r) { return r[2]; }).map(function (r) { return r[0] + (r[1] ? " (" + fmtShort(r[1]) + ")" : " (empty)"); });
     add("World series", wsBad.length >= wsRows.length ? "act" : wsBad.length ? "watch" : "ok", wsBad.length ? "not kept up: " + wsBad.join(", ") : wsRows.length + " series current");
     if (ctx.canes) fresh("Canes results", ctx.canes.updated || lastDate(ctx.canes.games, function (g) { return g.date; }), 4, 8, "last game logged");
-    var unv = (ctx.leaders || []).filter(function (l) { return l.name && l.verified === false; }).length, empt = (ctx.leaders || []).filter(function (l) { return !l.name; }).length;
-    add("Leadership board", unv + empt > 6 ? "act" : unv + empt ? "watch" : "ok", unv + " to confirm, " + empt + " empty");
+    var cfA = (ctx.confirmations || []).filter(function (c) { return c.stage !== "confirmed" && c.stage !== "withdrawn"; }), cfStale = cfA.filter(function (c) { var d = c.dates || {}, last = Object.keys(d).reduce(function (m, k) { return d[k] > m ? d[k] : m; }, c.updated || c.added || ""); return !last || daysBetween(last, TD) > 45; }).length;
+    add("Confirmation tracker", !(ctx.confirmations || []).length ? "watch" : cfStale > 2 ? "act" : cfStale ? "watch" : "ok", cfA.length + " open" + (cfStale ? ", " + cfStale + " untouched for 45 days" : ""));
     var exUp = (ctx.exercises || []).filter(function (x) { return x.to >= TD; }).length; add("Exercise calendar", exUp ? "ok" : "watch", exUp + " announced");
     var rel = ((ctx.releases || {}).releases || []).filter(function (r) { return daysBetween(r.date, TD) <= 45 && r.date <= TD; }).length, sota = (ctx.releases || {}).sota || {};
     add("Frontier log", rel ? (sota.asof && daysBetween(sota.asof, TD) <= 10 ? "ok" : "watch") : "act", rel + " releases in 45 days; state-of-the-art table " + (sota.asof ? "as of " + fmtShort(sota.asof) : "never written"));
@@ -727,12 +727,14 @@
     h += part("pro", "Part 4", "Profession", "Inside the US military, the allies you work beside, and the technology of the fight.", "p-pro");
     h += '<section id="army" class="pro"><h2>Defence &amp; Army</h2>';
     if (AR.cards) h += '<div class="cards">' + AR.cards.map(function (c) { return '<div class="card"><div class="lbl">' + esc(c.l) + '</div><div class="val">' + esc(c.v) + "</div><p>" + rich(c.n) + "</p></div>"; }).join("") + "</div>";
-    if (ctx.leaders && ctx.leaders.length) {
-      h += '<h3 id="leaders">Leadership board</h3>' + table(["Post", "Holder"], ctx.leaders.map(function (l) {
-        var b = l.updated === TD ? "UPDATED" : "", nm = l.name ? esc(l.name) + (l.acting ? ' <span class="chip st quiet">acting</span>' : "") : '<span class="small">not yet filled</span>';
-        return '<tr class="' + fu(b) + '"><td><b>' + esc(l.post) + '</b><div class="small">' + esc(l.org) + "</div></td><td>" + nm + badge(b) + (l.verified === false && l.name ? ' <span class="chip rep">to confirm</span>' : "") + (l.src && l.src.length ? '<sup class="r">' + l.src.map(function (x) { return citeLink(x[0], srcMap(l.src)); }).join("") + "</sup>" : "") + '<div class="small mono">' + (l.since ? "since " + esc(fmtShort(l.since) + " " + l.since.slice(0, 4)) : "") + "</div></td></tr>";
-      }).join(""), "lbl1 leaders") + '<p class="small" style="margin-top:6px">"To confirm" marks a name the morning run has not yet sourced.</p>';
-    }
+    var STG = ["vacant","announced","nominated","hearing","committee","floor","confirmed"], STGL = { vacant: "Vacant", announced: "Announced", nominated: "Nominated", hearing: "Hearing", committee: "Committee", floor: "Floor", confirmed: "Confirmed", withdrawn: "Withdrawn" };
+    var CF = (ctx.confirmations || []).map(function (c) { var d = c.dates || {}, last = Object.keys(d).reduce(function (m, k) { return d[k] > m ? d[k] : m; }, ""); return { c: c, last: last, badge: c.added === TD ? "NEW" : c.updated === TD ? "UPDATED" : "" }; }).filter(function (x) { return !((x.c.stage === "confirmed" && daysBetween(x.last, TD) > 30) || (x.c.stage === "withdrawn" && daysBetween(x.last, TD) > 14)); }).sort(function (a, b) { var ac = a.c.stage === "confirmed" || a.c.stage === "withdrawn", bc = b.c.stage === "confirmed" || b.c.stage === "withdrawn"; if (ac !== bc) return ac ? 1 : -1; return a.last < b.last ? 1 : a.last > b.last ? -1 : 0; });
+    h += '<h3 id="confirmations">Senate confirmation tracker <span class="small">defence posts</span></h3>';
+    h += CF.length ? '<div class="fug">' + nq() + '<div class="cflist">' + CF.map(function (x) {
+      var c = x.c, idx = STG.indexOf(c.stage), d = c.dates || {};
+      var pipe = '<div class="pipe' + (c.stage === "withdrawn" ? " wd" : "") + '">' + STG.map(function (st, i) { var on = c.stage === "withdrawn" ? false : i <= idx, cur = st === c.stage; return '<span class="' + (on ? "on" : "") + (cur ? " cur" : "") + '" title="' + esc(STGL[st] + (d[st] ? " · " + fmtShort(d[st]) : "")) + '"><i></i><small>' + STGL[st] + "</small></span>"; }).join("") + "</div>";
+      return '<div class="cf ' + fu(x.badge) + '" id="cf-' + esc(c.id) + '"><div class="cf-top"><b>' + esc(c.post) + '</b><span class="chip st">' + esc(STGL[c.stage] || c.stage) + (x.last ? " · " + esc(fmtShort(x.last)) : "") + "</span>" + badge(x.badge) + '</div><div class="cf-who">' + (c.nominee ? esc(c.nominee) : '<span class="small">no nominee</span>') + (c.org ? ' <span class="small">· ' + esc(c.org) + "</span>" : "") + (c.committee ? ' <span class="small">· ' + esc(c.committee) + "</span>" : "") + (c.src && c.src.length ? '<sup class="r">' + c.src.map(function (z) { return citeLink(z[0], srcMap(c.src)); }).join("") + "</sup>" : "") + "</div>" + pipe + (c.next ? '<p class="small">' + rich(c.next, srcMap(c.src)) + "</p>" : "") + "</div>";
+    }).join("") + "</div></div>" : quiet("No defence nominations or vacancies tracked.");
     var AG = [["dod", "Department of Defense", AR.dod, "Nothing new from the Pentagon in the window."], ["armynews", "Army and USAREUR-AF", AR.news || AR.items, "No Army news in the window."], ["congress", "Congress and policy", AR.congress, "No new legislation or policy in the window."]];
     AG.forEach(function (g) { h += '<h3 id="' + g[0] + '">' + g[1] + "</h3>" + items(g[2], null, g[3]); });
     var CR = AR.career || {};
@@ -1195,10 +1197,10 @@
     opt("data/incidents.json"), opt("data/bins.json"), opt("data/threads.json"), opt("data/horizon.json"),
     opt("data/fx.json"), opt("data/series.json"), opt("data/canes.json"),
     opt("data/conflicts.json"), opt("data/world-series.json"), opt("data/calendar.json"), opt("data/deadlines.json"),
-    opt("data/leaders.json"), opt("data/exercises.json"), opt("data/releases.json"), opt("data/events.json"), opt("data/idioms.json"), opt("data/ski.json"), opt("data/search-index.json")
+    opt("data/confirmations.json"), opt("data/exercises.json"), opt("data/releases.json"), opt("data/events.json"), opt("data/idioms.json"), opt("data/ski.json"), opt("data/search-index.json")
   ]).then(function (r) {
     ctx.fetchedAt = Date.now();
-    ctx.leaders = r[12] && r[12].posts; ctx.exercises = r[13] && r[13].exercises; ctx.releases = r[14]; ctx.events = r[15] && r[15].events; ctx.idioms = r[16] && r[16].idioms; ctx.ski = r[17]; ctx.searchIndex = r[18];
+    ctx.confirmations = r[12] && r[12].nominations; ctx.exercises = r[13] && r[13].exercises; ctx.releases = r[14]; ctx.events = r[15] && r[15].events; ctx.idioms = r[16] && r[16].idioms; ctx.ski = r[17]; ctx.searchIndex = r[18];
     ctx.index = r[0]; ctx.incidents = r[1] && r[1].incidents; ctx.attrLog = r[1] && r[1].attrLog; ctx.bins = r[2];
     ctx.threads = r[3] && r[3].threads; ctx.horizon = r[4] && r[4].events;
     ctx.fx = r[5] && r[5].series && r[5].series.length ? r[5] : null; ctx.series = r[6]; ctx.canes = r[7];

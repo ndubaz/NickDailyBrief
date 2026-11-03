@@ -11,7 +11,7 @@ A personal daily briefing, installed on the iPhone as a home-screen web app. Sta
 
 ## The page
 
-One scroll, everything expanded, nothing folded: Front (masthead, Today strip, Five things, Today and tomorrow), then Part 1 The World, Part 2 Security, Part 3 Watchlist, Part 4 Profession (Defence & Army with a leadership board, NATO & European militaries with an exercise calendar, Defence tech, Aperture), Part 5 Frontier (tech and AI releases, the release log, the Friday state-of-the-art table), Part 6 Money, Part 7 Home (Netherlands, AFNORTH, Out and about within 90 minutes, Taal with a daily idiom, Snow in season), Part 8 Hockey, Part 9 Planner, and the footer with Sources, Past editions, Archive search and the changelog. The sticky header has jump chips per part and a "New only" toggle that hides everything without a NEW or UPDATED badge (remembered on the phone).
+One scroll, everything expanded, nothing folded: Front (masthead, Today strip, Five things, Today and tomorrow), then Part 1 The World, Part 2 Security, Part 3 Watchlist, Part 4 Profession (Defence & Army with a Senate confirmation tracker, NATO & European militaries with an exercise calendar, Defence tech, Aperture), Part 5 Frontier (tech and AI releases, the release log, the Friday state-of-the-art table), Part 6 Money, Part 7 Home (Netherlands, AFNORTH, Out and about within 90 minutes, Taal with a daily idiom, Snow in season), Part 8 Hockey, Part 9 Planner, and the footer with Sources, Past editions, Archive search and the changelog. The sticky header has jump chips per part and a "New only" toggle that hides everything without a NEW or UPDATED badge (remembered on the phone).
 
 The World part is facts and summaries only: the board (ten theatres on a schematic map, each with a dated log and a four-week activity bar), overnight developments, a "By the numbers" row of open-source series with sparklines, and one feature a day on a seven-day rota (theatre in numbers, actor on the record, trend line, chronology, week on the board, geography, the record). The page draws every chart from data: tables, series, timelines and geography schematics come from the edition; no hand-made images.
 
@@ -38,7 +38,7 @@ The edition is a daily snapshot. The standing files under `data/` are the Readbo
 | `data/calendar.json` | Public holidays, school breaks for four systems, clocks, market seasons, 18 months | Calendar, week strip, countdowns, school overlap chart |
 | `data/deadlines.json` | Nick's own deadlines, hand-maintained, never touched by the run | Deadlines table, calendar, week strip |
 | `data/bins.json` | Rd4 collection dates | Bin day tile, calendar, countdown |
-| `data/leaders.json` | Who holds eleven key posts, with dates and sources | Leadership board in Profession |
+| `data/confirmations.json` | Defence vacancies and nominations with the Senate stage reached | Senate confirmation tracker in Profession |
 | `data/exercises.json` | NATO and allied exercises with dates | Exercise calendar, Planner |
 | `data/releases.json` | Dated AI and tech releases, plus the Friday state-of-the-art table | Frontier |
 | `data/events.json` | Curated events within about 90 minutes, with sources | Out and about, calendar, week strip |

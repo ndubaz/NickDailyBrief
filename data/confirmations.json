@@ -1,0 +1,48 @@
+{
+ "note": "Senate confirmation tracker for defence posts that matter to Nick: service secretaries and chiefs, the Joint Staff, combatant and NATO commanders, OSD posts, ambassadors to NATO and the host nations. One row per vacancy or nomination. stage = vacant|announced|nominated|hearing|committee|floor|confirmed|withdrawn. dates holds the date each stage was reached. The run adds rows when a post falls vacant or a name is announced, moves stage and dates as the Senate acts (set updated), copies the cited source rows into src, and never deletes rows (the page hides confirmed rows after 30 days and withdrawn rows after 14).",
+ "updated": "2026-11-03",
+ "nominations": [
+  {
+   "id": "secarmy-2026",
+   "post": "Secretary of the Army",
+   "org": "Army",
+   "nominee": null,
+   "stage": "vacant",
+   "dates": {
+    "vacant": "2026-09-01"
+   },
+   "committee": "SASC",
+   "next": "No nominee named; Adam Telle is acting.",
+   "added": "2026-11-02",
+   "src": [
+    [
+     48,
+     "In first public speech as acting Army secretary, Telle highlights acquisition",
+     "Stars and Stripes",
+     "https://www.stripes.com/branches/army/2026-10-12/acting-army-secretary-telle-ausa-conference-23134806.html"
+    ]
+   ]
+  },
+  {
+   "id": "csa-2026",
+   "post": "Chief of Staff of the Army",
+   "org": "Army",
+   "nominee": null,
+   "stage": "vacant",
+   "dates": {
+    "vacant": "2026-04-01"
+   },
+   "committee": "SASC",
+   "next": "No nominee as of 12 Oct; Gen. LaNeve is acting.",
+   "added": "2026-11-02",
+   "src": [
+    [
+     48,
+     "In first public speech as acting Army secretary, Telle highlights acquisition",
+     "Stars and Stripes",
+     "https://www.stripes.com/branches/army/2026-10-12/acting-army-secretary-telle-ausa-conference-23134806.html"
+    ]
+   ]
+  }
+ ]
+}
