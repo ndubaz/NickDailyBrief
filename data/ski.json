@@ -1,5 +1,5 @@
 {
- "note": "Snow report for the Home part, shown 1 Dec to 31 Mar or whenever the data is fresh. Resorts are static (public coordinates; drive times from Hoensbroek by car are approximate; top = summit elevation in m). The morning run refreshes 'snow' daily from Open-Meteo (free, no key): forecast endpoint with daily=snowfall_sum,temperature_2m_max,temperature_2m_min and hourly=snow_depth at each resort's coordinates; snowfall_sum is cm per day, snow_depth is metres at the model grid elevation (modelElevation), which sits well below the summit.",
+ "note": "Snow report for the Home part, shown 1 Dec to 31 Mar only. Resorts are static (public coordinates; drive times from Hoensbroek by car are approximate; top = summit elevation in m). In season the morning run refreshes 'snow' daily from Open-Meteo (free, no key): forecast endpoint with daily=snowfall_sum,temperature_2m_max,temperature_2m_min and hourly=snow_depth at each resort's coordinates; snowfall_sum is cm per day, snow_depth is metres at the model grid elevation (modelElevation), which sits well below the summit.",
  "source": "Open-Meteo forecast API",
  "url": "https://open-meteo.com/en/docs",
  "season": [

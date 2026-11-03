@@ -21,7 +21,7 @@ The site is static. `index.html` + `app.js` + `styles.css` never change day to d
 | `data/releases.json` | Append one entry per AI, chip, robotics or autonomy release, published result or shipped capability (`kind`, `t`, `lab`, `n`, `date`, `src`). On Fridays rewrite `sota` (leading system per domain) with sources. |
 | `data/events.json` | Add events within about 90 minutes of Hoensbroek with a source; prune events whose `to` has passed; set `updated` when details change. |
 | `data/idioms.json` | Append today's idiom (rotate `nl`, `fr`, `it`); never repeat a phrase. |
-| `data/ski.json` | Refresh `snow` daily from Open-Meteo for every resort; resorts stay as they are. |
+| `data/ski.json` | 1 Dec to 31 Mar only: refresh `snow` daily from Open-Meteo for every resort; resorts stay as they are. Outside the season, leave the file alone. |
 | `data/search-index.json` | Append today's headline block (same fields as the page's search). |
 | `data/calendar.json` | Only when a school year or holiday list is newly published: add the missing segments. Otherwise leave alone. |
 | `data/bins.json` | Only when a new Rd4 calendar is supplied. |
@@ -165,7 +165,7 @@ The same file carries `tiers` and `watch`: the register of posts the confirmatio
 
 ### `data/ski.json`
 
-`{ "season": ["12-01","03-31"], "resorts": [{"id","name","cc","area","lat","lon","drive","top","modelElevation"}], "snow": { "<id>": {"asof","depthCm","days":[[date, newSnowCm, tMax, tMin]]} } }`. Shown in season or when `asof` is within two days. Refreshed daily from Open-Meteo (`daily=snowfall_sum,temperature_2m_max,temperature_2m_min&hourly=snow_depth`).
+`{ "season": ["12-01","03-31"], "resorts": [{"id","name","cc","area","lat","lon","drive","top","modelElevation"}], "snow": { "<id>": {"asof","depthCm","days":[[date, newSnowCm, tMax, tMin]]} } }`. Shown 1 Dec to 31 Mar only (the `season` window), whatever the date of the data. Refreshed daily from Open-Meteo in season (`daily=snowfall_sum,temperature_2m_max,temperature_2m_min&hourly=snow_depth`); outside the season the run leaves the file alone.
 
 ### `data/search-index.json`
 

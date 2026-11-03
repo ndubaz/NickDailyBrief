@@ -934,8 +934,7 @@
     h += "</section>";
     /* snow */
     var SK = ctx.ski, md = TD.slice(5), inSeason = SK && SK.season && (md >= SK.season[0] || md <= SK.season[1]);
-    var fresh = SK && SK.snow && Object.keys(SK.snow).some(function (k) { return SK.snow[k].asof && daysBetween(SK.snow[k].asof, TD) <= 2; });
-    if (SK && (inSeason || fresh) && SK.resorts && SK.resorts.length) {
+    if (SK && inSeason && SK.resorts && SK.resorts.length) {
       var rows = SK.resorts.map(function (r) { var sn = SK.snow[r.id]; if (!sn) return null; var n7 = sn.days.reduce(function (a, d) { return a + (d[1] || 0); }, 0); return { r: r, sn: sn, n7: n7 }; }).filter(Boolean).sort(function (a, b) { return b.n7 - a.n7 || b.sn.depthCm - a.sn.depthCm; });
       var mx = Math.max.apply(null, rows.map(function (x) { return Math.max.apply(null, x.sn.days.map(function (d) { return d[1] || 0; })); })) || 1;
       h += '<section id="snow" class="home"><h2>Snow <span class="num">7-day forecast · ' + esc(rows.length ? fmtShort(rows[0].sn.asof) : "") + "</span></h2>";
