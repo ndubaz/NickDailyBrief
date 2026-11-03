@@ -1,14 +1,16 @@
-/* Nick's Daily Readbook v3.0 renderer.
+/* Nick's Daily Readbook v4.0 renderer.
    Reads data/index.json, then data/editions/<date>.json, plus the standing files:
-   incidents.json, bins.json, threads.json, horizon.json, fx.json, series.json, canes.json.
-   All content lives in the JSON files; this file only draws it. Editions in the 2.5 format still render. */
+   incidents, bins, threads, horizon, fx, series, canes, conflicts, world-series, calendar, deadlines.
+   All content lives in the JSON files; this file only draws it. Editions in the 2.5 and 3.0 formats still render.
+   Everything renders expanded; nothing is folded by default. */
 (function () {
   "use strict";
   var MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
   var DOW = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
-  var CAT = { nl:["Netherlands","--c-nl"], be:["Belgium","--c-be"], de:["Germany","--c-de"], us:["US / AFNORTH","--c-us"], mkt:["Markets & events","--c-mkt"], pro:["Work & world","--c-pro"] };
+  var CAT = { nl:["Netherlands","--c-nl"], be:["Belgium","--c-be"], de:["Germany","--c-de"], us:["US / AFNORTH","--c-us"], mkt:["Markets & events","--c-mkt"], pro:["Work & world","--c-pro"],
+              hockey:["Hurricanes","--p-hockey"], home:["Bins & home","--p-home"], school:["School breaks","--p-pro"], watch:["Horizon","--p-watch"], deadline:["Deadlines","--crit"], info:["Clocks","--muted"] };
   var CODE_COLORS = { CYB:"--c-us", SAB:"--crit", UAS:"--c-mkt", UWI:"--c-pro", GNSS:"--c-be", INF:"--c-nl", ELX:"--c-nl", MIG:"--c-de", PRX:"--warn", AIR:"--c-de", SEA:"--c-pro", COE:"--c-be", KIN:"--crit" };
-  var PART_CLASSES = ["front","sec","watch","pro","money","home","hockey","plan"];
+  var PART_CLASSES = ["front","world","sec","watch","pro","money","home","hockey","plan"];
   var SERIES_BY_LABEL = [["s&p 500","spx"],["nasdaq","ndx"],["aex","aex"],["brent","brent"],["dutch ttf","ttf"],["ttf","ttf"]];
   var HOME = { lat: 50.89, lon: 5.98, name: "Heerlen" };
   var app = document.getElementById("app");
@@ -29,6 +31,7 @@
     });
     return h;
   }
+  function plain(s) { return String(s || "").replace(/\*\*|\*/g, "").replace(/\s?\[\d+(?:\s*,\s*\d+)*\]/g, ""); }
   function cite(n) { return n ? '<sup class="r"><a href="#s' + n + '">' + n + "</a></sup>" : ""; }
   function pd(s) { var a = String(s).slice(0, 10).split("-").map(Number); return new Date(a[0], a[1] - 1, a[2]); }
   function key(d) { return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); }
@@ -47,6 +50,19 @@
   function signed(v, dp, suffix) { return (v > 0 ? "+" : v < 0 ? "−" : "") + Math.abs(v).toLocaleString("en-GB", { minimumFractionDigits: dp, maximumFractionDigits: dp }) + (suffix || ""); }
   function dir(v) { return v > 0 ? "up" : v < 0 ? "down" : "flat"; }
   function km(lat1, lon1, lat2, lon2) { var R = 6371, dLat = (lat2 - lat1) * Math.PI / 180, dLon = (lon2 - lon1) * Math.PI / 180, a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * Math.sin(dLon / 2) * Math.sin(dLon / 2); return 2 * R * Math.asin(Math.sqrt(a)); }
+  function catColor(c) { return "var(" + (CAT[c] ? CAT[c][1] : "--muted") + ")"; }
+  function ordinal(n) { var s = ["th","st","nd","rd"], v = n % 100; return n + (s[(v - 20) % 10] || s[v] || s[0]); }
+  function cet(utc) { try { return new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Amsterdam", weekday: "short", hour: "2-digit", minute: "2-digit" }).format(new Date(utc)); } catch (e) { return ""; } }
+  function cetDate(utc) { try { return new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Amsterdam", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date(utc)); } catch (e) { return String(utc).slice(0, 10); } }
+  /* USD/EUR guard: any label written as EUR/USD with a dollars-per-euro value is shown inverted, as euros per dollar. */
+  function fxGuard(label, value, change, d) {
+    var v = parseFloat(String(value).replace(/[^\d.]/g, ""));
+    if (/EUR\s*\/\s*USD/i.test(String(label)) && v > 1 && v < 2) {
+      var pct = /%/.test(String(change || "")) ? parseFloat(String(change).replace(/[^\d.\-−+]/g, "").replace("−", "-")) : null;
+      return { label: String(label).replace(/EUR\s*\/\s*USD/i, "USD/EUR"), value: (1 / v).toFixed(4), change: pct != null && !isNaN(pct) ? signed(-pct, 2, "%") : "", dir: d === "up" ? "down" : d === "down" ? "up" : d, fixed: true };
+    }
+    return { label: label, value: value, change: change, dir: d, fixed: false };
+  }
 
   function item(it, opts) {
     opts = opts || {};
@@ -65,30 +81,210 @@
   function table(head, rows, cls) {
     return '<div class="tw"><table' + (cls ? ' class="' + cls + '"' : "") + "><thead><tr>" + head.map(function (c) { return "<th>" + esc(c) + "</th>"; }).join("") + "</tr></thead><tbody>" + rows + "</tbody></table></div>";
   }
-  function svgText(x, y, t, anchor, size, halo) { return '<text x="' + x + '" y="' + y + '" font-size="' + (size || 10.5) + '" font-family="var(--f-mono)" fill="var(--muted)"' + (anchor ? ' text-anchor="' + anchor + '"' : "") + (halo ? ' stroke="var(--surface)" stroke-width="3" paint-order="stroke" stroke-linejoin="round"' : "") + ">" + esc(t) + "</text>"; }
+  function svgText(x, y, t, anchor, size, halo, fill) { return '<text x="' + x + '" y="' + y + '" font-size="' + (size || 10.5) + '" font-family="var(--f-mono)" fill="' + (fill || "var(--muted)") + '"' + (anchor ? ' text-anchor="' + anchor + '"' : "") + (halo ? ' stroke="var(--surface)" stroke-width="3" paint-order="stroke" stroke-linejoin="round"' : "") + ">" + esc(t) + "</text>"; }
+  function tl(rows) {
+    return '<div class="tl">' + rows.map(function (r) { return '<div class="tl-i' + (r[3] ? " h" : "") + '"><div class="d"><span>' + esc(fmtLong(r[0])) + '</span></div><p class="ink">' + rich(r[1], r[2] ? srcMap(r[2]) : null) + "</p></div>"; }).join("") + "</div>";
+  }
 
   /* ---------- gantt ---------- */
-  function gantt(g, today) {
+  function gantt(g, today, opts) {
+    opts = opts || {};
     var from = pd(g.from), to = pd(g.to), span = (to - from) / DAY;
-    function pct(d) { return ((d - from) / DAY) / span * 100; }
+    function pct(d) { return Math.max(0, Math.min(100, ((d - from) / DAY) / span * 100)); }
     var h = '<div class="g-axis"><div></div><div class="ticks">';
-    (g.ticks || []).forEach(function (t) { var d = pd(t); h += '<span style="left:' + pct(d) + '%">' + d.getDate() + " " + MON[d.getMonth()] + "</span>"; });
+    (g.ticks || []).forEach(function (t) { var d = pd(t); h += '<span style="left:' + pct(d) + '%">' + d.getDate() + " " + MON[d.getMonth()] + (opts.year ? " " + String(d.getFullYear()).slice(2) : "") + "</span>"; });
     h += "</div></div>";
     var xmas = new Date(from.getFullYear(), 11, 25);
     g.rows.forEach(function (r) {
-      h += '<div class="g-row"><div class="g-name">' + esc(r.name) + (r.sub ? "<small>" + esc(r.sub) + "</small>" : "") + '</div><div class="g-track">';
+      h += '<div class="g-row' + (r.all ? " all" : "") + '"><div class="g-name">' + esc(r.name) + (r.sub ? "<small>" + esc(r.sub) + "</small>" : "") + '</div><div class="g-track">';
       r.segs.forEach(function (s) {
-        var a = pd(s[0]), b = pd(s[1]), w = Math.max(0.8, pct(new Date(+b + DAY)) - pct(a));
-        h += '<div class="g-bar" title="' + esc(r.name + ": " + fmt(a) + " – " + fmt(b)) + '" style="left:' + pct(a) + "%;width:" + w + "%;background:var(" + (CAT[r.color] ? CAT[r.color][1] : "--muted") + ')"></div>';
+        var a = pd(s[0]), b = pd(s[1]); if (b < from || a > to) return;
+        var w = Math.max(0.8, pct(new Date(+b + DAY)) - pct(a));
+        h += '<div class="g-bar" title="' + esc(r.name + ": " + fmt(a) + " – " + fmt(b) + (s[2] ? " · " + s[2] : "")) + '" style="left:' + pct(a) + "%;width:" + w + "%;background:" + (r.all ? "var(--ink)" : catColor(r.color)) + '"></div>';
       });
       if (today >= from && today <= to) h += '<div class="g-today" style="left:' + pct(today) + '%"></div>';
-      if (xmas >= from && xmas <= to) h += '<div class="g-xmas" style="left:' + pct(xmas) + '%"></div>';
+      if (!opts.noXmas && xmas >= from && xmas <= to) h += '<div class="g-xmas" style="left:' + pct(xmas) + '%"></div>';
       h += "</div></div>";
     });
     return '<div class="gantt">' + h + "</div>";
   }
 
-  /* ---------- hybrid visuals from the running incident log ---------- */
+  /* ---------- charts ---------- */
+  function niceTicks(lo, hi) {
+    var range = hi - lo || 1, base = Math.pow(10, Math.floor(Math.log(range / 3) / Math.LN10)), mults = [1, 2, 2.5, 5, 10, 20, 25, 50], best = null;
+    for (var i = 0; i < mults.length; i++) {
+      var st = mults[i] * base, a = Math.ceil(lo / st - 1e-9) * st, t = [];
+      for (var v = a; v <= hi + 1e-9; v += st) t.push(v);
+      if (t.length >= 3 && t.length <= 4) return { ticks: t, step: st };
+      if (t.length >= 3 && (!best || t.length < best.ticks.length)) best = { ticks: t, step: st };
+    }
+    return best ? { ticks: best.ticks.slice(0, 4), step: best.step } : { ticks: [lo, hi], step: range };
+  }
+  function tickFmt(v, step) { var d = step >= 1 ? 0 : Math.min(4, Math.ceil(-Math.log(step) / Math.LN10)); return v.toLocaleString("en-GB", { minimumFractionDigits: d, maximumFractionDigits: d }); }
+  /* generic line chart: series ascending [[date, value]], opts {W, days, avg, hi, lo, dec, label, zero} */
+  function lineChart(series, o) {
+    o = o || {};
+    var view = o.days ? series.filter(function (p) { return p[0] > addDays(series[series.length - 1][0], -o.days); }) : series.slice();
+    if (view.length < 2) return "";
+    var W = Math.max(240, Math.round(o.W || 360)), H = o.H || 170, L = o.L || 48, R = 14, T = 14, B = 22, dec = o.dec == null ? 4 : o.dec;
+    var vals = view.map(function (p) { return p[1]; }), lo = Math.min.apply(null, vals), hi = Math.max.apply(null, vals);
+    if (o.avg != null) { lo = Math.min(lo, o.avg); hi = Math.max(hi, o.avg); }
+    if (o.zero) lo = Math.min(lo, 0);
+    var pad = (hi - lo) * 0.08 || Math.abs(hi) * 0.05 || 1; lo -= pad; hi += pad;
+    function X(i) { return L + i / (view.length - 1) * (W - L - R); }
+    function Y(v) { return T + (1 - (v - lo) / (hi - lo)) * (H - T - B); }
+    var s = '<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="' + esc(o.label || "Line chart") + '">';
+    var nt = niceTicks(lo, hi);
+    nt.ticks.forEach(function (t) { var y = Y(t); s += '<line x1="' + L + '" y1="' + y.toFixed(1) + '" x2="' + (W - R) + '" y2="' + y.toFixed(1) + '" stroke="var(--line)" stroke-width="1"/>' + svgText(L - 6, y + 3.5, tickFmt(t, nt.step), "end", 10.5); });
+    if (o.avg != null) { var ya = Y(o.avg); s += '<line x1="' + L + '" y1="' + ya.toFixed(1) + '" x2="' + (W - R) + '" y2="' + ya.toFixed(1) + '" stroke="var(--muted)" stroke-width="1" stroke-dasharray="2 3"/>' + svgText(W - R, ya - 4, (o.avgLabel || "avg ") + o.avg.toFixed(dec), "end", 10, true); }
+    var pts = view.map(function (p, i) { return X(i).toFixed(1) + "," + Y(p[1]).toFixed(1); });
+    s += '<path d="M' + pts.join(" L") + " L" + X(view.length - 1).toFixed(1) + "," + (H - B) + " L" + L + "," + (H - B) + ' Z" fill="var(--pc)" fill-opacity=".15"/>';
+    s += '<polyline points="' + pts.join(" ") + '" fill="none" stroke="var(--pc)" stroke-width="1.5" stroke-linejoin="round"/>';
+    [[o.hi, o.hiLabel || "high", -6], [o.lo, o.loLabel || "low", 13]].forEach(function (m) {
+      if (!m[0]) return;
+      var i = -1; view.forEach(function (p, j) { if (p[0] === m[0][0]) i = j; });
+      if (i < 0) return;
+      var x = X(i), y = Y(m[0][1]), anchor = i > view.length * 0.75 ? "end" : i < view.length * 0.25 ? "start" : "middle";
+      var dy = m[2] < 0 ? (y < T + 14 ? 13 : -6) : (y > H - B - 16 ? -6 : 13);
+      s += '<circle cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="3" fill="var(--surface)" stroke="var(--pc)" stroke-width="1.5"/>' + svgText(x, y + dy, m[1] + " " + m[0][1].toFixed(dec), anchor, 10, true);
+    });
+    var li = view.length - 1, lx = X(li), ly = Y(view[li][1]);
+    s += '<circle cx="' + lx.toFixed(1) + '" cy="' + ly.toFixed(1) + '" r="5" fill="var(--pc)" fill-opacity=".25"/><circle cx="' + lx.toFixed(1) + '" cy="' + ly.toFixed(1) + '" r="2.8" fill="var(--pc)"/>';
+    var mid = Math.floor(view.length / 2);
+    s += svgText(L, H - 6, fmtShort(view[0][0]), "start", 10.5) + svgText(X(mid), H - 6, fmtShort(view[mid][0]), "middle", 10.5) + svgText(W - R, H - 6, fmtShort(view[li][0]), "end", 10.5);
+    return s + "</svg>";
+  }
+  function sparkline(series, W) {
+    if (!series || series.length < 2) return "";
+    W = Math.max(80, Math.round(W || 160)); var H = 36, P = 3, vals = series.map(function (p) { return p[1]; });
+    var lo = Math.min.apply(null, vals), hi = Math.max.apply(null, vals), span = hi - lo || 1;
+    function X(i) { return P + i / (series.length - 1) * (W - 2 * P); }
+    function Y(v) { return P + (1 - (v - lo) / span) * (H - 2 * P); }
+    var pts = series.map(function (p, i) { return X(i).toFixed(1) + "," + Y(p[1]).toFixed(1); });
+    var last = series[series.length - 1], trend = last[1] >= series[0][1] ? "--up" : "--down";
+    var s = '<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="Trend from ' + esc(series[0][0]) + " to " + esc(last[0]) + '">';
+    s += '<path d="M' + pts.join(" L") + " L" + X(series.length - 1).toFixed(1) + "," + (H - P) + " L" + X(0).toFixed(1) + "," + (H - P) + ' Z" fill="var(' + trend + ')" fill-opacity=".15"/>';
+    s += '<polyline points="' + pts.join(" ") + '" fill="none" stroke="var(' + trend + ')" stroke-width="1.5" stroke-linejoin="round"/>';
+    s += '<circle cx="' + X(series.length - 1).toFixed(1) + '" cy="' + Y(last[1]).toFixed(1) + '" r="2.5" fill="var(' + trend + ')"/>';
+    return s + "</svg>";
+  }
+  function hbars(rows, opts) {
+    opts = opts || {};
+    if (!rows.length) return quiet(opts.empty || "No data.");
+    var mx = Math.max.apply(null, rows.map(function (r) { return Math.abs(r[1]); })) || 1;
+    return '<div class="hbars' + (opts.inner ? " inner" : "") + '">' + rows.map(function (r) { return '<div class="hbar"><span' + (opts.mono ? ' class="mono"' : "") + ">" + esc(r[0]) + '</span><span class="t"><i style="width:' + (Math.abs(r[1]) / mx * 100) + '%"></i></span><span class="v">' + esc(opts.fmt ? opts.fmt(r[1]) : r[1]) + "</span></div>"; }).join("") + (opts.foot ? '<p class="small" style="margin:2px 0 0">' + opts.foot + "</p>" : "") + "</div>";
+  }
+  /* vertical bars: rows [[label, value, sub?, highlight?]] */
+  function vbars(rows, o) {
+    o = o || {};
+    if (!rows || !rows.length) return "";
+    var W = Math.max(240, Math.round(o.W || 360)), H = o.H || 150, T = 18, B = 20, L = 6, R = 6, n = rows.length, bw = (W - L - R) / n;
+    var mx = Math.max.apply(null, rows.map(function (r) { return r[1]; })) || 1, mn = Math.min.apply(null, rows.map(function (r) { return r[1]; }));
+    var lo = o.zero ? 0 : Math.max(0, mn - (mx - mn) * 0.5), hi = mx;
+    function Y(v) { return T + (1 - (v - lo) / (hi - lo || 1)) * (H - T - B); }
+    var s = '<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="' + esc(o.label || "Bar chart") + '">';
+    s += '<line x1="' + L + '" y1="' + (H - B) + '" x2="' + (W - R) + '" y2="' + (H - B) + '" stroke="var(--line)" stroke-width="1"/>';
+    rows.forEach(function (r, i) {
+      var x = L + i * bw + bw * 0.15, w = bw * 0.7, y = Y(r[1]), hot = r[3];
+      s += '<rect x="' + x.toFixed(1) + '" y="' + y.toFixed(1) + '" width="' + w.toFixed(1) + '" height="' + (H - B - y).toFixed(1) + '" fill="var(--pc)" fill-opacity="' + (hot ? ".9" : ".45") + '"><title>' + esc(r[0] + ": " + (o.fmt ? o.fmt(r[1]) : r[1])) + "</title></rect>";
+      if (n <= 14) s += svgText(x + w / 2, y - 4, o.fmt ? o.fmt(r[1]) : String(r[1]), "middle", n > 10 ? 8.5 : 10) + svgText(x + w / 2, H - 6, r[0], "middle", n > 10 ? 9 : 10);
+    });
+    return s + "</svg>";
+  }
+  /* cumulative points line above paired goals-for and goals-against bars */
+  function hockeyChart(games, W) {
+    if (!games || games.length < 2) return "";
+    W = Math.max(240, Math.round(W || 360)); var H1 = 110, H2 = 90, T = 14, B = 18, L = 30, R = 10, n = games.length, bw = (W - L - R) / n;
+    var pts = 0, cum = games.map(function (g) { pts += g.res === "W" ? 2 : g.res === "L" ? 0 : 1; return pts; });
+    var maxP = Math.max(2 * n, pts), s = '<svg viewBox="0 0 ' + W + " " + (H1 + H2) + '" role="img" aria-label="Points by game and goals for and against">';
+    function Y1(v) { return T + (1 - v / maxP) * (H1 - T - 6); }
+    [0, Math.round(maxP / 2), maxP].forEach(function (t) { s += '<line x1="' + L + '" y1="' + Y1(t).toFixed(1) + '" x2="' + (W - R) + '" y2="' + Y1(t).toFixed(1) + '" stroke="var(--line)"/>' + svgText(L - 5, Y1(t) + 3.5, t, "end", 10); });
+    var pace = games.map(function (g, i) { return (L + (i + 0.5) * bw).toFixed(1) + "," + Y1(2 * (i + 1)).toFixed(1); });
+    s += '<polyline points="' + pace.join(" ") + '" fill="none" stroke="var(--muted)" stroke-width="1" stroke-dasharray="2 3"/>';
+    var line = cum.map(function (p, i) { return (L + (i + 0.5) * bw).toFixed(1) + "," + Y1(p).toFixed(1); });
+    s += '<polyline points="' + line.join(" ") + '" fill="none" stroke="var(--pc)" stroke-width="1.5" stroke-linejoin="round"/>';
+    s += '<circle cx="' + (L + (n - 0.5) * bw).toFixed(1) + '" cy="' + Y1(pts).toFixed(1) + '" r="3" fill="var(--pc)"/>' + svgText(W - R, Y1(pts) - 6, pts + " pts", "end", 10, true) + svgText(L, 10, "points (dotted = 2 per game pace)", "start", 10);
+    var mg = Math.max.apply(null, games.map(function (g) { return Math.max(g.gf, g.ga); })) || 1, base = H1 + H2 - B;
+    function Y2(v) { return base - v / mg * (H2 - B - 10); }
+    s += '<line x1="' + L + '" y1="' + base + '" x2="' + (W - R) + '" y2="' + base + '" stroke="var(--line)"/>' + svgText(L, H1 + 10, "goals for (solid) and against (outline)", "start", 10);
+    games.forEach(function (g, i) {
+      var x = L + i * bw + bw * 0.12, w = bw * 0.36;
+      s += '<rect x="' + x.toFixed(1) + '" y="' + Y2(g.gf).toFixed(1) + '" width="' + w.toFixed(1) + '" height="' + (base - Y2(g.gf)).toFixed(1) + '" fill="var(--pc)" fill-opacity=".85"><title>' + esc(fmtShort(g.date) + " " + (g.home ? "vs " : "at ") + g.opp + ": " + g.gf + "–" + g.ga + " " + g.res) + "</title></rect>";
+      s += '<rect x="' + (x + w + 1).toFixed(1) + '" y="' + Y2(g.ga).toFixed(1) + '" width="' + w.toFixed(1) + '" height="' + (base - Y2(g.ga)).toFixed(1) + '" fill="var(--pc)" fill-opacity=".15" stroke="var(--pc)" stroke-width="1"/>';
+      if (n <= 20 || i % 5 === 0) s += svgText(x + w, H1 + H2 - 6, g.opp, "middle", n > 25 ? 8 : 9);
+    });
+    return s + "</svg>";
+  }
+  /* schematic world map for the board */
+  function worldMap(theatres, counts, W) {
+    W = Math.max(240, Math.round(W || 360)); var lon0 = -100, lon1 = 150, lat0 = -40, lat1 = 72, H = Math.round(W * (lat1 - lat0) / (lon1 - lon0) * 1.25);
+    function X(lon) { return (lon - lon0) / (lon1 - lon0) * W; }
+    function Y(lat) { return H - (lat - lat0) / (lat1 - lat0) * H; }
+    var s = '<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="Schematic map of tracked theatres, sized by events logged in the last 7 days">';
+    for (var lo = -90; lo <= 150; lo += 30) s += '<line x1="' + X(lo).toFixed(1) + '" y1="0" x2="' + X(lo).toFixed(1) + '" y2="' + H + '" stroke="var(--line)" stroke-width="1"/>';
+    for (var la = -30; la <= 60; la += 30) s += '<line x1="0" y1="' + Y(la).toFixed(1) + '" x2="' + W + '" y2="' + Y(la).toFixed(1) + '" stroke="var(--line)" stroke-width="' + (la === 0 ? 1.5 : 1) + '"/>';
+    [["N. America", 45, -88], ["S. America", -22, -60], ["Europe", 64, 0], ["Africa", -14, 14], ["Asia", 46, 95], ["Pacific", 4, 140]].forEach(function (l) { s += svgText(X(l[2]), Y(l[1]), l[0], "middle", 10); });
+    var hx = X(HOME.lon), hy = Y(HOME.lat);
+    s += '<rect x="' + (hx - 3) + '" y="' + (hy - 3) + '" width="6" height="6" fill="var(--ink)" transform="rotate(45 ' + hx + " " + hy + ')"/>';
+    theatres.forEach(function (t) {
+      if (t.lat == null) return;
+      var n = counts[t.id] || 0, r = n ? 5 + 3 * Math.sqrt(n) : 4, x = X(t.lon), y = Y(t.lat);
+      s += '<circle cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="' + r.toFixed(1) + '" fill="var(--pc)" fill-opacity="' + (n ? ".75" : ".2") + '" stroke="var(--pc)" stroke-width="1.5"><title>' + esc(t.name + ": " + n + " logged in 7 days") + "</title></circle>";
+      var lp = t.lp || "below", lx = lp === "right" ? x + r + 4 : lp === "left" ? x - r - 4 : x, ly = lp === "above" ? y - r - 4 : lp === "below" ? y + r + 11 : y + 3.5;
+      s += svgText(lx, ly, t.short || t.name, lp === "right" ? "start" : lp === "left" ? "end" : "middle", 10, true, "var(--ink)");
+      if (n) s += svgText(x, y + 3.5, n, "middle", 10, false, "var(--bg)");
+    });
+    return s + "</svg>";
+  }
+  /* geography schematic from an edition feature: geo {bbox:[lon0,lat0,lon1,lat1], points:[{n,lat,lon,k,align}], lines:[{a:[lat,lon], b:[lat,lon], t, solid}], labels:[{t,lat,lon}]} */
+  function geoSchematic(geo, W) {
+    if (!geo || !geo.bbox) return "";
+    W = Math.max(240, Math.round(W || 360));
+    var lon0 = geo.bbox[0], lat0 = geo.bbox[1], lon1 = geo.bbox[2], lat1 = geo.bbox[3], mid = (lat0 + lat1) / 2 * Math.PI / 180;
+    var H = Math.round(W * (lat1 - lat0) / ((lon1 - lon0) * Math.cos(mid)));
+    H = Math.max(140, Math.min(H, Math.round(W * 1.2)));
+    function X(lon) { return (lon - lon0) / (lon1 - lon0) * W; }
+    function Y(lat) { return H - (lat - lat0) / (lat1 - lat0) * H; }
+    var s = '<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="' + esc(geo.title || "Schematic") + '">';
+    var step = (lon1 - lon0) > 10 ? 5 : (lon1 - lon0) > 3 ? 1 : 0.5;
+    for (var lo = Math.ceil(lon0 / step) * step; lo <= lon1; lo += step) s += '<line x1="' + X(lo).toFixed(1) + '" y1="0" x2="' + X(lo).toFixed(1) + '" y2="' + H + '" stroke="var(--line)" stroke-width="1"/>' + svgText(X(lo) + 2, H - 3, lo + "°", "start", 9);
+    for (var la = Math.ceil(lat0 / step) * step; la <= lat1; la += step) s += '<line x1="0" y1="' + Y(la).toFixed(1) + '" x2="' + W + '" y2="' + Y(la).toFixed(1) + '" stroke="var(--line)" stroke-width="1"/>' + svgText(2, Y(la) - 2, la + "°", "start", 9);
+    (geo.lines || []).forEach(function (l) {
+      var x1 = X(l.a[1]), y1 = Y(l.a[0]), x2 = X(l.b[1]), y2 = Y(l.b[0]), t = l.t || Math.round(km(l.a[0], l.a[1], l.b[0], l.b[1])) + " km";
+      s += '<line x1="' + x1.toFixed(1) + '" y1="' + y1.toFixed(1) + '" x2="' + x2.toFixed(1) + '" y2="' + y2.toFixed(1) + '" stroke="var(--pc)" stroke-width="1.5" stroke-dasharray="' + (l.solid ? "0" : "4 3") + '"/>' + svgText((x1 + x2) / 2, (y1 + y2) / 2 - 5, t, "middle", 10, true, "var(--ink)");
+    });
+    (geo.points || []).forEach(function (p) {
+      var x = X(p.lon), y = Y(p.lat), k = p.k || "city";
+      if (k === "base") s += '<rect x="' + (x - 4) + '" y="' + (y - 4) + '" width="8" height="8" fill="var(--crit)"/>';
+      else if (k === "chokepoint") s += '<rect x="' + (x - 4.5) + '" y="' + (y - 4.5) + '" width="9" height="9" fill="var(--pc)" transform="rotate(45 ' + x + " " + y + ')"/>';
+      else if (k === "port") s += '<circle cx="' + x + '" cy="' + y + '" r="4" fill="var(--surface)" stroke="var(--pc)" stroke-width="1.5"/>';
+      else s += '<circle cx="' + x + '" cy="' + y + '" r="3.5" fill="var(--ink)"/>';
+      s += svgText(x + (p.align === "left" ? -7 : 7), y + 3.5, p.n, p.align === "left" ? "end" : "start", 10, true, "var(--ink)");
+    });
+    (geo.labels || []).forEach(function (l) { s += svgText(X(l.lon), Y(l.lat), l.t, "middle", 10, true); });
+    s += "</svg>";
+    return s + '<p class="small geo-key">● city · ■ base · ◆ chokepoint · ○ port · dashed line = distance</p>';
+  }
+  /* daylight curve for the year at the home latitude (declination approximation, a few minutes off at most) */
+  function daylight(lat, todayKey, W) {
+    W = Math.max(240, Math.round(W || 360)); var H = 140, T = 14, B = 22, L = 36, R = 10, year = pd(todayKey).getFullYear();
+    function hours(doy) { var decl = 23.44 * Math.PI / 180 * Math.sin(2 * Math.PI * (284 + doy) / 365), x = -Math.tan(lat * Math.PI / 180) * Math.tan(decl); x = Math.max(-1, Math.min(1, x)); return 24 / Math.PI * Math.acos(x); }
+    var pts = [], jan1 = new Date(year, 0, 1), ndays = Math.round((new Date(year + 1, 0, 1) - jan1) / DAY), mn = 24, mx = 0;
+    for (var d = 1; d <= ndays; d++) { var h = hours(d); pts.push(h); mn = Math.min(mn, h); mx = Math.max(mx, h); }
+    var lo = Math.floor(mn) - 1, hi = Math.ceil(mx) + 1;
+    function X(d) { return L + (d - 1) / (ndays - 1) * (W - L - R); }
+    function Y(h) { return T + (1 - (h - lo) / (hi - lo)) * (H - T - B); }
+    var s = '<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="Hours of daylight through the year">';
+    for (var t = lo + 1; t < hi; t += 4) s += '<line x1="' + L + '" y1="' + Y(t).toFixed(1) + '" x2="' + (W - R) + '" y2="' + Y(t).toFixed(1) + '" stroke="var(--line)"/>' + svgText(L - 5, Y(t) + 3.5, t + " h", "end", 10);
+    var path = pts.map(function (h, i) { return X(i + 1).toFixed(1) + "," + Y(h).toFixed(1); });
+    s += '<path d="M' + path.join(" L") + " L" + X(ndays).toFixed(1) + "," + (H - B) + " L" + L + "," + (H - B) + ' Z" fill="var(--pc)" fill-opacity=".15"/><polyline points="' + path.join(" ") + '" fill="none" stroke="var(--pc)" stroke-width="1.5"/>';
+    for (var m = 0; m < 12; m++) { var dm = Math.round((new Date(year, m, 1) - jan1) / DAY) + 1; s += svgText(X(dm) + 2, H - 7, MON[m].charAt(0), "start", 9); }
+    var doy = Math.round((pd(todayKey) - jan1) / DAY) + 1, th = pts[doy - 1], tx = X(doy), ty = Y(th), hh = Math.floor(th), mm = Math.round((th - hh) * 60);
+    s += '<line x1="' + tx.toFixed(1) + '" y1="' + T + '" x2="' + tx.toFixed(1) + '" y2="' + (H - B) + '" stroke="var(--crit)" stroke-width="1" stroke-dasharray="2 2"/><circle cx="' + tx.toFixed(1) + '" cy="' + ty.toFixed(1) + '" r="3.5" fill="var(--crit)"/>' + svgText(tx + (doy > ndays * 0.7 ? -8 : 8), ty - 8, "today " + hh + " h " + String(mm).padStart(2, "0") + " min", doy > ndays * 0.7 ? "end" : "start", 10.5, true, "var(--ink)");
+    var minD = pts.indexOf(mn) + 1, maxD = pts.indexOf(mx) + 1;
+    s += svgText(X(maxD), Y(mx) - 5, "longest " + mx.toFixed(1) + " h", "middle", 10, true) + svgText(X(minD) + (minD > ndays * 0.7 ? -6 : 6), Y(mn) - 5, "shortest " + mn.toFixed(1) + " h", minD > ndays * 0.7 ? "end" : "start", 10, true);
+    return s + "</svg>";
+  }
   function incidentMap(list, W) {
     W = Math.max(240, Math.round(W || 360)); var H = Math.round(W * 2 / 3), lon0 = -4, lon1 = 32, lat0 = 46, lat1 = 61;
     function X(lon) { return (lon - lon0) / (lon1 - lon0) * W; }
@@ -124,76 +320,7 @@
     days.forEach(function (d, j) { var h = d.n / max * (H - 4); if (d.n) s += '<rect x="' + (j * bw + 1) + '" y="' + (H + T - h) + '" width="' + (bw - 2) + '" height="' + h + '" fill="var(--pc)" fill-opacity=".85"><title>' + d.k + ": " + d.n + "</title></rect>"; });
     s += svgText(2, H + T + 13, days[0].k.slice(5)) + svgText(W - 2, H + T + 13, days[29].k.slice(5), "end") + svgText(W - 2, 10, "max " + max + "/day", "end") + "</svg>";
     var codes = Object.keys(byCode).sort(function (a, b) { return byCode[b] - byCode[a]; });
-    var cm = codes.length ? byCode[codes[0]] : 1;
-    s += '<div class="hbars inner">' + (codes.length ? codes.map(function (c) { return '<div class="hbar"><span class="mono">' + esc(c) + '</span><span class="t"><i style="width:' + (byCode[c] / cm * 100) + '%"></i></span><span class="v">' + byCode[c] + "</span></div>"; }).join("") : quiet("No incidents logged yet.")) + "</div>";
-    return s;
-  }
-
-  /* ---------- sparklines and the EUR/USD chart ---------- */
-  function sparkline(series, W) {
-    if (!series || series.length < 2) return "";
-    W = Math.max(80, Math.round(W || 160)); var H = 36, P = 3, vals = series.map(function (p) { return p[1]; });
-    var lo = Math.min.apply(null, vals), hi = Math.max.apply(null, vals), span = hi - lo || 1;
-    function X(i) { return P + i / (series.length - 1) * (W - 2 * P); }
-    function Y(v) { return P + (1 - (v - lo) / span) * (H - 2 * P); }
-    var pts = series.map(function (p, i) { return X(i).toFixed(1) + "," + Y(p[1]).toFixed(1); });
-    var last = series[series.length - 1], trend = last[1] >= series[0][1] ? "--up" : "--down";
-    var s = '<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="30-day trend: from ' + esc(series[0][0]) + " to " + esc(last[0]) + '">';
-    s += '<path d="M' + pts.join(" L") + " L" + X(series.length - 1).toFixed(1) + "," + (H - P) + " L" + X(0).toFixed(1) + "," + (H - P) + ' Z" fill="var(' + trend + ')" fill-opacity=".15"/>';
-    s += '<polyline points="' + pts.join(" ") + '" fill="none" stroke="var(' + trend + ')" stroke-width="1.5" stroke-linejoin="round"/>';
-    s += '<circle cx="' + X(series.length - 1).toFixed(1) + '" cy="' + Y(last[1]).toFixed(1) + '" r="2.5" fill="var(' + trend + ')"/>';
-    return s + "</svg>";
-  }
-  function niceTicks(lo, hi) {
-    var steps = [0.0025, 0.005, 0.01, 0.02, 0.025, 0.05, 0.1, 0.2], best = null;
-    for (var i = 0; i < steps.length; i++) {
-      var st = steps[i], a = Math.ceil(lo / st - 1e-9) * st, t = [];
-      for (var v = a; v <= hi + 1e-9; v += st) t.push(Math.round(v * 10000) / 10000);
-      if (t.length >= 3 && t.length <= 4) return t;
-      if (t.length >= 3 && (!best || t.length < best.length)) best = t;
-    }
-    return best ? best.slice(0, 4) : [lo, hi];
-  }
-  function fxChart(series, days, avg, hi30, lo30, W) {
-    var from = addDays(series[series.length - 1][0], -days), view = series.filter(function (p) { return p[0] > from; });
-    if (view.length < 2) return "";
-    W = Math.max(240, Math.round(W || 360)); var H = 170, L = 44, R = 14, T = 14, B = 22;
-    var vals = view.map(function (p) { return p[1]; }), lo = Math.min.apply(null, vals), hi = Math.max.apply(null, vals);
-    if (avg != null) { lo = Math.min(lo, avg); hi = Math.max(hi, avg); }
-    var pad = (hi - lo) * 0.08 || 0.01; lo -= pad; hi += pad;
-    function X(i) { return L + i / (view.length - 1) * (W - L - R); }
-    function Y(v) { return T + (1 - (v - lo) / (hi - lo)) * (H - T - B); }
-    var s = '<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="USD/EUR, euros per dollar, last ' + days + ' days">';
-    niceTicks(lo, hi).forEach(function (t) { var y = Y(t); s += '<line x1="' + L + '" y1="' + y.toFixed(1) + '" x2="' + (W - R) + '" y2="' + y.toFixed(1) + '" stroke="var(--line)" stroke-width="1"/>' + svgText(L - 6, y + 3.5, t.toFixed(Math.round(t * 1000) % 10 ? 3 : 2), "end", 10.5); });
-    if (avg != null) { var ya = Y(avg); s += '<line x1="' + L + '" y1="' + ya.toFixed(1) + '" x2="' + (W - R) + '" y2="' + ya.toFixed(1) + '" stroke="var(--muted)" stroke-width="1" stroke-dasharray="2 3"/>' + svgText(W - R, ya - 4, "1y avg " + avg.toFixed(4), "end", 10, true); }
-    var pts = view.map(function (p, i) { return X(i).toFixed(1) + "," + Y(p[1]).toFixed(1); });
-    s += '<path d="M' + pts.join(" L") + " L" + X(view.length - 1).toFixed(1) + "," + (H - B) + " L" + L + "," + (H - B) + ' Z" fill="var(--pc)" fill-opacity=".15"/>';
-    s += '<polyline points="' + pts.join(" ") + '" fill="none" stroke="var(--pc)" stroke-width="1.5" stroke-linejoin="round"/>';
-    [[hi30, "high", -6], [lo30, "low", 12]].forEach(function (m) {
-      if (!m[0]) return;
-      var i = -1; view.forEach(function (p, j) { if (p[0] === m[0][0]) i = j; });
-      if (i < 0) return;
-      var x = X(i), y = Y(m[0][1]), anchor = i > view.length * 0.75 ? "end" : i < view.length * 0.25 ? "start" : "middle";
-      var dy = m[2] < 0 ? (y < T + 14 ? 13 : -6) : (y > H - B - 16 ? -6 : 13);
-      s += '<circle cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="3" fill="var(--surface)" stroke="var(--pc)" stroke-width="1.5"/>' + svgText(x, y + dy, "30d " + m[1] + " " + m[0][1].toFixed(4), anchor, 10, true);
-    });
-    var li = view.length - 1, lx = X(li), ly = Y(view[li][1]);
-    s += '<circle cx="' + lx.toFixed(1) + '" cy="' + ly.toFixed(1) + '" r="5" fill="var(--pc)" fill-opacity=".25"/><circle cx="' + lx.toFixed(1) + '" cy="' + ly.toFixed(1) + '" r="2.8" fill="var(--pc)"/>';
-    var mid = Math.floor(view.length / 2);
-    s += svgText(L, H - 6, fmtShort(view[0][0]), "start", 10.5) + svgText(X(mid), H - 6, fmtShort(view[mid][0]), "middle", 10.5) + svgText(W - R, H - 6, fmtShort(view[li][0]), "end", 10.5);
-    return s + "</svg>";
-  }
-  function fxStats(series, asOf) {
-    /* fx.json stores the ECB rate as US dollars per euro; the page shows euros per dollar, so up means the dollar buys more euros. */
-    var s = series.filter(function (p) { return p[0] <= asOf && typeof p[1] === "number" && p[1] > 0; }).map(function (p) { return [p[0], 1 / p[1]]; });
-    if (s.length < 2) return null;
-    var last = s[s.length - 1], prev = s[s.length - 2];
-    function at(daysBack) { var k = addDays(last[0], -daysBack), v = null; s.forEach(function (p) { if (p[0] <= k) v = p; }); return v; }
-    var m = at(30), yearFrom = addDays(last[0], -365), year = s.filter(function (p) { return p[0] > yearFrom; }), last30 = s.filter(function (p) { return p[0] > addDays(last[0], -30); });
-    var avg = year.reduce(function (a, p) { return a + p[1]; }, 0) / year.length;
-    var hi30 = last30.reduce(function (a, p) { return !a || p[1] > a[1] ? p : a; }, null), lo30 = last30.reduce(function (a, p) { return !a || p[1] < a[1] ? p : a; }, null);
-    var best = year.reduce(function (a, p) { return !a || p[1] > a[1] ? p : a; }, null), worst = year.reduce(function (a, p) { return !a || p[1] < a[1] ? p : a; }, null);
-    return { series: s, last: last, prev: prev, month: m, d1: last[1] - prev[1], d30: m ? last[1] - m[1] : null, avg: avg, hi30: hi30, lo30: lo30, best: best, worst: worst };
+    return s + hbars(codes.map(function (c) { return [c, byCode[c]]; }), { inner: true, mono: true, empty: "No incidents logged yet." });
   }
 
   var ICON = {
@@ -205,7 +332,21 @@
   };
   var STLBL = { rising: "Rising", falling: "Falling", steady: "Steady", watch: "Watch", nodata: "No data" };
 
-  /* ---------- standing data: threads, horizon, canes ---------- */
+  /* ---------- standing data views ---------- */
+  function fxStats(series, asOf) {
+    /* fx.json stores the ECB rate as US dollars per euro; the page shows euros per dollar, so up means the dollar buys more euros. */
+    var s = series.filter(function (p) { return p[0] <= asOf && typeof p[1] === "number" && p[1] > 0; }).map(function (p) { return [p[0], 1 / p[1]]; });
+    if (s.length < 2) return null;
+    var last = s[s.length - 1], prev = s[s.length - 2];
+    function at(daysBack) { var k = addDays(last[0], -daysBack), v = null; s.forEach(function (p) { if (p[0] <= k) v = p; }); return v; }
+    var m = at(30), yearFrom = addDays(last[0], -365), year = s.filter(function (p) { return p[0] > yearFrom; }), last30 = s.filter(function (p) { return p[0] > addDays(last[0], -30); });
+    var avg = year.reduce(function (a, p) { return a + p[1]; }, 0) / year.length;
+    var hi30 = last30.reduce(function (a, p) { return !a || p[1] > a[1] ? p : a; }, null), lo30 = last30.reduce(function (a, p) { return !a || p[1] < a[1] ? p : a; }, null);
+    var best = year.reduce(function (a, p) { return !a || p[1] > a[1] ? p : a; }, null), worst = year.reduce(function (a, p) { return !a || p[1] < a[1] ? p : a; }, null);
+    var months = {}; year.forEach(function (p) { var k = p[0].slice(0, 7); (months[k] = months[k] || []).push(p[1]); });
+    var pay = Object.keys(months).sort().slice(-12).map(function (k) { var a = months[k], avgm = a.reduce(function (x, y) { return x + y; }, 0) / a.length; return [MON[parseInt(k.slice(5), 10) - 1], Math.round(1000 * avgm), k]; });
+    return { series: s, last: last, prev: prev, month: m, d1: last[1] - prev[1], d30: m ? last[1] - m[1] : null, avg: avg, hi30: hi30, lo30: lo30, best: best, worst: worst, pay: pay };
+  }
   function threadView(list, today) {
     var out = [];
     (list || []).forEach(function (t) {
@@ -219,13 +360,12 @@
     out.sort(function (a, b) { return a.last.date < b.last.date ? 1 : a.last.date > b.last.date ? -1 : 0; });
     return out;
   }
+  function logList(log, cls) { return '<div class="' + (cls || "tlog") + '">' + log.slice().reverse().map(function (e) { return '<div class="e"><span class="d">' + esc(fmtLong(e.date)) + "</span><p>" + rich(e.t, srcMap(e.src)) + "</p></div>"; }).join("") + "</div>"; }
   function renderThreads(view) {
     if (!view.length) return quiet("No threads are open.");
     return '<div class="fug">' + nq() + view.map(function (v) {
-      var map = srcMap(v.last.src);
-      var h = '<details class="thread ' + fu(v.badge) + '" data-k="thread-' + esc(v.t.id) + '" id="thread-' + esc(v.t.id) + '"><summary><span class="tname">' + esc(v.t.name) + '<span class="chip st ' + v.status + '">' + v.status + "</span>" + badge(v.badge) + '</span><span class="tlast"><span class="d">' + esc(fmtShort(v.last.date)) + "</span>" + rich(v.last.t, map) + "</span></summary>";
-      h += '<div class="tlog">' + v.log.slice().reverse().map(function (e) { return '<div class="e"><span class="d">' + esc(fmtLong(e.date)) + "</span><p>" + rich(e.t, srcMap(e.src)) + "</p></div>"; }).join("");
-      h += '<div class="meta">Opened ' + esc(v.t.opened ? fmtLong(v.t.opened) : "—") + " · " + v.log.length + (v.log.length === 1 ? " entry" : " entries") + (v.status === "quiet" ? " · quiet: nothing logged for " + v.age + " days" : "") + "</div></div></details>";
+      var h = '<details class="thread ' + fu(v.badge) + '" id="thread-' + esc(v.t.id) + '" open><summary><span class="tname">' + esc(v.t.name) + '<span class="chip st ' + v.status + '">' + v.status + "</span>" + badge(v.badge) + '</span><span class="tlast"><span class="d">' + esc(fmtShort(v.last.date)) + "</span>" + rich(v.last.t, srcMap(v.last.src)) + "</span></summary>";
+      h += '<div class="tlog">' + (v.log.length > 1 ? logList(v.log.slice(0, -1), "sub") : "") + '<div class="meta">Opened ' + esc(v.t.opened ? fmtLong(v.t.opened) : "—") + " · " + v.log.length + (v.log.length === 1 ? " entry" : " entries") + (v.status === "quiet" ? " · quiet: nothing logged for " + v.age + " days" : "") + "</div></div></details>";
       return h;
     }).join("") + "</div>";
   }
@@ -249,35 +389,128 @@
     if (!C || !C.games || !C.games.length) return null;
     var games = C.games.filter(function (g) { return g.date <= asOf; });
     if (!games.length) return null;
-    var complete = games.length === C.games.length;
-    var w = 0, l = 0, o = 0;
+    var complete = games.length === C.games.length, w = 0, l = 0, o = 0;
     games.forEach(function (g) { if (g.res === "W") w++; else if (g.res === "L") l++; else o++; });
-    return { games: games, record: complete && C.record ? C.record : w + "-" + l + "-" + o, points: complete && C.points != null ? C.points : 2 * w + o, metro: complete ? C.metro : null, season: C.season };
+    var up = (C.upcoming || []).filter(function (g) { return g.date >= asOf; }).slice(0, 10);
+    return { games: games, record: complete && C.record ? C.record : w + "-" + l + "-" + o, points: complete && C.points != null ? C.points : 2 * w + o, metro: complete ? C.metro : null, season: C.season, upcoming: up };
   }
-  function ordinal(n) { var s = ["th","st","nd","rd"], v = n % 100; return n + (s[(v - 20) % 10] || s[v] || s[0]); }
+  function boardView(theatres, today) {
+    return (theatres || []).map(function (t) {
+      var log = (t.log || []).slice().sort(function (a, b) { return a.date < b.date ? -1 : a.date > b.date ? 1 : 0; }).filter(function (e) { return e.date <= today; });
+      var last = log.length ? log[log.length - 1] : null, age = last ? daysBetween(last.date, today) : null;
+      var weeks = [0, 0, 0, 0]; log.forEach(function (e) { var n = daysBetween(e.date, today); if (n >= 0 && n < 28) weeks[3 - Math.floor(n / 7)]++; });
+      return { t: t, log: log, last: last, age: age, weeks: weeks, n7: weeks[3], badge: age === 0 ? "NEW" : age === 1 ? "UPDATED" : "" };
+    }).sort(function (a, b) { var ad = a.last ? a.last.date : "", bd = b.last ? b.last.date : ""; return ad < bd ? 1 : ad > bd ? -1 : 0; });
+  }
+  function act4(weeks) { var mx = Math.max.apply(null, weeks) || 1; return '<span class="act4" title="Events logged per week, oldest to newest: ' + weeks.join(", ") + '">' + weeks.map(function (w) { return '<i style="height:' + (w ? 4 + w / mx * 12 : 2) + 'px"' + (w ? "" : ' class="z"') + "></i>"; }).join("") + "</span>"; }
+
+  /* ---------- planner data: merge every dated source ---------- */
+  function plannerEvents(E, ctx, TD) {
+    var ev = [], P = E.planner || {};
+    (P.events || []).forEach(function (e) { ev.push({ date: e[0], cat: e[1], t: e[2], sub: [e[3], e[4], e[5]].filter(Boolean).join(" · "), src: "edition" }); });
+    ((ctx.bins && ctx.bins.dates) || []).forEach(function (b) { ev.push({ date: b[0], cat: "home", t: "Bin: " + b[1].split("·")[0].trim(), sub: b[1], src: "bins" }); });
+    if (ctx.canes) {
+      (ctx.canes.games || []).forEach(function (g) { ev.push({ date: g.date, cat: "hockey", t: "CAR " + g.res + " " + g.gf + "–" + g.ga + (g.home ? " vs " : " at ") + g.opp, sub: "Final", src: "canes" }); });
+      (ctx.canes.upcoming || []).forEach(function (g) { var d = g.utc ? cetDate(g.utc) : g.date; ev.push({ date: d, cat: "hockey", t: "Canes " + (g.home ? "vs " : "at ") + g.opp, sub: g.utc ? "Puck drop " + cet(g.utc) + " CET" : "", src: "canes" }); });
+    }
+    (ctx.horizon || []).forEach(function (e) { if (e.date) ev.push({ date: e.date, cat: "watch", t: e.t, sub: (e.dateText || "") + (e.n ? " · " + plain(e.n) : ""), src: "horizon" }); });
+    var cal = ctx.calendar;
+    if (cal) {
+      (cal.holidays || []).forEach(function (h) { ev.push({ date: h.date, cat: h.c === "info" ? "info" : h.c, t: h.n, sub: h.note || (CAT[h.c] ? CAT[h.c][0] : ""), src: "calendar" }); });
+      Object.keys(cal.school || {}).forEach(function (k) {
+        var sys = cal.school[k];
+        (sys.segs || []).forEach(function (s) { ev.push({ date: s[0], end: s[1], cat: "school", t: sys.name + ": " + (s[2] || "break"), sub: fmtShort(s[0]) + " – " + fmtShort(s[1]), src: "calendar", sys: k }); });
+        (sys.days || []).forEach(function (d) { ev.push({ date: d[0], cat: "school", t: sys.name + ": " + d[1], sub: "", src: "calendar", sys: k }); });
+      });
+      (cal.markets || []).forEach(function (m) { ev.push({ date: m[2], end: m[3], cat: "mkt", t: m[0] + " opens", sub: "to " + fmtShort(m[3]), src: "calendar" }); });
+    }
+    ((ctx.deadlines && ctx.deadlines.items) || []).forEach(function (d) { ev.push({ date: d.date, cat: "deadline", t: d.name, sub: d.note || d.cat || "", src: "deadlines" }); });
+    var seen = {};
+    return ev.filter(function (e) { if (!e.date || !/^\d{4}-\d{2}-\d{2}$/.test(e.date)) return false; var k = e.date + "|" + e.cat + "|" + e.t; if (seen[k]) return false; seen[k] = 1; return true; }).sort(function (a, b) { return a.date < b.date ? -1 : a.date > b.date ? 1 : 0; });
+  }
+  function onDay(ev, k) { return ev.filter(function (e) { return e.date === k || (e.end && e.cat === "school" && e.date <= k && k <= e.end); }); }
+  function calMonth(ev, y, m, TD, filter) {
+    var from = new Date(y, m, 1), to = new Date(y, m + 1, 0), h = '<div class="cal">';
+    ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"].forEach(function (d) { h += '<div class="dow">' + d + "</div>"; });
+    for (var i = 0; i < (from.getDay() + 6) % 7; i++) h += '<div class="day out"></div>';
+    for (var d = new Date(from); d <= to; d.setDate(d.getDate() + 1)) {
+      var k = key(d), list = onDay(ev, k).filter(function (e) { return filter(e.cat); }), spans = list.filter(function (e) { return e.end; }), dots = list.filter(function (e) { return !e.end; });
+      h += '<div class="day' + (k === TD ? " today" : "") + (d.getDay() === 0 || d.getDay() === 6 ? " we" : "") + '"' + (list.length ? ' title="' + esc(list.map(function (e) { return e.t; }).join("\n")) + '"' : "") + '><div class="n"><b>' + d.getDate() + "</b></div>";
+      if (spans.length) h += '<div class="spans">' + spans.map(function (e) { return '<i style="background:' + catColor(e.cat) + '"></i>'; }).join("") + "</div>";
+      if (dots.length) h += '<div class="dots">' + dots.map(function (e) { return '<i style="background:' + catColor(e.cat) + '"></i>'; }).join("") + '</div><div class="lab">' + esc(dots.map(function (e) { return e.t; }).join(" · ")) + "</div>";
+      h += "</div>";
+    }
+    h += "</div>";
+    var ym = key(from).slice(0, 7), rows = ev.filter(function (e) { return e.date.slice(0, 7) === ym && filter(e.cat); });
+    h += '<div class="agenda">' + (rows.length ? table(["Date", "What"], rows.map(function (e) { var dd = pd(e.date); return '<tr class="' + (e.date === TD ? "soon" : "") + '"><td class="d"><span class="dot" style="background:' + catColor(e.cat) + '"></span>' + DOW[dd.getDay()] + " " + dd.getDate() + "</td><td><b>" + esc(e.t) + "</b>" + (e.sub ? '<div class="small">' + esc(e.sub) + "</div>" : "") + "</td></tr>"; }).join("")) : quiet("Nothing in this category this month.")) + "</div>";
+    return h;
+  }
+  function weekStrip(ev, E, TD) {
+    var T = E.today || {}, wx = {}; ((T.weather && T.weather.week) || []).forEach(function (w) { wx[w[0]] = w; });
+    var h = '<div class="week scrollx"><div class="week-in">';
+    for (var i = 0; i < 7; i++) {
+      var k = addDays(TD, i), d = pd(k), list = onDay(ev, k), w = wx[k];
+      h += '<div class="wday' + (i === 0 ? " today" : "") + '"><div class="wd"><b>' + DOW[d.getDay()] + "</b> " + d.getDate() + " " + MON[d.getMonth()] + "</div>";
+      if (w) h += '<div class="wx"><span class="hi">' + esc(w[1]) + "°</span> / " + esc(w[2]) + "°" + (w[3] != null && w[3] !== "" ? ' <span class="rain">' + esc(w[3]) + "%</span>" : "") + (w[4] ? '<div class="small">' + esc(w[4]) + "</div>" : "") + "</div>";
+      h += list.length ? list.slice(0, 7).map(function (e) { return '<div class="we"><i style="background:' + catColor(e.cat) + '"></i>' + esc(e.t) + "</div>"; }).join("") + (list.length > 7 ? '<div class="we small">+' + (list.length - 7) + " more</div>" : "") : '<div class="we none">—</div>';
+      h += "</div>";
+    }
+    return h + "</div></div>";
+  }
+  function countdowns(ev, ctx, TD) {
+    var tiles = [];
+    function next(pred) { for (var i = 0; i < ev.length; i++) if (ev[i].date >= TD && pred(ev[i])) return ev[i]; return null; }
+    function tile(lbl, e, alt) { if (!e) return; var n = daysBetween(TD, e.date); tiles.push('<div class="tile cd"><div class="lbl">' + esc(lbl) + '</div><div class="val">' + (n === 0 ? "Today" : n === 1 ? "Tomorrow" : n + " days") + "</div><p>" + esc((alt || e.t) + " · " + fmt(pd(e.date))) + "</p></div>"); }
+    tile("Next bin day", next(function (e) { return e.cat === "home" && e.src === "bins"; }), null);
+    var g = next(function (e) { return e.cat === "hockey" && e.src === "canes" && e.t.indexOf("Canes") === 0; }); if (g) tile("Next Canes game", g, g.t + (g.sub ? " · " + g.sub.replace("Puck drop ", "") : ""));
+    tile("Next AFNORTH day off", next(function (e) { return e.cat === "school" && e.sys === "afnorth" && e.end; }), null);
+    tile("Next school break", next(function (e) { return e.cat === "school" && e.sys === "afnorth" && e.end && daysBetween(e.date, e.end) > 1; }), null);
+    tile("Next central bank", next(function (e) { return e.cat === "watch" && /ECB|Fed\b|FOMC|Federal Reserve|rate decision/i.test(e.t); }), null);
+    var d = pd(TD), pay = null;
+    for (var i = 0; i < 40 && !pay; i++) { var c = new Date(d); c.setDate(c.getDate() + i); if (c.getDate() === 1 || c.getDate() === 15) { while (c.getDay() === 0 || c.getDay() === 6) c.setDate(c.getDate() - 1); if (key(c) >= TD) pay = c; } }
+    if (pay) { var n = daysBetween(TD, key(pay)); tiles.push('<div class="tile cd"><div class="lbl">Next payday</div><div class="val">' + (n === 0 ? "Today" : n === 1 ? "Tomorrow" : n + " days") + "</div><p>" + esc(fmt(pay) + " · 1st and 15th, or the Friday before") + "</p></div>"); }
+    return '<div class="strip cds">' + tiles.join("") + "</div>";
+  }
+  function overlapRows(cal, TD) {
+    var from = TD, to = addDays(TD, 365), rows = [], sets = [];
+    Object.keys(cal.school || {}).forEach(function (k) { var s = cal.school[k], segs = (s.segs || []).filter(function (g) { return g[1] >= from && g[0] <= to; }); rows.push({ name: s.name, color: s.color, segs: segs }); sets.push(segs); });
+    var all = [], d = pd(from), end = pd(to), cur = null;
+    for (; d <= end; d.setDate(d.getDate() + 1)) {
+      var k = key(d), off = sets.length && sets.every(function (segs) { return segs.some(function (g) { return g[0] <= k && k <= g[1]; }); });
+      if (off && !cur) cur = [k, k]; else if (off) cur[1] = k; else if (cur) { all.push(cur); cur = null; }
+    }
+    if (cur) all.push(cur);
+    rows.push({ name: "All systems off", sub: "family and neighbours", color: "us", all: true, segs: all });
+    var ticks = []; for (var m = 0; m < 13; m++) { var t = new Date(pd(from).getFullYear(), pd(from).getMonth() + m + 1, 1); if (key(t) <= to) ticks.push(key(t)); }
+    return { from: from, to: to, ticks: ticks, rows: rows, all: all };
+  }
 
   /* ---------- main render ---------- */
   function render(E, ctx) {
     var today = pd(E.date), TD = E.date, h = "";
     var T = E.today || {};
-    var isMonday = today.getDay() === 1;
     var FX = ctx.fx && ctx.fx.series ? fxStats(ctx.fx.series, TD) : null;
     var threads = ctx.threads && ctx.threads.length ? threadView(ctx.threads, TD) : null;
     var horizonEvents = ctx.horizon && ctx.horizon.length ? ctx.horizon : null;
     var CV = canesView(ctx.canes, TD);
     var SER = ctx.series || {};
+    var WS = ctx.worldSeries || { meta: {}, series: {} };
+    var WO = Array.isArray(E.world) ? { items: E.world } : (E.world || {});
+    var board = ctx.conflicts && ctx.conflicts.length ? boardView(ctx.conflicts, TD) : null;
+    var PEV = plannerEvents(E, ctx, TD);
+    ctx._pev = PEV; ctx._ws = {}; ctx._fser = null; ctx._geo = null;
 
     /* masthead */
     h += '<header class="mast"><div class="eyebrow">' + esc(E.place || "Hoensbroek · Parkstad Limburg") + "</div><h1>Nick's Daily Readbook</h1>";
     h += '<div class="date">' + esc(E.weekday + " " + today.getDate() + " " + MON[today.getMonth()] + " " + today.getFullYear()) + "</div>";
     h += '<div class="mast-meta"><span><b>Edition ' + esc(E.edition) + "</b></span><span>Look-back " + esc(E.lookback) + '</span><span id="readtime"></span></div>';
-    h += '<div class="rule" aria-hidden="true">' + ["--p-sec","--p-watch","--p-pro","--p-money","--p-home","--p-hockey"].map(function (c) { return '<i style="background:var(' + c + ')"></i>'; }).join("") + "</div>";
+    h += '<div class="rule" aria-hidden="true">' + ["--p-world","--p-sec","--p-watch","--p-pro","--p-money","--p-home","--p-hockey"].map(function (c) { return '<i style="background:var(' + c + ')"></i>'; }).join("") + "</div>";
     if (E.note) h += '<p class="note">' + rich(E.note) + "</p>";
     h += "</header>";
 
     /* slim header */
     h += '<div class="slim" id="slim"><div class="slim-row"><span class="cur" id="cur">Front</span>' +
-      '<a class="front" href="#front">Front</a><a class="sec" href="#p-sec">Security</a><a class="watch" href="#p-watch">Watchlist</a><a class="pro" href="#p-pro">Profession</a><a class="money" href="#p-money">Money</a><a class="home" href="#p-home">Home</a><a class="hockey" href="#p-hockey">Hockey</a><a class="plan" href="#p-plan">Planner</a><a href="#sources">Sources</a>' +
+      '<a class="front" href="#front">Front</a><a class="world" href="#p-world">World</a><a class="sec" href="#p-sec">Security</a><a class="watch" href="#p-watch">Watchlist</a><a class="pro" href="#p-pro">Profession</a><a class="money" href="#p-money">Money</a><a class="home" href="#p-home">Home</a><a class="hockey" href="#p-hockey">Hockey</a><a class="plan" href="#p-plan">Planner</a><a href="#sources">Sources</a>' +
       '<button type="button" class="tg" id="newonly" aria-pressed="false" title="Show only items with a NEW or UPDATED badge">New only</button>' +
       '</div><div class="prog"><i id="prog"></i></div></div>';
 
@@ -286,7 +519,7 @@
     if (T.weather) { var w = T.weather; h += '<div class="tile"><div class="lbl">Weather · ' + esc(E.town || "Hoensbroek") + '</div><div class="val">' + esc(w.hi) + "° / " + esc(w.lo) + "°</div><p>" + esc(w.now) + ". " + esc(w.tomorrow) + ". Sun " + esc(w.sunrise) + "–" + esc(w.sunset) + "." + cite(w.src) + "</p></div>"; }
     if (T.canes) h += '<div class="tile hockey"><div class="lbl">Hurricanes</div><div class="val">' + esc(T.canes.line) + "</div><p>" + esc(T.canes.sub) + cite(T.canes.src) + "</p></div>";
     else if (CV) { var lg = CV.games[CV.games.length - 1]; h += '<div class="tile hockey"><div class="lbl">Hurricanes</div><div class="val">' + esc(lg.res + " " + lg.gf + "–" + lg.ga + (lg.home ? " vs " : " at ") + lg.opp) + "</div><p>" + esc(CV.record + " · " + CV.points + " pts") + "</p></div>"; }
-    if (T.markets) h += '<div class="tile"><div class="lbl">Markets</div><div class="mini-mk">' + T.markets.map(function (m) { return "<span>" + esc(m[0]) + '</span><span class="chg ' + esc(m[2]) + '">' + esc(m[1]) + "</span>"; }).join("") + "</div></div>";
+    if (T.markets) h += '<div class="tile"><div class="lbl">Markets</div><div class="mini-mk">' + T.markets.map(function (m) { var g = fxGuard(m[0], m[1], null, m[2]); return "<span>" + esc(g.label) + '</span><span class="chg ' + esc(g.dir) + '">' + esc(g.value) + "</span>"; }).join("") + "</div></div>";
     if (FX) h += '<div class="tile money"><div class="lbl">USD/EUR · ECB</div><div class="val">' + FX.last[1].toFixed(4) + '</div><p><span class="chg ' + dir(FX.d1) + '">' + signed(FX.d1, 4) + " (" + signed(FX.d1 / FX.prev[1] * 100, 2, "%") + ")</span> vs " + esc(fmtShort(FX.prev[0])) + "</p></div>";
     h += '<div class="tile" id="bins"><div class="lbl">Bin day</div><div class="val">…</div><p></p></div>';
     h += '<button type="button" class="tile newcount" id="newcount" title="Show only new and updated items"><div class="lbl">This edition</div><div class="val"><span id="nnew">…</span><small id="nupd"></small></div><p>Tap to show only what changed</p></button>';
@@ -294,19 +527,72 @@
 
     /* front: five things, pick, today and tomorrow */
     h += '<section class="front"><h2>Five things</h2><ol class="five">';
-    (E.five || []).forEach(function (f) { h += '<li class="' + esc(f.part === "watch" ? "watch" : f.part) + '">' + rich(f.t) + ' <a class="go" href="#' + esc(f.to) + '">Read →</a></li>'; });
+    (E.five || []).forEach(function (f) { h += '<li class="' + esc(f.part) + '">' + rich(f.t) + ' <a class="go" href="#' + esc(f.to) + '">Read →</a></li>'; });
     h += "</ol>";
     if (E.pick) h += '<div class="pick">' + rich(E.pick.t) + (E.pick.to ? ' <a href="#' + esc(E.pick.to) + '">Go →</a>' : "") + "</div>";
     if (T.items && T.items.length) {
       h += '<h3>Today and tomorrow</h3><div class="tt">';
-      T.items.forEach(function (t) { h += '<div><span class="k" style="--kc:var(' + (CAT[t.cat] ? CAT[t.cat][1] : "--muted") + ')">' + esc(t.k) + "</span><p>" + rich(t.t) + "</p></div>"; });
+      T.items.forEach(function (t) { h += '<div><span class="k" style="--kc:' + catColor(t.cat) + '">' + esc(t.k) + "</span><p>" + rich(t.t) + "</p></div>"; });
       h += "</div>";
     }
     h += "</section>";
 
-    /* ===== Part 1 · Security ===== */
+    /* ===== Part 1 · The World ===== */
+    h += part("world", "Part 1", "The World", "Facts and summaries only: the board, overnight developments, the numbers and the day's feature.", "p-world");
+    h += '<section id="board" class="world"><h2>The board <span class="num">events logged, not a measure of intensity</span></h2>';
+    if (board) {
+      h += '<div class="panel"><div class="lbl">Ten theatres · marker size = events logged in 7 days</div><div class="chart" id="worldmap"></div></div>';
+      h += '<div class="fug board">' + nq() + board.map(function (b) {
+        var hd = '<details class="thread brow ' + fu(b.badge) + '" id="th-' + esc(b.t.id) + '" open><summary><span class="tname">' + esc(b.t.name) + act4(b.weeks) + badge(b.badge) + "</span>";
+        hd += b.last ? '<span class="tlast"><span class="d">' + esc(fmtShort(b.last.date)) + "</span>" + rich(b.last.t, srcMap(b.last.src)) + "</span>" : '<span class="tlast small">No events logged yet.</span>';
+        hd += "</summary>";
+        hd += '<div class="tlog">' + (b.log.length > 1 ? logList(b.log.slice(0, -1), "sub") : "") + '<div class="meta">' + b.log.length + (b.log.length === 1 ? " entry" : " entries") + (b.last ? " · last " + esc(fmtLong(b.last.date)) + (b.age > 1 ? " (" + b.age + " days ago)" : "") : "") + "</div></div></details>";
+        return hd;
+      }).join("") + "</div>";
+    } else h += quiet("The board file is not loaded.");
+    h += "</section>";
+    h += '<section id="world" class="world"><h2>Developments <span class="num">beyond Europe</span></h2>';
+    if (WO.items && WO.items.length) {
+      var rc = {}; WO.items.forEach(function (x) { rc[x.region] = (rc[x.region] || 0) + 1; });
+      h += '<div class="regions">' + Object.keys(rc).map(function (r) { return "<span>" + esc(r) + "<b>" + rc[r] + "</b></span>"; }).join("") + '</div><div class="world fug">' + nq();
+      WO.items.forEach(function (x) {
+        h += '<article class="wcard ' + fu(x.badge) + '"><div class="wtop"><span class="tag rg">' + esc(x.region) + "</span>" + (x.conf ? '<span class="conf">confidence: ' + esc(x.conf) + "</span>" : "") + badge(x.badge) + "</div><h4>" + rich(x.h) + "</h4><p>" + rich(x.body) + "</p>" + (x.next ? '<p class="sw-line"><b class="l">Next</b>' + rich(x.next) + "</p>" : "") + (x.sw ? '<p class="sw-line"><b class="l">So what</b>' + rich(x.sw) + "</p>" : "") + "</article>";
+      });
+      h += "</div>";
+    } else h += quiet();
+    h += "</section>";
+    /* by the numbers */
+    var keys = WO.numbers && WO.numbers.length ? WO.numbers : Object.keys(WS.series || {}).filter(function (k) { return (WS.series[k] || []).length; }).concat(["brent"]);
+    var tiles = [];
+    keys.forEach(function (k) {
+      var meta = (WS.meta || {})[k] || {}, ser = (WS.series || {})[k] || SER[k] || [];
+      ser = ser.filter(function (p) { return p[0] <= TD && typeof p[1] === "number"; });
+      if (!ser.length) return;
+      var last = ser[ser.length - 1], prev = ser.length > 1 ? ser[ser.length - 2] : null, dec = meta.decimals != null ? meta.decimals : (k === "brent" || k === "ttf" ? 2 : 0);
+      var label = meta.label || (k === "brent" ? "Brent, $ per barrel" : k === "ttf" ? "Dutch TTF gas, € per MWh" : k), unit = meta.unit || "";
+      tiles.push('<div class="tile nt"><div class="lbl">' + esc(label) + '</div><div class="val">' + num(last[1], dec) + (unit ? ' <small>' + esc(unit) + "</small>" : "") + "</div><p>" + (prev ? '<span class="chg ' + dir(last[1] - prev[1]) + '">' + signed(last[1] - prev[1], dec) + "</span> vs " + esc(fmtShort(prev[0])) + " · " : "") + "as of " + esc(fmtShort(last[0])) + (meta.cadence ? " · " + esc(meta.cadence) : "") + "</p>" + (ser.length > 1 ? '<div class="spark" data-ws="' + esc(k) + '"></div>' : "") + (meta.note ? '<p class="small">' + esc(meta.note) + "</p>" : "") + (meta.source ? '<p class="small">' + (meta.url ? '<a href="' + esc(meta.url) + '" target="_blank" rel="noopener">' + esc(meta.source) + "</a>" : esc(meta.source)) + "</p>" : "") + "</div>");
+      ctx._ws[k] = ser.slice(-30);
+    });
+    h += '<section id="numbers" class="world"><h2>By the numbers</h2>' + (tiles.length ? '<div class="strip nums">' + tiles.join("") + "</div>" : quiet("No series published yet.")) + "</section>";
+    /* feature */
+    var FE = WO.feature;
+    var WROT = [["mon","Mon","Theatre in numbers"],["tue","Tue","Actor on the record"],["wed","Wed","Trend line"],["thu","Thu","Chronology"],["fri","Fri","Week on the board"],["sat","Sat","Geography"],["sun","Sun","The record"]];
+    h += '<section id="feature" class="world"><h2>' + esc(FE && FE.kind ? FE.kind : "Feature") + "</h2>";
+    if (FE) {
+      h += '<article class="feature"><h3 class="ft">' + esc(FE.title) + "</h3>" + (FE.body || []).map(function (p) { return "<p>" + rich(p) + "</p>"; }).join("");
+      if (FE.table) h += table(FE.table.head, FE.table.rows.map(function (r) { return "<tr>" + r.map(function (c, j) { return "<td" + (j > 0 && /^[\d.,%$€+−\- ]+$/.test(String(c)) ? ' class="d"' : "") + ">" + rich(c) + "</td>"; }).join("") + "</tr>"; }).join(""), "lbl1");
+      if (FE.series) { var fs = ((WS.series || {})[FE.series] || SER[FE.series] || []).filter(function (p) { return p[0] <= TD; }); var fm = (WS.meta || {})[FE.series] || {}; if (fs.length > 1) { ctx._fser = fs; ctx._fmeta = fm; h += '<div class="panel"><div class="lbl">' + esc(fm.label || FE.series) + (fm.unit ? " · " + esc(fm.unit) : "") + '</div><div class="chart" id="fchart"></div>' + (fm.source ? '<p class="small">' + esc(fm.source) + "</p>" : "") + "</div>"; } }
+      if (FE.bars) h += '<div class="panel"><div class="lbl">' + esc(FE.bars.label || "") + '</div><div class="chart" id="fbars"></div></div>';
+      if (FE.timeline) h += tl(FE.timeline.map(function (r) { return [r[0], r[1], null, r[2]]; }));
+      if (FE.geo) { ctx._geo = FE.geo; h += '<div class="panel"><div class="lbl">' + esc(FE.geo.title || "Schematic") + '</div><div class="chart" id="fgeo"></div></div>'; }
+      if (FE.after) h += FE.after.map(function (p) { return "<p>" + rich(p) + "</p>"; }).join("");
+      h += "</article>";
+    } else h += quiet("No feature in this edition (format 3.0 and earlier).");
+    h += '<div class="ap-c"><div class="lbl">World feature rota</div><div class="rota">' + WROT.map(function (r) { return '<div class="' + (r[0] === (FE && FE.rota) ? "on " : "") + '"><b>' + r[1] + "</b>" + r[2] + "</div>"; }).join("") + "</div></div></section>";
+
+    /* ===== Part 2 · Security ===== */
     var HY = E.hybrid || {};
-    h += part("sec", "Part 1", "Security", "Hybrid activity, Europe, the wider world and the Euregio.", "p-sec");
+    h += part("sec", "Part 2", "Security", "Hybrid activity, Europe and the Euregio.", "p-sec");
     h += '<section id="hybrid" class="sec"><h2>Hybrid watch</h2><h3>Incident log</h3>';
     if (HY.incidents && HY.incidents.length) {
       h += '<div class="incidents fug">' + nq();
@@ -314,19 +600,19 @@
         h += '<article class="inc ' + fu(i.badge) + '" id="inc-' + esc(i.id) + '"><div class="inc-top"><span class="when">' + esc(i.when) + '</span><span class="chip code">' + esc(i.code) + "</span>" + (i.local ? '<span class="chip local">LOCAL</span>' : "") + '<span class="chip ' + esc((i.attr || "").toLowerCase()) + '">' + esc(i.attr) + "</span>" + badge(i.badge) + '</div><div class="place">' + esc(i.place) + "</div><p>" + rich(i.text) + "</p></article>";
       });
       h += "</div>";
-      var counts = [0, 0, 0, 0, 0, 0];
-      HY.incidents.forEach(function (i) { var n = parseInt(String(i.attr).replace("A", ""), 10); if (!isNaN(n)) counts[n]++; });
+      var counts2 = [0, 0, 0, 0, 0, 0];
+      HY.incidents.forEach(function (i) { var n = parseInt(String(i.attr).replace("A", ""), 10); if (!isNaN(n)) counts2[n]++; });
       var names = ["unexplained", "suspected", "named", "attributed", "charged", "convicted"];
-      h += '<div class="ladder" role="img" aria-label="Incidents by attribution level">' + counts.map(function (c, n) { return '<div class="rung ' + (c ? "hot" : "zero") + '"><b>A' + n + "</b><span>" + c + "</span><small>" + names[n] + "</small></div>"; }).join("") + "</div>";
+      h += '<div class="ladder" role="img" aria-label="Incidents by attribution level">' + counts2.map(function (c, n) { return '<div class="rung ' + (c ? "hot" : "zero") + '"><b>A' + n + "</b><span>" + c + "</span><small>" + names[n] + "</small></div>"; }).join("") + "</div>";
     } else h += quiet("No new incidents in the window.");
-    h += '<div class="viz"><div class="panel"><div class="lbl">Running log · last 30 days</div><div id="map"></div></div><div class="panel"><div class="lbl">Per day and by type</div><div id="trend"></div></div></div>';
+    h += '<div class="viz"><div class="panel"><div class="lbl">Running log · last 30 days</div><div id="map"></div></div><div class="panel"><div class="lbl">Per day and by type</div><div id="trend"></div></div><div class="panel"><div class="lbl">By country · last 30 days</div><div id="bycountry"></div></div></div>';
     h += '<p class="small" id="logsrc"></p>';
     h += '<h3>Attribution moves <span class="small">last 7 days</span></h3><div id="attrmoves"></div>';
     h += '<h3>Within 100 km <span class="small">last 30 days</span></h3><div id="near"></div>';
     if (HY.leads && HY.leads.length) {
       h += "<h3>Lead analysis</h3>";
-      HY.leads.forEach(function (l, n) {
-        h += '<details class="lead" id="' + esc(l.id) + '" data-k="lead-' + n + '"' + (n === 0 ? " open" : "") + '><summary><span class="t">' + esc(l.title) + '</span><span class="te">' + rich(l.teaser) + '</span></summary><div class="lead-body"><dl>';
+      HY.leads.forEach(function (l) {
+        h += '<details class="lead" id="' + esc(l.id) + '" open><summary><span class="t">' + esc(l.title) + '</span><span class="te">' + rich(l.teaser) + '</span></summary><div class="lead-body"><dl>';
         l.rows.forEach(function (r) { h += "<dt>" + esc(r[0]) + "</dt><dd>" + rich(r[1]) + "</dd>"; });
         if (l.sw) h += '<dt>So what</dt><dd class="sw">' + rich(l.sw) + "</dd>";
         h += "</dl></div></details>";
@@ -342,25 +628,12 @@
     }
     if (HY.note) h += '<p class="small" style="margin-top:8px">' + rich(HY.note) + "</p>";
     h += "</section>";
-
     h += '<section id="europe" class="sec"><h2>Europe</h2>' + items(E.europe) + "</section>";
-
-    var WO = E.world || [];
-    h += '<section id="world" class="sec"><h2>World <span class="num">beyond Europe</span></h2>';
-    if (WO.length) {
-      var rc = {}; WO.forEach(function (x) { rc[x.region] = (rc[x.region] || 0) + 1; });
-      h += '<div class="regions">' + Object.keys(rc).map(function (r) { return "<span>" + esc(r) + "<b>" + rc[r] + "</b></span>"; }).join("") + '</div><div class="world fug">' + nq();
-      WO.forEach(function (x) {
-        h += '<article class="wcard ' + fu(x.badge) + '"><div class="wtop"><span class="tag rg">' + esc(x.region) + "</span>" + (x.conf ? '<span class="conf">confidence: ' + esc(x.conf) + "</span>" : "") + badge(x.badge) + "</div><h4>" + rich(x.h) + "</h4><p>" + rich(x.body) + "</p>" + (x.sw ? '<p class="sw-line"><b class="l">So what</b>' + rich(x.sw) + "</p>" : "") + "</article>";
-      });
-      h += "</div>";
-    } else h += quiet();
-    h += "</section>";
     if (E.euregio && E.euregio.length) h += '<section id="euregio" class="sec"><h2>Local &amp; Euregio</h2>' + items(E.euregio) + "</section>";
 
-    /* ===== Part 2 · Watchlist ===== */
+    /* ===== Part 3 · Watchlist ===== */
     var P = E.planner || {};
-    h += part("watch", "Part 2", "Watchlist", "Threads that keep moving, and what is coming up.", "p-watch");
+    h += part("watch", "Part 3", "Watchlist", "Threads that keep moving, and what is coming up.", "p-watch");
     h += '<section id="threads" class="watch"><h2>Tracked threads</h2>';
     if (threads) h += renderThreads(threads);
     else if (P.threads && P.threads.length) h += '<div class="fug">' + nq() + table(["Thread", "What moved"], P.threads.map(function (t) { return '<tr class="' + fu(t[2]) + '"><td>' + esc(t[0]) + badge(t[2]) + "</td><td>" + rich(t[1]) + "</td></tr>"; }).join(""), "lbl1") + "</div>";
@@ -379,13 +652,12 @@
     } else h += quiet("Nothing dated on the horizon.");
     h += "</section>";
 
-    /* ===== Part 3 · Profession ===== */
+    /* ===== Part 4 · Profession ===== */
     var AR = E.army || {}, AP = E.aperture || {};
-    h += part("pro", "Part 3", "Profession", "The Army as an institution, and the thinking pieces.", "p-pro");
+    h += part("pro", "Part 4", "Profession", "The Army as an institution, and the thinking pieces.", "p-pro");
     h += '<section id="army" class="pro"><h2>US Army &amp; USAREUR-AF</h2>';
     if (AR.cards) h += '<div class="cards">' + AR.cards.map(function (c) { return '<div class="card"><div class="lbl">' + esc(c.l) + '</div><div class="val">' + esc(c.v) + "</div><p>" + rich(c.n) + "</p></div>"; }).join("") + "</div>";
     h += items(AR.items) + "</section>";
-
     h += '<section id="aperture" class="pro"><h2>Aperture</h2><div class="ap">';
     if (AP.contrarian) h += '<div class="ap-c"><div class="lbl">Contrarian read</div><p>' + rich(AP.contrarian) + "</p></div>";
     if (AP.weak) h += '<div class="ap-c"><div class="lbl">Weak signal</div><p>' + rich(AP.weak) + "</p></div>";
@@ -394,7 +666,7 @@
     if (AP.question) h += '<div class="ap-c"><div class="lbl">Question for the staff</div><p>' + rich(AP.question) + "</p></div>";
     if (AP.deep) {
       var D = AP.deep;
-      h += '<details class="deep" data-k="deep" open><summary><div class="eyebrow" style="color:var(--pc)">' + esc(D.kind) + "</div><h4>" + esc(D.title) + '</h4></summary><div class="deep-body">' + (D.body || []).map(function (p) { return "<p>" + rich(p) + "</p>"; }).join("");
+      h += '<details class="deep" open><summary><div class="eyebrow" style="color:var(--pc)">' + esc(D.kind) + "</div><h4>" + esc(D.title) + '</h4></summary><div class="deep-body">' + (D.body || []).map(function (p) { return "<p>" + rich(p) + "</p>"; }).join("");
       if (D.table) h += table(D.table.head, D.table.rows.map(function (r) { return "<tr>" + r.map(function (c) { return "<td>" + rich(c) + "</td>"; }).join("") + "</tr>"; }).join(""), "lbl1");
       h += "</div></details>";
     }
@@ -403,23 +675,21 @@
     h += '<div class="ap-c"><div class="lbl">Deep cuts and special topics</div><div class="rota">' + ROT.map(function (r) { return '<div class="' + (r[0] === AP.rota ? "on " : "") + (r[0] === "sat" || r[0] === "sun" ? "sp" : "") + '"><b>' + r[1] + "</b>" + r[2] + "</div>"; }).join("") + "</div></div>";
     h += "</div></section>";
 
-    /* ===== Part 4 · Money ===== */
+    /* ===== Part 5 · Money ===== */
     var M = E.money || {};
-    h += part("money", "Part 4", "Money", "Last session's markets and the numbers that move prices, pay and rates.", "p-money");
+    h += part("money", "Part 5", "Money", "Last session's markets and the numbers that move prices, pay and rates.", "p-money");
     h += '<section id="markets" class="money"><h2>Markets &amp; economy <span class="num">' + esc(M.asof || "") + "</span></h2>";
     var sparks = []; ctx._sparks = sparks;
     if (M.cards) h += '<div class="cards">' + M.cards.map(function (c) {
-      var arrow = c[3] === "up" ? "▲ " : c[3] === "down" ? "▼ " : "", src = null, sk = null;
+      var src = null, sk = null;
       [c[5], c[6]].forEach(function (v) { if (typeof v === "number") src = v; else if (typeof v === "string" && v) sk = v; });
       if (!sk) { var lab = String(c[0]).toLowerCase(); SERIES_BY_LABEL.forEach(function (m) { if (!sk && lab.indexOf(m[0]) === 0) sk = m[1]; }); }
+      var g = fxGuard(c[0], c[1], c[2], c[3]), arrow = g.dir === "up" ? "▲ " : g.dir === "down" ? "▼ " : "";
       var ser = sk && SER[sk] && SER[sk].length ? SER[sk].filter(function (p) { return p[0] <= TD; }).slice(-30) : null;
-      return '<div class="card"><div class="lbl">' + esc(c[0]) + '</div><div class="val">' + esc(c[1]) + '</div><p><span class="chg ' + esc(c[3]) + '">' + (c[2] ? arrow + esc(c[2]) : "") + "</span> " + esc(c[4]) + cite(src) + "</p>" + (ser ? '<div class="spark" data-s="' + (sparks.push(ser) - 1) + '" title="' + esc(fmtShort(ser[0][0]) + " – " + fmtShort(ser[ser.length - 1][0])) + '"></div>' : "") + "</div>";
+      return '<div class="card"><div class="lbl">' + esc(g.label) + '</div><div class="val">' + esc(g.value) + '</div><p><span class="chg ' + esc(g.dir) + '">' + (g.change ? arrow + esc(g.change) : "") + "</span> " + esc(g.fixed ? "euros per dollar" : c[4]) + cite(src) + "</p>" + (ser ? '<div class="spark" data-s="' + (sparks.push(ser) - 1) + '" title="' + esc(fmtShort(ser[0][0]) + " – " + fmtShort(ser[ser.length - 1][0])) + '"></div>' : "") + "</div>";
     }).join("") + "</div>";
     if (M.driver) h += "<p>" + rich(M.driver) + "</p>";
-    if (M.ytd) {
-      var mx = Math.max.apply(null, M.ytd.map(function (y) { return Math.abs(y[1]); })) * 1.15;
-      h += '<h3>Year to date</h3><div class="hbars">' + M.ytd.map(function (y) { return '<div class="hbar"><span>' + esc(y[0]) + '</span><span class="t"><i style="width:' + (Math.abs(y[1]) / mx * 100) + '%"></i></span><span class="v">' + (y[1] >= 0 ? "+" : "") + y[1].toFixed(1) + "%</span></div>"; }).join("") + '<p class="small" style="margin:2px 0 0">Change since 1 January at the last close.' + cite(M.ytdSrc) + "</p></div>";
-    }
+    if (M.ytd) h += "<h3>Year to date</h3>" + hbars(M.ytd, { fmt: function (v) { return (v >= 0 ? "+" : "") + v.toFixed(1) + "%"; }, foot: "Change since 1 January at the last close." + cite(M.ytdSrc) });
     h += "</section>";
     if (FX) {
       var range = store("rb:fx:range") === "1y" ? 365 : 90;
@@ -432,10 +702,11 @@
       h += '<div class="chart" id="fxchart" data-range="' + range + '"></div>';
       var eu = function (r) { return "€" + num(1000 * r, 0); };
       h += '<p class="pay"><b class="l">Pay</b>$1,000 is ' + eu(FX.last[1]) + " today" + (FX.month ? ", " + eu(FX.month[1]) + " a month ago" : "") + "; 12-month best " + eu(FX.best[1]) + " (" + esc(fmtShort(FX.best[0])) + "), worst " + eu(FX.worst[1]) + " (" + esc(fmtShort(FX.worst[0])) + "). Up means the dollar buys more euros.</p>";
+      h += '<div class="lbl" style="margin-top:12px">$1,000 in euros, monthly average</div><div class="chart" id="paybars"></div>';
       h += '<p class="small" style="margin:8px 0 0"><a href="' + esc(ctx.fx.url || "https://www.ecb.europa.eu/stats/eurofxref/") + '" target="_blank" rel="noopener">' + esc(ctx.fx.source || "ECB") + "</a>, one value per ECB business day, inverted from the ECB's dollars-per-euro quote.</p></div></section>";
     }
     h += '<section id="rates" class="money">';
-    if (M.rates) h += "<h2>Rates and prices</h2>" + table(["Measure", "Latest", "Note"], M.rates.map(function (r) { return "<tr><td>" + esc(r[0]) + '</td><td class="d">' + esc(r[1]) + "</td><td>" + rich(r[2]) + "</td></tr>"; }).join(""), "lbl1");
+    if (M.rates) h += "<h2>Rates and prices</h2>" + table(["Measure", "Latest", "Note"], M.rates.map(function (r) { var g = fxGuard(r[0], r[1], null, null); return "<tr><td>" + esc(g.label) + '</td><td class="d">' + esc(g.value) + "</td><td>" + rich(r[2]) + "</td></tr>"; }).join(""), "lbl1");
     if (M.fuel) {
       var F = M.fuel, minP = Math.min.apply(null, F.rows.map(function (r) { return r[1]; })), minD = Math.min.apply(null, F.rows.map(function (r) { return r[2]; }));
       h += '<h3>Fuel across the borders <span class="small">' + esc(F.asof) + "</span></h3>";
@@ -446,9 +717,9 @@
     if (M.fy) h += '<p class="sw-line" style="margin-top:12px"><b class="l">For you</b>' + rich(M.fy) + "</p>";
     h += "</section>";
 
-    /* ===== Part 5 · Home ===== */
+    /* ===== Part 6 · Home ===== */
     var NL = E.nl || {}, AF = E.afnorth || {}, OD = E.offduty || {};
-    h += part("home", "Part 5", "Home", "The Netherlands, the family, weekends and the Dutch corner.", "p-home");
+    h += part("home", "Part 6", "Home", "The Netherlands, the family, weekends and the Dutch corner.", "p-home");
     h += '<section id="nl" class="home"><h2>Netherlands</h2>' + items(NL.items);
     if (NL.temp) h += '<p class="small" style="margin-top:12px"><b>Political temperature:</b> ' + rich(NL.temp) + "</p>";
     h += "</section>";
@@ -471,13 +742,14 @@
     if (NL.phrase) h += '<div class="nl-word"><div class="w" lang="nl">' + esc(NL.phrase.w) + '</div><p class="small" style="margin:2px 0 10px">“' + esc(NL.phrase.en) + "” · " + esc(NL.phrase.lvl) + "</p><p>" + rich(NL.phrase.note) + "</p></div>";
     h += "</section>";
 
-    /* ===== Part 6 · Hockey ===== */
+    /* ===== Part 7 · Hockey ===== */
     var HK = E.hockey || {};
-    h += part("hockey", "Part 6", "Hockey", "Carolina first, then the league.", "p-hockey");
+    h += part("hockey", "Part 7", "Hockey", "Carolina first, then the league.", "p-hockey");
     h += '<section id="hockey" class="hockey"><h2>Hurricanes' + (CV ? ' <span class="num">' + esc(CV.season) + "</span>" : "") + "</h2>";
     if (CV) {
       h += '<div class="season" role="list" aria-label="Last ten results">' + CV.games.slice(-10).map(function (g) { return '<div class="g ' + g.res + '" role="listitem" title="' + esc(fmtShort(g.date) + (g.home ? " vs " : " at ") + g.opp + ": " + g.res + " " + g.gf + "–" + g.ga) + '"><b>' + g.res + "</b>" + (g.home ? "" : "@") + esc(g.opp) + "</div>"; }).join("") + "</div>";
       h += '<p class="recline">Record <b>' + esc(CV.record) + "</b> · <b>" + CV.points + "</b> pts" + (CV.metro ? " · <b>" + ordinal(CV.metro) + "</b> in the Metro" : "") + " · " + CV.games.length + " games</p>";
+      if (CV.upcoming.length) h += '<div class="lbl sched-l">Next ten · CET</div><div class="season up" role="list" aria-label="Next ten games">' + CV.upcoming.map(function (g) { var dk = g.utc ? cetDate(g.utc) : g.date, tm = g.utc ? cet(g.utc).replace(/^\w+,? /, "") : ""; return '<div class="g" role="listitem" title="' + esc(fmt(pd(dk)) + (g.home ? " vs " : " at ") + g.opp + (tm ? " · " + tm + " CET" : "")) + '"><b>' + esc(fmtShort(dk)) + "</b>" + (g.home ? "" : "@") + esc(g.opp) + (tm ? "<small>" + esc(tm) + "</small>" : "") + "</div>"; }).join("") + "</div>";
     }
     if (HK.canes) {
       var C = HK.canes, R = C.result;
@@ -491,6 +763,7 @@
       if (C.next && C.next.length) h += table(["Next", "Opponent", "Puck drop here"], C.next.map(function (n) { return '<tr><td class="d">' + esc(n[0]) + "</td><td>" + esc(n[1]) + '</td><td class="d">' + esc(n[3]) + '<div class="small">' + esc(n[2]) + "</div>" + (n[4] ? '<span class="badge live">WATCH LIVE</span>' : "") + "</td></tr>"; }).join("")) + '<p class="small" style="margin:0">Schedule' + cite(C.nextSrc) + "</p>";
       h += "</div>";
     }
+    if (CV && CV.games.length > 1) h += '<div class="panel" style="margin-top:12px"><div class="lbl">Season so far · points by game, goals for and against</div><div class="chart" id="hkchart"></div></div>';
     h += '<h3>Scores <span class="small">' + esc(HK.scoresDate || "") + "</span></h3>";
     if (HK.scores && HK.scores.length) {
       h += '<div class="scores">' + HK.scores.map(function (g) {
@@ -501,33 +774,31 @@
     } else h += quiet("No NHL games last night.");
     h += "<h3>Top NHL news</h3>" + items(HK.news) + "</section>";
 
-    /* ===== Part 7 · Planner ===== */
-    var plOpen = store("rb:open:planner:" + TD); plOpen = plOpen == null ? (P.open != null ? !!P.open : isMonday) : plOpen === "1";
-    h += '<details class="planner plan" data-k="planner:' + TD + '"' + (plOpen ? " open" : "") + '><summary>' + part("plan", "Part 7", "Planner", "On this day, calendar, school holidays and the seasonal planner. Tap to " + (plOpen ? "fold" : "open") + ".", "p-plan") + "</summary>";
-    h += '<section id="calendar" class="plan"><h2>Calendar &amp; culture</h2>';
+    /* ===== Part 8 · Planner (always open) ===== */
+    h += part("plan", "Part 8", "Planner", "The week, the countdowns, the calendar, the school year and the season.", "p-plan");
+    h += '<section id="week" class="plan"><h2>This week</h2>' + weekStrip(PEV, E, TD) + "</section>";
+    h += '<section id="countdown" class="plan"><h2>Countdowns</h2>' + countdowns(PEV, ctx, TD) + "</section>";
+    h += '<section id="calendar" class="plan"><h2>Calendar</h2>';
     if (P.otd) h += '<div class="ap-c" style="margin-bottom:14px"><div class="lbl">' + esc(P.otd.title) + '</div><p style="margin:0">' + rich(P.otd.body) + "</p></div>";
-    if (P.events && P.calFrom && P.calTo) {
-      var from = pd(P.calFrom), to = pd(P.calTo);
-      var FILT = [["all","All"],["nl","NL"],["be","BE"],["de","DE"],["us","US"],["ev","Events"]];
-      h += '<div class="filt" id="calfilt" role="group" aria-label="Filter the calendar">' + FILT.map(function (f) { return '<button type="button" data-f="' + f[0] + '" aria-pressed="' + (f[0] === "all") + '">' + f[1] + "</button>"; }).join("") + "</div>";
-      h += '<div class="legend">' + Object.keys(CAT).map(function (k) { return '<span><i style="background:var(' + CAT[k][1] + ')"></i>' + esc(CAT[k][0]) + "</span>"; }).join("") + '</div><div class="cal" id="cal">';
-      ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"].forEach(function (d) { h += '<div class="dow">' + d + "</div>"; });
-      for (var i = 0; i < (from.getDay() + 6) % 7; i++) h += '<div class="day out"></div>';
-      for (var d = new Date(from); d <= to; d.setDate(d.getDate() + 1)) {
-        var k = key(d), ev = P.events.filter(function (e) { return e[0] === k; });
-        h += '<div class="day' + (k === E.date ? " today" : "") + '"' + (ev.length ? ' title="' + esc(ev.map(function (e) { return e[2]; }).join("\n")) + '"' : "") + '><div class="n"><b>' + d.getDate() + "</b>" + (d.getDate() === 1 || +d === +from ? " " + MON[d.getMonth()] : "") + "</div>";
-        if (ev.length) h += '<div class="dots">' + ev.map(function (e) { return '<i data-cat="' + esc(e[1]) + '" style="background:var(' + (CAT[e[1]] ? CAT[e[1]][1] : "--muted") + ')"></i>'; }).join("") + '</div><div class="lab">' + ev.map(function (e) { return '<span data-cat="' + esc(e[1]) + '">' + esc(e[2]) + "</span>"; }).join('<span class="sep"> · </span>') + "</div>";
-        h += "</div>";
-      }
-      h += '</div><div class="agenda">' + table(["Date", "What · where · practical effect"], P.events.map(function (e) {
-        var dd = pd(e[0]); return '<tr data-cat="' + esc(e[1]) + '"><td class="d"><span class="dot" style="background:var(' + (CAT[e[1]] ? CAT[e[1]][1] : "--muted") + ')"></span>' + dd.getDate() + " " + MON[dd.getMonth()] + "</td><td><b>" + esc(e[2]) + '</b><div class="small">' + esc([e[3], e[4], e[5]].filter(Boolean).join(" · ")) + "</div></td></tr>";
-      }).join("")) + '<p class="quiet" id="calempty" style="display:none">Nothing in this category in the window.</p></div>';
-    }
+    var FILT = [["all","All"],["nl","NL"],["be","BE"],["de","DE"],["us","US"],["ev","Events"],["hockey","Hockey"],["homed","Home"],["school","School"],["watch","Horizon"]];
+    h += '<div class="cal-nav"><button type="button" id="calprev" aria-label="Previous month">‹</button><span class="cal-title" id="caltitle"></span><button type="button" id="calnext" aria-label="Next month">›</button><button type="button" id="caltoday">This month</button></div>';
+    h += '<div class="filt" id="calfilt" role="group" aria-label="Filter the calendar">' + FILT.map(function (f) { return '<button type="button" data-f="' + f[0] + '" aria-pressed="' + (f[0] === "all") + '">' + f[1] + "</button>"; }).join("") + "</div>";
+    h += '<div class="legend">' + Object.keys(CAT).map(function (k) { return '<span><i style="background:' + catColor(k) + '"></i>' + esc(CAT[k][0]) + "</span>"; }).join("") + "</div>";
+    h += '<div id="calbody"></div>';
+    var dl = ((ctx.deadlines && ctx.deadlines.items) || []).filter(function (d) { return d.date >= TD && daysBetween(TD, d.date) <= 90; }).sort(function (a, b) { return a.date < b.date ? -1 : 1; });
+    h += '<h3>Deadlines <span class="small">next 90 days · data/deadlines.json, hand-maintained</span></h3>' + (dl.length ? table(["In", "Date", "What"], dl.map(function (d) { var n = daysBetween(TD, d.date), b = d.updated === TD ? "UPDATED" : ""; return '<tr class="' + (n <= 7 ? "soon" : "") + '"><td class="d">' + (n === 0 ? "today" : n + " d") + '</td><td class="d">' + esc(fmtShort(d.date)) + "</td><td><b>" + esc(d.name) + "</b>" + badge(b) + (d.note ? '<div class="small">' + esc(d.note) + "</div>" : "") + "</td></tr>"; }).join("")) : quiet("No deadlines listed. Add items to data/deadlines.json."));
     if (P.culture) h += "<h3>" + esc(P.culture.title) + "</h3><p>" + rich(P.culture.body) + "</p>";
-    if (P.school) h += "<h3>School holidays</h3>" + gantt(P.school, today) + (P.school.note ? '<p class="small" style="margin-top:6px">' + rich(P.school.note) + "</p>" : "");
     h += "</section>";
+    h += '<section id="school" class="plan"><h2>School year</h2>';
+    if (ctx.calendar && ctx.calendar.school) {
+      var OV = overlapRows(ctx.calendar, TD);
+      h += '<p class="small">Twelve months from today. The bottom row marks the days when every system is off at once.</p>' + gantt(OV, today, { year: true, noXmas: true });
+      if (OV.all.length) h += '<p class="small" style="margin-top:8px"><b>Everyone off:</b> ' + OV.all.map(function (s) { return fmtShort(s[0]) + " – " + fmtShort(s[1]); }).join("; ") + ".</p>";
+      h += '<p class="small">Sources: ' + Object.keys(ctx.calendar.school).map(function (k) { return esc(ctx.calendar.school[k].name) + " (" + esc(ctx.calendar.school[k].source) + ")"; }).join("; ") + ".</p>";
+    } else if (P.school) h += gantt(P.school, today) + (P.school.note ? '<p class="small" style="margin-top:6px">' + rich(P.school.note) + "</p>" : "");
+    else h += quiet("No school calendar loaded.");
+    h += '<h3>Daylight</h3><div class="panel"><div class="lbl">Hours of daylight at ' + esc(HOME.name) + " through " + today.getFullYear() + '</div><div class="chart" id="daylight"></div></div></section>';
     if (P.season) h += '<section id="season" class="plan"><h2>' + esc(P.season.title) + "</h2>" + (P.season.intro ? '<p class="small">' + rich(P.season.intro) + "</p>" : "") + gantt(P.season, today) + (P.season.notes ? '<ul class="clean" style="margin-top:12px">' + P.season.notes.map(function (n) { return "<li>" + rich(n) + "</li>"; }).join("") + "</ul>" : "") + "</section>";
-    h += "</details>";
 
     /* ===== Footer ===== */
     h += '<section id="sources"><h2>Sources</h2><ol class="src">' + (E.sources || []).map(function (s) { return '<li id="s' + s[0] + '" value="' + s[0] + '"><a href="' + esc(s[3]) + '" target="_blank" rel="noopener">' + esc(s[1]) + '</a><span class="o"> · ' + esc(s[2]) + "</span></li>"; }).join("") + "</ol>";
@@ -545,16 +816,26 @@
   /* ---------- post-render wiring ---------- */
   function after(E, ctx) {
     var today = pd(E.date), TD = E.date;
-    /* running incident log */
     var log = (ctx.incidents || []).filter(function (x) { var d = pd(x.date); return (today - d) / DAY <= 29 && d <= today; });
     if (!ctx.incidents) log = (E.hybrid && E.hybrid.incidents) || [];
     var FX = ctx.fx ? fxStats(ctx.fx.series, TD) : null, fxc = document.getElementById("fxchart");
+    var board = ctx.conflicts && ctx.conflicts.length ? boardView(ctx.conflicts, TD) : null;
     function drawCharts() {
-      var mapEl = document.getElementById("map"), trEl = document.getElementById("trend");
+      var mapEl = document.getElementById("map"), trEl = document.getElementById("trend"), bc = document.getElementById("bycountry");
       mapEl.innerHTML = incidentMap(log, mapEl.clientWidth);
       trEl.innerHTML = incidentTrend(log, today, trEl.clientWidth);
+      var byC = {}; log.forEach(function (i) { var c = i.country || "?"; byC[c] = (byC[c] || 0) + 1; });
+      bc.innerHTML = hbars(Object.keys(byC).sort(function (a, b) { return byC[b] - byC[a]; }).map(function (c) { return [c, byC[c]]; }), { inner: true, mono: true, empty: "No incidents logged yet." });
       app.querySelectorAll(".spark[data-s]").forEach(function (el) { el.innerHTML = sparkline(ctx._sparks[+el.getAttribute("data-s")], el.clientWidth); });
-      if (fxc && FX) fxc.innerHTML = fxChart(FX.series, +fxc.getAttribute("data-range"), FX.avg, FX.hi30, FX.lo30, fxc.clientWidth);
+      app.querySelectorAll(".spark[data-ws]").forEach(function (el) { el.innerHTML = sparkline(ctx._ws[el.getAttribute("data-ws")], el.clientWidth); });
+      if (fxc && FX) fxc.innerHTML = lineChart(FX.series, { W: fxc.clientWidth, days: +fxc.getAttribute("data-range"), avg: FX.avg, avgLabel: "1y avg ", hi: FX.hi30, lo: FX.lo30, hiLabel: "30d high", loLabel: "30d low", dec: 4, label: "USD/EUR, euros per dollar" });
+      var pb = document.getElementById("paybars"); if (pb && FX) pb.innerHTML = vbars(FX.pay.map(function (p) { return [p[0], p[1], p[2], p[2] === FX.last[0].slice(0, 7)]; }), { W: pb.clientWidth, H: 130, fmt: function (v) { return "€" + v; }, label: "$1,000 in euros by month" });
+      var wm = document.getElementById("worldmap"); if (wm && board) { var counts = {}; board.forEach(function (b) { counts[b.t.id] = b.n7; }); wm.innerHTML = worldMap(ctx.conflicts, counts, wm.clientWidth); }
+      var fc = document.getElementById("fchart"); if (fc && ctx._fser) { var fm = ctx._fmeta || {}; fc.innerHTML = lineChart(ctx._fser, { W: fc.clientWidth, days: 400, dec: fm.decimals != null ? fm.decimals : 0, zero: true, label: fm.label || "" }); }
+      var fb = document.getElementById("fbars"); if (fb && E.world && E.world.feature && E.world.feature.bars) fb.innerHTML = vbars(E.world.feature.bars.rows, { W: fb.clientWidth, zero: true, label: E.world.feature.bars.label || "" });
+      var fg = document.getElementById("fgeo"); if (fg && ctx._geo) fg.innerHTML = geoSchematic(ctx._geo, fg.clientWidth);
+      var hk = document.getElementById("hkchart"); if (hk && ctx.canes) hk.innerHTML = hockeyChart(canesView(ctx.canes, TD).games, hk.clientWidth);
+      var dlc = document.getElementById("daylight"); if (dlc) dlc.innerHTML = daylight(HOME.lat, TD, dlc.clientWidth);
     }
     drawCharts();
     var rsz = null; window.addEventListener("resize", function () { clearTimeout(rsz); rsz = setTimeout(drawCharts, 150); });
@@ -588,21 +869,13 @@
     }
 
     /* new / updated count */
-    var nNew = app.querySelectorAll(".badge.new").length, nUpd = app.querySelectorAll(".badge.upd").length;
-    document.getElementById("nnew").textContent = nNew + " new";
-    document.getElementById("nupd").textContent = nUpd + " updated";
+    document.getElementById("nnew").textContent = app.querySelectorAll(".badge.new").length + " new";
+    document.getElementById("nupd").textContent = app.querySelectorAll(".badge.upd").length + " updated";
 
     /* read time: Front through Hockey */
     var words = 0, stop = false;
-    Array.prototype.forEach.call(app.children, function (el) { if (stop || el.classList.contains("planner") || el.id === "sources") { stop = true; return; } if (el.id !== "slim") words += (el.textContent || "").split(/\s+/).length; });
+    Array.prototype.forEach.call(app.children, function (el) { if (stop || el.id === "p-plan" || el.id === "sources") { stop = true; return; } if (el.id !== "slim") words += (el.textContent || "").split(/\s+/).length; });
     document.getElementById("readtime").textContent = "≈ " + Math.max(1, Math.round(words / 230)) + " min read";
-
-    /* remembered fold state */
-    app.querySelectorAll("details[data-k]").forEach(function (d) {
-      var k = "rb:open:" + d.getAttribute("data-k"), v = store(k);
-      if (v != null && d.getAttribute("data-k").indexOf("planner") !== 0) d.open = v === "1";
-      d.addEventListener("toggle", function () { store(k, d.open ? "1" : "0"); });
-    });
 
     /* new-only filter */
     var newOnly = store("rb:newonly") === "1", tg = document.getElementById("newonly");
@@ -613,10 +886,10 @@
       store("rb:newonly", newOnly ? "1" : "0");
     }
     tg.addEventListener("click", function () { newOnly = !newOnly; applyNewOnly(); });
-    document.getElementById("newcount").addEventListener("click", function () { newOnly = true; applyNewOnly(); document.getElementById("p-sec").scrollIntoView(); });
+    document.getElementById("newcount").addEventListener("click", function () { newOnly = true; applyNewOnly(); document.getElementById("p-world").scrollIntoView(); });
     applyNewOnly();
 
-    /* EUR/USD range toggle */
+    /* USD/EUR range toggle */
     if (fxc && FX) {
       app.querySelectorAll(".fx-tools button").forEach(function (b) {
         b.addEventListener("click", function () {
@@ -624,31 +897,26 @@
           store("rb:fx:range", r === 365 ? "1y" : "90d");
           app.querySelectorAll(".fx-tools button").forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
           fxc.setAttribute("data-range", r);
-          fxc.innerHTML = fxChart(FX.series, r, FX.avg, FX.hi30, FX.lo30, fxc.clientWidth);
+          fxc.innerHTML = lineChart(FX.series, { W: fxc.clientWidth, days: r, avg: FX.avg, avgLabel: "1y avg ", hi: FX.hi30, lo: FX.lo30, hiLabel: "30d high", loLabel: "30d low", dec: 4, label: "USD/EUR, euros per dollar" });
         });
       });
     }
 
-    /* calendar filter chips */
-    var filt = document.getElementById("calfilt");
-    if (filt) {
-      filt.addEventListener("click", function (ev) {
-        var b = ev.target.closest("button"); if (!b) return;
-        var f = b.getAttribute("data-f");
-        filt.querySelectorAll("button").forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
-        function match(cat) { return f === "all" || (f === "ev" ? (cat === "mkt" || cat === "pro") : cat === f); }
-        var left = 0;
-        app.querySelectorAll("#cal [data-cat], .agenda tr[data-cat]").forEach(function (el) { var on = match(el.getAttribute("data-cat")); el.style.display = on ? "" : "none"; if (on && el.tagName === "TR") left++; });
-        app.querySelectorAll("#cal .lab").forEach(function (lab) { var vis = Array.prototype.filter.call(lab.querySelectorAll("span[data-cat]"), function (s) { return s.style.display !== "none"; }); lab.querySelectorAll(".sep").forEach(function (s) { s.style.display = "none"; }); vis.forEach(function (s, i) { if (i) { var p = s.previousElementSibling; if (p && p.classList.contains("sep")) p.style.display = ""; } }); });
-        document.getElementById("calempty").style.display = left ? "none" : "";
-      });
-    }
-
-    /* tables that scroll sideways get a right-edge fade */
-    function fades() { app.querySelectorAll(".tw").forEach(function (t) { t.classList.toggle("scroll", t.scrollWidth - t.clientWidth - t.scrollLeft > 4); }); }
-    app.querySelectorAll(".tw").forEach(function (t) { t.addEventListener("scroll", fades, { passive: true }); });
-    fades();
+    /* scroll containers get a right-edge fade */
+    function fades() { app.querySelectorAll(".tw, .scrollx").forEach(function (t) { t.classList.toggle("scroll", t.scrollWidth - t.clientWidth - t.scrollLeft > 4); }); }
+    app.addEventListener("scroll", function (e) { var t = e.target; if (t && t.classList && (t.classList.contains("tw") || t.classList.contains("scrollx"))) fades(); }, true);
     window.addEventListener("resize", fades);
+
+    /* calendar: month navigation and filter chips */
+    var calState = { y: today.getFullYear(), m: today.getMonth(), f: "all" }, calBody = document.getElementById("calbody"), calTitle = document.getElementById("caltitle");
+    function calFilter(cat) { var f = calState.f; return f === "all" || (f === "ev" ? (cat === "mkt" || cat === "pro") : f === "homed" ? (cat === "home" || cat === "deadline") : cat === f); }
+    function drawCal() { calBody.innerHTML = calMonth(ctx._pev, calState.y, calState.m, TD, calFilter); calTitle.textContent = MON[calState.m] + " " + calState.y; fades(); }
+    document.getElementById("calprev").addEventListener("click", function () { calState.m--; if (calState.m < 0) { calState.m = 11; calState.y--; } drawCal(); });
+    document.getElementById("calnext").addEventListener("click", function () { calState.m++; if (calState.m > 11) { calState.m = 0; calState.y++; } drawCal(); });
+    document.getElementById("caltoday").addEventListener("click", function () { calState.y = today.getFullYear(); calState.m = today.getMonth(); drawCal(); });
+    var filt = document.getElementById("calfilt");
+    filt.addEventListener("click", function (ev) { var b = ev.target.closest("button"); if (!b) return; calState.f = b.getAttribute("data-f"); filt.querySelectorAll("button").forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); }); drawCal(); });
+    drawCal();
 
     /* archive picker */
     var sel = document.getElementById("arch");
@@ -669,8 +937,10 @@
         eds.forEach(function (ed) {
           function add(t, to, where) { if (t && String(t).toLowerCase().indexOf(q) >= 0) out.push({ date: ed.date, edition: ed.edition, t: t, to: to, where: where }); }
           (ed.five || []).forEach(function (f) { add(f.t, f.to, "Five things"); });
+          var wi = Array.isArray(ed.world) ? ed.world : ((ed.world || {}).items || []);
+          wi.forEach(function (i) { add(i.h, "world", "World"); });
+          if (ed.world && ed.world.feature) add(ed.world.feature.title, "feature", "Feature");
           (ed.europe || []).forEach(function (i) { add(i.h, "europe", "Europe"); });
-          (ed.world || []).forEach(function (i) { add(i.h, "world", "World"); });
           (ed.euregio || []).forEach(function (i) { add(i.h, "euregio", "Euregio"); });
           ((ed.hybrid || {}).leads || []).forEach(function (l) { add(l.title, l.id, "Lead"); });
           ((ed.hybrid || {}).incidents || []).forEach(function (i) { add(i.place, "hybrid", "Incident"); });
@@ -680,7 +950,7 @@
           ((ed.hockey || {}).news || []).forEach(function (i) { add(i.h, "hockey", "NHL"); });
         });
         out.sort(function (a, b) { return a.date < b.date ? 1 : a.date > b.date ? -1 : 0; });
-        hits.innerHTML = out.length ? '<ul class="hits">' + out.slice(0, 60).map(function (x) { return '<li><span class="d">' + esc(fmtShort(x.date) + " " + x.date.slice(0, 4)) + '</span><span><a href="#ed-' + x.date + "/" + esc(x.to) + '">' + rich(x.t).replace(/<sup class="r">.*?<\/sup>/g, "") + '</a><span class="w">' + esc(x.where) + "</span></span></li>"; }).join("") + "</ul>" + (out.length > 60 ? '<p class="small">Showing 60 of ' + out.length + " hits.</p>" : "") : quiet("No headline matches “" + q + "” in " + eds.length + (eds.length === 1 ? " edition." : " editions."));
+        hits.innerHTML = out.length ? '<ul class="hits">' + out.slice(0, 60).map(function (x) { return '<li><span class="d">' + esc(fmtShort(x.date) + " " + x.date.slice(0, 4)) + '</span><span><a href="#ed-' + x.date + "/" + esc(x.to) + '">' + esc(plain(x.t)) + '</a><span class="w">' + esc(x.where) + "</span></span></li>"; }).join("") + "</ul>" + (out.length > 60 ? '<p class="small">Showing 60 of ' + out.length + " hits.</p>" : "") : quiet("No headline matches “" + q + "” in " + eds.length + (eds.length === 1 ? " edition." : " editions."));
       }).catch(function (e) { hits.innerHTML = quiet("Search failed: " + (e.message || e)); });
     });
 
@@ -693,12 +963,7 @@
       parts.forEach(function (p) { if (p.getBoundingClientRect().top + window.scrollY <= y) now = p; });
       if (now) {
         var name = now.getAttribute("data-part");
-        if (name !== curName) {
-          curName = name;
-          cur.classList.add("fade");
-          clearTimeout(fadeTimer);
-          fadeTimer = setTimeout(function () { cur.textContent = name; cur.classList.remove("fade"); }, 150);
-        }
+        if (name !== curName) { curName = name; cur.classList.add("fade"); clearTimeout(fadeTimer); fadeTimer = setTimeout(function () { cur.textContent = name; cur.classList.remove("fade"); }, 150); }
         var cls = now.className.split(" ").filter(function (c) { return PART_CLASSES.indexOf(c) >= 0; })[0];
         slim.className = "slim " + (cls || "");
         totop.classList.toggle("on", now !== parts[0]);
@@ -733,11 +998,13 @@
   Promise.all([
     getJSON("data/index.json"),
     opt("data/incidents.json"), opt("data/bins.json"), opt("data/threads.json"), opt("data/horizon.json"),
-    opt("data/fx.json"), opt("data/series.json"), opt("data/canes.json")
+    opt("data/fx.json"), opt("data/series.json"), opt("data/canes.json"),
+    opt("data/conflicts.json"), opt("data/world-series.json"), opt("data/calendar.json"), opt("data/deadlines.json")
   ]).then(function (r) {
     ctx.index = r[0]; ctx.incidents = r[1] && r[1].incidents; ctx.attrLog = r[1] && r[1].attrLog; ctx.bins = r[2];
     ctx.threads = r[3] && r[3].threads; ctx.horizon = r[4] && r[4].events;
     ctx.fx = r[5] && r[5].series && r[5].series.length ? r[5] : null; ctx.series = r[6]; ctx.canes = r[7];
+    ctx.conflicts = r[8] && r[8].theatres; ctx.worldSeries = r[9]; ctx.calendar = r[10]; ctx.deadlines = r[11];
     var m = location.hash.match(/^#ed-(\d{4}-\d{2}-\d{2})/);
     return load(m ? m[1] : null);
   }).catch(fail);

@@ -1,0 +1,64 @@
+{
+ "note": "World series: dated open-source counts for the World part's By the numbers row and the Wednesday trend line. The morning run appends one row per published value; cadence is per series. Keys in money series.json (brent, ttf) can also be referenced from the edition.",
+ "meta": {
+  "ua-air": {
+   "label": "Drones and missiles launched at Ukraine overnight",
+   "unit": "",
+   "cadence": "daily",
+   "source": "Ukrainian Air Force daily statement, as reported by Ukrinform or the Kyiv Independent",
+   "url": "https://www.ukrinform.net/",
+   "decimals": 0
+  },
+  "ru-personnel-day": {
+   "label": "Russian personnel losses claimed per day",
+   "unit": "",
+   "cadence": "daily",
+   "source": "Ukrainian General Staff daily figure via index.minfin.com.ua",
+   "url": "https://index.minfin.com.ua/en/russian-invading/casualties/",
+   "decimals": 0,
+   "note": "Ukrainian claim, not independently verified"
+  },
+  "ru-uav-day": {
+   "label": "Russian UAVs claimed destroyed per day",
+   "unit": "",
+   "cadence": "daily",
+   "source": "Ukrainian General Staff daily figure via index.minfin.com.ua",
+   "url": "https://index.minfin.com.ua/en/russian-invading/casualties/",
+   "decimals": 0,
+   "note": "Ukrainian claim, not independently verified"
+  },
+  "hormuz-transits": {
+   "label": "Tanker transits of Hormuz per day (weekly average)",
+   "unit": "",
+   "cadence": "weekly",
+   "source": "Lloyd's List or Windward weekly figure",
+   "url": "",
+   "decimals": 0
+  },
+  "ua-strikes-week": {
+   "label": "Ukrainian long-range strikes claimed per week",
+   "unit": "",
+   "cadence": "weekly",
+   "source": "Ukrainian General Staff weekly tallies",
+   "url": "",
+   "decimals": 0
+  }
+ },
+ "series": {
+  "ua-air": [],
+  "ru-personnel-day": [
+   [
+    "2026-11-03",
+    2060
+   ]
+  ],
+  "ru-uav-day": [
+   [
+    "2026-11-03",
+    1413
+   ]
+  ],
+  "hormuz-transits": [],
+  "ua-strikes-week": []
+ }
+}

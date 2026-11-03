@@ -1,0 +1,684 @@
+{
+ "note": "Standing calendar, edited rarely: public holidays and observances (c = nl, be, de, us, info), school breaks per system, and seasonal markets. The morning run completes missing school years when they are published and otherwise leaves this file alone. Window: 2026-11-01 to 2028-04-30. Holiday dates are computed from the statutory rules (Easter-based dates via the Gregorian algorithm) and should be spot-checked once a year.",
+ "from": "2026-11-01",
+ "to": "2028-04-30",
+ "updated": "2026-11-03",
+ "holidays": [
+  {
+   "date": "2026-11-01",
+   "c": "be",
+   "n": "Allerheiligen"
+  },
+  {
+   "date": "2026-11-01",
+   "c": "de",
+   "n": "Allerheiligen",
+   "note": "NRW"
+  },
+  {
+   "date": "2026-11-01",
+   "c": "us",
+   "n": "US clocks back: ET is 6 h behind again"
+  },
+  {
+   "date": "2026-11-11",
+   "c": "be",
+   "n": "Wapenstilstand"
+  },
+  {
+   "date": "2026-11-11",
+   "c": "nl",
+   "n": "Sint Maarten · carnival season opens 11:11"
+  },
+  {
+   "date": "2026-11-11",
+   "c": "us",
+   "n": "Veterans Day"
+  },
+  {
+   "date": "2026-11-15",
+   "c": "de",
+   "n": "Volkstrauertag",
+   "note": "Quiet day in NRW; markets closed or limited"
+  },
+  {
+   "date": "2026-11-22",
+   "c": "de",
+   "n": "Totensonntag",
+   "note": "Quiet day in NRW; Köln market closed, Aachen evening only"
+  },
+  {
+   "date": "2026-11-26",
+   "c": "us",
+   "n": "Thanksgiving"
+  },
+  {
+   "date": "2026-12-05",
+   "c": "nl",
+   "n": "Pakjesavond (Sinterklaas)"
+  },
+  {
+   "date": "2026-12-25",
+   "c": "be",
+   "n": "Kerstmis"
+  },
+  {
+   "date": "2026-12-25",
+   "c": "de",
+   "n": "1. Weihnachtstag"
+  },
+  {
+   "date": "2026-12-25",
+   "c": "nl",
+   "n": "Eerste Kerstdag"
+  },
+  {
+   "date": "2026-12-25",
+   "c": "us",
+   "n": "Christmas Day"
+  },
+  {
+   "date": "2026-12-26",
+   "c": "de",
+   "n": "2. Weihnachtstag"
+  },
+  {
+   "date": "2026-12-26",
+   "c": "nl",
+   "n": "Tweede Kerstdag"
+  },
+  {
+   "date": "2027-01-01",
+   "c": "be",
+   "n": "Nieuwjaar"
+  },
+  {
+   "date": "2027-01-01",
+   "c": "de",
+   "n": "Neujahr"
+  },
+  {
+   "date": "2027-01-01",
+   "c": "nl",
+   "n": "Nieuwjaarsdag"
+  },
+  {
+   "date": "2027-01-01",
+   "c": "us",
+   "n": "New Year's Day"
+  },
+  {
+   "date": "2027-01-18",
+   "c": "us",
+   "n": "Martin Luther King Jr. Day"
+  },
+  {
+   "date": "2027-02-08",
+   "c": "nl",
+   "n": "Carnaval (Limburg) Sun–Tue",
+   "note": "Vastelaovend; schools and many offices closed Mon–Tue in Zuid-Limburg"
+  },
+  {
+   "date": "2027-02-15",
+   "c": "us",
+   "n": "Presidents' Day"
+  },
+  {
+   "date": "2027-03-14",
+   "c": "us",
+   "n": "US clocks forward: ET is 5 h behind until the EU change"
+  },
+  {
+   "date": "2027-03-26",
+   "c": "de",
+   "n": "Karfreitag"
+  },
+  {
+   "date": "2027-03-26",
+   "c": "nl",
+   "n": "Goede Vrijdag",
+   "note": "Not a statutory day off for most"
+  },
+  {
+   "date": "2027-03-28",
+   "c": "info",
+   "n": "EU clocks forward (CEST)"
+  },
+  {
+   "date": "2027-03-28",
+   "c": "nl",
+   "n": "Eerste Paasdag"
+  },
+  {
+   "date": "2027-03-29",
+   "c": "be",
+   "n": "Paasmaandag"
+  },
+  {
+   "date": "2027-03-29",
+   "c": "de",
+   "n": "Ostermontag"
+  },
+  {
+   "date": "2027-03-29",
+   "c": "nl",
+   "n": "Tweede Paasdag"
+  },
+  {
+   "date": "2027-04-27",
+   "c": "nl",
+   "n": "Koningsdag"
+  },
+  {
+   "date": "2027-05-01",
+   "c": "be",
+   "n": "Dag van de Arbeid"
+  },
+  {
+   "date": "2027-05-01",
+   "c": "de",
+   "n": "Tag der Arbeit"
+  },
+  {
+   "date": "2027-05-05",
+   "c": "nl",
+   "n": "Bevrijdingsdag",
+   "note": "Day off only in lustrum years and by employer"
+  },
+  {
+   "date": "2027-05-06",
+   "c": "be",
+   "n": "O.L.H. Hemelvaart"
+  },
+  {
+   "date": "2027-05-06",
+   "c": "de",
+   "n": "Christi Himmelfahrt"
+  },
+  {
+   "date": "2027-05-06",
+   "c": "nl",
+   "n": "Hemelvaartsdag"
+  },
+  {
+   "date": "2027-05-16",
+   "c": "nl",
+   "n": "Eerste Pinksterdag"
+  },
+  {
+   "date": "2027-05-17",
+   "c": "be",
+   "n": "Pinkstermaandag"
+  },
+  {
+   "date": "2027-05-17",
+   "c": "de",
+   "n": "Pfingstmontag"
+  },
+  {
+   "date": "2027-05-17",
+   "c": "nl",
+   "n": "Tweede Pinksterdag"
+  },
+  {
+   "date": "2027-05-27",
+   "c": "de",
+   "n": "Fronleichnam",
+   "note": "NRW"
+  },
+  {
+   "date": "2027-05-31",
+   "c": "us",
+   "n": "Memorial Day"
+  },
+  {
+   "date": "2027-06-19",
+   "c": "us",
+   "n": "Juneteenth"
+  },
+  {
+   "date": "2027-07-04",
+   "c": "us",
+   "n": "Independence Day"
+  },
+  {
+   "date": "2027-07-21",
+   "c": "be",
+   "n": "Nationale feestdag"
+  },
+  {
+   "date": "2027-08-15",
+   "c": "be",
+   "n": "O.L.V. Hemelvaart"
+  },
+  {
+   "date": "2027-09-06",
+   "c": "us",
+   "n": "Labor Day"
+  },
+  {
+   "date": "2027-10-03",
+   "c": "de",
+   "n": "Tag der Deutschen Einheit"
+  },
+  {
+   "date": "2027-10-11",
+   "c": "us",
+   "n": "Columbus Day"
+  },
+  {
+   "date": "2027-10-31",
+   "c": "info",
+   "n": "EU clocks back (CET)"
+  },
+  {
+   "date": "2027-11-01",
+   "c": "be",
+   "n": "Allerheiligen"
+  },
+  {
+   "date": "2027-11-01",
+   "c": "de",
+   "n": "Allerheiligen",
+   "note": "NRW"
+  },
+  {
+   "date": "2027-11-07",
+   "c": "us",
+   "n": "US clocks back: ET is 6 h behind again"
+  },
+  {
+   "date": "2027-11-11",
+   "c": "be",
+   "n": "Wapenstilstand"
+  },
+  {
+   "date": "2027-11-11",
+   "c": "nl",
+   "n": "Sint Maarten · carnival season opens 11:11"
+  },
+  {
+   "date": "2027-11-11",
+   "c": "us",
+   "n": "Veterans Day"
+  },
+  {
+   "date": "2027-11-14",
+   "c": "de",
+   "n": "Volkstrauertag",
+   "note": "Quiet day in NRW; markets closed or limited"
+  },
+  {
+   "date": "2027-11-21",
+   "c": "de",
+   "n": "Totensonntag",
+   "note": "Quiet day in NRW; Köln market closed, Aachen evening only"
+  },
+  {
+   "date": "2027-11-25",
+   "c": "us",
+   "n": "Thanksgiving"
+  },
+  {
+   "date": "2027-12-05",
+   "c": "nl",
+   "n": "Pakjesavond (Sinterklaas)"
+  },
+  {
+   "date": "2027-12-25",
+   "c": "be",
+   "n": "Kerstmis"
+  },
+  {
+   "date": "2027-12-25",
+   "c": "de",
+   "n": "1. Weihnachtstag"
+  },
+  {
+   "date": "2027-12-25",
+   "c": "nl",
+   "n": "Eerste Kerstdag"
+  },
+  {
+   "date": "2027-12-25",
+   "c": "us",
+   "n": "Christmas Day"
+  },
+  {
+   "date": "2027-12-26",
+   "c": "de",
+   "n": "2. Weihnachtstag"
+  },
+  {
+   "date": "2027-12-26",
+   "c": "nl",
+   "n": "Tweede Kerstdag"
+  },
+  {
+   "date": "2028-01-01",
+   "c": "be",
+   "n": "Nieuwjaar"
+  },
+  {
+   "date": "2028-01-01",
+   "c": "de",
+   "n": "Neujahr"
+  },
+  {
+   "date": "2028-01-01",
+   "c": "nl",
+   "n": "Nieuwjaarsdag"
+  },
+  {
+   "date": "2028-01-01",
+   "c": "us",
+   "n": "New Year's Day"
+  },
+  {
+   "date": "2028-01-17",
+   "c": "us",
+   "n": "Martin Luther King Jr. Day"
+  },
+  {
+   "date": "2028-02-21",
+   "c": "us",
+   "n": "Presidents' Day"
+  },
+  {
+   "date": "2028-02-28",
+   "c": "nl",
+   "n": "Carnaval (Limburg) Sun–Tue",
+   "note": "Vastelaovend; schools and many offices closed Mon–Tue in Zuid-Limburg"
+  },
+  {
+   "date": "2028-03-12",
+   "c": "us",
+   "n": "US clocks forward: ET is 5 h behind until the EU change"
+  },
+  {
+   "date": "2028-03-26",
+   "c": "info",
+   "n": "EU clocks forward (CEST)"
+  },
+  {
+   "date": "2028-04-14",
+   "c": "de",
+   "n": "Karfreitag"
+  },
+  {
+   "date": "2028-04-14",
+   "c": "nl",
+   "n": "Goede Vrijdag",
+   "note": "Not a statutory day off for most"
+  },
+  {
+   "date": "2028-04-16",
+   "c": "nl",
+   "n": "Eerste Paasdag"
+  },
+  {
+   "date": "2028-04-17",
+   "c": "be",
+   "n": "Paasmaandag"
+  },
+  {
+   "date": "2028-04-17",
+   "c": "de",
+   "n": "Ostermontag"
+  },
+  {
+   "date": "2028-04-17",
+   "c": "nl",
+   "n": "Tweede Paasdag"
+  },
+  {
+   "date": "2028-04-27",
+   "c": "nl",
+   "n": "Koningsdag"
+  }
+ ],
+ "school": {
+  "afnorth": {
+   "name": "AFNORTH",
+   "color": "us",
+   "source": "AFNORTH 2026–27 academic calendar (rows taken from Editions 1–2; the full PDF could not be fetched from this environment). Complete 2027 breaks and the 2027–28 year from the calendar.",
+   "segs": [
+    [
+     "2026-11-16",
+     "2026-11-16",
+     "No school, staff and students"
+    ],
+    [
+     "2026-12-07",
+     "2026-12-07",
+     "No school, Q2 training day"
+    ],
+    [
+     "2026-12-18",
+     "2027-01-01",
+     "Winter break"
+    ],
+    [
+     "2027-01-15",
+     "2027-01-15",
+     "No school, teacher work day"
+    ]
+   ],
+   "days": [
+    [
+     "2026-11-04",
+     "12:30 release, parent conferences"
+    ],
+    [
+     "2026-11-05",
+     "12:30 release, parent conferences"
+    ],
+    [
+     "2027-01-11",
+     "Semester exams (11–14 Jan)"
+    ],
+    [
+     "2027-01-14",
+     "Semester ends"
+    ]
+   ],
+   "weekly": "Early release every Wednesday"
+  },
+  "nl": {
+   "name": "NL region Zuid",
+   "color": "nl",
+   "source": "Government.nl school holiday dates 2026–2027 and 2027–2028",
+   "segs": [
+    [
+     "2026-10-17",
+     "2026-10-25",
+     "Herfstvakantie"
+    ],
+    [
+     "2026-12-19",
+     "2027-01-03",
+     "Kerstvakantie"
+    ],
+    [
+     "2027-02-13",
+     "2027-02-21",
+     "Voorjaarsvakantie"
+    ],
+    [
+     "2027-04-24",
+     "2027-05-02",
+     "Meivakantie"
+    ],
+    [
+     "2027-07-24",
+     "2027-09-05",
+     "Zomervakantie"
+    ],
+    [
+     "2027-10-23",
+     "2027-10-31",
+     "Herfstvakantie"
+    ],
+    [
+     "2027-12-25",
+     "2028-01-09",
+     "Kerstvakantie"
+    ],
+    [
+     "2028-02-26",
+     "2028-03-05",
+     "Voorjaarsvakantie"
+    ],
+    [
+     "2028-04-29",
+     "2028-05-07",
+     "Meivakantie"
+    ]
+   ]
+  },
+  "be-fl": {
+   "name": "Belgium (Flanders)",
+   "color": "be",
+   "source": "La DH, 30 Jul 2026, Dutch-language community dates 2026–2027; 2027–28 not yet published",
+   "segs": [
+    [
+     "2026-11-02",
+     "2026-11-08",
+     "Herfstvakantie"
+    ],
+    [
+     "2026-12-21",
+     "2027-01-03",
+     "Kerstvakantie"
+    ],
+    [
+     "2027-02-08",
+     "2027-02-14",
+     "Krokusvakantie"
+    ],
+    [
+     "2027-03-29",
+     "2027-04-11",
+     "Paasvakantie"
+    ],
+    [
+     "2027-05-06",
+     "2027-05-07",
+     "Hemelvaart bridge"
+    ],
+    [
+     "2027-07-01",
+     "2027-08-31",
+     "Zomervakantie"
+    ]
+   ]
+  },
+  "be-fr": {
+   "name": "Belgium (Wallonia, Brussels FR)",
+   "color": "be",
+   "source": "La DH, 30 Jul 2026, French-language community dates 2026–2027; summer end and 2027–28 not yet published",
+   "segs": [
+    [
+     "2026-10-19",
+     "2026-11-01",
+     "Congé d'automne"
+    ],
+    [
+     "2026-12-21",
+     "2027-01-03",
+     "Vacances de Noël"
+    ],
+    [
+     "2027-02-22",
+     "2027-03-07",
+     "Congé de détente"
+    ],
+    [
+     "2027-04-26",
+     "2027-05-09",
+     "Vacances de printemps"
+    ],
+    [
+     "2027-07-03",
+     "2027-08-29",
+     "Vacances d'été (end date to confirm)"
+    ]
+   ]
+  },
+  "nrw": {
+   "name": "NRW",
+   "color": "de",
+   "source": "schulferien.org, Ferien Nordrhein-Westfalen 2026–2027; 2027–28 winter break onward not yet listed",
+   "segs": [
+    [
+     "2026-10-12",
+     "2026-10-24",
+     "Herbstferien"
+    ],
+    [
+     "2026-12-23",
+     "2027-01-06",
+     "Weihnachtsferien"
+    ],
+    [
+     "2027-03-22",
+     "2027-04-03",
+     "Osterferien"
+    ],
+    [
+     "2027-05-18",
+     "2027-05-18",
+     "Pfingstferien"
+    ],
+    [
+     "2027-07-19",
+     "2027-08-31",
+     "Sommerferien"
+    ],
+    [
+     "2027-10-23",
+     "2027-11-06",
+     "Herbstferien"
+    ]
+   ]
+  }
+ },
+ "markets": [
+  [
+   "Kerststad Valkenburg",
+   "nl",
+   "2026-11-13",
+   "2027-01-03"
+  ],
+  [
+   "Köln Dom",
+   "de",
+   "2026-11-16",
+   "2026-12-23"
+  ],
+  [
+   "Aachen",
+   "de",
+   "2026-11-20",
+   "2026-12-23"
+  ],
+  [
+   "Magisch Maastricht",
+   "nl",
+   "2026-11-27",
+   "2026-12-27"
+  ],
+  [
+   "Liège Village de Noël",
+   "be",
+   "2026-11-27",
+   "2026-12-30"
+  ],
+  [
+   "Monschau (weekends)",
+   "de",
+   "2026-11-27",
+   "2026-12-20"
+  ]
+ ]
+}

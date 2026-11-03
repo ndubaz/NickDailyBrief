@@ -1,6 +1,6 @@
-# Readbook data format (v3.0)
+# Readbook data format (v4.0)
 
-The site is static. `index.html` + `app.js` + `styles.css` never change day to day; each morning's run only writes data files. The page still renders v2.5 editions (Editions 1 and 2): see "Compatibility" at the end.
+The site is static. `index.html` + `app.js` + `styles.css` never change day to day; each morning's run only writes data files. The page renders every earlier format (2.5 and 3.0) as well: see "Compatibility" at the end. Everything on the page is expanded by default; nothing is folded.
 
 ## Files the daily run writes
 
@@ -8,13 +8,18 @@ The site is static. `index.html` + `app.js` + `styles.css` never change day to d
 |---|---|
 | `data/editions/YYYY-MM-DD.json` | Create the day's edition (format below). Never edit past editions. |
 | `data/index.json` | Set `latest` to today's date and append `{"date","edition"}` to `editions`. |
+| `data/conflicts.json` | Append one dated fact entry to each theatre that had a reportable event. Never edit or delete old entries. No status labels. |
+| `data/world-series.json` | Append one row per published value to each series the source published. |
 | `data/incidents.json` | Append each new hybrid incident (same id never twice). When an older incident is newly attributed or charged, update its `attr` in place **and** append an entry to `attrLog`. Prune incidents older than 400 days. |
 | `data/threads.json` | Append a dated log entry to each thread that moved; open new threads; set `status`. Never delete entries. |
 | `data/horizon.json` | Add new dated events (`added` = today); set `updated` = today on an event you changed; remove events whose date has passed. |
-| `data/fx.json` | Append today's ECB EUR/USD reference rate when the ECB has published it (about 16:00 CET; a morning run appends the previous business day). One value per ECB business day, ascending, no duplicates. |
+| `data/fx.json` | Append the ECB EUR reference rate for each business day not yet listed (the ECB publishes about 16:00 CET, so a morning run appends yesterday). Stored exactly as the ECB quotes it, US dollars per euro; the page inverts to euros per dollar. |
 | `data/series.json` | Append the last close for each series key; keep the last 30 trading days per key. |
-| `data/canes.json` | Append each completed Carolina game; update `record`, `points`, `metro`. |
-| `data/bins.json` | Only when a new Rd4 calendar is supplied: `dates` = `[["YYYY-MM-DD","GFT"], ...]`. |
+| `data/canes.json` | Append each completed Carolina game; refresh `upcoming` (next 15 scheduled games with UTC start); update `record`, `points`, `metro`. |
+| `data/calendar.json` | Only when a school year or holiday list is newly published: add the missing segments. Otherwise leave alone. |
+| `data/bins.json` | Only when a new Rd4 calendar is supplied. |
+
+Never written by the run: `data/deadlines.json` (Nick's own list).
 
 The standing files are the Readbook's memory. The page reads them; it never writes.
 
@@ -23,24 +28,39 @@ The standing files are the Readbook's memory. The page reads them; it never writ
 - Plain text, no HTML. `**bold**`, `*italic*`.
 - Citations: `[12]` or `[3, 45]` at the end of a sentence; numbers refer to the edition's `sources`.
 - Every link appears once, in `sources`. No URLs in body text.
-- Badges: `"badge": "NEW"` or `"UPDATED"`; omit when unchanged. The Today strip counts badges, and the "New only" toggle hides everything without one.
+- Badges: `"badge": "NEW"` or `"UPDATED"`; omit when unchanged. The Today strip counts badges and the "New only" toggle hides everything without one. Standing files carry no badges; the page derives them from dates.
 - Empty arrays are fine: the page shows a one-line "No significant change today."
+- The exchange rate is always USD/EUR, euros per dollar, four decimals (0.8916), in the strip, the cards, the rates table and the pay line. The page relabels and inverts any EUR/USD row it finds, but do not rely on that.
 - Never write a home address, postcode or house number anywhere in `data/`. Town names are fine.
+- The World part is facts and summaries only: what happened, who said what, what is scheduled. No assessments, no "what it means", no So what lines.
 
 ## Edition object
 
 ```
 {
- "v": "3.0", "date": "YYYY-MM-DD", "weekday": "Monday", "edition": N, "lookback": "31 Oct – 2 Nov",
+ "v": "4.0", "date": "YYYY-MM-DD", "weekday": "Monday", "edition": N, "lookback": "31 Oct – 2 Nov",
  "note": "optional one-liner under the masthead",
  "today": {
-   "weather": {"now","hi","lo","tomorrow","sunrise","sunset","src"},
-   "canes": {"line": "W 7–0 vs WPG", "sub": "12-2-2 · …", "src"}   (optional; when absent the strip derives it from canes.json),
+   "weather": {"now","hi","lo","tomorrow","sunrise","sunset","src",
+               "week": [["YYYY-MM-DD", hi, lo, rainPct, "wind"], ... 7 rows from today]},
+   "canes": {"line": "W 7–0 vs WPG", "sub": "12-2-2 · …", "src"}   (optional; the strip derives it from canes.json when absent),
    "markets": [["S&P 500","−1.8%","down"], ...4 rows; dir = up|down|flat],
    "items": [{"k":"Wed","t":"…","cat":"nl|be|de|us|mkt|pro"}]
  },
- "five": [{"t","to": "<element id>","part": "sec|watch|pro|money|home|hockey"}] (exactly 5),
+ "five": [{"t","to": "<element id>","part": "world|sec|watch|pro|money|home|hockey"}] (exactly 5),
  "pick": {"t","to"},
+ "world": {
+   "items": [{"region","h","body","next","conf","badge"}] (3–5; next = what is scheduled, dated),
+   "numbers": ["ru-personnel-day","ru-uav-day","brent","ttf"] (keys into world-series.json or series.json, 4–6),
+   "feature": {"rota": "mon|tue|wed|thu|fri|sat|sun", "kind": "Monday · Theatre in numbers", "title", "body": ["para", ...],
+               "table": {"head":[...],"rows":[[...]]} | omitted,
+               "series": "<world-series key charted over 12 months>" | omitted,
+               "bars": {"label", "rows": [[label, value], ...]} | omitted,
+               "timeline": [[date, text, hybridRelevant:bool], ...] | omitted,
+               "geo": {"title","bbox":[lon0,lat0,lon1,lat1],"points":[{"n","lat","lon","k":"city|port|base|chokepoint","align":"left"?}],
+                       "lines":[{"a":[lat,lon],"b":[lat,lon],"t":"optional label","solid":bool}],"labels":[{"t","lat","lon"}]} | omitted,
+               "after": ["closing para", ...] | omitted}
+ },
  "hybrid": {
    "incidents": [{"id","date","when","code","attr":"A0..A5","local":bool,"country","place","lat","lon","text","badge"}],
    "leads": [{"id":"lead-1","title","teaser","rows":[["What","…"],["Attribution","…"],...],"sw"}],
@@ -49,7 +69,7 @@ The standing files are the Readbook's memory. The page reads them; it never writ
    "week": {"t": "Fridays only: week in hybrid summary"} | null,
    "note": "…"
  },
- "europe": [item], "world": [item + "region"], "euregio": [item] (section omitted when empty),
+ "europe": [item], "euregio": [item] (section omitted when empty),
  "army": {"cards": [{"l","v","n"}] (4), "items": [item]},
  "aperture": {"contrarian","weak"|null,"number":{"n","t"},"inject","question",
    "deep": {"kind","title","body":["para",...],"table": {"head":[...],"rows":[[...]]} | null},
@@ -67,9 +87,8 @@ The standing files are the Readbook's memory. The page reads them; it never writ
    "scores": [[away, awayGoals, home, homeGoals, ""|"OT"|"SO"|"pending"]], "scoresDate", "scoresNote", "scoresSrc",
    "news": [item] (3–5)
  },
- "planner": {"open": true on Mondays (optional; the page defaults to open on Mondays),
-   "calFrom","calTo","events": [[date,"nl|be|de|us|mkt|pro",label,where,what,effect]],
-   "school": {"from","to","ticks":[...],"rows":[{"name","color","segs":[[from,to]]}],"note"} | null,
+ "planner": {
+   "events": [[date,"nl|be|de|us|mkt|pro",label,where,what,effect]] (only what calendar.json does not already hold),
    "season": {"title","intro","from","to","ticks","rows":[{"name","sub","color","segs"}],"notes"} | null,
    "otd": {"title","body"}, "culture": {"title","body"} | null},
  "sources": [[n,title,outlet,url]], "flags": "…", "changelog": [[date,text]]
@@ -78,78 +97,81 @@ The standing files are the Readbook's memory. The page reads them; it never writ
 
 `item` = `{"h","tag","conf","badge","body","sw","fy"}` (all optional except `h`).
 
-### Changes from v2.5
+The World feature rota: Monday "Theatre in numbers" (table), Tuesday "Actor on the record" (dated quotes, table of capabilities), Wednesday "Trend line" (`series`), Thursday "Chronology" (`timeline`, 30 days), Friday "Week on the board" (table of what moved per theatre), Saturday "Geography" (`geo` schematic), Sunday "The record" (`timeline` over 12 months plus `series`). A worked example is in `data/examples/edition-4.0-sample.json`.
 
-- `planner.threads` and `planner.horizon` are gone; threads and horizon live in `threads.json` and `horizon.json`.
-- `today.fx` is gone; the Today strip and the USD/EUR tracker read `fx.json`.
-- `hockey.canes.record` is no longer needed; the season strip and record line come from `canes.json`. The run appends the game to `canes.json` instead.
-- `money.cards` rows gain an optional seventh field, `series`: a key into `series.json` (`"spx"`, `"ndx"`, `"aex"`, `"brent"`, `"ttf"`). The card then shows a 30-day sparkline. Example: `["S&P 500", "7,580.07", "−1.8%", "down", "Fri close", 56, "spx"]`. The page also accepts the key in the sixth position when a card has no source number, and falls back to matching the label (S&P 500, Nasdaq, AEX, Brent, Dutch TTF) when the field is absent.
-- `five[].part` may be `"watch"` for a Watchlist item.
-- `"v": "3.0"`.
+### Changes from v3.0
+
+- `world` is an object (items, numbers, feature) instead of an array; the World part is Part 1, before Security.
+- `planner.calFrom`, `calTo`, `school`, `open` are gone: the page draws any month from the merged calendar and reads school breaks from `calendar.json`. `planner.events` only carries what the standing calendar does not already hold.
+- `today.weather.week` added (7-day forecast for the week strip).
+- `five[].part` may be `"world"`; `to` may be `board`, `world`, `numbers`, `feature`.
+- `"v": "4.0"`.
 
 ## Standing files
 
-### `data/threads.json`
+### `data/conflicts.json`
 
 ```
-{ "threads": [ { "id": "cold-chain", "name": "Cold-chain attacks", "status": "moving|quiet|resolved", "opened": "2026-11-02",
-    "log": [ {"date": "2026-11-02", "t": "France 11–12 Oct, then seven countries 1–2 Nov. Belgian criminal case open. [2, 45]",
-              "src": [[2,"title","outlet","url"],[45,"title","outlet","url"]]} ] } ] }
+{ "theatres": [ { "id": "ru-ua", "name": "Russia–Ukraine", "short": "Ukraine", "lp": "above", "lat": 48.5, "lon": 35.0,
+    "log": [ {"date": "2026-11-03", "t": "Fact sentence(s) with citations. [14, 18]", "src": [[14,"title","outlet","url"], ...]} ] } ] }
 ```
 
-- Each run appends one log entry per thread that moved (newest last). Entries are never edited or deleted.
-- `[n]` in `t` refers to the sources of the edition that added the entry, so copy those source rows into the entry's `src`; the page renders the superscript as a direct link. An entry with no citations carries `"src": []`.
-- Page rules: threads ordered by most recent log date; a thread whose last entry is older than 30 days and whose status is not `resolved` is shown as `quiet`; `resolved` threads disappear 7 days after their last entry. The row shows the latest entry with NEW when it is dated today and UPDATED when dated yesterday; tapping expands the full dated log.
+Ten theatres. Append one entry per theatre per day it had a reportable event, copying the cited source rows into `src`. Never edit or delete entries; do not add status fields. The page orders rows by last entry, draws a four-week activity bar from the dates, sizes the map marker by the 7-day count, and shows NEW when the last entry is today, UPDATED when yesterday. `short` and `lp` (above, below, left, right) place the map label.
 
-### `data/horizon.json`
+### `data/world-series.json`
 
 ```
-{ "events": [ { "id": "us-midterms-2026", "date": "2026-11-03", "dateText": "3 Nov", "t": "US midterm elections",
-    "n": "Posture, NATO rhetoric, Iran timing", "h": true, "status": "confirmed|reported", "added": "2026-11-02",
-    "updated": "2026-11-05" (optional), "src": [[n,"title","outlet","url"]] } ] }
+{ "meta": { "<key>": {"label","unit","cadence":"daily|weekly","source","url","decimals","note"} },
+  "series": { "<key>": [["YYYY-MM-DD", value], ...] } }
 ```
 
-- Events without a firm date carry `date` as the first day of their window and `dateText` as the human text ("early 2027").
-- Page rules: sorted by date; grouped into Next 14 days, 15 to 90 days, Beyond 90 days; "today", "tomorrow" or "in N days" beside each date; events dated before today are dropped; NEW when `added` is today, UPDATED when `updated` is today; filled marker when `h` is true; `reported` shown as a small label.
+Append one row per published value; never backfill estimates. A weekly series keeps its weekly cadence and the tile shows the as-of date. New keys need a `meta` entry.
 
-### `data/fx.json`
-
-```
-{ "source": "ECB euro foreign exchange reference rates", "url": "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist.zip",
-  "pair": "EUR/USD", "updated": "2026-11-02", "series": [ ["2024-11-01", 1.0885], ... ascending, one value per ECB business day ] }
-```
-
-Two years of history are kept. Values are stored exactly as the ECB quotes them, US dollars per euro. The page inverts them and shows euros per dollar (USD/EUR), so up means dollar pay buys more euros. See README for extending it by hand.
-
-### `data/series.json`
+### `data/calendar.json`
 
 ```
-{ "spx": [["2026-10-30", 7580.07], ...], "ndx": [...], "aex": [...], "brent": [...], "ttf": [...] }
+{ "from", "to", "holidays": [{"date","c":"nl|be|de|us|info","n","note"}],
+  "school": { "<system>": {"name","color","source","segs":[[from,to,label]],"days":[[date,label]],"weekly"} },
+  "markets": [[name, c, from, to]] }
 ```
 
-Thirty trading days per key, ascending, last close only. `ndx` is the Nasdaq Composite (matching the "Nasdaq" card), `brent` the ICE Brent front month in $/bbl, `ttf` the TTF front month in €/MWh. Keys starting with `_` are notes and are ignored.
+Edited rarely. Add a school year when the ministry publishes it. The page merges holidays, school breaks, markets, bins, Canes games, horizon events, deadlines and `planner.events` into one calendar with month navigation, a seven-day strip, countdown tiles and the twelve-month school overlap chart.
 
-### `data/canes.json`
-
-```
-{ "season": "2026-27", "team": "CAR", "games": [ {"date": "2026-11-01", "opp": "WPG", "home": true, "gf": 7, "ga": 0, "res": "W|L|OTL|SOL"} ],
-  "record": "12-2-2", "points": 26, "metro": 1, "updated": "2026-11-01" }
-```
-
-Regular-season games only, ascending by date. The page draws the last ten results and the record line; when an older edition is viewed it recomputes the record from the games up to that date.
-
-### `data/incidents.json`
-
-As before, plus:
+### `data/deadlines.json`
 
 ```
-"attrLog": [ {"id": "<incident id>", "date": "2026-11-05", "from": "A1", "to": "A4", "t": "Lithuania charged two suspects", "src": [[n,"title","outlet","url"]]} ]
+{ "items": [ {"name","date","note","cat":"home|money|school|car|docs","updated":"YYYY-MM-DD"} ] }
 ```
 
-The Hybrid section lists the last 7 days of `attrLog` under "Attribution moves" and the last 30 days of incidents flagged `local` or within 100 km under "Within 100 km".
+Hand-maintained by Nick. The run never writes it. No addresses or document numbers.
+
+### `data/threads.json`, `data/horizon.json`, `data/fx.json`, `data/series.json`, `data/canes.json`, `data/incidents.json`
+
+As in 3.0 (see the 3.0 notes kept below), with one addition to `canes.json`:
+
+```
+"upcoming": [ {"date": "2026-11-05", "opp": "NYI", "home": false, "utc": "2026-11-06T00:00:00Z"} ]
+```
+
+The page converts `utc` to CET for the schedule strip, the calendar and the countdown tile.
+
+#### threads.json
+`{ "threads": [ { "id", "name", "status": "moving|quiet|resolved", "opened", "log": [ {"date", "t", "src": [[n,title,outlet,url]]} ] } ] }`. Append entries; never edit. Quiet after 30 days without an entry; resolved threads disappear 7 days after their last entry.
+
+#### horizon.json
+`{ "events": [ { "id", "date", "dateText", "t", "n", "h": bool, "status": "confirmed|reported", "added", "updated", "src" } ] }`. Events without a firm date carry `date` as the first day of their window.
+
+#### fx.json
+`{ "source", "url", "pair": "EUR/USD", "updated", "series": [["YYYY-MM-DD", usd_per_euro], ...] }`. Two years kept. The page shows euros per dollar.
+
+#### series.json
+`{ "spx": [...], "ndx": [...], "aex": [...], "brent": [...], "ttf": [...] }`, 30 trading days each, last close only. `ndx` is the Nasdaq Composite, `brent` the ICE front month in $/bbl, `ttf` the TTF front month in €/MWh.
+
+#### incidents.json
+As before, plus `attrLog`: `[{"id","date","from","to","t","src"}]`.
 
 ## Compatibility
 
-- A v2.5 edition that carries `planner.threads` or `planner.horizon` renders them under the Watchlist when `threads.json` or `horizon.json` is absent or empty; when the standing files have content, they win.
-- When `fx.json` is missing or empty the USD/EUR tracker and the strip tile are hidden.
-- When `series.json` lacks a key, the card shows no sparkline. When `canes.json` is missing, the Hockey part falls back to the edition's `hockey.canes.record`.
+- A 3.0 or 2.5 edition whose `world` is an array renders it under Developments; the board, the numbers and the planner come from the standing files; the feature block says there is none.
+- A 2.5 edition's `planner.threads` and `planner.horizon` still render when the standing files are empty; `planner.school` renders when `calendar.json` is missing.
+- When `fx.json` is missing the USD/EUR tracker and tile are hidden; when a series key is missing the card has no sparkline; when `canes.json` is missing the Hockey part falls back to the edition's `hockey.canes.record`.

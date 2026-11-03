@@ -1,7 +1,7 @@
 {
  "season": "2026-27",
  "team": "CAR",
- "source": "NHL API (api-web.nhle.com club-schedule-season and standings), 2 Nov 2026",
+ "source": "NHL API (api-web.nhle.com club-schedule-season and standings), 3 Nov 2026",
  "games": [
   {
    "date": "2026-09-29",
@@ -135,5 +135,97 @@
  "record": "12-2-2",
  "points": 26,
  "metro": 1,
- "updated": "2026-11-01"
+ "updated": "2026-11-01",
+ "upcoming": [
+  {
+   "date": "2026-11-03",
+   "opp": "NSH",
+   "home": false,
+   "utc": "2026-11-04T01:00:00Z"
+  },
+  {
+   "date": "2026-11-05",
+   "opp": "NYI",
+   "home": false,
+   "utc": "2026-11-06T00:00:00Z"
+  },
+  {
+   "date": "2026-11-07",
+   "opp": "CHI",
+   "home": true,
+   "utc": "2026-11-08T01:00:00Z"
+  },
+  {
+   "date": "2026-11-12",
+   "opp": "SEA",
+   "home": false,
+   "utc": "2026-11-12T17:00:00Z"
+  },
+  {
+   "date": "2026-11-14",
+   "opp": "SEA",
+   "home": true,
+   "utc": "2026-11-14T18:00:00Z"
+  },
+  {
+   "date": "2026-11-19",
+   "opp": "MTL",
+   "home": true,
+   "utc": "2026-11-20T00:00:00Z"
+  },
+  {
+   "date": "2026-11-21",
+   "opp": "EDM",
+   "home": true,
+   "utc": "2026-11-21T18:00:00Z"
+  },
+  {
+   "date": "2026-11-22",
+   "opp": "NYR",
+   "home": false,
+   "utc": "2026-11-22T17:30:00Z"
+  },
+  {
+   "date": "2026-11-25",
+   "opp": "TBL",
+   "home": false,
+   "utc": "2026-11-26T00:00:00Z"
+  },
+  {
+   "date": "2026-11-28",
+   "opp": "OTT",
+   "home": true,
+   "utc": "2026-11-29T00:00:00Z"
+  },
+  {
+   "date": "2026-11-30",
+   "opp": "NYR",
+   "home": false,
+   "utc": "2026-12-01T00:00:00Z"
+  },
+  {
+   "date": "2026-12-03",
+   "opp": "CBJ",
+   "home": true,
+   "utc": "2026-12-04T00:00:00Z"
+  },
+  {
+   "date": "2026-12-05",
+   "opp": "TOR",
+   "home": true,
+   "utc": "2026-12-06T00:00:00Z"
+  },
+  {
+   "date": "2026-12-08",
+   "opp": "NYR",
+   "home": true,
+   "utc": "2026-12-09T00:00:00Z"
+  },
+  {
+   "date": "2026-12-11",
+   "opp": "NYI",
+   "home": true,
+   "utc": "2026-12-12T00:00:00Z"
+  }
+ ]
 }
