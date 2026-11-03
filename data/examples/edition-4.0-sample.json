@@ -545,7 +545,7 @@
     "n": "DCIS leads a joint probe into August fridge failures at 7+ bases. [7]"
    }
   ],
-  "items": [
+  "dod": [
    {
     "h": "Was it a hack? Pentagon investigators look at commissary freezers",
     "tag": "DoD",
@@ -553,7 +553,9 @@
     "badge": "NEW",
     "body": "Four officials told Reuters the Pentagon treats August refrigeration outages at commissaries as a possible cyberattack. Sites include Fort Irwin, Fort Huachuca, Holloman, Robins and Naval Station Newport. The US and France are cooperating on the French case; there is no proof yet that the US failures were a hack. [7]",
     "sw": "If the probe confirms a hack, expect a department-wide check of facility controllers. Get ahead of it: ask Benelux garrison facilities staff which cold rooms are remote-managed."
-   },
+   }
+  ],
+  "news": [
    {
     "h": "The Europe-assigned Typhon battery fires a Tomahawk, but Germany is still off",
     "tag": "USAREUR-AF",
@@ -561,13 +563,20 @@
     "badge": "NEW",
     "body": "The Mid-Range Capability battery of 3rd Battalion, 12th Field Artillery, under Multi-Domain Command Europe (MDC-E), fired a Tomahawk from the Typhon launcher at China Lake, California, on 28 Sep. MDC-E says the battery is certified, but there are “no current plans” to deploy it to Europe; the Pentagon cancelled the 2026 Germany deployment in May. [25]",
     "sw": "Without US ground-launched long-range fires in theatre, Berlin's own deep-strike plans weigh more in the regional plans."
-   },
-   {
-    "h": "Personnel and promotions",
-    "body": "The FY27 colonel board (Army competitive category) is listed as sitting from 20 Oct to 5 Nov; the lieutenant colonel board convened on 9 Sep. [26] No new evaluation or assignment policy for field-grade officers surfaced in the window.",
-    "fy": "Results post on the Army Human Resources Command (HRC) site some weeks after a board recesses; nothing to do until the release message."
    }
-  ]
+  ],
+  "congress": [],
+  "career": {
+   "items": [
+    {
+     "h": "Personnel and promotions",
+     "body": "The FY27 colonel board (Army competitive category) is listed as sitting from 20 Oct to 5 Nov; the lieutenant colonel board convened on 9 Sep. [26] No new evaluation or assignment policy for field-grade officers surfaced in the window.",
+     "fy": "Results post on the Army Human Resources Command (HRC) site some weeks after a board recesses; nothing to do until the release message."
+    }
+   ],
+   "dates": [],
+   "note": "Sample: career items are what touches a field-grade officer in a NATO billet in Europe."
+  }
  },
  "aperture": {
   "contrarian": "Monday's oil drop prices a deal Washington has not accepted. Araghchi's two-day plan needs the US to end the blockade, lift oil sanctions and stop fighting on every front; there are no direct talks; and US jets hit Qeshm the same day. Earlier sell-offs in this war reversed when talks failed. [27, 17] The best case for the drop holding: Goldman puts the war premium near $27 a barrel, so even a partial deal takes a lot out. [17]",

@@ -425,6 +425,7 @@
       (cal.markets || []).forEach(function (m) { ev.push({ date: m[2], end: m[3], cat: "mkt", t: m[0] + " opens", sub: "to " + fmtShort(m[3]), src: "calendar" }); });
     }
     ((ctx.deadlines && ctx.deadlines.items) || []).forEach(function (d) { ev.push({ date: d.date, cat: "deadline", t: d.name, sub: d.note || d.cat || "", src: "deadlines" }); });
+    (((E.army || {}).career || {}).dates || []).forEach(function (d) { ev.push({ date: d[0], cat: "pro", t: plain(d[1]), sub: "Career milestone", src: "edition" }); });
     var seen = {};
     return ev.filter(function (e) { if (!e.date || !/^\d{4}-\d{2}-\d{2}$/.test(e.date)) return false; var k = e.date + "|" + e.cat + "|" + e.t; if (seen[k]) return false; seen[k] = 1; return true; }).sort(function (a, b) { return a.date < b.date ? -1 : a.date > b.date ? 1 : 0; });
   }
@@ -655,9 +656,18 @@
     /* ===== Part 4 · Profession ===== */
     var AR = E.army || {}, AP = E.aperture || {};
     h += part("pro", "Part 4", "Profession", "The Army as an institution, and the thinking pieces.", "p-pro");
-    h += '<section id="army" class="pro"><h2>US Army &amp; USAREUR-AF</h2>';
+    h += '<section id="army" class="pro"><h2>Defence &amp; Army</h2>';
     if (AR.cards) h += '<div class="cards">' + AR.cards.map(function (c) { return '<div class="card"><div class="lbl">' + esc(c.l) + '</div><div class="val">' + esc(c.v) + "</div><p>" + rich(c.n) + "</p></div>"; }).join("") + "</div>";
-    h += items(AR.items) + "</section>";
+    var AG = [["dod", "Department of Defense", AR.dod, "Nothing new from the Pentagon in the window."], ["armynews", "Army and USAREUR-AF", AR.news || AR.items, "No Army news in the window."], ["congress", "Congress and policy", AR.congress, "No new legislation or policy in the window."]];
+    AG.forEach(function (g) { h += '<h3 id="' + g[0] + '">' + g[1] + "</h3>" + items(g[2], null, g[3]); });
+    var CR = AR.career || {};
+    h += '<h3 id="career">Career <span class="small">boards, assignments, education, pay and benefits</span></h3>';
+    if (CR.items && CR.items.length) h += items(CR.items);
+    else if (CR.note) h += "<p>" + rich(CR.note) + "</p>";
+    else h += quiet("Nothing new that touches your career in the window.");
+    if (CR.dates && CR.dates.length) h += table(["Date", "Milestone"], CR.dates.filter(function (d) { return d[0] >= TD; }).map(function (d) { var n = daysBetween(TD, d[0]); return '<tr class="' + (n <= 14 ? "soon" : "") + '"><td class="d">' + esc(fmtShort(d[0])) + " · " + (n === 0 ? "today" : n + " d") + "</td><td>" + rich(d[1]) + "</td></tr>"; }).join(""));
+    if (CR.note && CR.items && CR.items.length) h += '<p class="small" style="margin-top:8px">' + rich(CR.note) + "</p>";
+    h += "</section>";
     h += '<section id="aperture" class="pro"><h2>Aperture</h2><div class="ap">';
     if (AP.contrarian) h += '<div class="ap-c"><div class="lbl">Contrarian read</div><p>' + rich(AP.contrarian) + "</p></div>";
     if (AP.weak) h += '<div class="ap-c"><div class="lbl">Weak signal</div><p>' + rich(AP.weak) + "</p></div>";
@@ -944,7 +954,11 @@
           (ed.euregio || []).forEach(function (i) { add(i.h, "euregio", "Euregio"); });
           ((ed.hybrid || {}).leads || []).forEach(function (l) { add(l.title, l.id, "Lead"); });
           ((ed.hybrid || {}).incidents || []).forEach(function (i) { add(i.place, "hybrid", "Incident"); });
-          ((ed.army || {}).items || []).forEach(function (i) { add(i.h, "army", "Army"); });
+          var ar = ed.army || {};
+          (ar.items || []).concat(ar.news || []).forEach(function (i) { add(i.h, "armynews", "Army"); });
+          (ar.dod || []).forEach(function (i) { add(i.h, "dod", "DoD"); });
+          (ar.congress || []).forEach(function (i) { add(i.h, "congress", "Congress"); });
+          ((ar.career || {}).items || []).forEach(function (i) { add(i.h, "career", "Career"); });
           ((ed.nl || {}).items || []).forEach(function (i) { add(i.h, "nl", "Netherlands"); });
           ((ed.offduty || {}).items || []).forEach(function (i) { add(i.h, "offduty", "Off duty"); });
           ((ed.hockey || {}).news || []).forEach(function (i) { add(i.h, "hockey", "NHL"); });

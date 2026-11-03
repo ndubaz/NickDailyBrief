@@ -70,7 +70,12 @@ The standing files are the Readbook's memory. The page reads them; it never writ
    "note": "…"
  },
  "europe": [item], "euregio": [item] (section omitted when empty),
- "army": {"cards": [{"l","v","n"}] (4), "items": [item]},
+ "army": {"cards": [{"l","v","n"}] (4),
+   "dod": [item] (Department of Defense: Secretary, posture, budget execution, joint force),
+   "news": [item] (Army and USAREUR-AF: units, exercises, equipment, people),
+   "congress": [item] (NDAA, appropriations, hearings, nominations, policy with a bill or directive behind it),
+   "career": {"items": [item] (boards, assignments, education, pay and benefits, as they touch a field-grade officer in Europe),
+              "dates": [["YYYY-MM-DD", "milestone"]] (optional; also shown on the calendar), "note": "optional line"}},
  "aperture": {"contrarian","weak"|null,"number":{"n","t"},"inject","question",
    "deep": {"kind","title","body":["para",...],"table": {"head":[...],"rows":[[...]]} | null},
    "longread": {"title","outlet","url","why"} | null, "rota": "mon|tue|wed|thu|fri|sat|sun"},
@@ -105,6 +110,7 @@ The World feature rota: Monday "Theatre in numbers" (table), Tuesday "Actor on t
 - `planner.calFrom`, `calTo`, `school`, `open` are gone: the page draws any month from the merged calendar and reads school breaks from `calendar.json`. `planner.events` only carries what the standing calendar does not already hold.
 - `today.weather.week` added (7-day forecast for the week strip).
 - `five[].part` may be `"world"`; `to` may be `board`, `world`, `numbers`, `feature`.
+- `army.items` is split into `dod`, `news`, `congress` and `career` (3.0 editions with `items` render under Army and USAREUR-AF). Jump ids: `army`, `dod`, `armynews`, `congress`, `career`.
 - `"v": "4.0"`.
 
 ## Standing files
