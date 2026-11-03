@@ -520,3 +520,12 @@ tr.h-act td{background:color-mix(in srgb,var(--crit) 8%,transparent)}
 .wp.unk{border-left-color:var(--line)}
 .wp:not(.unk):not(.vac):not(.pend){border-left-color:var(--pc)}
 .wp:hover{background:var(--accent-soft)}
+/* defence priority topics and quotes */
+.regions.topics{margin-top:var(--s1)}
+.regions span.zero{color:var(--muted);border-style:dashed}
+.regions span.zero b{color:var(--muted)}
+.words{display:grid;gap:var(--s2)}
+blockquote.word{margin:0;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--pc);border-radius:var(--r-card);padding:var(--s3) var(--s4)}
+blockquote.word p{font-size:16px;line-height:1.45;margin:0 0 var(--s1)}
+blockquote.word footer{font-size:13.5px;color:var(--muted)}
+blockquote.word footer b{color:var(--ink)}

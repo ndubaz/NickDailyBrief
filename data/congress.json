@@ -332,8 +332,8 @@
    "updated": null
   },
   {
-   "id": "forscom",
-   "post": "US Army Forces Command",
+   "id": "westhem",
+   "post": "US Army Western Hemisphere Command",
    "tier": "army4",
    "senate": true,
    "holder": null,
@@ -341,6 +341,18 @@
    "acting": false,
    "src": [],
    "updated": null
+  },
+  {
+   "id": "autowarcom",
+   "post": "Autonomous Warfare Command (AUTOWARCOM)",
+   "tier": "army4",
+   "senate": true,
+   "holder": null,
+   "since": null,
+   "acting": false,
+   "src": [],
+   "updated": null,
+   "note": "tier, rank and parent to confirm from the establishing order"
   },
   {
    "id": "t2com",

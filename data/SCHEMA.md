@@ -84,6 +84,7 @@ The standing files are the Readbook's memory. The page reads them; it never writ
    "ttp": {"title","body":["para",...]} | null (Saturdays: week in war, tactics, techniques and procedures)},
  "frontier": {"items": [item] (3–5: AI, chips, robotics, autonomy; only a release, a published result or a shipped capability dated in the window)},
  "army": {"cards": [{"l","v","n"}] (4),
+   "words": [{"who","role","where","date","quote","context","badge"}] (senior leaders on the record: speeches, testimony, statements; 1–3 a day when there are any),
    "depth": {"rota":"mon|wed|fri","kind","title","body":["para",...],"table": {...} | omitted,"bars": {"label","rows":[[label,value]]} | omitted} | null
             (Mon readiness and recruiting in numbers; Wed an acquisition programme in numbers; Fri the week's personnel and policy decisions),
    "dod": [item] (Department of Defense: Secretary, posture, budget execution, joint force),
@@ -116,6 +117,8 @@ The standing files are the Readbook's memory. The page reads them; it never writ
 ```
 
 `item` = `{"h","tag","conf","badge","body","sw","fy"}` (all optional except `h`).
+
+Defence items carry priority-topic tags in `tag` (several separated by ` · `): `Autonomy` (AUTOWARCOM and defence autonomy), `Leaders' words`, `SOF`, `Strategy`, `Posture` (posture and basing), `Force design`. The page counts them in a chip row at the top of Defence & Army so gaps are visible; other tags (DoD, Army, USAREUR-AF, NATO, a country) stay allowed.
 
 The World feature rota: Monday "Theatre in numbers" (table), Tuesday "Actor on the record" (dated quotes, table of capabilities), Wednesday "Trend line" (`series`), Thursday "Chronology" (`timeline`, 30 days), Friday "Week on the board" (table of what moved per theatre), Saturday "Geography" (`geo` schematic), Sunday "The record" (`timeline` over 12 months plus `series`). A worked example is in `data/examples/edition-4.0-sample.json`.
 

@@ -729,8 +729,14 @@
     h += part("pro", "Part 4", "Profession", "Inside the US military, the allies you work beside, and the technology of the fight.", "p-pro");
     h += '<section id="army" class="pro"><h2>Defence &amp; Army</h2>';
     if (AR.cards) h += '<div class="cards">' + AR.cards.map(function (c) { return '<div class="card"><div class="lbl">' + esc(c.l) + '</div><div class="val">' + esc(c.v) + "</div><p>" + rich(c.n) + "</p></div>"; }).join("") + "</div>";
+    var TOPICS = ["Autonomy", "Leaders' words", "SOF", "Strategy", "Posture", "Force design"], tcount = {};
+    [].concat(AR.dod || [], AR.news || AR.items || [], AR.congress || [], (AR.career || {}).items || [], DT.items || [], (AR.words || []).map(function (w) { return { tag: "Leaders' words" }; })).forEach(function (it) { String(it.tag || "").split(/\s*[,·]\s*/).forEach(function (t) { TOPICS.forEach(function (T) { if (t && t.toLowerCase() === T.toLowerCase()) tcount[T] = (tcount[T] || 0) + 1; }); }); });
+    h += '<div class="regions topics" title="Priority topics: items tagged today">' + TOPICS.map(function (T) { return '<span class="' + (tcount[T] ? "" : "zero") + '">' + esc(T) + "<b>" + (tcount[T] || 0) + "</b></span>"; }).join("") + "</div>";
     var AG = [["dod", "Department of Defense", AR.dod, "Nothing new from the Pentagon in the window."], ["armynews", "Army and USAREUR-AF", AR.news || AR.items, "No Army news in the window."], ["congress", "Congress and policy", AR.congress, "No new legislation or policy in the window."]];
-    AG.forEach(function (g) { h += '<h3 id="' + g[0] + '">' + g[1] + "</h3>" + items(g[2], null, g[3]); });
+    AG.forEach(function (g) {
+      h += '<h3 id="' + g[0] + '">' + g[1] + "</h3>" + items(g[2], null, g[3]);
+      if (g[0] === "dod" && AR.words && AR.words.length) h += '<h3 id="words">Senior leaders on the record</h3><div class="fug words">' + nq() + AR.words.map(function (w) { return '<blockquote class="word ' + fu(w.badge) + '"><p>“' + rich(w.quote) + '”</p><footer><b>' + esc(w.who) + "</b>" + (w.role ? ", " + esc(w.role) : "") + (w.where ? " · " + esc(w.where) : "") + (w.date ? " · " + esc(fmtShort(w.date)) : "") + badge(w.badge) + (w.context ? '<div class="small">' + rich(w.context) + "</div>" : "") + "</footer></blockquote>"; }).join("") + "</div>";
+    });
     var CR = AR.career || {};
     h += '<h3 id="career">Career <span class="small">boards, assignments, education, pay and benefits</span></h3>';
     if (CR.items && CR.items.length) h += items(CR.items);
