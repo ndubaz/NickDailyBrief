@@ -102,9 +102,9 @@ h3 .small{font-weight:400}
 h4{font-size:16.5px;margin:0 0 var(--s1);line-height:1.35}
 p.quiet{font-size:14px;color:var(--muted);font-style:italic;margin:0;padding:var(--s2) 0;border-top:1px dotted var(--line);display:flex;align-items:center;gap:var(--s2)}
 p.quiet::before{content:"";width:7px;height:7px;border:1.5px solid var(--muted);border-radius:50%;flex:none;opacity:.7}
-.nq{display:none}
+p.quiet.nq{display:none}
 body.newonly .fu:not(.new){display:none}
-body.newonly .fug.empty .nq{display:flex}
+body.newonly .fug.empty p.quiet.nq{display:flex}
 
 /* front */
 ol.five{list-style:none;padding:0;margin:0;display:grid;gap:var(--s2);counter-reset:f}
@@ -533,3 +533,60 @@ blockquote.word footer b{color:var(--ink)}
 /* top line: last data update */
 .topline{display:flex;justify-content:space-between;gap:var(--s2);flex-wrap:wrap;font-family:var(--f-mono);font-size:11.5px;color:var(--muted);padding:var(--s2) 0 0;border-bottom:1px dotted var(--line);padding-bottom:var(--s1)}
 .topline b{color:var(--ink);font-weight:500}
+/* 5.0 compact pass: weather and daylight, health list, exercise list, Congress tracker colours */
+.wx-in{display:grid;grid-template-columns:repeat(7,minmax(72px,1fr));gap:var(--s1);min-width:max-content}
+.wxd{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card);padding:6px var(--s2);font-size:12px;text-align:center;font-variant-numeric:tabular-nums}
+.wxd.today{border:2px solid var(--pc)}
+.wxd .wd{font-family:var(--f-display);font-weight:600;font-size:12.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.wxd .wd b{color:var(--ink)}
+.wxd .t{font-family:var(--f-mono);font-size:12.5px;margin-top:2px}
+.wxd .t .hi{color:var(--ink);font-weight:500}
+.wxd .r{font-family:var(--f-mono);font-size:11.5px;color:var(--accent)}
+.wxd .small{font-size:10.5px}
+.dl-line{margin:var(--s2) 0 var(--s2)}
+ul.hl{list-style:none;margin:0 0 var(--s2);padding:0;display:grid;gap:4px}
+ul.hl li{font-size:13px;line-height:1.35;padding:4px var(--s2);border-left:3px solid var(--warn);background:var(--surface);border-radius:var(--r-chip)}
+ul.hl li.h-act{border-left-color:var(--crit)}
+ul.hl li .chip.hs{margin:0 6px 0 0;vertical-align:1px}
+ul.hl li b{margin-right:4px}
+.hok{margin:0;line-height:1.6}
+.hok span{white-space:nowrap}
+ul.exl{list-style:none;margin:0;padding:0;display:grid;gap:3px}
+ul.exl li{display:grid;grid-template-columns:96px 1fr;gap:var(--s2);font-size:13px;line-height:1.35;padding:3px 0;border-bottom:1px solid var(--line)}
+ul.exl li .d{font-family:var(--f-mono);font-size:11.5px;color:var(--muted);padding-top:1px}
+ul.exl li em{font-style:normal;font-family:var(--f-mono);font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);margin-left:4px}
+ul.exl li.on .d{color:var(--accent)}
+ul.exl li.done{opacity:.6}
+.cg-key{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;margin:0 0 var(--s2)}
+.cg-key .k{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:-6px;vertical-align:-1px}
+.k.g-vac,.k.w-vac{background:var(--crit)} .k.g-prog,.k.w-prog{background:var(--accent)} .k.g-cr,.k.w-acting{background:var(--warn)} .k.g-done,.k.w-done{background:var(--up)} .k.g-off{background:var(--muted)} .k.w-ok{background:color-mix(in srgb,var(--muted) 45%,transparent)} .k.w-unk{background:transparent;border:1px dashed var(--muted)}
+.pipe.g-vac span.on i{background:var(--crit)} .pipe.g-prog span.on i{background:var(--accent)} .pipe.g-cr span.on i{background:var(--warn)} .pipe.g-done span.on i{background:var(--up)}
+.pipe.g-vac span.cur small{color:var(--crit)} .pipe.g-prog span.cur small{color:var(--accent)} .pipe.g-cr span.cur small{color:var(--warn)} .pipe.g-done span.cur small{color:var(--up)}
+.chip.st.g-vac{color:var(--crit);border-color:var(--crit)} .chip.st.g-prog{color:var(--accent);border-color:var(--accent)} .chip.st.g-cr{color:var(--warn);border-color:var(--warn)} .chip.st.g-done{color:var(--up);border-color:var(--up)} .chip.st.g-off{color:var(--muted);border-style:dashed}
+.cf{padding:var(--s2) var(--s3);border-left:4px solid var(--line)}
+.cf.g-vac{border-left-color:var(--crit)} .cf.g-prog{border-left-color:var(--accent)} .cf.g-cr{border-left-color:var(--warn)} .cf.g-done{border-left-color:var(--up)}
+.cf-top{font-size:14px}
+.cf-who{font-size:13px;margin:0 0 4px}
+.cg-quiet{margin:var(--s2) 0}
+.cg-quiet .g-vac{color:var(--crit)} .cg-quiet .g-cr{color:var(--warn)}
+.wposts{gap:6px}
+.wtier{display:flex;flex-wrap:wrap;align-items:center;gap:4px}
+.wtier .wtn{width:100%;margin:2px 0 0}
+.wpc{display:inline-block;text-decoration:none;color:var(--ink);font-size:11.5px;line-height:1.25;padding:3px 7px;border-radius:var(--r-chip);border:1px solid transparent;background:color-mix(in srgb,var(--muted) 14%,transparent)}
+.wpc.w-vac{background:color-mix(in srgb,var(--crit) 18%,transparent);border-color:var(--crit)}
+.wpc.w-prog{background:color-mix(in srgb,var(--accent) 18%,transparent);border-color:var(--accent)}
+.wpc.w-acting{background:color-mix(in srgb,var(--warn) 18%,transparent);border-color:var(--warn)}
+.wpc.w-done{background:color-mix(in srgb,var(--up) 18%,transparent);border-color:var(--up)}
+.wpc.w-unk{background:transparent;border:1px dashed var(--muted);color:var(--muted)}
+.wpc.chg{box-shadow:0 0 0 2px var(--pc)}
+.wpc:hover{filter:brightness(.95)}
+ul.wexc{list-style:none;margin:var(--s2) 0 var(--s1);padding:0;display:grid;gap:3px}
+ul.wexc li{font-size:13px;line-height:1.35;padding:3px var(--s2);border-left:3px solid var(--line)}
+ul.wexc li.w-vac{border-left-color:var(--crit)} ul.wexc li.w-prog{border-left-color:var(--accent)} ul.wexc li.w-acting{border-left-color:var(--warn)} ul.wexc li.w-done{border-left-color:var(--up)}
+ul.wexc li em{font-style:normal;font-family:var(--f-mono);font-size:10px;text-transform:uppercase;letter-spacing:.06em;margin-left:4px;color:var(--accent)}
+ul.wexc li.w-vac em{color:var(--crit)}
+.cf .pipe{gap:2px;margin:2px 0 4px}
+.cf .pipe span small{display:none}
+.cf .pipe span i{height:4px}
+.cf .pipe span.cur i{height:7px;margin-top:-1.5px}
+.cf-top .badge{margin-left:0}

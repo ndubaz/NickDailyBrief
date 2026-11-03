@@ -1135,18 +1135,18 @@
   }
  },
  "afnorth": {
-  "intro": "From the AFNORTH International School 2026–27 academic calendar, which governs. [6]",
+  "intro": "From the AFNORTH 2026–2027 Academic Calendar, which governs; checked against the PDF on 3 Nov. [6]",
   "rows": [
    [
     "4–5 Nov",
-    "12:30 release for parent conferences",
+    "12:30 release, parent conferences",
     "Book a slot; afternoon pick-up",
     "soon"
    ],
    [
     "11 Nov",
-    "Veterans Day: not marked as a day off",
-    "School day; Belgium is off, the Netherlands works",
+    "Veterans Day: a school day",
+    "Belgium is off, the Netherlands works",
     "soon"
    ],
    [
@@ -1156,25 +1156,25 @@
     "soon"
    ],
    [
+    "26–27 Nov",
+    "Thanksgiving: school days",
+    "No closure on the calendar",
+    ""
+   ],
+   [
     "7 Dec",
-    "No school, Q2 training day",
+    "No school, Q2 CCRS/PD training",
     "Childcare",
     ""
    ],
    [
     "18 Dec – 1 Jan",
     "Winter break",
-    "Travel window",
-    ""
-   ],
-   [
-    "Every Wed",
-    "Early release",
-    "Standing pick-up",
+    "Travel window; back Mon 4 Jan",
     ""
    ]
   ],
-  "note": "The next 14 days are marked. The elementary school's own site lists parent conferences on Fri 6 Nov, with 12:30 release on 4 and 5 Nov (seen in a search summary only): check the school's message. [121] Brunssum's Poppy Day remembrance is Wed 11 Nov at 10:30. [122]"
+  "note": "The next 14 days are marked. The calendar shows no weekly early release, so the Wednesday early release in earlier editions is unconfirmed: check the school's notices. The elementary school's site listed parent conferences on Fri 6 Nov, which the calendar shows as a normal B day; follow the school's message. [121] Brunssum's Poppy Day remembrance is Wed 11 Nov at 10:30. [122]"
  },
  "offduty": {
   "items": [
@@ -1302,7 +1302,8 @@
     "Sint-Hubertus",
     "BE/NL Limburg",
     "Bread blessings",
-    "Wiemesmeer feast today"
+    "Wiemesmeer feast today",
+    true
    ],
    [
     "2026-11-04",
@@ -1318,7 +1319,8 @@
     "Brunssum centre roadworks (4–5)",
     "Brunssum",
     "Koutenveld, Raadhuisstraat partly closed",
-    "Use the ring roads"
+    "Use the ring roads",
+    true
    ],
    [
     "2026-11-05",
@@ -1342,7 +1344,8 @@
     "Poppy Day, Brunssum War Cemetery",
     "Brunssum",
     "Remembrance, 10:30",
-    ""
+    "",
+    true
    ],
    [
     "2026-11-13",
@@ -1350,7 +1353,8 @@
     "A2 tunnel closed in Maastricht (to 16 Nov)",
     "Maastricht",
     "Fri 21:00 – Mon 06:00",
-    "Allow extra time"
+    "Allow extra time",
+    true
    ],
    [
     "2026-11-14",
@@ -1358,7 +1362,8 @@
     "Sinterklaas arrives",
     "Grave; Maastricht, Sittard, Geleen",
     "Intocht",
-    "Heerlen 15 Nov"
+    "Heerlen 15 Nov",
+    true
    ],
    [
     "2026-11-15",
@@ -1366,7 +1371,8 @@
     "Sinterklaas in Heerlen and Valkenburg",
     "Parkstad",
     "Intocht",
-    ""
+    "",
+    true
    ],
    [
     "2026-11-15",
@@ -1382,7 +1388,8 @@
     "Sinterklaas in Hoensbroek and Kerkrade",
     "Parkstad",
     "Intocht",
-    ""
+    "",
+    true
    ],
    [
     "2026-11-29",

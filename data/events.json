@@ -1,5 +1,5 @@
 {
- "note": "Out and about: curated events within about 90 minutes by car (Maastricht, Aachen, Liège, Köln, Düsseldorf, Bonn, Eindhoven, Antwerp, Brussels, the Eifel and Ardennes). The run adds events with a source, prunes those that have passed, and sets updated when details change. cat = music|markets|museums|sport|kids|food|outdoors|festival. kid = suitable for children. drive = minutes from Hoensbroek, approximate.",
+ "note": "Out and about: curated events within about 90 minutes by car (Maastricht, Aachen, Liège, Köln, Düsseldorf, Bonn, Eindhoven, Antwerp, Brussels, the Eifel and Ardennes). The run adds events with a source, prunes those that have passed, and sets updated when details change. cat = music|markets|museums|sport|kids|food|outdoors|festival. kid = suitable for children. drive = minutes from Hoensbroek, approximate. prio = true marks the few major events (big festivals, Sinterklaas arrivals, the carnival opening) that also appear in the Planner's This week; Christmas markets come from calendar.json.",
  "updated": "2026-11-03",
  "events": [
   {
@@ -110,7 +110,8 @@
      "FilmFreeway",
      "https://filmfreeway.com/DMFF"
     ]
-   ]
+   ],
+   "prio": true
   },
   {
    "id": "fortuna-sittard-telstar-2026",
@@ -154,7 +155,8 @@
      "Holland Expat Center South",
      "https://www.hollandexpatcenter.com/events/glow-eindhoven-2026-7-to-14-november"
     ]
-   ]
+   ],
+   "prio": true
   },
   {
    "id": "kasteel-hoensbroek-kids-2026",
@@ -220,7 +222,8 @@
      "ELF Maastricht",
      "https://elfmestreech.nl/"
     ]
-   ]
+   ],
+   "prio": true
   },
   {
    "id": "rhythmix-philzuid-heerlen-2026",

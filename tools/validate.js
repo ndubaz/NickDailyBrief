@@ -7,7 +7,7 @@ function load(f) { try { return JSON.parse(fs.readFileSync(f, "utf8")); } catch 
 const index = load(D("index.json"));
 const edPath = process.argv[2] || (index && D("editions/" + index.latest + ".json"));
 const E = edPath && load(edPath);
-const ids = ["board","world","numbers","feature","hybrid","lead-1","lead-2","europe","euregio","threads","horizon","army","congresstracker","dod","armynews","congress","career","nato","exercises","deftech","aperture","frontier","releases","sota","markets","fx","rates","nl","afnorth","offduty","dutch","snow","hockey","week","countdown","calendar","school","season"];
+const ids = ["board","world","numbers","feature","hybrid","lead-1","lead-2","europe","euregio","threads","horizon","army","congresstracker","dod","armynews","congress","career","nato","exercises","deftech","aperture","frontier","releases","sota","markets","fx","rates","nl","afnorth","offduty","dutch","snow","hockey","week","weather","countdown","calendar","school","season"];
 const judge = /\b(likely|probably|unlikely|suggests|signals that|we assess|means that|so what|could lead to|is expected to)\b/i;
 function walk(o, fn, p) { p = p || ""; if (typeof o === "string") fn(o, p); else if (Array.isArray(o)) o.forEach((v, i) => walk(v, fn, p + "[" + i + "]")); else if (o && typeof o === "object") Object.keys(o).forEach((k) => walk(o[k], fn, p + "." + k)); }
 if (E) {

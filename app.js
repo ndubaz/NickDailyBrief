@@ -57,6 +57,7 @@
   function catColor(c) { return "var(" + (CAT[c] ? CAT[c][1] : "--muted") + ")"; }
   function ordinal(n) { var s = ["th","st","nd","rd"], v = n % 100; return n + (s[(v - 20) % 10] || s[v] || s[0]); }
   function cet(utc) { try { return new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Amsterdam", weekday: "short", hour: "2-digit", minute: "2-digit" }).format(new Date(utc)); } catch (e) { return ""; } }
+  function cetHour(utc) { try { return parseInt(new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Amsterdam", hour: "2-digit", hour12: false }).format(new Date(utc)), 10); } catch (e) { return -1; } }
   function cetDate(utc) { try { return new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Amsterdam", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date(utc)); } catch (e) { return String(utc).slice(0, 10); } }
   /* USD/EUR guard: any label written as EUR/USD with a dollars-per-euro value is shown inverted, as euros per dollar. */
   function fxGuard(label, value, change, d) {
@@ -283,7 +284,7 @@
     return s + '<p class="small geo-key">● city · ■ base · ◆ chokepoint · ○ port · dashed line = distance</p>';
   }
   /* daylight curve for the year at the home latitude (declination approximation, a few minutes off at most) */
-  function daylight(lat, todayKey, W) {
+  function daylight(lat, todayKey, W, todayH) {
     W = Math.max(240, Math.round(W || 360)); var H = 140, T = 14, B = 22, L = 36, R = 10, year = pd(todayKey).getFullYear();
     function hours(doy) { var decl = 23.44 * Math.PI / 180 * Math.sin(2 * Math.PI * (284 + doy) / 365), x = -Math.tan(lat * Math.PI / 180) * Math.tan(decl); x = Math.max(-1, Math.min(1, x)); return 24 / Math.PI * Math.acos(x); }
     var pts = [], jan1 = new Date(year, 0, 1), ndays = Math.round((new Date(year + 1, 0, 1) - jan1) / DAY), mn = 24, mx = 0;
@@ -296,10 +297,10 @@
     var path = pts.map(function (h, i) { return X(i + 1).toFixed(1) + "," + Y(h).toFixed(1); });
     s += '<path d="M' + path.join(" L") + " L" + X(ndays).toFixed(1) + "," + (H - B) + " L" + L + "," + (H - B) + ' Z" fill="var(--pc)" fill-opacity=".15"/><polyline points="' + path.join(" ") + '" fill="none" stroke="var(--pc)" stroke-width="1.5"/>';
     for (var m = 0; m < 12; m++) { var dm = Math.round((new Date(year, m, 1) - jan1) / DAY) + 1; s += svgText(X(dm) + 2, H - 7, MON[m].charAt(0), "start", 9); }
-    var doy = Math.round((pd(todayKey) - jan1) / DAY) + 1, th = pts[doy - 1], tx = X(doy), ty = Y(th), hh = Math.floor(th), mm = Math.round((th - hh) * 60);
-    s += '<line x1="' + tx.toFixed(1) + '" y1="' + T + '" x2="' + tx.toFixed(1) + '" y2="' + (H - B) + '" stroke="var(--crit)" stroke-width="1" stroke-dasharray="2 2"/><circle cx="' + tx.toFixed(1) + '" cy="' + ty.toFixed(1) + '" r="3.5" fill="var(--crit)"/>' + svgText(tx + (doy > ndays * 0.7 ? -8 : 8), ty - 8, "today " + hh + " h " + String(mm).padStart(2, "0") + " min", doy > ndays * 0.7 ? "end" : "start", 10.5, true, "var(--ink)");
+    var doy = Math.round((pd(todayKey) - jan1) / DAY) + 1, th = pts[doy - 1], tx = X(doy), ty = Y(th), lh = todayH > 0 ? todayH : th, hh = Math.floor(lh), mm = Math.round((lh - hh) * 60), minD0 = pts.indexOf(mn) + 1, nearMin = Math.abs(doy - minD0) < 75, ly = nearMin ? Math.max(T + 10, Y(mn) - 22) : ty - 8;
+    s += '<line x1="' + tx.toFixed(1) + '" y1="' + T + '" x2="' + tx.toFixed(1) + '" y2="' + (H - B) + '" stroke="var(--crit)" stroke-width="1" stroke-dasharray="2 2"/><circle cx="' + tx.toFixed(1) + '" cy="' + ty.toFixed(1) + '" r="3.5" fill="var(--crit)"/>' + svgText(tx + (doy > ndays * 0.7 ? -8 : 8), ly, "today " + hh + " h " + String(mm).padStart(2, "0") + " min" + (nearMin ? " · shortest " + mn.toFixed(1) + " h" : ""), doy > ndays * 0.7 ? "end" : "start", 10.5, true, "var(--ink)");
     var minD = pts.indexOf(mn) + 1, maxD = pts.indexOf(mx) + 1;
-    s += svgText(X(maxD), Y(mx) - 5, "longest " + mx.toFixed(1) + " h", "middle", 10, true) + svgText(X(minD) + (minD > ndays * 0.7 ? -6 : 6), Y(mn) - 5, "shortest " + mn.toFixed(1) + " h", minD > ndays * 0.7 ? "end" : "start", 10, true);
+    s += svgText(X(maxD), Y(mx) - 5, "longest " + mx.toFixed(1) + " h", "middle", 10, true) + (nearMin ? "" : svgText(X(minD) + (minD > ndays * 0.7 ? -6 : 6), Y(mn) - 5, "shortest " + mn.toFixed(1) + " h", minD > ndays * 0.7 ? "end" : "start", 10, true));
     return s + "</svg>";
   }
   function incidentMap(list, W) {
@@ -424,11 +425,11 @@
   /* ---------- planner data: merge every dated source ---------- */
   function plannerEvents(E, ctx, TD) {
     var ev = [], P = E.planner || {};
-    (P.events || []).forEach(function (e) { ev.push({ date: e[0], cat: e[1], t: e[2], sub: [e[3], e[4], e[5]].filter(Boolean).join(" · "), src: "edition" }); });
+    (P.events || []).forEach(function (e) { ev.push({ date: e[0], cat: e[1], t: e[2], sub: [e[3], e[4], e[5]].filter(Boolean).join(" · "), src: "edition", prio: e[6] === true }); });
     ((ctx.bins && ctx.bins.dates) || []).forEach(function (b) { ev.push({ date: b[0], cat: "home", t: "Bin: " + b[1].split("·")[0].trim(), sub: b[1], src: "bins" }); });
     if (ctx.canes) {
       (ctx.canes.games || []).forEach(function (g) { ev.push({ date: g.date, cat: "hockey", t: "CAR " + g.res + " " + g.gf + "–" + g.ga + (g.home ? " vs " : " at ") + g.opp, sub: "Final", src: "canes" }); });
-      (ctx.canes.upcoming || []).forEach(function (g) { var d = g.utc ? cetDate(g.utc) : g.date; ev.push({ date: d, cat: "hockey", t: "Canes " + (g.home ? "vs " : "at ") + g.opp, sub: g.utc ? "Puck drop " + cet(g.utc) + " CET" : "", src: "canes" }); });
+      (ctx.canes.upcoming || []).forEach(function (g) { var d = g.utc ? cetDate(g.utc) : g.date, hr = g.utc ? cetHour(g.utc) : -1; ev.push({ date: d, cat: "hockey", t: "Canes " + (g.home ? "vs " : "at ") + g.opp, sub: g.utc ? "Puck drop " + cet(g.utc) + " CET" : "", src: "canes", live: hr >= 7 && hr <= 22 }); });
     }
     (ctx.horizon || []).forEach(function (e) { if (e.date) ev.push({ date: e.date, cat: "watch", t: e.t, sub: (e.dateText || "") + (e.n ? " · " + plain(e.n) : ""), src: "horizon" }); });
     var cal = ctx.calendar;
@@ -442,8 +443,8 @@
       (cal.markets || []).forEach(function (m) { ev.push({ date: m[2], end: m[3], cat: "mkt", t: m[0] + " opens", sub: "to " + fmtShort(m[3]), src: "calendar" }); });
     }
     ((ctx.deadlines && ctx.deadlines.items) || []).forEach(function (d) { ev.push({ date: d.date, cat: "deadline", t: d.name, sub: d.note || d.cat || "", src: "deadlines" }); });
-    (((E.army || {}).career || {}).dates || []).forEach(function (d) { ev.push({ date: d[0], cat: "pro", t: plain(d[1]), sub: "Career milestone", src: "edition" }); });
-    (ctx.events || []).forEach(function (e) { if (e.from) ev.push({ date: e.from, end: e.to !== e.from ? e.to : undefined, cat: "out", t: e.t, sub: [e.town, e.drive != null ? "~" + e.drive + " min" : "", e.to !== e.from ? "to " + fmtShort(e.to) : ""].filter(Boolean).join(" · "), src: "events" }); });
+    (((E.army || {}).career || {}).dates || []).forEach(function (d) { ev.push({ date: d[0], cat: "pro", t: plain(d[1]), sub: "Career milestone", src: "career" }); });
+    (ctx.events || []).forEach(function (e) { if (e.from) ev.push({ date: e.from, end: e.to !== e.from ? e.to : undefined, cat: "out", t: e.t, sub: [e.town, e.drive != null ? "~" + e.drive + " min" : "", e.to !== e.from ? "to " + fmtShort(e.to) : ""].filter(Boolean).join(" · "), src: "events", prio: e.prio === true }); });
     (ctx.congress || []).forEach(function (c) { if (c.deadline) ev.push({ date: c.deadline, cat: "pro", t: (c.title || c.post) + ": deadline", sub: c.next ? plain(c.next) : "Congress", src: "congress" }); });
     (ctx.exercises || []).forEach(function (x) { if (x.from) ev.push({ date: x.from, end: x.to !== x.from ? x.to : undefined, cat: "ex", t: x.name, sub: [x.lead, x.where].filter(Boolean).join(" · "), src: "exercises" }); });
     var seen = {};
@@ -471,17 +472,41 @@
     h += '<div class="agenda">' + (rows.length ? table(["Date", "What"], body) : quiet("Nothing in this category this month.")) + "</div>";
     return h;
   }
+  /* This week: only what Nick has to do or will plan around (holidays, AFNORTH days, bins, deadlines, career dates,
+     major festivals marked prio, Christmas markets opening, exercise start and end, Canes games watchable live in CET) */
+  function weekPrio(e) {
+    if (e.src === "bins" || e.src === "deadlines" || e.src === "career" || e.src === "exercises") return true;
+    if (e.src === "calendar") return e.cat !== "school" || e.sys === "afnorth";
+    if (e.src === "canes") return !!e.live;
+    if (e.src === "events" || e.src === "edition") return !!e.prio;
+    return false;
+  }
   function weekStrip(ev, E, TD) {
-    var T = E.today || {}, wx = {}; ((T.weather && T.weather.week) || []).forEach(function (w) { wx[w[0]] = w; });
-    var h = '<div class="week scrollx"><div class="week-in">';
+    var pick = ev.filter(weekPrio), h = '<div class="week scrollx"><div class="week-in">';
     for (var i = 0; i < 7; i++) {
-      var k = addDays(TD, i), d = pd(k), list = onDay(ev, k), w = wx[k];
+      var k = addDays(TD, i), d = pd(k), list = [];
+      pick.forEach(function (e) {
+        var span = e.end && e.end !== e.date, se = e.src === "exercises" || e.cat === "school";
+        if (e.date === k) list.push([e.cat, span && se ? e.t + " starts" : e.t]);
+        else if (span && se && e.end === k) list.push([e.cat, e.t + " ends"]);
+        else if (span && e.cat === "school" && i === 0 && e.date < k && k < e.end) list.push([e.cat, e.t + ", to " + fmtShort(e.end)]);
+      });
       h += '<div class="wday' + (i === 0 ? " today" : "") + '"><div class="wd"><b>' + DOW[d.getDay()] + "</b> " + d.getDate() + " " + MON[d.getMonth()] + "</div>";
-      if (w) h += '<div class="wx"><span class="hi">' + esc(w[1]) + "°</span> / " + esc(w[2]) + "°" + (w[3] != null && w[3] !== "" ? ' <span class="rain">' + esc(w[3]) + "%</span>" : "") + (w[4] ? '<div class="small">' + esc(w[4]) + "</div>" : "") + "</div>";
-      h += list.length ? list.slice(0, 7).map(function (e) { return '<div class="we"><i style="background:' + catColor(e.cat) + '"></i>' + esc(e.t) + "</div>"; }).join("") + (list.length > 7 ? '<div class="we small">+' + (list.length - 7) + " more</div>" : "") : '<div class="we none">—</div>';
+      h += list.length ? list.map(function (x) { return '<div class="we"><i style="background:' + catColor(x[0]) + '"></i>' + esc(x[1]) + "</div>"; }).join("") : '<div class="we none">—</div>';
       h += "</div>";
     }
     return h + "</div></div>";
+  }
+  function dayHours(lat, k) { var d = pd(k), doy = Math.round((d - new Date(d.getFullYear(), 0, 1)) / DAY) + 1, decl = 23.44 * Math.PI / 180 * Math.sin(2 * Math.PI * (284 + doy) / 365), x = Math.max(-1, Math.min(1, -Math.tan(lat * Math.PI / 180) * Math.tan(decl))); return 24 / Math.PI * Math.acos(x); }
+  function hm(hrs) { var a = Math.abs(hrs), hh = Math.floor(a), mm = Math.round((a - hh) * 60); if (mm === 60) { hh++; mm = 0; } return hh + " h " + String(mm).padStart(2, "0") + " min"; }
+  function weatherBlock(E, TD) {
+    var w = (E.today || {}).weather || {}, wk = w.week || [], h = "";
+    if (wk.length) h += '<div class="wxrow scrollx"><div class="wx-in">' + wk.slice(0, 7).map(function (r, i) { var d = pd(r[0]); return '<div class="wxd' + (r[0] === TD ? " today" : "") + '"><div class="wd"><b>' + DOW[d.getDay()] + "</b> " + d.getDate() + '</div><div class="t"><span class="hi">' + esc(r[1]) + "°</span> " + esc(r[2]) + '°</div><div class="r">' + (r[3] != null && r[3] !== "" ? esc(r[3]) + "%" : "–") + '</div><div class="small">' + esc(r[4] || "") + "</div></div>"; }).join("") + "</div></div>";
+    else h += quiet("No forecast in this edition.");
+    var geo = dayHours(HOME.lat, TD), diff = (geo - dayHours(HOME.lat, addDays(TD, -7))) * 60, now = geo, sr = /^(\d{1,2}):(\d{2})$/.exec(w.sunrise || ""), ss = /^(\d{1,2}):(\d{2})$/.exec(w.sunset || "");
+    if (sr && ss) now = (ss[1] * 60 + +ss[2] - sr[1] * 60 - +sr[2]) / 60;
+    h += '<p class="small dl-line">' + (w.sunrise ? "Sunrise <b>" + esc(w.sunrise) + "</b> · sunset <b>" + esc(w.sunset) + "</b> · " : "") + hm(now) + " of daylight, " + Math.abs(Math.round(diff)) + " min " + (diff < 0 ? "less" : "more") + " than a week ago." + (w.weekNote ? " " + rich(w.weekNote) : "") + (w.src && !/\[\d/.test(w.weekNote || "") ? cite(w.src) : "") + "</p>";
+    return h + '<div class="panel"><div class="lbl">Hours of daylight at ' + esc(HOME.name) + " through the year</div>" + '<div class="chart" id="daylight" data-h="' + now.toFixed(3) + '" style="min-height:120px"></div></div>';
   }
   function countdowns(ev, ctx, TD) {
     var tiles = [];
@@ -767,44 +792,51 @@
     var STGL = { introduced: "Introduced", committee: "Committee", house: "House", senate: "Senate", conference: "Conference", enacted: "Enacted", request: "Request", cr: "CR", vacant: "Vacant", announced: "Announced", nominated: "Nominated", hearing: "Hearing", floor: "Floor", confirmed: "Confirmed", withdrawn: "Withdrawn", stalled: "Stalled", vetoed: "Vetoed" };
     var DONE = { enacted: 1, confirmed: 1, withdrawn: 1, vetoed: 1 };
     var CG = (ctx.congress || []).map(function (c) { var d = c.dates || {}, last = Object.keys(d).reduce(function (m, k) { return d[k] > m ? d[k] : m; }, "") || c.updated || c.added || ""; return { c: c, last: last, badge: c.added === TD ? "NEW" : c.updated === TD ? "UPDATED" : "" }; }).filter(function (x) { return !(DONE[x.c.stage] && daysBetween(x.last, TD) > 30); });
+    function stg(c) { var st = c.stage; if (st === "vacant") return "vac"; if (st === "withdrawn" || st === "stalled" || st === "vetoed" || /stalled|vetoed/i.test(c.status || "")) return "off"; if (st === "confirmed" || st === "enacted") return "done"; if (st === "cr") return "cr"; return "prog"; }
     function cgCard(x) {
-      var c = x.c, lane = LANES[c.kind] || LANES.bill, idx = lane.indexOf(c.stage), d = c.dates || {}, off = c.stage === "withdrawn" || c.stage === "vetoed" || c.stage === "stalled" || (c.status && /stalled|vetoed/i.test(c.status) && idx < 0);
-      var pipe = '<div class="pipe' + (off ? " wd" : "") + '" style="grid-template-columns:repeat(' + lane.length + ',1fr)">' + lane.map(function (st, i) { var on = !off && i <= idx, cur = st === c.stage; return '<span class="' + (on ? "on" : "") + (cur ? " cur" : "") + '" title="' + esc(STGL[st] + (d[st] ? " · " + fmtShort(d[st]) : "")) + '"><i></i><small>' + STGL[st] + "</small></span>"; }).join("") + "</div>";
+      var c = x.c, lane = LANES[c.kind] || LANES.bill, idx = lane.indexOf(c.stage), d = c.dates || {}, g = stg(c);
+      var pipe = '<div class="pipe g-' + g + '" style="grid-template-columns:repeat(' + lane.length + ',1fr)">' + lane.map(function (st, i) { var on = g !== "off" && i <= idx, cur = st === c.stage; return '<span class="' + (on ? "on" : "") + (cur ? " cur" : "") + '" title="' + esc(STGL[st] + (d[st] ? " · " + fmtShort(d[st]) : "")) + '"><i></i><small>' + STGL[st] + "</small></span>"; }).join("") + "</div>";
       var dl = c.deadline && c.deadline >= TD ? daysBetween(TD, c.deadline) : null;
-      return '<div class="cf ' + fu(x.badge) + '" id="cg-' + esc(c.id) + '"><div class="cf-top"><b>' + esc(c.title || c.post) + '</b><span class="chip st">' + esc(STGL[c.stage] || c.stage) + (x.last ? " · " + esc(fmtShort(x.last)) : "") + "</span>" + (dl != null ? '<span class="chip st' + (dl <= 14 ? " act" : "") + '">' + esc(fmtShort(c.deadline)) + " · " + (dl === 0 ? "today" : dl + " d") + "</span>" : "") + badge(x.badge) + '</div><div class="cf-who">' + (c.kind === "nomination" ? (c.nominee ? esc(c.nominee) : '<span class="small">no nominee</span>') : esc(c.number || "")) + (c.org ? ' <span class="small">· ' + esc(c.org) + "</span>" : "") + (c.committee ? ' <span class="small">· ' + esc(c.committee) + "</span>" : "") + (c.src && c.src.length ? '<sup class="r">' + c.src.map(function (z) { return citeLink(z[0], srcMap(c.src)); }).join("") + "</sup>" : "") + "</div>" + pipe + (c.status ? '<p class="small"><b>' + esc(c.status) + "</b></p>" : "") + (c.next ? '<p class="small">' + rich(c.next, srcMap(c.src)) + "</p>" : "") + "</div>";
+      return '<div class="cf g-' + g + " " + fu(x.badge) + '" id="cg-' + esc(c.id) + '"><div class="cf-top"><b>' + esc(c.title || c.post) + '</b><span class="chip st g-' + g + '">' + esc(STGL[c.stage] || c.stage) + (x.last ? " · " + esc(fmtShort(x.last)) : "") + "</span>" + (dl != null ? '<span class="chip st' + (dl <= 14 ? " act" : "") + '">due ' + esc(fmtShort(c.deadline)) + " · " + (dl === 0 ? "today" : dl + " d") + "</span>" : "") + badge(x.badge) + '</div><div class="cf-who">' + (c.kind === "nomination" ? (c.nominee ? esc(c.nominee) : '<span class="small">no nominee</span>') : esc(c.number || "")) + (c.number && c.kind === "nomination" ? ' <span class="small">· ' + esc(c.number) + "</span>" : "") + (c.src && c.src.length ? '<sup class="r">' + c.src.map(function (z) { return citeLink(z[0], srcMap(c.src)); }).join("") + "</sup>" : "") + "</div>" + pipe + (c.next || c.status ? '<p class="small">' + rich(c.next || c.status, srcMap(c.src)) + "</p>" : "") + "</div>";
     }
-    h += '<h3 id="congresstracker">Congress tracker <span class="small">bills, budget, confirmations</span></h3>';
-    if (CG.length) {
+    var RECENT = 7;
+    function cgRecent(x) { var c = x.c, d = c.dates || {}, acts = [c.updated || "", c.added || ""].concat(Object.keys(d).map(function (k) { return d[k]; })).filter(function (v) { return v && v <= TD; }).sort(), lastAct = acts.pop(); return (lastAct && daysBetween(lastAct, TD) <= RECENT) || (c.deadline && c.deadline >= TD && daysBetween(TD, c.deadline) <= 21); }
+    var CGN = CG.filter(cgRecent), CGQ = CG.filter(function (x) { return !cgRecent(x) && !DONE[x.c.stage]; });
+    h += '<h3 id="congresstracker">Congress tracker <span class="small">what moved in the last ' + RECENT + ' days</span></h3>';
+    h += '<div class="cg-key small"><span class="k g-vac"></span>vacant <span class="k g-prog"></span>in the pipeline <span class="k g-cr"></span>stopgap <span class="k g-done"></span>confirmed or enacted <span class="k g-off"></span>stalled or withdrawn</div>';
+    if (CGN.length) {
       h += '<div class="fug">' + nq();
       [["bill", "Key defence bills"], ["budget", "Budget and appropriations"], ["nomination", "Confirmations"]].forEach(function (lane) {
-        var rows = CG.filter(function (x) { return (x.c.kind || "bill") === lane[0]; }).sort(function (a, b) { var ad = DONE[a.c.stage] ? 1 : 0, bd = DONE[b.c.stage] ? 1 : 0; if (ad !== bd) return ad - bd; return a.last < b.last ? 1 : a.last > b.last ? -1 : 0; });
-        h += '<div class="lbl cg-lane">' + lane[1] + "</div>" + (rows.length ? '<div class="cflist">' + rows.map(cgCard).join("") + "</div>" : quiet("Nothing tracked in this lane."));
+        var rows = CGN.filter(function (x) { return (x.c.kind || "bill") === lane[0]; }).sort(function (a, b) { return a.last < b.last ? 1 : a.last > b.last ? -1 : 0; });
+        if (rows.length) h += '<div class="lbl cg-lane">' + lane[1] + '</div><div class="cflist">' + rows.map(cgCard).join("") + "</div>";
       });
       h += "</div>";
-    } else h += quiet("Nothing tracked yet.");
+    } else h += quiet("Nothing moved in Congress or the confirmation pipeline this week.");
+    if (CGQ.length) h += '<p class="small cg-quiet"><b>Open, no change this week:</b> ' + CGQ.map(function (x) { return '<span class="g-' + stg(x.c) + '">' + esc(x.c.title || x.c.post) + " (" + esc(STGL[x.c.stage] || x.c.stage) + (x.last ? " since " + esc(fmtShort(x.last)) : "") + ")</span>"; }).join("; ") + ".</p>";
     var CW = ctx.congressWatch || [], CT = ctx.congressTiers || [];
     if (CW.length) {
-      var openBy = {}; CG.forEach(function (x) { if (x.c.kind === "nomination" && x.c.postId && !DONE[x.c.stage]) openBy[x.c.postId] = x.c.stage; });
-      h += '<div class="lbl cg-lane">Watched posts <span class="small" style="text-transform:none;letter-spacing:0">' + CW.filter(function (w) { return w.holder; }).length + " of " + CW.length + ' holders sourced</span></div><div class="wposts">';
+      var openBy = {}, openId = {}, conf30 = {}; CG.forEach(function (x) { var c = x.c; if (c.kind !== "nomination" || !c.postId) return; if (!DONE[c.stage]) { openBy[c.postId] = c.stage; openId[c.postId] = c.id; } else if (c.stage === "confirmed" && x.last && daysBetween(x.last, TD) <= 30) conf30[c.postId] = 1; });
+      function wst(w) { var st = openBy[w.id]; if (st === "vacant") return "vac"; if (st) return "prog"; if (!w.holder) return "unk"; if (w.acting) return "acting"; if (conf30[w.id]) return "done"; return "ok"; }
+      var cnt = {}; CW.forEach(function (w) { var k = wst(w); cnt[k] = (cnt[k] || 0) + 1; });
+      var WL = [["vac", "vacant"], ["prog", "nomination in progress"], ["acting", "acting holder"], ["done", "confirmed in 30 days"], ["ok", "filled"], ["unk", "not yet sourced"]];
+      h += '<div class="lbl cg-lane">Watched posts</div><div class="cg-key small">' + WL.filter(function (l) { return cnt[l[0]]; }).map(function (l) { return '<span class="k w-' + l[0] + '"></span>' + cnt[l[0]] + " " + l[1]; }).join(" ") + '</div><div class="wposts">';
       CT.forEach(function (t) {
         var list = CW.filter(function (w) { return w.tier === t.id; }); if (!list.length) return;
-        h += '<div class="wtier"><div class="wtn">' + esc(t.name) + '</div><div class="wrow">' + list.map(function (w) {
-          var st = openBy[w.id], cls = st === "vacant" ? "vac" : st ? "pend" : w.holder ? "" : "unk", b = w.updated === TD ? "UPDATED" : "";
-          return '<a class="wp ' + cls + (b ? " fu new" : " fu") + '" href="#' + (st ? "cg-" + esc(CG.filter(function (x) { return x.c.postId === w.id && !DONE[x.c.stage]; })[0].c.id) : "congresstracker") + '" title="' + esc(w.post + (w.senate ? " · Senate-confirmed" : "") + (w.since ? " · since " + fmtShort(w.since) + " " + w.since.slice(0, 4) : "") + (w.note ? " · " + w.note : "")) + '"><b>' + esc(w.post) + "</b>" + (w.holder ? "<span>" + esc(w.holder) + (w.acting ? " (acting)" : "") + (w.verified === false ? ' <em class="tc">to confirm</em>' : "") + "</span>" : '<span class="small">' + esc(w.note ? "empty: " + w.note : "holder not yet sourced") + "</span>") + (st ? '<em>' + esc(STGL[st] || st) + "</em>" : "") + badge(b) + "</a>";
-        }).join("") + "</div></div>";
+        h += '<div class="wtier"><span class="wtn">' + esc(t.name) + "</span>" + list.map(function (w) { var k = wst(w); return '<a class="wpc w-' + k + (w.updated && daysBetween(w.updated, TD) <= RECENT && w.updated !== TD ? " chg" : "") + '" href="#' + (openId[w.id] ? "cg-" + esc(openId[w.id]) : "congresstracker") + '" title="' + esc(w.post + ": " + (w.holder ? w.holder + (w.acting ? " (acting)" : "") : "holder not sourced") + (w.since ? " · since " + fmtShort(w.since) + " " + w.since.slice(0, 4) : "") + (w.note ? " · " + w.note : "")) + '">' + esc(w.post) + "</a>"; }).join("") + "</div>";
       });
-      h += '</div><p class="small">Red = vacant, amber = nomination in progress. Posts marked Senate-confirmed in the tooltip go through the pipeline above; the rest change by assignment.</p>';
+      var EXC = CW.filter(function (w) { var k = wst(w); return k === "vac" || k === "prog" || k === "acting" || k === "done" || (w.updated && w.updated > addDays(TD, -RECENT) && w.updated < TD); });
+      h += "</div>" + (EXC.length ? '<ul class="wexc">' + EXC.map(function (w) { var k = wst(w); return '<li class="w-' + k + '"><b>' + esc(w.post) + "</b> " + (w.holder ? esc(w.holder) + (w.acting ? " (acting)" : "") : '<span class="small">no holder</span>') + (openBy[w.id] ? ' <em>' + esc(STGL[openBy[w.id]] || openBy[w.id]) + "</em>" : "") + (w.src && w.src.length ? '<sup class="r">' + w.src.map(function (z) { return citeLink(z[0], srcMap(w.src)); }).join("") + "</sup>" : "") + "</li>"; }).join("") + "</ul>" : "") + '<p class="small">Each chip is a watched post, coloured by its state; tap for the holder. Listed below the chips: anything vacant, acting, in the pipeline or newly confirmed.</p>';
     }
     h += "</section>";
 
     h += '<section id="nato" class="pro"><h2>NATO &amp; European militaries</h2>' + items(NA.items, null, "Nothing new from the Alliance or the allied armies in the window.");
-    if (NA.table) h += '<h3>' + esc(NA.table.title || "Allied spending and strength") + (NA.table.asof ? ' <span class="small">' + esc(NA.table.asof) + "</span>" : "") + "</h3>" + table(NA.table.head, NA.table.rows.map(function (r) { return "<tr>" + r.map(function (c, j) { return "<td" + (j > 0 && /^[\d.,%$€+−\- ]+$/.test(String(c)) ? ' class="d"' : "") + ">" + rich(c) + "</td>"; }).join("") + "</tr>"; }).join(""), "lbl1") + (NA.table.src ? '<p class="small" style="margin-top:6px">Source' + cite(NA.table.src) + "</p>" : "");
-    var EXL = (ctx.exercises || []).filter(function (x) { return x.to >= addDays(TD, -60); }).sort(function (a, b) { return a.from < b.from ? -1 : 1; });
-    h += '<h3 id="exercises">Exercise calendar <span class="small">recent and announced</span></h3>';
-    h += EXL.length ? '<div class="fug">' + nq() + table(["When", "Exercise", "Lead · where · forces"], EXL.map(function (x) {
-      var b = x.added === TD ? "NEW" : x.updated === TD ? "UPDATED" : "", n = daysBetween(TD, x.from), when = x.dateText || (fmtShort(x.from) + (x.to !== x.from ? " – " + fmtShort(x.to) : "") + (x.from > TD ? " · in " + n + " d" : ""));
-      return '<tr class="' + fu(b) + (x.from <= TD && x.to >= TD ? " soon" : "") + '"><td class="d">' + esc(when) + "</td><td><b>" + esc(x.name) + "</b>" + badge(b) + (x.status ? '<div class="small">' + esc(x.status) + "</div>" : "") + "</td><td>" + esc([x.lead, x.where, x.forces].filter(Boolean).join(" · ")) + (x.src && x.src.length ? '<sup class="r">' + x.src.map(function (z) { return citeLink(z[0], srcMap(x.src)); }).join("") + "</sup>" : "") + "</td></tr>";
-    }).join(""), "lbl1") + "</div>" : quiet("No exercises announced.");
+    if (NA.table && (NA.table.badge === "NEW" || (NA.table.asof && daysBetween(NA.table.asof, TD) <= 7))) h += '<h3>' + esc(NA.table.title || "Allied spending and strength") + (NA.table.asof ? ' <span class="small">' + esc(NA.table.asof) + "</span>" : "") + "</h3>" + table(NA.table.head, NA.table.rows.map(function (r) { return "<tr>" + r.map(function (c, j) { return "<td" + (j > 0 && /^[\d.,%$€+−\- ]+$/.test(String(c)) ? ' class="d"' : "") + ">" + rich(c) + "</td>"; }).join("") + "</tr>"; }).join(""), "lbl1") + (NA.table.src ? '<p class="small" style="margin-top:6px">Source' + cite(NA.table.src) + "</p>" : "");
+    var EXL = (ctx.exercises || []).filter(function (x) { return x.to >= addDays(TD, -7); }).sort(function (a, b) { return a.from < b.from ? -1 : 1; });
+    h += '<h3 id="exercises">Exercise calendar <span class="small">under way and announced</span></h3>';
+    h += EXL.length ? '<ul class="exl fug">' + nq() + EXL.map(function (x) {
+      var b = x.added === TD ? "NEW" : x.updated === TD ? "UPDATED" : "", on = x.from <= TD && x.to >= TD, done = x.to < TD, when = x.dateText && /[a-z]/i.test(x.dateText) && !/under way/i.test(x.dateText) ? x.dateText : fmtShort(x.from) + (x.to !== x.from ? " – " + fmtShort(x.to) : "");
+      return '<li class="' + fu(b) + (on ? " on" : done ? " done" : "") + '" title="' + esc([x.lead, x.forces].filter(Boolean).join(" · ")) + '"><span class="d">' + esc(when) + '</span><span><b>' + esc(x.name) + "</b>" + (x.where ? ' <span class="small">· ' + esc(x.where) + "</span>" : "") + (on ? ' <em>under way</em>' : done ? ' <em>ended</em>' : "") + badge(b) + (x.src && x.src.length ? '<sup class="r">' + x.src.map(function (z) { return citeLink(z[0], srcMap(x.src)); }).join("") + "</sup>" : "") + "</span></li>";
+    }).join("") + "</ul>" : quiet("No exercises announced.");
     h += "</section>";
 
     h += '<section id="deftech" class="pro"><h2>Defence tech</h2>' + items(DT.items, null, "No new defence technology in the window.");
@@ -980,7 +1012,8 @@
 
     /* ===== Part 8 · Planner (always open) ===== */
     h += part("plan", "Part 9", "Planner", "The week, the countdowns, the calendar, the school year and the season.", "p-plan");
-    h += '<section id="week" class="plan"><h2>This week</h2>' + weekStrip(PEV, E, TD) + "</section>";
+    h += '<section id="week" class="plan"><h2>This week <span class="num">holidays, school, bins, deadlines, major events</span></h2>' + weekStrip(PEV, E, TD) + "</section>";
+    h += '<section id="weather" class="plan"><h2>Weather and daylight <span class="num">' + esc(HOME.name) + " · 7 days</span></h2>" + weatherBlock(E, TD) + "</section>";
     h += '<section id="countdown" class="plan"><h2>Countdowns</h2>' + countdowns(PEV, ctx, TD) + "</section>";
     h += '<section id="calendar" class="plan"><h2>Calendar</h2>';
     if (P.otd) h += '<div class="ap-c" style="margin-bottom:14px"><div class="lbl">' + esc(P.otd.title) + '</div><p style="margin:0">' + rich(P.otd.body) + "</p></div>";
@@ -1001,7 +1034,7 @@
       h += '<p class="small">Sources: ' + Object.keys(ctx.calendar.school).map(function (k) { return esc(ctx.calendar.school[k].name) + " (" + esc(ctx.calendar.school[k].source) + ")"; }).join("; ") + ".</p>";
     } else if (P.school) h += gantt(P.school, today) + (P.school.note ? '<p class="small" style="margin-top:6px">' + rich(P.school.note) + "</p>" : "");
     else h += quiet("No school calendar loaded.");
-    h += '<h3>Daylight</h3><div class="panel"><div class="lbl">Hours of daylight at ' + esc(HOME.name) + " through " + today.getFullYear() + '</div><div class="chart" id="daylight" style="min-height:120px"></div></div></section>';
+    h += "</section>";
     if (P.season) h += '<section id="season" class="plan"><h2>' + esc(P.season.title) + "</h2>" + (P.season.intro ? '<p class="small">' + rich(P.season.intro) + "</p>" : "") + gantt(P.season, today) + (P.season.notes ? '<ul class="clean" style="margin-top:12px">' + P.season.notes.map(function (n) { return "<li>" + rich(n) + "</li>"; }).join("") + "</ul>" : "") + "</section>";
 
     /* ===== Footer ===== */
@@ -1011,7 +1044,7 @@
     h += '<div class="search"><form id="searchform" role="search"><label class="small" for="q">Archive search</label><input id="q" type="search" placeholder="Search headlines in every edition" autocomplete="off"><button type="submit">Search</button></form><div id="hits" class="small"></div></div>';
     if (E.changelog) h += '<div><div class="small"><b>What changed in the Readbook</b></div><ul class="clean small" style="margin-top:6px">' + E.changelog.map(function (c) { return "<li>" + esc(c[0]) + ": " + rich(c[1]) + "</li>"; }).join("") + "</ul></div>";
     h += '<p class="small">Open sources only. Personal reading; not an official product.</p></div></section>';
-    h += '<section id="health" class="plan"><h2>Readbook health <span class="num">when to remodel</span></h2><p class="small">Computed on the page from the edition and the standing files. Act = the data model or the task prompt needs work; watch = keep an eye on it.</p><div id="healthbody"></div></section>';
+    h += '<section id="health" class="plan"><h2>Readbook health <span class="num">act = fix the data model or the prompt</span></h2><div id="healthbody"></div></section>';
     h += '<button type="button" class="totop" id="totop" aria-label="Back to top">Top</button>';
 
     app.innerHTML = h;
@@ -1040,7 +1073,7 @@
       var fb = document.getElementById("fbars"); if (fb && E.world && E.world.feature && E.world.feature.bars) fb.innerHTML = vbars(E.world.feature.bars.rows, { W: fb.clientWidth, zero: true, label: E.world.feature.bars.label || "" });
       var fg = document.getElementById("fgeo"); if (fg && ctx._geo) fg.innerHTML = geoSchematic(ctx._geo, fg.clientWidth);
       var hk = document.getElementById("hkchart"); if (hk && ctx.canes) hk.innerHTML = hockeyChart(canesView(ctx.canes, TD).games, hk.clientWidth);
-      var dlc = document.getElementById("daylight"); if (dlc) dlc.innerHTML = daylight(HOME.lat, TD, dlc.clientWidth);
+      var dlc = document.getElementById("daylight"); if (dlc) dlc.innerHTML = daylight(HOME.lat, TD, dlc.clientWidth, parseFloat(dlc.getAttribute("data-h")));
       var ab = document.getElementById("armybars"); if (ab && E.army && E.army.depth && E.army.depth.bars) ab.innerHTML = vbars(E.army.depth.bars.rows, { W: ab.clientWidth, zero: true, label: E.army.depth.bars.label || "" });
       Object.keys(ctx._dts || {}).forEach(function (k) { var el = document.getElementById("dts-" + k); if (el) { var m = ((ctx.worldSeries || {}).meta || {})[k] || {}; el.innerHTML = lineChart(ctx._dts[k], { W: el.clientWidth, days: 400, dec: m.decimals != null ? m.decimals : 0, zero: true, label: m.label || k }); } });
     }
@@ -1079,7 +1112,8 @@
     var words0 = 0, stop0 = false;
     Array.prototype.forEach.call(app.children, function (el) { if (stop0 || el.id === "p-plan" || el.id === "sources") { stop0 = true; return; } if (el.id !== "slim") words0 += (el.textContent || "").split(/\s+/).length; });
     var HR = health(E, ctx, TD, words0), nAct = HR.filter(function (r) { return r[1] === "act"; }).length, nWatch = HR.filter(function (r) { return r[1] === "watch"; }).length;
-    document.getElementById("healthbody").innerHTML = '<p class="hsum"><span class="chip hs ' + (nAct ? "act" : nWatch ? "watch" : "ok") + '">' + (nAct ? nAct + " to act on" : nWatch ? "nothing to act on" : "all clear") + "</span> " + HR.length + " checks · " + nWatch + " to watch · " + (HR.length - nAct - nWatch) + " ok</p>" + table(["Check", "Detail"], HR.map(function (r) { return '<tr class="h-' + r[1] + '"><td><b>' + esc(r[0]) + '</b><div><span class="chip hs ' + r[1] + '">' + r[1] + "</span></div></td><td>" + esc(r[2]) + "</td></tr>"; }).join(""));
+    var HB = HR.filter(function (r) { return r[1] !== "ok"; }).sort(function (a, b) { return (a[1] === "act" ? 0 : 1) - (b[1] === "act" ? 0 : 1); }), HG = HR.filter(function (r) { return r[1] === "ok"; });
+    document.getElementById("healthbody").innerHTML = '<p class="hsum"><span class="chip hs ' + (nAct ? "act" : nWatch ? "watch" : "ok") + '">' + (nAct ? nAct + " to act on" : nWatch ? "nothing to act on" : "all clear") + "</span> " + HR.length + " checks · " + nWatch + " to watch · " + HG.length + " ok</p>" + (HB.length ? '<ul class="hl">' + HB.map(function (r) { return '<li class="h-' + r[1] + '"><span class="chip hs ' + r[1] + '">' + r[1] + "</span><b>" + esc(r[0]) + "</b> " + esc(r[2]) + "</li>"; }).join("") + "</ul>" : "") + (HG.length ? '<p class="small hok"><b>OK:</b> ' + HG.map(function (r) { return '<span title="' + esc(r[2]) + '">' + esc(r[0]) + "</span>"; }).join(" · ") + "</p>" : "");
 
     /* new / updated count */
     document.getElementById("nnew").textContent = app.querySelectorAll(".badge.new").length + " new";

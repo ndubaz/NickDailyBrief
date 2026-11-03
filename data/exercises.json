@@ -26,7 +26,7 @@
    "name": "Steadfast Defender 2027",
    "from": "2027-01-01",
    "to": "2027-12-31",
-   "dateText": "2027, dates to be announced",
+   "dateText": "2027, dates not set",
    "lead": "NATO",
    "where": "Europe",
    "forces": "Live formations; tests Avenger Triad concepts",
@@ -71,7 +71,6 @@
    "name": "Combined Resolve",
    "from": "2026-10-26",
    "to": "2026-11-04",
-   "dateText": "under way by 26 Oct, ends 4 Nov",
    "lead": "USAREUR-AF (7th Army Training Command)",
    "where": "Joint Multinational Readiness Center, Hohenfels, Germany",
    "forces": "1st Armored Brigade, 1st Armored Division; more than 3,500 personnel from seven nations, about 50 Ukrainian soldiers",
@@ -84,7 +83,8 @@
      "Stars and Stripes",
      "https://www.stripes.com/branches/army/2026-10-26/ukraine-drones-combined-resolve-germany-23266051.html"
     ]
-   ]
+   ],
+   "dateText": "to 4 Nov (start not published)"
   },
   {
    "id": "resolute-reforger-2026",
@@ -129,7 +129,7 @@
    "name": "Steadfast Dart 27",
    "from": "2027-01-01",
    "to": "2027-03-31",
-   "dateText": "early 2027, dates not published",
+   "dateText": "early 2027",
    "lead": "SHAPE, JFC Naples, NRDC-ITA",
    "where": "Krivolak, North Macedonia",
    "forces": "Allied Reaction Force deployment; part of Steadfast Defender 27",
@@ -149,7 +149,7 @@
    "name": "Quadriga 27",
    "from": "2027-03-01",
    "to": "2027-05-31",
-   "dateText": "March–May 2027 (aggregator, citing the Luftwaffe)",
+   "dateText": "Mar–May 2027",
    "lead": "Germany",
    "where": "Across Germany",
    "forces": "Includes Air Defender 27, 3–14 May, about 200 aircraft",

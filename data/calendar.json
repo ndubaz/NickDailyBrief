@@ -441,17 +441,37 @@
   "afnorth": {
    "name": "AFNORTH",
    "color": "us",
-   "source": "AFNORTH 2026–27 academic calendar (rows taken from Editions 1–2; the full PDF could not be fetched from this environment). Complete 2027 breaks and the 2027–28 year from the calendar.",
+   "source": "AFNORTH 2026–2027 Academic Calendar (DoDEA Europe West, A/B-day edition), supplied by Nick on 3 Nov 2026. The 2027–28 year is not yet published.",
    "segs": [
+    [
+     "2026-09-14",
+     "2026-09-14",
+     "No school: staff day"
+    ],
+    [
+     "2026-09-28",
+     "2026-09-28",
+     "No school: Q1 CCRS/PD day"
+    ],
+    [
+     "2026-10-16",
+     "2026-10-16",
+     "No school: teacher work day"
+    ],
+    [
+     "2026-10-19",
+     "2026-10-23",
+     "Fall break"
+    ],
     [
      "2026-11-16",
      "2026-11-16",
-     "No school, staff and students"
+     "No school: staff and students"
     ],
     [
      "2026-12-07",
      "2026-12-07",
-     "No school, Q2 training day"
+     "No school: Q2 CCRS/PD training"
     ],
     [
      "2026-12-18",
@@ -461,7 +481,57 @@
     [
      "2027-01-15",
      "2027-01-15",
-     "No school, teacher work day"
+     "No school: teacher work day"
+    ],
+    [
+     "2027-01-25",
+     "2027-01-25",
+     "No school: staff and students"
+    ],
+    [
+     "2027-02-08",
+     "2027-02-12",
+     "Carnival break"
+    ],
+    [
+     "2027-02-22",
+     "2027-02-22",
+     "No school: Q3 CCRS day"
+    ],
+    [
+     "2027-03-22",
+     "2027-04-02",
+     "Spring break"
+    ],
+    [
+     "2027-04-09",
+     "2027-04-09",
+     "No school: teacher work day"
+    ],
+    [
+     "2027-04-19",
+     "2027-04-19",
+     "No school: Q4 CCRS day"
+    ],
+    [
+     "2027-04-27",
+     "2027-04-27",
+     "No school: staff and students (King's Day)"
+    ],
+    [
+     "2027-05-06",
+     "2027-05-06",
+     "No school: AIS staff international day"
+    ],
+    [
+     "2027-05-17",
+     "2027-05-17",
+     "No school: staff and students (Whit Monday)"
+    ],
+    [
+     "2027-06-18",
+     "2027-06-18",
+     "No school: teacher workday"
     ]
    ],
    "days": [
@@ -479,10 +549,34 @@
     ],
     [
      "2027-01-14",
-     "Semester ends"
+     "End of semester 1"
+    ],
+    [
+     "2027-01-20",
+     "All AIS 2 pm release"
+    ],
+    [
+     "2027-03-17",
+     "All AIS 2 pm release"
+    ],
+    [
+     "2027-04-08",
+     "End of 3rd quarter"
+    ],
+    [
+     "2027-06-11",
+     "Graduation; final exams 11–16 Jun"
+    ],
+    [
+     "2027-06-17",
+     "Last day of school"
+    ],
+    [
+     "2027-06-21",
+     "Summer break begins"
     ]
    ],
-   "weekly": "Early release every Wednesday"
+   "note": "The academic calendar shows no weekly early release; the Wednesday early release listed earlier is not on it, so confirm with the school before relying on it. US federal holidays are school days unless listed: Veterans Day, Thanksgiving, MLK Day, Presidents' Day and Memorial Day are all A or B days."
   },
   "nl": {
    "name": "NL region Zuid",

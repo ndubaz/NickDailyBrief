@@ -78,7 +78,7 @@ The standing files are the Readbook's memory. The page reads them; it never writ
  },
  "europe": [item], "euregio": [item] (section omitted when empty),
  "nato": {"items": [item] (3–5: NATO HQ and the allied armies: DE, NL, BE, FR, PL, UK, Nordics, Baltics),
-   "table": {"title","asof","head":[...],"rows":[[...]],"src"} | null (allied spending and strength, from NATO's own figures)},
+   "table": {"title","asof","head":[...],"rows":[[...]],"src"} | null (allied spending and strength, from NATO's own figures; only in the edition of the day NATO publishes new figures, otherwise null. The page shows it only when asof is within 7 days)},
  "deftech": {"items": [item] (3: drones, counter-drone, air defence, EW, autonomy, munitions production),
    "series": ["<world-series key>", ...] (production series charted when published),
    "ttp": {"title","body":["para",...]} | null (Saturdays: week in war, tactics, techniques and procedures)},
@@ -109,7 +109,7 @@ The standing files are the Readbook's memory. The page reads them; it never writ
    "news": [item] (3–5)
  },
  "planner": {
-   "events": [[date,"nl|be|de|us|mkt|pro",label,where,what,effect]] (only what calendar.json does not already hold),
+   "events": [[date,"nl|be|de|us|mkt|pro",label,where,what,effect,priority?]] (only what calendar.json does not already hold; a 7th element true puts the row in This week),
    "season": {"title","intro","from","to","ticks","rows":[{"name","sub","color","segs"}],"notes"} | null,
    "otd": {"title","body"}, "culture": {"title","body"} | null},
  "sources": [[n,title,outlet,url]], "flags": "…", "changelog": [[date,text]]
@@ -121,6 +121,12 @@ The standing files are the Readbook's memory. The page reads them; it never writ
 Defence items carry priority-topic tags in `tag` (several separated by ` · `): `Autonomy` (AUTOWARCOM and defence autonomy), `Leaders' words`, `SOF`, `Strategy`, `Posture` (posture and basing), `Force design`. The page counts them in a chip row at the top of Defence & Army so gaps are visible; other tags (DoD, Army, USAREUR-AF, NATO, a country) stay allowed.
 
 The World feature rota: Monday "Theatre in numbers" (table), Tuesday "Actor on the record" (dated quotes, table of capabilities), Wednesday "Trend line" (`series`), Thursday "Chronology" (`timeline`, 30 days), Friday "Week on the board" (table of what moved per theatre), Saturday "Geography" (`geo` schematic), Sunday "The record" (`timeline` over 12 months plus `series`). A worked example is in `data/examples/edition-4.0-sample.json`.
+
+### Page changes on 3 Nov (format stays 5.0)
+
+- This week lists only holidays, AFNORTH days, bins, deadlines, career dates, Christmas markets opening, events with `prio`, planner rows with the priority flag, exercise start and end dates, and Canes games that start between 07:00 and 22:59 CET. Spans show on their first and last day only.
+- New section `weather` in the Planner: the seven-day forecast from `today.weather.week`, today's sunrise, sunset and day length, and the daylight curve (moved out of School year).
+- The NATO spending table shows only in the week NATO publishes. The Congress tracker shows only what moved in 7 days; the register is compact chips coloured by state. The exercise calendar is one line per exercise. Readbook health lists act and watch items and puts the ok checks on one line.
 
 ### Changes from v4.0
 
@@ -143,13 +149,13 @@ The World feature rota: Monday "Theatre in numbers" (table), Tuesday "Actor on t
 
 ### `data/congress.json`
 
-`{ "items": [ {"id","kind":"bill|budget|nomination","title","number","post","org","nominee","stage","dates":{"<stage>":"YYYY-MM-DD"},"deadline","status","committee","next","added","updated","src"} ] }`. Stages: bill = introduced, committee, house, senate, conference, enacted (status "stalled" or "vetoed" greys the pipeline); budget = request, house, senate, cr, enacted, with `deadline` for the next expiry; nomination = vacant, announced, nominated, hearing, committee, floor, confirmed, or withdrawn. The page draws a pipeline per row in three lanes, hides finished rows after 30 days, shows a deadline countdown, badges from `added` and `updated`, and puts deadlines on the Planner.
+`{ "items": [ {"id","kind":"bill|budget|nomination","title","number","post","org","nominee","stage","dates":{"<stage>":"YYYY-MM-DD"},"deadline","status","committee","next","added","updated","src"} ] }`. Stages: bill = introduced, committee, house, senate, conference, enacted (status "stalled" or "vetoed" greys the pipeline); budget = request, house, senate, cr, enacted, with `deadline` for the next expiry; nomination = vacant, announced, nominated, hearing, committee, floor, confirmed, or withdrawn. The page shows only rows that moved in the last 7 days (a stage date, `added` or `updated` within 7 days) or carry a deadline within 21 days, as compact cards coloured by state (red vacant, blue in the pipeline, amber stopgap, green confirmed or enacted, grey stalled or withdrawn); every other open row is one line under "Open, no change this week". So the run only touches a row when something happened, and never sets `updated` without a change.
 
-The same file carries `tiers` and `watch`: the register of posts the confirmations lane follows (`{"id","post","tier":"army|joint|cocom|army4|europe","senate":bool,"holder","since","acting","src","updated"}`). A nomination row carries `postId` to link it to its post. The page shows the register under the pipeline cards, red when a linked row is vacant, amber when a nomination is in progress.
+The same file carries `tiers` and `watch`: the register of posts the confirmations lane follows (`{"id","post","tier":"army|joint|cocom|army4|europe","senate":bool,"holder","since","acting","src","updated"}`). A nomination row carries `postId` to link it to its post. The page shows the register as small chips per tier, coloured by state (red vacant, blue nomination in progress, amber acting, green confirmed in the last 30 days, grey filled, dashed not yet sourced), and lists only the exceptions by name.
 
 ### `data/exercises.json`
 
-`{ "exercises": [ {"id","name","from","to","dateText","lead","where","forces","status":"planned|under way|complete","added","updated","src"} ] }`. Feeds the Planner (category Exercises) and the exercise calendar in Profession.
+`{ "exercises": [ {"id","name","from","to","dateText","lead","where","forces","status":"planned|under way|complete","added","updated","src"} ] }`. Feeds the Planner (category Exercises; This week shows only the start and end dates) and the one-line-per-exercise calendar in Profession, which lists exercises under way or announced and those ended in the last 7 days. `dateText` replaces the date range when the dates are not firm (for example "early 2027").
 
 ### `data/releases.json`
 
@@ -157,7 +163,7 @@ The same file carries `tiers` and `watch`: the register of posts the confirmatio
 
 ### `data/events.json`
 
-`{ "events": [ {"id","t","cat":"music|markets|museums|sport|kids|food|outdoors|festival","from","to","town","venue","cc","drive":minutes,"cost","kid":bool,"added","updated","src"} ] }`. Radius about 90 minutes by car. The page shows This weekend (Friday to Sunday) and Next 30 days with category chips, and feeds the calendar and the week strip.
+`{ "events": [ {"id","t","cat":"music|markets|museums|sport|kids|food|outdoors|festival","from","to","town","venue","cc","drive":minutes,"cost","kid":bool,"prio":bool,"added","updated","src"} ] }`. Radius about 90 minutes by car. The page shows This weekend (Friday to Sunday) and Next 30 days with category chips, and feeds the calendar. Only events with `"prio": true` (a handful: major festivals, the carnival opening, a Sinterklaas arrival in Parkstad) appear in This week; long-running exhibitions never do.
 
 ### `data/idioms.json`
 
