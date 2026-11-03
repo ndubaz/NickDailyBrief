@@ -3,200 +3,68 @@
  "updated": "2026-11-03",
  "events": [
   {
-   "id": "jazzout-2026",
-   "t": "JazzOUT! with Nate Smith (Live Action)",
-   "cat": "music",
-   "from": "2026-11-13",
-   "to": "2026-11-13",
-   "town": "Heerlen",
-   "venue": "Theater Heerlen",
-   "cc": "NL",
-   "drive": 10,
-   "cost": "Tickets on sale",
-   "kid": false,
-   "added": "2026-11-02",
-   "src": [
-    [
-     40,
-     "JazzOUT! 2026",
-     "Festivalinfo",
-     "https://www.festivalinfo.nl/festival/36675/JazzOUT%21/2026/"
-    ]
-   ]
-  },
-  {
-   "id": "elf-mestreech-2026",
-   "t": "ELF: Mestreech Geit Loos, carnival opening",
-   "cat": "festival",
-   "from": "2026-11-11",
-   "to": "2026-11-11",
+   "id": "born-to-play-bonnefanten-2026",
+   "t": "Born to Play: hands-on art floor for ages 6–12",
+   "cat": "museums",
+   "from": "2026-04-18",
+   "to": "2027-02-28",
    "town": "Maastricht",
-   "venue": "Kesselskade",
+   "venue": "Bonnefanten, Tue–Sun 11:00–17:00",
    "cc": "NL",
-   "drive": 30,
-   "cost": "Sold out; remaining places via the organiser",
-   "kid": false,
-   "added": "2026-11-02",
-   "src": [
-    [
-     38,
-     "ELF: Mestreech Geit Loos",
-     "ELF Maastricht",
-     "https://elfmestreech.nl/"
-    ]
-   ]
-  },
-  {
-   "id": "kerststad-valkenburg-2026",
-   "t": "Kerststad Valkenburg: cave Christmas markets",
-   "cat": "markets",
-   "from": "2026-11-13",
-   "to": "2027-01-03",
-   "town": "Valkenburg",
-   "venue": "Gemeentegrot and Fluweelengrot",
-   "cc": "NL",
-   "drive": 20,
-   "cost": "Book weekend time slots online",
-   "kid": true,
-   "added": "2026-11-02",
-   "src": [
-    [
-     39,
-     "Kerststad Valkenburg",
-     "Visit Zuid-Limburg",
-     "https://www.visitzuidlimburg.com/experience-zuid-limburg/event/kerststad-valkenburg/60635/"
-    ]
-   ]
-  },
-  {
-   "id": "koeln-dom-markt-2026",
-   "t": "Weihnachtsmarkt am Kölner Dom",
-   "cat": "markets",
-   "from": "2026-11-16",
-   "to": "2026-12-23",
-   "town": "Köln",
-   "venue": "Roncalliplatz",
-   "cc": "DE",
-   "drive": 65,
-   "cost": "Free entry; closed Sun 22 Nov",
-   "kid": true,
-   "added": "2026-11-02",
-   "src": [
-    [
-     51,
-     "Weihnachtsmarkt am Kölner Dom",
-     "koeln.de",
-     "https://www.koeln.de/weihnachten/weihnachtsmaerkte-koeln/weihnachtsmarkt-am-koelner-dom/"
-    ]
-   ]
-  },
-  {
-   "id": "aachen-markt-2026",
-   "t": "Aachener Weihnachtsmarkt",
-   "cat": "markets",
-   "from": "2026-11-20",
-   "to": "2026-12-23",
-   "town": "Aachen",
-   "venue": "Around the Dom and Rathaus",
-   "cc": "DE",
    "drive": 25,
-   "cost": "Free entry; Sun 22 Nov evening only",
+   "cost": "Adults €22; under-18s free",
    "kid": true,
-   "added": "2026-11-02",
-   "src": [
-    [
-     41,
-     "Aachener Weihnachtsmarkt: dates and hours",
-     "Aachen Christmas market",
-     "https://aachenweihnachtsmarkt.de/en/pages/offers/"
-    ]
-   ]
-  },
-  {
-   "id": "magisch-maastricht-2026",
-   "t": "Magisch Maastricht",
-   "cat": "markets",
-   "from": "2026-11-27",
-   "to": "2026-12-27",
-   "town": "Maastricht",
-   "venue": "Vrijthof",
-   "cc": "NL",
-   "drive": 30,
-   "cost": "Free entry; covered ice rink",
-   "kid": true,
-   "added": "2026-11-02",
-   "src": [
-    [
-     54,
-     "Magisch Maastricht",
-     "Kidsproof",
-     "https://www.kidsproof.nl/zuid-limburg/eropuit/magisch-maastricht/magisch-maastricht-kerst-gezinsuitje-eu/"
-    ]
-   ]
-  },
-  {
-   "id": "liege-noel-2026",
-   "t": "Village de Noël de Liège",
-   "cat": "markets",
-   "from": "2026-11-27",
-   "to": "2026-12-30",
-   "town": "Liège",
-   "venue": "Place Saint-Lambert and Place du Marché",
-   "cc": "BE",
-   "drive": 45,
-   "cost": "Free entry",
-   "kid": true,
-   "added": "2026-11-02",
-   "src": [
-    [
-     53,
-     "Village de Noël in Luik",
-     "Visit Zuid-Limburg",
-     "https://www.visitzuidlimburg.com/experience-zuid-limburg/event/village-de-noel-in-luik/64128"
-    ]
-   ]
-  },
-  {
-   "id": "monschau-markt-2026",
-   "t": "Monschau Christmas market (four weekends)",
-   "cat": "markets",
-   "from": "2026-11-27",
-   "to": "2026-12-20",
-   "town": "Monschau",
-   "venue": "Old town",
-   "cc": "DE",
-   "drive": 50,
-   "cost": "Free entry; Fri–Sun only",
-   "kid": true,
-   "added": "2026-11-02",
-   "src": [
-    [
-     52,
-     "Christmas market Monschau",
-     "Tourismus Kreis Düren",
-     "https://www.tourismus.kreis-dueren.de/en/e-christmas-market-monschau-2"
-    ]
-   ]
-  },
-  {
-   "id": "dutch-mountain-film-2026",
-   "t": "Dutch Mountain Film Festival",
-   "cat": "festival",
-   "from": "2026-11-06",
-   "to": "2026-11-15",
-   "town": "Heerlen and Aachen",
-   "venue": "Various",
-   "cc": "NL",
-   "drive": 10,
-   "cost": "Tickets per screening",
-   "kid": false,
    "added": "2026-11-03",
    "src": [
     [
-     45,
-     "Dutch Mountain Film Festival (DMFF) 2026",
-     "FilmFreeway",
-     "https://filmfreeway.com/DMFF"
+     158,
+     "Born to Play: do & dare like an artist",
+     "Visit Maastricht",
+     "https://www.visitmaastricht.com/en/agenda/2556837283/born-to-play-do-dare-like-an-artist"
+    ]
+   ]
+  },
+  {
+   "id": "gaiazoo-ijstijd-2026",
+   "t": "IJstijd (Ice Age winter theme) at GaiaZOO",
+   "cat": "outdoors",
+   "from": "2026-10-17",
+   "to": "2027-02-28",
+   "town": "Kerkrade",
+   "venue": "GaiaZOO",
+   "cc": "NL",
+   "drive": 15,
+   "cost": "Normal zoo admission",
+   "kid": true,
+   "added": "2026-11-03",
+   "src": [
+    [
+     140,
+     "IJstijd",
+     "GaiaZOO",
+     "https://www.gaiazoo.nl/evenementen/ijstijd/"
+    ]
+   ]
+  },
+  {
+   "id": "meet-ber-mosasaurus-2026",
+   "t": "Meet Bèr: Mosasaurus Experience",
+   "cat": "museums",
+   "from": "2026-11-04",
+   "to": "2026-12-31",
+   "town": "Maastricht",
+   "venue": "Natuurhistorisch Museum Maastricht",
+   "cc": "NL",
+   "drive": 25,
+   "cost": "€11.50; ages 5–17 €7.50; under 4 free",
+   "kid": true,
+   "added": "2026-11-03",
+   "src": [
+    [
+     159,
+     "Meet Bèr - Mosasaurus Experience",
+     "Visit Maastricht",
+     "https://www.visitmaastricht.com/en/agenda/1541388440/meet-ber-mosasaurus-experience"
     ]
    ]
   },
@@ -223,6 +91,336 @@
    ]
   },
   {
+   "id": "dutch-mountain-film-2026",
+   "t": "Dutch Mountain Film Festival",
+   "cat": "festival",
+   "from": "2026-11-06",
+   "to": "2026-11-15",
+   "town": "Heerlen and Aachen",
+   "venue": "Various",
+   "cc": "NL",
+   "drive": 10,
+   "cost": "Tickets per screening",
+   "kid": false,
+   "added": "2026-11-03",
+   "src": [
+    [
+     45,
+     "Dutch Mountain Film Festival (DMFF) 2026",
+     "FilmFreeway",
+     "https://filmfreeway.com/DMFF"
+    ]
+   ]
+  },
+  {
+   "id": "fortuna-sittard-telstar-2026",
+   "t": "Fortuna Sittard v Telstar (Eredivisie)",
+   "cat": "sport",
+   "from": "2026-11-07",
+   "to": "2026-11-07",
+   "town": "Sittard",
+   "venue": "Fortuna Sittard Stadion, 16:30 (kick-off may change)",
+   "cc": "NL",
+   "drive": 15,
+   "cost": "Tickets via the club",
+   "kid": true,
+   "added": "2026-11-03",
+   "src": [
+    [
+     141,
+     "Competitieprogramma VriendenLoterij Eredivisie seizoen 2026/'27",
+     "KNVB",
+     "https://www.knvb.nl/downloads/bestand/30062/definitiefcompetitieprogrammavriendenloterijeredivisie"
+    ]
+   ]
+  },
+  {
+   "id": "glow-eindhoven-2026",
+   "t": "GLOW Eindhoven light-art festival",
+   "cat": "festival",
+   "from": "2026-11-07",
+   "to": "2026-11-14",
+   "town": "Eindhoven",
+   "venue": "City-centre walking route of about 5 km from Eindhoven Centraal, nightly 18:30–23:00",
+   "cc": "NL",
+   "drive": 55,
+   "cost": "Free",
+   "kid": true,
+   "added": "2026-11-03",
+   "src": [
+    [
+     126,
+     "GLOW Eindhoven 2026, 7 to 14 November",
+     "Holland Expat Center South",
+     "https://www.hollandexpatcenter.com/events/glow-eindhoven-2026-7-to-14-november"
+    ]
+   ]
+  },
+  {
+   "id": "kasteel-hoensbroek-kids-2026",
+   "t": "Het Kasteel in rep en roer!, children's show",
+   "cat": "kids",
+   "from": "2026-11-08",
+   "to": "2026-11-08",
+   "town": "Hoensbroek",
+   "venue": "Kasteel Hoensbroek",
+   "cc": "NL",
+   "drive": 5,
+   "cost": "Included in admission; sign up at the desk",
+   "kid": true,
+   "added": "2026-11-03",
+   "src": [
+    [
+     125,
+     "Kindervoorstelling: Het Kasteel in rep en roer!",
+     "Kasteel Hoensbroek",
+     "https://www.kasteelhoensbroek.nl/wat-is-er-te-doen/kindervoorstelling-het-kasteel-in-rep-en-roer/"
+    ]
+   ]
+  },
+  {
+   "id": "cooking-from-the-fridge-bonnefanten-2026",
+   "t": "Cooking from the Fridge: 270 works from three Limburg collections",
+   "cat": "museums",
+   "from": "2026-11-11",
+   "to": "2027-01-10",
+   "town": "Maastricht",
+   "venue": "Bonnefanten",
+   "cc": "NL",
+   "drive": 25,
+   "cost": "Adults €22; under-18s free",
+   "kid": false,
+   "added": "2026-11-03",
+   "src": [
+    [
+     160,
+     "Cooking from the Fridge",
+     "Bonnefanten",
+     "https://www.bonnefanten.nl/nl/tentoonstellingen/cooking-from-the-fridge"
+    ]
+   ]
+  },
+  {
+   "id": "elf-mestreech-2026",
+   "t": "ELF: Mestreech Geit Loos, carnival opening",
+   "cat": "festival",
+   "from": "2026-11-11",
+   "to": "2026-11-11",
+   "town": "Maastricht",
+   "venue": "Kesselskade",
+   "cc": "NL",
+   "drive": 30,
+   "cost": "Sold out; remaining places via the organiser",
+   "kid": false,
+   "added": "2026-11-02",
+   "src": [
+    [
+     38,
+     "ELF: Mestreech Geit Loos",
+     "ELF Maastricht",
+     "https://elfmestreech.nl/"
+    ]
+   ]
+  },
+  {
+   "id": "rhythmix-philzuid-heerlen-2026",
+   "t": "Rhythmix: Philzuid and Percossa family concert (8+)",
+   "cat": "music",
+   "from": "2026-11-12",
+   "to": "2026-11-12",
+   "town": "Heerlen",
+   "venue": "Theater Heerlen, 19:00–20:00",
+   "cc": "NL",
+   "drive": 10,
+   "cost": "€19.50; children to 12 €9.50",
+   "kid": true,
+   "added": "2026-11-03",
+   "src": [
+    [
+     142,
+     "Familieconcert Rhythmix – Philzuid",
+     "Parkstad Limburg Theaters",
+     "https://www.plt.nl/programma/rhythmix-philzuid/12-11-2026-19-00"
+    ]
+   ]
+  },
+  {
+   "id": "hans-grietje-kerkrade-2026",
+   "t": "Hans & Grietje op de vlucht!, family opera (8+)",
+   "cat": "kids",
+   "from": "2026-11-13",
+   "to": "2026-11-13",
+   "town": "Kerkrade",
+   "venue": "Theater Kerkrade, 19:00",
+   "cc": "NL",
+   "drive": 15,
+   "cost": "€18.75–€28.75; children to 12 from €13.75",
+   "kid": true,
+   "added": "2026-11-03",
+   "src": [
+    [
+     143,
+     "Hans & Grietje op de vlucht!",
+     "Parkstad Limburg Theaters",
+     "https://www.plt.nl/programma/hans-grietje-op-de-vlucht/13-11-2026-19-00"
+    ]
+   ]
+  },
+  {
+   "id": "jazzout-2026",
+   "t": "JazzOUT! with Nate Smith (Live Action)",
+   "cat": "music",
+   "from": "2026-11-13",
+   "to": "2026-11-13",
+   "town": "Heerlen",
+   "venue": "Theater Heerlen",
+   "cc": "NL",
+   "drive": 10,
+   "cost": "Tickets on sale",
+   "kid": false,
+   "added": "2026-11-02",
+   "src": [
+    [
+     40,
+     "JazzOUT! 2026",
+     "Festivalinfo",
+     "https://www.festivalinfo.nl/festival/36675/JazzOUT%21/2026/"
+    ]
+   ]
+  },
+  {
+   "id": "kerststad-valkenburg-2026",
+   "t": "Kerststad Valkenburg: cave Christmas markets",
+   "cat": "markets",
+   "from": "2026-11-13",
+   "to": "2027-01-03",
+   "town": "Valkenburg",
+   "venue": "Gemeentegrot and Fluweelengrot",
+   "cc": "NL",
+   "drive": 20,
+   "cost": "Book weekend time slots online",
+   "kid": true,
+   "added": "2026-11-02",
+   "src": [
+    [
+     39,
+     "Kerststad Valkenburg",
+     "Visit Zuid-Limburg",
+     "https://www.visitzuidlimburg.com/experience-zuid-limburg/event/kerststad-valkenburg/60635/"
+    ]
+   ]
+  },
+  {
+   "id": "winterland-hasselt-2026",
+   "t": "Winterland Hasselt: Christmas market, covered ice rink, Ferris wheel",
+   "cat": "markets",
+   "from": "2026-11-13",
+   "to": "2027-01-03",
+   "town": "Hasselt",
+   "venue": "Kolonel Dusartplein",
+   "cc": "BE",
+   "drive": 45,
+   "cost": "Free entry; rink and rides paid",
+   "kid": true,
+   "added": "2026-11-03",
+   "src": [
+    [
+     144,
+     "Winterland Hasselt",
+     "Winterland",
+     "https://www.winterland.be/"
+    ]
+   ]
+  },
+  {
+   "id": "sinterklaas-venlo-blerick-2026",
+   "t": "Sinterklaas arrives in Blerick (12:45) and Venlo (15:30)",
+   "cat": "kids",
+   "from": "2026-11-15",
+   "to": "2026-11-15",
+   "town": "Venlo",
+   "venue": "Blerick harbour, then Venlo Maasboulevard and the Markt",
+   "cc": "NL",
+   "drive": 50,
+   "cost": "Free",
+   "kid": true,
+   "added": "2026-11-03",
+   "src": [
+    [
+     145,
+     "Intocht Sinterklaas Venlo & Blerick 2026",
+     "Kidsproof Eindhoven",
+     "https://www.kidsproof.nl/eindhoven/?p=38614"
+    ]
+   ]
+  },
+  {
+   "id": "koeln-dom-markt-2026",
+   "t": "Weihnachtsmarkt am Kölner Dom",
+   "cat": "markets",
+   "from": "2026-11-16",
+   "to": "2026-12-23",
+   "town": "Köln",
+   "venue": "Roncalliplatz",
+   "cc": "DE",
+   "drive": 65,
+   "cost": "Free entry; closed Sun 22 Nov",
+   "kid": true,
+   "added": "2026-11-02",
+   "src": [
+    [
+     51,
+     "Weihnachtsmarkt am Kölner Dom",
+     "koeln.de",
+     "https://www.koeln.de/weihnachten/weihnachtsmaerkte-koeln/weihnachtsmarkt-am-koelner-dom/"
+    ]
+   ]
+  },
+  {
+   "id": "duesseldorf-weihnachtsmarkt-2026",
+   "t": "Düsseldorf Christmas markets (seven themed markets)",
+   "cat": "markets",
+   "from": "2026-11-19",
+   "to": "2026-12-30",
+   "town": "Düsseldorf",
+   "venue": "Altstadt and city centre (closed 22 Nov and 25 Dec)",
+   "cc": "DE",
+   "drive": 75,
+   "cost": "Free entry",
+   "kid": true,
+   "added": "2026-11-03",
+   "src": [
+    [
+     146,
+     "Düsseldorfer Weihnachtsmarkt",
+     "Visit Düsseldorf",
+     "https://www.visitduesseldorf.de/event/duesseldorfer-weihnachtsmarkt-c632015b44"
+    ]
+   ]
+  },
+  {
+   "id": "aachen-markt-2026",
+   "t": "Aachener Weihnachtsmarkt",
+   "cat": "markets",
+   "from": "2026-11-20",
+   "to": "2026-12-23",
+   "town": "Aachen",
+   "venue": "Around the Dom and Rathaus",
+   "cc": "DE",
+   "drive": 25,
+   "cost": "Free entry; Sun 22 Nov evening only",
+   "kid": true,
+   "added": "2026-11-02",
+   "src": [
+    [
+     41,
+     "Aachener Weihnachtsmarkt: dates and hours",
+     "Aachen Christmas market",
+     "https://aachenweihnachtsmarkt.de/en/pages/offers/"
+    ]
+   ]
+  },
+  {
    "id": "geheimen-parkstad-2026",
    "t": "Geheimen van Parkstad, family show",
    "cat": "kids",
@@ -241,6 +439,336 @@
      "Geheimen van Parkstad brengt streekverhalen tot leven in Theater Heerlen",
      "Drimble / ParkstadActueel",
      "https://drimble.nl/regio/limburg/heerlen/108460506/geheimen-van-parkstad-brengt-streekverhalen-tot-leven-in-theater-heerlen.html"
+    ]
+   ]
+  },
+  {
+   "id": "sinterklaas-kerkrade-2026",
+   "t": "Sinterklaas arrives in Kerkrade (from 13:30)",
+   "cat": "kids",
+   "from": "2026-11-21",
+   "to": "2026-11-21",
+   "town": "Kerkrade",
+   "venue": "Town centre",
+   "cc": "NL",
+   "drive": 15,
+   "cost": "Free",
+   "kid": true,
+   "added": "2026-11-03",
+   "src": [
+    [
+     147,
+     "Sinterklaasintochten 2026 Zuid-Limburg",
+     "Kidsproof Zuid-Limburg",
+     "https://www.kidsproof.nl/zuid-limburg/?p=29216"
+    ]
+   ]
+  },
+  {
+   "id": "brussels-winter-wonders-2026",
+   "t": "Winter Wonders Brussels (25th edition)",
+   "cat": "markets",
+   "from": "2026-11-27",
+   "to": "2027-01-03",
+   "town": "Brussels",
+   "venue": "City-centre trail from the Grand-Place to Place Sainte-Catherine; 238 chalets",
+   "cc": "BE",
+   "drive": 90,
+   "cost": "Free to walk; attractions paid",
+   "kid": true,
+   "added": "2026-11-03",
+   "src": [
+    [
+     148,
+     "Winter Wonders",
+     "Plaisirs d'Hiver / Winterpret",
+     "https://www.plaisirsdhiver.be/en"
+    ]
+   ]
+  },
+  {
+   "id": "liege-noel-2026",
+   "t": "Village de Noël de Liège",
+   "cat": "markets",
+   "from": "2026-11-27",
+   "to": "2026-12-30",
+   "town": "Liège",
+   "venue": "Place Saint-Lambert and Place du Marché",
+   "cc": "BE",
+   "drive": 45,
+   "cost": "Free entry",
+   "kid": true,
+   "added": "2026-11-02",
+   "src": [
+    [
+     53,
+     "Village de Noël in Luik",
+     "Visit Zuid-Limburg",
+     "https://www.visitzuidlimburg.com/experience-zuid-limburg/event/village-de-noel-in-luik/64128"
+    ]
+   ]
+  },
+  {
+   "id": "magisch-maastricht-2026",
+   "t": "Magisch Maastricht",
+   "cat": "markets",
+   "from": "2026-11-27",
+   "to": "2026-12-27",
+   "town": "Maastricht",
+   "venue": "Vrijthof",
+   "cc": "NL",
+   "drive": 30,
+   "cost": "Free entry; covered ice rink",
+   "kid": true,
+   "added": "2026-11-02",
+   "src": [
+    [
+     54,
+     "Magisch Maastricht",
+     "Kidsproof",
+     "https://www.kidsproof.nl/zuid-limburg/eropuit/magisch-maastricht/magisch-maastricht-kerst-gezinsuitje-eu/"
+    ]
+   ]
+  },
+  {
+   "id": "monschau-markt-2026",
+   "t": "Monschau Christmas market (four weekends)",
+   "cat": "markets",
+   "from": "2026-11-27",
+   "to": "2026-12-20",
+   "town": "Monschau",
+   "venue": "Old town",
+   "cc": "DE",
+   "drive": 50,
+   "cost": "Free entry; Fri–Sun only",
+   "kid": true,
+   "added": "2026-11-02",
+   "src": [
+    [
+     52,
+     "Christmas market Monschau",
+     "Tourismus Kreis Düren",
+     "https://www.tourismus.kreis-dueren.de/en/e-christmas-market-monschau-2"
+    ]
+   ]
+  },
+  {
+   "id": "oliver-musical-kerkrade-2026",
+   "t": "Oliver en het avontuur van de straatkinderen, youth musical (8+)",
+   "cat": "kids",
+   "from": "2026-11-29",
+   "to": "2026-11-29",
+   "town": "Kerkrade",
+   "venue": "Theater Kerkrade, 15:00–16:15",
+   "cc": "NL",
+   "drive": 15,
+   "cost": "€20–€25",
+   "kid": true,
+   "added": "2026-11-03",
+   "src": [
+    [
+     150,
+     "Oliver en het avontuur van de straatkinderen",
+     "Parkstad Limburg Theaters",
+     "https://www.plt.nl/programma/oliver-en-het-avontuur-van-de-straatkinderen/29-11-2026-15-00"
+    ]
+   ]
+  },
+  {
+   "id": "roda-jc-de-graafschap-2026",
+   "t": "Roda JC v De Graafschap (Keuken Kampioen Divisie)",
+   "cat": "sport",
+   "from": "2026-11-29",
+   "to": "2026-11-29",
+   "town": "Kerkrade",
+   "venue": "Parkstad Limburg Stadion, 16:45",
+   "cc": "NL",
+   "drive": 15,
+   "cost": "Tickets via the club",
+   "kid": true,
+   "added": "2026-11-03",
+   "src": [
+    [
+     149,
+     "Roda JC Kerkrade – wedstrijden",
+     "Roda JC Kerkrade",
+     "https://www.rodajckerkrade.nl/"
+    ]
+   ]
+  },
+  {
+   "id": "aladdin-musical-maastricht-2026",
+   "t": "Aladdin De Musical (4+), with meet and greet",
+   "cat": "kids",
+   "from": "2026-12-12",
+   "to": "2026-12-12",
+   "town": "Maastricht",
+   "venue": "Theater aan het Vrijthof, 13:30 and 16:00",
+   "cc": "NL",
+   "drive": 25,
+   "cost": "€32.50",
+   "kid": true,
+   "added": "2026-11-03",
+   "src": [
+    [
+     151,
+     "Aladdin De Musical 4+ (Van Hoorne Studios)",
+     "Theater aan het Vrijthof",
+     "https://www.theateraanhetvrijthof.nl/voorstellingen/familie-en-jeugd/aladdin-de-musical-4-van-hoorne-studios/12-12-2026-16-00"
+    ]
+   ]
+  },
+  {
+   "id": "herman-van-veen-maastricht-2026",
+   "t": "Herman van Veen: Vandaag, theatre concert",
+   "cat": "music",
+   "from": "2026-12-17",
+   "to": "2026-12-18",
+   "town": "Maastricht",
+   "venue": "Theater aan het Vrijthof, 20:00",
+   "cc": "NL",
+   "drive": 25,
+   "cost": "€44.50–€54.50",
+   "kid": false,
+   "added": "2026-11-03",
+   "src": [
+    [
+     152,
+     "Vandaag - Herman van Veen",
+     "Theater aan het Vrijthof",
+     "https://www.theateraanhetvrijthof.nl/voorstellingen/theaterconcert/vandaag-herman-van-veen/18-12-2026-20-00"
+    ]
+   ]
+  },
+  {
+   "id": "philxmas-philzuid-2026",
+   "t": "PhilXmas: Philzuid family Christmas show after A Christmas Carol",
+   "cat": "music",
+   "from": "2026-12-19",
+   "to": "2026-12-20",
+   "town": "Maastricht",
+   "venue": "Opus 9 (Theresiakerk); Sat 19:00, Sun 15:00",
+   "cc": "NL",
+   "drive": 25,
+   "cost": "€19.50; children €9.50",
+   "kid": true,
+   "added": "2026-11-03",
+   "src": [
+    [
+     153,
+     "PhilXmas - Philzuid",
+     "Theater aan het Vrijthof",
+     "https://www.theateraanhetvrijthof.nl/voorstellingen/klassiek-klassiek/philxmas-philzuid/20-12-2026-15-00"
+    ]
+   ]
+  },
+  {
+   "id": "koelner-haie-mannheim-2026",
+   "t": "Kölner Haie v Adler Mannheim (DEL ice hockey)",
+   "cat": "sport",
+   "from": "2026-12-20",
+   "to": "2026-12-20",
+   "town": "Köln",
+   "venue": "Home arena, 14:00",
+   "cc": "DE",
+   "drive": 80,
+   "cost": "Tickets via haie.de",
+   "kid": true,
+   "added": "2026-11-03",
+   "src": [
+    [
+     154,
+     "Spielplan",
+     "Kölner Haie",
+     "https://www.haie.de/spielplan"
+    ]
+   ]
+  },
+  {
+   "id": "superprestige-zolder-2026",
+   "t": "Telenet Superprestige cyclo-cross, Christmas Day",
+   "cat": "sport",
+   "from": "2026-12-25",
+   "to": "2026-12-25",
+   "town": "Heusden-Zolder",
+   "venue": "Zolder",
+   "cc": "BE",
+   "drive": 45,
+   "cost": "Paid entry",
+   "kid": true,
+   "added": "2026-11-03",
+   "src": [
+    [
+     155,
+     "Discover the calendar for the 2026-2027 Telenet Superprestige",
+     "Telenet Superprestige",
+     "https://www.superprestigecyclocross.be/en/news/discover-the-calendar-for-the-2026-2027-telenet-superprestige"
+    ]
+   ]
+  },
+  {
+   "id": "wereldbeker-zonhoven-2027",
+   "t": "UCI Cyclo-cross World Cup Zonhoven",
+   "cat": "sport",
+   "from": "2027-01-03",
+   "to": "2027-01-03",
+   "town": "Zonhoven",
+   "venue": "Zonhoven cross course",
+   "cc": "BE",
+   "drive": 40,
+   "cost": "Paid entry",
+   "kid": true,
+   "added": "2026-11-03",
+   "src": [
+    [
+     156,
+     "Wanneer is welke cross? Dit is de complete veldritkalender 2026-2027",
+     "Sporza",
+     "https://sporza.be/nl/2026/09/29/wanneer-is-welke-cross-en-welke-wedstrijden-zijn-live-bij-sporza-dit-is-de-complete-veldritkalender-2026-2027~1790685673220/"
+    ]
+   ]
+  },
+  {
+   "id": "nieuwjaarsconcert-philzuid-2027",
+   "t": "Philzuid New Year's Concert (Strauss, Lehár)",
+   "cat": "music",
+   "from": "2027-01-07",
+   "to": "2027-01-07",
+   "town": "Maastricht",
+   "venue": "Theater aan het Vrijthof, 20:00",
+   "cc": "NL",
+   "drive": 25,
+   "cost": "€39–€55",
+   "kid": false,
+   "added": "2026-11-03",
+   "src": [
+    [
+     157,
+     "Nieuwjaarsconcert - Philzuid",
+     "Theater aan het Vrijthof",
+     "https://www.theateraanhetvrijthof.nl/voorstellingen/2027/01/nieuwjaarsconcert-philzuid"
+    ]
+   ]
+  },
+  {
+   "id": "bk-veldrijden-bilzen-2027",
+   "t": "Belgian national cyclo-cross championships",
+   "cat": "sport",
+   "from": "2027-01-09",
+   "to": "2027-01-10",
+   "town": "Bilzen",
+   "venue": "Course not yet announced",
+   "cc": "BE",
+   "drive": 30,
+   "cost": "Paid entry",
+   "kid": true,
+   "added": "2026-11-03",
+   "src": [
+    [
+     156,
+     "Wanneer is welke cross? Dit is de complete veldritkalender 2026-2027",
+     "Sporza",
+     "https://sporza.be/nl/2026/09/29/wanneer-is-welke-cross-en-welke-wedstrijden-zijn-live-bij-sporza-dit-is-de-complete-veldritkalender-2026-2027~1790685673220/"
     ]
    ]
   }

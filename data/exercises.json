@@ -40,6 +40,129 @@
      "https://www.army.mil/article/296123/usareur_af_nato_allies_conclude_exercise_avenger_triad_26"
     ]
    ]
+  },
+  {
+   "id": "koalicja-2026",
+   "name": "Koalicja (Multinational Force–Ukraine)",
+   "from": "2026-11-09",
+   "to": "2026-11-22",
+   "lead": "France and the UK (MNF-U, operational HQ Paris); not NATO",
+   "where": "Around Nowa Dęba, south-east Poland",
+   "forces": "About 2,800 troops from 10 countries (FR 1,100, UK 300; BE, EE, DE, LT, NL, PL, ES, SE); drones and counter-drone, no tanks",
+   "status": "planned",
+   "added": "2026-11-03",
+   "src": [
+    [
+     91,
+     "Thousands of troops from Europe to rehearse post-war Ukraine deployment in Poland",
+     "Euronews",
+     "https://euronews.com/2026/11/03/thousands-of-troops-from-europe-to-rehearse-post-war-ukraine-deployment-in-poland"
+    ],
+    [
+     92,
+     "European force to hold first Ukraine support exercise in Poland",
+     "France 24",
+     "https://www.france24.com/en/europe/20261103-european-force-to-hold-first-ukraine-support-exercise-in-poland"
+    ]
+   ]
+  },
+  {
+   "id": "combined-resolve-2026",
+   "name": "Combined Resolve",
+   "from": "2026-10-26",
+   "to": "2026-11-04",
+   "dateText": "under way by 26 Oct, ends 4 Nov",
+   "lead": "USAREUR-AF (7th Army Training Command)",
+   "where": "Joint Multinational Readiness Center, Hohenfels, Germany",
+   "forces": "1st Armored Brigade, 1st Armored Division; more than 3,500 personnel from seven nations, about 50 Ukrainian soldiers",
+   "status": "under way",
+   "added": "2026-11-03",
+   "src": [
+    [
+     73,
+     "Ukrainian soldiers tap front-line experience to scout for US armor in Bavaria exercise",
+     "Stars and Stripes",
+     "https://www.stripes.com/branches/army/2026-10-26/ukraine-drones-combined-resolve-germany-23266051.html"
+    ]
+   ]
+  },
+  {
+   "id": "resolute-reforger-2026",
+   "name": "Resolute Reforger 2026",
+   "from": "2026-10-26",
+   "to": "2026-11-08",
+   "lead": "NATO Multinational Brigade Latvia",
+   "where": "Eastern Latvia",
+   "forces": "About 3,000 personnel and 1,000 vehicles; recovery phase 4–8 Nov",
+   "status": "under way",
+   "added": "2026-11-03",
+   "src": [
+    [
+     74,
+     "NATO exercise Resolute Reforger 2026 in Latvia",
+     "UkrMedia",
+     "https://ukrmedia.news/en/world/navchannia-nato-latviia-resolute-reforger-2026/"
+    ]
+   ]
+  },
+  {
+   "id": "neptune-strike-26-4",
+   "name": "Neptune Strike 26-4",
+   "from": "2026-10-16",
+   "to": "2026-11-05",
+   "lead": "NATO (STRIKFORNATO; JFC Norfolk)",
+   "where": "North Atlantic and High North",
+   "forces": "17 allies; Italian carrier group (ITS Cavour), Turkish amphibious group (TCG Anadolu), UK carrier group (HMS Prince of Wales)",
+   "status": "under way",
+   "added": "2026-11-03",
+   "src": [
+    [
+     75,
+     "NATO says three maritime strike groups and forces from 17 Allies are testing joint combat readiness in Neptune Strike 26-4",
+     "Defence Industry Europe",
+     "https://defence-industry.eu/nato-says-three-maritime-strike-groups-and-forces-from-17-allies-are-testing-joint-combat-readiness-in-neptune-strike-26-4/"
+    ]
+   ]
+  },
+  {
+   "id": "steadfast-dart-27",
+   "name": "Steadfast Dart 27",
+   "from": "2027-01-01",
+   "to": "2027-03-31",
+   "dateText": "early 2027, dates not published",
+   "lead": "SHAPE, JFC Naples, NRDC-ITA",
+   "where": "Krivolak, North Macedonia",
+   "forces": "Allied Reaction Force deployment; part of Steadfast Defender 27",
+   "status": "planned",
+   "added": "2026-11-03",
+   "src": [
+    [
+     76,
+     "Reconnaissance for exercise Steadfast Dart 27 by a SHAPE, JFCNP and NRDC-ITA delegation",
+     "Army of North Macedonia",
+     "https://mil.mk/general-staff-activities/izviduvanje-za-vezhbata-steadfast-dart-27-od-strana-na-delegacija-od-shape-jfcnp-i-nrdc-ita/?lang=en"
+    ]
+   ]
+  },
+  {
+   "id": "quadriga-27",
+   "name": "Quadriga 27",
+   "from": "2027-03-01",
+   "to": "2027-05-31",
+   "dateText": "March–May 2027 (aggregator, citing the Luftwaffe)",
+   "lead": "Germany",
+   "where": "Across Germany",
+   "forces": "Includes Air Defender 27, 3–14 May, about 200 aircraft",
+   "status": "planned",
+   "added": "2026-11-03",
+   "src": [
+    [
+     77,
+     "NATO exercises 2027",
+     "Grosswald (aggregator)",
+     "https://www.grosswald.org/nato-exercises-2027/"
+    ]
+   ]
   }
  ]
 }

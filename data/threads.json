@@ -84,6 +84,18 @@
        "https://www.eunews.it/en/2026/11/02/hacker-attacks-on-eu-supermarkets-hansen-says-an-attempt-to-disrupt-the-food-supply/"
       ]
      ]
+    },
+    {
+     "date": "2026-11-03",
+     "t": "Rome's crisis meeting under Undersecretary Mantovano, with the agriculture minister, the cyber agency and the intelligence chiefs, found limited impact in Italy; the postal police are investigating links abroad and Copasir will ask the government for information. [48]",
+     "src": [
+      [
+       48,
+       "Attacchi hacker ai supermercati in Europa, anomalie anche in Italia. Cosa sappiamo",
+       "Sky TG24",
+       "https://tg24.sky.it/cronaca/2026/11/03/attacchi-hacker-supermercati-europa-italia-cosa-sappiamo"
+      ]
+     ]
     }
    ]
   },
@@ -182,6 +194,24 @@
        "US picks Poland for Patriot maintenance hub",
        "Stars and Stripes",
        "https://www.stripes.com/theaters/europe/2026-10-28/poland-patriot-missile-maintenance-hub-23286863.html"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-03",
+     "t": "At least four option sets of force levels and dispositions are due to Hegseth on 6 Nov, with the full review in December; NBC reported that the options include withdrawing at least 25,000 of about 80,000 US personnel in Europe. [53, 54]",
+     "src": [
+      [
+       53,
+       "Pentagon's NATO review preparing troop options for Hegseth by November 6",
+       "Military Times (Reuters)",
+       "https://www.militarytimes.com/news/pentagon-congress/2026/08/27/pentagons-nato-review-preparing-troop-options-for-hegseth-by-november-6/"
+      ],
+      [
+       54,
+       "Pentagon weighs pulling at least 25,000 US troops from Europe: report",
+       "Anadolu (citing NBC News)",
+       "https://aa.com.tr/en/world/pentagon-weighs-pulling-at-least-25-000-us-troops-from-europe-report/4060679"
       ]
      ]
     }
@@ -321,6 +351,64 @@
        "Iran-US deal still out of reach, senior Iranian official says",
        "Times of Israel (Reuters)",
        "https://www.timesofisrael.com/liveblog_entry/iran-us-deal-still-out-of-reach-senior-iranian-official-says/"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-03",
+     "t": "The Wall Street Journal says Washington has carried out limited strikes on Iran in recent weeks; Vance says he and Trump “feel really good” about a negotiated settlement; Trump names Pickaxe Mountain as a possible target; Qatari mediators took a draft text to Tehran on 2 Nov. [11]",
+     "src": [
+      [
+       11,
+       "U.S. strikes Iran's Qeshm Island as Vance seeks settlement",
+       "CNBC",
+       "https://www.cnbc.com/2026/11/03/iran-us-vance-trump-strikes.html"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "nl-tax-plan-2027",
+   "name": "Dutch 2027 tax plan",
+   "status": "moving",
+   "opened": "2026-11-03",
+   "log": [
+    {
+     "date": "2026-11-03",
+     "t": "The revised plan went to the Kamer on 3 Nov: the vrijheidsbijdrage (a €347 million labour tax for defence) is scrapped for 2027, the new box-3 tax moves from 2028 to 2029, and the VAT rise on flowers and plants is dropped. Debate 4 Nov, vote 12 Nov; no majority yet. [9]",
+     "src": [
+      [
+       9,
+       "Kabinet schrapt vrijheidsbijdrage voor 2027 en stelt nieuw box 3-stelsel jaar uit",
+       "Fiscaal Vanmorgen",
+       "https://www.fiscaalvanmorgen.nl/2026/11/03/kabinet-schrapt-vrijheidsbijdrage-voor-2027-en-stelt-nieuw-box-3-stelsel-jaar-uit/"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "rail-sabotage",
+   "name": "Rail and energy sabotage plots",
+   "status": "moving",
+   "opened": "2026-11-03",
+   "log": [
+    {
+     "date": "2026-11-03",
+     "t": "Two Belarusians held in Germany on Romanian warrants allegedly planned fires near a railway and a power route in the Nuremberg region; Poland charged a Russian citizen with espionage after he photographed trains at Świdnica. [41, 42]",
+     "src": [
+      [
+       41,
+       "2 Belarusians arrested in Germany over alleged sabotage for Russia",
+       "Anadolu",
+       "https://www.aa.com.tr/en/europe/2-belarusians-arrested-in-germany-over-alleged-sabotage-for-russia/4104268"
+      ],
+      [
+       42,
+       "Russian citizen detained in Poland on suspicion of spying after photographing trains and rail infrastructure",
+       "The Insider",
+       "https://theins.press/en/news/298979"
       ]
      ]
     }

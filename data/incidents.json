@@ -156,6 +156,48 @@
    "lon": 27.17,
    "summary": "Unidentified drone entered from the east at 18:59; orange alert; a Blaze interceptor drone launched and self-destructed short of the Russian border; the object left after about 17 minutes.",
    "edition": "2026-11-03"
+  },
+  {
+   "id": "2026-10-28-de-sab-nuremberg",
+   "date": "2026-10-28",
+   "code": "SAB",
+   "attr": "A2",
+   "local": false,
+   "country": "DE",
+   "place": "Germany: Nuremberg region (planned targets); Romania: Brașov (arson on 14 Sep)",
+   "lat": 49.45,
+   "lon": 11.08,
+   "summary": "Two Belarusian men are held in Germany on European arrest warrants from a Bucharest court. Romanian prosecutors say they set fire to a defence company in a Brașov industrial park on 14 Sep; security sources told Der Spiegel they planned fires near a railway line and a power transmission route in the Nuremberg region. Romania's intelligence service (SRI) places them in a “Moscow-controlled espionage and sabotage network”.",
+   "edition": "2026-11-03",
+   "src": [
+    [
+     41,
+     "2 Belarusians arrested in Germany over alleged sabotage for Russia",
+     "Anadolu",
+     "https://www.aa.com.tr/en/europe/2-belarusians-arrested-in-germany-over-alleged-sabotage-for-russia/4104268"
+    ]
+   ]
+  },
+  {
+   "id": "2026-10-30-pl-sab-swidnica",
+   "date": "2026-10-30",
+   "code": "SAB",
+   "attr": "A4",
+   "local": false,
+   "country": "PL",
+   "place": "Poland: Świdnica (Lower Silesia)",
+   "lat": 50.84,
+   "lon": 16.49,
+   "summary": "Police detained a 55-year-old Russian citizen seen photographing trains and rail infrastructure near a level crossing; his devices held “hundreds of thousands” of images of transport sites in Poland and abroad. He is charged with spying for a foreign intelligence service and held for three months. Security services coordinator Tomasz Siemoniak said such activity “has always been accompanied by prior reconnaissance and information gathering.”",
+   "edition": "2026-11-03",
+   "src": [
+    [
+     42,
+     "Russian citizen detained in Poland on suspicion of spying after photographing trains and rail infrastructure",
+     "The Insider",
+     "https://theins.press/en/news/298979"
+    ]
+   ]
   }
  ],
  "attrLog": [],

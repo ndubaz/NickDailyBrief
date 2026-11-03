@@ -11,8 +11,8 @@
    "dates": {
     "house": "2026-07-22"
    },
-   "status": "Senate cloture failed 50–46",
-   "next": "Senate floor time after the midterms; conference once both chambers pass a text.",
+   "status": "House passed H.R. 8800 216–212 (22 Jul); Senate S. 4784 failed cloture on the motion to proceed 50–46 (14 Jul)",
+   "next": "Lame-duck session from 9 Nov; conference once the Senate passes a text.",
    "committee": "HASC / SASC",
    "added": "2026-11-02",
    "src": [
@@ -21,20 +21,39 @@
      "NDAA FY2027 and Dec. 11 funding deadline",
      "Buffalo Chronicle (thin source)",
      "https://buffalochronicle.com/2026/10/24/ndaa-fy2027-lame-duck-dec-11-funding-deadline-niagara-falls/"
+    ],
+    [
+     22,
+     "Congress returns: National security and trade provisions to watch in the FY2027 NDAA",
+     "Reed Smith",
+     "https://www.tradecomplianceresourcehub.com/2026/11/02/congress-returns-national-security-and-trade-provisions-to-watch-in-the-fy2027-ndaa/"
+    ],
+    [
+     84,
+     "FY2027 NDAA: Status of Legislative Activity (IN12704)",
+     "Congressional Research Service",
+     "https://www.everycrsreport.com/reports/IN12704.html"
+    ],
+    [
+     65,
+     "NDAA narrowly clears House: what's next for the must-pass defense bill",
+     "MOAA",
+     "https://www.moaa.org/content/publications-and-media/news-articles/2026-news-articles/reads/ndaa-narrowly-clears-house-–-whats-next-for-the-must-pass-defense-bill/"
     ]
-   ]
+   ],
+   "updated": "2026-11-03"
   },
   {
    "id": "approps-fy27",
    "kind": "budget",
    "title": "FY2027 defense appropriations",
-   "number": "Continuing resolution",
+   "number": "H.R. 6500 (continuing resolution)",
    "stage": "cr",
    "dates": {
     "cr": "2026-10-01"
    },
    "deadline": "2026-12-11",
-   "status": "New-start ban under the CR",
+   "status": "FY2026 levels; no new starts or multiyear contracts",
    "next": "CR expires 11 Dec; a full-year bill or another CR is needed before then.",
    "committee": "Appropriations",
    "added": "2026-11-02",
@@ -44,8 +63,21 @@
      "NDAA FY2027 and Dec. 11 funding deadline",
      "Buffalo Chronicle (thin source)",
      "https://buffalochronicle.com/2026/10/24/ndaa-fy2027-lame-duck-dec-11-funding-deadline-niagara-falls/"
+    ],
+    [
+     63,
+     "Congressional Bill H.R. 6500 Signed into Law",
+     "The White House",
+     "https://www.whitehouse.gov/briefings-statements/2026/09/congressional-bill-h-r-6500-signed-into-law/"
+    ],
+    [
+     64,
+     "How the new stopgap funding bill affects the defense department",
+     "Breaking Defense",
+     "https://breakingdefense.com/2026/09/how-the-new-stopgap-funding-bill-affects-the-defense-department/"
     ]
-   ]
+   ],
+   "updated": "2026-11-03"
   },
   {
    "id": "secarmy-2026",
@@ -57,7 +89,7 @@
     "vacant": "2026-09-01"
    },
    "committee": "SASC",
-   "next": "No nominee named; Adam Telle is acting.",
+   "next": "No nomination in congress.gov data to 31 Oct; Adam R. Telle acting since 3 Sep.",
    "added": "2026-11-02",
    "src": [
     [
@@ -65,11 +97,18 @@
      "In first public speech as acting Army secretary, Telle highlights acquisition",
      "Stars and Stripes",
      "https://www.stripes.com/branches/army/2026-10-12/acting-army-secretary-telle-ausa-conference-23134806.html"
+    ],
+    [
+     137,
+     "Acting Secretary of the Army",
+     "army.mil",
+     "https://www.army.mil/leaders/sa/"
     ]
    ],
    "kind": "nomination",
    "title": "Secretary of the Army",
-   "postId": "secarmy"
+   "postId": "secarmy",
+   "updated": "2026-11-03"
   },
   {
    "id": "csa-2026",
@@ -81,7 +120,7 @@
     "vacant": "2026-04-01"
    },
    "committee": "SASC",
-   "next": "No nominee as of 12 Oct; Gen. LaNeve is acting.",
+   "next": "No nomination submitted; army.mil lists the post as vacant. Gen. LaNeve performs the duties while remaining Vice Chief.",
    "added": "2026-11-02",
    "src": [
     [
@@ -89,11 +128,24 @@
      "In first public speech as acting Army secretary, Telle highlights acquisition",
      "Stars and Stripes",
      "https://www.stripes.com/branches/army/2026-10-12/acting-army-secretary-telle-ausa-conference-23134806.html"
+    ],
+    [
+     138,
+     "V Corps welcomed Lt. Gen. Thomas M. Feltey as new commanding general",
+     "army.mil",
+     "https://www.army.mil/article/295074/v_corps_welcomed_lt_gen_thomas_m_feltey_as_new_commanding_general"
+    ],
+    [
+     139,
+     "Vice Chief of Staff of the Army",
+     "army.mil",
+     "https://www.army.mil/leaders/vcsa/"
     ]
    ],
    "kind": "nomination",
    "title": "Chief of Staff of the Army",
-   "postId": "csa"
+   "postId": "csa",
+   "updated": "2026-11-03"
   },
   {
    "id": "usareur-2026",
@@ -102,14 +154,15 @@
    "title": "Commanding General, US Army Europe and Africa",
    "org": "Army",
    "nominee": "Lt. Gen. Kevin Admiral",
-   "stage": "nominated",
+   "stage": "committee",
    "dates": {
     "vacant": "2026-07-02",
     "announced": "2026-07-23",
-    "nominated": "2026-07-23"
+    "nominated": "2026-07-23",
+    "committee": "2026-09-23"
    },
    "committee": "SASC",
-   "next": "Hearing not yet scheduled in open reporting; post stays a three-star if confirmed, with LANDCOM dual-hat.",
+   "next": "Senate floor vote in the lame duck from 9 Nov; nominations still pending at adjournment go back to the White House.",
    "postId": "usareur",
    "added": "2026-11-03",
    "src": [
@@ -118,8 +171,17 @@
      "Pentagon nominates Lt. Gen. Admiral to command US Army Europe and Africa",
      "Army Times",
      "https://www.armytimes.com/news/your-military/2026/07/24/pentagon-nominates-lt-gen-admiral-to-command-us-army-europe-and-africa/"
+    ],
+    [
+     79,
+     "PN1188: Lt. Gen. Kevin D. Admiral, Commanding General, US Army Europe and Africa, and Commander, Allied Land Command",
+     "congress.gov",
+     "https://www.congress.gov/nomination/119th-congress/1188"
     ]
-   ]
+   ],
+   "number": "PN1188",
+   "status": "Reported by SASC; on the Senate Executive Calendar (No. 924) since 23 Sep.",
+   "updated": "2026-11-03"
   },
   {
    "id": "t2com-2026",
@@ -191,8 +253,17 @@
      "White House nominates next general to helm US Space Command",
      "Defense News",
      "https://defensenews.com/news/pentagon-congress/2026/09/30/white-house-nominates-next-general-to-helm-us-space-command"
+    ],
+    [
+     82,
+     "PN1413: Lt. Gen. David N. Miller Jr., Commander, US Space Command",
+     "congress.gov",
+     "https://www.congress.gov/nomination/119th-congress/1413"
     ]
-   ]
+   ],
+   "number": "PN1413",
+   "status": "Referred to SASC on 29 Sep; no hearing recorded.",
+   "updated": "2026-11-03"
   },
   {
    "id": "jfcbs-2026",

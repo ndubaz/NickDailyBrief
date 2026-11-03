@@ -87,6 +87,24 @@
    "updated": "2026-11-03"
   },
   {
+   "id": "bundestag-budget-4nov",
+   "date": "2026-11-04",
+   "dateText": "4 Nov",
+   "t": "Bundestag budget committee: seven arms purchases",
+   "n": "Eurofighter Tranche 4 and 5 contract change, Role 2B field hospitals, SPIKE-ER2 missiles",
+   "h": false,
+   "status": "reported",
+   "added": "2026-11-03",
+   "src": [
+    [
+     10,
+     "Bundeswehr: 7 neue Rüstungsvorhaben vor Entscheidung",
+     "ESUT",
+     "https://esut.de/2026/11/meldungen/76427/bundeswehr-7-ruestungsvorhaben-ent/"
+    ]
+   ]
+  },
+  {
    "id": "army-fy27-col-board",
    "date": "2026-11-05",
    "dateText": "5 Nov",
@@ -143,6 +161,54 @@
      "NDAA FY2027 and Dec. 11 funding deadline",
      "Buffalo Chronicle (thin source)",
      "https://buffalochronicle.com/2026/10/24/ndaa-fy2027-lame-duck-dec-11-funding-deadline-niagara-falls/"
+    ]
+   ]
+  },
+  {
+   "id": "koalicja-exercise",
+   "date": "2026-11-09",
+   "dateText": "9–22 Nov",
+   "t": "Koalicja: first Multinational Force–Ukraine exercise, Poland",
+   "n": "About 2,800 troops from 10 countries near Nowa Dęba; not a NATO operation",
+   "h": true,
+   "status": "confirmed",
+   "added": "2026-11-03",
+   "src": [
+    [
+     91,
+     "Thousands of troops from Europe to rehearse post-war Ukraine deployment in Poland",
+     "Euronews",
+     "https://euronews.com/2026/11/03/thousands-of-troops-from-europe-to-rehearse-post-war-ukraine-deployment-in-poland"
+    ],
+    [
+     92,
+     "European force to hold first Ukraine support exercise in Poland",
+     "France 24",
+     "https://www.france24.com/en/europe/20261103-european-force-to-hold-first-ukraine-support-exercise-in-poland"
+    ]
+   ]
+  },
+  {
+   "id": "tricare-open-season",
+   "date": "2026-11-09",
+   "dateText": "9 Nov – 8 Dec",
+   "t": "TRICARE Open Season",
+   "n": "Family plan choice for 2027; FEDVIP to 14 Dec",
+   "h": false,
+   "status": "confirmed",
+   "added": "2026-11-03",
+   "src": [
+    [
+     88,
+     "TRICARE Open Season",
+     "TRICARE",
+     "https://www.tricare.mil/openseason"
+    ],
+    [
+     89,
+     "Federal Benefits Open Season",
+     "OPM",
+     "https://www.opm.gov/healthcare-insurance/open-season/"
     ]
    ]
   },
