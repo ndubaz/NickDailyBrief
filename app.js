@@ -538,7 +538,8 @@
     add("World series", wsBad.length >= wsRows.length ? "act" : wsBad.length ? "watch" : "ok", wsBad.length ? "not kept up: " + wsBad.join(", ") : wsRows.length + " series current");
     if (ctx.canes) fresh("Canes results", ctx.canes.updated || lastDate(ctx.canes.games, function (g) { return g.date; }), 4, 8, "last game logged");
     var cgA = (ctx.congress || []).filter(function (c) { return !/^(enacted|confirmed|withdrawn|vetoed)$/.test(c.stage); }), cgStale = cgA.filter(function (c) { var d = c.dates || {}, last = [c.updated || "", c.added || ""].concat(Object.keys(d).map(function (k) { return d[k]; })).sort().pop(); return !last || daysBetween(last, TD) > 45; }).length, cgDl = cgA.filter(function (c) { return c.deadline && daysBetween(TD, c.deadline) >= 0 && daysBetween(TD, c.deadline) <= 14; }).length;
-    add("Congress tracker", !(ctx.congress || []).length ? "watch" : cgStale > 2 ? "act" : cgStale ? "watch" : "ok", cgA.length + " open" + (cgDl ? ", " + cgDl + " deadline" + (cgDl > 1 ? "s" : "") + " within 14 days" : "") + (cgStale ? ", " + cgStale + " untouched for 45 days" : ""));
+    var cwUnk = (ctx.congressWatch || []).filter(function (w) { return !w.holder; }).length;
+    add("Congress tracker", !(ctx.congress || []).length ? "watch" : cgStale > 2 || cwUnk > 20 ? "act" : cgStale || cwUnk ? "watch" : "ok", cgA.length + " open" + (cwUnk ? ", " + cwUnk + " watched posts without a sourced holder" : "") + (cgDl ? ", " + cgDl + " deadline" + (cgDl > 1 ? "s" : "") + " within 14 days" : "") + (cgStale ? ", " + cgStale + " untouched for 45 days" : ""));
     var exUp = (ctx.exercises || []).filter(function (x) { return x.to >= TD; }).length; add("Exercise calendar", exUp ? "ok" : "watch", exUp + " announced");
     var rel = ((ctx.releases || {}).releases || []).filter(function (r) { return daysBetween(r.date, TD) <= 45 && r.date <= TD; }).length, sota = (ctx.releases || {}).sota || {};
     add("Frontier log", rel ? (sota.asof && daysBetween(sota.asof, TD) <= 10 ? "ok" : "watch") : "act", rel + " releases in 45 days; state-of-the-art table " + (sota.asof ? "as of " + fmtShort(sota.asof) : "never written"));
@@ -764,6 +765,19 @@
       });
       h += "</div>";
     } else h += quiet("Nothing tracked yet.");
+    var CW = ctx.congressWatch || [], CT = ctx.congressTiers || [];
+    if (CW.length) {
+      var openBy = {}; CG.forEach(function (x) { if (x.c.kind === "nomination" && x.c.postId && !DONE[x.c.stage]) openBy[x.c.postId] = x.c.stage; });
+      h += '<div class="lbl cg-lane">Watched posts <span class="small" style="text-transform:none;letter-spacing:0">' + CW.filter(function (w) { return w.holder; }).length + " of " + CW.length + ' holders sourced</span></div><div class="wposts">';
+      CT.forEach(function (t) {
+        var list = CW.filter(function (w) { return w.tier === t.id; }); if (!list.length) return;
+        h += '<div class="wtier"><div class="wtn">' + esc(t.name) + '</div><div class="wrow">' + list.map(function (w) {
+          var st = openBy[w.id], cls = st === "vacant" ? "vac" : st ? "pend" : w.holder ? "" : "unk", b = w.updated === TD ? "UPDATED" : "";
+          return '<a class="wp ' + cls + (b ? " fu new" : " fu") + '" href="#' + (st ? "cg-" + esc(CG.filter(function (x) { return x.c.postId === w.id && !DONE[x.c.stage]; })[0].c.id) : "congresstracker") + '" title="' + esc(w.post + (w.senate ? " · Senate-confirmed" : "") + (w.since ? " · since " + fmtShort(w.since) + " " + w.since.slice(0, 4) : "")) + '"><b>' + esc(w.post) + "</b>" + (w.holder ? "<span>" + esc(w.holder) + (w.acting ? " (acting)" : "") + "</span>" : '<span class="small">holder not yet sourced</span>') + (st ? '<em>' + esc(STGL[st] || st) + "</em>" : "") + badge(b) + "</a>";
+        }).join("") + "</div></div>";
+      });
+      h += '</div><p class="small">Red = vacant, amber = nomination in progress. Posts marked Senate-confirmed in the tooltip go through the pipeline above; the rest change by assignment.</p>';
+    }
     h += "</section>";
 
     h += '<section id="nato" class="pro"><h2>NATO &amp; European militaries</h2>' + items(NA.items, null, "Nothing new from the Alliance or the allied armies in the window.");
@@ -1212,7 +1226,7 @@
     opt("data/congress.json"), opt("data/exercises.json"), opt("data/releases.json"), opt("data/events.json"), opt("data/idioms.json"), opt("data/ski.json"), opt("data/search-index.json")
   ]).then(function (r) {
     ctx.fetchedAt = Date.now();
-    ctx.congress = r[12] && r[12].items; ctx.exercises = r[13] && r[13].exercises; ctx.releases = r[14]; ctx.events = r[15] && r[15].events; ctx.idioms = r[16] && r[16].idioms; ctx.ski = r[17]; ctx.searchIndex = r[18];
+    ctx.congress = r[12] && r[12].items; ctx.congressWatch = r[12] && r[12].watch; ctx.congressTiers = r[12] && r[12].tiers; ctx.exercises = r[13] && r[13].exercises; ctx.releases = r[14]; ctx.events = r[15] && r[15].events; ctx.idioms = r[16] && r[16].idioms; ctx.ski = r[17]; ctx.searchIndex = r[18];
     ctx.index = r[0]; ctx.incidents = r[1] && r[1].incidents; ctx.attrLog = r[1] && r[1].attrLog; ctx.bins = r[2];
     ctx.threads = r[3] && r[3].threads; ctx.horizon = r[4] && r[4].events;
     ctx.fx = r[5] && r[5].series && r[5].series.length ? r[5] : null; ctx.series = r[6]; ctx.canes = r[7];

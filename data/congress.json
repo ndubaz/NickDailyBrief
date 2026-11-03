@@ -1,5 +1,5 @@
 {
- "note": "Congress tracker for the Profession part, three lanes in one list. kind = bill (stages introduced, committee, house, senate, conference, enacted; status 'stalled' or 'vetoed' greys the pipeline), budget (stages request, house, senate, cr, enacted, plus a deadline date), nomination (stages vacant, announced, nominated, hearing, committee, floor, confirmed, or withdrawn). dates holds the date each stage was reached. The run adds rows for key defence bills, the appropriations cycle and defence posts (service secretaries and chiefs, Joint Staff, combatant and NATO commanders, OSD, ambassadors to NATO and the host nations), moves stage and dates as Congress acts, sets updated, copies cited source rows into src, and never deletes rows (the page hides enacted, confirmed and withdrawn rows after 30 days). Deadlines feed the Planner.",
+ "note": "Congress tracker for the Profession part, three lanes in one list. kind = bill (stages introduced, committee, house, senate, conference, enacted; status 'stalled' or 'vetoed' greys the pipeline), budget (stages request, house, senate, cr, enacted, plus a deadline date), nomination (stages vacant, announced, nominated, hearing, committee, floor, confirmed, or withdrawn). dates holds the date each stage was reached. The run adds rows for key defence bills, the appropriations cycle and defence posts (service secretaries and chiefs, Joint Staff, combatant and NATO commanders, OSD, ambassadors to NATO and the host nations), moves stage and dates as Congress acts, sets updated, copies cited source rows into src, and never deletes rows (the page hides enacted, confirmed and withdrawn rows after 30 days). Deadlines feed the Planner. watch = the register of posts the tracker follows (tiers: army, joint, cocom, army4, europe; senate = requires Senate confirmation). The run fills holder, since, acting and src when it can source them, sets updated on a change, and opens a nomination row (with postId) when a post falls vacant or a name is announced. Never delete posts.",
  "updated": "2026-11-03",
  "items": [
   {
@@ -68,7 +68,8 @@
     ]
    ],
    "kind": "nomination",
-   "title": "Secretary of the Army"
+   "title": "Secretary of the Army",
+   "postId": "secarmy"
   },
   {
    "id": "csa-2026",
@@ -91,7 +92,464 @@
     ]
    ],
    "kind": "nomination",
-   "title": "Chief of Staff of the Army"
+   "title": "Chief of Staff of the Army",
+   "postId": "csa"
+  }
+ ],
+ "tiers": [
+  {
+   "id": "army",
+   "name": "Army leadership"
+  },
+  {
+   "id": "joint",
+   "name": "Joint Staff"
+  },
+  {
+   "id": "cocom",
+   "name": "Combatant commands"
+  },
+  {
+   "id": "army4",
+   "name": "Other Army four-star commands"
+  },
+  {
+   "id": "europe",
+   "name": "Europe-based general officer posts"
+  }
+ ],
+ "watch": [
+  {
+   "id": "secarmy",
+   "post": "Secretary of the Army",
+   "tier": "army",
+   "senate": true,
+   "holder": "Adam Telle",
+   "since": "2026-09-01",
+   "acting": true,
+   "src": [
+    [
+     48,
+     "In first public speech as acting Army secretary, Telle highlights acquisition",
+     "Stars and Stripes",
+     "https://www.stripes.com/branches/army/2026-10-12/acting-army-secretary-telle-ausa-conference-23134806.html"
+    ]
+   ],
+   "updated": "2026-11-02"
+  },
+  {
+   "id": "usa",
+   "post": "Under Secretary of the Army",
+   "tier": "army",
+   "senate": true,
+   "holder": null,
+   "since": null,
+   "acting": false,
+   "src": [],
+   "updated": null
+  },
+  {
+   "id": "csa",
+   "post": "Chief of Staff of the Army",
+   "tier": "army",
+   "senate": true,
+   "holder": "Gen. LaNeve",
+   "since": "2026-04-01",
+   "acting": true,
+   "src": [
+    [
+     48,
+     "In first public speech as acting Army secretary, Telle highlights acquisition",
+     "Stars and Stripes",
+     "https://www.stripes.com/branches/army/2026-10-12/acting-army-secretary-telle-ausa-conference-23134806.html"
+    ]
+   ],
+   "updated": "2026-11-02"
+  },
+  {
+   "id": "vcsa",
+   "post": "Vice Chief of Staff of the Army",
+   "tier": "army",
+   "senate": true,
+   "holder": null,
+   "since": null,
+   "acting": false,
+   "src": [],
+   "updated": null
+  },
+  {
+   "id": "sma",
+   "post": "Sergeant Major of the Army",
+   "tier": "army",
+   "senate": false,
+   "holder": null,
+   "since": null,
+   "acting": false,
+   "src": [],
+   "updated": null
+  },
+  {
+   "id": "cjcs",
+   "post": "Chairman of the Joint Chiefs of Staff",
+   "tier": "joint",
+   "senate": true,
+   "holder": null,
+   "since": null,
+   "acting": false,
+   "src": [],
+   "updated": null
+  },
+  {
+   "id": "vcjcs",
+   "post": "Vice Chairman of the Joint Chiefs of Staff",
+   "tier": "joint",
+   "senate": true,
+   "holder": null,
+   "since": null,
+   "acting": false,
+   "src": [],
+   "updated": null
+  },
+  {
+   "id": "eucom",
+   "post": "US European Command (SACEUR)",
+   "tier": "cocom",
+   "senate": true,
+   "holder": null,
+   "since": null,
+   "acting": false,
+   "src": [],
+   "updated": null
+  },
+  {
+   "id": "centcom",
+   "post": "US Central Command",
+   "tier": "cocom",
+   "senate": true,
+   "holder": null,
+   "since": null,
+   "acting": false,
+   "src": [],
+   "updated": null
+  },
+  {
+   "id": "indopacom",
+   "post": "US Indo-Pacific Command",
+   "tier": "cocom",
+   "senate": true,
+   "holder": null,
+   "since": null,
+   "acting": false,
+   "src": [],
+   "updated": null
+  },
+  {
+   "id": "africom",
+   "post": "US Africa Command",
+   "tier": "cocom",
+   "senate": true,
+   "holder": null,
+   "since": null,
+   "acting": false,
+   "src": [],
+   "updated": null
+  },
+  {
+   "id": "northcom",
+   "post": "US Northern Command (NORAD)",
+   "tier": "cocom",
+   "senate": true,
+   "holder": null,
+   "since": null,
+   "acting": false,
+   "src": [],
+   "updated": null
+  },
+  {
+   "id": "southcom",
+   "post": "US Southern Command",
+   "tier": "cocom",
+   "senate": true,
+   "holder": null,
+   "since": null,
+   "acting": false,
+   "src": [],
+   "updated": null
+  },
+  {
+   "id": "cybercom",
+   "post": "US Cyber Command (NSA)",
+   "tier": "cocom",
+   "senate": true,
+   "holder": null,
+   "since": null,
+   "acting": false,
+   "src": [],
+   "updated": null
+  },
+  {
+   "id": "socom",
+   "post": "US Special Operations Command",
+   "tier": "cocom",
+   "senate": true,
+   "holder": null,
+   "since": null,
+   "acting": false,
+   "src": [],
+   "updated": null
+  },
+  {
+   "id": "stratcom",
+   "post": "US Strategic Command",
+   "tier": "cocom",
+   "senate": true,
+   "holder": null,
+   "since": null,
+   "acting": false,
+   "src": [],
+   "updated": null
+  },
+  {
+   "id": "spacecom",
+   "post": "US Space Command",
+   "tier": "cocom",
+   "senate": true,
+   "holder": null,
+   "since": null,
+   "acting": false,
+   "src": [],
+   "updated": null
+  },
+  {
+   "id": "transcom",
+   "post": "US Transportation Command",
+   "tier": "cocom",
+   "senate": true,
+   "holder": null,
+   "since": null,
+   "acting": false,
+   "src": [],
+   "updated": null
+  },
+  {
+   "id": "forscom",
+   "post": "US Army Forces Command",
+   "tier": "army4",
+   "senate": true,
+   "holder": null,
+   "since": null,
+   "acting": false,
+   "src": [],
+   "updated": null
+  },
+  {
+   "id": "t2com",
+   "post": "Army Transformation and Training Command",
+   "tier": "army4",
+   "senate": true,
+   "holder": null,
+   "since": null,
+   "acting": false,
+   "src": [],
+   "updated": null
+  },
+  {
+   "id": "amc",
+   "post": "Army Materiel Command",
+   "tier": "army4",
+   "senate": true,
+   "holder": null,
+   "since": null,
+   "acting": false,
+   "src": [],
+   "updated": null
+  },
+  {
+   "id": "usarpac",
+   "post": "US Army Pacific",
+   "tier": "army4",
+   "senate": true,
+   "holder": null,
+   "since": null,
+   "acting": false,
+   "src": [],
+   "updated": null
+  },
+  {
+   "id": "usareur",
+   "post": "US Army Europe and Africa",
+   "tier": "army4",
+   "senate": true,
+   "holder": null,
+   "since": null,
+   "acting": false,
+   "src": [],
+   "updated": null
+  },
+  {
+   "id": "usareur-dcg",
+   "post": "USAREUR-AF deputy commanding general",
+   "tier": "europe",
+   "senate": true,
+   "holder": null,
+   "since": null,
+   "acting": false,
+   "src": [],
+   "updated": null
+  },
+  {
+   "id": "usareur-cos",
+   "post": "USAREUR-AF chief of staff",
+   "tier": "europe",
+   "senate": false,
+   "holder": null,
+   "since": null,
+   "acting": false,
+   "src": [],
+   "updated": null
+  },
+  {
+   "id": "vcorps",
+   "post": "V Corps",
+   "tier": "europe",
+   "senate": true,
+   "holder": null,
+   "since": null,
+   "acting": false,
+   "src": [],
+   "updated": null
+  },
+  {
+   "id": "vcorps-dcg",
+   "post": "V Corps deputy commanding generals",
+   "tier": "europe",
+   "senate": false,
+   "holder": null,
+   "since": null,
+   "acting": false,
+   "src": [],
+   "updated": null
+  },
+  {
+   "id": "21tsc",
+   "post": "21st Theater Sustainment Command",
+   "tier": "europe",
+   "senate": false,
+   "holder": null,
+   "since": null,
+   "acting": false,
+   "src": [],
+   "updated": null
+  },
+  {
+   "id": "7atc",
+   "post": "7th Army Training Command",
+   "tier": "europe",
+   "senate": false,
+   "holder": null,
+   "since": null,
+   "acting": false,
+   "src": [],
+   "updated": null
+  },
+  {
+   "id": "setaf",
+   "post": "Southern European Task Force, Africa",
+   "tier": "europe",
+   "senate": false,
+   "holder": null,
+   "since": null,
+   "acting": false,
+   "src": [],
+   "updated": null
+  },
+  {
+   "id": "56arty",
+   "post": "56th Artillery Command",
+   "tier": "europe",
+   "senate": false,
+   "holder": null,
+   "since": null,
+   "acting": false,
+   "src": [],
+   "updated": null
+  },
+  {
+   "id": "mdce",
+   "post": "Multi-Domain Command Europe",
+   "tier": "europe",
+   "senate": false,
+   "holder": null,
+   "since": null,
+   "acting": false,
+   "src": [],
+   "updated": null
+  },
+  {
+   "id": "10aamdc",
+   "post": "10th Army Air and Missile Defense Command",
+   "tier": "europe",
+   "senate": false,
+   "holder": null,
+   "since": null,
+   "acting": false,
+   "src": [],
+   "updated": null
+  },
+  {
+   "id": "landcom",
+   "post": "NATO Allied Land Command",
+   "tier": "europe",
+   "senate": true,
+   "holder": null,
+   "since": null,
+   "acting": false,
+   "src": [],
+   "updated": null
+  },
+  {
+   "id": "jfcbs",
+   "post": "NATO Joint Force Command Brunssum",
+   "tier": "europe",
+   "senate": false,
+   "holder": null,
+   "since": null,
+   "acting": false,
+   "src": [],
+   "updated": null
+  },
+  {
+   "id": "shape-cos",
+   "post": "SHAPE chief of staff",
+   "tier": "europe",
+   "senate": false,
+   "holder": null,
+   "since": null,
+   "acting": false,
+   "src": [],
+   "updated": null
+  },
+  {
+   "id": "eucom-dcdr",
+   "post": "US European Command deputy commander",
+   "tier": "europe",
+   "senate": true,
+   "holder": null,
+   "since": null,
+   "acting": false,
+   "src": [],
+   "updated": null
+  },
+  {
+   "id": "usmilrep",
+   "post": "US Military Representative to the NATO Military Committee",
+   "tier": "europe",
+   "senate": true,
+   "holder": null,
+   "since": null,
+   "acting": false,
+   "src": [],
+   "updated": null
   }
  ]
 }

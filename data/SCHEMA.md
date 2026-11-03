@@ -142,6 +142,8 @@ The World feature rota: Monday "Theatre in numbers" (table), Tuesday "Actor on t
 
 `{ "items": [ {"id","kind":"bill|budget|nomination","title","number","post","org","nominee","stage","dates":{"<stage>":"YYYY-MM-DD"},"deadline","status","committee","next","added","updated","src"} ] }`. Stages: bill = introduced, committee, house, senate, conference, enacted (status "stalled" or "vetoed" greys the pipeline); budget = request, house, senate, cr, enacted, with `deadline` for the next expiry; nomination = vacant, announced, nominated, hearing, committee, floor, confirmed, or withdrawn. The page draws a pipeline per row in three lanes, hides finished rows after 30 days, shows a deadline countdown, badges from `added` and `updated`, and puts deadlines on the Planner.
 
+The same file carries `tiers` and `watch`: the register of posts the confirmations lane follows (`{"id","post","tier":"army|joint|cocom|army4|europe","senate":bool,"holder","since","acting","src","updated"}`). A nomination row carries `postId` to link it to its post. The page shows the register under the pipeline cards, red when a linked row is vacant, amber when a nomination is in progress.
+
 ### `data/exercises.json`
 
 `{ "exercises": [ {"id","name","from","to","dateText","lead","where","forces","status":"planned|under way|complete","added","updated","src"} ] }`. Feeds the Planner (category Exercises) and the exercise calendar in Profession.

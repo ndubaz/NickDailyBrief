@@ -38,7 +38,7 @@ The edition is a daily snapshot. The standing files under `data/` are the Readbo
 | `data/calendar.json` | Public holidays, school breaks for four systems, clocks, market seasons, 18 months | Calendar, week strip, countdowns, school overlap chart |
 | `data/deadlines.json` | Nick's own deadlines, hand-maintained, never touched by the run | Deadlines table, calendar, week strip |
 | `data/bins.json` | Rd4 collection dates | Bin day tile, calendar, countdown |
-| `data/congress.json` | Key defence bills, the budget cycle and confirmations, each with the stage reached | Congress tracker in Profession, deadlines on the Planner |
+| `data/congress.json` | Key defence bills, the budget cycle, confirmations, and the register of 38 watched posts (Army leadership, Joint Staff, combatant commands, Army four-star commands, Europe-based general officers) | Congress tracker in Profession, deadlines on the Planner |
 | `data/exercises.json` | NATO and allied exercises with dates | Exercise calendar, Planner |
 | `data/releases.json` | Dated AI and tech releases, plus the Friday state-of-the-art table | Frontier |
 | `data/events.json` | Curated events within about 90 minutes, with sources | Out and about, calendar, week strip |
