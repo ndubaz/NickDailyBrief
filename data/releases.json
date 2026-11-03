@@ -1,0 +1,10 @@
+{
+ "note": "Frontier log: dated releases, published results and shipped capabilities in AI, chips, robotics and autonomy. One entry per release; the run appends and never edits. kind = model|chip|robot|autonomy|result|tool.",
+ "updated": "2026-11-03",
+ "releases": [],
+ "sota": {
+  "asof": null,
+  "note": "Friday table: leading system per domain with the date it took the lead. The run rewrites this block on Fridays with sources.",
+  "rows": []
+ }
+}

@@ -1,0 +1,248 @@
+{
+ "note": "Out and about: curated events within about 90 minutes by car (Maastricht, Aachen, Liège, Köln, Düsseldorf, Bonn, Eindhoven, Antwerp, Brussels, the Eifel and Ardennes). The run adds events with a source, prunes those that have passed, and sets updated when details change. cat = music|markets|museums|sport|kids|food|outdoors|festival. kid = suitable for children. drive = minutes from Hoensbroek, approximate.",
+ "updated": "2026-11-03",
+ "events": [
+  {
+   "id": "jazzout-2026",
+   "t": "JazzOUT! with Nate Smith (Live Action)",
+   "cat": "music",
+   "from": "2026-11-13",
+   "to": "2026-11-13",
+   "town": "Heerlen",
+   "venue": "Theater Heerlen",
+   "cc": "NL",
+   "drive": 10,
+   "cost": "Tickets on sale",
+   "kid": false,
+   "added": "2026-11-02",
+   "src": [
+    [
+     40,
+     "JazzOUT! 2026",
+     "Festivalinfo",
+     "https://www.festivalinfo.nl/festival/36675/JazzOUT%21/2026/"
+    ]
+   ]
+  },
+  {
+   "id": "elf-mestreech-2026",
+   "t": "ELF: Mestreech Geit Loos, carnival opening",
+   "cat": "festival",
+   "from": "2026-11-11",
+   "to": "2026-11-11",
+   "town": "Maastricht",
+   "venue": "Kesselskade",
+   "cc": "NL",
+   "drive": 30,
+   "cost": "Sold out; remaining places via the organiser",
+   "kid": false,
+   "added": "2026-11-02",
+   "src": [
+    [
+     38,
+     "ELF: Mestreech Geit Loos",
+     "ELF Maastricht",
+     "https://elfmestreech.nl/"
+    ]
+   ]
+  },
+  {
+   "id": "kerststad-valkenburg-2026",
+   "t": "Kerststad Valkenburg: cave Christmas markets",
+   "cat": "markets",
+   "from": "2026-11-13",
+   "to": "2027-01-03",
+   "town": "Valkenburg",
+   "venue": "Gemeentegrot and Fluweelengrot",
+   "cc": "NL",
+   "drive": 20,
+   "cost": "Book weekend time slots online",
+   "kid": true,
+   "added": "2026-11-02",
+   "src": [
+    [
+     39,
+     "Kerststad Valkenburg",
+     "Visit Zuid-Limburg",
+     "https://www.visitzuidlimburg.com/experience-zuid-limburg/event/kerststad-valkenburg/60635/"
+    ]
+   ]
+  },
+  {
+   "id": "koeln-dom-markt-2026",
+   "t": "Weihnachtsmarkt am Kölner Dom",
+   "cat": "markets",
+   "from": "2026-11-16",
+   "to": "2026-12-23",
+   "town": "Köln",
+   "venue": "Roncalliplatz",
+   "cc": "DE",
+   "drive": 65,
+   "cost": "Free entry; closed Sun 22 Nov",
+   "kid": true,
+   "added": "2026-11-02",
+   "src": [
+    [
+     51,
+     "Weihnachtsmarkt am Kölner Dom",
+     "koeln.de",
+     "https://www.koeln.de/weihnachten/weihnachtsmaerkte-koeln/weihnachtsmarkt-am-koelner-dom/"
+    ]
+   ]
+  },
+  {
+   "id": "aachen-markt-2026",
+   "t": "Aachener Weihnachtsmarkt",
+   "cat": "markets",
+   "from": "2026-11-20",
+   "to": "2026-12-23",
+   "town": "Aachen",
+   "venue": "Around the Dom and Rathaus",
+   "cc": "DE",
+   "drive": 25,
+   "cost": "Free entry; Sun 22 Nov evening only",
+   "kid": true,
+   "added": "2026-11-02",
+   "src": [
+    [
+     41,
+     "Aachener Weihnachtsmarkt: dates and hours",
+     "Aachen Christmas market",
+     "https://aachenweihnachtsmarkt.de/en/pages/offers/"
+    ]
+   ]
+  },
+  {
+   "id": "magisch-maastricht-2026",
+   "t": "Magisch Maastricht",
+   "cat": "markets",
+   "from": "2026-11-27",
+   "to": "2026-12-27",
+   "town": "Maastricht",
+   "venue": "Vrijthof",
+   "cc": "NL",
+   "drive": 30,
+   "cost": "Free entry; covered ice rink",
+   "kid": true,
+   "added": "2026-11-02",
+   "src": [
+    [
+     54,
+     "Magisch Maastricht",
+     "Kidsproof",
+     "https://www.kidsproof.nl/zuid-limburg/eropuit/magisch-maastricht/magisch-maastricht-kerst-gezinsuitje-eu/"
+    ]
+   ]
+  },
+  {
+   "id": "liege-noel-2026",
+   "t": "Village de Noël de Liège",
+   "cat": "markets",
+   "from": "2026-11-27",
+   "to": "2026-12-30",
+   "town": "Liège",
+   "venue": "Place Saint-Lambert and Place du Marché",
+   "cc": "BE",
+   "drive": 45,
+   "cost": "Free entry",
+   "kid": true,
+   "added": "2026-11-02",
+   "src": [
+    [
+     53,
+     "Village de Noël in Luik",
+     "Visit Zuid-Limburg",
+     "https://www.visitzuidlimburg.com/experience-zuid-limburg/event/village-de-noel-in-luik/64128"
+    ]
+   ]
+  },
+  {
+   "id": "monschau-markt-2026",
+   "t": "Monschau Christmas market (four weekends)",
+   "cat": "markets",
+   "from": "2026-11-27",
+   "to": "2026-12-20",
+   "town": "Monschau",
+   "venue": "Old town",
+   "cc": "DE",
+   "drive": 50,
+   "cost": "Free entry; Fri–Sun only",
+   "kid": true,
+   "added": "2026-11-02",
+   "src": [
+    [
+     52,
+     "Christmas market Monschau",
+     "Tourismus Kreis Düren",
+     "https://www.tourismus.kreis-dueren.de/en/e-christmas-market-monschau-2"
+    ]
+   ]
+  },
+  {
+   "id": "dutch-mountain-film-2026",
+   "t": "Dutch Mountain Film Festival",
+   "cat": "festival",
+   "from": "2026-11-06",
+   "to": "2026-11-15",
+   "town": "Heerlen and Aachen",
+   "venue": "Various",
+   "cc": "NL",
+   "drive": 10,
+   "cost": "Tickets per screening",
+   "kid": false,
+   "added": "2026-11-03",
+   "src": [
+    [
+     45,
+     "Dutch Mountain Film Festival (DMFF) 2026",
+     "FilmFreeway",
+     "https://filmfreeway.com/DMFF"
+    ]
+   ]
+  },
+  {
+   "id": "sint-hubertus-tongeren-2026",
+   "t": "Sint-Hubertus procession and festivities, Offelken",
+   "cat": "festival",
+   "from": "2026-11-05",
+   "to": "2026-11-12",
+   "town": "Tongeren",
+   "venue": "Offelken racecourse",
+   "cc": "BE",
+   "drive": 40,
+   "cost": "Free",
+   "kid": true,
+   "added": "2026-11-03",
+   "src": [
+    [
+     46,
+     "De Hubertusfeesten in Offelken",
+     "Immaterieel Erfgoed",
+     "https://immaterieelerfgoed.be/nl/erfgoederen/de-hubertusfeesten-in-offelken/pdf"
+    ]
+   ]
+  },
+  {
+   "id": "geheimen-parkstad-2026",
+   "t": "Geheimen van Parkstad, family show",
+   "cat": "kids",
+   "from": "2026-11-21",
+   "to": "2026-11-22",
+   "town": "Heerlen",
+   "venue": "Theater Heerlen",
+   "cc": "NL",
+   "drive": 10,
+   "cost": "Tickets",
+   "kid": true,
+   "added": "2026-11-03",
+   "src": [
+    [
+     47,
+     "Geheimen van Parkstad brengt streekverhalen tot leven in Theater Heerlen",
+     "Drimble / ParkstadActueel",
+     "https://drimble.nl/regio/limburg/heerlen/108460506/geheimen-van-parkstad-brengt-streekverhalen-tot-leven-in-theater-heerlen.html"
+    ]
+   ]
+  }
+ ]
+}

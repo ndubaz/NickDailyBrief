@@ -1,5 +1,5 @@
 {
- "v": "4.0",
+ "v": "5.0",
  "date": "2026-11-07",
  "weekday": "Saturday",
  "edition": 0,
@@ -139,9 +139,9 @@
    "part": "sec"
   },
   {
-   "t": "**Germany is hardening its bases** and says US sites have drawn suspected drone surveillance, while Poland's sabotage alert runs to Sunday.",
-   "to": "lead-2",
-   "part": "sec"
+   "t": "**Germany is hardening its bases** and says US sites have drawn suspected drone surveillance (sample link to Profession).",
+   "to": "nato",
+   "part": "pro"
   },
   {
    "t": "**The Dutch tax plan reaches the Kamer without a majority.** If it falls on 12 Nov, the fuel-duty discount falls with it.",
@@ -555,16 +555,7 @@
     "sw": "If the probe confirms a hack, expect a department-wide check of facility controllers. Get ahead of it: ask Benelux garrison facilities staff which cold rooms are remote-managed."
    }
   ],
-  "news": [
-   {
-    "h": "The Europe-assigned Typhon battery fires a Tomahawk, but Germany is still off",
-    "tag": "USAREUR-AF",
-    "conf": "high",
-    "badge": "NEW",
-    "body": "The Mid-Range Capability battery of 3rd Battalion, 12th Field Artillery, under Multi-Domain Command Europe (MDC-E), fired a Tomahawk from the Typhon launcher at China Lake, California, on 28 Sep. MDC-E says the battery is certified, but there are “no current plans” to deploy it to Europe; the Pentagon cancelled the 2026 Germany deployment in May. [25]",
-    "sw": "Without US ground-launched long-range fires in theatre, Berlin's own deep-strike plans weigh more in the regional plans."
-   }
-  ],
+  "news": [],
   "congress": [],
   "career": {
    "items": [
@@ -576,7 +567,8 @@
    ],
    "dates": [],
    "note": "Sample: career items are what touches a field-grade officer in a NATO billet in Europe."
-  }
+  },
+  "depth": null
  },
  "aperture": {
   "contrarian": "Monday's oil drop prices a deal Washington has not accepted. Araghchi's two-day plan needs the US to end the blockade, lift oil sanctions and stop fighting on every front; there are no direct talks; and US jets hit Qeshm the same day. Earlier sell-offs in this war reversed when talks failed. [27, 17] The best case for the drop holding: Goldman puts the war premium near $27 a barrel, so even a partial deal takes a lot out. [17]",
@@ -1749,5 +1741,28 @@
    "v1: first designed edition."
   ]
  ],
- "_note": "SAMPLE of the 4.0 edition shape, built from Edition 2's sourced facts and restructured. Not listed in index.json and never shown on the page; the morning run follows this shape and SCHEMA.md. The feature below is a Saturday geography piece using public EIA facts about the Strait of Hormuz."
+ "_note": "SAMPLE of the 5.0 edition shape, built from Edition 2's sourced facts and restructured. Not listed in index.json and never shown on the page; the morning run follows this shape and SCHEMA.md. Arrays left empty are legitimately empty for a sample; the run fills them from the day's reporting.",
+ "deftech": {
+  "items": [
+   {
+    "h": "The Europe-assigned Typhon battery fires a Tomahawk, but Germany is still off",
+    "tag": "USAREUR-AF",
+    "conf": "high",
+    "badge": "NEW",
+    "body": "The Mid-Range Capability battery of 3rd Battalion, 12th Field Artillery, under Multi-Domain Command Europe (MDC-E), fired a Tomahawk from the Typhon launcher at China Lake, California, on 28 Sep. MDC-E says the battery is certified, but there are “no current plans” to deploy it to Europe; the Pentagon cancelled the 2026 Germany deployment in May. [25]",
+    "sw": "Without US ground-launched long-range fires in theatre, Berlin's own deep-strike plans weigh more in the regional plans."
+   }
+  ],
+  "series": [
+   "ru-uav-day"
+  ],
+  "ttp": null
+ },
+ "nato": {
+  "items": [],
+  "table": null
+ },
+ "frontier": {
+  "items": []
+ }
 }
