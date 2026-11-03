@@ -1,6 +1,6 @@
-# Readbook data format (v4.0)
+# Readbook data format (v5.0)
 
-The site is static. `index.html` + `app.js` + `styles.css` never change day to day; each morning's run only writes data files. The page renders every earlier format (2.5 and 3.0) as well: see "Compatibility" at the end. Everything on the page is expanded by default; nothing is folded.
+The site is static. `index.html` + `app.js` + `styles.css` never change day to day; each morning's run only writes data files. The page renders every earlier format (2.5, 3.0 and 4.0) as well: see "Compatibility" at the end. Everything on the page is expanded by default; nothing is folded. Run `node tools/validate.js` before committing; it checks everything listed here.
 
 ## Files the daily run writes
 
@@ -16,10 +16,17 @@ The site is static. `index.html` + `app.js` + `styles.css` never change day to d
 | `data/fx.json` | Append the ECB EUR reference rate for each business day not yet listed (the ECB publishes about 16:00 CET, so a morning run appends yesterday). Stored exactly as the ECB quotes it, US dollars per euro; the page inverts to euros per dollar. |
 | `data/series.json` | Append the last close for each series key; keep the last 30 trading days per key. |
 | `data/canes.json` | Append each completed Carolina game; refresh `upcoming` (next 15 scheduled games with UTC start); update `record`, `points`, `metro`. |
+| `data/leaders.json` | When a post changes hands: set `name`, `since`, `acting`, `verified: true`, `src`, `updated`. Fill empty posts the same way. Never delete posts. |
+| `data/exercises.json` | Add announced NATO and allied exercises; set `updated` when dates change; never delete (the page hides those older than 60 days). |
+| `data/releases.json` | Append one entry per AI, chip, robotics or autonomy release, published result or shipped capability (`kind`, `t`, `lab`, `n`, `date`, `src`). On Fridays rewrite `sota` (leading system per domain) with sources. |
+| `data/events.json` | Add events within about 90 minutes of Hoensbroek with a source; prune events whose `to` has passed; set `updated` when details change. |
+| `data/idioms.json` | Append today's idiom (rotate `nl`, `fr`, `it`); never repeat a phrase. |
+| `data/ski.json` | Refresh `snow` daily from Open-Meteo for every resort; resorts stay as they are. |
+| `data/search-index.json` | Append today's headline block (same fields as the page's search). |
 | `data/calendar.json` | Only when a school year or holiday list is newly published: add the missing segments. Otherwise leave alone. |
 | `data/bins.json` | Only when a new Rd4 calendar is supplied. |
 
-Never written by the run: `data/deadlines.json` (Nick's own list).
+Never written by the run: `data/deadlines.json` (Nick's own list). Write the standing files first and the edition second, so a run that stops early still leaves the memory current.
 
 The standing files are the Readbook's memory. The page reads them; it never writes.
 
@@ -70,7 +77,15 @@ The standing files are the Readbook's memory. The page reads them; it never writ
    "note": "…"
  },
  "europe": [item], "euregio": [item] (section omitted when empty),
+ "nato": {"items": [item] (3–5: NATO HQ and the allied armies: DE, NL, BE, FR, PL, UK, Nordics, Baltics),
+   "table": {"title","asof","head":[...],"rows":[[...]],"src"} | null (allied spending and strength, from NATO's own figures)},
+ "deftech": {"items": [item] (3: drones, counter-drone, air defence, EW, autonomy, munitions production),
+   "series": ["<world-series key>", ...] (production series charted when published),
+   "ttp": {"title","body":["para",...]} | null (Saturdays: week in war, tactics, techniques and procedures)},
+ "frontier": {"items": [item] (3–5: AI, chips, robotics, autonomy; only a release, a published result or a shipped capability dated in the window)},
  "army": {"cards": [{"l","v","n"}] (4),
+   "depth": {"rota":"mon|wed|fri","kind","title","body":["para",...],"table": {...} | omitted,"bars": {"label","rows":[[label,value]]} | omitted} | null
+            (Mon readiness and recruiting in numbers; Wed an acquisition programme in numbers; Fri the week's personnel and policy decisions),
    "dod": [item] (Department of Defense: Secretary, posture, budget execution, joint force),
    "news": [item] (Army and USAREUR-AF: units, exercises, equipment, people),
    "congress": [item] (NDAA, appropriations, hearings, nominations, policy with a bill or directive behind it),
@@ -84,7 +99,7 @@ The standing files are the Readbook's memory. The page reads them; it never writ
    "fuel": {"asof","rows":[["Netherlands",95,diesel],...],"note","src","weekly":"Fridays"} | null},
  "nl": {"items":[item],"temp","lees":{"nl","gloss":[[word,meaning]],"src"},"phrase":{"w","en","lvl","note"}},
  "afnorth": {"intro","rows":[[date,event,action,"soon"|""]],"note"},
- "offduty": {"items":[item + "tag"],"weekend": {"rows":[[day,event,place,why,cost]],"gem","family"} | null,"weather": "Fridays: KNMI weekend line" | null},
+ "offduty": {"items":[item + "tag"] (editor's picks; the event list itself comes from events.json),"weekend": {"rows":[[day,event,place,why,cost]],"gem","family"} | null,"weather": "Fridays: KNMI weekend line" | null},
  "hockey": {
    "canes": {"result": {"date","home","hs","away","as","ot":bool,"venue","lines":["…"],"src"} | null,
              "noGame": "text when Carolina did not play",
@@ -104,6 +119,14 @@ The standing files are the Readbook's memory. The page reads them; it never writ
 
 The World feature rota: Monday "Theatre in numbers" (table), Tuesday "Actor on the record" (dated quotes, table of capabilities), Wednesday "Trend line" (`series`), Thursday "Chronology" (`timeline`, 30 days), Friday "Week on the board" (table of what moved per theatre), Saturday "Geography" (`geo` schematic), Sunday "The record" (`timeline` over 12 months plus `series`). A worked example is in `data/examples/edition-4.0-sample.json`.
 
+### Changes from v4.0
+
+- New edition objects: `nato`, `deftech`, `frontier`, `army.depth`. Jump ids added: `leaders`, `nato`, `exercises`, `deftech`, `frontier`, `releases`, `sota`, `snow`.
+- The Off duty section became Out and about: events live in `events.json`; `offduty.items` are editor's picks only.
+- Dutch corner became Taal: the idiom of the day comes from `idioms.json`; `nl.lees` and `nl.phrase` stay.
+- `five[].part` may be `"frontier"`.
+- `"v": "5.0"`.
+
 ### Changes from v3.0
 
 - `world` is an object (items, numbers, feature) instead of an array; the World part is Part 1, before Security.
@@ -114,6 +137,34 @@ The World feature rota: Monday "Theatre in numbers" (table), Tuesday "Actor on t
 - `"v": "4.0"`.
 
 ## Standing files
+
+### `data/leaders.json`
+
+`{ "posts": [ {"id","post","org","name","since","acting":bool,"verified":bool,"src":[[n,title,outlet,url]],"updated"} ] }`. Eleven posts; a name with `verified: false` shows "to confirm" until the run sources it.
+
+### `data/exercises.json`
+
+`{ "exercises": [ {"id","name","from","to","dateText","lead","where","forces","status":"planned|under way|complete","added","updated","src"} ] }`. Feeds the Planner (category Exercises) and the exercise calendar in Profession.
+
+### `data/releases.json`
+
+`{ "releases": [ {"date","kind":"model|chip|robot|autonomy|result|tool","t","lab","n","src"} ], "sota": {"asof","rows":[[domain, system, lab, sinceDate, src]]} }`. The release log shows the last 45 days; `sota` is rewritten on Fridays.
+
+### `data/events.json`
+
+`{ "events": [ {"id","t","cat":"music|markets|museums|sport|kids|food|outdoors|festival","from","to","town","venue","cc","drive":minutes,"cost","kid":bool,"added","updated","src"} ] }`. Radius about 90 minutes by car. The page shows This weekend (Friday to Sunday) and Next 30 days with category chips, and feeds the calendar and the week strip.
+
+### `data/idioms.json`
+
+`{ "idioms": [ {"date","lang":"nl|fr|it","phrase","literal","meaning","example","register","note"} ] }`. One per day, rotating languages; the page shows today's and a review line (yesterday, a week ago, a month ago).
+
+### `data/ski.json`
+
+`{ "season": ["12-01","03-31"], "resorts": [{"id","name","cc","area","lat","lon","drive","top","modelElevation"}], "snow": { "<id>": {"asof","depthCm","days":[[date, newSnowCm, tMax, tMin]]} } }`. Shown in season or when `asof` is within two days. Refreshed daily from Open-Meteo (`daily=snowfall_sum,temperature_2m_max,temperature_2m_min&hourly=snow_depth`).
+
+### `data/search-index.json`
+
+`{ "editions": [ {"date","edition","hits":[{"t","to","w"}]} ] }`. One block per edition with the headlines of five, world, feature, europe, euregio, leads, incidents, army groups, nl, offduty picks and hockey news. The page searches this file and falls back to downloading editions when it is missing.
 
 ### `data/conflicts.json`
 
@@ -178,6 +229,7 @@ As before, plus `attrLog`: `[{"id","date","from","to","t","src"}]`.
 
 ## Compatibility
 
+- A 4.0 edition renders with the Profession, Frontier and Home sections showing their standing-file content and quiet lines for the missing edition objects.
 - A 3.0 or 2.5 edition whose `world` is an array renders it under Developments; the board, the numbers and the planner come from the standing files; the feature block says there is none.
 - A 2.5 edition's `planner.threads` and `planner.horizon` still render when the standing files are empty; `planner.school` renders when `calendar.json` is missing.
 - When `fx.json` is missing the USD/EUR tracker and tile are hidden; when a series key is missing the card has no sparkline; when `canes.json` is missing the Hockey part falls back to the edition's `hockey.canes.record`.

@@ -1,6 +1,6 @@
-/* Nick's Daily Readbook v4.0 renderer.
+/* Nick's Daily Readbook v5.0 renderer.
    Reads data/index.json, then data/editions/<date>.json, plus the standing files:
-   incidents, bins, threads, horizon, fx, series, canes, conflicts, world-series, calendar, deadlines.
+   incidents, bins, threads, horizon, fx, series, canes, conflicts, world-series, calendar, deadlines, leaders, exercises, releases, events, idioms, ski, search-index.
    All content lives in the JSON files; this file only draws it. Editions in the 2.5 and 3.0 formats still render.
    Everything renders expanded; nothing is folded by default. */
 (function () {
@@ -8,9 +8,11 @@
   var MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
   var DOW = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
   var CAT = { nl:["Netherlands","--c-nl"], be:["Belgium","--c-be"], de:["Germany","--c-de"], us:["US / AFNORTH","--c-us"], mkt:["Markets & events","--c-mkt"], pro:["Work & world","--c-pro"],
-              hockey:["Hurricanes","--p-hockey"], home:["Bins & home","--p-home"], school:["School breaks","--p-pro"], watch:["Horizon","--p-watch"], deadline:["Deadlines","--crit"], info:["Clocks","--muted"] };
+              hockey:["Hurricanes","--p-hockey"], home:["Bins & home","--p-home"], school:["School breaks","--p-pro"], watch:["Horizon","--p-watch"], deadline:["Deadlines","--crit"], info:["Clocks","--muted"], out:["Out and about","--c-mkt"], ex:["Exercises","--p-pro"] };
   var CODE_COLORS = { CYB:"--c-us", SAB:"--crit", UAS:"--c-mkt", UWI:"--c-pro", GNSS:"--c-be", INF:"--c-nl", ELX:"--c-nl", MIG:"--c-de", PRX:"--warn", AIR:"--c-de", SEA:"--c-pro", COE:"--c-be", KIN:"--crit" };
-  var PART_CLASSES = ["front","world","sec","watch","pro","money","home","hockey","plan"];
+  var PART_CLASSES = ["front","world","sec","watch","pro","frontier","money","home","hockey","plan"];
+  var PARTS = [["front","Front","#front"],["world","The World","#p-world"],["sec","Security","#p-sec"],["watch","Watchlist","#p-watch"],["pro","Profession","#p-pro"],["frontier","Frontier","#p-frontier"],["money","Money","#p-money"],["home","Home","#p-home"],["hockey","Hockey","#p-hockey"],["plan","Planner","#p-plan"]];
+  var EVCAT = { music:"Music", markets:"Markets", museums:"Museums", sport:"Sport", kids:"Kids", food:"Food", outdoors:"Outdoors", festival:"Festivals" };
   var SERIES_BY_LABEL = [["s&p 500","spx"],["nasdaq","ndx"],["aex","aex"],["brent","brent"],["dutch ttf","ttf"],["ttf","ttf"]];
   var HOME = { lat: 50.89, lon: 5.98, name: "Heerlen" };
   var app = document.getElementById("app");
@@ -76,11 +78,16 @@
   }
   function items(list, opts, q) { return list && list.length ? '<div class="fug">' + nq() + list.map(function (i) { return item(i, opts); }).join("") + "</div>" : quiet(q); }
   function part(cls, n, title, desc, id) {
-    return '<div class="part ' + cls + '" id="' + id + '" data-part="' + esc(title) + '"><span class="pn">' + esc(n) + '</span><span class="pt">' + esc(title) + '</span>' + (desc ? '<span class="pd">' + esc(desc) + "</span>" : "") + "</div>";
+    var prev = PARTS[Math.max(0, PARTS.map(function (p) { return p[0]; }).indexOf(cls) - 1)];
+    return (cls !== "front" && cls !== "world" ? nextLink(prev[0]) : "") + '<div class="part ' + cls + '" id="' + id + '" data-part="' + esc(title) + '"><span class="pn">' + esc(n) + '</span><span class="pt">' + esc(title) + '</span>' + (desc ? '<span class="pd">' + esc(desc) + "</span>" : "") + "</div>";
   }
   function table(head, rows, cls) {
-    return '<div class="tw"><table' + (cls ? ' class="' + cls + '"' : "") + "><thead><tr>" + head.map(function (c) { return "<th>" + esc(c) + "</th>"; }).join("") + "</tr></thead><tbody>" + rows + "</tbody></table></div>";
+    var i = 0;
+    rows = rows.replace(/<tr([^>]*)>|<td([^>]*)>/g, function (m, tr, td) { if (tr !== undefined) { i = 0; return m; } var th = head[i] || ""; i++; return "<td" + (td || "") + ' data-th="' + esc(th) + '">'; });
+    return '<div class="tw' + (head.length >= 3 ? " stack" : "") + '"><table' + (cls ? ' class="' + cls + '"' : "") + "><thead><tr>" + head.map(function (c) { return "<th>" + esc(c) + "</th>"; }).join("") + "</tr></thead><tbody>" + rows + "</tbody></table></div>";
   }
+  function nextLink(cls) { var i = -1; PARTS.forEach(function (p, j) { if (p[0] === cls) i = j; }); var n = PARTS[i + 1]; return n ? '<a class="next ' + n[0] + '" href="' + n[2] + '">Next · ' + esc(n[1]) + ' →</a>' : ""; }
+  function chartBox(id, h, cls) { return '<div class="chart' + (cls ? " " + cls : "") + '" id="' + id + '" style="min-height:' + h + 'px"></div>'; }
   function svgText(x, y, t, anchor, size, halo, fill) { return '<text x="' + x + '" y="' + y + '" font-size="' + (size || 10.5) + '" font-family="var(--f-mono)" fill="' + (fill || "var(--muted)") + '"' + (anchor ? ' text-anchor="' + anchor + '"' : "") + (halo ? ' stroke="var(--surface)" stroke-width="3" paint-order="stroke" stroke-linejoin="round"' : "") + ">" + esc(t) + "</text>"; }
   function tl(rows) {
     return '<div class="tl">' + rows.map(function (r) { return '<div class="tl-i' + (r[3] ? " h" : "") + '"><div class="d"><span>' + esc(fmtLong(r[0])) + '</span></div><p class="ink">' + rich(r[1], r[2] ? srcMap(r[2]) : null) + "</p></div>"; }).join("") + "</div>";
@@ -426,10 +433,12 @@
     }
     ((ctx.deadlines && ctx.deadlines.items) || []).forEach(function (d) { ev.push({ date: d.date, cat: "deadline", t: d.name, sub: d.note || d.cat || "", src: "deadlines" }); });
     (((E.army || {}).career || {}).dates || []).forEach(function (d) { ev.push({ date: d[0], cat: "pro", t: plain(d[1]), sub: "Career milestone", src: "edition" }); });
+    (ctx.events || []).forEach(function (e) { if (e.from) ev.push({ date: e.from, end: e.to !== e.from ? e.to : undefined, cat: "out", t: e.t, sub: [e.town, e.drive != null ? "~" + e.drive + " min" : "", e.to !== e.from ? "to " + fmtShort(e.to) : ""].filter(Boolean).join(" · "), src: "events" }); });
+    (ctx.exercises || []).forEach(function (x) { if (x.from) ev.push({ date: x.from, end: x.to !== x.from ? x.to : undefined, cat: "ex", t: x.name, sub: [x.lead, x.where].filter(Boolean).join(" · "), src: "exercises" }); });
     var seen = {};
     return ev.filter(function (e) { if (!e.date || !/^\d{4}-\d{2}-\d{2}$/.test(e.date)) return false; var k = e.date + "|" + e.cat + "|" + e.t; if (seen[k]) return false; seen[k] = 1; return true; }).sort(function (a, b) { return a.date < b.date ? -1 : a.date > b.date ? 1 : 0; });
   }
-  function onDay(ev, k) { return ev.filter(function (e) { return e.date === k || (e.end && e.cat === "school" && e.date <= k && k <= e.end); }); }
+  function onDay(ev, k) { return ev.filter(function (e) { return e.date === k || (e.end && e.date <= k && k <= e.end); }); }
   function calMonth(ev, y, m, TD, filter) {
     var from = new Date(y, m, 1), to = new Date(y, m + 1, 0), h = '<div class="cal">';
     ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"].forEach(function (d) { h += '<div class="dow">' + d + "</div>"; });
@@ -442,8 +451,13 @@
       h += "</div>";
     }
     h += "</div>";
-    var ym = key(from).slice(0, 7), rows = ev.filter(function (e) { return e.date.slice(0, 7) === ym && filter(e.cat); });
-    h += '<div class="agenda">' + (rows.length ? table(["Date", "What"], rows.map(function (e) { var dd = pd(e.date); return '<tr class="' + (e.date === TD ? "soon" : "") + '"><td class="d"><span class="dot" style="background:' + catColor(e.cat) + '"></span>' + DOW[dd.getDay()] + " " + dd.getDate() + "</td><td><b>" + esc(e.t) + "</b>" + (e.sub ? '<div class="small">' + esc(e.sub) + "</div>" : "") + "</td></tr>"; }).join("")) : quiet("Nothing in this category this month.")) + "</div>";
+    var ym = key(from).slice(0, 7), rows = ev.filter(function (e) { return e.date.slice(0, 7) === ym && filter(e.cat); }), lastW = null, body = "";
+    rows.forEach(function (e) {
+      var dd = pd(e.date), wk = key(new Date(dd.getFullYear(), dd.getMonth(), dd.getDate() - ((dd.getDay() + 6) % 7)));
+      if (wk !== lastW) { lastW = wk; var we = addDays(wk, 6); body += '<tr class="wk"><td colspan="2">Week of ' + esc(fmtShort(wk)) + " – " + esc(fmtShort(we)) + "</td></tr>"; }
+      body += '<tr class="' + (e.date === TD ? "soon" : e.date < TD ? "past" : "") + '"><td class="d"><span class="dot" style="background:' + catColor(e.cat) + '"></span>' + DOW[dd.getDay()] + " " + dd.getDate() + "</td><td><b>" + esc(e.t) + "</b>" + (e.sub ? '<div class="small">' + esc(e.sub) + "</div>" : "") + "</td></tr>";
+    });
+    h += '<div class="agenda">' + (rows.length ? table(["Date", "What"], body) : quiet("Nothing in this category this month.")) + "</div>";
     return h;
   }
   function weekStrip(ev, E, TD) {
@@ -505,13 +519,14 @@
     h += '<header class="mast"><div class="eyebrow">' + esc(E.place || "Hoensbroek · Parkstad Limburg") + "</div><h1>Nick's Daily Readbook</h1>";
     h += '<div class="date">' + esc(E.weekday + " " + today.getDate() + " " + MON[today.getMonth()] + " " + today.getFullYear()) + "</div>";
     h += '<div class="mast-meta"><span><b>Edition ' + esc(E.edition) + "</b></span><span>Look-back " + esc(E.lookback) + '</span><span id="readtime"></span></div>';
-    h += '<div class="rule" aria-hidden="true">' + ["--p-world","--p-sec","--p-watch","--p-pro","--p-money","--p-home","--p-hockey"].map(function (c) { return '<i style="background:var(' + c + ')"></i>'; }).join("") + "</div>";
+    h += '<div class="rule" aria-hidden="true">' + ["--p-world","--p-sec","--p-watch","--p-pro","--p-frontier","--p-money","--p-home","--p-hockey"].map(function (c) { return '<i style="background:var(' + c + ')"></i>'; }).join("") + "</div>";
+    h += '<div class="status"><span id="status"></span><span class="theme" role="group" aria-label="Theme"><button type="button" data-theme="auto">Auto</button><button type="button" data-theme="light">Light</button><button type="button" data-theme="dark">Dark</button></span></div>';
     if (E.note) h += '<p class="note">' + rich(E.note) + "</p>";
     h += "</header>";
 
     /* slim header */
     h += '<div class="slim" id="slim"><div class="slim-row"><span class="cur" id="cur">Front</span>' +
-      '<a class="front" href="#front">Front</a><a class="world" href="#p-world">World</a><a class="sec" href="#p-sec">Security</a><a class="watch" href="#p-watch">Watchlist</a><a class="pro" href="#p-pro">Profession</a><a class="money" href="#p-money">Money</a><a class="home" href="#p-home">Home</a><a class="hockey" href="#p-hockey">Hockey</a><a class="plan" href="#p-plan">Planner</a><a href="#sources">Sources</a>' +
+      PARTS.map(function (p) { return '<a class="' + p[0] + '" data-p="' + p[0] + '" href="' + p[2] + '">' + esc(p[0] === "world" ? "World" : p[1]) + "</a>"; }).join("") + '<a href="#sources">Sources</a>' +
       '<button type="button" class="tg" id="newonly" aria-pressed="false" title="Show only items with a NEW or UPDATED badge">New only</button>' +
       '</div><div class="prog"><i id="prog"></i></div></div>';
 
@@ -542,7 +557,7 @@
     h += part("world", "Part 1", "The World", "Facts and summaries only: the board, overnight developments, the numbers and the day's feature.", "p-world");
     h += '<section id="board" class="world"><h2>The board <span class="num">events logged, not a measure of intensity</span></h2>';
     if (board) {
-      h += '<div class="panel"><div class="lbl">Ten theatres · marker size = events logged in 7 days</div><div class="chart" id="worldmap"></div></div>';
+      h += '<div class="panel"><div class="lbl">Ten theatres · marker size = events logged in 7 days</div><div class="chart" id="worldmap" style="min-height:150px"></div></div>';
       h += '<div class="fug board">' + nq() + board.map(function (b) {
         var hd = '<details class="thread brow ' + fu(b.badge) + '" id="th-' + esc(b.t.id) + '" open><summary><span class="tname">' + esc(b.t.name) + act4(b.weeks) + badge(b.badge) + "</span>";
         hd += b.last ? '<span class="tlast"><span class="d">' + esc(fmtShort(b.last.date)) + "</span>" + rich(b.last.t, srcMap(b.last.src)) + "</span>" : '<span class="tlast small">No events logged yet.</span>';
@@ -606,7 +621,7 @@
       var names = ["unexplained", "suspected", "named", "attributed", "charged", "convicted"];
       h += '<div class="ladder" role="img" aria-label="Incidents by attribution level">' + counts2.map(function (c, n) { return '<div class="rung ' + (c ? "hot" : "zero") + '"><b>A' + n + "</b><span>" + c + "</span><small>" + names[n] + "</small></div>"; }).join("") + "</div>";
     } else h += quiet("No new incidents in the window.");
-    h += '<div class="viz"><div class="panel"><div class="lbl">Running log · last 30 days</div><div id="map"></div></div><div class="panel"><div class="lbl">Per day and by type</div><div id="trend"></div></div><div class="panel"><div class="lbl">By country · last 30 days</div><div id="bycountry"></div></div></div>';
+    h += '<div class="viz"><div class="panel"><div class="lbl">Running log · last 30 days</div><div id="map" class="chart" style="min-height:200px"></div></div><div class="panel"><div class="lbl">Per day and by type</div><div id="trend" class="chart" style="min-height:100px"></div></div><div class="panel"><div class="lbl">By country · last 30 days</div><div id="bycountry"></div></div></div>';
     h += '<p class="small" id="logsrc"></p>';
     h += '<h3>Attribution moves <span class="small">last 7 days</span></h3><div id="attrmoves"></div>';
     h += '<h3>Within 100 km <span class="small">last 30 days</span></h3><div id="near"></div>';
@@ -654,10 +669,16 @@
     h += "</section>";
 
     /* ===== Part 4 · Profession ===== */
-    var AR = E.army || {}, AP = E.aperture || {};
-    h += part("pro", "Part 4", "Profession", "The Army as an institution, and the thinking pieces.", "p-pro");
+    var AR = E.army || {}, AP = E.aperture || {}, NA = E.nato || {}, DT = E.deftech || {};
+    h += part("pro", "Part 4", "Profession", "Inside the US military, the allies you work beside, and the technology of the fight.", "p-pro");
     h += '<section id="army" class="pro"><h2>Defence &amp; Army</h2>';
     if (AR.cards) h += '<div class="cards">' + AR.cards.map(function (c) { return '<div class="card"><div class="lbl">' + esc(c.l) + '</div><div class="val">' + esc(c.v) + "</div><p>" + rich(c.n) + "</p></div>"; }).join("") + "</div>";
+    if (ctx.leaders && ctx.leaders.length) {
+      h += '<h3 id="leaders">Leadership board</h3>' + table(["Post", "Holder"], ctx.leaders.map(function (l) {
+        var b = l.updated === TD ? "UPDATED" : "", nm = l.name ? esc(l.name) + (l.acting ? ' <span class="chip st quiet">acting</span>' : "") : '<span class="small">not yet filled</span>';
+        return '<tr class="' + fu(b) + '"><td><b>' + esc(l.post) + '</b><div class="small">' + esc(l.org) + "</div></td><td>" + nm + badge(b) + (l.verified === false && l.name ? ' <span class="chip rep">to confirm</span>' : "") + (l.src && l.src.length ? '<sup class="r">' + l.src.map(function (x) { return citeLink(x[0], srcMap(l.src)); }).join("") + "</sup>" : "") + '<div class="small mono">' + (l.since ? "since " + esc(fmtShort(l.since) + " " + l.since.slice(0, 4)) : "") + "</div></td></tr>";
+      }).join(""), "lbl1 leaders") + '<p class="small" style="margin-top:6px">"To confirm" marks a name the morning run has not yet sourced.</p>';
+    }
     var AG = [["dod", "Department of Defense", AR.dod, "Nothing new from the Pentagon in the window."], ["armynews", "Army and USAREUR-AF", AR.news || AR.items, "No Army news in the window."], ["congress", "Congress and policy", AR.congress, "No new legislation or policy in the window."]];
     AG.forEach(function (g) { h += '<h3 id="' + g[0] + '">' + g[1] + "</h3>" + items(g[2], null, g[3]); });
     var CR = AR.career || {};
@@ -667,7 +688,32 @@
     else h += quiet("Nothing new that touches your career in the window.");
     if (CR.dates && CR.dates.length) h += table(["Date", "Milestone"], CR.dates.filter(function (d) { return d[0] >= TD; }).map(function (d) { var n = daysBetween(TD, d[0]); return '<tr class="' + (n <= 14 ? "soon" : "") + '"><td class="d">' + esc(fmtShort(d[0])) + " · " + (n === 0 ? "today" : n + " d") + "</td><td>" + rich(d[1]) + "</td></tr>"; }).join(""));
     if (CR.note && CR.items && CR.items.length) h += '<p class="small" style="margin-top:8px">' + rich(CR.note) + "</p>";
+    var DP = AR.depth, PROT = [["mon","Mon","Readiness and recruiting in numbers"],["wed","Wed","An acquisition programme in numbers"],["fri","Fri","The week's personnel and policy decisions"]];
+    if (DP) {
+      h += '<article class="feature" id="armydepth"><div class="lbl" style="color:var(--pc)">' + esc(DP.kind || "In depth") + '</div><h3 class="ft">' + esc(DP.title) + "</h3>" + (DP.body || []).map(function (p) { return "<p>" + rich(p) + "</p>"; }).join("");
+      if (DP.table) h += table(DP.table.head, DP.table.rows.map(function (r) { return "<tr>" + r.map(function (c, j) { return "<td" + (j > 0 && /^[\d.,%$€+−\- ]+$/.test(String(c)) ? ' class="d"' : "") + ">" + rich(c) + "</td>"; }).join("") + "</tr>"; }).join(""), "lbl1");
+      if (DP.bars) h += '<div class="panel"><div class="lbl">' + esc(DP.bars.label || "") + "</div>" + chartBox("armybars", 150) + "</div>";
+      h += "</article>";
+    }
+    h += '<div class="ap-c"><div class="lbl">Depth rota</div><div class="rota three">' + PROT.map(function (r) { return '<div class="' + (DP && r[0] === DP.rota ? "on" : "") + '"><b>' + r[1] + "</b>" + r[2] + "</div>"; }).join("") + "</div></div>";
     h += "</section>";
+
+    h += '<section id="nato" class="pro"><h2>NATO &amp; European militaries</h2>' + items(NA.items, null, "Nothing new from the Alliance or the allied armies in the window.");
+    if (NA.table) h += '<h3>' + esc(NA.table.title || "Allied spending and strength") + (NA.table.asof ? ' <span class="small">' + esc(NA.table.asof) + "</span>" : "") + "</h3>" + table(NA.table.head, NA.table.rows.map(function (r) { return "<tr>" + r.map(function (c, j) { return "<td" + (j > 0 && /^[\d.,%$€+−\- ]+$/.test(String(c)) ? ' class="d"' : "") + ">" + rich(c) + "</td>"; }).join("") + "</tr>"; }).join(""), "lbl1") + (NA.table.src ? '<p class="small" style="margin-top:6px">Source' + cite(NA.table.src) + "</p>" : "");
+    var EXL = (ctx.exercises || []).filter(function (x) { return x.to >= addDays(TD, -60); }).sort(function (a, b) { return a.from < b.from ? -1 : 1; });
+    h += '<h3 id="exercises">Exercise calendar <span class="small">recent and announced</span></h3>';
+    h += EXL.length ? '<div class="fug">' + nq() + table(["When", "Exercise", "Lead · where · forces"], EXL.map(function (x) {
+      var b = x.added === TD ? "NEW" : x.updated === TD ? "UPDATED" : "", n = daysBetween(TD, x.from), when = x.dateText || (fmtShort(x.from) + (x.to !== x.from ? " – " + fmtShort(x.to) : "") + (x.from > TD ? " · in " + n + " d" : ""));
+      return '<tr class="' + fu(b) + (x.from <= TD && x.to >= TD ? " soon" : "") + '"><td class="d">' + esc(when) + "</td><td><b>" + esc(x.name) + "</b>" + badge(b) + (x.status ? '<div class="small">' + esc(x.status) + "</div>" : "") + "</td><td>" + esc([x.lead, x.where, x.forces].filter(Boolean).join(" · ")) + (x.src && x.src.length ? '<sup class="r">' + x.src.map(function (z) { return citeLink(z[0], srcMap(x.src)); }).join("") + "</sup>" : "") + "</td></tr>";
+    }).join(""), "lbl1") + "</div>" : quiet("No exercises announced.");
+    h += "</section>";
+
+    h += '<section id="deftech" class="pro"><h2>Defence tech</h2>' + items(DT.items, null, "No new defence technology in the window.");
+    var DTS = (DT.series || []).filter(function (k) { return ((WS.series || {})[k] || []).length > 1; });
+    if (DTS.length) h += '<div class="viz">' + DTS.map(function (k) { var m = (WS.meta || {})[k] || {}; ctx._dts = ctx._dts || {}; ctx._dts[k] = (WS.series[k] || []).filter(function (p) { return p[0] <= TD; }); return '<div class="panel"><div class="lbl">' + esc(m.label || k) + (m.unit ? " · " + esc(m.unit) : "") + "</div>" + chartBox("dts-" + k, 170) + (m.source ? '<p class="small">' + esc(m.source) + "</p>" : "") + "</div>"; }).join("") + "</div>";
+    if (DT.ttp) h += '<article class="feature" id="ttp"><div class="lbl" style="color:var(--pc)">Week in war · TTPs</div><h3 class="ft">' + esc(DT.ttp.title) + "</h3>" + (DT.ttp.body || []).map(function (p) { return "<p>" + rich(p) + "</p>"; }).join("") + "</article>";
+    h += "</section>";
+
     h += '<section id="aperture" class="pro"><h2>Aperture</h2><div class="ap">';
     if (AP.contrarian) h += '<div class="ap-c"><div class="lbl">Contrarian read</div><p>' + rich(AP.contrarian) + "</p></div>";
     if (AP.weak) h += '<div class="ap-c"><div class="lbl">Weak signal</div><p>' + rich(AP.weak) + "</p></div>";
@@ -681,13 +727,26 @@
       h += "</div></details>";
     }
     if (AP.longread) h += '<div class="ap-c"><div class="lbl">Long read</div><p><a href="' + esc(AP.longread.url) + '" target="_blank" rel="noopener">' + esc(AP.longread.title) + "</a> · " + esc(AP.longread.outlet) + "</p><p>" + rich(AP.longread.why) + "</p></div>";
-    var ROT = [["mon","Mon","Historical echo"],["tue","Tue","Outside-in"],["wed","Wed","Red lens"],["thu","Thu","Concept"],["fri","Fri","Ally spotlight + week in hybrid"],["sat","Sat","Week in war: TTPs"],["sun","Sun","Week in defence tech"]];
+    var ROT = [["mon","Mon","Historical echo"],["tue","Tue","Outside-in"],["wed","Wed","Red lens"],["thu","Thu","Concept"],["fri","Fri","Ally spotlight + week in hybrid"],["sat","Sat","Week in war: TTPs (in Defence tech)"],["sun","Sun","Week in defence tech"]];
     h += '<div class="ap-c"><div class="lbl">Deep cuts and special topics</div><div class="rota">' + ROT.map(function (r) { return '<div class="' + (r[0] === AP.rota ? "on " : "") + (r[0] === "sat" || r[0] === "sun" ? "sp" : "") + '"><b>' + r[1] + "</b>" + r[2] + "</div>"; }).join("") + "</div></div>";
     h += "</div></section>";
 
+    /* ===== Part 5 · Frontier ===== */
+    var FR = E.frontier || {}, REL = ctx.releases || {};
+    h += part("frontier", "Part 5", "Frontier", "Tech and AI: releases, results and shipped capability only.", "p-frontier");
+    h += '<section id="frontier" class="frontier"><h2>Newest</h2>' + items(FR.items, null, "No new release or published result in the window.") + "</section>";
+    var RL = (REL.releases || []).filter(function (r) { return r.date <= TD && r.date >= addDays(TD, -45); }).sort(function (a, b) { return a.date < b.date ? 1 : -1; });
+    h += '<section id="releases" class="frontier"><h2>Release log <span class="num">last 45 days</span></h2>';
+    h += RL.length ? '<div class="fug">' + nq() + '<div class="tl">' + RL.map(function (r) { var b = r.date === TD ? "NEW" : r.date === addDays(TD, -1) ? "UPDATED" : ""; return '<div class="tl-i ' + fu(b) + '"><div class="d"><span>' + esc(fmtLong(r.date)) + '</span><span class="chip rep">' + esc(r.kind || "release") + "</span></div><h4>" + esc(r.t) + "</h4>" + badge(b) + '<p class="ink">' + esc(r.lab || "") + (r.lab && r.n ? " · " : "") + rich(r.n || "", srcMap(r.src)) + "</p></div>"; }).join("") + "</div></div>" : quiet("No releases logged yet.");
+    h += "</section>";
+    var SO = REL.sota || {};
+    h += '<section id="sota" class="frontier"><h2>State of the art <span class="num">' + (SO.asof ? "as of " + esc(fmtShort(SO.asof)) : "updated Fridays") + "</span></h2>";
+    h += SO.rows && SO.rows.length ? table(["Domain", "Leading system", "Since"], SO.rows.map(function (r) { return "<tr><td>" + esc(r[0]) + "</td><td><b>" + esc(r[1]) + "</b>" + (r[2] ? '<div class="small">' + esc(r[2]) + "</div>" : "") + (r[4] && r[4].length ? '<sup class="r">' + r[4].map(function (z) { return citeLink(z[0], srcMap(r[4])); }).join("") + "</sup>" : "") + '</td><td class="d">' + esc(r[3] ? fmtShort(r[3]) : "—") + "</td></tr>"; }).join(""), "lbl1") : quiet("The Friday table has not been written yet.");
+    h += "</section>";
+
     /* ===== Part 5 · Money ===== */
     var M = E.money || {};
-    h += part("money", "Part 5", "Money", "Last session's markets and the numbers that move prices, pay and rates.", "p-money");
+    h += part("money", "Part 6", "Money", "Last session's markets and the numbers that move prices, pay and rates.", "p-money");
     h += '<section id="markets" class="money"><h2>Markets &amp; economy <span class="num">' + esc(M.asof || "") + "</span></h2>";
     var sparks = []; ctx._sparks = sparks;
     if (M.cards) h += '<div class="cards">' + M.cards.map(function (c) {
@@ -709,10 +768,10 @@
       if (FX.month) h += '<div><div class="lbl">Since ' + esc(fmtShort(FX.month[0])) + '</div><div class="v chg ' + dir(FX.d30) + '">' + signed(FX.d30, 4) + '</div><div class="p chg ' + dir(FX.d30) + '">' + signed(FX.d30 / FX.month[1] * 100, 2, "%") + "</div></div>";
       h += '<div><div class="lbl">30-day range</div><div class="v">' + FX.lo30[1].toFixed(4) + '</div><div class="p">to ' + FX.hi30[1].toFixed(4) + "</div></div></div>";
       h += '<div class="fx-tools"><button type="button" data-range="90" aria-pressed="' + (range === 90) + '">90 days</button><button type="button" data-range="365" aria-pressed="' + (range === 365) + '">1 year</button></div>';
-      h += '<div class="chart" id="fxchart" data-range="' + range + '"></div>';
+      h += '<div class="chart" id="fxchart" style="min-height:150px" data-range="' + range + '"></div>';
       var eu = function (r) { return "€" + num(1000 * r, 0); };
       h += '<p class="pay"><b class="l">Pay</b>$1,000 is ' + eu(FX.last[1]) + " today" + (FX.month ? ", " + eu(FX.month[1]) + " a month ago" : "") + "; 12-month best " + eu(FX.best[1]) + " (" + esc(fmtShort(FX.best[0])) + "), worst " + eu(FX.worst[1]) + " (" + esc(fmtShort(FX.worst[0])) + "). Up means the dollar buys more euros.</p>";
-      h += '<div class="lbl" style="margin-top:12px">$1,000 in euros, monthly average</div><div class="chart" id="paybars"></div>';
+      h += '<div class="lbl" style="margin-top:12px">$1,000 in euros, monthly average</div><div class="chart" id="paybars" style="min-height:110px"></div>';
       h += '<p class="small" style="margin:8px 0 0"><a href="' + esc(ctx.fx.url || "https://www.ecb.europa.eu/stats/eurofxref/") + '" target="_blank" rel="noopener">' + esc(ctx.fx.source || "ECB") + "</a>, one value per ECB business day, inverted from the ECB's dollars-per-euro quote.</p></div></section>";
     }
     h += '<section id="rates" class="money">';
@@ -727,9 +786,9 @@
     if (M.fy) h += '<p class="sw-line" style="margin-top:12px"><b class="l">For you</b>' + rich(M.fy) + "</p>";
     h += "</section>";
 
-    /* ===== Part 6 · Home ===== */
+    /* ===== Part 7 · Home ===== */
     var NL = E.nl || {}, AF = E.afnorth || {}, OD = E.offduty || {};
-    h += part("home", "Part 6", "Home", "The Netherlands, the family, weekends and the Dutch corner.", "p-home");
+    h += part("home", "Part 7", "Home", "The Netherlands, the family, what is on nearby, the languages and the snow.", "p-home");
     h += '<section id="nl" class="home"><h2>Netherlands</h2>' + items(NL.items);
     if (NL.temp) h += '<p class="small" style="margin-top:12px"><b>Political temperature:</b> ' + rich(NL.temp) + "</p>";
     h += "</section>";
@@ -739,22 +798,59 @@
     else h += quiet("Nothing new in the next 14 days.");
     if (AF.note) h += '<p class="small" style="margin-top:8px">' + rich(AF.note) + "</p>";
     h += "</section>";
-    h += '<section id="offduty" class="home"><h2>Off duty <span class="num">1-hour radius</span></h2>' + items(OD.items, { inlineTag: true }, "Nothing new worth the drive today.");
+    /* out and about */
+    var EVS = (ctx.events || []).filter(function (e) { return e.to >= TD; }).sort(function (a, b) { return a.from < b.from ? -1 : a.from > b.from ? 1 : 0; });
+    var dow = today.getDay(), fri = addDays(TD, dow === 0 ? -2 : dow === 6 ? -1 : 5 - dow), sun = addDays(fri, 2);
+    var WK = EVS.filter(function (e) { return e.from <= sun && e.to >= fri; }), N30 = EVS.filter(function (e) { return e.from <= addDays(TD, 30); });
+    function evRow(e) {
+      var b = e.added === TD ? "NEW" : e.updated === TD ? "UPDATED" : "", when = e.from === e.to ? fmt(pd(e.from)) : fmtShort(e.from) + " – " + fmtShort(e.to);
+      return '<div class="evrow ' + fu(b) + '" data-cat="' + esc(e.cat) + '"><span class="d">' + esc(when) + '</span><div><span class="chip st" style="color:' + catColor("out") + '">' + esc(EVCAT[e.cat] || e.cat) + "</span>" + (e.kid ? '<span class="chip st quiet">kids</span>' : "") + " <b>" + esc(e.t) + "</b>" + badge(b) + '<div class="small">' + esc([e.town + (e.cc ? " (" + e.cc + ")" : ""), e.venue, e.drive != null ? "~" + e.drive + " min" : "", e.cost].filter(Boolean).join(" · ")) + (e.src && e.src.length ? '<sup class="r">' + e.src.map(function (z) { return citeLink(z[0], srcMap(e.src)); }).join("") + "</sup>" : "") + "</div></div></div>";
+    }
+    h += '<section id="offduty" class="home"><h2>Out and about <span class="num">within 90 minutes</span></h2>';
+    h += '<h3>This weekend <span class="small">' + esc(fmtShort(fri) + " – " + fmtShort(sun)) + "</span></h3>";
+    if (OD.weather) h += '<p class="small">' + rich(OD.weather) + "</p>";
+    h += WK.length ? '<div class="evlist fug">' + nq() + WK.map(evRow).join("") + "</div>" : quiet("Nothing listed for the weekend yet.");
+    if (OD.items && OD.items.length) h += '<h3>Editor\'s picks</h3>' + items(OD.items, { inlineTag: true });
     if (OD.weekend) {
       h += "<h3>Weekend guide</h3>" + table(["Day", "Event", "Place", "Why go", "Cost / booking"], OD.weekend.rows.map(function (r) { return "<tr>" + r.map(function (c, j) { return "<td" + (j === 0 ? ' class="d"' : "") + ">" + rich(c) + "</td>"; }).join("") + "</tr>"; }).join(""));
       if (OD.weekend.gem) h += '<p class="sw-line" style="margin-top:10px"><b class="l">Hidden gem</b>' + rich(OD.weekend.gem) + "</p>";
       if (OD.weekend.family) h += '<p class="sw-line"><b class="l">Family pick</b>' + rich(OD.weekend.family) + "</p>";
     }
-    if (OD.weather) h += '<p class="small">' + rich(OD.weather) + "</p>";
+    h += '<h3>Next 30 days</h3><div class="filt" id="evfilt" role="group" aria-label="Filter events"><button type="button" data-f="all" aria-pressed="true">All</button>' + Object.keys(EVCAT).map(function (k) { return '<button type="button" data-f="' + k + '" aria-pressed="false">' + EVCAT[k] + "</button>"; }).join("") + '<button type="button" data-f="kids" aria-pressed="false">With kids</button></div>';
+    h += N30.length ? '<div class="evlist fug" id="evlist">' + nq() + N30.map(evRow).join("") + '<p class="quiet" id="evempty" style="display:none">Nothing in this category in the next 30 days.</p></div>' : quiet("Nothing listed for the next 30 days.");
     h += "</section>";
-    h += '<section id="dutch" class="home"><h2>Dutch corner</h2>';
+    /* taal */
+    var ID = (ctx.idioms || []).filter(function (i) { return i.date <= TD; }).sort(function (a, b) { return a.date < b.date ? 1 : -1; });
+    var LANG = { nl: "Dutch", fr: "French", it: "Italian" };
+    h += '<section id="dutch" class="home"><h2>Taal <span class="num">Dutch, French, Italian</span></h2>';
+    if (ID.length) {
+      var cur = ID[0], b0 = cur.date === TD ? "NEW" : "";
+      h += '<div class="idiom ' + fu(b0) + '"><div class="lbl">' + esc(LANG[cur.lang] || cur.lang) + " idiom of the day" + "</div><div class=\"w\" lang=\"" + esc(cur.lang) + '">' + esc(cur.phrase) + "</div>" + badge(b0) + '<p class="lit">“' + esc(cur.literal) + "”</p><p><b>" + esc(cur.meaning) + "</b></p>" + (cur.example ? '<blockquote lang="' + esc(cur.lang) + '">' + esc(cur.example) + "</blockquote>" : "") + '<p class="small">' + esc([cur.register, cur.note].filter(Boolean).join(" · ")) + "</p></div>";
+      var rev = [];
+      [[1, "yesterday"], [7, "a week ago"], [30, "a month ago"]].forEach(function (r) { var k = addDays(TD, -r[0]), hit = null; ID.forEach(function (i) { if (!hit && i.date <= k) hit = i; }); if (hit && hit !== cur && rev.indexOf(hit) < 0) rev.push(hit); });
+      if (rev.length) h += '<div class="review"><div class="lbl">Review</div>' + rev.map(function (i) { return '<p><span class="chip st quiet">' + esc(i.lang) + '</span> <b lang="' + esc(i.lang) + '">' + esc(i.phrase) + "</b> · " + esc(i.meaning) + "</p>"; }).join("") + "</div>";
+    } else h += quiet("No idiom logged yet.");
     if (NL.lees) h += '<div class="lees"><div class="lbl">Lees mee</div><blockquote lang="nl">' + rich(NL.lees.nl) + cite(NL.lees.src) + "</blockquote><dl>" + NL.lees.gloss.map(function (g) { return '<dt lang="nl">' + esc(g[0]) + "</dt><dd>" + rich(g[1]) + "</dd>"; }).join("") + "</dl></div>";
     if (NL.phrase) h += '<div class="nl-word"><div class="w" lang="nl">' + esc(NL.phrase.w) + '</div><p class="small" style="margin:2px 0 10px">“' + esc(NL.phrase.en) + "” · " + esc(NL.phrase.lvl) + "</p><p>" + rich(NL.phrase.note) + "</p></div>";
     h += "</section>";
+    /* snow */
+    var SK = ctx.ski, md = TD.slice(5), inSeason = SK && SK.season && (md >= SK.season[0] || md <= SK.season[1]);
+    var fresh = SK && SK.snow && Object.keys(SK.snow).some(function (k) { return SK.snow[k].asof && daysBetween(SK.snow[k].asof, TD) <= 2; });
+    if (SK && (inSeason || fresh) && SK.resorts && SK.resorts.length) {
+      var rows = SK.resorts.map(function (r) { var sn = SK.snow[r.id]; if (!sn) return null; var n7 = sn.days.reduce(function (a, d) { return a + (d[1] || 0); }, 0); return { r: r, sn: sn, n7: n7 }; }).filter(Boolean).sort(function (a, b) { return b.n7 - a.n7 || b.sn.depthCm - a.sn.depthCm; });
+      var mx = Math.max.apply(null, rows.map(function (x) { return Math.max.apply(null, x.sn.days.map(function (d) { return d[1] || 0; })); })) || 1;
+      h += '<section id="snow" class="home"><h2>Snow <span class="num">7-day forecast · ' + esc(rows.length ? fmtShort(rows[0].sn.asof) : "") + "</span></h2>";
+      h += table(["Resort", "New snow 7 d", "Depth", "Drive"], rows.map(function (x) {
+        var bars = '<span class="snowbars" title="' + esc(x.sn.days.map(function (d) { return d[0].slice(5) + ": " + d[1] + " cm"; }).join(", ")) + '">' + x.sn.days.map(function (d) { return '<i style="height:' + (d[1] ? 3 + (d[1] / mx) * 15 : 1) + 'px"' + (d[1] ? "" : ' class="z"') + "></i>"; }).join("") + "</span>";
+        var temps = x.sn.days.length ? Math.round(Math.min.apply(null, x.sn.days.map(function (d) { return d[3]; }))) + "° to " + Math.round(Math.max.apply(null, x.sn.days.map(function (d) { return d[2]; }))) + "°" : "";
+        return "<tr><td><b>" + esc(x.r.name) + '</b><div class="small">' + esc(x.r.area + " (" + x.r.cc + ") · top " + x.r.top + " m") + '</div></td><td class="d">' + bars + " " + Math.round(x.n7) + " cm" + (temps ? '<div class="small">' + esc(temps) + "</div>" : "") + '</td><td class="d">' + x.sn.depthCm + ' cm<div class="small">at ' + Math.round(x.r.modelElevation || 0) + " m</div></td><td class=\"d\">" + esc(x.r.drive) + "</td></tr>";
+      }).join(""), "lbl1 snowtab");
+      h += '<p class="small" style="margin-top:6px">Model forecast at the grid elevation, not the summit; depth is the model\'s snowpack. <a href="' + esc(SK.url || "https://open-meteo.com") + '" target="_blank" rel="noopener">' + esc(SK.source || "Open-Meteo") + "</a>. Drive times from Hoensbroek, approximate.</p></section>";
+    }
 
     /* ===== Part 7 · Hockey ===== */
     var HK = E.hockey || {};
-    h += part("hockey", "Part 7", "Hockey", "Carolina first, then the league.", "p-hockey");
+    h += part("hockey", "Part 8", "Hockey", "Carolina first, then the league.", "p-hockey");
     h += '<section id="hockey" class="hockey"><h2>Hurricanes' + (CV ? ' <span class="num">' + esc(CV.season) + "</span>" : "") + "</h2>";
     if (CV) {
       h += '<div class="season" role="list" aria-label="Last ten results">' + CV.games.slice(-10).map(function (g) { return '<div class="g ' + g.res + '" role="listitem" title="' + esc(fmtShort(g.date) + (g.home ? " vs " : " at ") + g.opp + ": " + g.res + " " + g.gf + "–" + g.ga) + '"><b>' + g.res + "</b>" + (g.home ? "" : "@") + esc(g.opp) + "</div>"; }).join("") + "</div>";
@@ -773,7 +869,7 @@
       if (C.next && C.next.length) h += table(["Next", "Opponent", "Puck drop here"], C.next.map(function (n) { return '<tr><td class="d">' + esc(n[0]) + "</td><td>" + esc(n[1]) + '</td><td class="d">' + esc(n[3]) + '<div class="small">' + esc(n[2]) + "</div>" + (n[4] ? '<span class="badge live">WATCH LIVE</span>' : "") + "</td></tr>"; }).join("")) + '<p class="small" style="margin:0">Schedule' + cite(C.nextSrc) + "</p>";
       h += "</div>";
     }
-    if (CV && CV.games.length > 1) h += '<div class="panel" style="margin-top:12px"><div class="lbl">Season so far · points by game, goals for and against</div><div class="chart" id="hkchart"></div></div>';
+    if (CV && CV.games.length > 1) h += '<div class="panel" style="margin-top:12px"><div class="lbl">Season so far · points by game, goals for and against</div><div class="chart" id="hkchart" style="min-height:170px"></div></div>';
     h += '<h3>Scores <span class="small">' + esc(HK.scoresDate || "") + "</span></h3>";
     if (HK.scores && HK.scores.length) {
       h += '<div class="scores">' + HK.scores.map(function (g) {
@@ -785,12 +881,12 @@
     h += "<h3>Top NHL news</h3>" + items(HK.news) + "</section>";
 
     /* ===== Part 8 · Planner (always open) ===== */
-    h += part("plan", "Part 8", "Planner", "The week, the countdowns, the calendar, the school year and the season.", "p-plan");
+    h += part("plan", "Part 9", "Planner", "The week, the countdowns, the calendar, the school year and the season.", "p-plan");
     h += '<section id="week" class="plan"><h2>This week</h2>' + weekStrip(PEV, E, TD) + "</section>";
     h += '<section id="countdown" class="plan"><h2>Countdowns</h2>' + countdowns(PEV, ctx, TD) + "</section>";
     h += '<section id="calendar" class="plan"><h2>Calendar</h2>';
     if (P.otd) h += '<div class="ap-c" style="margin-bottom:14px"><div class="lbl">' + esc(P.otd.title) + '</div><p style="margin:0">' + rich(P.otd.body) + "</p></div>";
-    var FILT = [["all","All"],["nl","NL"],["be","BE"],["de","DE"],["us","US"],["ev","Events"],["hockey","Hockey"],["homed","Home"],["school","School"],["watch","Horizon"]];
+    var FILT = [["all","All"],["nl","NL"],["be","BE"],["de","DE"],["us","US"],["ev","Events"],["out","Out and about"],["hockey","Hockey"],["homed","Home"],["school","School"],["watch","Horizon"],["ex","Exercises"]];
     h += '<div class="cal-nav"><button type="button" id="calprev" aria-label="Previous month">‹</button><span class="cal-title" id="caltitle"></span><button type="button" id="calnext" aria-label="Next month">›</button><button type="button" id="caltoday">This month</button></div>';
     h += '<div class="filt" id="calfilt" role="group" aria-label="Filter the calendar">' + FILT.map(function (f) { return '<button type="button" data-f="' + f[0] + '" aria-pressed="' + (f[0] === "all") + '">' + f[1] + "</button>"; }).join("") + "</div>";
     h += '<div class="legend">' + Object.keys(CAT).map(function (k) { return '<span><i style="background:' + catColor(k) + '"></i>' + esc(CAT[k][0]) + "</span>"; }).join("") + "</div>";
@@ -807,11 +903,11 @@
       h += '<p class="small">Sources: ' + Object.keys(ctx.calendar.school).map(function (k) { return esc(ctx.calendar.school[k].name) + " (" + esc(ctx.calendar.school[k].source) + ")"; }).join("; ") + ".</p>";
     } else if (P.school) h += gantt(P.school, today) + (P.school.note ? '<p class="small" style="margin-top:6px">' + rich(P.school.note) + "</p>" : "");
     else h += quiet("No school calendar loaded.");
-    h += '<h3>Daylight</h3><div class="panel"><div class="lbl">Hours of daylight at ' + esc(HOME.name) + " through " + today.getFullYear() + '</div><div class="chart" id="daylight"></div></div></section>';
+    h += '<h3>Daylight</h3><div class="panel"><div class="lbl">Hours of daylight at ' + esc(HOME.name) + " through " + today.getFullYear() + '</div><div class="chart" id="daylight" style="min-height:120px"></div></div></section>';
     if (P.season) h += '<section id="season" class="plan"><h2>' + esc(P.season.title) + "</h2>" + (P.season.intro ? '<p class="small">' + rich(P.season.intro) + "</p>" : "") + gantt(P.season, today) + (P.season.notes ? '<ul class="clean" style="margin-top:12px">' + P.season.notes.map(function (n) { return "<li>" + rich(n) + "</li>"; }).join("") + "</ul>" : "") + "</section>";
 
     /* ===== Footer ===== */
-    h += '<section id="sources"><h2>Sources</h2><ol class="src">' + (E.sources || []).map(function (s) { return '<li id="s' + s[0] + '" value="' + s[0] + '"><a href="' + esc(s[3]) + '" target="_blank" rel="noopener">' + esc(s[1]) + '</a><span class="o"> · ' + esc(s[2]) + "</span></li>"; }).join("") + "</ol>";
+    h += '<a class="next" href="#sources">Sources ↓</a><section id="sources"><h2>Sources</h2><ol class="src">' + (E.sources || []).map(function (s) { return '<li id="s' + s[0] + '" value="' + s[0] + '"><a href="' + esc(s[3]) + '" target="_blank" rel="noopener">' + esc(s[1]) + '</a><span class="o"> · ' + esc(s[2]) + "</span></li>"; }).join("") + "</ol>";
     if (E.flags) h += '<p class="small" style="margin-top:12px"><b>Sourcing flags:</b> ' + rich(E.flags) + "</p>";
     h += '<div class="foot"><div class="arch"><label class="small" for="arch">Past editions</label><select id="arch"></select></div>';
     h += '<div class="search"><form id="searchform" role="search"><label class="small" for="q">Archive search</label><input id="q" type="search" placeholder="Search headlines in every edition" autocomplete="off"><button type="submit">Search</button></form><div id="hits" class="small"></div></div>';
@@ -846,6 +942,8 @@
       var fg = document.getElementById("fgeo"); if (fg && ctx._geo) fg.innerHTML = geoSchematic(ctx._geo, fg.clientWidth);
       var hk = document.getElementById("hkchart"); if (hk && ctx.canes) hk.innerHTML = hockeyChart(canesView(ctx.canes, TD).games, hk.clientWidth);
       var dlc = document.getElementById("daylight"); if (dlc) dlc.innerHTML = daylight(HOME.lat, TD, dlc.clientWidth);
+      var ab = document.getElementById("armybars"); if (ab && E.army && E.army.depth && E.army.depth.bars) ab.innerHTML = vbars(E.army.depth.bars.rows, { W: ab.clientWidth, zero: true, label: E.army.depth.bars.label || "" });
+      Object.keys(ctx._dts || {}).forEach(function (k) { var el = document.getElementById("dts-" + k); if (el) { var m = ((ctx.worldSeries || {}).meta || {})[k] || {}; el.innerHTML = lineChart(ctx._dts[k], { W: el.clientWidth, days: 400, dec: m.decimals != null ? m.decimals : 0, zero: true, label: m.label || k }); } });
     }
     drawCharts();
     var rsz = null; window.addEventListener("resize", function () { clearTimeout(rsz); rsz = setTimeout(drawCharts, 150); });
@@ -886,6 +984,24 @@
     var words = 0, stop = false;
     Array.prototype.forEach.call(app.children, function (el) { if (stop || el.id === "p-plan" || el.id === "sources") { stop = true; return; } if (el.id !== "slim") words += (el.textContent || "").split(/\s+/).length; });
     document.getElementById("readtime").textContent = "≈ " + Math.max(1, Math.round(words / 230)) + " min read";
+
+    /* theme control and status line */
+    var themeBtns = app.querySelectorAll(".theme button");
+    function applyTheme(t) { if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t); else document.documentElement.removeAttribute("data-theme"); themeBtns.forEach(function (b) { b.setAttribute("aria-pressed", String(b.getAttribute("data-theme") === t)); }); store("rb:theme", t); }
+    themeBtns.forEach(function (b) { b.addEventListener("click", function () { applyTheme(b.getAttribute("data-theme")); }); });
+    applyTheme(store("rb:theme") || "auto");
+    var st = document.getElementById("status");
+    function status() { var t = ctx.fetchedAt ? new Date(ctx.fetchedAt) : null; st.textContent = (t ? "Loaded " + String(t.getHours()).padStart(2, "0") + ":" + String(t.getMinutes()).padStart(2, "0") : "") + (navigator.onLine === false ? " · offline, showing the last copy" : ""); st.classList.toggle("off", navigator.onLine === false); }
+    window.addEventListener("online", status); window.addEventListener("offline", status); status();
+
+    /* out-and-about filter */
+    var evf = document.getElementById("evfilt");
+    if (evf) evf.addEventListener("click", function (ev) {
+      var b = ev.target.closest("button"); if (!b) return; var f = b.getAttribute("data-f"), left = 0;
+      evf.querySelectorAll("button").forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
+      app.querySelectorAll("#evlist .evrow").forEach(function (r) { var on = f === "all" || (f === "kids" ? !!r.querySelector(".chip.quiet") : r.getAttribute("data-cat") === f); r.style.display = on ? "" : "none"; if (on) left++; });
+      var em = document.getElementById("evempty"); if (em) em.style.display = left ? "none" : "";
+    });
 
     /* new-only filter */
     var newOnly = store("rb:newonly") === "1", tg = document.getElementById("newonly");
@@ -942,10 +1058,12 @@
       var q = document.getElementById("q").value.trim().toLowerCase();
       if (!q) { hits.innerHTML = ""; return; }
       hits.textContent = "Searching…";
-      loadAllEditions(ctx).then(function (eds) {
+      var viaIndex = ctx.searchIndex && ctx.searchIndex.editions && ctx.searchIndex.editions.length;
+      (viaIndex ? Promise.resolve(ctx.searchIndex.editions.map(function (b) { return { date: b.date, edition: b.edition, _hits: b.hits }; })) : loadAllEditions(ctx)).then(function (eds) {
         var out = [];
         eds.forEach(function (ed) {
           function add(t, to, where) { if (t && String(t).toLowerCase().indexOf(q) >= 0) out.push({ date: ed.date, edition: ed.edition, t: t, to: to, where: where }); }
+          if (ed._hits) { ed._hits.forEach(function (x) { add(x.t, x.to, x.w); }); return; }
           (ed.five || []).forEach(function (f) { add(f.t, f.to, "Five things"); });
           var wi = Array.isArray(ed.world) ? ed.world : ((ed.world || {}).items || []);
           wi.forEach(function (i) { add(i.h, "world", "World"); });
@@ -964,6 +1082,7 @@
           ((ed.hockey || {}).news || []).forEach(function (i) { add(i.h, "hockey", "NHL"); });
         });
         out.sort(function (a, b) { return a.date < b.date ? 1 : a.date > b.date ? -1 : 0; });
+        if (!viaIndex) {} 
         hits.innerHTML = out.length ? '<ul class="hits">' + out.slice(0, 60).map(function (x) { return '<li><span class="d">' + esc(fmtShort(x.date) + " " + x.date.slice(0, 4)) + '</span><span><a href="#ed-' + x.date + "/" + esc(x.to) + '">' + esc(plain(x.t)) + '</a><span class="w">' + esc(x.where) + "</span></span></li>"; }).join("") + "</ul>" + (out.length > 60 ? '<p class="small">Showing 60 of ' + out.length + " hits.</p>" : "") : quiet("No headline matches “" + q + "” in " + eds.length + (eds.length === 1 ? " edition." : " editions."));
       }).catch(function (e) { hits.innerHTML = quiet("Search failed: " + (e.message || e)); });
     });
@@ -980,6 +1099,7 @@
         if (name !== curName) { curName = name; cur.classList.add("fade"); clearTimeout(fadeTimer); fadeTimer = setTimeout(function () { cur.textContent = name; cur.classList.remove("fade"); }, 150); }
         var cls = now.className.split(" ").filter(function (c) { return PART_CLASSES.indexOf(c) >= 0; })[0];
         slim.className = "slim " + (cls || "");
+        slim.querySelectorAll("a[data-p]").forEach(function (a) { a.classList.toggle("on", a.getAttribute("data-p") === cls); });
         totop.classList.toggle("on", now !== parts[0]);
       }
       var max = document.documentElement.scrollHeight - window.innerHeight;
@@ -1013,8 +1133,11 @@
     getJSON("data/index.json"),
     opt("data/incidents.json"), opt("data/bins.json"), opt("data/threads.json"), opt("data/horizon.json"),
     opt("data/fx.json"), opt("data/series.json"), opt("data/canes.json"),
-    opt("data/conflicts.json"), opt("data/world-series.json"), opt("data/calendar.json"), opt("data/deadlines.json")
+    opt("data/conflicts.json"), opt("data/world-series.json"), opt("data/calendar.json"), opt("data/deadlines.json"),
+    opt("data/leaders.json"), opt("data/exercises.json"), opt("data/releases.json"), opt("data/events.json"), opt("data/idioms.json"), opt("data/ski.json"), opt("data/search-index.json")
   ]).then(function (r) {
+    ctx.fetchedAt = Date.now();
+    ctx.leaders = r[12] && r[12].posts; ctx.exercises = r[13] && r[13].exercises; ctx.releases = r[14]; ctx.events = r[15] && r[15].events; ctx.idioms = r[16] && r[16].idioms; ctx.ski = r[17]; ctx.searchIndex = r[18];
     ctx.index = r[0]; ctx.incidents = r[1] && r[1].incidents; ctx.attrLog = r[1] && r[1].attrLog; ctx.bins = r[2];
     ctx.threads = r[3] && r[3].threads; ctx.horizon = r[4] && r[4].events;
     ctx.fx = r[5] && r[5].series && r[5].series.length ? r[5] : null; ctx.series = r[6]; ctx.canes = r[7];

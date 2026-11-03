@@ -1,0 +1,36 @@
+{
+ "note": "Taal: the idiom bank. One featured idiom per day rotating nl, fr, it. The run appends one entry per day and never repeats a phrase. The page shows today's and a review line (yesterday, a week ago, a month ago).",
+ "updated": "2026-11-03",
+ "idioms": [
+  {
+   "date": "2026-11-01",
+   "lang": "nl",
+   "phrase": "de kat uit de boom kijken",
+   "literal": "to watch the cat out of the tree",
+   "meaning": "to wait and see how things develop before committing",
+   "example": "Bij de begrotingsonderhandelingen kijkt de oppositie eerst de kat uit de boom.",
+   "register": "everyday, NL and BE",
+   "note": "Very common in political reporting; the Belgian form is the same."
+  },
+  {
+   "date": "2026-11-02",
+   "lang": "fr",
+   "phrase": "avoir d'autres chats à fouetter",
+   "literal": "to have other cats to whip",
+   "meaning": "to have more important things to do",
+   "example": "Le bourgmestre n'a pas répondu : il a d'autres chats à fouetter.",
+   "register": "everyday, slightly informal",
+   "note": "Used across Wallonia and France; the English cousin is 'bigger fish to fry'."
+  },
+  {
+   "date": "2026-11-03",
+   "lang": "it",
+   "phrase": "in bocca al lupo",
+   "literal": "into the mouth of the wolf",
+   "meaning": "good luck (said before an exam, a match or a journey)",
+   "example": "Domani hai l'esame? In bocca al lupo!",
+   "register": "everyday, all of Italy",
+   "note": "The reply is 'crepi (il lupo)', may the wolf die; never answer 'grazie'."
+  }
+ ]
+}

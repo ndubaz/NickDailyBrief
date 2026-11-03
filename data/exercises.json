@@ -1,0 +1,45 @@
+{
+ "note": "NATO and allied exercise calendar. The run adds exercises with dates, lead, location and forces when announced, sets updated when dates change, and never deletes past ones (the page hides those older than 60 days). Feeds the Planner and the Horizon.",
+ "updated": "2026-11-03",
+ "exercises": [
+  {
+   "id": "avenger-triad-26",
+   "name": "Avenger Triad 26",
+   "from": "2026-10-06",
+   "to": "2026-10-15",
+   "lead": "USAREUR-AF and NATO LANDCOM",
+   "where": "Command posts in France, Germany, the Netherlands and Poland",
+   "forces": "About 4,000 personnel; V Corps, 2nd Polish Corps, 1st French Corps, 1 German-Netherlands Corps",
+   "status": "complete",
+   "added": "2026-11-02",
+   "src": [
+    [
+     46,
+     "USAREUR-AF, NATO Allies conclude Exercise Avenger Triad 26",
+     "army.mil",
+     "https://www.army.mil/article/296123/usareur_af_nato_allies_conclude_exercise_avenger_triad_26"
+    ]
+   ]
+  },
+  {
+   "id": "steadfast-defender-27",
+   "name": "Steadfast Defender 2027",
+   "from": "2027-01-01",
+   "to": "2027-12-31",
+   "dateText": "2027, dates to be announced",
+   "lead": "NATO",
+   "where": "Europe",
+   "forces": "Live formations; tests Avenger Triad concepts",
+   "status": "planned",
+   "added": "2026-11-02",
+   "src": [
+    [
+     46,
+     "USAREUR-AF, NATO Allies conclude Exercise Avenger Triad 26",
+     "army.mil",
+     "https://www.army.mil/article/296123/usareur_af_nato_allies_conclude_exercise_avenger_triad_26"
+    ]
+   ]
+  }
+ ]
+}

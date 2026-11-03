@@ -1,0 +1,7 @@
+/* Self-hosted typefaces, latin subsets from Google Fonts. Barlow Condensed (Jeremy Tribby), Public Sans (US Web Design System) and JetBrains Mono (JetBrains) are all under the SIL Open Font License 1.1. */
+@font-face{font-family:"Barlow Condensed";font-style:normal;font-weight:500;font-display:swap;src:url(barlowcondensed-normal-500.woff2) format("woff2")}
+@font-face{font-family:"Barlow Condensed";font-style:normal;font-weight:600;font-display:swap;src:url(barlowcondensed-normal-600.woff2) format("woff2")}
+@font-face{font-family:"Barlow Condensed";font-style:normal;font-weight:700;font-display:swap;src:url(barlowcondensed-normal-700.woff2) format("woff2")}
+@font-face{font-family:"Public Sans";font-style:normal;font-weight:400 700;font-display:swap;src:url(publicsans-normal-400-600-700.woff2) format("woff2")}
+@font-face{font-family:"Public Sans";font-style:italic;font-weight:400;font-display:swap;src:url(publicsans-italic-400.woff) format("woff")}
+@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:500;font-display:swap;src:url(jetbrainsmono-normal-500.woff) format("woff")}
