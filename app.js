@@ -17,6 +17,7 @@
   var HOME = { lat: 50.89, lon: 5.98, name: "Heerlen" };
   var app = document.getElementById("app");
   var DAY = 864e5;
+  var ctx = {};
 
   /* ---------- small helpers ---------- */
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]; }); }
@@ -47,7 +48,8 @@
   function store(k, v) { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } }
   function quiet(t, cls) { return '<p class="quiet' + (cls ? " " + cls : "") + '">' + esc(t || "No significant change today.") + "</p>"; }
   function nq() { return quiet("Nothing new or updated here today.", "nq"); }
-  function getJSON(url) { return fetch(url, { cache: "no-store" }).then(function (r) { if (!r.ok) throw new Error(url + " " + r.status); return r.json(); }); }
+  function getJSON(url) { return fetch(url, { cache: "no-store" }).then(function (r) { if (!r.ok) throw new Error(url + " " + r.status); var lm = r.headers.get("last-modified"); if (lm) { var t = Date.parse(lm); if (t && (!ctx.dataUpdated || t > ctx.dataUpdated)) ctx.dataUpdated = t; } return r.json(); }); }
+  function stamp(ms) { try { var d = new Date(ms); return new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Amsterdam", weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" }).format(d).replace(",", "") + " CET"; } catch (e) { return new Date(ms).toISOString().slice(0, 16).replace("T", " "); } }
   function num(v, dp) { return (v < 0 ? "−" : "") + Math.abs(v).toLocaleString("en-GB", { minimumFractionDigits: dp, maximumFractionDigits: dp }); }
   function signed(v, dp, suffix) { return (v > 0 ? "+" : v < 0 ? "−" : "") + Math.abs(v).toLocaleString("en-GB", { minimumFractionDigits: dp, maximumFractionDigits: dp }) + (suffix || ""); }
   function dir(v) { return v > 0 ? "up" : v < 0 ? "down" : "flat"; }
@@ -580,6 +582,7 @@
     ctx._pev = PEV; ctx._ws = {}; ctx._fser = null; ctx._geo = null;
 
     /* masthead */
+    h += '<div class="topline"><span>Data updated <b id="dataup">' + (ctx.dataUpdated ? esc(stamp(ctx.dataUpdated)) : "—") + "</b></span><span>Edition " + esc(E.edition) + " · " + esc(fmtShort(E.date)) + "</span></div>";
     h += '<header class="mast"><div class="eyebrow">' + esc(E.place || "Hoensbroek · Parkstad Limburg") + "</div><h1>Nick's Daily Readbook</h1>";
     h += '<div class="date">' + esc(E.weekday + " " + today.getDate() + " " + MON[today.getMonth()] + " " + today.getFullYear()) + "</div>";
     h += '<div class="mast-meta"><span><b>Edition ' + esc(E.edition) + "</b></span><span>Look-back " + esc(E.lookback) + '</span><span id="readtime"></span></div>';
@@ -1220,7 +1223,7 @@
   }
 
   /* ---------- boot ---------- */
-  var ctx = {}, allEditions = null;
+  var allEditions = null;
   function loadAllEditions(ctx) {
     if (allEditions) return allEditions;
     allEditions = Promise.all((ctx.index.editions || []).map(function (e) { return getJSON("data/editions/" + e.date + ".json").then(function (ed) { ed.date = ed.date || e.date; ed.edition = ed.edition || e.edition; return ed; }).catch(function () { return null; }); })).then(function (list) { return list.filter(Boolean); });
