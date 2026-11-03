@@ -94,6 +94,179 @@
    "kind": "nomination",
    "title": "Chief of Staff of the Army",
    "postId": "csa"
+  },
+  {
+   "id": "usareur-2026",
+   "kind": "nomination",
+   "post": "Commanding General, US Army Europe and Africa",
+   "title": "Commanding General, US Army Europe and Africa",
+   "org": "Army",
+   "nominee": "Lt. Gen. Kevin Admiral",
+   "stage": "nominated",
+   "dates": {
+    "vacant": "2026-07-02",
+    "announced": "2026-07-23",
+    "nominated": "2026-07-23"
+   },
+   "committee": "SASC",
+   "next": "Hearing not yet scheduled in open reporting; post stays a three-star if confirmed, with LANDCOM dual-hat.",
+   "postId": "usareur",
+   "added": "2026-11-03",
+   "src": [
+    [
+     1,
+     "Pentagon nominates Lt. Gen. Admiral to command US Army Europe and Africa",
+     "Army Times",
+     "https://www.armytimes.com/news/your-military/2026/07/24/pentagon-nominates-lt-gen-admiral-to-command-us-army-europe-and-africa/"
+    ]
+   ]
+  },
+  {
+   "id": "t2com-2026",
+   "kind": "nomination",
+   "post": "Commanding General, Army Transformation and Training Command",
+   "title": "Commanding General, Army Transformation and Training Command",
+   "org": "Army",
+   "nominee": null,
+   "stage": "vacant",
+   "dates": {
+    "vacant": "2026-04-02"
+   },
+   "committee": "SASC",
+   "next": "Gen. Hodne removed 2 Apr; Lt. Gen. Edmond Brown acting; no nominee reported.",
+   "postId": "t2com",
+   "added": "2026-11-03",
+   "src": [
+    [
+     1,
+     "Acting commander, Transformation and Training Command",
+     "Stars and Stripes",
+     "https://www.stripes.com/branches/army/2026-04-07/acting-commander-training-transformation-command-21308262.html"
+    ]
+   ]
+  },
+  {
+   "id": "amc-2026",
+   "kind": "nomination",
+   "post": "Commanding General, Army Materiel Command",
+   "title": "Commanding General, Army Materiel Command",
+   "org": "Army",
+   "nominee": null,
+   "stage": "vacant",
+   "dates": {
+    "vacant": "2026-08-07"
+   },
+   "committee": "SASC",
+   "next": "Lt. Gen. Mohan retired 7 Aug; Lt. Gen. Gavin Lawrence acting; no nominee reported.",
+   "postId": "amc",
+   "added": "2026-11-03",
+   "src": [
+    [
+     1,
+     "Senior Commander, Redstone Arsenal",
+     "home.army.mil",
+     "https://home.army.mil/redstone/about/leadership/senior-commander"
+    ]
+   ]
+  },
+  {
+   "id": "spacecom-2026",
+   "kind": "nomination",
+   "post": "Commander, US Space Command",
+   "title": "Commander, US Space Command",
+   "org": "USSF",
+   "nominee": "Lt. Gen. David Miller Jr.",
+   "stage": "nominated",
+   "dates": {
+    "announced": "2026-09-30",
+    "nominated": "2026-09-30"
+   },
+   "committee": "SASC",
+   "next": "Gen. Whiting stays until the handover around the turn of the year; hearing not yet reported.",
+   "postId": "spacecom",
+   "added": "2026-11-03",
+   "src": [
+    [
+     1,
+     "White House nominates next general to helm US Space Command",
+     "Defense News",
+     "https://defensenews.com/news/pentagon-congress/2026/09/30/white-house-nominates-next-general-to-helm-us-space-command"
+    ]
+   ]
+  },
+  {
+   "id": "jfcbs-2026",
+   "kind": "nomination",
+   "post": "Commander, JFC Brunssum",
+   "title": "Commander, JFC Brunssum",
+   "org": "NATO",
+   "nominee": "Polish four-star, name not yet reported",
+   "stage": "announced",
+   "dates": {
+    "announced": "2026-02-27"
+   },
+   "committee": "NATO (no Senate role)",
+   "next": "Gerhartz completes his term first; handover date not announced.",
+   "postId": "jfcbs",
+   "added": "2026-11-03",
+   "src": [
+    [
+     1,
+     "Polish general to lead NATO's Joint Force Command Brunssum",
+     "Polskie Radio",
+     "https://www.polskieradio.pl/395/7784/Artykul/3646946"
+    ]
+   ]
+  },
+  {
+   "id": "autowarcom-2026",
+   "kind": "nomination",
+   "post": "Commander, Autonomous Warfare Command",
+   "title": "Commander, Autonomous Warfare Command (AUTOWARCOM)",
+   "org": "DoD",
+   "nominee": null,
+   "stage": "vacant",
+   "dates": {
+    "vacant": "2026-09-30"
+   },
+   "committee": "SASC",
+   "next": "Hegseth said a four-star commander would be named soon; command target date 1 Oct 2027, legislation required.",
+   "postId": "autowarcom",
+   "added": "2026-11-03",
+   "src": [
+    [
+     1,
+     "U.S. creates new Autonomous Warfare Command",
+     "DefenseScoop",
+     "https://defensescoop.com/2026/09/30/hegseth-announces-autonomous-warfare-command/"
+    ]
+   ]
+  },
+  {
+   "id": "vcorps-2026",
+   "kind": "nomination",
+   "post": "Commanding General, V Corps",
+   "title": "Commanding General, V Corps",
+   "org": "Army",
+   "nominee": "Lt. Gen. Thomas Feltey",
+   "stage": "confirmed",
+   "dates": {
+    "vacant": "2026-08-08",
+    "nominated": "2026-07-16",
+    "confirmed": "2026-08-31"
+   },
+   "committee": "SASC",
+   "next": "Assumed command 31 Aug 2026 after Lt. Gen. Costanza's removal.",
+   "postId": "vcorps",
+   "added": "2026-11-03",
+   "src": [
+    [
+     1,
+     "Thomas Feltey takes early command of V Corps",
+     "Stars and Stripes",
+     "https://www.stripes.com/branches/army/2026-09-03/thomas-feltey-takes-early-command-of-v-corps-22739536.html"
+    ]
+   ]
   }
  ],
  "tiers": [
@@ -142,11 +315,19 @@
    "post": "Under Secretary of the Army",
    "tier": "army",
    "senate": true,
-   "holder": null,
-   "since": null,
+   "holder": "Michael Obadal",
+   "since": "2025-09-22",
    "acting": false,
-   "src": [],
-   "updated": null
+   "src": [
+    [
+     1,
+     "Under Secretary of the Army",
+     "army.mil",
+     "https://www.army.mil/leaders/usa/bio"
+    ]
+   ],
+   "updated": "2026-11-03",
+   "verified": true
   },
   {
    "id": "csa",
@@ -174,240 +355,423 @@
    "holder": null,
    "since": null,
    "acting": false,
-   "src": [],
-   "updated": null
+   "src": [
+    [
+     1,
+     "Senate confirms LaNeve to be next Army vice chief",
+     "Breaking Defense",
+     "https://breakingdefense.com/2026/01/senate-confirms-laneve-to-be-next-army-vice-chief"
+    ]
+   ],
+   "updated": "2026-11-03",
+   "verified": false,
+   "note": "LaNeve moved up to acting Chief of Staff on 2 Apr 2026; who covers the vice chief post is not reported."
   },
   {
    "id": "sma",
    "post": "Sergeant Major of the Army",
    "tier": "army",
    "senate": false,
-   "holder": null,
-   "since": null,
+   "holder": "SMA Michael Weimer",
+   "since": "2023-08-04",
    "acting": false,
-   "src": [],
-   "updated": null
+   "src": [
+    [
+     1,
+     "Weimer bio",
+     "army.mil",
+     "https://www.army.mil/e2/downloads/rv7/leaders/bio/weimer_bio.pdf"
+    ]
+   ],
+   "updated": "2026-11-03",
+   "verified": true
   },
   {
    "id": "cjcs",
    "post": "Chairman of the Joint Chiefs of Staff",
    "tier": "joint",
    "senate": true,
-   "holder": null,
-   "since": null,
+   "holder": "Gen. Dan Caine (USAF)",
+   "since": "2025-04-01",
    "acting": false,
-   "src": [],
-   "updated": null
+   "src": [
+    [
+     1,
+     "Chairman of the Joint Chiefs of Staff news",
+     "jcs.mil",
+     "https://www.jcs.mil/Media/News/Tag/148573/"
+    ]
+   ],
+   "updated": "2026-11-03",
+   "verified": true,
+   "note": "Assumed office April 2025."
   },
   {
    "id": "vcjcs",
    "post": "Vice Chairman of the Joint Chiefs of Staff",
    "tier": "joint",
    "senate": true,
-   "holder": null,
-   "since": null,
+   "holder": "Gen. Christopher Mahoney (USMC)",
+   "since": "2025-07-01",
    "acting": false,
-   "src": [],
-   "updated": null
+   "src": [
+    [
+     1,
+     "Vice Chairman of the Joint Chiefs of Staff Gen. Christopher J. Mahoney",
+     "jcs.mil",
+     "https://www.jcs.mil/Media/News/Tag/312327/vice-chairman-of-the-joint-chiefs-of-staff-gen-christopher-j-mahoney"
+    ]
+   ],
+   "updated": "2026-11-03",
+   "verified": true,
+   "note": "Nominated June 2025; in post by mid-2025."
   },
   {
    "id": "eucom",
    "post": "US European Command (SACEUR)",
    "tier": "cocom",
    "senate": true,
-   "holder": null,
-   "since": null,
+   "holder": "Gen. Alexus Grynkewich (USAF)",
+   "since": "2025-07-01",
    "acting": false,
-   "src": [],
-   "updated": null
+   "src": [
+    [
+     1,
+     "European Command: Grynkewich takes over from Cavoli",
+     "Stars and Stripes",
+     "https://www.stripes.com/branches/army/2025-07-01/european-command-grynkewich-cavoli-18301728.html"
+    ]
+   ],
+   "updated": "2026-11-03",
+   "verified": true,
+   "note": "Assumed command 1 July 2025."
   },
   {
    "id": "centcom",
    "post": "US Central Command",
    "tier": "cocom",
    "senate": true,
-   "holder": null,
-   "since": null,
+   "holder": "Adm. Brad Cooper (USN)",
+   "since": "2025-08-08",
    "acting": false,
-   "src": [],
-   "updated": null
+   "src": [
+    [
+     1,
+     "Leadership of the United States Central Command",
+     "Wikipedia",
+     "https://en.wikipedia.org/wiki/Leadership_of_the_United_States_Central_Command"
+    ]
+   ],
+   "updated": "2026-11-03",
+   "verified": true
   },
   {
    "id": "indopacom",
    "post": "US Indo-Pacific Command",
    "tier": "cocom",
    "senate": true,
-   "holder": null,
-   "since": null,
+   "holder": "Adm. Samuel Paparo (USN)",
+   "since": "2024-05-03",
    "acting": false,
-   "src": [],
-   "updated": null
+   "src": [
+    [
+     1,
+     "USINDOPACOM Commander visits Palau",
+     "DVIDS",
+     "https://www.dvidshub.net/news/printable/566903"
+    ]
+   ],
+   "updated": "2026-11-03",
+   "verified": true
   },
   {
    "id": "africom",
    "post": "US Africa Command",
    "tier": "cocom",
    "senate": true,
-   "holder": null,
-   "since": null,
+   "holder": "Gen. Dagvin Anderson (USAF)",
+   "since": "2025-08-01",
    "acting": false,
-   "src": [],
-   "updated": null
+   "src": [
+    [
+     1,
+     "U.S. Africa Command welcomes new commander",
+     "africom.mil",
+     "https://www.africom.mil/article/10605/africom-change-of-command"
+    ]
+   ],
+   "updated": "2026-11-03",
+   "verified": true,
+   "note": "Assumed command August 2025."
   },
   {
    "id": "northcom",
    "post": "US Northern Command (NORAD)",
    "tier": "cocom",
    "senate": true,
-   "holder": null,
-   "since": null,
+   "holder": "Gen. Gregory Guillot (USAF)",
+   "since": "2024-02-05",
    "acting": false,
-   "src": [],
-   "updated": null
+   "src": [
+    [
+     1,
+     "Leadership of the United States Northern Command",
+     "Wikipedia",
+     "https://en.wikipedia.org/wiki/Leadership_of_the_United_States_Northern_Command"
+    ]
+   ],
+   "updated": "2026-11-03",
+   "verified": true
   },
   {
    "id": "southcom",
    "post": "US Southern Command",
    "tier": "cocom",
    "senate": true,
-   "holder": null,
-   "since": null,
+   "holder": "Gen. Francis Donovan (USMC)",
+   "since": "2026-02-05",
    "acting": false,
-   "src": [],
-   "updated": null
+   "src": [
+    [
+     1,
+     "US Marine General Donovan assumes command of SOUTHCOM",
+     "southcom.mil",
+     "https://www.southcom.mil/News/PressReleases/Article/4398915/us-marine-general-donovan-assumes-command-of-southcom/"
+    ]
+   ],
+   "updated": "2026-11-03",
+   "verified": true
   },
   {
    "id": "cybercom",
    "post": "US Cyber Command (NSA)",
    "tier": "cocom",
    "senate": true,
-   "holder": null,
-   "since": null,
+   "holder": "Gen. Joshua Rudd (USA)",
+   "since": "2026-03-20",
    "acting": false,
-   "src": [],
-   "updated": null
+   "src": [
+    [
+     1,
+     "General Joshua M. Rudd, USA",
+     "nsa.gov",
+     "https://www.nsa.gov/About/Leadership/Leadership-View/Article/4439868/general-joshua-m-rudd-usa/"
+    ]
+   ],
+   "updated": "2026-11-03",
+   "verified": true
   },
   {
    "id": "socom",
    "post": "US Special Operations Command",
    "tier": "cocom",
    "senate": true,
-   "holder": null,
-   "since": null,
+   "holder": "Adm. Frank Bradley (USN)",
+   "since": "2025-10-03",
    "acting": false,
-   "src": [],
-   "updated": null
+   "src": [
+    [
+     1,
+     "Leadership of the United States Special Operations Command",
+     "Wikipedia",
+     "https://en.wikipedia.org/wiki/Leadership_of_the_United_States_Special_Operations_Command"
+    ]
+   ],
+   "updated": "2026-11-03",
+   "verified": true
   },
   {
    "id": "stratcom",
    "post": "US Strategic Command",
    "tier": "cocom",
    "senate": true,
-   "holder": null,
-   "since": null,
+   "holder": "Adm. Richard Correll (USN)",
+   "since": "2025-12-05",
    "acting": false,
-   "src": [],
-   "updated": null
+   "src": [
+    [
+     1,
+     "ADM. Richard Correll biography",
+     "stratcom.mil",
+     "https://www.stratcom.mil/Portals/8/Documents/ADM. Richard Correll.pdf"
+    ]
+   ],
+   "updated": "2026-11-03",
+   "verified": true
   },
   {
    "id": "spacecom",
    "post": "US Space Command",
    "tier": "cocom",
    "senate": true,
-   "holder": null,
-   "since": null,
+   "holder": "Gen. Stephen Whiting (USSF)",
+   "since": "2024-01-10",
    "acting": false,
-   "src": [],
-   "updated": null
+   "src": [
+    [
+     1,
+     "White House nominates next general to helm US Space Command",
+     "Defense News",
+     "https://defensenews.com/news/pentagon-congress/2026/09/30/white-house-nominates-next-general-to-helm-us-space-command"
+    ]
+   ],
+   "updated": "2026-11-03",
+   "verified": true
   },
   {
    "id": "transcom",
    "post": "US Transportation Command",
    "tier": "cocom",
    "senate": true,
-   "holder": null,
-   "since": null,
+   "holder": "Gen. Randall Reed (USAF)",
+   "since": "2024-10-01",
    "acting": false,
-   "src": [],
-   "updated": null
+   "src": [
+    [
+     1,
+     "Gen. Reed, commander US Transportation Command, engages with Naval War College",
+     "DVIDS",
+     "https://www.dvidshub.net/news/562489/gen-reed-commander-us-transportation-command-engages-with-naval-war-college-faculty-and-students"
+    ]
+   ],
+   "updated": "2026-11-03",
+   "verified": true,
+   "note": "Took command October 2024; exact day not in the sources."
   },
   {
    "id": "westhem",
    "post": "US Army Western Hemisphere Command",
    "tier": "army4",
    "senate": true,
-   "holder": null,
-   "since": null,
+   "holder": "Gen. Joseph Ryan",
+   "since": "2025-12-05",
    "acting": false,
-   "src": [],
-   "updated": null
+   "src": [
+    [
+     1,
+     "U.S. Army Western Hemisphere Command",
+     "army.mil",
+     "https://www.army.mil/usawhc"
+    ]
+   ],
+   "updated": "2026-11-03",
+   "verified": true,
+   "note": "Replaced FORSCOM, ARNORTH and ARSOUTH; FOC summer 2026."
   },
   {
    "id": "autowarcom",
-   "post": "Autonomous Warfare Command (AUTOWARCOM)",
-   "tier": "army4",
+   "post": "Autonomous Warfare Command (AUTOWARCOM), DoD",
+   "tier": "joint",
    "senate": true,
    "holder": null,
    "since": null,
    "acting": false,
-   "src": [],
-   "updated": null,
-   "note": "tier, rank and parent to confirm from the establishing order"
+   "src": [
+    [
+     1,
+     "U.S. creates new Autonomous Warfare Command",
+     "DefenseScoop",
+     "https://defensescoop.com/2026/09/30/hegseth-announces-autonomous-warfare-command/"
+    ]
+   ],
+   "updated": "2026-11-03",
+   "note": "Announced by Hegseth on 30 Sep 2026 as a DoD four-star command; target 1 Oct 2027; no commander named. Distinct from SOUTHCOM's theatre unit of the same name.",
+   "verified": false
   },
   {
    "id": "t2com",
    "post": "Army Transformation and Training Command",
    "tier": "army4",
    "senate": true,
-   "holder": null,
-   "since": null,
-   "acting": false,
-   "src": [],
-   "updated": null
+   "holder": "Lt. Gen. Edmond Brown",
+   "since": "2026-04-02",
+   "acting": true,
+   "src": [
+    [
+     1,
+     "Acting commander, Transformation and Training Command",
+     "Stars and Stripes",
+     "https://www.stripes.com/branches/army/2026-04-07/acting-commander-training-transformation-command-21308262.html"
+    ]
+   ],
+   "updated": "2026-11-03",
+   "verified": true
   },
   {
    "id": "amc",
    "post": "Army Materiel Command",
    "tier": "army4",
    "senate": true,
-   "holder": null,
-   "since": null,
-   "acting": false,
-   "src": [],
-   "updated": null
+   "holder": "Lt. Gen. Gavin Lawrence",
+   "since": "2026-08-07",
+   "acting": true,
+   "src": [
+    [
+     1,
+     "Senior Commander, Redstone Arsenal",
+     "home.army.mil",
+     "https://home.army.mil/redstone/about/leadership/senior-commander"
+    ]
+   ],
+   "updated": "2026-11-03",
+   "verified": true
   },
   {
    "id": "usarpac",
    "post": "US Army Pacific",
    "tier": "army4",
    "senate": true,
-   "holder": null,
-   "since": null,
+   "holder": "Gen. Ronald Clark",
+   "since": "2024-11-08",
    "acting": false,
-   "src": [],
-   "updated": null
+   "src": [
+    [
+     1,
+     "US Army Pacific commanding general visits Singapore",
+     "DVIDS",
+     "https://www.dvidshub.net/news/564728/us-army-pacific-commanding-general-visits-singapore-strengthen-regional-partnerships"
+    ]
+   ],
+   "updated": "2026-11-03",
+   "verified": true
   },
   {
    "id": "usareur",
    "post": "US Army Europe and Africa",
    "tier": "army4",
    "senate": true,
-   "holder": null,
-   "since": null,
-   "acting": false,
-   "src": [],
-   "updated": null
+   "holder": "Maj. Gen. Christopher Norrie",
+   "since": "2026-07-02",
+   "acting": true,
+   "src": [
+    [
+     1,
+     "Gen. Christopher Donahue relinquishes command of US Army Europe and Africa",
+     "Defense News",
+     "https://development.defensenews.com/?p=45565"
+    ]
+   ],
+   "updated": "2026-11-03",
+   "verified": true
   },
   {
    "id": "usareur-dcg",
    "post": "USAREUR-AF deputy commanding general",
    "tier": "europe",
    "senate": true,
-   "holder": null,
-   "since": null,
+   "holder": "Maj. Gen. Christopher Norrie (also acting CG)",
+   "since": "2026-07-02",
    "acting": false,
-   "src": [],
-   "updated": null
+   "src": [
+    [
+     1,
+     "Pentagon nominates Lt. Gen. Admiral to command US Army Europe and Africa",
+     "Army Times",
+     "https://www.armytimes.com/news/your-military/2026/07/24/pentagon-nominates-lt-gen-admiral-to-command-us-army-europe-and-africa/"
+    ]
+   ],
+   "updated": "2026-11-03",
+   "verified": true
   },
   {
    "id": "usareur-cos",
@@ -418,95 +782,142 @@
    "since": null,
    "acting": false,
    "src": [],
-   "updated": null
+   "updated": "2026-11-03",
+   "verified": false,
+   "note": "Not found in open reporting."
   },
   {
    "id": "vcorps",
    "post": "V Corps",
    "tier": "europe",
    "senate": true,
-   "holder": null,
-   "since": null,
+   "holder": "Lt. Gen. Thomas Feltey",
+   "since": "2026-08-31",
    "acting": false,
-   "src": [],
-   "updated": null
+   "src": [
+    [
+     1,
+     "V Corps welcomed Lt. Gen. Thomas M. Feltey as new commanding general",
+     "army.mil",
+     "https://www.army.mil/article/295074/v_corps_welcomed_lt_gen_thomas_m_feltey_as_new_commanding_general"
+    ]
+   ],
+   "updated": "2026-11-03",
+   "verified": true
   },
   {
    "id": "vcorps-dcg",
    "post": "V Corps deputy commanding generals",
    "tier": "europe",
    "senate": false,
-   "holder": null,
-   "since": null,
+   "holder": "BG John Mountford (readiness); MG Piotr Trytek, PL (interoperability); MG Charles Grist, UK (manoeuvre)",
+   "since": "2026-07-29",
    "acting": false,
-   "src": [],
-   "updated": null
+   "src": [
+    [
+     1,
+     "V Corps welcomes new deputy commanding general-interoperability",
+     "DVIDS",
+     "https://www.dvidshub.net/news/571105/v-corps-welcomes-new-deputy-commanding-general-interoperability-during-ceremony-poland"
+    ]
+   ],
+   "updated": "2026-11-03",
+   "verified": true
   },
   {
    "id": "21tsc",
    "post": "21st Theater Sustainment Command",
    "tier": "europe",
    "senate": false,
-   "holder": null,
-   "since": null,
+   "holder": "Maj. Gen. Michael Lalor",
+   "since": "2025-07-30",
    "acting": false,
-   "src": [],
-   "updated": null
+   "src": [
+    [
+     1,
+     "21st TSC change of command welcomes Maj. Gen. Lalor",
+     "army.mil",
+     "https://www.army.mil/article/287546"
+    ]
+   ],
+   "updated": "2026-11-03",
+   "verified": true
   },
   {
    "id": "7atc",
    "post": "7th Army Training Command",
    "tier": "europe",
    "senate": false,
-   "holder": null,
-   "since": null,
+   "holder": "Brig. Gen. Terry Tillis",
+   "since": "2025-06-30",
    "acting": false,
-   "src": [],
-   "updated": null
+   "src": [
+    [
+     1,
+     "Training command gets new commander in Bavaria",
+     "Stars and Stripes",
+     "https://www.stripes.com/branches/army/2025-06-30/training-command-new-commander-bavaria-18292177.html"
+    ]
+   ],
+   "updated": "2026-11-03",
+   "verified": true
   },
   {
    "id": "setaf",
    "post": "Southern European Task Force, Africa",
    "tier": "europe",
    "senate": false,
-   "holder": null,
-   "since": null,
+   "holder": "Maj. Gen. Matthew Brown",
+   "since": "2026-06-26",
    "acting": false,
-   "src": [],
-   "updated": null
-  },
-  {
-   "id": "56arty",
-   "post": "56th Artillery Command",
-   "tier": "europe",
-   "senate": false,
-   "holder": null,
-   "since": null,
-   "acting": false,
-   "src": [],
-   "updated": null
+   "src": [
+    [
+     1,
+     "SETAF-AF conducts change of command ceremony, welcomes new leader",
+     "army.mil",
+     "https://www.army.mil/article/293528"
+    ]
+   ],
+   "updated": "2026-11-03",
+   "verified": true
   },
   {
    "id": "mdce",
    "post": "Multi-Domain Command Europe",
    "tier": "europe",
    "senate": false,
-   "holder": null,
-   "since": null,
+   "holder": "Brig. Gen. Steven Carpenter",
+   "since": "2026-01-22",
    "acting": false,
-   "src": [],
-   "updated": null
+   "src": [
+    [
+     1,
+     "An Army general talks fusing sensors and shooters on the eastern flank",
+     "War on the Rocks",
+     "https://warontherocks.com/cogs-of-war/an-army-general-talks-fusing-sensors-and-shooters-on-the-eastern-flank/"
+    ]
+   ],
+   "updated": "2026-11-03",
+   "verified": true
   },
   {
    "id": "10aamdc",
    "post": "10th Army Air and Missile Defense Command",
    "tier": "europe",
    "senate": false,
-   "holder": null,
-   "since": null,
+   "holder": "Brig. Gen. Glenn Henke",
+   "since": "2026-06-18",
    "acting": false,
-   "src": [],
-   "updated": null
+   "src": [
+    [
+     1,
+     "10th AAMDC welcomes Brig. Gen. Glenn Henke as its new commander",
+     "army.mil",
+     "https://www.army.mil/article/293366/10th_aamdc_welcomes_brig_gen_glenn_henke_as_its_new_commander"
+    ]
+   ],
+   "updated": "2026-11-03",
+   "verified": true
   },
   {
    "id": "landcom",
@@ -514,54 +925,98 @@
    "tier": "europe",
    "senate": true,
    "holder": null,
-   "since": null,
+   "since": "2026-07-02",
    "acting": false,
-   "src": [],
-   "updated": null
+   "src": [
+    [
+     1,
+     "Commander, Allied Land Command",
+     "lc.nato.int",
+     "https://lc.nato.int/about-us/biographies/commander"
+    ]
+   ],
+   "updated": "2026-11-03",
+   "verified": true,
+   "note": "Dual-hatted with the USAREUR-AF commander; empty since Donahue left on 2 Jul 2026, pending Lt. Gen. Admiral's confirmation."
   },
   {
    "id": "jfcbs",
    "post": "NATO Joint Force Command Brunssum",
    "tier": "europe",
    "senate": false,
-   "holder": null,
-   "since": null,
+   "holder": "Gen. Ingo Gerhartz (DEU)",
+   "since": "2025-06-01",
    "acting": false,
-   "src": [],
-   "updated": null
+   "src": [
+    [
+     1,
+     "The Director General of NATO IMS visits JFC Brunssum",
+     "nato.int",
+     "https://www.nato.int/en/news-and-events/articles/news/2026/02/27/the-director-general-of-nato-ims-visits-jfc-brunssum"
+    ]
+   ],
+   "updated": "2026-11-03",
+   "verified": true,
+   "note": "Germany and Poland now rotate the post; a Polish four-star succeeds Gerhartz when his term ends."
   },
   {
    "id": "shape-cos",
    "post": "SHAPE chief of staff",
    "tier": "europe",
    "senate": false,
-   "holder": null,
-   "since": null,
+   "holder": "Gen. Markus Laubenthal (DEU)",
+   "since": "2024-09-01",
    "acting": false,
-   "src": [],
-   "updated": null
+   "src": [
+    [
+     1,
+     "Command group",
+     "shape.nato.int",
+     "https://shape.nato.int/about/leadership-staff/command-group.aspx"
+    ]
+   ],
+   "updated": "2026-11-03",
+   "verified": true
   },
   {
    "id": "eucom-dcdr",
    "post": "US European Command deputy commander",
    "tier": "europe",
    "senate": true,
-   "holder": null,
+   "holder": "Lt. Gen. Robert Fulford (USMC)",
    "since": null,
    "acting": false,
-   "src": [],
-   "updated": null
+   "src": [
+    [
+     1,
+     "Senior leadership",
+     "eucom.mil",
+     "https://www.eucom.mil/senior-leadership"
+    ]
+   ],
+   "updated": "2026-11-03",
+   "verified": false,
+   "note": "From the undated EUCOM leadership page; confirm the date."
   },
   {
    "id": "usmilrep",
    "post": "US Military Representative to the NATO Military Committee",
    "tier": "europe",
    "senate": true,
-   "holder": null,
-   "since": null,
+   "holder": "Lt. Gen. William Taylor",
+   "since": "2025-11-12",
    "acting": false,
-   "src": [],
-   "updated": null
+   "src": [
+    [
+     1,
+     "United States Military Representative to the NATO Military Committee",
+     "Wikipedia",
+     "https://en.wikipedia.org/wiki/United_States_Military_Representative_to_the_NATO_Military_Committee"
+    ]
+   ],
+   "updated": "2026-11-03",
+   "verified": false,
+   "note": "Wikipedia only; confirm against a DoD release."
   }
  ]
 }

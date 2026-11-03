@@ -529,3 +529,4 @@ blockquote.word{margin:0;background:var(--surface);border:1px solid var(--line);
 blockquote.word p{font-size:16px;line-height:1.45;margin:0 0 var(--s1)}
 blockquote.word footer{font-size:13.5px;color:var(--muted)}
 blockquote.word footer b{color:var(--ink)}
+.wp em.tc{color:var(--warn);margin-left:4px}
