@@ -103,7 +103,15 @@
    "lat": 37.5,
    "lon": 15.09,
    "summary": "Display-case controllers at three Coop-brand stores in Catania and one in Palermo were reset remotely around 04:00; trade sources say at least 12 Sicilian stores. Italy's National Cybersecurity Agency (ACN) also found a catering firm in Tuscany and a frozen-food producer in Emilia-Romagna hit.",
-   "edition": "2026-11-03"
+   "edition": "2026-11-03",
+   "src": [
+    [
+     38,
+     "Anche l'Italia colpita dagli attacchi hacker ai supermercati: Chigi convoca un vertice d'urgenza",
+     "Open",
+     "https://www.open.online/2026/11/02/supermercati-frigoriferi-hacker-italia-sicilia/"
+    ]
+   ]
   },
   {
    "id": "2026-11-02-ro-cyb-coldchain",
@@ -116,7 +124,15 @@
    "lat": 44.43,
    "lon": 26.1,
    "summary": "Fridges in six stores heated up overnight and staff found them at 08:00. The National Cyber Security Directorate (DNSC) says the controllers sat behind cellular (GSM) routers with fixed IP addresses, reachable from the internet, on old software.",
-   "edition": "2026-11-03"
+   "edition": "2026-11-03",
+   "src": [
+    [
+     39,
+     "Frigiderele din 6 magazine din România, posibil vizate în noul atac",
+     "HotNews.ro",
+     "https://hotnews.ro/frigiderele-din-6-magazine-din-romania-ale-aceluiasi-lant-de-supermarketuri-posibil-vizate-in-noul-atac-care-a-ridicat-temperaturile-la-50-de-grade-2393059"
+    ]
+   ]
   },
   {
    "id": "2026-11-02-de-cyb-coldchain",
@@ -129,7 +145,21 @@
    "lat": 51.26,
    "lon": 7.15,
    "summary": "Germany's first cold-chain cases: refrigeration heated to about +50 °C at an Edeka in Reisbach, a CAP-Markt in Wuppertal and a Rewe in Raesfeld (Danfoss controls set to defrost); stock discarded, police complaint in Wuppertal.",
-   "edition": "2026-11-03"
+   "edition": "2026-11-03",
+   "src": [
+    [
+     34,
+     "Hackerangriffe treffen deutsche Supermärkte",
+     "t-online",
+     "https://www.t-online.de/nachrichten/panorama/kriminalitaet/id_101509426/hitze-attacken-erste-deutsche-supermaerkte-melden-hackerangriffe.html"
+    ],
+    [
+     35,
+     "Mutmaßlicher Cyberangriff auf Rewe-Markt in NRW",
+     "t-online",
+     "https://www.t-online.de/nachrichten/panorama/kriminalitaet/id_101509572/mutmasslicher-cyberangriff-auf-rewe-markt-in-nrw-kuehlregale-leer.html"
+    ]
+   ]
   },
   {
    "id": "2026-11-02-pt-cyb-coldchain",
@@ -142,7 +172,15 @@
    "lat": 38.72,
    "lon": -9.14,
    "summary": "Seven Intermarché stores hit, reportedly through an outside refrigeration contractor (AFP, single source).",
-   "edition": "2026-11-03"
+   "edition": "2026-11-03",
+   "src": [
+    [
+     36,
+     "New Wave of Refrigeration Cyberattacks Hits Supermarkets Across Europe",
+     "The Hacker News",
+     "https://thehackernews.com/2026/11/second-wave-of-cyberattacks-hits.html"
+    ]
+   ]
   },
   {
    "id": "2026-11-01-lv-uas-kraslava",
@@ -155,7 +193,15 @@
    "lat": 55.9,
    "lon": 27.17,
    "summary": "Unidentified drone entered from the east at 18:59; orange alert; a Blaze interceptor drone launched and self-destructed short of the Russian border; the object left after about 17 minutes.",
-   "edition": "2026-11-03"
+   "edition": "2026-11-03",
+   "src": [
+    [
+     37,
+     "Latvian military deploys interceptor drone against unidentified drone",
+     "European Pravda",
+     "https://www.eurointegration.com.ua/eng/news/2026/11/2/7249074/"
+    ]
+   ]
   },
   {
    "id": "2026-10-28-de-sab-nuremberg",
@@ -171,7 +217,7 @@
    "edition": "2026-11-03",
    "src": [
     [
-     41,
+     40,
      "2 Belarusians arrested in Germany over alleged sabotage for Russia",
      "Anadolu",
      "https://www.aa.com.tr/en/europe/2-belarusians-arrested-in-germany-over-alleged-sabotage-for-russia/4104268"
@@ -192,7 +238,7 @@
    "edition": "2026-11-03",
    "src": [
     [
-     42,
+     41,
      "Russian citizen detained in Poland on suspicion of spying after photographing trains and rail infrastructure",
      "The Insider",
      "https://theins.press/en/news/298979"

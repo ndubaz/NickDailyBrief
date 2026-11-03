@@ -30,7 +30,7 @@
    "added": "2026-11-03",
    "src": [
     [
-     14,
+     136,
      "U.S. to mediate new Ukraine-Russia talks in Abu Dhabi next week",
      "Xinhua",
      "https://english.news.cn/20261103/caa9492cf0a74a6b97db0fe7ba3781fc/c.html"
@@ -42,18 +42,31 @@
    "date": "2026-11-03",
    "dateText": "3 Nov",
    "t": "Polish national security meeting on a permanent US base",
-   "n": "Warsaw would pay $3–4 billion; up to 5,000 more permanent troops",
+   "n": "Met at 15:00 behind closed doors; no outcome published by late afternoon. Sikorski says Washington decides by December.",
    "h": true,
    "status": "confirmed",
    "added": "2026-11-03",
    "src": [
     [
      4,
+     "Nawrocki says Poland faces constitutional crisis (Interia)",
+     "UA.NEWS",
+     "https://ua.news/en/world/prezident-navrotskii-zaiaviv-pro-konstitutsiinu-krizu-v-polshchi-interia"
+    ],
+    [
+     56,
+     "Sikorski criticizes invitation of Braun party representatives to NSC (RMF24)",
+     "UA.NEWS",
+     "https://ua.news/en/world/sikorskii-rozkritikuvav-zaproshennia-predstavnikiv-partiyi-brauna-do-rbn-rmf24"
+    ],
+    [
+     55,
      "Poland calls security meeting on permanent US military base",
      "Stars and Stripes",
      "https://www.stripes.com/theaters/europe/2026-10-29/poland-new-american-military-base-23296978.html"
     ]
-   ]
+   ],
+   "updated": "2026-11-03"
   },
   {
    "id": "tk-budget-debate",
@@ -66,19 +79,19 @@
    "added": "2026-11-02",
    "src": [
     [
-     30,
+     137,
      "No sign of deal on budget ahead of crucial week",
      "DutchNews",
      "https://www.dutchnews.nl/2026/11/no-sign-of-deal-on-budget-ahead-of-crucial-week-in-parliament/"
     ],
     [
-     39,
+     110,
      "Geen deal met oppositie over belastingplan, woensdag debat in Tweede Kamer",
      "NOS",
      "https://nos.nl/artikel/2637476-geen-deal-met-oppositie-over-belastingplan-woensdag-debat-in-tweede-kamer"
     ],
     [
-     82,
+     138,
      "Kabinet eens over koers Belastingplan 2027",
      "Salaris Vanmorgen",
      "https://www.salarisvanmorgen.nl/2026/11/03/kabinet-eens-over-koers-belastingplan-2027"
@@ -97,7 +110,7 @@
    "added": "2026-11-03",
    "src": [
     [
-     10,
+     81,
      "Bundeswehr: 7 neue Rüstungsvorhaben vor Entscheidung",
      "ESUT",
      "https://esut.de/2026/11/meldungen/76427/bundeswehr-7-ruestungsvorhaben-ent/"
@@ -115,7 +128,7 @@
    "added": "2026-11-03",
    "src": [
     [
-     26,
+     139,
      "FY27 HQDA Board Schedule",
      "Army Human Resources Command",
      "https://www.hrc.army.mil/content/FY27%20HQDA%20Board%20Schedule"
@@ -175,13 +188,13 @@
    "added": "2026-11-03",
    "src": [
     [
-     91,
+     79,
      "Thousands of troops from Europe to rehearse post-war Ukraine deployment in Poland",
      "Euronews",
      "https://euronews.com/2026/11/03/thousands-of-troops-from-europe-to-rehearse-post-war-ukraine-deployment-in-poland"
     ],
     [
-     92,
+     80,
      "European force to hold first Ukraine support exercise in Poland",
      "France 24",
      "https://www.france24.com/en/europe/20261103-european-force-to-hold-first-ukraine-support-exercise-in-poland"
@@ -199,13 +212,13 @@
    "added": "2026-11-03",
    "src": [
     [
-     88,
+     76,
      "TRICARE Open Season",
      "TRICARE",
      "https://www.tricare.mil/openseason"
     ],
     [
-     89,
+     77,
      "Federal Benefits Open Season",
      "OPM",
      "https://www.opm.gov/healthcare-insurance/open-season/"
@@ -223,19 +236,19 @@
    "added": "2026-11-02",
    "src": [
     [
-     14,
+     136,
      "U.S. to mediate new Ukraine-Russia talks in Abu Dhabi next week",
      "Xinhua",
      "https://english.news.cn/20261103/caa9492cf0a74a6b97db0fe7ba3781fc/c.html"
     ],
     [
-     27,
+     140,
      "Kremlin: Abu Dhabi talks after November 4",
      "Meduza",
      "https://meduza.io/en/news/2026/10/29/kremlin-says-u-s-russia-ukraine-peace-talks-will-take-place-in-abu-dhabi-after-november-4-depending-on-battlefield-conditions"
     ],
     [
-     26,
+     141,
      "WSJ: US pitches Russian gas through Ukraine's pipelines",
      "Euromaidan Press",
      "https://euromaidanpress.com/2026/11/02/wsj-us-pitches-russian-gas-through-ukraines-pipelines-as-moscows-incentive-for-an-energy-truce/"
@@ -272,7 +285,7 @@
    "added": "2026-11-03",
    "src": [
     [
-     50,
+     121,
      "Carolina, Seattle to play in 2026 Global Series Finland",
      "NHL.com",
      "https://www.nhl.com/news/carolina-seattle-to-play-in-2026-global-series-finland"
@@ -290,7 +303,7 @@
    "added": "2026-11-03",
    "src": [
     [
-     84,
+     112,
      "Vakbonden verwachten nieuwe stakingen in streekvervoer",
      "RTV Noord",
      "https://rtvnoord.nl/verkeer/1449544/vakbonden-verwachten-nieuwe-stakingen-in-streekvervoer"
@@ -308,7 +321,7 @@
    "added": "2026-11-03",
    "src": [
     [
-     29,
+     28,
      "Taiwan seeking formal APEC invitation from China: Premier",
      "Focus Taiwan",
      "https://focustaiwan.tw/politics/202611030015"
@@ -326,7 +339,7 @@
    "added": "2026-11-03",
    "src": [
     [
-     108,
+     142,
      "Brussel op maandag 23 november andermaal decor van nationale betoging",
      "Bruzz",
      "https://www.bruzz.be/actua/politiek/brussel-op-maandag-23-november-andermaal-decor-van-nationale-betoging-2026-10-21"
@@ -362,7 +375,7 @@
    "added": "2026-11-03",
    "src": [
     [
-     19,
+     143,
      "Russia-Ukraine talks to take place in Abu Dhabi this month, US says",
      "The National",
      "https://www.thenationalnews.com/news/us/2026/11/02/russia-ukraine-witkoff-abu-dhabi/"
@@ -416,7 +429,7 @@
    "added": "2026-11-03",
    "src": [
     [
-     50,
+     121,
      "Carolina, Seattle to play in 2026 Global Series Finland",
      "NHL.com",
      "https://www.nhl.com/news/carolina-seattle-to-play-in-2026-global-series-finland"

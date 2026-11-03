@@ -27,70 +27,40 @@
     },
     {
      "date": "2026-11-03",
-     "t": "Wave widened to Italy and Romania; nine countries on the night of 1–2 Nov. Italy's prime minister's office meets intelligence chiefs on 3 Nov; the Pentagon's DCIS is probing August commissary outages. [3, 4, 7]",
+     "t": "Germany (Reisbach, Wuppertal, Raesfeld) and Portugal (seven Intermarché stores) added: at least 11 countries since 1 Nov. Commissioner Hansen calls it a deliberate attempt to disrupt the food supply; US officials privately suspect Iran-linked hackers for the commissary hits; Rome's crisis meeting found limited impact in Italy. [34, 35, 36, 44, 45, 47]",
      "src": [
       [
-       3,
-       "Anche l'Italia colpita dagli attacchi hacker ai supermercati: Chigi convoca un vertice d'urgenza",
-       "Open",
-       "https://www.open.online/2026/11/02/supermercati-frigoriferi-hacker-italia-sicilia/"
-      ],
-      [
-       4,
-       "Frigiderele din 6 magazine din România, posibil vizate în noul atac",
-       "HotNews.ro",
-       "https://hotnews.ro/frigiderele-din-6-magazine-din-romania-ale-aceluiasi-lant-de-supermarketuri-posibil-vizate-in-noul-atac-care-a-ridicat-temperaturile-la-50-de-grade-2393059"
-      ],
-      [
-       7,
-       "Hackers pushed freezers at French supermarkets to 122 degrees. Now the Pentagon is asking whether the same thing hit U.S. military bases",
-       "Fortune",
-       "https://fortune.com/2026/11/01/hackers-pushed-freezers-at-hundreds-of-french-supermarkets-to-122-degrees-pentagon-investigating-us-military-bases/"
-      ]
-     ]
-    },
-    {
-     "date": "2026-11-03",
-     "t": "Germany (Reisbach, Wuppertal, Raesfeld) and Portugal (seven Intermarché stores) added, at least 11 countries since 1 Nov. EU Commissioner Hansen calls it a deliberate attempt to disrupt the food supply; US officials privately suspect Iran-linked hackers for the commissary hits. [35, 36, 37, 42, 43]",
-     "src": [
-      [
-       35,
+       34,
        "Hackerangriffe treffen deutsche Supermärkte",
        "t-online",
        "https://www.t-online.de/nachrichten/panorama/kriminalitaet/id_101509426/hitze-attacken-erste-deutsche-supermaerkte-melden-hackerangriffe.html"
       ],
       [
-       36,
+       35,
        "Mutmaßlicher Cyberangriff auf Rewe-Markt in NRW",
        "t-online",
        "https://www.t-online.de/nachrichten/panorama/kriminalitaet/id_101509572/mutmasslicher-cyberangriff-auf-rewe-markt-in-nrw-kuehlregale-leer.html"
       ],
       [
-       37,
+       36,
        "New Wave of Refrigeration Cyberattacks Hits Supermarkets Across Europe",
        "The Hacker News",
        "https://thehackernews.com/2026/11/second-wave-of-cyberattacks-hits.html"
       ],
       [
-       42,
+       44,
        "Officials suspect Iran of cyberattacks on military base freezers",
        "Defense One / Nextgov",
        "https://defenseone.com/threats/2026/11/officials-suspect-iran-series-cyberattacks-military-base-freezers/416992"
       ],
       [
-       43,
+       45,
        "Hacker attacks on EU supermarkets: Hansen says an attempt to disrupt the food supply",
        "Eunews",
        "https://www.eunews.it/en/2026/11/02/hacker-attacks-on-eu-supermarkets-hansen-says-an-attempt-to-disrupt-the-food-supply/"
-      ]
-     ]
-    },
-    {
-     "date": "2026-11-03",
-     "t": "Rome's crisis meeting under Undersecretary Mantovano, with the agriculture minister, the cyber agency and the intelligence chiefs, found limited impact in Italy; the postal police are investigating links abroad and Copasir will ask the government for information. [48]",
-     "src": [
+      ],
       [
-       48,
+       47,
        "Attacchi hacker ai supermercati in Europa, anomalie anche in Italia. Cosa sappiamo",
        "Sky TG24",
        "https://tg24.sky.it/cronaca/2026/11/03/attacchi-hacker-supermercati-europa-italia-cosa-sappiamo"
@@ -157,61 +127,37 @@
     },
     {
      "date": "2026-11-03",
-     "t": "Election day: five NATO diplomats fear more troop cuts, lower common funding and PURL limits if Republicans lose; option sets still due 6 Nov. [12, 13]",
+     "t": "Option sets go to Hegseth on 6 Nov; NBC reported they include withdrawing at least 25,000 of about 80,000 US personnel. Five NATO diplomats fear deeper cuts if Republicans lose. Poland's security council met on a base Warsaw would pay $3–4 billion for; Sikorski says Washington will decide by December. [51, 52, 53, 55, 56]",
      "src": [
       [
-       12,
+       51,
        "NATO allies fear Trump could target alliance after potential US midterm defeat: report",
        "Anadolu (citing POLITICO)",
        "https://m.aa.com.tr/en/world/nato-allies-fear-trump-could-target-alliance-after-potential-us-midterm-defeat-report/4108932"
       ],
       [
-       13,
-       "Pentagon Europe posture review terms of reference",
-       "Grosswald",
-       "https://www.grosswald.org/pentagon-europe-posture-review-terms-of-reference-four-option-sets-6-november/"
-      ]
-     ]
-    },
-    {
-     "date": "2026-11-03",
-     "t": "Poland's security council meets today on a permanent US base Warsaw would pay $3–4 billion for; the Pentagon picked Poland for Europe's first Patriot maintenance hub. About 80,000 US troops are in Europe against a 76,000 legal floor. [4, 50, 51]",
-     "src": [
-      [
-       4,
-       "Poland calls security meeting on permanent US military base",
-       "Stars and Stripes",
-       "https://www.stripes.com/theaters/europe/2026-10-29/poland-new-american-military-base-23296978.html"
-      ],
-      [
-       50,
-       "The fiscal risks of bringing US troops out of Europe",
-       "Breaking Defense",
-       "https://breakingdefense.com/2026/11/the-fiscal-risks-of-bringing-us-troops-out-of-europe/"
-      ],
-      [
-       51,
-       "US picks Poland for Patriot maintenance hub",
-       "Stars and Stripes",
-       "https://www.stripes.com/theaters/europe/2026-10-28/poland-patriot-missile-maintenance-hub-23286863.html"
-      ]
-     ]
-    },
-    {
-     "date": "2026-11-03",
-     "t": "At least four option sets of force levels and dispositions are due to Hegseth on 6 Nov, with the full review in December; NBC reported that the options include withdrawing at least 25,000 of about 80,000 US personnel in Europe. [53, 54]",
-     "src": [
-      [
-       53,
+       52,
        "Pentagon's NATO review preparing troop options for Hegseth by November 6",
        "Military Times (Reuters)",
        "https://www.militarytimes.com/news/pentagon-congress/2026/08/27/pentagons-nato-review-preparing-troop-options-for-hegseth-by-november-6/"
       ],
       [
-       54,
+       53,
        "Pentagon weighs pulling at least 25,000 US troops from Europe: report",
        "Anadolu (citing NBC News)",
        "https://aa.com.tr/en/world/pentagon-weighs-pulling-at-least-25-000-us-troops-from-europe-report/4060679"
+      ],
+      [
+       55,
+       "Poland calls security meeting on permanent US military base",
+       "Stars and Stripes",
+       "https://www.stripes.com/theaters/europe/2026-10-29/poland-new-american-military-base-23296978.html"
+      ],
+      [
+       56,
+       "Sikorski criticizes invitation of Braun party representatives to NSC (RMF24)",
+       "UA.NEWS",
+       "https://ua.news/en/world/sikorskii-rozkritikuvav-zaproshennia-predstavnikiv-partiyi-brauna-do-rbn-rmf24"
       ]
      ]
     }
@@ -243,19 +189,19 @@
     },
     {
      "date": "2026-11-03",
-     "t": "Witkoff: Abu Dhabi talks on 10–11 Nov; US meets France, Germany, UK, EU and NATO in Brussels this week; Moscow says Europe's role needs all three sides' agreement. [14, 10]",
+     "t": "Witkoff: US-mediated working-level talks in Abu Dhabi on 10–11 Nov; US negotiators meet France, Germany, Britain, the EU and NATO in Brussels this week. [18, 16]",
      "src": [
       [
-       14,
-       "U.S. to mediate new Ukraine-Russia talks in Abu Dhabi next week",
-       "Xinhua",
-       "https://english.news.cn/20261103/caa9492cf0a74a6b97db0fe7ba3781fc/c.html"
+       18,
+       "Ukraine and Russia will hold talks in Abu Dhabi with US mediation",
+       "Ukrainska Pravda via Yahoo",
+       "https://www.yahoo.com/news/politics/articles/ukraine-russia-hold-talks-abu-232900800.html"
       ],
       [
-       10,
-       "Top security official comments on West (Shoigu press conference)",
-       "TASS",
-       "https://tass.com/russias-foreign-policy/2211895"
+       16,
+       "At least 73 injured as Russia bombs Ukrainian hospital and power plants",
+       "Al Jazeera",
+       "https://www.aljazeera.com/news/2026/11/3/at-least-73-injured-as-russia-bombs-ukrainian-hospital-and-power-plants"
       ]
      ]
     }
@@ -276,6 +222,18 @@
        "Polish president rushes home as court showdown sparks clashes",
        "i24NEWS",
        "https://www.i24news.tv/en/news/international/europe/artc-polish-president-rushes-home-as-court-showdown-sparks-clashes-coup-accusations"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-03",
+     "t": "President Nawrocki opened the 3 Nov National Security Council by calling the government's moves on the Constitutional Tribunal a serious constitutional crisis. [4]",
+     "src": [
+      [
+       4,
+       "Nawrocki says Poland faces constitutional crisis (Interia)",
+       "UA.NEWS",
+       "https://ua.news/en/world/prezident-navrotskii-zaiaviv-pro-konstitutsiinu-krizu-v-polshchi-interia"
       ]
      ]
     }
@@ -302,67 +260,19 @@
    "log": [
     {
      "date": "2026-11-03",
-     "t": "US struck radar and missile launchers on Qeshm on 2 Nov; Iran offers a conditional two-day Hormuz reopening; Brent −7.6% to $104.77. [16, 17, 27]",
+     "t": "US strikes on Qeshm on 2 Nov, called defensive; IRNA reports a US MQ-9 destroyed. Vance says he and Trump “feel really good” about a settlement; Trump names Pickaxe Mountain and says there is “no rush”; Ghalibaf says Iran “will not submit”. Qatari mediators took a draft text to Tehran. [9, 10]",
      "src": [
       [
-       16,
-       "US strikes Iran's Qeshm Island on eve of midterm elections",
-       "Yahoo News",
-       "https://www.yahoo.com/news/politics/articles/us-strikes-irans-qeshm-island-035152273.html"
-      ],
-      [
-       17,
-       "Oil slides on Hormuz deal hopes but Trump keeps Iran strikes on the table",
-       "Euronews",
-       "https://www.euronews.com/2026/11/02/oil-slides-on-hormuz-deal-hopes-but-trump-keeps-iran-strikes-on-the-table"
-      ],
-      [
-       27,
-       "Crude oil prices sell off more than 7% on Iran peace talk hopes ahead of U.S. midterms",
-       "CNBC",
-       "https://cnbc.com/2026/11/02/oil-prices-fall-as-iran-us-pursue-diplomacy.html"
-      ]
-     ]
-    },
-    {
-     "date": "2026-11-03",
-     "t": "Blasts reported on Qeshm and at Bandar Lengeh overnight; US officials call the strikes limited and defensive. Araghchi: the strait reopens on day two if the US acts first; Trump: “It could happen!”; a senior Iranian official says the sides are far from a deal. [11, 12, 13, 14]",
-     "src": [
-      [
-       11,
-       "U.S. military carries out limited strikes on Iran's Qeshm Island, U.S. officials say",
-       "NBC News",
-       "https://www.nbcnews.com/world/iran/us-conducted-defensive-strikes-iranian-targets-strait-hormuz-us-offici-rcna607161"
-      ],
-      [
-       12,
-       "Explosions hit Iran's Qeshm Island as US media report US strikes in Hormuz",
-       "Al Jazeera",
-       "https://www.aljazeera.com/news/2026/11/3/explosions-hit-irans-qeshm-island-as-us-media-report-us-strikes-in-hormuz"
-      ],
-      [
-       13,
-       "Araghchi says Hormuz could be reopened within two days if conditions met",
-       "Middle East Eye",
-       "https://www.middleeasteye.net/live-blog/live-blog-update/araghchi-says-hormuz-could-be-reopened-two-days-if-conditions-met"
-      ],
-      [
-       14,
-       "Iran-US deal still out of reach, senior Iranian official says",
-       "Times of Israel (Reuters)",
-       "https://www.timesofisrael.com/liveblog_entry/iran-us-deal-still-out-of-reach-senior-iranian-official-says/"
-      ]
-     ]
-    },
-    {
-     "date": "2026-11-03",
-     "t": "The Wall Street Journal says Washington has carried out limited strikes on Iran in recent weeks; Vance says he and Trump “feel really good” about a negotiated settlement; Trump names Pickaxe Mountain as a possible target; Qatari mediators took a draft text to Tehran on 2 Nov. [11]",
-     "src": [
-      [
-       11,
+       9,
        "U.S. strikes Iran's Qeshm Island as Vance seeks settlement",
        "CNBC",
        "https://www.cnbc.com/2026/11/03/iran-us-vance-trump-strikes.html"
+      ],
+      [
+       10,
+       "US hits Qeshm Island, Pezeshkian signals more diplomacy: Iran war latest",
+       "Al Jazeera",
+       "https://www.aljazeera.com/news/2026/11/3/us-hits-qeshm-island-pezeshkian-signals-more-diplomacy-iran-war-latest"
       ]
      ]
     }
@@ -376,13 +286,19 @@
    "log": [
     {
      "date": "2026-11-03",
-     "t": "The revised plan went to the Kamer on 3 Nov: the vrijheidsbijdrage (a €347 million labour tax for defence) is scrapped for 2027, the new box-3 tax moves from 2028 to 2029, and the VAT rise on flowers and plants is dropped. Debate 4 Nov, vote 12 Nov; no majority yet. [9]",
+     "t": "The revised plan went to the Kamer on 3 Nov: the vrijheidsbijdrage (a €347 million labour tax for defence) is scrapped for 2027, the new box-3 tax moves to 2029 and the VAT rise on flowers is dropped. Debate 4 Nov, vote 12 Nov; no majority yet. [8, 110]",
      "src": [
       [
-       9,
+       8,
        "Kabinet schrapt vrijheidsbijdrage voor 2027 en stelt nieuw box 3-stelsel jaar uit",
        "Fiscaal Vanmorgen",
        "https://www.fiscaalvanmorgen.nl/2026/11/03/kabinet-schrapt-vrijheidsbijdrage-voor-2027-en-stelt-nieuw-box-3-stelsel-jaar-uit/"
+      ],
+      [
+       110,
+       "Geen deal met oppositie over belastingplan, woensdag debat in Tweede Kamer",
+       "NOS",
+       "https://nos.nl/artikel/2637476-geen-deal-met-oppositie-over-belastingplan-woensdag-debat-in-tweede-kamer"
       ]
      ]
     }
@@ -396,16 +312,16 @@
    "log": [
     {
      "date": "2026-11-03",
-     "t": "Two Belarusians held in Germany on Romanian warrants allegedly planned fires near a railway and a power route in the Nuremberg region; Poland charged a Russian citizen with espionage after he photographed trains at Świdnica. [41, 42]",
+     "t": "Two Belarusians held in Germany on Romanian warrants allegedly planned fires near a railway and a power line in the Nuremberg region; Poland charged a Russian citizen with espionage after he photographed trains at Świdnica. [40, 41]",
      "src": [
       [
-       41,
+       40,
        "2 Belarusians arrested in Germany over alleged sabotage for Russia",
        "Anadolu",
        "https://www.aa.com.tr/en/europe/2-belarusians-arrested-in-germany-over-alleged-sabotage-for-russia/4104268"
       ],
       [
-       42,
+       41,
        "Russian citizen detained in Poland on suspicion of spying after photographing trains and rail infrastructure",
        "The Insider",
        "https://theins.press/en/news/298979"

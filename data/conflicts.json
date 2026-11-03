@@ -34,19 +34,37 @@
     },
     {
      "date": "2026-11-03",
-     "t": "Envoy Steve Witkoff says the US will mediate working-level Ukraine–Russia talks in Abu Dhabi on 10–11 Nov. Russian bombs killed at least 24 people at a school used for aid handouts in Komyshuvakha, Zaporizhzhia region. [14, 18]",
+     "t": "Russia launched 289 drones and 59 cruise missiles overnight; President Zelensky put the ballistic total at 17, and the Energy Ministry says energy sites in 10 regions were hit. [13, 14, 15] Envoy Steve Witkoff says the US will mediate working-level Ukraine–Russia talks in Abu Dhabi on 10–11 Nov. The toll from the bombing of an aid point in Komyshuvakha, Zaporizhzhia region, rose to 29, with 48 missing. [18, 17]",
      "src": [
       [
+       13,
+       "Air defense downs 49 of 59 cruise missiles, 257 of 289 drones overnight; strikes recorded at 23 locations",
+       "Interfax-Ukraine",
+       "https://en.interfax.com.ua/news/general/1230251.html"
+      ],
+      [
        14,
-       "U.S. to mediate new Ukraine-Russia talks in Abu Dhabi next week",
-       "Xinhua",
-       "https://english.news.cn/20261103/caa9492cf0a74a6b97db0fe7ba3781fc/c.html"
+       "On U.S. Election Day, Russia launched 17 ballistic missiles and 289 drones at Ukraine, according to Zelenskyy",
+       "UA.NEWS",
+       "https://ua.news/en/war-vs-rf/u-den-viboriv-u-ssha-rosiia-vipustila-po-ukrayini-17-balistichnikh-raket-i-289-droniv-zelenskii"
+      ],
+      [
+       15,
+       "Russian attack hits energy infrastructure in 10 regions, Energy Ministry says",
+       "Ukrinform",
+       "https://www.ukrinform.net/rubric-economy/4180856-russian-attack-hits-energy-infrastructure-in-10-regions-energy-ministry.html"
       ],
       [
        18,
-       "Ukraine war latest: Russian bomb strikes kill 24 at humanitarian aid center in Zaporizhzhia Oblast",
-       "Kyiv Independent",
-       "https://kyivindependent.com/ukraine-war-latest-russian-bomb-strikes-kill-24-at-humanitarian-aid-center-in-zaporizhzhia-oblast/"
+       "Ukraine and Russia will hold talks in Abu Dhabi with US mediation",
+       "Ukrainska Pravda via Yahoo",
+       "https://www.yahoo.com/news/politics/articles/ukraine-russia-hold-talks-abu-232900800.html"
+      ],
+      [
+       17,
+       "Death toll hits 29 after Russian strike on Ukrainian aid site, with 48 still missing",
+       "NPR",
+       "https://www.npr.org/2026/11/03/g-s1-151439/russia-ukraine-war"
       ]
      ]
     }
@@ -74,19 +92,31 @@
     },
     {
      "date": "2026-11-03",
-     "t": "US jets struck radar and missile launchers on Qeshm Island on Monday; a US official called it a defensive operation after Iranian surface-to-air fire. Foreign Minister Araghchi says Hormuz could reopen within two days if Washington ends its blockade, lifts oil sanctions and halts fighting on all fronts. Brent fell 7.6% to $104.77. [16, 17]",
+     "t": "A US official called Monday's strike on Qeshm Island a defensive measure against Iranian surface-to-air missiles; IRNA reported that the Revolutionary Guards destroyed a US MQ-9 drone east of the strait. [9, 10] Araghchi says Hormuz reopens on day two if Washington meets Iran's conditions first; Qatari mediators took a draft text to Tehran on 2 Nov. Brent fell 7.6% to $104.77 on Monday. [11, 9, 101]",
      "src": [
       [
-       16,
-       "US strikes Iran's Qeshm Island on eve of midterm elections",
-       "Yahoo News",
-       "https://www.yahoo.com/news/politics/articles/us-strikes-irans-qeshm-island-035152273.html"
+       9,
+       "U.S. strikes Iran's Qeshm Island as Vance seeks settlement",
+       "CNBC",
+       "https://www.cnbc.com/2026/11/03/iran-us-vance-trump-strikes.html"
       ],
       [
-       17,
-       "Oil slides on Hormuz deal hopes but Trump keeps Iran strikes on the table",
-       "Euronews",
-       "https://www.euronews.com/2026/11/02/oil-slides-on-hormuz-deal-hopes-but-trump-keeps-iran-strikes-on-the-table"
+       10,
+       "US hits Qeshm Island, Pezeshkian signals more diplomacy: Iran war latest",
+       "Al Jazeera",
+       "https://www.aljazeera.com/news/2026/11/3/us-hits-qeshm-island-pezeshkian-signals-more-diplomacy-iran-war-latest"
+      ],
+      [
+       11,
+       "Araghchi says Hormuz could be reopened within two days if conditions met",
+       "Middle East Eye",
+       "https://www.middleeasteye.net/live-blog/live-blog-update/araghchi-says-hormuz-could-be-reopened-two-days-if-conditions-met"
+      ],
+      [
+       101,
+       "Crude oil prices sell off more than 7% on Iran peace talk hopes ahead of U.S. midterms",
+       "CNBC",
+       "https://cnbc.com/2026/11/02/oil-prices-fall-as-iran-us-pursue-diplomacy.html"
       ]
      ]
     }
@@ -102,16 +132,16 @@
    "log": [
     {
      "date": "2026-11-03",
-     "t": "Gaza civil defence said Israeli attacks killed five people on 2 Nov in Khan Younis, Gaza City and central Gaza; health officials count at least 1,580 killed since the October 2025 ceasefire. Israel's military said it killed six Hamas members for ceasefire violations. [102, 103]",
+     "t": "Gaza civil defence said Israeli attacks killed five people on 2 Nov in Khan Younis, Gaza City and central Gaza; health officials count at least 1,580 killed since the October 2025 ceasefire. Israel's military said it killed six Hamas members for ceasefire violations. [131, 132]",
      "src": [
       [
-       102,
+       131,
        "Israeli attacks kill five in Gaza Strip",
        "The New Arab",
        "https://www.newarab.com/news/israeli-attacks-kill-five-gaza-strip"
       ],
       [
-       103,
+       132,
        "Liveblog, 1–2 November 2026",
        "Times of Israel",
        "https://www.timesofisrael.com/liveblog-november-1-2026-2/"
@@ -130,22 +160,22 @@
    "log": [
     {
      "date": "2026-11-03",
-     "t": "The Saudi-led coalition intercepted a Houthi drone and a ballistic missile aimed at southern Saudi Arabia on 1 Nov; Houthi media reported airstrikes on Ras Isa port and a telecoms site near Saada, with seven wounded at Ras Isa and the Bajil oil facility. Saudi Defence Minister Khalid bin Salman raised the Houthi attacks with Hegseth on 3 Nov. [104, 105, 106]",
+     "t": "The Saudi-led coalition intercepted a Houthi drone and a ballistic missile aimed at southern Saudi Arabia on 1 Nov; Houthi media reported airstrikes on Ras Isa port and a telecoms site near Saada, with seven wounded at Ras Isa and the Bajil oil facility. Saudi Defence Minister Khalid bin Salman raised the Houthi attacks with Hegseth on 3 Nov. [133, 134, 135]",
      "src": [
       [
-       104,
+       133,
        "Houthis report airstrikes on Red Sea oil port, telecom facility in Yemen",
        "Xinhua",
        "https://english.news.cn/20261102/f2b0a52f64004b76b5d065af417aee14/c.html"
       ],
       [
-       105,
+       134,
        "Saudi forces launch airstrike on port of Ras Isa, Yemen",
        "The Maritime Executive",
        "https://maritime-executive.com/article/saudi-forces-launch-airstrike-on-port-of-ras-isa-yemen"
       ],
       [
-       106,
+       135,
        "Liveblog, 3 November 2026",
        "Times of Israel",
        "https://www.timesofisrael.com/liveblog-november-03-2026/"
@@ -176,25 +206,25 @@
     },
     {
      "date": "2026-11-03",
-     "t": "Taiwan's air force holds its annual Sky Dragon drills 2–6 Nov, and Kinmen held live-fire drills on 3 Nov. Premier Cho Jung-tai said Taiwan is still seeking a formal invitation to the APEC leaders' meeting in Shenzhen on 18–19 Nov. [28, 29, 107]",
+     "t": "Taiwan's air force holds its annual Sky Dragon drills 2–6 Nov, and Kinmen held live-fire drills on 3 Nov. Premier Cho Jung-tai said Taiwan is still seeking a formal invitation to the APEC leaders' meeting in Shenzhen on 18–19 Nov. [26, 27, 28]",
      "src": [
       [
-       28,
+       26,
        "Taiwan air force holds annual Sky Dragon drills",
        "Focus Taiwan",
        "https://focustaiwan.tw/politics/202611010005"
       ],
       [
-       29,
-       "Taiwan seeking formal APEC invitation from China: Premier",
-       "Focus Taiwan",
-       "https://focustaiwan.tw/politics/202611030015"
-      ],
-      [
-       107,
+       27,
        "Kinmen holds live-fire drills",
        "Taipei Times",
        "https://taipeitimes.com/News/taiwan/archives/2026/11/03/2003867080"
+      ],
+      [
+       28,
+       "Taiwan seeking formal APEC invitation from China: Premier",
+       "Focus Taiwan",
+       "https://focustaiwan.tw/politics/202611030015"
       ]
      ]
     }
@@ -210,16 +240,16 @@
    "log": [
     {
      "date": "2026-11-03",
-     "t": "North Korea fired a tactical ballistic missile with a cluster-bomb warhead on 31 Oct and strategic cruise missiles with a cluster warhead on 2 Nov, according to KCNA, while the US–South Korean Freedom Flag exercise runs at Kunsan to 6 Nov. [26, 27]",
+     "t": "North Korea fired a tactical ballistic missile with a cluster-bomb warhead on 31 Oct and strategic cruise missiles with a cluster warhead on 2 Nov, according to KCNA, while the Freedom Flag exercise runs at Kunsan to 6 Nov. [24, 25]",
      "src": [
       [
-       26,
+       24,
        "North Korea tests missile with cluster-bomb warhead",
        "Stars and Stripes",
        "https://www.stripes.com/theaters/asia_pacific/2026-11-02/north-korea-cluster-bomb-warhead-23335418.html"
       ],
       [
-       27,
+       25,
        "North Korea test-fires strategic cruise missiles: KCNA",
        "AFP via Manila Times",
        "https://www.manilatimes.net/2026/11/03/world/asia-oceania/north-korea-test-fires-strategic-cruise-missiles-kcna/2460150"
@@ -250,16 +280,16 @@
     },
     {
      "date": "2026-11-03",
-     "t": "Drones hit the New Halfa and Aroma stations in Kassala state and Al-Ghazali near Merowe on 2 Nov, a day after Abu Hamad and Al-Dabbah; Anadolu counts at least 16 stations hit in a week. Sudan filed complaints against Ethiopia at the UN Security Council and the African Union over drone attacks it says were launched from Ethiopian territory. [24, 25]",
+     "t": "Drones hit the New Halfa and Aroma stations in Kassala state and Al-Ghazali near Merowe on 2 Nov; Anadolu counts at least 16 stations hit in a week. Sudan filed complaints against Ethiopia at the UN Security Council and the African Union over drones it says came from Ethiopian territory. [22, 23]",
      "src": [
       [
-       24,
+       22,
        "Drone attacks hit 3 power stations in Sudan, trigger widespread outages",
        "Anadolu",
        "https://www.aa.com.tr/en/world/drone-attacks-hit-3-power-stations-in-sudan-trigger-widespread-outages/4108387"
       ],
       [
-       25,
+       23,
        "Sudan files complaints against Ethiopia with UN over deadly drone spree",
        "Al Jazeera",
        "https://www.aljazeera.com/news/2026/11/2/sudan-files-complaints-against-ethiopia-with-un-over-deadly-drone-spree"

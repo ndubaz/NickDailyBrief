@@ -10,7 +10,7 @@
    "n": "Tesla's Robotaxi service began fully unsupervised public rides in Fort Worth, Texas, at 06:00 local time on 2 Nov, with no safety monitor on board, using Model Y cars across about 143 square miles. Fort Worth is the seventh unsupervised city after Austin, Dallas, Houston, Miami, Orlando and Tampa; fleet size and fares were not published.",
    "src": [
     [
-     103,
+     96,
      "Tesla expands Robotaxi service, launches unsupervised rides in Fort Worth",
      "Not a Tesla App",
      "https://www.notateslaapp.com/news/4932/tesla-expands-robotaxi-service-launches-unsupervised-rides-in-fort-worth"
@@ -25,7 +25,7 @@
    "n": "Meituan released LongCat-2.5 on 2 Nov, a multimodal mixture-of-experts model with 1.6 trillion total parameters and about 48 billion active per token, built for long agent runs over whole codebases. It is live in Meituan's chat service and API; open weights on GitHub and Hugging Face are promised but not yet out, and no benchmarks, context length or prices were published.",
    "src": [
     [
-     104,
+     94,
      "Meituan launches LongCat-2.5 multimodal AI model for extended coding tasks",
      "TechNode",
      "https://technode.com/2026/11/02/meituan-launches-longcat-2-5-multimodal-ai-model-for-extended-coding-tasks/"
@@ -40,10 +40,31 @@
    "n": "Agility Robotics said on 2 Nov that its Digit humanoid has moved more than 100,000 totes at GXO's Georgia site since June 2024, a company figure; GXO signed for two more US sites, in Statesville, North Carolina and Lebanon, Tennessee, starting in early 2027. No unit counts were given.",
    "src": [
     [
-     105,
+     97,
      "Agility Robotics says more than 30 companies considering Digit humanoid robot",
      "Robotics & Automation News",
      "https://roboticsandautomationnews.com/2026/11/02/agility-robotics-says-more-than-30-companies-considering-digit-humanoid-robot/106595"
+    ]
+   ]
+  },
+  {
+   "date": "2026-11-02",
+   "kind": "result",
+   "t": "SemiAnalysis launches GDPx; the best model scores 12%",
+   "lab": "SemiAnalysis",
+   "n": "SemiAnalysis published GDPx on 2 Nov, a benchmark of long agentic tasks in 11 domains, scored pass@1 over three attempts with tasks of up to eight hours. Claude Opus 5.5 (Anthropic) leads at 12.0%, ahead of Gemini 4 Carbon (Google) at 10.9% and GPT-6 Astra (OpenAI) at 9.6%; finance and legal tasks score near zero.",
+   "src": [
+    [
+     92,
+     "GDPx: measuring frontier model capabilities",
+     "SemiAnalysis",
+     "https://newsletter.semianalysis.com/p/gdpx-measuring-frontier-model-capabilities"
+    ],
+    [
+     93,
+     "SemiAnalysis unveils GDPx benchmark, and the best AI model scores 12%",
+     "Crypto Briefing",
+     "https://cryptobriefing.com/semianalysis-gdpx-ai-benchmark-frontier-models/"
     ]
    ]
   }

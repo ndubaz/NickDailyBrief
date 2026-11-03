@@ -17,25 +17,25 @@
    "added": "2026-11-02",
    "src": [
     [
-     24,
+     144,
      "NDAA FY2027 and Dec. 11 funding deadline",
      "Buffalo Chronicle (thin source)",
      "https://buffalochronicle.com/2026/10/24/ndaa-fy2027-lame-duck-dec-11-funding-deadline-niagara-falls/"
     ],
     [
-     22,
+     21,
      "Congress returns: National security and trade provisions to watch in the FY2027 NDAA",
      "Reed Smith",
      "https://www.tradecomplianceresourcehub.com/2026/11/02/congress-returns-national-security-and-trade-provisions-to-watch-in-the-fy2027-ndaa/"
     ],
     [
-     84,
+     72,
      "FY2027 NDAA: Status of Legislative Activity (IN12704)",
      "Congressional Research Service",
      "https://www.everycrsreport.com/reports/IN12704.html"
     ],
     [
-     65,
+     61,
      "NDAA narrowly clears House: what's next for the must-pass defense bill",
      "MOAA",
      "https://www.moaa.org/content/publications-and-media/news-articles/2026-news-articles/reads/ndaa-narrowly-clears-house-–-whats-next-for-the-must-pass-defense-bill/"
@@ -59,19 +59,19 @@
    "added": "2026-11-02",
    "src": [
     [
-     24,
+     144,
      "NDAA FY2027 and Dec. 11 funding deadline",
      "Buffalo Chronicle (thin source)",
      "https://buffalochronicle.com/2026/10/24/ndaa-fy2027-lame-duck-dec-11-funding-deadline-niagara-falls/"
     ],
     [
-     63,
+     59,
      "Congressional Bill H.R. 6500 Signed into Law",
      "The White House",
      "https://www.whitehouse.gov/briefings-statements/2026/09/congressional-bill-h-r-6500-signed-into-law/"
     ],
     [
-     64,
+     60,
      "How the new stopgap funding bill affects the defense department",
      "Breaking Defense",
      "https://breakingdefense.com/2026/09/how-the-new-stopgap-funding-bill-affects-the-defense-department/"
@@ -93,13 +93,13 @@
    "added": "2026-11-02",
    "src": [
     [
-     48,
+     58,
      "In first public speech as acting Army secretary, Telle highlights acquisition",
      "Stars and Stripes",
      "https://www.stripes.com/branches/army/2026-10-12/acting-army-secretary-telle-ausa-conference-23134806.html"
     ],
     [
-     137,
+     145,
      "Acting Secretary of the Army",
      "army.mil",
      "https://www.army.mil/leaders/sa/"
@@ -108,7 +108,8 @@
    "kind": "nomination",
    "title": "Secretary of the Army",
    "postId": "secarmy",
-   "updated": "2026-11-03"
+   "updated": "2026-11-03",
+   "status": null
   },
   {
    "id": "csa-2026",
@@ -124,19 +125,19 @@
    "added": "2026-11-02",
    "src": [
     [
-     48,
+     58,
      "In first public speech as acting Army secretary, Telle highlights acquisition",
      "Stars and Stripes",
      "https://www.stripes.com/branches/army/2026-10-12/acting-army-secretary-telle-ausa-conference-23134806.html"
     ],
     [
-     138,
+     146,
      "V Corps welcomed Lt. Gen. Thomas M. Feltey as new commanding general",
      "army.mil",
      "https://www.army.mil/article/295074/v_corps_welcomed_lt_gen_thomas_m_feltey_as_new_commanding_general"
     ],
     [
-     139,
+     147,
      "Vice Chief of Staff of the Army",
      "army.mil",
      "https://www.army.mil/leaders/vcsa/"
@@ -145,7 +146,8 @@
    "kind": "nomination",
    "title": "Chief of Staff of the Army",
    "postId": "csa",
-   "updated": "2026-11-03"
+   "updated": "2026-11-03",
+   "status": null
   },
   {
    "id": "usareur-2026",
@@ -167,13 +169,13 @@
    "added": "2026-11-03",
    "src": [
     [
-     1,
+     69,
      "Pentagon nominates Lt. Gen. Admiral to command US Army Europe and Africa",
      "Army Times",
      "https://www.armytimes.com/news/your-military/2026/07/24/pentagon-nominates-lt-gen-admiral-to-command-us-army-europe-and-africa/"
     ],
     [
-     79,
+     70,
      "PN1188: Lt. Gen. Kevin D. Admiral, Commanding General, US Army Europe and Africa, and Commander, Allied Land Command",
      "congress.gov",
      "https://www.congress.gov/nomination/119th-congress/1188"
@@ -200,12 +202,13 @@
    "added": "2026-11-03",
    "src": [
     [
-     1,
+     148,
      "Acting commander, Transformation and Training Command",
      "Stars and Stripes",
      "https://www.stripes.com/branches/army/2026-04-07/acting-commander-training-transformation-command-21308262.html"
     ]
-   ]
+   ],
+   "status": null
   },
   {
    "id": "amc-2026",
@@ -224,12 +227,13 @@
    "added": "2026-11-03",
    "src": [
     [
-     1,
+     149,
      "Senior Commander, Redstone Arsenal",
      "home.army.mil",
      "https://home.army.mil/redstone/about/leadership/senior-commander"
     ]
-   ]
+   ],
+   "status": null
   },
   {
    "id": "spacecom-2026",
@@ -249,13 +253,13 @@
    "added": "2026-11-03",
    "src": [
     [
-     1,
+     150,
      "White House nominates next general to helm US Space Command",
      "Defense News",
      "https://defensenews.com/news/pentagon-congress/2026/09/30/white-house-nominates-next-general-to-helm-us-space-command"
     ],
     [
-     82,
+     151,
      "PN1413: Lt. Gen. David N. Miller Jr., Commander, US Space Command",
      "congress.gov",
      "https://www.congress.gov/nomination/119th-congress/1413"
@@ -282,12 +286,13 @@
    "added": "2026-11-03",
    "src": [
     [
-     1,
+     152,
      "Polish general to lead NATO's Joint Force Command Brunssum",
      "Polskie Radio",
      "https://www.polskieradio.pl/395/7784/Artykul/3646946"
     ]
-   ]
+   ],
+   "status": null
   },
   {
    "id": "autowarcom-2026",
@@ -306,12 +311,13 @@
    "added": "2026-11-03",
    "src": [
     [
-     1,
+     153,
      "U.S. creates new Autonomous Warfare Command",
      "DefenseScoop",
      "https://defensescoop.com/2026/09/30/hegseth-announces-autonomous-warfare-command/"
     ]
-   ]
+   ],
+   "status": null
   },
   {
    "id": "vcorps-2026",
@@ -332,12 +338,13 @@
    "added": "2026-11-03",
    "src": [
     [
-     1,
+     154,
      "Thomas Feltey takes early command of V Corps",
      "Stars and Stripes",
      "https://www.stripes.com/branches/army/2026-09-03/thomas-feltey-takes-early-command-of-v-corps-22739536.html"
     ]
-   ]
+   ],
+   "status": null
   }
  ],
  "tiers": [
@@ -391,7 +398,7 @@
    "acting": false,
    "src": [
     [
-     1,
+     155,
      "Under Secretary of the Army",
      "army.mil",
      "https://www.army.mil/leaders/usa/bio"
@@ -428,7 +435,7 @@
    "acting": false,
    "src": [
     [
-     1,
+     156,
      "Senate confirms LaNeve to be next Army vice chief",
      "Breaking Defense",
      "https://breakingdefense.com/2026/01/senate-confirms-laneve-to-be-next-army-vice-chief"
@@ -448,7 +455,7 @@
    "acting": false,
    "src": [
     [
-     1,
+     157,
      "Weimer bio",
      "army.mil",
      "https://www.army.mil/e2/downloads/rv7/leaders/bio/weimer_bio.pdf"
@@ -467,7 +474,7 @@
    "acting": false,
    "src": [
     [
-     1,
+     158,
      "Chairman of the Joint Chiefs of Staff news",
      "jcs.mil",
      "https://www.jcs.mil/Media/News/Tag/148573/"
@@ -487,7 +494,7 @@
    "acting": false,
    "src": [
     [
-     1,
+     159,
      "Vice Chairman of the Joint Chiefs of Staff Gen. Christopher J. Mahoney",
      "jcs.mil",
      "https://www.jcs.mil/Media/News/Tag/312327/vice-chairman-of-the-joint-chiefs-of-staff-gen-christopher-j-mahoney"
@@ -507,7 +514,7 @@
    "acting": false,
    "src": [
     [
-     1,
+     160,
      "European Command: Grynkewich takes over from Cavoli",
      "Stars and Stripes",
      "https://www.stripes.com/branches/army/2025-07-01/european-command-grynkewich-cavoli-18301728.html"
@@ -527,7 +534,7 @@
    "acting": false,
    "src": [
     [
-     1,
+     161,
      "Leadership of the United States Central Command",
      "Wikipedia",
      "https://en.wikipedia.org/wiki/Leadership_of_the_United_States_Central_Command"
@@ -546,7 +553,7 @@
    "acting": false,
    "src": [
     [
-     1,
+     162,
      "USINDOPACOM Commander visits Palau",
      "DVIDS",
      "https://www.dvidshub.net/news/printable/566903"
@@ -565,7 +572,7 @@
    "acting": false,
    "src": [
     [
-     1,
+     163,
      "U.S. Africa Command welcomes new commander",
      "africom.mil",
      "https://www.africom.mil/article/10605/africom-change-of-command"
@@ -585,7 +592,7 @@
    "acting": false,
    "src": [
     [
-     1,
+     164,
      "Leadership of the United States Northern Command",
      "Wikipedia",
      "https://en.wikipedia.org/wiki/Leadership_of_the_United_States_Northern_Command"
@@ -604,7 +611,7 @@
    "acting": false,
    "src": [
     [
-     1,
+     165,
      "US Marine General Donovan assumes command of SOUTHCOM",
      "southcom.mil",
      "https://www.southcom.mil/News/PressReleases/Article/4398915/us-marine-general-donovan-assumes-command-of-southcom/"
@@ -623,7 +630,7 @@
    "acting": false,
    "src": [
     [
-     1,
+     166,
      "General Joshua M. Rudd, USA",
      "nsa.gov",
      "https://www.nsa.gov/About/Leadership/Leadership-View/Article/4439868/general-joshua-m-rudd-usa/"
@@ -642,7 +649,7 @@
    "acting": false,
    "src": [
     [
-     1,
+     167,
      "Leadership of the United States Special Operations Command",
      "Wikipedia",
      "https://en.wikipedia.org/wiki/Leadership_of_the_United_States_Special_Operations_Command"
@@ -661,7 +668,7 @@
    "acting": false,
    "src": [
     [
-     1,
+     168,
      "ADM. Richard Correll biography",
      "stratcom.mil",
      "https://www.stratcom.mil/Portals/8/Documents/ADM. Richard Correll.pdf"
@@ -680,7 +687,7 @@
    "acting": false,
    "src": [
     [
-     1,
+     150,
      "White House nominates next general to helm US Space Command",
      "Defense News",
      "https://defensenews.com/news/pentagon-congress/2026/09/30/white-house-nominates-next-general-to-helm-us-space-command"
@@ -699,7 +706,7 @@
    "acting": false,
    "src": [
     [
-     1,
+     169,
      "Gen. Reed, commander US Transportation Command, engages with Naval War College",
      "DVIDS",
      "https://www.dvidshub.net/news/562489/gen-reed-commander-us-transportation-command-engages-with-naval-war-college-faculty-and-students"
@@ -719,7 +726,7 @@
    "acting": false,
    "src": [
     [
-     1,
+     170,
      "U.S. Army Western Hemisphere Command",
      "army.mil",
      "https://www.army.mil/usawhc"
@@ -739,7 +746,7 @@
    "acting": false,
    "src": [
     [
-     1,
+     153,
      "U.S. creates new Autonomous Warfare Command",
      "DefenseScoop",
      "https://defensescoop.com/2026/09/30/hegseth-announces-autonomous-warfare-command/"
@@ -759,7 +766,7 @@
    "acting": true,
    "src": [
     [
-     1,
+     148,
      "Acting commander, Transformation and Training Command",
      "Stars and Stripes",
      "https://www.stripes.com/branches/army/2026-04-07/acting-commander-training-transformation-command-21308262.html"
@@ -778,7 +785,7 @@
    "acting": true,
    "src": [
     [
-     1,
+     149,
      "Senior Commander, Redstone Arsenal",
      "home.army.mil",
      "https://home.army.mil/redstone/about/leadership/senior-commander"
@@ -797,7 +804,7 @@
    "acting": false,
    "src": [
     [
-     1,
+     171,
      "US Army Pacific commanding general visits Singapore",
      "DVIDS",
      "https://www.dvidshub.net/news/564728/us-army-pacific-commanding-general-visits-singapore-strengthen-regional-partnerships"
@@ -816,7 +823,7 @@
    "acting": true,
    "src": [
     [
-     1,
+     172,
      "Gen. Christopher Donahue relinquishes command of US Army Europe and Africa",
      "Defense News",
      "https://development.defensenews.com/?p=45565"
@@ -835,7 +842,7 @@
    "acting": false,
    "src": [
     [
-     1,
+     69,
      "Pentagon nominates Lt. Gen. Admiral to command US Army Europe and Africa",
      "Army Times",
      "https://www.armytimes.com/news/your-military/2026/07/24/pentagon-nominates-lt-gen-admiral-to-command-us-army-europe-and-africa/"
@@ -867,7 +874,7 @@
    "acting": false,
    "src": [
     [
-     1,
+     146,
      "V Corps welcomed Lt. Gen. Thomas M. Feltey as new commanding general",
      "army.mil",
      "https://www.army.mil/article/295074/v_corps_welcomed_lt_gen_thomas_m_feltey_as_new_commanding_general"
@@ -886,7 +893,7 @@
    "acting": false,
    "src": [
     [
-     1,
+     173,
      "V Corps welcomes new deputy commanding general-interoperability",
      "DVIDS",
      "https://www.dvidshub.net/news/571105/v-corps-welcomes-new-deputy-commanding-general-interoperability-during-ceremony-poland"
@@ -905,7 +912,7 @@
    "acting": false,
    "src": [
     [
-     1,
+     174,
      "21st TSC change of command welcomes Maj. Gen. Lalor",
      "army.mil",
      "https://www.army.mil/article/287546"
@@ -924,7 +931,7 @@
    "acting": false,
    "src": [
     [
-     1,
+     175,
      "Training command gets new commander in Bavaria",
      "Stars and Stripes",
      "https://www.stripes.com/branches/army/2025-06-30/training-command-new-commander-bavaria-18292177.html"
@@ -943,7 +950,7 @@
    "acting": false,
    "src": [
     [
-     1,
+     176,
      "SETAF-AF conducts change of command ceremony, welcomes new leader",
      "army.mil",
      "https://www.army.mil/article/293528"
@@ -962,7 +969,7 @@
    "acting": false,
    "src": [
     [
-     1,
+     177,
      "An Army general talks fusing sensors and shooters on the eastern flank",
      "War on the Rocks",
      "https://warontherocks.com/cogs-of-war/an-army-general-talks-fusing-sensors-and-shooters-on-the-eastern-flank/"
@@ -981,7 +988,7 @@
    "acting": false,
    "src": [
     [
-     1,
+     178,
      "10th AAMDC welcomes Brig. Gen. Glenn Henke as its new commander",
      "army.mil",
      "https://www.army.mil/article/293366/10th_aamdc_welcomes_brig_gen_glenn_henke_as_its_new_commander"
@@ -1000,7 +1007,7 @@
    "acting": false,
    "src": [
     [
-     1,
+     179,
      "Commander, Allied Land Command",
      "lc.nato.int",
      "https://lc.nato.int/about-us/biographies/commander"
@@ -1020,7 +1027,7 @@
    "acting": false,
    "src": [
     [
-     1,
+     180,
      "The Director General of NATO IMS visits JFC Brunssum",
      "nato.int",
      "https://www.nato.int/en/news-and-events/articles/news/2026/02/27/the-director-general-of-nato-ims-visits-jfc-brunssum"
@@ -1040,7 +1047,7 @@
    "acting": false,
    "src": [
     [
-     1,
+     181,
      "Command group",
      "shape.nato.int",
      "https://shape.nato.int/about/leadership-staff/command-group.aspx"
@@ -1059,7 +1066,7 @@
    "acting": false,
    "src": [
     [
-     1,
+     182,
      "Senior leadership",
      "eucom.mil",
      "https://www.eucom.mil/senior-leadership"
@@ -1079,7 +1086,7 @@
    "acting": false,
    "src": [
     [
-     1,
+     183,
      "United States Military Representative to the NATO Military Committee",
      "Wikipedia",
      "https://en.wikipedia.org/wiki/United_States_Military_Representative_to_the_NATO_Military_Committee"

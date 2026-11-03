@@ -53,13 +53,13 @@
    "added": "2026-11-03",
    "src": [
     [
-     91,
+     79,
      "Thousands of troops from Europe to rehearse post-war Ukraine deployment in Poland",
      "Euronews",
      "https://euronews.com/2026/11/03/thousands-of-troops-from-europe-to-rehearse-post-war-ukraine-deployment-in-poland"
     ],
     [
-     92,
+     80,
      "European force to hold first Ukraine support exercise in Poland",
      "France 24",
      "https://www.france24.com/en/europe/20261103-european-force-to-hold-first-ukraine-support-exercise-in-poland"
@@ -69,7 +69,7 @@
   {
    "id": "combined-resolve-2026",
    "name": "Combined Resolve",
-   "from": "2026-10-26",
+   "from": null,
    "to": "2026-11-04",
    "lead": "USAREUR-AF (7th Army Training Command)",
    "where": "Joint Multinational Readiness Center, Hohenfels, Germany",
@@ -78,13 +78,14 @@
    "added": "2026-11-03",
    "src": [
     [
-     73,
+     68,
      "Ukrainian soldiers tap front-line experience to scout for US armor in Bavaria exercise",
      "Stars and Stripes",
      "https://www.stripes.com/branches/army/2026-10-26/ukraine-drones-combined-resolve-germany-23266051.html"
     ]
    ],
-   "dateText": "to 4 Nov (start not published)"
+   "dateText": "to 4 Nov (start not published)",
+   "updated": "2026-11-03"
   },
   {
    "id": "resolute-reforger-2026",
@@ -98,7 +99,7 @@
    "added": "2026-11-03",
    "src": [
     [
-     74,
+     184,
      "NATO exercise Resolute Reforger 2026 in Latvia",
      "UkrMedia",
      "https://ukrmedia.news/en/world/navchannia-nato-latviia-resolute-reforger-2026/"
@@ -117,7 +118,7 @@
    "added": "2026-11-03",
    "src": [
     [
-     75,
+     185,
      "NATO says three maritime strike groups and forces from 17 Allies are testing joint combat readiness in Neptune Strike 26-4",
      "Defence Industry Europe",
      "https://defence-industry.eu/nato-says-three-maritime-strike-groups-and-forces-from-17-allies-are-testing-joint-combat-readiness-in-neptune-strike-26-4/"
@@ -137,7 +138,7 @@
    "added": "2026-11-03",
    "src": [
     [
-     76,
+     186,
      "Reconnaissance for exercise Steadfast Dart 27 by a SHAPE, JFCNP and NRDC-ITA delegation",
      "Army of North Macedonia",
      "https://mil.mk/general-staff-activities/izviduvanje-za-vezhbata-steadfast-dart-27-od-strana-na-delegacija-od-shape-jfcnp-i-nrdc-ita/?lang=en"
@@ -157,7 +158,7 @@
    "added": "2026-11-03",
    "src": [
     [
-     77,
+     187,
      "NATO exercises 2027",
      "Grosswald (aggregator)",
      "https://www.grosswald.org/nato-exercises-2027/"
