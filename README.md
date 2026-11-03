@@ -45,6 +45,7 @@ The edition is a daily snapshot. The standing files under `data/` are the Readbo
 | `data/idioms.json` | The idiom bank, one a day in Dutch, French or Italian | Taal |
 | `data/ski.json` | Twelve resorts and a daily Open-Meteo snow forecast | Snow, December to March |
 | `data/search-index.json` | Headlines per edition | Archive search |
+| `data/land.json` | Simplified Natural Earth land outlines (static, never edited by the run) | The board map |
 
 Editions in the 2.5, 3.0 and 4.0 formats still render: an edition whose `world` is an array shows under Developments, and the page falls back to the edition's own threads, horizon and school rows when a standing file is missing.
 

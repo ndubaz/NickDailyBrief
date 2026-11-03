@@ -223,21 +223,29 @@
     return s + "</svg>";
   }
   /* schematic world map for the board */
-  function worldMap(theatres, counts, W) {
+  function worldMap(theatres, counts, W, land) {
     W = Math.max(240, Math.round(W || 360)); var lon0 = -100, lon1 = 150, lat0 = -40, lat1 = 72, H = Math.round(W * (lat1 - lat0) / (lon1 - lon0) * 1.25);
     function X(lon) { return (lon - lon0) / (lon1 - lon0) * W; }
     function Y(lat) { return H - (lat - lat0) / (lat1 - lat0) * H; }
-    var s = '<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="Schematic map of tracked theatres, sized by events logged in the last 7 days">';
-    for (var lo = -90; lo <= 150; lo += 30) s += '<line x1="' + X(lo).toFixed(1) + '" y1="0" x2="' + X(lo).toFixed(1) + '" y2="' + H + '" stroke="var(--line)" stroke-width="1"/>';
-    for (var la = -30; la <= 60; la += 30) s += '<line x1="0" y1="' + Y(la).toFixed(1) + '" x2="' + W + '" y2="' + Y(la).toFixed(1) + '" stroke="var(--line)" stroke-width="' + (la === 0 ? 1.5 : 1) + '"/>';
-    [["N. America", 45, -88], ["S. America", -22, -60], ["Europe", 64, 0], ["Africa", -14, 14], ["Asia", 46, 95], ["Pacific", 4, 140]].forEach(function (l) { s += svgText(X(l[2]), Y(l[1]), l[0], "middle", 10); });
+    var s = '<svg viewBox="0 0 ' + W + " " + H + '" style="overflow:hidden" role="img" aria-label="Map of tracked theatres, sized by events logged in the last 7 days">';
+    s += '<rect x="0" y="0" width="' + W + '" height="' + H + '" fill="var(--pc)" fill-opacity=".05"/>';
+    if (land && land.length) {
+      var d = "";
+      land.forEach(function (ring) { var inView = ring.some(function (p) { return p[0] >= lon0 - 5 && p[0] <= lon1 + 5 && p[1] >= lat0 - 5 && p[1] <= lat1 + 5; }); if (!inView) return; d += "M" + ring.map(function (p) { return X(p[0]).toFixed(1) + "," + Y(p[1]).toFixed(1); }).join("L") + "Z"; });
+      s += '<path d="' + d + '" fill="var(--surface)" stroke="var(--muted)" stroke-opacity=".55" stroke-width=".8" stroke-linejoin="round" fill-rule="evenodd"/>';
+    }
+    for (var lo = -90; lo <= 150; lo += 30) s += '<line x1="' + X(lo).toFixed(1) + '" y1="0" x2="' + X(lo).toFixed(1) + '" y2="' + H + '" stroke="var(--line)" stroke-width="1" stroke-opacity=".6"/>';
+    for (var la = -30; la <= 60; la += 30) s += '<line x1="0" y1="' + Y(la).toFixed(1) + '" x2="' + W + '" y2="' + Y(la).toFixed(1) + '" stroke="var(--line)" stroke-width="' + (la === 0 ? 1.5 : 1) + '" stroke-opacity=".6"/>';
+    if (!land || !land.length) [["N. America", 45, -88], ["S. America", -22, -60], ["Europe", 64, 0], ["Africa", -14, 14], ["Asia", 46, 95], ["Pacific", 4, 140]].forEach(function (l) { s += svgText(X(l[2]), Y(l[1]), l[0], "middle", 10); });
     var hx = X(HOME.lon), hy = Y(HOME.lat);
     s += '<rect x="' + (hx - 3) + '" y="' + (hy - 3) + '" width="6" height="6" fill="var(--ink)" transform="rotate(45 ' + hx + " " + hy + ')"/>';
     theatres.forEach(function (t) {
       if (t.lat == null) return;
-      var n = counts[t.id] || 0, r = n ? 5 + 3 * Math.sqrt(n) : 4, x = X(t.lon), y = Y(t.lat);
-      s += '<circle cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="' + r.toFixed(1) + '" fill="var(--pc)" fill-opacity="' + (n ? ".75" : ".2") + '" stroke="var(--pc)" stroke-width="1.5"><title>' + esc(t.name + ": " + n + " logged in 7 days") + "</title></circle>";
-      var lp = t.lp || "below", lx = lp === "right" ? x + r + 4 : lp === "left" ? x - r - 4 : x, ly = lp === "above" ? y - r - 4 : lp === "below" ? y + r + 11 : y + 3.5;
+      var n = counts[t.id] || 0, r = n ? 6 + 3 * Math.sqrt(n) : 4.5, x = X(t.lon), y = Y(t.lat);
+      if (n) s += '<circle cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="' + (r + 5).toFixed(1) + '" fill="var(--pc)" fill-opacity=".18"/>';
+      s += '<circle cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="' + r.toFixed(1) + '" fill="' + (n ? "var(--pc)" : "var(--surface)") + '" stroke="var(--pc)" stroke-width="1.5"><title>' + esc(t.name + ": " + n + " logged in 7 days") + "</title></circle>";
+      var lp = t.lp || "below"; if (lp === "right" && x > W - 48) lp = "left"; if (lp === "left" && x < 48) lp = "right";
+      var lx = lp === "right" ? x + r + 4 : lp === "left" ? x - r - 4 : x, ly = lp === "above" ? y - r - 4 : lp === "below" ? y + r + 11 : y + 3.5;
       s += svgText(lx, ly, t.short || t.name, lp === "right" ? "start" : lp === "left" ? "end" : "middle", 10, true, "var(--ink)");
       if (n) s += svgText(x, y + 3.5, n, "middle", 10, false, "var(--bg)");
     });
@@ -613,7 +621,7 @@
     h += part("world", "Part 1", "The World", "Facts and summaries only: the board, overnight developments, the numbers and the day's feature.", "p-world");
     h += '<section id="board" class="world"><h2>The board <span class="num">events logged, not a measure of intensity</span></h2>';
     if (board) {
-      h += '<div class="panel"><div class="lbl">Ten theatres · marker size = events logged in 7 days</div><div class="chart" id="worldmap" style="min-height:150px"></div></div>';
+      h += '<div class="panel"><div class="lbl">Ten theatres · filled marker = events logged in 7 days, sized by count</div><div class="chart" id="worldmap" style="min-height:150px"></div></div>';
       h += '<div class="fug board">' + nq() + board.map(function (b) {
         var hd = '<details class="thread brow ' + fu(b.badge) + '" id="th-' + esc(b.t.id) + '" open><summary><span class="tname">' + esc(b.t.name) + act4(b.weeks) + badge(b.badge) + "</span>";
         hd += b.last ? '<span class="tlast"><span class="d">' + esc(fmtShort(b.last.date)) + "</span>" + rich(b.last.t, srcMap(b.last.src)) + "</span>" : '<span class="tlast small">No events logged yet.</span>';
@@ -1025,7 +1033,7 @@
       app.querySelectorAll(".spark[data-ws]").forEach(function (el) { el.innerHTML = sparkline(ctx._ws[el.getAttribute("data-ws")], el.clientWidth); });
       if (fxc && FX) fxc.innerHTML = lineChart(FX.series, { W: fxc.clientWidth, days: +fxc.getAttribute("data-range"), avg: FX.avg, avgLabel: "1y avg ", hi: FX.hi30, lo: FX.lo30, hiLabel: "30d high", loLabel: "30d low", dec: 4, label: "USD/EUR, euros per dollar" });
       var pb = document.getElementById("paybars"); if (pb && FX) pb.innerHTML = vbars(FX.pay.map(function (p) { return [p[0], p[1], p[2], p[2] === FX.last[0].slice(0, 7)]; }), { W: pb.clientWidth, H: 130, fmt: function (v) { return "€" + v; }, label: "$1,000 in euros by month" });
-      var wm = document.getElementById("worldmap"); if (wm && board) { var counts = {}; board.forEach(function (b) { counts[b.t.id] = b.n7; }); wm.innerHTML = worldMap(ctx.conflicts, counts, wm.clientWidth); }
+      var wm = document.getElementById("worldmap"); if (wm && board) { var counts = {}; board.forEach(function (b) { counts[b.t.id] = b.n7; }); wm.innerHTML = worldMap(ctx.conflicts, counts, wm.clientWidth, ctx.land); }
       var fc = document.getElementById("fchart"); if (fc && ctx._fser) { var fm = ctx._fmeta || {}; fc.innerHTML = lineChart(ctx._fser, { W: fc.clientWidth, days: 400, dec: fm.decimals != null ? fm.decimals : 0, zero: true, label: fm.label || "" }); }
       var fb = document.getElementById("fbars"); if (fb && E.world && E.world.feature && E.world.feature.bars) fb.innerHTML = vbars(E.world.feature.bars.rows, { W: fb.clientWidth, zero: true, label: E.world.feature.bars.label || "" });
       var fg = document.getElementById("fgeo"); if (fg && ctx._geo) fg.innerHTML = geoSchematic(ctx._geo, fg.clientWidth);
@@ -1229,10 +1237,10 @@
     opt("data/incidents.json"), opt("data/bins.json"), opt("data/threads.json"), opt("data/horizon.json"),
     opt("data/fx.json"), opt("data/series.json"), opt("data/canes.json"),
     opt("data/conflicts.json"), opt("data/world-series.json"), opt("data/calendar.json"), opt("data/deadlines.json"),
-    opt("data/congress.json"), opt("data/exercises.json"), opt("data/releases.json"), opt("data/events.json"), opt("data/idioms.json"), opt("data/ski.json"), opt("data/search-index.json")
+    opt("data/congress.json"), opt("data/exercises.json"), opt("data/releases.json"), opt("data/events.json"), opt("data/idioms.json"), opt("data/ski.json"), opt("data/search-index.json"), opt("data/land.json")
   ]).then(function (r) {
     ctx.fetchedAt = Date.now();
-    ctx.congress = r[12] && r[12].items; ctx.congressWatch = r[12] && r[12].watch; ctx.congressTiers = r[12] && r[12].tiers; ctx.exercises = r[13] && r[13].exercises; ctx.releases = r[14]; ctx.events = r[15] && r[15].events; ctx.idioms = r[16] && r[16].idioms; ctx.ski = r[17]; ctx.searchIndex = r[18];
+    ctx.congress = r[12] && r[12].items; ctx.congressWatch = r[12] && r[12].watch; ctx.congressTiers = r[12] && r[12].tiers; ctx.exercises = r[13] && r[13].exercises; ctx.releases = r[14]; ctx.events = r[15] && r[15].events; ctx.idioms = r[16] && r[16].idioms; ctx.ski = r[17]; ctx.searchIndex = r[18]; ctx.land = r[19] && r[19].rings;
     ctx.index = r[0]; ctx.incidents = r[1] && r[1].incidents; ctx.attrLog = r[1] && r[1].attrLog; ctx.bins = r[2];
     ctx.threads = r[3] && r[3].threads; ctx.horizon = r[4] && r[4].events;
     ctx.fx = r[5] && r[5].series && r[5].series.length ? r[5] : null; ctx.series = r[6]; ctx.canes = r[7];
