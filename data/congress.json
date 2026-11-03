@@ -1,0 +1,97 @@
+{
+ "note": "Congress tracker for the Profession part, three lanes in one list. kind = bill (stages introduced, committee, house, senate, conference, enacted; status 'stalled' or 'vetoed' greys the pipeline), budget (stages request, house, senate, cr, enacted, plus a deadline date), nomination (stages vacant, announced, nominated, hearing, committee, floor, confirmed, or withdrawn). dates holds the date each stage was reached. The run adds rows for key defence bills, the appropriations cycle and defence posts (service secretaries and chiefs, Joint Staff, combatant and NATO commanders, OSD, ambassadors to NATO and the host nations), moves stage and dates as Congress acts, sets updated, copies cited source rows into src, and never deletes rows (the page hides enacted, confirmed and withdrawn rows after 30 days). Deadlines feed the Planner.",
+ "updated": "2026-11-03",
+ "items": [
+  {
+   "id": "ndaa-fy27",
+   "kind": "bill",
+   "title": "FY2027 National Defense Authorization Act",
+   "number": "H.R. 8800",
+   "stage": "house",
+   "dates": {
+    "house": "2026-07-22"
+   },
+   "status": "Senate cloture failed 50–46",
+   "next": "Senate floor time after the midterms; conference once both chambers pass a text.",
+   "committee": "HASC / SASC",
+   "added": "2026-11-02",
+   "src": [
+    [
+     24,
+     "NDAA FY2027 and Dec. 11 funding deadline",
+     "Buffalo Chronicle (thin source)",
+     "https://buffalochronicle.com/2026/10/24/ndaa-fy2027-lame-duck-dec-11-funding-deadline-niagara-falls/"
+    ]
+   ]
+  },
+  {
+   "id": "approps-fy27",
+   "kind": "budget",
+   "title": "FY2027 defense appropriations",
+   "number": "Continuing resolution",
+   "stage": "cr",
+   "dates": {
+    "cr": "2026-10-01"
+   },
+   "deadline": "2026-12-11",
+   "status": "New-start ban under the CR",
+   "next": "CR expires 11 Dec; a full-year bill or another CR is needed before then.",
+   "committee": "Appropriations",
+   "added": "2026-11-02",
+   "src": [
+    [
+     24,
+     "NDAA FY2027 and Dec. 11 funding deadline",
+     "Buffalo Chronicle (thin source)",
+     "https://buffalochronicle.com/2026/10/24/ndaa-fy2027-lame-duck-dec-11-funding-deadline-niagara-falls/"
+    ]
+   ]
+  },
+  {
+   "id": "secarmy-2026",
+   "post": "Secretary of the Army",
+   "org": "Army",
+   "nominee": null,
+   "stage": "vacant",
+   "dates": {
+    "vacant": "2026-09-01"
+   },
+   "committee": "SASC",
+   "next": "No nominee named; Adam Telle is acting.",
+   "added": "2026-11-02",
+   "src": [
+    [
+     48,
+     "In first public speech as acting Army secretary, Telle highlights acquisition",
+     "Stars and Stripes",
+     "https://www.stripes.com/branches/army/2026-10-12/acting-army-secretary-telle-ausa-conference-23134806.html"
+    ]
+   ],
+   "kind": "nomination",
+   "title": "Secretary of the Army"
+  },
+  {
+   "id": "csa-2026",
+   "post": "Chief of Staff of the Army",
+   "org": "Army",
+   "nominee": null,
+   "stage": "vacant",
+   "dates": {
+    "vacant": "2026-04-01"
+   },
+   "committee": "SASC",
+   "next": "No nominee as of 12 Oct; Gen. LaNeve is acting.",
+   "added": "2026-11-02",
+   "src": [
+    [
+     48,
+     "In first public speech as acting Army secretary, Telle highlights acquisition",
+     "Stars and Stripes",
+     "https://www.stripes.com/branches/army/2026-10-12/acting-army-secretary-telle-ausa-conference-23134806.html"
+    ]
+   ],
+   "kind": "nomination",
+   "title": "Chief of Staff of the Army"
+  }
+ ]
+}

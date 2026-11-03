@@ -505,3 +505,5 @@ tr.past td{opacity:.55}
 .chip.hs{text-transform:uppercase;letter-spacing:.06em;font-size:10px;margin-top:3px}
 .chip.hs.ok{color:var(--up)} .chip.hs.watch{color:var(--warn)} .chip.hs.act{color:var(--bg);background:var(--crit);border-color:var(--crit)}
 tr.h-act td{background:color-mix(in srgb,var(--crit) 8%,transparent)}
+.cg-lane{font-family:var(--f-display);font-weight:600;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:var(--s3) 0 var(--s2)}
+.chip.st.act{color:var(--bg);background:var(--crit);border-color:var(--crit)}

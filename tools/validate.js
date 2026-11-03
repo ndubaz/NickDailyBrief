@@ -7,7 +7,7 @@ function load(f) { try { return JSON.parse(fs.readFileSync(f, "utf8")); } catch 
 const index = load(D("index.json"));
 const edPath = process.argv[2] || (index && D("editions/" + index.latest + ".json"));
 const E = edPath && load(edPath);
-const ids = ["board","world","numbers","feature","hybrid","lead-1","lead-2","europe","euregio","threads","horizon","army","confirmations","dod","armynews","congress","career","nato","exercises","deftech","aperture","frontier","releases","sota","markets","fx","rates","nl","afnorth","offduty","dutch","snow","hockey","week","countdown","calendar","school","season"];
+const ids = ["board","world","numbers","feature","hybrid","lead-1","lead-2","europe","euregio","threads","horizon","army","congresstracker","dod","armynews","congress","career","nato","exercises","deftech","aperture","frontier","releases","sota","markets","fx","rates","nl","afnorth","offduty","dutch","snow","hockey","week","countdown","calendar","school","season"];
 const judge = /\b(likely|probably|unlikely|suggests|signals that|we assess|means that|so what|could lead to|is expected to)\b/i;
 function walk(o, fn, p) { p = p || ""; if (typeof o === "string") fn(o, p); else if (Array.isArray(o)) o.forEach((v, i) => walk(v, fn, p + "[" + i + "]")); else if (o && typeof o === "object") Object.keys(o).forEach((k) => walk(o[k], fn, p + "." + k)); }
 if (E) {
@@ -30,7 +30,7 @@ if (E) {
   if (E.world && E.world.feature && E.world.feature.rota) { const d = new Date(E.date + "T12:00:00"); const wd = ["sun","mon","tue","wed","thu","fri","sat"][d.getDay()]; if (E.world.feature.rota !== wd) errors.push("world.feature.rota " + E.world.feature.rota + " does not match weekday " + wd); }
 }
 /* standing files */
-const files = { "conflicts.json": "theatres", "threads.json": "threads", "horizon.json": "events", "incidents.json": "incidents", "exercises.json": "exercises", "events.json": "events", "idioms.json": "idioms", "confirmations.json": "nominations", "releases.json": "releases" };
+const files = { "conflicts.json": "theatres", "threads.json": "threads", "horizon.json": "events", "incidents.json": "incidents", "exercises.json": "exercises", "events.json": "events", "idioms.json": "idioms", "congress.json": "items", "releases.json": "releases" };
 Object.keys(files).forEach((f) => { const j = load(D(f)); if (!j) return; if (!Array.isArray(j[files[f]])) errors.push(f + ": missing array " + files[f]); });
 const fx = load(D("fx.json")); if (fx && fx.series) { let prev = ""; fx.series.forEach((p) => { if (p[0] <= prev) errors.push("fx.json not ascending at " + p[0]); prev = p[0]; if (!(p[1] > 0.8 && p[1] < 1.7)) errors.push("fx.json value out of range at " + p[0]); }); }
 const ser = load(D("series.json")); if (ser) Object.keys(ser).filter((k) => k[0] !== "_").forEach((k) => { if (ser[k].length > 30) warns.push("series.json " + k + " has " + ser[k].length + " rows (keep 30)"); });

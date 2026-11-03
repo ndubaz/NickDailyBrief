@@ -1,6 +1,6 @@
 /* Nick's Daily Readbook v5.0 renderer.
    Reads data/index.json, then data/editions/<date>.json, plus the standing files:
-   incidents, bins, threads, horizon, fx, series, canes, conflicts, world-series, calendar, deadlines, confirmations, exercises, releases, events, idioms, ski, search-index.
+   incidents, bins, threads, horizon, fx, series, canes, conflicts, world-series, calendar, deadlines, congress, exercises, releases, events, idioms, ski, search-index.
    All content lives in the JSON files; this file only draws it. Editions in the 2.5 and 3.0 formats still render.
    Everything renders expanded; nothing is folded by default. */
 (function () {
@@ -434,6 +434,7 @@
     ((ctx.deadlines && ctx.deadlines.items) || []).forEach(function (d) { ev.push({ date: d.date, cat: "deadline", t: d.name, sub: d.note || d.cat || "", src: "deadlines" }); });
     (((E.army || {}).career || {}).dates || []).forEach(function (d) { ev.push({ date: d[0], cat: "pro", t: plain(d[1]), sub: "Career milestone", src: "edition" }); });
     (ctx.events || []).forEach(function (e) { if (e.from) ev.push({ date: e.from, end: e.to !== e.from ? e.to : undefined, cat: "out", t: e.t, sub: [e.town, e.drive != null ? "~" + e.drive + " min" : "", e.to !== e.from ? "to " + fmtShort(e.to) : ""].filter(Boolean).join(" · "), src: "events" }); });
+    (ctx.congress || []).forEach(function (c) { if (c.deadline) ev.push({ date: c.deadline, cat: "pro", t: (c.title || c.post) + ": deadline", sub: c.next ? plain(c.next) : "Congress", src: "congress" }); });
     (ctx.exercises || []).forEach(function (x) { if (x.from) ev.push({ date: x.from, end: x.to !== x.from ? x.to : undefined, cat: "ex", t: x.name, sub: [x.lead, x.where].filter(Boolean).join(" · "), src: "exercises" }); });
     var seen = {};
     return ev.filter(function (e) { if (!e.date || !/^\d{4}-\d{2}-\d{2}$/.test(e.date)) return false; var k = e.date + "|" + e.cat + "|" + e.t; if (seen[k]) return false; seen[k] = 1; return true; }).sort(function (a, b) { return a.date < b.date ? -1 : a.date > b.date ? 1 : 0; });
@@ -536,8 +537,8 @@
     var wsBad = wsRows.filter(function (r) { return r[2]; }).map(function (r) { return r[0] + (r[1] ? " (" + fmtShort(r[1]) + ")" : " (empty)"); });
     add("World series", wsBad.length >= wsRows.length ? "act" : wsBad.length ? "watch" : "ok", wsBad.length ? "not kept up: " + wsBad.join(", ") : wsRows.length + " series current");
     if (ctx.canes) fresh("Canes results", ctx.canes.updated || lastDate(ctx.canes.games, function (g) { return g.date; }), 4, 8, "last game logged");
-    var cfA = (ctx.confirmations || []).filter(function (c) { return c.stage !== "confirmed" && c.stage !== "withdrawn"; }), cfStale = cfA.filter(function (c) { var d = c.dates || {}, last = Object.keys(d).reduce(function (m, k) { return d[k] > m ? d[k] : m; }, c.updated || c.added || ""); return !last || daysBetween(last, TD) > 45; }).length;
-    add("Confirmation tracker", !(ctx.confirmations || []).length ? "watch" : cfStale > 2 ? "act" : cfStale ? "watch" : "ok", cfA.length + " open" + (cfStale ? ", " + cfStale + " untouched for 45 days" : ""));
+    var cgA = (ctx.congress || []).filter(function (c) { return !/^(enacted|confirmed|withdrawn|vetoed)$/.test(c.stage); }), cgStale = cgA.filter(function (c) { var d = c.dates || {}, last = [c.updated || "", c.added || ""].concat(Object.keys(d).map(function (k) { return d[k]; })).sort().pop(); return !last || daysBetween(last, TD) > 45; }).length, cgDl = cgA.filter(function (c) { return c.deadline && daysBetween(TD, c.deadline) >= 0 && daysBetween(TD, c.deadline) <= 14; }).length;
+    add("Congress tracker", !(ctx.congress || []).length ? "watch" : cgStale > 2 ? "act" : cgStale ? "watch" : "ok", cgA.length + " open" + (cgDl ? ", " + cgDl + " deadline" + (cgDl > 1 ? "s" : "") + " within 14 days" : "") + (cgStale ? ", " + cgStale + " untouched for 45 days" : ""));
     var exUp = (ctx.exercises || []).filter(function (x) { return x.to >= TD; }).length; add("Exercise calendar", exUp ? "ok" : "watch", exUp + " announced");
     var rel = ((ctx.releases || {}).releases || []).filter(function (r) { return daysBetween(r.date, TD) <= 45 && r.date <= TD; }).length, sota = (ctx.releases || {}).sota || {};
     add("Frontier log", rel ? (sota.asof && daysBetween(sota.asof, TD) <= 10 ? "ok" : "watch") : "act", rel + " releases in 45 days; state-of-the-art table " + (sota.asof ? "as of " + fmtShort(sota.asof) : "never written"));
@@ -744,14 +745,25 @@
       h += "</article>";
     }
     h += '<div class="ap-c"><div class="lbl">Depth rota</div><div class="rota three">' + PROT.map(function (r) { return '<div class="' + (DP && r[0] === DP.rota ? "on" : "") + '"><b>' + r[1] + "</b>" + r[2] + "</div>"; }).join("") + "</div></div>";
-    var STG = ["vacant","announced","nominated","hearing","committee","floor","confirmed"], STGL = { vacant: "Vacant", announced: "Announced", nominated: "Nominated", hearing: "Hearing", committee: "Committee", floor: "Floor", confirmed: "Confirmed", withdrawn: "Withdrawn" };
-    var CF = (ctx.confirmations || []).map(function (c) { var d = c.dates || {}, last = Object.keys(d).reduce(function (m, k) { return d[k] > m ? d[k] : m; }, ""); return { c: c, last: last, badge: c.added === TD ? "NEW" : c.updated === TD ? "UPDATED" : "" }; }).filter(function (x) { return !((x.c.stage === "confirmed" && daysBetween(x.last, TD) > 30) || (x.c.stage === "withdrawn" && daysBetween(x.last, TD) > 14)); }).sort(function (a, b) { var ac = a.c.stage === "confirmed" || a.c.stage === "withdrawn", bc = b.c.stage === "confirmed" || b.c.stage === "withdrawn"; if (ac !== bc) return ac ? 1 : -1; return a.last < b.last ? 1 : a.last > b.last ? -1 : 0; });
-    h += '<h3 id="confirmations">Senate confirmation tracker <span class="small">defence posts</span></h3>';
-    h += CF.length ? '<div class="fug">' + nq() + '<div class="cflist">' + CF.map(function (x) {
-      var c = x.c, idx = STG.indexOf(c.stage), d = c.dates || {};
-      var pipe = '<div class="pipe' + (c.stage === "withdrawn" ? " wd" : "") + '">' + STG.map(function (st, i) { var on = c.stage === "withdrawn" ? false : i <= idx, cur = st === c.stage; return '<span class="' + (on ? "on" : "") + (cur ? " cur" : "") + '" title="' + esc(STGL[st] + (d[st] ? " · " + fmtShort(d[st]) : "")) + '"><i></i><small>' + STGL[st] + "</small></span>"; }).join("") + "</div>";
-      return '<div class="cf ' + fu(x.badge) + '" id="cf-' + esc(c.id) + '"><div class="cf-top"><b>' + esc(c.post) + '</b><span class="chip st">' + esc(STGL[c.stage] || c.stage) + (x.last ? " · " + esc(fmtShort(x.last)) : "") + "</span>" + badge(x.badge) + '</div><div class="cf-who">' + (c.nominee ? esc(c.nominee) : '<span class="small">no nominee</span>') + (c.org ? ' <span class="small">· ' + esc(c.org) + "</span>" : "") + (c.committee ? ' <span class="small">· ' + esc(c.committee) + "</span>" : "") + (c.src && c.src.length ? '<sup class="r">' + c.src.map(function (z) { return citeLink(z[0], srcMap(c.src)); }).join("") + "</sup>" : "") + "</div>" + pipe + (c.next ? '<p class="small">' + rich(c.next, srcMap(c.src)) + "</p>" : "") + "</div>";
-    }).join("") + "</div></div>" : quiet("No defence nominations or vacancies tracked.");
+    var LANES = { bill: ["introduced","committee","house","senate","conference","enacted"], budget: ["request","house","senate","cr","enacted"], nomination: ["vacant","announced","nominated","hearing","committee","floor","confirmed"] };
+    var STGL = { introduced: "Introduced", committee: "Committee", house: "House", senate: "Senate", conference: "Conference", enacted: "Enacted", request: "Request", cr: "CR", vacant: "Vacant", announced: "Announced", nominated: "Nominated", hearing: "Hearing", floor: "Floor", confirmed: "Confirmed", withdrawn: "Withdrawn", stalled: "Stalled", vetoed: "Vetoed" };
+    var DONE = { enacted: 1, confirmed: 1, withdrawn: 1, vetoed: 1 };
+    var CG = (ctx.congress || []).map(function (c) { var d = c.dates || {}, last = Object.keys(d).reduce(function (m, k) { return d[k] > m ? d[k] : m; }, "") || c.updated || c.added || ""; return { c: c, last: last, badge: c.added === TD ? "NEW" : c.updated === TD ? "UPDATED" : "" }; }).filter(function (x) { return !(DONE[x.c.stage] && daysBetween(x.last, TD) > 30); });
+    function cgCard(x) {
+      var c = x.c, lane = LANES[c.kind] || LANES.bill, idx = lane.indexOf(c.stage), d = c.dates || {}, off = c.stage === "withdrawn" || c.stage === "vetoed" || c.stage === "stalled" || (c.status && /stalled|vetoed/i.test(c.status) && idx < 0);
+      var pipe = '<div class="pipe' + (off ? " wd" : "") + '" style="grid-template-columns:repeat(' + lane.length + ',1fr)">' + lane.map(function (st, i) { var on = !off && i <= idx, cur = st === c.stage; return '<span class="' + (on ? "on" : "") + (cur ? " cur" : "") + '" title="' + esc(STGL[st] + (d[st] ? " · " + fmtShort(d[st]) : "")) + '"><i></i><small>' + STGL[st] + "</small></span>"; }).join("") + "</div>";
+      var dl = c.deadline && c.deadline >= TD ? daysBetween(TD, c.deadline) : null;
+      return '<div class="cf ' + fu(x.badge) + '" id="cg-' + esc(c.id) + '"><div class="cf-top"><b>' + esc(c.title || c.post) + '</b><span class="chip st">' + esc(STGL[c.stage] || c.stage) + (x.last ? " · " + esc(fmtShort(x.last)) : "") + "</span>" + (dl != null ? '<span class="chip st' + (dl <= 14 ? " act" : "") + '">' + esc(fmtShort(c.deadline)) + " · " + (dl === 0 ? "today" : dl + " d") + "</span>" : "") + badge(x.badge) + '</div><div class="cf-who">' + (c.kind === "nomination" ? (c.nominee ? esc(c.nominee) : '<span class="small">no nominee</span>') : esc(c.number || "")) + (c.org ? ' <span class="small">· ' + esc(c.org) + "</span>" : "") + (c.committee ? ' <span class="small">· ' + esc(c.committee) + "</span>" : "") + (c.src && c.src.length ? '<sup class="r">' + c.src.map(function (z) { return citeLink(z[0], srcMap(c.src)); }).join("") + "</sup>" : "") + "</div>" + pipe + (c.status ? '<p class="small"><b>' + esc(c.status) + "</b></p>" : "") + (c.next ? '<p class="small">' + rich(c.next, srcMap(c.src)) + "</p>" : "") + "</div>";
+    }
+    h += '<h3 id="congresstracker">Congress tracker <span class="small">bills, budget, confirmations</span></h3>';
+    if (CG.length) {
+      h += '<div class="fug">' + nq();
+      [["bill", "Key defence bills"], ["budget", "Budget and appropriations"], ["nomination", "Confirmations"]].forEach(function (lane) {
+        var rows = CG.filter(function (x) { return (x.c.kind || "bill") === lane[0]; }).sort(function (a, b) { var ad = DONE[a.c.stage] ? 1 : 0, bd = DONE[b.c.stage] ? 1 : 0; if (ad !== bd) return ad - bd; return a.last < b.last ? 1 : a.last > b.last ? -1 : 0; });
+        h += '<div class="lbl cg-lane">' + lane[1] + "</div>" + (rows.length ? '<div class="cflist">' + rows.map(cgCard).join("") + "</div>" : quiet("Nothing tracked in this lane."));
+      });
+      h += "</div>";
+    } else h += quiet("Nothing tracked yet.");
     h += "</section>";
 
     h += '<section id="nato" class="pro"><h2>NATO &amp; European militaries</h2>' + items(NA.items, null, "Nothing new from the Alliance or the allied armies in the window.");
@@ -1197,10 +1209,10 @@
     opt("data/incidents.json"), opt("data/bins.json"), opt("data/threads.json"), opt("data/horizon.json"),
     opt("data/fx.json"), opt("data/series.json"), opt("data/canes.json"),
     opt("data/conflicts.json"), opt("data/world-series.json"), opt("data/calendar.json"), opt("data/deadlines.json"),
-    opt("data/confirmations.json"), opt("data/exercises.json"), opt("data/releases.json"), opt("data/events.json"), opt("data/idioms.json"), opt("data/ski.json"), opt("data/search-index.json")
+    opt("data/congress.json"), opt("data/exercises.json"), opt("data/releases.json"), opt("data/events.json"), opt("data/idioms.json"), opt("data/ski.json"), opt("data/search-index.json")
   ]).then(function (r) {
     ctx.fetchedAt = Date.now();
-    ctx.confirmations = r[12] && r[12].nominations; ctx.exercises = r[13] && r[13].exercises; ctx.releases = r[14]; ctx.events = r[15] && r[15].events; ctx.idioms = r[16] && r[16].idioms; ctx.ski = r[17]; ctx.searchIndex = r[18];
+    ctx.congress = r[12] && r[12].items; ctx.exercises = r[13] && r[13].exercises; ctx.releases = r[14]; ctx.events = r[15] && r[15].events; ctx.idioms = r[16] && r[16].idioms; ctx.ski = r[17]; ctx.searchIndex = r[18];
     ctx.index = r[0]; ctx.incidents = r[1] && r[1].incidents; ctx.attrLog = r[1] && r[1].attrLog; ctx.bins = r[2];
     ctx.threads = r[3] && r[3].threads; ctx.horizon = r[4] && r[4].events;
     ctx.fx = r[5] && r[5].series && r[5].series.length ? r[5] : null; ctx.series = r[6]; ctx.canes = r[7];
