@@ -1,6 +1,6 @@
 {
  "note": "Out and about: curated events within about 90 minutes by car (Maastricht, Aachen, Liège, Köln, Düsseldorf, Bonn, Eindhoven, Antwerp, Brussels, the Eifel and Ardennes). The run adds events with a source, prunes those that have passed, and sets updated when details change. cat = music|markets|museums|sport|kids|food|outdoors|festival. kid = suitable for children. drive = minutes from Hoensbroek, approximate. prio = true marks the few major events (big festivals, Sinterklaas arrivals, the carnival opening) that also appear in the Planner's This week; Christmas markets come from calendar.json.",
- "updated": "2026-11-03",
+ "updated": "2026-11-04",
  "events": [
   {
    "id": "born-to-play-bonnefanten-2026",
@@ -336,6 +336,28 @@
    ]
   },
   {
+   "id": "phantasialand-wintertraum-2026",
+   "t": "Phantasialand Wintertraum (winter season)",
+   "cat": "kids",
+   "from": "2026-11-14",
+   "to": "2027-01-24",
+   "town": "Brühl",
+   "venue": "Phantasialand, 11:00–20:00; closed 24–25 Dec and 1 Jan",
+   "cc": "DE",
+   "drive": 75,
+   "cost": "Dynamic pricing from about €28",
+   "kid": true,
+   "added": "2026-11-04",
+   "src": [
+    [
+     112,
+     "Phantasialand Wintertraum",
+     "Festivals in Deutschland",
+     "https://www.festivalsindeutschland.de/festival/phantasialand-wintertraum"
+    ]
+   ]
+  },
+  {
    "id": "sinterklaas-venlo-blerick-2026",
    "t": "Sinterklaas arrives in Blerick (12:45) and Venlo (15:30)",
    "cat": "kids",
@@ -492,6 +514,28 @@
    ]
   },
   {
+   "id": "koelner-weihnachtscircus-2026",
+   "t": "11th Kölner Weihnachtscircus",
+   "cat": "kids",
+   "from": "2026-11-27",
+   "to": "2027-01-03",
+   "town": "Köln",
+   "venue": "Circus tent, Köln-Mülheim",
+   "cc": "DE",
+   "drive": 70,
+   "cost": "From €24.90",
+   "kid": true,
+   "added": "2026-11-04",
+   "src": [
+    [
+     131,
+     "Kölner Weihnachtscircus",
+     "koeln.de",
+     "https://www.koeln.de/veranstaltungen/koelner-weihnachtscircus"
+    ]
+   ]
+  },
+  {
    "id": "liege-noel-2026",
    "t": "Village de Noël de Liège",
    "cat": "markets",
@@ -554,6 +598,28 @@
      "Christmas market Monschau",
      "Tourismus Kreis Düren",
      "https://www.tourismus.kreis-dueren.de/en/e-christmas-market-monschau-2"
+    ]
+   ]
+  },
+  {
+   "id": "schlossweihnacht-dyck-2026",
+   "t": "Schlossweihnacht at Schloss Dyck (Advent weekends)",
+   "cat": "markets",
+   "from": "2026-11-28",
+   "to": "2026-12-20",
+   "town": "Jüchen",
+   "venue": "Schloss Dyck, Sat–Sun 10:00–20:00 on the four Advent weekends",
+   "cc": "DE",
+   "drive": 60,
+   "cost": "Adults €18.50 online",
+   "kid": true,
+   "added": "2026-11-04",
+   "src": [
+    [
+     132,
+     "Schlossweihnacht Schloss Dyck, Jüchen",
+     "Festivals in Deutschland",
+     "https://www.festivalsindeutschland.de/festival/schlossweihnacht-schloss-dyck-juechen"
     ]
    ]
   },
@@ -642,6 +708,28 @@
      "Vandaag - Herman van Veen",
      "Theater aan het Vrijthof",
      "https://www.theateraanhetvrijthof.nl/voorstellingen/theaterconcert/vandaag-herman-van-veen/18-12-2026-20-00"
+    ]
+   ]
+  },
+  {
+   "id": "aachener-weihnachtscircus-2026",
+   "t": "10th Aachener Weihnachtscircus",
+   "cat": "kids",
+   "from": "2026-12-19",
+   "to": "2027-01-03",
+   "town": "Aachen",
+   "venue": "Bendplatz",
+   "cc": "DE",
+   "drive": 25,
+   "cost": "From €24.90",
+   "kid": true,
+   "added": "2026-11-04",
+   "src": [
+    [
+     113,
+     "10. Aachener Weihnachtscircus 2026: das Jubiläumsprogramm",
+     "MVP",
+     "https://www.mvp.de/aachen/veranstaltungen/10-aachener-weihnachtscircus-2026-das-jubilaeumsprogramm/"
     ]
    ]
   },

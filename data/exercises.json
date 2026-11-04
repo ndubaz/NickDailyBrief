@@ -1,6 +1,6 @@
 {
  "note": "NATO and allied exercise calendar. The run adds exercises with dates, lead, location and forces when announced, sets updated when dates change, and never deletes past ones (the page hides those older than 60 days). Feeds the Planner and the Horizon.",
- "updated": "2026-11-03",
+ "updated": "2026-11-04",
  "exercises": [
   {
    "id": "avenger-triad-26",
@@ -43,28 +43,41 @@
   },
   {
    "id": "koalicja-2026",
-   "name": "Koalicja (Multinational Force–Ukraine)",
+   "name": "Koalicja 26.2 (Multinational Force–Ukraine)",
    "from": "2026-11-09",
    "to": "2026-11-22",
    "lead": "France and the UK (MNF-U, operational HQ Paris); not NATO",
    "where": "Around Nowa Dęba, south-east Poland",
-   "forces": "About 2,800 troops from 10 countries (FR 1,100, UK 300; BE, EE, DE, LT, NL, PL, ES, SE); drones and counter-drone, no tanks",
+   "forces": "About 2,800 personnel from 11 nations (FR 1,100; UK 300 plus Typhoons and a Voyager; BE, EE, DE, LT, NL, PL, ES, SE; Türkiye runs mine clearance from Istanbul); drones and counter-drone, no tanks",
    "status": "planned",
    "added": "2026-11-03",
    "src": [
     [
      79,
-     "Thousands of troops from Europe to rehearse post-war Ukraine deployment in Poland",
-     "Euronews",
-     "https://euronews.com/2026/11/03/thousands-of-troops-from-europe-to-rehearse-post-war-ukraine-deployment-in-poland"
+     "UK to lead multinational military training exercise to prepare for peace in Ukraine",
+     "GOV.UK",
+     "https://www.gov.uk/government/news/uk-to-lead-multinational-military-training-exercise-to-prepare-for-peace-in-ukraine--2"
     ],
     [
      80,
      "European force to hold first Ukraine support exercise in Poland",
      "France 24",
      "https://www.france24.com/en/europe/20261103-european-force-to-hold-first-ukraine-support-exercise-in-poland"
+    ],
+    [
+     81,
+     "Nederland oefent met Coalition of the Willing",
+     "Defensie",
+     "https://www.defensie.nl/nieuws/20261103-nederland-oefent-met-coalition-of-the-willing"
+    ],
+    [
+     82,
+     "Sojusznicy wzmacniają przygotowania do pokoju w Ukrainie dużymi ćwiczeniami w Polsce",
+     "Polish Ministry of National Defence",
+     "https://www.gov.pl/web/obrona-narodowa/sojusznicy-wzmacniaja-przygotowania-do-pokoju-w-ukrainie-duzymi-cwiczeniami-w-polsce2"
     ]
-   ]
+   ],
+   "updated": "2026-11-04"
   },
   {
    "id": "combined-resolve-2026",

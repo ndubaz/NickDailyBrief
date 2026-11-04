@@ -42,6 +42,15 @@
    "source": "Ukrainian General Staff weekly tallies",
    "url": "",
    "decimals": 0
+  },
+  "ua-drones-month": {
+   "label": "Shahed-type drones launched at Ukraine per month",
+   "unit": "",
+   "cadence": "monthly",
+   "source": "Institute for Science and International Security, monthly analysis of Ukrainian Air Force reports (Table 1a, all Shahed-type drones including decoys)",
+   "url": "https://isis-online.org/isis-reports/monthly-analysis-of-russian-shahed-136-deployment-against-ukraine-updated",
+   "decimals": 0,
+   "note": "Rows dated the first of the month. September 2026 is the institute's reporting baseline (6,732); it estimates the full month at 7,400–7,700. October not yet published by the institute."
   }
  },
  "series": {
@@ -84,6 +93,52 @@
    ]
   ],
   "hormuz-transits": [],
-  "ua-strikes-week": []
+  "ua-strikes-week": [],
+  "ua-drones-month": [
+   [
+    "2025-11-01",
+    5447
+   ],
+   [
+    "2025-12-01",
+    5131
+   ],
+   [
+    "2026-01-01",
+    4442
+   ],
+   [
+    "2026-02-01",
+    5059
+   ],
+   [
+    "2026-03-01",
+    6462
+   ],
+   [
+    "2026-04-01",
+    6583
+   ],
+   [
+    "2026-05-01",
+    8161
+   ],
+   [
+    "2026-06-01",
+    5749
+   ],
+   [
+    "2026-07-01",
+    4981
+   ],
+   [
+    "2026-08-01",
+    5166
+   ],
+   [
+    "2026-09-01",
+    6732
+   ]
+  ]
  }
 }

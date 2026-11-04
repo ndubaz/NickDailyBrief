@@ -1,6 +1,6 @@
 {
  "note": "Frontier log: dated releases, published results and shipped capabilities in AI, chips, robotics and autonomy. One entry per release; the run appends and never edits. kind = model|chip|robot|autonomy|result|tool.",
- "updated": "2026-11-03",
+ "updated": "2026-11-04",
  "releases": [
   {
    "date": "2026-11-02",
@@ -65,6 +65,57 @@
      "SemiAnalysis unveils GDPx benchmark, and the best AI model scores 12%",
      "Crypto Briefing",
      "https://cryptobriefing.com/semianalysis-gdpx-ai-benchmark-frontier-models/"
+    ]
+   ]
+  },
+  {
+   "date": "2026-11-03",
+   "kind": "chip",
+   "t": "AMD ships MI450 and Helios; data-centre sales nearly double",
+   "lab": "AMD",
+   "n": "Q3 revenue $13.4 billion, data centre $8.5 billion (+97%); MI450 launched, Helios racks in use, ROCm 10 released.",
+   "src": [
+    [
+     92,
+     "AMD reports third quarter 2026 financial results",
+     "AMD",
+     "https://newsroom.amd.com/news/amd-reports-third-quarter-2026-earnings/"
+    ],
+    [
+     93,
+     "AMD Q3 earnings report 2026",
+     "CNBC",
+     "https://www.cnbc.com/2026/11/03/amd-amd-q3-earnings-report-2026-.html"
+    ]
+   ]
+  },
+  {
+   "date": "2026-11-03",
+   "kind": "tool",
+   "t": "Google DeepMind gives its Antigravity agent cheminformatics skills",
+   "lab": "Google DeepMind",
+   "n": "RDKit-based skills; the demo curated 568 compounds and benchmarked models across four readouts in about an hour.",
+   "src": [
+    [
+     94,
+     "Agentic cheminformatics with Google Antigravity",
+     "Google DeepMind",
+     "https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity/"
+    ]
+   ]
+  },
+  {
+   "date": "2026-11-03",
+   "kind": "autonomy",
+   "t": "Baidu launches Apollo World driving simulator",
+   "lab": "Baidu",
+   "n": "Up to 100,000 km of simulated driving a day; trains the Apollo Go robotaxi fleet.",
+   "src": [
+    [
+     95,
+     "China's Baidu launches AI model simulating road environment for robotaxis",
+     "Reuters via WTVB",
+     "https://wtvbam.com/2026/11/03/chinas-baidu-launches-ai-model-simulating-road-environment-for-robotaxis/"
     ]
    ]
   }

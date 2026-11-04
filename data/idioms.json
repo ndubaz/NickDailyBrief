@@ -1,6 +1,6 @@
 {
  "note": "Taal: the idiom bank. One featured idiom per day rotating nl, fr, it. The run appends one entry per day and never repeats a phrase. The page shows today's and a review line (yesterday, a week ago, a month ago).",
- "updated": "2026-11-03",
+ "updated": "2026-11-04",
  "idioms": [
   {
    "date": "2026-11-01",
@@ -31,6 +31,16 @@
    "example": "Domani hai l'esame? In bocca al lupo!",
    "register": "everyday, all of Italy",
    "note": "The reply is 'crepi (il lupo)', may the wolf die; never answer 'grazie'."
+  },
+  {
+   "date": "2026-11-04",
+   "lang": "nl",
+   "phrase": "water bij de wijn doen",
+   "literal": "to put water in the wine",
+   "meaning": "to compromise; to settle for less than you first asked",
+   "example": "Als het kabinet op 12 november een meerderheid wil, zal het water bij de wijn moeten doen.",
+   "register": "neutral; heard daily in politics and in meetings",
+   "note": "The standard phrase for coalition bargaining, so expect it all week around the tax-plan vote. A colleague who says 'we moeten allebei wat water bij de wijn doen' is offering a deal, not a lecture."
   }
  ]
 }

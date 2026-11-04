@@ -1,6 +1,6 @@
 {
  "note": "The board: ten tracked theatres with a dated log of facts per theatre. The morning run appends one entry per theatre that had a reportable event (newest last) with the cited source rows copied into src, and never edits or deletes old entries. No status labels: the page derives activity from the dates. lat/lon place the marker on the schematic map. short = map label; lp = label position (above, below, left, right).",
- "updated": "2026-11-03",
+ "updated": "2026-11-04",
  "theatres": [
   {
    "id": "ru-ua",
@@ -67,6 +67,24 @@
        "https://www.npr.org/2026/11/03/g-s1-151439/russia-ukraine-war"
       ]
      ]
+    },
+    {
+     "date": "2026-11-04",
+     "t": "Witkoff confirmed US-mediated talks in Abu Dhabi on 10–11 Nov, with Medinsky leading Russia's delegation; Russian drones hit a substation serving the Khmelnytskyi nuclear plant. [12, 14]",
+     "src": [
+      [
+       12,
+       "Witkoff reveals location, date for new trilateral peace deal negotiations",
+       "Kyiv Independent",
+       "https://kyivindependent.com/witkoff-reveals-location-date-for-new-trilateral-peace-deal-negotiations/"
+      ],
+      [
+       14,
+       "Russia targets substation critical to stable operation of Khmelnytskyi NPP",
+       "Ukrinform",
+       "https://www.ukrinform.net/rubric-economy/4181119-russia-targets-substation-critical-to-stable-operation-of-khmelnytskyi-npp.html"
+      ]
+     ]
     }
    ],
    "short": "Ukraine",
@@ -119,6 +137,24 @@
        "https://cnbc.com/2026/11/02/oil-prices-fall-as-iran-us-pursue-diplomacy.html"
       ]
      ]
+    },
+    {
+     "date": "2026-11-04",
+     "t": "Qatari mediators await US and Iranian answers to a draft within 36 hours; India says an Indian seafarer was killed in an attack on a dhow near Limah, Oman. [19, 20]",
+     "src": [
+      [
+       19,
+       "Iran, US still far apart on deal to end war as Qatar pushes mediation",
+       "Reuters via TimesLIVE",
+       "https://www.timeslive.co.za/news/world/2026-11-03-iran-us-still-far-apart-on-deal-to-end-war-as-qatar-pushes-mediation/"
+      ],
+      [
+       20,
+       "Iran and the United States strike Qeshm Island in the Strait of Hormuz",
+       "Il Sole 24 Ore",
+       "https://en.ilsole24ore.com/art/iran-and-the-united-states-strike-qeshm-island-in-the-strait-of-hormuz-AJEnHl2B"
+      ]
+     ]
     }
    ],
    "short": "Iran",
@@ -145,6 +181,18 @@
        "Liveblog, 1–2 November 2026",
        "Times of Israel",
        "https://www.timesofisrael.com/liveblog-november-1-2026-2/"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-04",
+     "t": "Gaza's health ministry counts 1,593 killed since the October 2025 ceasefire after five deaths on 2 Nov; Israel asked Lebanon, through the US, to deploy its army and set up checkpoints in Hezbollah areas. [127]",
+     "src": [
+      [
+       127,
+       "Israeli forces kill four in Gaza as fifth Palestinian dies of wounds",
+       "Al Jazeera",
+       "https://aljazeera.com/news/2026/11/3/israeli-forces-kill-four-in-gaza-as-fifth-palestinian-dies-of-wounds"
       ]
      ]
     }
@@ -179,6 +227,18 @@
        "Liveblog, 3 November 2026",
        "Times of Israel",
        "https://www.timesofisrael.com/liveblog-november-03-2026/"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-04",
+     "t": "The Houthis say Saudi strikes killed 17 people over two days; the Saudi-led coalition says it destroyed a drone over Mecca. [128]",
+     "src": [
+      [
+       128,
+       "US-Israel-Iran war live updates, 3 November 2026",
+       "Khaleej Times",
+       "https://www.khaleejtimes.com/world/mena/us-israel-iran-saudi-arabia-yemen-war-live-updates-november-3-2026"
       ]
      ]
     }
@@ -227,6 +287,18 @@
        "https://focustaiwan.tw/politics/202611030015"
       ]
      ]
+    },
+    {
+     "date": "2026-11-04",
+     "t": "Taiwan's defence ministry logged 49 Chinese military aircraft sorties, six warships and six government vessels in the 24 hours to 06:00 on 4 Nov. [28]",
+     "src": [
+      [
+       28,
+       "Heightened Chinese activity detected",
+       "Taipei Times",
+       "https://www.taipeitimes.com/News/taiwan/archives/2026/11/04/2003867122"
+      ]
+     ]
     }
    ],
    "short": "Taiwan",
@@ -253,6 +325,18 @@
        "North Korea test-fires strategic cruise missiles: KCNA",
        "AFP via Manila Times",
        "https://www.manilatimes.net/2026/11/03/world/asia-oceania/north-korea-test-fires-strategic-cruise-missiles-kcna/2460150"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-04",
+     "t": "South Korea's Joint Chiefs of Staff say North Korea fired several missiles from the Sondok area toward the East Sea on 4 Nov, the fourth launch event in a week. [26]",
+     "src": [
+      [
+       26,
+       "North Korea fires 'several missiles' east into the sea",
+       "NK News",
+       "https://www.nknews.org/2026/11/north-korea-fires-unidentified-projectile-east-toward-sea-south-korean-military/"
       ]
      ]
     }
@@ -295,6 +379,18 @@
        "https://www.aljazeera.com/news/2026/11/2/sudan-files-complaints-against-ethiopia-with-un-over-deadly-drone-spree"
       ]
      ]
+    },
+    {
+     "date": "2026-11-04",
+     "t": "Sudan's government says 187 drones in 70 attacks came from Ethiopian territory from February to October, killing 176 soldiers and 484 civilians; Ethiopia denies it. [29]",
+     "src": [
+      [
+       29,
+       "Deadly RSF drone strikes reveal deep divisions between Sudan and Ethiopia",
+       "Al Jazeera",
+       "https://www.aljazeera.com/news/2026/11/3/deadly-rsf-drone-strikes-reveal-deep-divisions-between-sudan-and-ethiopia"
+      ]
+     ]
     }
    ],
    "short": "Sudan",
@@ -305,7 +401,20 @@
    "name": "Sahel",
    "lat": 14.0,
    "lon": 0.0,
-   "log": [],
+   "log": [
+    {
+     "date": "2026-11-04",
+     "t": "Algerian military personnel escorting fuel trucks reached Agadez, Niger, on the weekend of 1–2 Nov. [129]",
+     "src": [
+      [
+       129,
+       "Niger: Algerian military personnel have arrived in Agadez",
+       "Africanews",
+       "https://www.africanews.com/2026/11/02/niger-algerian-military-personnel-have-arrived-in-agadez-africanews-today/"
+      ]
+     ]
+    }
+   ],
    "short": "Sahel",
    "lp": "below"
   },
@@ -314,7 +423,26 @@
    "name": "Eastern DRC",
    "lat": -1.5,
    "lon": 29.0,
-   "log": [],
+   "log": [
+    {
+     "date": "2026-11-04",
+     "t": "MONUSCO's head met Joseph Kabila, leader of a rebel coalition that includes M23, in Goma on 3 Nov; more than 100,000 people marched for peace in Uvira on 4 Nov. [30, 31]",
+     "src": [
+      [
+       30,
+       "UN peacekeeping head meets leaders of rebel coalition in eastern DRC",
+       "AP via Africanews",
+       "https://www.africanews.com/2026/11/03/un-peacekeeping-head-meets-leaders-of-rebel-coalition-in-eastern-drc/"
+      ],
+      [
+       31,
+       "Plus de 100 000 personnes marchent à Uvira pour exiger la paix",
+       "Radio Okapi",
+       "https://www.radiookapi.net/2026/11/04/actualite/politique/plus-de-100-000-personnes-marchent-uvira-pour-exiger-la-paix-dans"
+      ]
+     ]
+    }
+   ],
    "short": "DRC",
    "lp": "right"
   },
@@ -323,7 +451,20 @@
    "name": "Venezuela and the Caribbean",
    "lat": 10.5,
    "lon": -66.0,
-   "log": [],
+   "log": [
+    {
+     "date": "2026-11-04",
+     "t": "Secretary of State Marco Rubio met Venezuelan Foreign Minister Oliver Blanco on 2 Nov; the State Department set out a “three-phase plan for Venezuela: stabilization, economic recovery and political reconciliation, and democratic transition.” [130]",
+     "src": [
+      [
+       130,
+       "US urges Venezuela to follow phased plan for democratic transition",
+       "Al Jazeera",
+       "https://www.aljazeera.com/news/2026/11/3/us-urges-venezuela-to-follow-phased-plan-for-democratic-transition"
+      ]
+     ]
+    }
+   ],
    "short": "Venezuela",
    "lp": "below"
   }

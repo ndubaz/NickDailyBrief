@@ -2,71 +2,23 @@
  "note": "Standing horizon of dated events. The morning run adds events (added = today), sets updated when it changes one, and removes events after they pass. Events without a firm date carry date as the first day of their window and dateText as the human text.",
  "events": [
   {
-   "id": "us-midterms-2026",
-   "date": "2026-11-03",
-   "dateText": "3 Nov",
-   "t": "US midterm elections",
-   "n": "Posture, NATO rhetoric, Iran timing",
-   "h": true,
-   "status": "confirmed",
-   "added": "2026-11-02",
-   "src": [
-    [
-     28,
-     "Early Edition: November 2, 2026",
-     "Just Security",
-     "https://www.justsecurity.org/162991/early-edition-november-2-2026/"
-    ]
-   ]
-  },
-  {
    "id": "brussels-ukraine-guarantees",
-   "date": "2026-11-03",
-   "dateText": "this week",
-   "t": "US–Europe–NATO talks on Ukraine guarantees, Brussels",
+   "date": "2026-11-04",
+   "dateText": "4 Nov",
+   "t": "Technical talks on Ukraine at the European Commission",
    "n": "France, Germany, UK, EU and NATO; post-war security architecture",
    "h": true,
-   "status": "reported",
-   "added": "2026-11-03",
-   "src": [
-    [
-     136,
-     "U.S. to mediate new Ukraine-Russia talks in Abu Dhabi next week",
-     "Xinhua",
-     "https://english.news.cn/20261103/caa9492cf0a74a6b97db0fe7ba3781fc/c.html"
-    ]
-   ]
-  },
-  {
-   "id": "pl-us-base-meeting",
-   "date": "2026-11-03",
-   "dateText": "3 Nov",
-   "t": "Polish national security meeting on a permanent US base",
-   "n": "Met at 15:00 behind closed doors; no outcome published by late afternoon. Sikorski says Washington decides by December.",
-   "h": true,
    "status": "confirmed",
    "added": "2026-11-03",
    "src": [
     [
-     4,
-     "Nawrocki says Poland faces constitutional crisis (Interia)",
-     "UA.NEWS",
-     "https://ua.news/en/world/prezident-navrotskii-zaiaviv-pro-konstitutsiinu-krizu-v-polshchi-interia"
-    ],
-    [
-     56,
-     "Sikorski criticizes invitation of Braun party representatives to NSC (RMF24)",
-     "UA.NEWS",
-     "https://ua.news/en/world/sikorskii-rozkritikuvav-zaproshennia-predstavnikiv-partiyi-brauna-do-rbn-rmf24"
-    ],
-    [
-     55,
-     "Poland calls security meeting on permanent US military base",
-     "Stars and Stripes",
-     "https://www.stripes.com/theaters/europe/2026-10-29/poland-new-american-military-base-23296978.html"
+     16,
+     "Ukraine's allies to coordinate peace efforts ahead of planned talks with Russia, US",
+     "Kyiv Independent",
+     "https://kyivindependent.com/ukraines-allies-to-coordinate-peace-efforts-ahead-of-planned-talks-with-russia-us/"
     ]
    ],
-   "updated": "2026-11-03"
+   "updated": "2026-11-04"
   },
   {
    "id": "tk-budget-debate",
@@ -132,6 +84,42 @@
      "FY27 HQDA Board Schedule",
      "Army Human Resources Command",
      "https://www.hrc.army.mil/content/FY27%20HQDA%20Board%20Schedule"
+    ]
+   ]
+  },
+  {
+   "id": "white-house-oleshky",
+   "date": "2026-11-05",
+   "dateText": "5 Nov, 11:00 ET",
+   "t": "White House event on an Oleshky ceasefire",
+   "n": "Melania Trump convenes Russian and Ukrainian representatives",
+   "h": false,
+   "status": "reported",
+   "added": "2026-11-04",
+   "src": [
+    [
+     17,
+     "Melania Trump to convene Russian and Ukrainian representatives at White House",
+     "Ukrinform",
+     "https://www.ukrinform.net/rubric-polytics/4180964-melania-trump-to-convene-russian-and-ukrainian-representatives-at-white-house.html"
+    ]
+   ]
+  },
+  {
+   "id": "qatar-iran-window",
+   "date": "2026-11-05",
+   "dateText": "about 5 Nov",
+   "t": "Qatar's 36-hour window for US and Iranian answers",
+   "n": "Draft text carried to Tehran on 2 Nov",
+   "h": false,
+   "status": "reported",
+   "added": "2026-11-04",
+   "src": [
+    [
+     19,
+     "Iran, US still far apart on deal to end war as Qatar pushes mediation",
+     "Reuters via TimesLIVE",
+     "https://www.timeslive.co.za/news/world/2026-11-03-iran-us-still-far-apart-on-deal-to-end-war-as-qatar-pushes-mediation/"
     ]
    ]
   },
@@ -329,6 +317,24 @@
    ]
   },
   {
+   "id": "cotw-berlin",
+   "date": "2026-11-19",
+   "dateText": "19 Nov",
+   "t": "Coalition of the Willing meets in Berlin",
+   "n": "Announced by Merz",
+   "h": false,
+   "status": "confirmed",
+   "added": "2026-11-04",
+   "src": [
+    [
+     18,
+     "Merz announces November 19 meeting of Coalition of the Willing in Berlin",
+     "Ukrinform",
+     "https://www.ukrinform.net/rubric-ato/4181024-merz-announces-november-19-meeting-of-coalition-of-the-willing-in-berlin.html"
+    ]
+   ]
+  },
+  {
    "id": "be-national-demo",
    "date": "2026-11-23",
    "dateText": "23 Nov",
@@ -379,6 +385,60 @@
      "Russia-Ukraine talks to take place in Abu Dhabi this month, US says",
      "The National",
      "https://www.thenationalnews.com/news/us/2026/11/02/russia-ukraine-witkoff-abu-dhabi/"
+    ]
+   ]
+  },
+  {
+   "id": "pl-us-base-decision",
+   "date": "2026-12-01",
+   "dateText": "December",
+   "t": "US decision on a permanent base in Poland",
+   "n": "Pentagon talks in mid-November first",
+   "h": false,
+   "status": "reported",
+   "added": "2026-11-04",
+   "src": [
+    [
+     51,
+     "Stała baza USA w Polsce głównym tematem obrad RBN",
+     "Defence24",
+     "https://defence24.pl/polityka-obronna/stala-baza-usa-w-polsce-glownym-tematem-obrad-rbn"
+    ]
+   ]
+  },
+  {
+   "id": "monusco-mandate",
+   "date": "2026-12-01",
+   "dateText": "December",
+   "t": "MONUSCO mandate expires",
+   "n": "UN Security Council renewal",
+   "h": false,
+   "status": "reported",
+   "added": "2026-11-04",
+   "src": [
+    [
+     30,
+     "UN peacekeeping head meets leaders of rebel coalition in eastern DRC",
+     "AP via Africanews",
+     "https://www.africanews.com/2026/11/03/un-peacekeeping-head-meets-leaders-of-rebel-coalition-in-eastern-drc/"
+    ]
+   ]
+  },
+  {
+   "id": "eerste-kamer-tax-plan",
+   "date": "2026-12-01",
+   "dateText": "December",
+   "t": "Eerste Kamer takes the 2027 tax plan",
+   "n": "After the 12 Nov Kamer vote",
+   "h": false,
+   "status": "reported",
+   "added": "2026-11-04",
+   "src": [
+    [
+     5,
+     "CU en 50Plus positief, andere bondjes willen doorpraten over belastingplan",
+     "NOS",
+     "https://nos.nl/artikel/2637885"
     ]
    ]
   },

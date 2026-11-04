@@ -186,7 +186,7 @@
    "id": "2026-11-01-lv-uas-kraslava",
    "date": "2026-11-01",
    "code": "UAS",
-   "attr": "A0",
+   "attr": "A2",
    "local": false,
    "country": "LV",
    "place": "Latvia: Krāslava and Ludza",
@@ -244,8 +244,108 @@
      "https://theins.press/en/news/298979"
     ]
    ]
+  },
+  {
+   "id": "2026-11-03-de-cyb-westpfalz",
+   "date": "2026-11-03",
+   "code": "CYB",
+   "attr": "A0",
+   "local": false,
+   "country": "DE",
+   "place": "Germany: Kaiserslautern and Kusel districts",
+   "lat": 49.44,
+   "lon": 7.77,
+   "summary": "Polizeipräsidium Westpfalz confirmed on 3 Nov that a food-processing company and a supermarket in the Kaiserslautern and Kusel districts were hit in the refrigeration-controller wave. The area hosts the US Kaiserslautern Military Community. No claim of responsibility.",
+   "edition": "2026-11-04",
+   "src": [
+    [
+     42,
+     "Hackerangriffe in Europa: Supermärkte müssen Lebensmittel entsorgen",
+     "WirtschaftsWoche (dpa)",
+     "https://www.wiwo.de/unternehmen/handel/hackerangriffe-in-europa-supermaerkte-muessen-lebensmittel-entsorgen/100266676.html"
+    ]
+   ]
+  },
+  {
+   "id": "2026-11-02-de-cyb-lilienthal",
+   "date": "2026-11-02",
+   "code": "CYB",
+   "attr": "A0",
+   "local": false,
+   "country": "DE",
+   "place": "Germany: Lilienthal near Bremen; Wetter-Volmarstein",
+   "lat": 53.14,
+   "lon": 8.91,
+   "summary": "dpa lists a supermarket in Lilienthal near Bremen (cooling set to about 30 °C; the owner puts losses above €360,000) and an AWO-run market in Wetter-Volmarstein among German stores hit in the night to 2 Nov. The attack reportedly went through the company that maintains the systems remotely.",
+   "edition": "2026-11-04",
+   "src": [
+    [
+     42,
+     "Hackerangriffe in Europa: Supermärkte müssen Lebensmittel entsorgen",
+     "WirtschaftsWoche (dpa)",
+     "https://www.wiwo.de/unternehmen/handel/hackerangriffe-in-europa-supermaerkte-muessen-lebensmittel-entsorgen/100266676.html"
+    ]
+   ]
+  },
+  {
+   "id": "2026-11-03-ie-cyb-supervalu",
+   "date": "2026-11-03",
+   "code": "CYB",
+   "attr": "A0",
+   "local": false,
+   "country": "IE",
+   "place": "Ireland: 13 SuperValu stores",
+   "lat": 53.41,
+   "lon": -8.24,
+   "summary": "SecurityWeek reports 13 SuperValu stores in Ireland hit in the refrigeration-controller wave, part of more than 100 stores in Europe; Estonia, Luxembourg and Finland also report cases. Store locations not published (marker at the country centre).",
+   "edition": "2026-11-04",
+   "src": [
+    [
+     43,
+     "Over 100 European stores hit as supermarket fridge attacks return",
+     "SecurityWeek",
+     "https://www.securityweek.com/over-100-european-stores-hit-as-supermarket-fridge-attacks-resume/"
+    ]
+   ]
+  },
+  {
+   "id": "2026-11-02-lv-uas-crash",
+   "date": "2026-11-02",
+   "code": "UAS",
+   "attr": "A1",
+   "local": false,
+   "country": "LV",
+   "place": "Latvia: eastern border area",
+   "lat": 56.55,
+   "lon": 27.72,
+   "summary": "Latvia's military believes a drone that entered on 2 Nov was Ukrainian; it crashed inside Latvia and has not been found. NATO air-policing jets were activated. Crash site not published (marker at Ludza).",
+   "edition": "2026-11-04",
+   "src": [
+    [
+     44,
+     "Latvia believes one of two drones that violated its airspace was Russian, the other Ukrainian",
+     "Reuters via 93.3 The Drive",
+     "https://www.933thedrive.com/2026/11/03/latvia-believes-one-of-two-drones-that-violated-its-airspace-was-russian-the-other-ukrainian/"
+    ]
+   ]
   }
  ],
- "attrLog": [],
+ "attrLog": [
+  {
+   "id": "2026-11-01-lv-uas-kraslava",
+   "date": "2026-11-04",
+   "from": "A0",
+   "to": "A2",
+   "t": "Latvia's military assesses the 1 Nov drone as a Russian Geran-type that flew back into Russia. [44]",
+   "src": [
+    [
+     44,
+     "Latvia believes one of two drones that violated its airspace was Russian, the other Ukrainian",
+     "Reuters via 93.3 The Drive",
+     "https://www.933thedrive.com/2026/11/03/latvia-believes-one-of-two-drones-that-violated-its-airspace-was-russian-the-other-ukrainian/"
+    ]
+   ]
+  }
+ ],
  "attrLogNote": "One entry per attribution change: {id (incident id), date, from (A0..A5), to (A0..A5), t (what moved), src (optional [[n,title,outlet,url]])}. The page lists the last 7 days under Attribution moves."
 }
