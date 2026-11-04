@@ -69,6 +69,7 @@
    ]
   },
   {
+   "id": "2026-11-03-amd-mi450-helios",
    "date": "2026-11-03",
    "kind": "chip",
    "t": "AMD ships MI450 and Helios; data-centre sales nearly double",
@@ -90,6 +91,7 @@
    ]
   },
   {
+   "id": "2026-11-03-deepmind-antigravity-cheminformatics",
    "date": "2026-11-03",
    "kind": "tool",
    "t": "Google DeepMind gives its Antigravity agent cheminformatics skills",
@@ -105,6 +107,7 @@
    ]
   },
   {
+   "id": "2026-11-03-baidu-apollo-world",
    "date": "2026-11-03",
    "kind": "autonomy",
    "t": "Baidu launches Apollo World driving simulator",
