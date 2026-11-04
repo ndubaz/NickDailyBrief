@@ -1,0 +1,5 @@
+{
+ "note": "Corrections log. The morning run appends an entry when an earlier item was wrong: {date, edition, section, t (what was wrong and what is right), src}. Never edit or delete entries. The page shows the last 30 days in the footer.",
+ "updated": "2026-11-04",
+ "items": []
+}

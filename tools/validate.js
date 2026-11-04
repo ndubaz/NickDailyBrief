@@ -11,7 +11,9 @@ const ids = ["board","world","numbers","feature","hybrid","lead-1","lead-2","eur
 const judge = /\b(likely|probably|unlikely|suggests|signals that|we assess|means that|so what|could lead to|is expected to)\b/i;
 function walk(o, fn, p) { p = p || ""; if (typeof o === "string") fn(o, p); else if (Array.isArray(o)) o.forEach((v, i) => walk(v, fn, p + "[" + i + "]")); else if (o && typeof o === "object") Object.keys(o).forEach((k) => walk(o[k], fn, p + "." + k)); }
 if (E) {
-  if (E.v !== "5.0") warns.push("edition v is " + E.v + ", expected 5.0");
+  if (E.v !== "6.0") warns.push("edition v is " + E.v + ", expected 6.0");
+  (E.sources || []).forEach((x) => { if (x[4] != null && !(x[4] >= 1 && x[4] <= 4)) errors.push("source [" + x[0] + "] tier must be 1 to 4"); });
+  if (!(E.sources || []).some((x) => x[4])) warns.push("no source tiers assigned");
   if (!/^\d{4}-\d{2}-\d{2}$/.test(E.date || "")) errors.push("edition date missing");
   if (index && index.latest !== E.date) warns.push("index.latest " + index.latest + " differs from edition date " + E.date);
   const src = new Set((E.sources || []).map((s) => s[0])), used = new Set();
@@ -29,6 +31,15 @@ if (E) {
   (E.money && E.money.cards || []).forEach((c) => { if (/USD\/EUR/i.test(c[0]) && (parseFloat(c[1]) > 1 || parseFloat(c[1]) < 0.5)) errors.push("USD/EUR card value " + c[1] + " is not euros per dollar"); });
   if (E.world && E.world.feature && E.world.feature.rota) { const d = new Date(E.date + "T12:00:00"); const wd = ["sun","mon","tue","wed","thu","fri","sat"][d.getDay()]; if (E.world.feature.rota !== wd) errors.push("world.feature.rota " + E.world.feature.rota + " does not match weekday " + wd); }
 }
+/* cross-links */
+if (E) {
+  const reg = {}; const grab = (f, key, idk) => { const j = load(D(f)); if (j && Array.isArray(j[key])) j[key].forEach((x) => { if (x[idk || "id"]) reg[f.split(".")[0].replace("conflicts", "theatre").replace("threads", "thread").replace("congress", "congress").replace("exercises", "exercise").replace("events", "event").replace("releases", "release") + ":" + x[idk || "id"]] = 1; }); };
+  grab("conflicts.json", "theatres"); grab("threads.json", "threads"); grab("congress.json", "items"); grab("exercises.json", "exercises"); grab("events.json", "events"); grab("releases.json", "releases");
+  const cj = load(D("congress.json")); if (cj && cj.watch) cj.watch.forEach((w) => { reg["post:" + w.id] = 1; });
+  const seenLinks = new Set();
+  (function walk(o, p) { if (Array.isArray(o)) { o.forEach((v, i) => walk(v, p + "[" + i + "]")); return; } if (o && typeof o === "object") { if (Array.isArray(o.links)) o.links.forEach((l) => { seenLinks.add(l); if (!reg[l]) errors.push("link " + l + " at " + p + " matches nothing in the standing files"); }); Object.keys(o).forEach((k) => { if (k !== "sources") walk(o[k], p + "." + k); }); } })(E, "");
+  if (!seenLinks.size) warns.push("no item carries links to the trackers");
+}
 /* standing files */
 const files = { "conflicts.json": "theatres", "threads.json": "threads", "horizon.json": "events", "incidents.json": "incidents", "exercises.json": "exercises", "events.json": "events", "idioms.json": "idioms", "congress.json": "items", "releases.json": "releases" };
 Object.keys(files).forEach((f) => { const j = load(D(f)); if (!j) return; if (!Array.isArray(j[files[f]])) errors.push(f + ": missing array " + files[f]); });
@@ -37,7 +48,7 @@ const ser = load(D("series.json")); if (ser) Object.keys(ser).filter((k) => k[0]
 const can = load(D("canes.json")); if (can && can.games) { let w = 0, l = 0, o = 0; can.games.forEach((g) => { if (g.res === "W") w++; else if (g.res === "L") l++; else o++; }); if (can.record !== w + "-" + l + "-" + o) errors.push("canes.json record " + can.record + " does not match games " + w + "-" + l + "-" + o); }
 const idi = load(D("idioms.json")); if (idi) { const seen = new Set(); idi.idioms.forEach((i) => { const k = i.lang + ":" + i.phrase.toLowerCase(); if (seen.has(k)) errors.push("idioms.json repeats " + i.phrase); seen.add(k); }); }
 const con = load(D("conflicts.json")); if (con) con.theatres.forEach((t) => (t.log || []).forEach((e) => { if (judge.test(e.t)) errors.push("assessment language in conflicts.json " + t.id + " " + e.date); (e.t.match(/\[(\d+)/g) || []).forEach((m) => { const n = +m.slice(1); if (!(e.src || []).some((s) => s[0] === n)) errors.push("conflicts.json " + t.id + " " + e.date + " cites [" + n + "] without a src row"); }); }));
-["world-series.json", "calendar.json", "deadlines.json", "ski.json", "search-index.json", "bins.json"].forEach((f) => load(D(f)));
+["world-series.json", "calendar.json", "deadlines.json", "ski.json", "search-index.json", "bins.json", "week.json", "corrections.json"].forEach((f) => load(D(f)));
 warns.forEach((w) => console.log("warn  " + w));
 errors.forEach((e) => console.log("ERROR " + e));
 console.log(errors.length ? errors.length + " error(s)" : "ok: " + (E ? path.basename(edPath) : "no edition") + " and standing files pass");

@@ -8,10 +8,11 @@
   var MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
   var DOW = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
   var CAT = { nl:["Netherlands","--c-nl"], be:["Belgium","--c-be"], de:["Germany","--c-de"], us:["US / AFNORTH","--c-us"], mkt:["Markets & events","--c-mkt"], pro:["Work & world","--c-pro"],
-              hockey:["Hurricanes","--p-hockey"], home:["Bins & home","--p-home"], school:["School breaks","--p-pro"], watch:["Horizon","--p-watch"], deadline:["Deadlines","--crit"], info:["Clocks","--muted"], out:["Out and about","--c-mkt"], ex:["Exercises","--p-pro"] };
+              hockey:["Hurricanes","--p-hockey"], home:["Bins & home","--p-home"], school:["School breaks","--p-pro"], watch:["Horizon","--p-watch"], deadline:["Deadlines","--crit"], info:["Clocks","--muted"], out:["Out and about","--c-mkt"], ex:["Exercises","--p-pro"], me:["Yours","--ink"] };
   var CODE_COLORS = { CYB:"--c-us", SAB:"--crit", UAS:"--c-mkt", UWI:"--c-pro", GNSS:"--c-be", INF:"--c-nl", ELX:"--c-nl", MIG:"--c-de", PRX:"--warn", AIR:"--c-de", SEA:"--c-pro", COE:"--c-be", KIN:"--crit" };
-  var PART_CLASSES = ["front","world","sec","watch","pro","frontier","money","home","hockey","plan"];
-  var PARTS = [["front","Front","#front"],["world","The World","#p-world"],["sec","Security","#p-sec"],["watch","Watchlist","#p-watch"],["pro","Profession","#p-pro"],["frontier","Frontier","#p-frontier"],["money","Money","#p-money"],["home","Home","#p-home"],["hockey","Hockey","#p-hockey"],["plan","Planner","#p-plan"]];
+  var PART_CLASSES = ["front","news","watch","reading","home"];
+  var PARTS = [["front","Today","#front"],["news","The news","#p-news"],["watch","The watch","#p-watch"],["reading","The reading","#p-reading"],["home","Home and planning","#p-home"]];
+  var TIERS = { news: ["world","hybrid","europe","euregio","army","nato","deftech","frontier","markets","rates","nl"], watch: ["board","numbers","fx","threads","horizon","congress-sec","exercises-sec","releases","sota","production"], reading: ["feature","depth","ttpsec","aperture"], home: ["afnorth","offduty","dutch","snow","hockey","week","weather","countdown","decisions","calendar","year","school","season"] };
   var EVCAT = { music:"Music", markets:"Markets", museums:"Museums", sport:"Sport", kids:"Kids", food:"Food", outdoors:"Outdoors", festival:"Festivals" };
   var SERIES_BY_LABEL = [["s&p 500","spx"],["nasdaq","ndx"],["aex","aex"],["brent","brent"],["dutch ttf","ttf"],["ttf","ttf"]];
   var HOME = { lat: 50.89, lon: 5.98, name: "Heerlen" };
@@ -75,6 +76,7 @@
     h += "<h4>" + rich(it.h) + badge(it.badge) + (opts.inlineTag && it.tag ? ' <span class="tag">' + esc(it.tag) + "</span>" : "") + "</h4>";
     if (!opts.inlineTag && (it.tag || it.conf)) h += "<div>" + (it.tag ? '<span class="tag">' + esc(it.tag) + "</span>" : "") + (it.conf ? '<span class="conf">confidence: ' + esc(it.conf) + "</span>" : "") + "</div>";
     if (it.body) h += "<p>" + rich(it.body) + "</p>";
+    h += linkChips(it.links);
     if (it.sw) h += '<p class="sw-line"><b class="l">So what</b>' + rich(it.sw) + "</p>";
     if (it.fy) h += '<p class="sw-line"><b class="l">For you</b>' + rich(it.fy) + "</p>";
     return h + "</div>";
@@ -82,7 +84,7 @@
   function items(list, opts, q) { return list && list.length ? '<div class="fug">' + nq() + list.map(function (i) { return item(i, opts); }).join("") + "</div>" : quiet(q); }
   function part(cls, n, title, desc, id) {
     var prev = PARTS[Math.max(0, PARTS.map(function (p) { return p[0]; }).indexOf(cls) - 1)];
-    return (cls !== "front" && cls !== "world" ? nextLink(prev[0]) : "") + '<div class="part ' + cls + '" id="' + id + '" data-part="' + esc(title) + '"><span class="pn">' + esc(n) + '</span><span class="pt">' + esc(title) + '</span>' + (desc ? '<span class="pd">' + esc(desc) + "</span>" : "") + "</div>";
+    return (cls !== "front" && cls !== "news" ? nextLink(prev[0]) : "") + '<div class="part ' + cls + '" id="' + id + '" data-part="' + esc(title) + '"><span class="pn">' + esc(n) + '</span><span class="pt">' + esc(title) + '</span>' + (desc ? '<span class="pd">' + esc(desc) + "</span>" : "") + "</div>";
   }
   function table(head, rows, cls) {
     var i = 0;
@@ -382,7 +384,7 @@
   function renderThreads(view) {
     if (!view.length) return quiet("No threads are open.");
     return '<div class="fug">' + nq() + view.map(function (v) {
-      var h = '<details class="thread ' + fu(v.badge) + '" id="thread-' + esc(v.t.id) + '" open><summary><span class="tname">' + esc(v.t.name) + '<span class="chip st ' + v.status + '">' + v.status + "</span>" + badge(v.badge) + '</span><span class="tlast"><span class="d">' + esc(fmtShort(v.last.date)) + "</span>" + rich(v.last.t, srcMap(v.last.src)) + "</span></summary>";
+      var h = '<details class="thread ' + fu(v.badge) + '" id="thread-' + esc(v.t.id) + '" open><summary><span class="tname">' + esc(v.t.name) + '<span class="chip st ' + v.status + '">' + v.status + "</span>" + badge(v.badge) + inToday("thread", v.t.id) + '</span><span class="tlast"><span class="d">' + esc(fmtShort(v.last.date)) + "</span>" + rich(v.last.t, srcMap(v.last.src)) + "</span></summary>";
       h += '<div class="tlog">' + (v.log.length > 1 ? logList(v.log.slice(0, -1), "sub") : "") + '<div class="meta">Opened ' + esc(v.t.opened ? fmtLong(v.t.opened) : "—") + " · " + v.log.length + (v.log.length === 1 ? " entry" : " entries") + (v.status === "quiet" ? " · quiet: nothing logged for " + v.age + " days" : "") + "</div></div></details>";
       return h;
     }).join("") + "</div>";
@@ -447,6 +449,7 @@
     (ctx.events || []).forEach(function (e) { if (e.from) ev.push({ date: e.from, end: e.to !== e.from ? e.to : undefined, cat: "out", t: e.t, sub: [e.town, e.drive != null ? "~" + e.drive + " min" : "", e.to !== e.from ? "to " + fmtShort(e.to) : ""].filter(Boolean).join(" · "), src: "events", prio: e.prio === true }); });
     (ctx.congress || []).forEach(function (c) { if (c.deadline) ev.push({ date: c.deadline, cat: "pro", t: (c.title || c.post) + ": deadline", sub: c.next ? plain(c.next) : "Congress", src: "congress" }); });
     (ctx.exercises || []).forEach(function (x) { if (x.from) ev.push({ date: x.from, end: x.to !== x.from ? x.to : undefined, cat: "ex", t: x.name, sub: [x.lead, x.where].filter(Boolean).join(" · "), src: "exercises" }); });
+    ((ctx.week && ctx.week.items) || []).forEach(function (w) { if (w.date) ev.push({ date: w.date, end: w.end && w.end !== w.date ? w.end : undefined, cat: "me", t: w.t, sub: w.note || "", src: "week", prio: true }); });
     var seen = {};
     return ev.filter(function (e) { if (!e.date || !/^\d{4}-\d{2}-\d{2}$/.test(e.date)) return false; var k = e.date + "|" + e.cat + "|" + e.t; if (seen[k]) return false; seen[k] = 1; return true; }).sort(function (a, b) { return a.date < b.date ? -1 : a.date > b.date ? 1 : 0; });
   }
@@ -475,7 +478,7 @@
   /* This week: only what Nick has to do or will plan around (holidays, AFNORTH days, bins, deadlines, career dates,
      major festivals marked prio, Christmas markets opening, exercise start and end, Canes games watchable live in CET) */
   function weekPrio(e) {
-    if (e.src === "bins" || e.src === "deadlines" || e.src === "career" || e.src === "exercises") return true;
+    if (e.src === "bins" || e.src === "deadlines" || e.src === "career" || e.src === "exercises" || e.src === "week") return true;
     if (e.src === "calendar") return e.cat !== "school" || e.sys === "afnorth";
     if (e.src === "canes") return !!e.live;
     if (e.src === "events" || e.src === "edition") return !!e.prio;
@@ -537,7 +540,7 @@
   }
 
   /* ---------- health checks: when to remodel ---------- */
-  var PAGE_V = "5.0";
+  var PAGE_V = "6.0";
   function health(E, ctx, TD, words) {
     var rows = [], realToday = key(new Date());
     function add(name, level, detail) { rows.push([name, level, detail]); }
@@ -587,12 +590,122 @@
     add("School calendar coverage", !covMin ? "act" : daysBetween(TD, covMin[1]) < 60 ? "act" : daysBetween(TD, covMin[1]) < 120 ? "watch" : "ok", covMin ? "shortest: " + covMin[0] + " to " + fmtShort(covMin[1]) + " " + covMin[1].slice(0, 4) : "no calendar");
     var binLast = lastDate((ctx.bins || {}).dates, function (b) { return b[0]; }); add("Bin calendar", !binLast ? "act" : daysBetween(TD, binLast) < 14 ? "act" : daysBetween(TD, binLast) < 45 ? "watch" : "ok", binLast ? "loaded to " + fmtShort(binLast) : "not loaded");
     var dl = ((ctx.deadlines || {}).items || []).length; add("Deadlines", dl ? "ok" : "watch", dl ? dl + " listed" : "empty: add yours to data/deadlines.json");
+    var tiered = (E.sources || []).filter(function (x) { return x[4]; }).length, t12 = (E.sources || []).filter(function (x) { return x[4] == 1 || x[4] == 2; }).length;
+    add("Source tiers", !tiered ? "act" : t12 / tiered < 0.25 ? "watch" : "ok", tiered ? Math.round(100 * t12 / tiered) + "% of " + tiered + " tiered sources are official, primary or wire" : "no tiers assigned: the task prompt is behind the page");
+    var xl = Object.keys(ctx._linked || {}).length; add("Cross-links", xl ? "ok" : "watch", xl ? xl + " items link to trackers" : "no item links to a tracker yet");
     var siToday = ctx.searchIndex && ctx.searchIndex.editions && ctx.searchIndex.editions.some(function (b) { return b.date === TD; }); add("Search index", siToday ? "ok" : "watch", siToday ? "has today's edition" : "today's edition not indexed yet");
     return rows;
   }
 
+
+  /* ---------- 6.0: cross-links, calendar files, since yesterday, contents, decisions, year ahead, review, corrections, about ---------- */
+  var LINK_KIND = { theatre: ["#th-", "Board"], thread: ["#thread-", "Thread"], congress: ["#cg-", "Congress"], post: ["#congresstracker", "Post"], exercise: ["#exercises-sec", "Exercise"], release: ["#releases", "Release"], event: ["#offduty", "Event"] };
+  function linkNames(ctx) {
+    var n = { theatre: {}, thread: {}, congress: {}, post: {}, exercise: {}, release: {}, event: {} };
+    (ctx.conflicts || []).forEach(function (t) { n.theatre[t.id] = t.short || t.name; });
+    (ctx.threads || []).forEach(function (t) { n.thread[t.id] = t.name; });
+    (ctx.congress || []).forEach(function (c) { n.congress[c.id] = c.title || c.post; });
+    (ctx.congressWatch || []).forEach(function (w) { n.post[w.id] = w.post; });
+    (ctx.exercises || []).forEach(function (x) { n.exercise[x.id] = x.name; });
+    (((ctx.releases || {}).releases) || []).forEach(function (r, i) { if (r.id) n.release[r.id] = r.t; });
+    (ctx.events || []).forEach(function (e) { n.event[e.id] = e.t; });
+    return n;
+  }
+  function linkChips(links) {
+    if (!links || !links.length || !ctx._names) return "";
+    var out = links.map(function (l) { var a = String(l).split(":"), k = a[0], id = a.slice(1).join(":"), kind = LINK_KIND[k]; if (!kind) return ""; var name = (ctx._names[k] || {})[id] || id; return '<a class="xl" href="' + kind[0] + (kind[0].slice(-1) === "-" ? esc(id) : "") + '" title="' + esc(kind[1] + ": " + name) + '">' + esc(name) + "</a>"; }).filter(Boolean);
+    return out.length ? '<div class="xlinks"><span class="small">updates</span>' + out.join("") + "</div>" : "";
+  }
+  function collectLinks(E) {
+    var set = {};
+    function walk(o) { if (Array.isArray(o)) { o.forEach(walk); return; } if (o && typeof o === "object") { if (Array.isArray(o.links)) o.links.forEach(function (l) { set[l] = 1; }); Object.keys(o).forEach(function (k) { if (k !== "sources" && k !== "links") walk(o[k]); }); } }
+    walk(E); return set;
+  }
+  function inToday(kind, id) { return ctx._linked && ctx._linked[kind + ":" + id] ? '<a class="chip st intoday" href="#p-news" title="An item in today\'s edition updates this">in today\'s edition</a>' : ""; }
+  /* .ics file as a data link: all-day when no time */
+  function icsLink(title, date, end, desc, utc) {
+    if (!date && !utc) return "";
+    function dt(k) { return String(k || date).replace(/-/g, ""); }
+    var uid = (title + date).replace(/[^a-z0-9]/gi, "").slice(0, 40) + "@readbook", lines = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Readbook//EN", "BEGIN:VEVENT", "UID:" + uid, "DTSTAMP:" + new Date().toISOString().replace(/[-:]/g, "").slice(0, 15) + "Z"];
+    if (utc) { var st = new Date(utc), en = new Date(st.getTime() + 3 * 36e5); lines.push("DTSTART:" + st.toISOString().replace(/[-:]/g, "").slice(0, 15) + "Z", "DTEND:" + en.toISOString().replace(/[-:]/g, "").slice(0, 15) + "Z"); }
+    else lines.push("DTSTART;VALUE=DATE:" + dt(date), "DTEND;VALUE=DATE:" + dt(addDays(end || date, 1)));
+    lines.push("SUMMARY:" + String(title).replace(/[\n,;]/g, " "), "DESCRIPTION:" + String(desc || "Nick's Daily Readbook").replace(/[\n,;]/g, " "), "END:VEVENT", "END:VCALENDAR");
+    return '<a class="cal-add" download="' + esc(String(title).replace(/[^a-z0-9]+/gi, "-").toLowerCase().slice(0, 40) + ".ics") + '" href="data:text/calendar;charset=utf-8,' + encodeURIComponent(lines.join("\r\n")) + '" title="Add to calendar">+ cal</a>';
+  }
+  function sinceYesterday(E, ctx, TD) {
+    var y = addDays(TD, -1), rows = [];
+    function row(label, items, href) { if (items.length) rows.push('<li><a href="' + href + '"><b>' + esc(label) + "</b></a> " + items.map(esc).join(" · ") + "</li>"); }
+    row("Board", (ctx.conflicts || []).filter(function (t) { return (t.log || []).some(function (e) { return e.date === TD || e.date === y; }); }).map(function (t) { return t.short || t.name; }), "#board");
+    row("Threads", (ctx.threads || []).filter(function (t) { return (t.log || []).some(function (e) { return e.date === TD || e.date === y; }); }).map(function (t) { return t.name; }), "#threads");
+    row("Horizon", (ctx.horizon || []).filter(function (e) { return e.added === TD || e.updated === TD; }).map(function (e) { return e.t; }), "#horizon");
+    row("Congress", (ctx.congress || []).filter(function (c) { return c.added === TD || c.updated === TD; }).map(function (c) { return c.title || c.post; }), "#congress-sec");
+    row("Posts", (ctx.congressWatch || []).filter(function (w) { return w.updated === TD; }).map(function (w) { return w.post; }), "#congress-sec");
+    row("Exercises", (ctx.exercises || []).filter(function (x) { return x.added === TD || x.updated === TD; }).map(function (x) { return x.name; }), "#exercises-sec");
+    row("Releases", (((ctx.releases || {}).releases) || []).filter(function (r) { return r.date === TD; }).map(function (r) { return r.t; }), "#releases");
+    row("Events", (ctx.events || []).filter(function (e) { return e.added === TD; }).map(function (e) { return e.t; }), "#offduty");
+    var inc = (ctx.incidents || []).filter(function (i) { return i.date === TD || i.date === y; }).length; if (inc) rows.push('<li><a href="#hybrid"><b>Incidents</b></a> ' + inc + " logged in the last two days</li>");
+    var mv = (ctx.attrLog || []).filter(function (m) { return m.date === TD; }).length; if (mv) rows.push('<li><a href="#hybrid"><b>Attribution</b></a> ' + mv + " move" + (mv > 1 ? "s" : "") + "</li>");
+    return '<h3 id="since">Since yesterday <span class="small">what moved in the memory</span></h3>' + (rows.length ? '<ul class="since">' + rows.join("") + "</ul>" : quiet("Nothing in the standing files moved since yesterday."));
+  }
+  function contentsBlock() {
+    var tiers = [["news", "The news", TIERS.news], ["watch", "The watch", TIERS.watch], ["reading", "The reading", TIERS.reading], ["home", "Home and planning", TIERS.home]];
+    var SN = { world: "World", hybrid: "Hybrid", europe: "Europe", euregio: "Euregio", army: "Defence & Army", nato: "NATO & allies", deftech: "Defence tech", frontier: "Frontier", markets: "Markets", rates: "Rates", nl: "Netherlands", board: "The board", numbers: "Numbers", fx: "USD/EUR", threads: "Threads", horizon: "Horizon", "congress-sec": "Congress", "exercises-sec": "Exercises", releases: "Releases", sota: "State of the art", production: "Production", feature: "World feature", depth: "Army in depth", ttpsec: "Week in war", aperture: "Aperture", afnorth: "AFNORTH", offduty: "Out and about", dutch: "Taal", snow: "Snow", hockey: "Canes", week: "This week", weather: "Weather", countdown: "Countdowns", decisions: "Decisions due", calendar: "Calendar", year: "Year ahead", school: "School year", season: "Season" };
+    return '<h3>In this edition</h3><ol class="toc">' + tiers.map(function (t, i) { return '<li data-tier="' + t[0] + '" class="' + t[0] + '"><a href="#p-' + t[0] + '"><b>' + (i + 1) + " · " + esc(t[1]) + '</b></a><span class="tm"></span><span class="secs">' + t[2].map(function (id) { return '<a href="#' + id + '">' + esc(SN[id] || id) + "</a>"; }).join(" · ") + "</span></li>"; }).join("") + "</ol>";
+  }
+  function decisionsDue(PEV, ctx, E, TD) {
+    var rows = [];
+    ((ctx.deadlines || {}).items || []).forEach(function (d) { rows.push({ date: d.date, t: d.name, sub: d.note || "", why: "your deadline" }); });
+    (ctx.events || []).forEach(function (e) { if (e.to >= TD && /book|ticket|register|reserve|sold out|time slot|sign up|reserv/i.test(e.cost || "")) rows.push({ date: e.from, end: e.to, t: e.t, sub: [e.town, e.cost].filter(Boolean).join(" · "), why: "booking" }); });
+    (((E.army || {}).career || {}).dates || []).forEach(function (d) { rows.push({ date: d[0], t: plain(d[1]), sub: "career milestone", why: "career" }); });
+    (ctx.congress || []).forEach(function (c) { if (c.deadline && c.deadline >= TD) rows.push({ date: c.deadline, t: (c.title || c.post) + " deadline", sub: plain(c.next || ""), why: "Congress" }); });
+    ((ctx.week && ctx.week.items) || []).forEach(function (w) { if (w.act) rows.push({ date: w.date, end: w.end, t: w.t, sub: w.note || "", why: "yours" }); });
+    rows = rows.filter(function (r) { return r.date >= TD && daysBetween(TD, r.date) <= 60; }).sort(function (a, b) { return a.date < b.date ? -1 : a.date > b.date ? 1 : 0; });
+    return rows.length ? table(["In", "What"], rows.map(function (r) { var n = daysBetween(TD, r.date); return '<tr class="' + (n <= 7 ? "soon" : "") + '"><td class="d">' + (n === 0 ? "today" : n + " d") + '<div class="small">' + esc(fmtShort(r.date)) + "</div></td><td><b>" + esc(r.t) + '</b> <span class="chip st quiet">' + esc(r.why) + "</span> " + icsLink(r.t, r.date, r.end, r.sub) + (r.sub ? '<div class="small">' + esc(r.sub) + "</div>" : "") + "</td></tr>"; }).join(""), "lbl1") : quiet("Nothing needs a decision in the next 60 days. Deadlines, bookings, career dates, Congress deadlines and your own week.json entries marked act appear here.");
+  }
+  function yearAhead(ctx, E, TD, today) {
+    var from = TD, to = addDays(TD, 365), rows = [], cal = ctx.calendar || {};
+    function seg(list) { return list.filter(function (g) { return g[1] >= from && g[0] <= to; }); }
+    Object.keys(cal.school || {}).forEach(function (k) { var sy = cal.school[k]; rows.push({ name: sy.name, color: sy.color, segs: seg(sy.segs || []) }); });
+    var ex = seg((ctx.exercises || []).map(function (x) { return [x.from, x.to, x.name]; })); if (ex.length) rows.push({ name: "Exercises", color: "ex", segs: ex });
+    var car = seg((((E.army || {}).career || {}).dates || []).map(function (d) { return [d[0], d[0], plain(d[1])]; })), cg = seg((ctx.congress || []).filter(function (c) { return c.deadline; }).map(function (c) { return [c.deadline, c.deadline, (c.title || c.post) + " deadline"]; }));
+    if (car.length || cg.length) rows.push({ name: "Career and Congress", sub: "dates", color: "pro", segs: car.concat(cg) });
+    var hz = seg((ctx.horizon || []).map(function (e) { return [e.date, e.date, e.t]; })); if (hz.length) rows.push({ name: "Horizon", sub: "dated events", color: "watch", segs: hz });
+    var mk = seg((cal.markets || []).map(function (m) { return [m[2], m[3], m[0]]; })), sk = ctx.ski && ctx.ski.season ? seg([[(today.getMonth() + 1 >= 12 ? today.getFullYear() : today.getFullYear()) + "-" + ctx.ski.season[0], (today.getMonth() + 1 >= 12 ? today.getFullYear() + 1 : today.getFullYear()) + "-" + ctx.ski.season[1], "Ski season"], [(today.getFullYear() + 1) + "-" + ctx.ski.season[0], (today.getFullYear() + 2) + "-" + ctx.ski.season[1], "Ski season"]]) : [];
+    if (mk.length || sk.length) rows.push({ name: "Seasons", sub: "markets, snow", color: "mkt", segs: mk.concat(sk) });
+    var me = seg(((ctx.week && ctx.week.items) || []).map(function (w) { return [w.date, w.end || w.date, w.t]; })); if (me.length) rows.push({ name: "Yours", sub: "week.json", color: "me", segs: me });
+    var ticks = []; for (var m = 0; m < 13; m++) { var t = new Date(today.getFullYear(), today.getMonth() + m + 1, 1); if (key(t) <= to) ticks.push(key(t)); }
+    /* leave windows: every school system off and no exercise under way */
+    var sets = Object.keys(cal.school || {}).map(function (k) { return cal.school[k].segs || []; }), win = [], cur = null, d = pd(from), end = pd(to);
+    for (; d <= end; d.setDate(d.getDate() + 1)) { var k = key(d), off = sets.length && sets.every(function (sg) { return sg.some(function (g) { return g[0] <= k && k <= g[1]; }); }) && !ex.some(function (g) { return g[0] <= k && k <= g[1]; }); if (off && !cur) cur = [k, k]; else if (off) cur[1] = k; else if (cur) { win.push(cur); cur = null; } }
+    if (cur) win.push(cur);
+    var h = gantt({ from: from, to: to, ticks: ticks, rows: rows }, today, { year: true, noXmas: true });
+    h += '<p class="small" style="margin-top:8px"><b>Leave windows</b> (every school system off, no exercise under way): ' + (win.length ? win.map(function (w) { return fmtShort(w[0]) + " – " + fmtShort(w[1]) + " " + w[1].slice(0, 4); }).join("; ") : "none in the next twelve months with the calendars loaded so far") + ".</p>";
+    return h;
+  }
+  function weekReview(E, ctx, TD, today) {
+    var WR = E.weekreview, sun = today.getDay() === 0;
+    if (!WR && !sun) return "";
+    var from = addDays(TD, -7);
+    function cnt(list, f) { return (list || []).filter(f).length; }
+    var tiles = [["Board entries", cnt([].concat.apply([], (ctx.conflicts || []).map(function (t) { return t.log || []; })), function (e) { return e.date > from && e.date <= TD; })], ["Thread entries", cnt([].concat.apply([], (ctx.threads || []).map(function (t) { return t.log || []; })), function (e) { return e.date > from && e.date <= TD; })], ["Congress moves", cnt(ctx.congress, function (c) { return (c.updated || c.added) > from; })], ["Releases", cnt((ctx.releases || {}).releases, function (r) { return r.date > from && r.date <= TD; })], ["Incidents", cnt(ctx.incidents, function (i) { return i.date > from && i.date <= TD; })], ["Idioms learned", cnt(ctx.idioms, function (i) { return i.date > from && i.date <= TD; })]];
+    var h = '<section id="weekreview" class="home"><h2>The week <span class="num">' + esc(fmtShort(addDays(TD, -6)) + " – " + fmtShort(TD)) + "</span></h2>";
+    h += '<div class="strip cds">' + tiles.map(function (t) { return '<div class="tile cd"><div class="lbl">' + esc(t[0]) + '</div><div class="val">' + t[1] + "</div><p>last 7 days</p></div>"; }).join("") + "</div>";
+    if (WR) { h += '<h3>' + esc(WR.title || "The week ahead") + "</h3>" + (WR.body || []).map(function (p) { return "<p>" + rich(p) + "</p>"; }).join(""); if (WR.rows && WR.rows.length) h += table(["Date", "Scheduled"], WR.rows.map(function (r) { return '<tr><td class="d">' + esc(fmtShort(r[0])) + "</td><td>" + rich(r[1]) + " " + icsLink(plain(r[1]), r[0]) + "</td></tr>"; }).join(""), "lbl1"); }
+    return h + "</section>";
+  }
+  function correctionsBlock(ctx, E, TD) {
+    var C = ((ctx.corrections || {}).items || []).filter(function (c) { return daysBetween(c.date, TD) <= 30 && c.date <= TD; }).sort(function (a, b) { return a.date < b.date ? 1 : -1; });
+    return '<h3 id="corrections">Corrections <span class="small">last 30 days</span></h3>' + (C.length ? '<ul class="clean small">' + C.map(function (c) { return "<li><b>" + esc(fmtShort(c.date)) + "</b> · " + (c.edition ? "Edition " + esc(c.edition) + ", " : "") + esc(c.section || "") + ": " + rich(c.t, srcMap(c.src)) + "</li>"; }).join("") + "</ul>" : quiet("No corrections in the last 30 days."));
+  }
+  function aboutBlock(E, TD) {
+    var src = E.sources || [], tiers = [0, 0, 0, 0, 0]; src.forEach(function (x) { var t = +x[4]; tiers[t >= 1 && t <= 4 ? t : 0]++; });
+    var tiered = tiers[1] + tiers[2] + tiers[3] + tiers[4], share = tiered ? Math.round(100 * (tiers[1] + tiers[2]) / tiered) : null;
+    return '<h3 id="about">About this edition</h3><p class="small">Format ' + esc(E.v || "?") + " · " + src.length + " sources" + (tiered ? " · " + tiers[1] + " official or primary, " + tiers[2] + " wire or document, " + tiers[3] + " outlet, " + tiers[4] + " other (" + share + "% tier one or two)" : " · source tiers not yet assigned") + ' · <span id="aboutwords"></span>. Open sources only; the morning run writes the data files and the page draws them. Checks run by <code>tools/validate.js</code> before every commit.</p>';
+  }
+
   /* ---------- main render ---------- */
   function render(E, ctx) {
+    ctx._names = linkNames(ctx); ctx._linked = collectLinks(E);
     var today = pd(E.date), TD = E.date, h = "";
     var T = E.today || {};
     var FX = ctx.fx && ctx.fx.series ? fxStats(ctx.fx.series, TD) : null;
@@ -611,14 +724,14 @@
     h += '<header class="mast"><div class="eyebrow">' + esc(E.place || "Hoensbroek · Parkstad Limburg") + "</div><h1>Nick's Daily Readbook</h1>";
     h += '<div class="date">' + esc(E.weekday + " " + today.getDate() + " " + MON[today.getMonth()] + " " + today.getFullYear()) + "</div>";
     h += '<div class="mast-meta"><span><b>Edition ' + esc(E.edition) + "</b></span><span>Look-back " + esc(E.lookback) + '</span><span id="readtime"></span></div>';
-    h += '<div class="rule" aria-hidden="true">' + ["--p-world","--p-sec","--p-watch","--p-pro","--p-frontier","--p-money","--p-home","--p-hockey"].map(function (c) { return '<i style="background:var(' + c + ')"></i>'; }).join("") + "</div>";
+    h += '<div class="rule" aria-hidden="true">' + ["--ink","--p-news","--p-watch","--p-reading","--p-home"].map(function (c) { return '<i style="background:var(' + c + ')"></i>'; }).join("") + "</div>";
     h += '<div class="status"><span id="status"></span><span class="theme" role="group" aria-label="Theme"><button type="button" data-theme="auto">Auto</button><button type="button" data-theme="light">Light</button><button type="button" data-theme="dark">Dark</button></span></div>';
     if (E.note) h += '<p class="note">' + rich(E.note) + "</p>";
     h += "</header>";
 
     /* slim header */
     h += '<div class="slim" id="slim"><div class="slim-row"><span class="cur" id="cur">Front</span>' +
-      PARTS.map(function (p) { return '<a class="' + p[0] + '" data-p="' + p[0] + '" href="' + p[2] + '">' + esc(p[0] === "world" ? "World" : p[1]) + "</a>"; }).join("") + '<a href="#sources">Sources</a>' +
+      PARTS.map(function (p) { return '<a class="' + p[0] + '" data-p="' + p[0] + '" href="' + p[2] + '">' + esc(p[0] === "home" ? "Home" : p[0] === "front" ? "Today" : p[1].replace("The ", "")) + "</a>"; }).join("") + '<a href="#sources">Sources</a>' +
       '<button type="button" class="tg" id="newonly" aria-pressed="false" title="Show only items with a NEW or UPDATED badge">New only</button>' +
       '</div><div class="prog"><i id="prog"></i></div></div>';
 
@@ -643,65 +756,25 @@
       T.items.forEach(function (t) { h += '<div><span class="k" style="--kc:' + catColor(t.cat) + '">' + esc(t.k) + "</span><p>" + rich(t.t) + "</p></div>"; });
       h += "</div>";
     }
+    h += sinceYesterday(E, ctx, TD);
+    h += contentsBlock();
     h += "</section>";
 
-    /* ===== Part 1 · The World ===== */
-    h += part("world", "Part 1", "The World", "Facts and summaries only: the board, overnight developments, the numbers and the day's feature.", "p-world");
-    h += '<section id="board" class="world"><h2>The board <span class="num">events logged, not a measure of intensity</span></h2>';
-    if (board) {
-      h += '<div class="panel"><div class="lbl">Ten theatres · filled marker = events logged in 7 days, sized by count</div><div class="chart" id="worldmap" style="min-height:150px"></div></div>';
-      h += '<div class="fug board">' + nq() + board.map(function (b) {
-        var hd = '<details class="thread brow ' + fu(b.badge) + '" id="th-' + esc(b.t.id) + '" open><summary><span class="tname">' + esc(b.t.name) + act4(b.weeks) + badge(b.badge) + "</span>";
-        hd += b.last ? '<span class="tlast"><span class="d">' + esc(fmtShort(b.last.date)) + "</span>" + rich(b.last.t, srcMap(b.last.src)) + "</span>" : '<span class="tlast small">No events logged yet.</span>';
-        hd += "</summary>";
-        hd += '<div class="tlog">' + (b.log.length > 1 ? logList(b.log.slice(0, -1), "sub") : "") + '<div class="meta">' + b.log.length + (b.log.length === 1 ? " entry" : " entries") + (b.last ? " · last " + esc(fmtLong(b.last.date)) + (b.age > 1 ? " (" + b.age + " days ago)" : "") : "") + "</div></div></details>";
-        return hd;
-      }).join("") + "</div>";
-    } else h += quiet("The board file is not loaded.");
-    h += "</section>";
-    h += '<section id="world" class="world"><h2>Developments <span class="num">beyond Europe</span></h2>';
+
+    /* ===== Part 1 · The news ===== */
+    h += part("news", "Part 1", "The news", "What happened: the world, security, defence, frontier technology, money and the Netherlands.", "p-news");
+    h += '<section id="world" class="news"><h2>Developments <span class="num">beyond Europe</span></h2>';
     if (WO.items && WO.items.length) {
       var rc = {}; WO.items.forEach(function (x) { rc[x.region] = (rc[x.region] || 0) + 1; });
       h += '<div class="regions">' + Object.keys(rc).map(function (r) { return "<span>" + esc(r) + "<b>" + rc[r] + "</b></span>"; }).join("") + '</div><div class="world fug">' + nq();
       WO.items.forEach(function (x) {
-        h += '<article class="wcard ' + fu(x.badge) + '"><div class="wtop"><span class="tag rg">' + esc(x.region) + "</span>" + (x.conf ? '<span class="conf">confidence: ' + esc(x.conf) + "</span>" : "") + badge(x.badge) + "</div><h4>" + rich(x.h) + "</h4><p>" + rich(x.body) + "</p>" + (x.next ? '<p class="sw-line"><b class="l">Next</b>' + rich(x.next) + "</p>" : "") + (x.sw ? '<p class="sw-line"><b class="l">So what</b>' + rich(x.sw) + "</p>" : "") + "</article>";
+        h += '<article class="wcard ' + fu(x.badge) + '"><div class="wtop"><span class="tag rg">' + esc(x.region) + "</span>" + (x.conf ? '<span class="conf">confidence: ' + esc(x.conf) + "</span>" : "") + badge(x.badge) + "</div><h4>" + rich(x.h) + "</h4><p>" + rich(x.body) + "</p>" + linkChips(x.links) + (x.next ? '<p class="sw-line"><b class="l">Next</b>' + rich(x.next) + "</p>" : "") + (x.sw ? '<p class="sw-line"><b class="l">So what</b>' + rich(x.sw) + "</p>" : "") + "</article>";
       });
       h += "</div>";
     } else h += quiet();
     h += "</section>";
-    /* by the numbers */
-    var keys = WO.numbers && WO.numbers.length ? WO.numbers : Object.keys(WS.series || {}).filter(function (k) { return (WS.series[k] || []).length; }).concat(["brent"]);
-    var tiles = [];
-    keys.forEach(function (k) {
-      var meta = (WS.meta || {})[k] || {}, ser = (WS.series || {})[k] || SER[k] || [];
-      ser = ser.filter(function (p) { return p[0] <= TD && typeof p[1] === "number"; });
-      if (!ser.length) return;
-      var last = ser[ser.length - 1], prev = ser.length > 1 ? ser[ser.length - 2] : null, dec = meta.decimals != null ? meta.decimals : (k === "brent" || k === "ttf" ? 2 : 0);
-      var label = meta.label || (k === "brent" ? "Brent, $ per barrel" : k === "ttf" ? "Dutch TTF gas, € per MWh" : k), unit = meta.unit || "";
-      tiles.push('<div class="tile nt"><div class="lbl">' + esc(label) + '</div><div class="val">' + num(last[1], dec) + (unit ? ' <small>' + esc(unit) + "</small>" : "") + "</div><p>" + (prev ? '<span class="chg ' + dir(last[1] - prev[1]) + '">' + signed(last[1] - prev[1], dec) + "</span> vs " + esc(fmtShort(prev[0])) + " · " : "") + "as of " + esc(fmtShort(last[0])) + (meta.cadence ? " · " + esc(meta.cadence) : "") + "</p>" + (ser.length > 1 ? '<div class="spark" data-ws="' + esc(k) + '"></div>' : "") + (meta.note ? '<p class="small">' + esc(meta.note) + "</p>" : "") + (meta.source ? '<p class="small">' + (meta.url ? '<a href="' + esc(meta.url) + '" target="_blank" rel="noopener">' + esc(meta.source) + "</a>" : esc(meta.source)) + "</p>" : "") + "</div>");
-      ctx._ws[k] = ser.slice(-30);
-    });
-    h += '<section id="numbers" class="world"><h2>By the numbers</h2>' + (tiles.length ? '<div class="strip nums">' + tiles.join("") + "</div>" : quiet("No series published yet.")) + "</section>";
-    /* feature */
-    var FE = WO.feature;
-    var WROT = [["mon","Mon","Theatre in numbers"],["tue","Tue","Actor on the record"],["wed","Wed","Trend line"],["thu","Thu","Chronology"],["fri","Fri","Week on the board"],["sat","Sat","Geography"],["sun","Sun","The record"]];
-    h += '<section id="feature" class="world"><h2>' + esc(FE && FE.kind ? FE.kind : "Feature") + "</h2>";
-    if (FE) {
-      h += '<article class="feature"><h3 class="ft">' + esc(FE.title) + "</h3>" + (FE.body || []).map(function (p) { return "<p>" + rich(p) + "</p>"; }).join("");
-      if (FE.table) h += table(FE.table.head, FE.table.rows.map(function (r) { return "<tr>" + r.map(function (c, j) { return "<td" + (j > 0 && /^[\d.,%$€+−\- ]+$/.test(String(c)) ? ' class="d"' : "") + ">" + rich(c) + "</td>"; }).join("") + "</tr>"; }).join(""), "lbl1");
-      if (FE.series) { var fs = ((WS.series || {})[FE.series] || SER[FE.series] || []).filter(function (p) { return p[0] <= TD; }); var fm = (WS.meta || {})[FE.series] || {}; if (fs.length > 1) { ctx._fser = fs; ctx._fmeta = fm; h += '<div class="panel"><div class="lbl">' + esc(fm.label || FE.series) + (fm.unit ? " · " + esc(fm.unit) : "") + '</div><div class="chart" id="fchart"></div>' + (fm.source ? '<p class="small">' + esc(fm.source) + "</p>" : "") + "</div>"; } }
-      if (FE.bars) h += '<div class="panel"><div class="lbl">' + esc(FE.bars.label || "") + '</div><div class="chart" id="fbars"></div></div>';
-      if (FE.timeline) h += tl(FE.timeline.map(function (r) { return [r[0], r[1], null, r[2]]; }));
-      if (FE.geo) { ctx._geo = FE.geo; h += '<div class="panel"><div class="lbl">' + esc(FE.geo.title || "Schematic") + '</div><div class="chart" id="fgeo"></div></div>'; }
-      if (FE.after) h += FE.after.map(function (p) { return "<p>" + rich(p) + "</p>"; }).join("");
-      h += "</article>";
-    } else h += quiet("No feature in this edition (format 3.0 and earlier).");
-    h += '<div class="ap-c"><div class="lbl">World feature rota</div><div class="rota">' + WROT.map(function (r) { return '<div class="' + (r[0] === (FE && FE.rota) ? "on " : "") + '"><b>' + r[1] + "</b>" + r[2] + "</div>"; }).join("") + "</div></div></section>";
-
-    /* ===== Part 2 · Security ===== */
     var HY = E.hybrid || {};
-    h += part("sec", "Part 2", "Security", "Hybrid activity, Europe and the Euregio.", "p-sec");
-    h += '<section id="hybrid" class="sec"><h2>Hybrid watch</h2><h3>Incident log</h3>';
+    h += '<section id="hybrid" class="news"><h2>Hybrid watch</h2><h3>Incident log</h3>';
     if (HY.incidents && HY.incidents.length) {
       h += '<div class="incidents fug">' + nq();
       HY.incidents.forEach(function (i) {
@@ -736,12 +809,108 @@
     }
     if (HY.note) h += '<p class="small" style="margin-top:8px">' + rich(HY.note) + "</p>";
     h += "</section>";
-    h += '<section id="europe" class="sec"><h2>Europe</h2>' + items(E.europe) + "</section>";
-    if (E.euregio && E.euregio.length) h += '<section id="euregio" class="sec"><h2>Local &amp; Euregio</h2>' + items(E.euregio) + "</section>";
+    h += '<section id="europe" class="news"><h2>Europe</h2>' + items(E.europe) + "</section>";
+    if (E.euregio && E.euregio.length) h += '<section id="euregio" class="news"><h2>Local &amp; Euregio</h2>' + items(E.euregio) + "</section>";
 
-    /* ===== Part 3 · Watchlist ===== */
+    var AR = E.army || {}, AP = E.aperture || {}, NA = E.nato || {}, DT = E.deftech || {};
+    h += '<section id="army" class="news"><h2>Defence &amp; Army</h2>';
+    if (AR.cards) h += '<div class="cards">' + AR.cards.map(function (c) { return '<div class="card"><div class="lbl">' + esc(c.l) + '</div><div class="val">' + esc(c.v) + "</div><p>" + rich(c.n) + "</p></div>"; }).join("") + "</div>";
+    var TOPICS = ["Autonomy", "Leaders' words", "SOF", "Strategy", "Posture", "Force design"], tcount = {};
+    [].concat(AR.dod || [], AR.news || AR.items || [], AR.congress || [], (AR.career || {}).items || [], DT.items || [], (AR.words || []).map(function (w) { return { tag: "Leaders' words" }; })).forEach(function (it) { String(it.tag || "").split(/\s*[,·]\s*/).forEach(function (t) { TOPICS.forEach(function (T) { if (t && t.toLowerCase() === T.toLowerCase()) tcount[T] = (tcount[T] || 0) + 1; }); }); });
+    h += '<div class="regions topics" title="Priority topics: items tagged today">' + TOPICS.map(function (T) { return '<span class="' + (tcount[T] ? "" : "zero") + '">' + esc(T) + "<b>" + (tcount[T] || 0) + "</b></span>"; }).join("") + "</div>";
+    var AG = [["dod", "Department of Defense", AR.dod, "Nothing new from the Pentagon in the window."], ["armynews", "Army and USAREUR-AF", AR.news || AR.items, "No Army news in the window."], ["congress", "Congress and policy", AR.congress, "No new legislation or policy in the window."]];
+    AG.forEach(function (g) {
+      h += '<h3 id="' + g[0] + '">' + g[1] + "</h3>" + items(g[2], null, g[3]);
+      if (g[0] === "dod" && AR.words && AR.words.length) h += '<h3 id="words">Senior leaders on the record</h3><div class="fug words">' + nq() + AR.words.map(function (w) { return '<blockquote class="word ' + fu(w.badge) + '"><p>“' + rich(w.quote) + '”</p><footer><b>' + esc(w.who) + "</b>" + (w.role ? ", " + esc(w.role) : "") + (w.where ? " · " + esc(w.where) : "") + (w.date ? " · " + esc(fmtShort(w.date)) : "") + badge(w.badge) + (w.context ? '<div class="small">' + rich(w.context) + "</div>" : "") + "</footer></blockquote>"; }).join("") + "</div>";
+    });
+    var CR = AR.career || {};
+    h += '<h3 id="career">Career <span class="small">boards, assignments, education, pay and benefits</span></h3>';
+    if (CR.items && CR.items.length) h += items(CR.items);
+    else if (CR.note) h += "<p>" + rich(CR.note) + "</p>";
+    else h += quiet("Nothing new that touches your career in the window.");
+    if (CR.dates && CR.dates.length) h += table(["Date", "Milestone"], CR.dates.filter(function (d) { return d[0] >= TD; }).map(function (d) { var n = daysBetween(TD, d[0]); return '<tr class="' + (n <= 14 ? "soon" : "") + '"><td class="d">' + esc(fmtShort(d[0])) + " · " + (n === 0 ? "today" : n + " d") + "</td><td>" + rich(d[1]) + "</td></tr>"; }).join(""));
+    if (CR.note && CR.items && CR.items.length) h += '<p class="small" style="margin-top:8px">' + rich(CR.note) + "</p>";
+    h += "</section>";
+    h += '<section id="nato" class="news"><h2>NATO &amp; European militaries</h2>' + items(NA.items, null, "Nothing new from the Alliance or the allied armies in the window.");
+    if (NA.table && (NA.table.badge === "NEW" || (NA.table.asof && daysBetween(NA.table.asof, TD) <= 7))) h += '<h3>' + esc(NA.table.title || "Allied spending and strength") + (NA.table.asof ? ' <span class="small">' + esc(NA.table.asof) + "</span>" : "") + "</h3>" + table(NA.table.head, NA.table.rows.map(function (r) { return "<tr>" + r.map(function (c, j) { return "<td" + (j > 0 && /^[\d.,%$€+−\- ]+$/.test(String(c)) ? ' class="d"' : "") + ">" + rich(c) + "</td>"; }).join("") + "</tr>"; }).join(""), "lbl1") + (NA.table.src ? '<p class="small" style="margin-top:6px">Source' + cite(NA.table.src) + "</p>" : "");
+    h += "</section>";
+    h += '<section id="deftech" class="news"><h2>Defence tech</h2>' + items(DT.items, null, "No new defence technology in the window.");
+    h += "</section>";
+    var FR = E.frontier || {}, REL = ctx.releases || {};
+    h += '<section id="frontier" class="news"><h2>Newest</h2>' + items(FR.items, null, "No new release or published result in the window.") + "</section>";
+    var M = E.money || {};
+    h += '<section id="markets" class="news"><h2>Markets &amp; economy <span class="num">' + esc(M.asof || "") + "</span></h2>";
+    var sparks = []; ctx._sparks = sparks;
+    if (M.cards) h += '<div class="cards">' + M.cards.map(function (c) {
+      var src = null, sk = null;
+      [c[5], c[6]].forEach(function (v) { if (typeof v === "number") src = v; else if (typeof v === "string" && v) sk = v; });
+      if (!sk) { var lab = String(c[0]).toLowerCase(); SERIES_BY_LABEL.forEach(function (m) { if (!sk && lab.indexOf(m[0]) === 0) sk = m[1]; }); }
+      var g = fxGuard(c[0], c[1], c[2], c[3]), arrow = g.dir === "up" ? "▲ " : g.dir === "down" ? "▼ " : "";
+      var ser = sk && SER[sk] && SER[sk].length ? SER[sk].filter(function (p) { return p[0] <= TD; }).slice(-30) : null;
+      return '<div class="card"><div class="lbl">' + esc(g.label) + '</div><div class="val">' + esc(g.value) + '</div><p><span class="chg ' + esc(g.dir) + '">' + (g.change ? arrow + esc(g.change) : "") + "</span> " + esc(g.fixed ? "euros per dollar" : c[4]) + cite(src) + "</p>" + (ser ? '<div class="spark" data-s="' + (sparks.push(ser) - 1) + '" title="' + esc(fmtShort(ser[0][0]) + " – " + fmtShort(ser[ser.length - 1][0])) + '"></div>' : "") + "</div>";
+    }).join("") + "</div>";
+    if (M.driver) h += "<p>" + rich(M.driver) + "</p>";
+    if (M.ytd) h += "<h3>Year to date</h3>" + hbars(M.ytd, { fmt: function (v) { return (v >= 0 ? "+" : "") + v.toFixed(1) + "%"; }, foot: "Change since 1 January at the last close." + cite(M.ytdSrc) });
+    h += "</section>";
+    h += '<section id="rates" class="news">';
+    if (M.rates) h += "<h2>Rates and prices</h2>" + table(["Measure", "Latest", "Note"], M.rates.map(function (r) { var g = fxGuard(r[0], r[1], null, null); return "<tr><td>" + esc(g.label) + '</td><td class="d">' + esc(g.value) + "</td><td>" + rich(r[2]) + "</td></tr>"; }).join(""), "lbl1");
+    if (M.fuel) {
+      var F = M.fuel, minP = Math.min.apply(null, F.rows.map(function (r) { return r[1]; })), minD = Math.min.apply(null, F.rows.map(function (r) { return r[2]; }));
+      h += '<h3>Fuel across the borders <span class="small">' + esc(F.asof) + "</span></h3>";
+      h += table(["Country", "Euro 95 €/l", "Diesel €/l"], F.rows.map(function (r) { return "<tr><td>" + esc(r[0]) + '</td><td class="d"' + (r[1] === minP ? ' style="color:var(--up);font-weight:700"' : "") + ">" + r[1].toFixed(3) + '</td><td class="d"' + (r[2] === minD ? ' style="color:var(--up);font-weight:700"' : "") + ">" + r[2].toFixed(3) + "</td></tr>"; }).join(""), "lbl1");
+      h += '<p class="small" style="margin-top:6px">' + rich(F.note) + cite(F.src) + (F.weekly ? " Updated " + esc(F.weekly) + "." : "") + "</p>";
+    }
+    if (M.week) h += '<h3>Week ahead</h3><ul class="clean">' + M.week.map(function (x) { return "<li>" + rich(x) + "</li>"; }).join("") + "</ul>";
+    if (M.fy) h += '<p class="sw-line" style="margin-top:12px"><b class="l">For you</b>' + rich(M.fy) + "</p>";
+    h += "</section>";
+
+    var NL = E.nl || {}, AF = E.afnorth || {}, OD = E.offduty || {};
+    h += '<section id="nl" class="news"><h2>Netherlands</h2>' + items(NL.items);
+    if (NL.temp) h += '<p class="small" style="margin-top:12px"><b>Political temperature:</b> ' + rich(NL.temp) + "</p>";
+    h += "</section>";
+
+    /* ===== Part 2 · The watch ===== */
+    h += part("watch", "Part 2", "The watch", "The memory: the board, the numbers, the trackers and the registers.", "p-watch");
+    h += '<section id="board" class="watch"><h2>The board <span class="num">events logged, not a measure of intensity</span></h2>';
+    if (board) {
+      h += '<div class="panel"><div class="lbl">Ten theatres · filled marker = events logged in 7 days, sized by count</div><div class="chart" id="worldmap" style="min-height:150px"></div></div>';
+      h += '<div class="fug board">' + nq() + board.map(function (b) {
+        var hd = '<details class="thread brow ' + fu(b.badge) + '" id="th-' + esc(b.t.id) + '" open><summary><span class="tname">' + esc(b.t.name) + act4(b.weeks) + badge(b.badge) + inToday("theatre", b.t.id) + "</span>";
+        hd += b.last ? '<span class="tlast"><span class="d">' + esc(fmtShort(b.last.date)) + "</span>" + rich(b.last.t, srcMap(b.last.src)) + "</span>" : '<span class="tlast small">No events logged yet.</span>';
+        hd += "</summary>";
+        hd += '<div class="tlog">' + (b.log.length > 1 ? logList(b.log.slice(0, -1), "sub") : "") + '<div class="meta">' + b.log.length + (b.log.length === 1 ? " entry" : " entries") + (b.last ? " · last " + esc(fmtLong(b.last.date)) + (b.age > 1 ? " (" + b.age + " days ago)" : "") : "") + "</div></div></details>";
+        return hd;
+      }).join("") + "</div>";
+    } else h += quiet("The board file is not loaded.");
+    h += "</section>";
+    /* by the numbers */
+    var keys = WO.numbers && WO.numbers.length ? WO.numbers : Object.keys(WS.series || {}).filter(function (k) { return (WS.series[k] || []).length; }).concat(["brent"]);
+    var tiles = [];
+    keys.forEach(function (k) {
+      var meta = (WS.meta || {})[k] || {}, ser = (WS.series || {})[k] || SER[k] || [];
+      ser = ser.filter(function (p) { return p[0] <= TD && typeof p[1] === "number"; });
+      if (!ser.length) return;
+      var last = ser[ser.length - 1], prev = ser.length > 1 ? ser[ser.length - 2] : null, dec = meta.decimals != null ? meta.decimals : (k === "brent" || k === "ttf" ? 2 : 0);
+      var label = meta.label || (k === "brent" ? "Brent, $ per barrel" : k === "ttf" ? "Dutch TTF gas, € per MWh" : k), unit = meta.unit || "";
+      tiles.push('<div class="tile nt"><div class="lbl">' + esc(label) + '</div><div class="val">' + num(last[1], dec) + (unit ? ' <small>' + esc(unit) + "</small>" : "") + "</div><p>" + (prev ? '<span class="chg ' + dir(last[1] - prev[1]) + '">' + signed(last[1] - prev[1], dec) + "</span> vs " + esc(fmtShort(prev[0])) + " · " : "") + "as of " + esc(fmtShort(last[0])) + (meta.cadence ? " · " + esc(meta.cadence) : "") + "</p>" + (ser.length > 1 ? '<div class="spark" data-ws="' + esc(k) + '"></div>' : "") + (meta.note ? '<p class="small">' + esc(meta.note) + "</p>" : "") + (meta.source ? '<p class="small">' + (meta.url ? '<a href="' + esc(meta.url) + '" target="_blank" rel="noopener">' + esc(meta.source) + "</a>" : esc(meta.source)) + "</p>" : "") + "</div>");
+      ctx._ws[k] = ser.slice(-30);
+    });
+    h += '<section id="numbers" class="watch"><h2>By the numbers</h2>' + (tiles.length ? '<div class="strip nums">' + tiles.join("") + "</div>" : quiet("No series published yet.")) + "</section>";
+    if (FX) {
+      var range = store("rb:fx:range") === "1y" ? 365 : 90;
+      h += '<section id="fx" class="watch"><h2>USD/EUR <span class="num">euros per dollar · ECB</span></h2><div class="fx">';
+      h += '<div class="fx-top"><span class="big tab">' + FX.last[1].toFixed(4) + '</span><span class="asof">' + esc(fmtLong(FX.last[0])) + " · € per $</span></div>";
+      h += '<div class="fx-ch"><div><div class="lbl">Since ' + esc(fmtShort(FX.prev[0])) + '</div><div class="v chg ' + dir(FX.d1) + '">' + signed(FX.d1, 4) + '</div><div class="p chg ' + dir(FX.d1) + '">' + signed(FX.d1 / FX.prev[1] * 100, 2, "%") + "</div></div>";
+      if (FX.month) h += '<div><div class="lbl">Since ' + esc(fmtShort(FX.month[0])) + '</div><div class="v chg ' + dir(FX.d30) + '">' + signed(FX.d30, 4) + '</div><div class="p chg ' + dir(FX.d30) + '">' + signed(FX.d30 / FX.month[1] * 100, 2, "%") + "</div></div>";
+      h += '<div><div class="lbl">30-day range</div><div class="v">' + FX.lo30[1].toFixed(4) + '</div><div class="p">to ' + FX.hi30[1].toFixed(4) + "</div></div></div>";
+      h += '<div class="fx-tools"><button type="button" data-range="90" aria-pressed="' + (range === 90) + '">90 days</button><button type="button" data-range="365" aria-pressed="' + (range === 365) + '">1 year</button></div>';
+      h += '<div class="chart" id="fxchart" style="min-height:150px" data-range="' + range + '"></div>';
+      var eu = function (r) { return "€" + num(1000 * r, 0); };
+      h += '<p class="pay"><b class="l">Pay</b>$1,000 is ' + eu(FX.last[1]) + " today" + (FX.month ? ", " + eu(FX.month[1]) + " a month ago" : "") + "; 12-month best " + eu(FX.best[1]) + " (" + esc(fmtShort(FX.best[0])) + "), worst " + eu(FX.worst[1]) + " (" + esc(fmtShort(FX.worst[0])) + "). Up means the dollar buys more euros.</p>";
+      h += '<div class="lbl" style="margin-top:12px">$1,000 in euros, monthly average</div><div class="chart" id="paybars" style="min-height:110px"></div>';
+      h += '<p class="small" style="margin:8px 0 0"><a href="' + esc(ctx.fx.url || "https://www.ecb.europa.eu/stats/eurofxref/") + '" target="_blank" rel="noopener">' + esc(ctx.fx.source || "ECB") + "</a>, one value per ECB business day, inverted from the ECB's dollars-per-euro quote.</p></div></section>";
+    }
     var P = E.planner || {};
-    h += part("watch", "Part 3", "Watchlist", "Threads that keep moving, and what is coming up.", "p-watch");
     h += '<section id="threads" class="watch"><h2>Tracked threads</h2>';
     if (threads) h += renderThreads(threads);
     else if (P.threads && P.threads.length) h += '<div class="fug">' + nq() + table(["Thread", "What moved"], P.threads.map(function (t) { return '<tr class="' + fu(t[2]) + '"><td>' + esc(t[0]) + badge(t[2]) + "</td><td>" + rich(t[1]) + "</td></tr>"; }).join(""), "lbl1") + "</div>";
@@ -760,36 +929,10 @@
     } else h += quiet("Nothing dated on the horizon.");
     h += "</section>";
 
-    /* ===== Part 4 · Profession ===== */
-    var AR = E.army || {}, AP = E.aperture || {}, NA = E.nato || {}, DT = E.deftech || {};
-    h += part("pro", "Part 4", "Profession", "Inside the US military, the allies you work beside, and the technology of the fight.", "p-pro");
-    h += '<section id="army" class="pro"><h2>Defence &amp; Army</h2>';
-    if (AR.cards) h += '<div class="cards">' + AR.cards.map(function (c) { return '<div class="card"><div class="lbl">' + esc(c.l) + '</div><div class="val">' + esc(c.v) + "</div><p>" + rich(c.n) + "</p></div>"; }).join("") + "</div>";
-    var TOPICS = ["Autonomy", "Leaders' words", "SOF", "Strategy", "Posture", "Force design"], tcount = {};
-    [].concat(AR.dod || [], AR.news || AR.items || [], AR.congress || [], (AR.career || {}).items || [], DT.items || [], (AR.words || []).map(function (w) { return { tag: "Leaders' words" }; })).forEach(function (it) { String(it.tag || "").split(/\s*[,·]\s*/).forEach(function (t) { TOPICS.forEach(function (T) { if (t && t.toLowerCase() === T.toLowerCase()) tcount[T] = (tcount[T] || 0) + 1; }); }); });
-    h += '<div class="regions topics" title="Priority topics: items tagged today">' + TOPICS.map(function (T) { return '<span class="' + (tcount[T] ? "" : "zero") + '">' + esc(T) + "<b>" + (tcount[T] || 0) + "</b></span>"; }).join("") + "</div>";
-    var AG = [["dod", "Department of Defense", AR.dod, "Nothing new from the Pentagon in the window."], ["armynews", "Army and USAREUR-AF", AR.news || AR.items, "No Army news in the window."], ["congress", "Congress and policy", AR.congress, "No new legislation or policy in the window."]];
-    AG.forEach(function (g) {
-      h += '<h3 id="' + g[0] + '">' + g[1] + "</h3>" + items(g[2], null, g[3]);
-      if (g[0] === "dod" && AR.words && AR.words.length) h += '<h3 id="words">Senior leaders on the record</h3><div class="fug words">' + nq() + AR.words.map(function (w) { return '<blockquote class="word ' + fu(w.badge) + '"><p>“' + rich(w.quote) + '”</p><footer><b>' + esc(w.who) + "</b>" + (w.role ? ", " + esc(w.role) : "") + (w.where ? " · " + esc(w.where) : "") + (w.date ? " · " + esc(fmtShort(w.date)) : "") + badge(w.badge) + (w.context ? '<div class="small">' + rich(w.context) + "</div>" : "") + "</footer></blockquote>"; }).join("") + "</div>";
-    });
-    var CR = AR.career || {};
-    h += '<h3 id="career">Career <span class="small">boards, assignments, education, pay and benefits</span></h3>';
-    if (CR.items && CR.items.length) h += items(CR.items);
-    else if (CR.note) h += "<p>" + rich(CR.note) + "</p>";
-    else h += quiet("Nothing new that touches your career in the window.");
-    if (CR.dates && CR.dates.length) h += table(["Date", "Milestone"], CR.dates.filter(function (d) { return d[0] >= TD; }).map(function (d) { var n = daysBetween(TD, d[0]); return '<tr class="' + (n <= 14 ? "soon" : "") + '"><td class="d">' + esc(fmtShort(d[0])) + " · " + (n === 0 ? "today" : n + " d") + "</td><td>" + rich(d[1]) + "</td></tr>"; }).join(""));
-    if (CR.note && CR.items && CR.items.length) h += '<p class="small" style="margin-top:8px">' + rich(CR.note) + "</p>";
-    var DP = AR.depth, PROT = [["mon","Mon","Readiness and recruiting in numbers"],["wed","Wed","An acquisition programme in numbers"],["fri","Fri","The week's personnel and policy decisions"]];
-    if (DP) {
-      h += '<article class="feature" id="armydepth"><div class="lbl" style="color:var(--pc)">' + esc(DP.kind || "In depth") + '</div><h3 class="ft">' + esc(DP.title) + "</h3>" + (DP.body || []).map(function (p) { return "<p>" + rich(p) + "</p>"; }).join("");
-      if (DP.table) h += table(DP.table.head, DP.table.rows.map(function (r) { return "<tr>" + r.map(function (c, j) { return "<td" + (j > 0 && /^[\d.,%$€+−\- ]+$/.test(String(c)) ? ' class="d"' : "") + ">" + rich(c) + "</td>"; }).join("") + "</tr>"; }).join(""), "lbl1");
-      if (DP.bars) h += '<div class="panel"><div class="lbl">' + esc(DP.bars.label || "") + "</div>" + chartBox("armybars", 150) + "</div>";
-      h += "</article>";
-    }
-    h += '<div class="ap-c"><div class="lbl">Depth rota</div><div class="rota three">' + PROT.map(function (r) { return '<div class="' + (DP && r[0] === DP.rota ? "on" : "") + '"><b>' + r[1] + "</b>" + r[2] + "</div>"; }).join("") + "</div></div>";
+    h += '<section id="congress-sec" class="watch"><h2>Congress and commands <span class="num">bills, budget, confirmations, watched posts</span></h2>';
     var LANES = { bill: ["introduced","committee","house","senate","conference","enacted"], budget: ["request","house","senate","cr","enacted"], nomination: ["vacant","announced","nominated","hearing","committee","floor","confirmed"] };
     var STGL = { introduced: "Introduced", committee: "Committee", house: "House", senate: "Senate", conference: "Conference", enacted: "Enacted", request: "Request", cr: "CR", vacant: "Vacant", announced: "Announced", nominated: "Nominated", hearing: "Hearing", floor: "Floor", confirmed: "Confirmed", withdrawn: "Withdrawn", stalled: "Stalled", vetoed: "Vetoed" };
+    var STGS = { introduced: "Intro", committee: "Cmte", house: "House", senate: "Senate", conference: "Conf", enacted: "Law", request: "Req", cr: "CR", vacant: "Vacant", announced: "Named", nominated: "Nom", hearing: "Hearing", floor: "Floor", confirmed: "Conf'd" };
     var DONE = { enacted: 1, confirmed: 1, withdrawn: 1, vetoed: 1 };
     var CG = (ctx.congress || []).map(function (c) { var d = c.dates || {}, last = Object.keys(d).reduce(function (m, k) { return d[k] > m ? d[k] : m; }, "") || c.updated || c.added || ""; return { c: c, last: last, badge: c.added === TD ? "NEW" : c.updated === TD ? "UPDATED" : "" }; }).filter(function (x) { return !(DONE[x.c.stage] && daysBetween(x.last, TD) > 30); });
     function stg(c) { var st = c.stage; if (st === "vacant") return "vac"; if (st === "withdrawn" || st === "stalled" || st === "vetoed" || /stalled|vetoed/i.test(c.status || "")) return "off"; if (st === "confirmed" || st === "enacted") return "done"; if (st === "cr") return "cr"; return "prog"; }
@@ -804,15 +947,19 @@
     var CGN = CG.filter(cgRecent), CGQ = CG.filter(function (x) { return !cgRecent(x) && !DONE[x.c.stage]; });
     h += '<h3 id="congresstracker">Congress tracker <span class="small">what moved in the last ' + RECENT + ' days</span></h3>';
     h += '<div class="cg-key small"><span class="k g-vac"></span>vacant <span class="k g-prog"></span>in the pipeline <span class="k g-cr"></span>stopgap <span class="k g-done"></span>confirmed or enacted <span class="k g-off"></span>stalled or withdrawn</div>';
-    if (CGN.length) {
-      h += '<div class="fug">' + nq();
-      [["bill", "Key defence bills"], ["budget", "Budget and appropriations"], ["nomination", "Confirmations"]].forEach(function (lane) {
-        var rows = CGN.filter(function (x) { return (x.c.kind || "bill") === lane[0]; }).sort(function (a, b) { return a.last < b.last ? 1 : a.last > b.last ? -1 : 0; });
-        if (rows.length) h += '<div class="lbl cg-lane">' + lane[1] + '</div><div class="cflist">' + rows.map(cgCard).join("") + "</div>";
-      });
-      h += "</div>";
-    } else h += quiet("Nothing moved in Congress or the confirmation pipeline this week.");
-    if (CGQ.length) h += '<p class="small cg-quiet"><b>Open, no change this week:</b> ' + CGQ.map(function (x) { return '<span class="g-' + stg(x.c) + '">' + esc(x.c.title || x.c.post) + " (" + esc(STGL[x.c.stage] || x.c.stage) + (x.last ? " since " + esc(fmtShort(x.last)) : "") + ")</span>"; }).join("; ") + ".</p>";
+    function cgRow(x) {
+      var c = x.c, lane = LANES[c.kind] || LANES.bill, idx = lane.indexOf(c.stage), d = c.dates || {}, g = stg(c), moved = cgRecent(x), dl = c.deadline && c.deadline >= TD ? daysBetween(TD, c.deadline) : null;
+      var cells = lane.map(function (st, i) { var on = g !== "off" && i <= idx, cur = st === c.stage; return '<i class="' + (on ? "on" : "") + (cur ? " cur" : "") + '" title="' + esc(STGL[st] + (d[st] ? " · " + fmtShort(d[st]) : "")) + '"></i>'; }).join("");
+      return '<div class="cgr g-' + g + " " + fu(x.badge) + (moved ? " moved" : "") + '" id="cg-' + esc(c.id) + '"><div class="cgt"><b>' + esc(c.title || c.post) + "</b>" + (c.kind === "nomination" ? '<span class="small"> · ' + esc(c.nominee || "no nominee") + "</span>" : c.number ? '<span class="small"> · ' + esc(c.number) + "</span>" : "") + badge(x.badge) + inToday("congress", c.id) + '</div><div class="cgm" style="grid-template-columns:repeat(' + lane.length + ',1fr)">' + cells + '</div><div class="cgs"><span class="chip st g-' + g + '">' + esc(STGL[c.stage] || c.stage) + (x.last ? " · " + esc(fmtShort(x.last)) : "") + "</span>" + (dl != null ? '<span class="chip st' + (dl <= 14 ? " act" : "") + '">due ' + esc(fmtShort(c.deadline)) + " · " + (dl === 0 ? "today" : dl + " d") + "</span>" : "") + (c.src && c.src.length ? '<sup class="r">' + c.src.map(function (z) { return citeLink(z[0], srcMap(c.src)); }).join("") + "</sup>" : "") + "</div>" + (moved && (c.next || c.status) ? '<p class="small">' + rich(c.next || c.status, srcMap(c.src)) + "</p>" : "") + "</div>";
+    }
+    h += '<div class="fug">' + nq();
+    [["bill", "Key defence bills", LANES.bill], ["budget", "Budget and appropriations", LANES.budget], ["nomination", "Confirmations", LANES.nomination]].forEach(function (lane) {
+      var rows = CG.filter(function (x) { return (x.c.kind || "bill") === lane[0]; }).sort(function (a, b) { var am = cgRecent(a) ? 0 : 1, bm = cgRecent(b) ? 0 : 1; if (am !== bm) return am - bm; return a.last < b.last ? 1 : a.last > b.last ? -1 : 0; });
+      if (!rows.length) return;
+      h += '<div class="lbl cg-lane">' + lane[1] + '</div><div class="cgm head" style="grid-template-columns:repeat(' + lane[2].length + ',1fr)">' + lane[2].map(function (st) { return '<small title="' + esc(STGL[st]) + '">' + esc(STGS[st] || STGL[st]) + "</small>"; }).join("") + '</div><div class="cglist">' + rows.map(cgRow).join("") + "</div>";
+    });
+    h += "</div>";
+    if (!CG.length) h += quiet("Nothing tracked yet.");
     var CW = ctx.congressWatch || [], CT = ctx.congressTiers || [];
     if (CW.length) {
       var openBy = {}, openId = {}, conf30 = {}; CG.forEach(function (x) { var c = x.c; if (c.kind !== "nomination" || !c.postId) return; if (!DONE[c.stage]) { openBy[c.postId] = c.stage; openId[c.postId] = c.id; } else if (c.stage === "confirmed" && x.last && daysBetween(x.last, TD) <= 30) conf30[c.postId] = 1; });
@@ -828,24 +975,63 @@
       h += "</div>" + (EXC.length ? '<ul class="wexc">' + EXC.map(function (w) { var k = wst(w); return '<li class="w-' + k + '"><b>' + esc(w.post) + "</b> " + (w.holder ? esc(w.holder) + (w.acting ? " (acting)" : "") : '<span class="small">no holder</span>') + (openBy[w.id] ? ' <em>' + esc(STGL[openBy[w.id]] || openBy[w.id]) + "</em>" : "") + (w.src && w.src.length ? '<sup class="r">' + w.src.map(function (z) { return citeLink(z[0], srcMap(w.src)); }).join("") + "</sup>" : "") + "</li>"; }).join("") + "</ul>" : "") + '<p class="small">Each chip is a watched post, coloured by its state; tap for the holder. Listed below the chips: anything vacant, acting, in the pipeline or newly confirmed.</p>';
     }
     h += "</section>";
-
-    h += '<section id="nato" class="pro"><h2>NATO &amp; European militaries</h2>' + items(NA.items, null, "Nothing new from the Alliance or the allied armies in the window.");
-    if (NA.table && (NA.table.badge === "NEW" || (NA.table.asof && daysBetween(NA.table.asof, TD) <= 7))) h += '<h3>' + esc(NA.table.title || "Allied spending and strength") + (NA.table.asof ? ' <span class="small">' + esc(NA.table.asof) + "</span>" : "") + "</h3>" + table(NA.table.head, NA.table.rows.map(function (r) { return "<tr>" + r.map(function (c, j) { return "<td" + (j > 0 && /^[\d.,%$€+−\- ]+$/.test(String(c)) ? ' class="d"' : "") + ">" + rich(c) + "</td>"; }).join("") + "</tr>"; }).join(""), "lbl1") + (NA.table.src ? '<p class="small" style="margin-top:6px">Source' + cite(NA.table.src) + "</p>" : "");
+    h += '<section id="exercises-sec" class="watch"><h2>Exercise calendar</h2>';
     var EXL = (ctx.exercises || []).filter(function (x) { return x.to >= addDays(TD, -7); }).sort(function (a, b) { return a.from < b.from ? -1 : 1; });
-    h += '<h3 id="exercises">Exercise calendar <span class="small">under way and announced</span></h3>';
+    h += '<p class="small" id="exercises">Under way and announced; the run adds exercises as allies announce them.</p>';
     h += EXL.length ? '<ul class="exl fug">' + nq() + EXL.map(function (x) {
       var b = x.added === TD ? "NEW" : x.updated === TD ? "UPDATED" : "", on = x.from <= TD && x.to >= TD, done = x.to < TD, when = x.dateText && /[a-z]/i.test(x.dateText) && !/under way/i.test(x.dateText) ? x.dateText : fmtShort(x.from) + (x.to !== x.from ? " – " + fmtShort(x.to) : "");
-      return '<li class="' + fu(b) + (on ? " on" : done ? " done" : "") + '" title="' + esc([x.lead, x.forces].filter(Boolean).join(" · ")) + '"><span class="d">' + esc(when) + '</span><span><b>' + esc(x.name) + "</b>" + (x.where ? ' <span class="small">· ' + esc(x.where) + "</span>" : "") + (on ? ' <em>under way</em>' : done ? ' <em>ended</em>' : "") + badge(b) + (x.src && x.src.length ? '<sup class="r">' + x.src.map(function (z) { return citeLink(z[0], srcMap(x.src)); }).join("") + "</sup>" : "") + "</span></li>";
+      return '<li class="' + fu(b) + (on ? " on" : done ? " done" : "") + '" title="' + esc([x.lead, x.forces].filter(Boolean).join(" · ")) + '"><span class="d">' + esc(when) + '</span><span><b>' + esc(x.name) + "</b>" + (x.where ? ' <span class="small">· ' + esc(x.where) + "</span>" : "") + (on ? ' <em>under way</em>' : done ? ' <em>ended</em>' : "") + badge(b) + (x.src && x.src.length ? '<sup class="r">' + x.src.map(function (z) { return citeLink(z[0], srcMap(x.src)); }).join("") + "</sup>" : "") + (done ? "" : " " + icsLink(x.name, x.from, x.to, [x.lead, x.where].filter(Boolean).join(", "))) + "</span></li>";
     }).join("") + "</ul>" : quiet("No exercises announced.");
     h += "</section>";
-
-    h += '<section id="deftech" class="pro"><h2>Defence tech</h2>' + items(DT.items, null, "No new defence technology in the window.");
-    var DTS = (DT.series || []).filter(function (k) { return ((WS.series || {})[k] || []).length > 1; });
-    if (DTS.length) h += '<div class="viz">' + DTS.map(function (k) { var m = (WS.meta || {})[k] || {}; ctx._dts = ctx._dts || {}; ctx._dts[k] = (WS.series[k] || []).filter(function (p) { return p[0] <= TD; }); return '<div class="panel"><div class="lbl">' + esc(m.label || k) + (m.unit ? " · " + esc(m.unit) : "") + "</div>" + chartBox("dts-" + k, 170) + (m.source ? '<p class="small">' + esc(m.source) + "</p>" : "") + "</div>"; }).join("") + "</div>";
-    if (DT.ttp) h += '<article class="feature" id="ttp"><div class="lbl" style="color:var(--pc)">Week in war · TTPs</div><h3 class="ft">' + esc(DT.ttp.title) + "</h3>" + (DT.ttp.body || []).map(function (p) { return "<p>" + rich(p) + "</p>"; }).join("") + "</article>";
+    var RL = (REL.releases || []).filter(function (r) { return r.date <= TD && r.date >= addDays(TD, -45); }).sort(function (a, b) { return a.date < b.date ? 1 : -1; });
+    h += '<section id="releases" class="watch"><h2>Release log <span class="num">last 45 days</span></h2>';
+    h += RL.length ? '<div class="fug">' + nq() + '<div class="tl">' + RL.map(function (r) { var b = r.date === TD ? "NEW" : r.date === addDays(TD, -1) ? "UPDATED" : ""; return '<div class="tl-i ' + fu(b) + '"><div class="d"><span>' + esc(fmtLong(r.date)) + '</span><span class="chip rep">' + esc(r.kind || "release") + "</span></div><h4>" + esc(r.t) + "</h4>" + badge(b) + '<p class="ink">' + esc(r.lab || "") + (r.lab && r.n ? " · " : "") + rich(r.n || "", srcMap(r.src)) + "</p></div>"; }).join("") + "</div></div>" : quiet("No releases logged yet.");
+    h += "</section>";
+    var SO = REL.sota || {};
+    h += '<section id="sota" class="watch"><h2>State of the art <span class="num">' + (SO.asof ? "as of " + esc(fmtShort(SO.asof)) : "updated Fridays") + "</span></h2>";
+    h += SO.rows && SO.rows.length ? table(["Domain", "Leading system", "Since"], SO.rows.map(function (r) { return "<tr><td>" + esc(r[0]) + "</td><td><b>" + esc(r[1]) + "</b>" + (r[2] ? '<div class="small">' + esc(r[2]) + "</div>" : "") + (r[4] && r[4].length ? '<sup class="r">' + r[4].map(function (z) { return citeLink(z[0], srcMap(r[4])); }).join("") + "</sup>" : "") + '</td><td class="d">' + esc(r[3] ? fmtShort(r[3]) : "—") + "</td></tr>"; }).join(""), "lbl1") : quiet("The Friday table has not been written yet.");
     h += "</section>";
 
-    h += '<section id="aperture" class="pro"><h2>Aperture</h2><div class="ap">';
+    h += '<section id="production" class="watch"><h2>Production and capacity <span class="num">series the run keeps up</span></h2>';
+    var DTS = (DT.series || []).filter(function (k) { return ((WS.series || {})[k] || []).length > 1; });
+    if (DTS.length) h += '<div class="viz">' + DTS.map(function (k) { var m = (WS.meta || {})[k] || {}; ctx._dts = ctx._dts || {}; ctx._dts[k] = (WS.series[k] || []).filter(function (p) { return p[0] <= TD; }); return '<div class="panel"><div class="lbl">' + esc(m.label || k) + (m.unit ? " · " + esc(m.unit) : "") + "</div>" + chartBox("dts-" + k, 170) + (m.source ? '<p class="small">' + esc(m.source) + "</p>" : "") + "</div>"; }).join("") + "</div>";
+    if (!DTS.length) h += quiet("No production series charted yet.");
+    h += "</section>";
+
+    /* ===== Part 3 · The reading ===== */
+    h += part("reading", "Part 3", "The reading", "The long pieces: the feature, the Army in depth, the week in war and Aperture.", "p-reading");
+    /* feature */
+    var FE = WO.feature;
+    var WROT = [["mon","Mon","Theatre in numbers"],["tue","Tue","Actor on the record"],["wed","Wed","Trend line"],["thu","Thu","Chronology"],["fri","Fri","Week on the board"],["sat","Sat","Geography"],["sun","Sun","The record"]];
+    h += '<section id="feature" class="reading"><h2>' + esc(FE && FE.kind ? FE.kind : "Feature") + "</h2>";
+    if (FE) {
+      h += '<article class="feature"><h3 class="ft">' + esc(FE.title) + "</h3>" + (FE.body || []).map(function (p) { return "<p>" + rich(p) + "</p>"; }).join("");
+      if (FE.table) h += table(FE.table.head, FE.table.rows.map(function (r) { return "<tr>" + r.map(function (c, j) { return "<td" + (j > 0 && /^[\d.,%$€+−\- ]+$/.test(String(c)) ? ' class="d"' : "") + ">" + rich(c) + "</td>"; }).join("") + "</tr>"; }).join(""), "lbl1");
+      if (FE.series) { var fs = ((WS.series || {})[FE.series] || SER[FE.series] || []).filter(function (p) { return p[0] <= TD; }); var fm = (WS.meta || {})[FE.series] || {}; if (fs.length > 1) { ctx._fser = fs; ctx._fmeta = fm; h += '<div class="panel"><div class="lbl">' + esc(fm.label || FE.series) + (fm.unit ? " · " + esc(fm.unit) : "") + '</div><div class="chart" id="fchart"></div>' + (fm.source ? '<p class="small">' + esc(fm.source) + "</p>" : "") + "</div>"; } }
+      if (FE.bars) h += '<div class="panel"><div class="lbl">' + esc(FE.bars.label || "") + '</div><div class="chart" id="fbars"></div></div>';
+      if (FE.timeline) h += tl(FE.timeline.map(function (r) { return [r[0], r[1], null, r[2]]; }));
+      if (FE.geo) { ctx._geo = FE.geo; h += '<div class="panel"><div class="lbl">' + esc(FE.geo.title || "Schematic") + '</div><div class="chart" id="fgeo"></div></div>'; }
+      if (FE.after) h += FE.after.map(function (p) { return "<p>" + rich(p) + "</p>"; }).join("");
+      h += "</article>";
+    } else h += quiet("No feature in this edition (format 3.0 and earlier).");
+    h += '<div class="ap-c"><div class="lbl">World feature rota</div><div class="rota">' + WROT.map(function (r) { return '<div class="' + (r[0] === (FE && FE.rota) ? "on " : "") + '"><b>' + r[1] + "</b>" + r[2] + "</div>"; }).join("") + "</div></div></section>";
+
+    h += '<section id="depth" class="reading"><h2>Army in depth <span class="num">Mon numbers · Wed programme · Fri decisions</span></h2>';
+    var DP = AR.depth, PROT = [["mon","Mon","Readiness and recruiting in numbers"],["wed","Wed","An acquisition programme in numbers"],["fri","Fri","The week's personnel and policy decisions"]];
+    if (DP) {
+      h += '<article class="feature" id="armydepth"><div class="lbl" style="color:var(--pc)">' + esc(DP.kind || "In depth") + '</div><h3 class="ft">' + esc(DP.title) + "</h3>" + (DP.body || []).map(function (p) { return "<p>" + rich(p) + "</p>"; }).join("");
+      if (DP.table) h += table(DP.table.head, DP.table.rows.map(function (r) { return "<tr>" + r.map(function (c, j) { return "<td" + (j > 0 && /^[\d.,%$€+−\- ]+$/.test(String(c)) ? ' class="d"' : "") + ">" + rich(c) + "</td>"; }).join("") + "</tr>"; }).join(""), "lbl1");
+      if (DP.bars) h += '<div class="panel"><div class="lbl">' + esc(DP.bars.label || "") + "</div>" + chartBox("armybars", 150) + "</div>";
+      h += "</article>";
+    }
+    h += '<div class="ap-c"><div class="lbl">Depth rota</div><div class="rota three">' + PROT.map(function (r) { return '<div class="' + (DP && r[0] === DP.rota ? "on" : "") + '"><b>' + r[1] + "</b>" + r[2] + "</div>"; }).join("") + "</div></div>";
+    if (!DP) h += quiet("No depth piece today; the rota is below.");
+    h += "</section>";
+    h += '<section id="ttpsec" class="reading"><h2>Week in war <span class="num">tactics, techniques and procedures · Saturdays</span></h2>';
+    if (DT.ttp) h += '<article class="feature" id="ttp"><h3 class="ft">' + esc(DT.ttp.title) + "</h3>" + (DT.ttp.body || []).map(function (p) { return "<p>" + rich(p) + "</p>"; }).join("") + "</article>";
+    if (!DT.ttp) h += quiet("Written on Saturdays.");
+    h += "</section>";
+    h += '<section id="aperture" class="reading"><h2>Aperture</h2><div class="ap">';
     if (AP.contrarian) h += '<div class="ap-c"><div class="lbl">Contrarian read</div><p>' + rich(AP.contrarian) + "</p></div>";
     if (AP.weak) h += '<div class="ap-c"><div class="lbl">Weak signal</div><p>' + rich(AP.weak) + "</p></div>";
     if (AP.number) h += '<div class="ap-c numday"><div class="big">' + esc(AP.number.n) + '</div><div><div class="lbl">Number of the day</div><p style="margin:0">' + rich(AP.number.t) + "</p></div></div>";
@@ -862,67 +1048,9 @@
     h += '<div class="ap-c"><div class="lbl">Deep cuts and special topics</div><div class="rota">' + ROT.map(function (r) { return '<div class="' + (r[0] === AP.rota ? "on " : "") + (r[0] === "sat" || r[0] === "sun" ? "sp" : "") + '"><b>' + r[1] + "</b>" + r[2] + "</div>"; }).join("") + "</div></div>";
     h += "</div></section>";
 
-    /* ===== Part 5 · Frontier ===== */
-    var FR = E.frontier || {}, REL = ctx.releases || {};
-    h += part("frontier", "Part 5", "Frontier", "Tech and AI: releases, results and shipped capability only.", "p-frontier");
-    h += '<section id="frontier" class="frontier"><h2>Newest</h2>' + items(FR.items, null, "No new release or published result in the window.") + "</section>";
-    var RL = (REL.releases || []).filter(function (r) { return r.date <= TD && r.date >= addDays(TD, -45); }).sort(function (a, b) { return a.date < b.date ? 1 : -1; });
-    h += '<section id="releases" class="frontier"><h2>Release log <span class="num">last 45 days</span></h2>';
-    h += RL.length ? '<div class="fug">' + nq() + '<div class="tl">' + RL.map(function (r) { var b = r.date === TD ? "NEW" : r.date === addDays(TD, -1) ? "UPDATED" : ""; return '<div class="tl-i ' + fu(b) + '"><div class="d"><span>' + esc(fmtLong(r.date)) + '</span><span class="chip rep">' + esc(r.kind || "release") + "</span></div><h4>" + esc(r.t) + "</h4>" + badge(b) + '<p class="ink">' + esc(r.lab || "") + (r.lab && r.n ? " · " : "") + rich(r.n || "", srcMap(r.src)) + "</p></div>"; }).join("") + "</div></div>" : quiet("No releases logged yet.");
-    h += "</section>";
-    var SO = REL.sota || {};
-    h += '<section id="sota" class="frontier"><h2>State of the art <span class="num">' + (SO.asof ? "as of " + esc(fmtShort(SO.asof)) : "updated Fridays") + "</span></h2>";
-    h += SO.rows && SO.rows.length ? table(["Domain", "Leading system", "Since"], SO.rows.map(function (r) { return "<tr><td>" + esc(r[0]) + "</td><td><b>" + esc(r[1]) + "</b>" + (r[2] ? '<div class="small">' + esc(r[2]) + "</div>" : "") + (r[4] && r[4].length ? '<sup class="r">' + r[4].map(function (z) { return citeLink(z[0], srcMap(r[4])); }).join("") + "</sup>" : "") + '</td><td class="d">' + esc(r[3] ? fmtShort(r[3]) : "—") + "</td></tr>"; }).join(""), "lbl1") : quiet("The Friday table has not been written yet.");
-    h += "</section>";
 
-    /* ===== Part 5 · Money ===== */
-    var M = E.money || {};
-    h += part("money", "Part 6", "Money", "Last session's markets and the numbers that move prices, pay and rates.", "p-money");
-    h += '<section id="markets" class="money"><h2>Markets &amp; economy <span class="num">' + esc(M.asof || "") + "</span></h2>";
-    var sparks = []; ctx._sparks = sparks;
-    if (M.cards) h += '<div class="cards">' + M.cards.map(function (c) {
-      var src = null, sk = null;
-      [c[5], c[6]].forEach(function (v) { if (typeof v === "number") src = v; else if (typeof v === "string" && v) sk = v; });
-      if (!sk) { var lab = String(c[0]).toLowerCase(); SERIES_BY_LABEL.forEach(function (m) { if (!sk && lab.indexOf(m[0]) === 0) sk = m[1]; }); }
-      var g = fxGuard(c[0], c[1], c[2], c[3]), arrow = g.dir === "up" ? "▲ " : g.dir === "down" ? "▼ " : "";
-      var ser = sk && SER[sk] && SER[sk].length ? SER[sk].filter(function (p) { return p[0] <= TD; }).slice(-30) : null;
-      return '<div class="card"><div class="lbl">' + esc(g.label) + '</div><div class="val">' + esc(g.value) + '</div><p><span class="chg ' + esc(g.dir) + '">' + (g.change ? arrow + esc(g.change) : "") + "</span> " + esc(g.fixed ? "euros per dollar" : c[4]) + cite(src) + "</p>" + (ser ? '<div class="spark" data-s="' + (sparks.push(ser) - 1) + '" title="' + esc(fmtShort(ser[0][0]) + " – " + fmtShort(ser[ser.length - 1][0])) + '"></div>' : "") + "</div>";
-    }).join("") + "</div>";
-    if (M.driver) h += "<p>" + rich(M.driver) + "</p>";
-    if (M.ytd) h += "<h3>Year to date</h3>" + hbars(M.ytd, { fmt: function (v) { return (v >= 0 ? "+" : "") + v.toFixed(1) + "%"; }, foot: "Change since 1 January at the last close." + cite(M.ytdSrc) });
-    h += "</section>";
-    if (FX) {
-      var range = store("rb:fx:range") === "1y" ? 365 : 90;
-      h += '<section id="fx" class="money"><h2>USD/EUR <span class="num">euros per dollar · ECB</span></h2><div class="fx">';
-      h += '<div class="fx-top"><span class="big tab">' + FX.last[1].toFixed(4) + '</span><span class="asof">' + esc(fmtLong(FX.last[0])) + " · € per $</span></div>";
-      h += '<div class="fx-ch"><div><div class="lbl">Since ' + esc(fmtShort(FX.prev[0])) + '</div><div class="v chg ' + dir(FX.d1) + '">' + signed(FX.d1, 4) + '</div><div class="p chg ' + dir(FX.d1) + '">' + signed(FX.d1 / FX.prev[1] * 100, 2, "%") + "</div></div>";
-      if (FX.month) h += '<div><div class="lbl">Since ' + esc(fmtShort(FX.month[0])) + '</div><div class="v chg ' + dir(FX.d30) + '">' + signed(FX.d30, 4) + '</div><div class="p chg ' + dir(FX.d30) + '">' + signed(FX.d30 / FX.month[1] * 100, 2, "%") + "</div></div>";
-      h += '<div><div class="lbl">30-day range</div><div class="v">' + FX.lo30[1].toFixed(4) + '</div><div class="p">to ' + FX.hi30[1].toFixed(4) + "</div></div></div>";
-      h += '<div class="fx-tools"><button type="button" data-range="90" aria-pressed="' + (range === 90) + '">90 days</button><button type="button" data-range="365" aria-pressed="' + (range === 365) + '">1 year</button></div>';
-      h += '<div class="chart" id="fxchart" style="min-height:150px" data-range="' + range + '"></div>';
-      var eu = function (r) { return "€" + num(1000 * r, 0); };
-      h += '<p class="pay"><b class="l">Pay</b>$1,000 is ' + eu(FX.last[1]) + " today" + (FX.month ? ", " + eu(FX.month[1]) + " a month ago" : "") + "; 12-month best " + eu(FX.best[1]) + " (" + esc(fmtShort(FX.best[0])) + "), worst " + eu(FX.worst[1]) + " (" + esc(fmtShort(FX.worst[0])) + "). Up means the dollar buys more euros.</p>";
-      h += '<div class="lbl" style="margin-top:12px">$1,000 in euros, monthly average</div><div class="chart" id="paybars" style="min-height:110px"></div>';
-      h += '<p class="small" style="margin:8px 0 0"><a href="' + esc(ctx.fx.url || "https://www.ecb.europa.eu/stats/eurofxref/") + '" target="_blank" rel="noopener">' + esc(ctx.fx.source || "ECB") + "</a>, one value per ECB business day, inverted from the ECB's dollars-per-euro quote.</p></div></section>";
-    }
-    h += '<section id="rates" class="money">';
-    if (M.rates) h += "<h2>Rates and prices</h2>" + table(["Measure", "Latest", "Note"], M.rates.map(function (r) { var g = fxGuard(r[0], r[1], null, null); return "<tr><td>" + esc(g.label) + '</td><td class="d">' + esc(g.value) + "</td><td>" + rich(r[2]) + "</td></tr>"; }).join(""), "lbl1");
-    if (M.fuel) {
-      var F = M.fuel, minP = Math.min.apply(null, F.rows.map(function (r) { return r[1]; })), minD = Math.min.apply(null, F.rows.map(function (r) { return r[2]; }));
-      h += '<h3>Fuel across the borders <span class="small">' + esc(F.asof) + "</span></h3>";
-      h += table(["Country", "Euro 95 €/l", "Diesel €/l"], F.rows.map(function (r) { return "<tr><td>" + esc(r[0]) + '</td><td class="d"' + (r[1] === minP ? ' style="color:var(--up);font-weight:700"' : "") + ">" + r[1].toFixed(3) + '</td><td class="d"' + (r[2] === minD ? ' style="color:var(--up);font-weight:700"' : "") + ">" + r[2].toFixed(3) + "</td></tr>"; }).join(""), "lbl1");
-      h += '<p class="small" style="margin-top:6px">' + rich(F.note) + cite(F.src) + (F.weekly ? " Updated " + esc(F.weekly) + "." : "") + "</p>";
-    }
-    if (M.week) h += '<h3>Week ahead</h3><ul class="clean">' + M.week.map(function (x) { return "<li>" + rich(x) + "</li>"; }).join("") + "</ul>";
-    if (M.fy) h += '<p class="sw-line" style="margin-top:12px"><b class="l">For you</b>' + rich(M.fy) + "</p>";
-    h += "</section>";
-
-    /* ===== Part 7 · Home ===== */
-    var NL = E.nl || {}, AF = E.afnorth || {}, OD = E.offduty || {};
-    h += part("home", "Part 7", "Home", "The Netherlands, the family, what is on nearby, the languages and the snow.", "p-home");
-    h += '<section id="nl" class="home"><h2>Netherlands</h2>' + items(NL.items);
-    if (NL.temp) h += '<p class="small" style="margin-top:12px"><b>Political temperature:</b> ' + rich(NL.temp) + "</p>";
-    h += "</section>";
+    /* ===== Part 4 · Home and planning ===== */
+    h += part("home", "Part 4", "Home and planning", "Family, what is on nearby, the languages, the snow, the Canes, and the week and year ahead.", "p-home");
     h += '<section id="afnorth" class="home"><h2>AFNORTH &amp; family</h2>';
     if (AF.intro) h += '<p class="small">' + rich(AF.intro) + "</p>";
     if (AF.rows && AF.rows.length) h += table(["Date", "Event", "Action"], AF.rows.map(function (r) { return '<tr class="' + (r[3] === "soon" ? "soon" : "") + '"><td class="d">' + esc(r[0]) + "</td><td>" + rich(r[1]) + "</td><td>" + rich(r[2]) + "</td></tr>"; }).join(""));
@@ -932,15 +1060,17 @@
     /* out and about */
     var EVS = (ctx.events || []).filter(function (e) { return e.to >= TD; }).sort(function (a, b) { return a.from < b.from ? -1 : a.from > b.from ? 1 : 0; });
     var dow = today.getDay(), fri = addDays(TD, dow === 0 ? -2 : dow === 6 ? -1 : 5 - dow), sun = addDays(fri, 2);
-    var WK = EVS.filter(function (e) { return e.from <= sun && e.to >= fri; }), N30 = EVS.filter(function (e) { return e.from <= addDays(TD, 30); });
+    var WK = EVS.filter(function (e) { return e.from <= sun && e.to >= fri; }).sort(function (a, b) { return (a.drive == null ? 999 : a.drive) - (b.drive == null ? 999 : b.drive); }), N30 = EVS.filter(function (e) { return e.from <= addDays(TD, 30); });
+    var WX = ((E.today || {}).weather || {}).week || [], wkWx = WX.filter(function (r) { return r[0] >= fri && r[0] <= sun; });
     function evRow(e) {
       var b = e.added === TD ? "NEW" : e.updated === TD ? "UPDATED" : "", when = e.from === e.to ? fmt(pd(e.from)) : fmtShort(e.from) + " – " + fmtShort(e.to);
-      return '<div class="evrow ' + fu(b) + '" data-cat="' + esc(e.cat) + '"><span class="d">' + esc(when) + '</span><div><span class="chip st" style="color:' + catColor("out") + '">' + esc(EVCAT[e.cat] || e.cat) + "</span>" + (e.kid ? '<span class="chip st quiet">kids</span>' : "") + " <b>" + esc(e.t) + "</b>" + badge(b) + '<div class="small">' + esc([e.town + (e.cc ? " (" + e.cc + ")" : ""), e.venue, e.drive != null ? "~" + e.drive + " min" : "", e.cost].filter(Boolean).join(" · ")) + (e.src && e.src.length ? '<sup class="r">' + e.src.map(function (z) { return citeLink(z[0], srcMap(e.src)); }).join("") + "</sup>" : "") + "</div></div></div>";
+      return '<div class="evrow ' + fu(b) + '" data-cat="' + esc(e.cat) + '"><span class="d">' + esc(when) + '</span><div><span class="chip st" style="color:' + catColor("out") + '">' + esc(EVCAT[e.cat] || e.cat) + "</span>" + (e.kid ? '<span class="chip st quiet">kids</span>' : "") + " <b>" + esc(e.t) + "</b>" + badge(b) + '<div class="small">' + esc([e.town + (e.cc ? " (" + e.cc + ")" : ""), e.venue, e.drive != null ? "~" + e.drive + " min" : "", e.cost].filter(Boolean).join(" · ")) + (e.src && e.src.length ? '<sup class="r">' + e.src.map(function (z) { return citeLink(z[0], srcMap(e.src)); }).join("") + "</sup>" : "") + " " + icsLink(e.t, e.from, e.to, [e.venue, e.town, e.cost].filter(Boolean).join(", ")) + "</div></div></div>";
     }
     h += '<section id="offduty" class="home"><h2>Out and about <span class="num">within 90 minutes</span></h2>';
     h += '<h3>This weekend <span class="small">' + esc(fmtShort(fri) + " – " + fmtShort(sun)) + "</span></h3>";
     if (OD.weather) h += '<p class="small">' + rich(OD.weather) + "</p>";
-    h += WK.length ? '<div class="evlist fug">' + nq() + WK.map(evRow).join("") + "</div>" : quiet("Nothing listed for the weekend yet.");
+    if (wkWx.length) h += '<p class="small wkwx">' + wkWx.map(function (r) { var d = pd(r[0]); return "<b>" + DOW[d.getDay()] + "</b> " + esc(r[1]) + "° / " + esc(r[2]) + "°" + (r[3] != null && r[3] !== "" ? ", " + esc(r[3]) + "% rain" : ""); }).join(" · ") + "</p>";
+    h += WK.length ? '<p class="small">Nearest first; tap + cal to add one to your calendar.</p><div class="evlist fug">' + nq() + WK.map(evRow).join("") + "</div>" : quiet("Nothing listed for the weekend yet.");
     if (OD.items && OD.items.length) h += '<h3>Editor\'s picks</h3>' + items(OD.items, { inlineTag: true });
     if (OD.weekend) {
       h += "<h3>Weekend guide</h3>" + table(["Day", "Event", "Place", "Why go", "Cost / booking"], OD.weekend.rows.map(function (r) { return "<tr>" + r.map(function (c, j) { return "<td" + (j === 0 ? ' class="d"' : "") + ">" + rich(c) + "</td>"; }).join("") + "</tr>"; }).join(""));
@@ -978,14 +1108,12 @@
       h += '<p class="small" style="margin-top:6px">Model forecast at the grid elevation, not the summit; depth is the model\'s snowpack. <a href="' + esc(SK.url || "https://open-meteo.com") + '" target="_blank" rel="noopener">' + esc(SK.source || "Open-Meteo") + "</a>. Drive times from Hoensbroek, approximate.</p></section>";
     }
 
-    /* ===== Part 7 · Hockey ===== */
     var HK = E.hockey || {};
-    h += part("hockey", "Part 8", "Hockey", "Carolina first, then the league.", "p-hockey");
-    h += '<section id="hockey" class="hockey"><h2>Hurricanes' + (CV ? ' <span class="num">' + esc(CV.season) + "</span>" : "") + "</h2>";
+    h += '<section id="hockey" class="home"><h2>Hurricanes' + (CV ? ' <span class="num">' + esc(CV.season) + "</span>" : "") + "</h2>";
     if (CV) {
       h += '<div class="season" role="list" aria-label="Last ten results">' + CV.games.slice(-10).map(function (g) { return '<div class="g ' + g.res + '" role="listitem" title="' + esc(fmtShort(g.date) + (g.home ? " vs " : " at ") + g.opp + ": " + g.res + " " + g.gf + "–" + g.ga) + '"><b>' + g.res + "</b>" + (g.home ? "" : "@") + esc(g.opp) + "</div>"; }).join("") + "</div>";
       h += '<p class="recline">Record <b>' + esc(CV.record) + "</b> · <b>" + CV.points + "</b> pts" + (CV.metro ? " · <b>" + ordinal(CV.metro) + "</b> in the Metro" : "") + " · " + CV.games.length + " games</p>";
-      if (CV.upcoming.length) h += '<div class="lbl sched-l">Next ten · CET</div><div class="season up" role="list" aria-label="Next ten games">' + CV.upcoming.map(function (g) { var dk = g.utc ? cetDate(g.utc) : g.date, tm = g.utc ? cet(g.utc).replace(/^\w+,? /, "") : ""; return '<div class="g" role="listitem" title="' + esc(fmt(pd(dk)) + (g.home ? " vs " : " at ") + g.opp + (tm ? " · " + tm + " CET" : "")) + '"><b>' + esc(fmtShort(dk)) + "</b>" + (g.home ? "" : "@") + esc(g.opp) + (tm ? "<small>" + esc(tm) + "</small>" : "") + "</div>"; }).join("") + "</div>";
+      if (CV.upcoming.length) h += '<div class="lbl sched-l">Next ten · CET</div><div class="season up" role="list" aria-label="Next ten games">' + CV.upcoming.map(function (g) { var dk = g.utc ? cetDate(g.utc) : g.date, tm = g.utc ? cet(g.utc).replace(/^\w+,? /, "") : ""; return '<div class="g" role="listitem" title="' + esc(fmt(pd(dk)) + (g.home ? " vs " : " at ") + g.opp + (tm ? " · " + tm + " CET" : "")) + '"><b>' + esc(fmtShort(dk)) + "</b>" + (g.home ? "" : "@") + esc(g.opp) + (tm ? "<small>" + esc(tm) + "</small>" : "") + "</div>"; }).join("") + "</div>" + '<p class="small">' + CV.upcoming.slice(0, 3).map(function (g) { return icsLink("Canes " + (g.home ? "vs " : "at ") + g.opp, g.utc ? cetDate(g.utc) : g.date, null, "Carolina Hurricanes", g.utc); }).join(" ") + " for the next three games</p>";
     }
     if (HK.canes) {
       var C = HK.canes, R = C.result;
@@ -1010,23 +1138,24 @@
     } else h += quiet("No NHL games last night.");
     h += "<h3>Top NHL news</h3>" + items(HK.news) + "</section>";
 
-    /* ===== Part 8 · Planner (always open) ===== */
-    h += part("plan", "Part 9", "Planner", "The week, the countdowns, the calendar, the school year and the season.", "p-plan");
-    h += '<section id="week" class="plan"><h2>This week <span class="num">holidays, school, bins, deadlines, major events</span></h2>' + weekStrip(PEV, E, TD) + "</section>";
-    h += '<section id="weather" class="plan"><h2>Weather and daylight <span class="num">' + esc(HOME.name) + " · 7 days</span></h2>" + weatherBlock(E, TD) + "</section>";
-    h += '<section id="countdown" class="plan"><h2>Countdowns</h2>' + countdowns(PEV, ctx, TD) + "</section>";
-    h += '<section id="calendar" class="plan"><h2>Calendar</h2>';
+    h += weekReview(E, ctx, TD, today);
+    h += '<section id="week" class="home"><h2>This week <span class="num">holidays, school, bins, deadlines, major events</span></h2>' + weekStrip(PEV, E, TD) + "</section>";
+    h += '<section id="weather" class="home"><h2>Weather and daylight <span class="num">' + esc(HOME.name) + " · 7 days</span></h2>" + weatherBlock(E, TD) + "</section>";
+    h += '<section id="countdown" class="home"><h2>Countdowns</h2>' + countdowns(PEV, ctx, TD) + "</section>";
+    h += '<section id="decisions" class="home"><h2>Decisions due <span class="num">next 60 days · needs an action from you</span></h2>' + decisionsDue(PEV, ctx, E, TD) + "</section>";
+    h += '<section id="calendar" class="home"><h2>Calendar</h2>';
     if (P.otd) h += '<div class="ap-c" style="margin-bottom:14px"><div class="lbl">' + esc(P.otd.title) + '</div><p style="margin:0">' + rich(P.otd.body) + "</p></div>";
-    var FILT = [["all","All"],["nl","NL"],["be","BE"],["de","DE"],["us","US"],["ev","Events"],["out","Out and about"],["hockey","Hockey"],["homed","Home"],["school","School"],["watch","Horizon"],["ex","Exercises"]];
+    var FILT = [["all","All"],["me","Yours"],["nl","NL"],["be","BE"],["de","DE"],["us","US"],["ev","Events"],["out","Out and about"],["hockey","Hockey"],["homed","Home"],["school","School"],["watch","Horizon"],["ex","Exercises"]];
     h += '<div class="cal-nav"><button type="button" id="calprev" aria-label="Previous month">‹</button><span class="cal-title" id="caltitle"></span><button type="button" id="calnext" aria-label="Next month">›</button><button type="button" id="caltoday">This month</button></div>';
     h += '<div class="filt" id="calfilt" role="group" aria-label="Filter the calendar">' + FILT.map(function (f) { return '<button type="button" data-f="' + f[0] + '" aria-pressed="' + (f[0] === "all") + '">' + f[1] + "</button>"; }).join("") + "</div>";
     h += '<div class="legend">' + Object.keys(CAT).map(function (k) { return '<span><i style="background:' + catColor(k) + '"></i>' + esc(CAT[k][0]) + "</span>"; }).join("") + "</div>";
     h += '<div id="calbody"></div>';
     var dl = ((ctx.deadlines && ctx.deadlines.items) || []).filter(function (d) { return d.date >= TD && daysBetween(TD, d.date) <= 90; }).sort(function (a, b) { return a.date < b.date ? -1 : 1; });
-    h += '<h3>Deadlines <span class="small">next 90 days · data/deadlines.json, hand-maintained</span></h3>' + (dl.length ? table(["In", "Date", "What"], dl.map(function (d) { var n = daysBetween(TD, d.date), b = d.updated === TD ? "UPDATED" : ""; return '<tr class="' + (n <= 7 ? "soon" : "") + '"><td class="d">' + (n === 0 ? "today" : n + " d") + '</td><td class="d">' + esc(fmtShort(d.date)) + "</td><td><b>" + esc(d.name) + "</b>" + badge(b) + (d.note ? '<div class="small">' + esc(d.note) + "</div>" : "") + "</td></tr>"; }).join("")) : quiet("No deadlines listed. Add items to data/deadlines.json."));
+    h += '<h3>Deadlines <span class="small">next 90 days · data/deadlines.json, hand-maintained</span></h3>' + (dl.length ? table(["In", "Date", "What"], dl.map(function (d) { var n = daysBetween(TD, d.date), b = d.updated === TD ? "UPDATED" : ""; return '<tr class="' + (n <= 7 ? "soon" : "") + '"><td class="d">' + (n === 0 ? "today" : n + " d") + '</td><td class="d">' + esc(fmtShort(d.date)) + "</td><td><b>" + esc(d.name) + "</b>" + badge(b) + " " + icsLink(d.name, d.date, null, d.note) + (d.note ? '<div class="small">' + esc(d.note) + "</div>" : "") + "</td></tr>"; }).join("")) : quiet("No deadlines listed. Add items to data/deadlines.json."));
     if (P.culture) h += "<h3>" + esc(P.culture.title) + "</h3><p>" + rich(P.culture.body) + "</p>";
     h += "</section>";
-    h += '<section id="school" class="plan"><h2>School year</h2>';
+    h += '<section id="year" class="home"><h2>The year ahead <span class="num">family, work, world, seasons</span></h2>' + yearAhead(ctx, E, TD, today) + "</section>";
+    h += '<section id="school" class="home"><h2>School year</h2>';
     if (ctx.calendar && ctx.calendar.school) {
       var OV = overlapRows(ctx.calendar, TD);
       h += '<p class="small">Twelve months from today. The bottom row marks the days when every system is off at once.</p>' + gantt(OV, today, { year: true, noXmas: true });
@@ -1035,11 +1164,13 @@
     } else if (P.school) h += gantt(P.school, today) + (P.school.note ? '<p class="small" style="margin-top:6px">' + rich(P.school.note) + "</p>" : "");
     else h += quiet("No school calendar loaded.");
     h += "</section>";
-    if (P.season) h += '<section id="season" class="plan"><h2>' + esc(P.season.title) + "</h2>" + (P.season.intro ? '<p class="small">' + rich(P.season.intro) + "</p>" : "") + gantt(P.season, today) + (P.season.notes ? '<ul class="clean" style="margin-top:12px">' + P.season.notes.map(function (n) { return "<li>" + rich(n) + "</li>"; }).join("") + "</ul>" : "") + "</section>";
+    if (P.season) h += '<section id="season" class="home"><h2>' + esc(P.season.title) + "</h2>" + (P.season.intro ? '<p class="small">' + rich(P.season.intro) + "</p>" : "") + gantt(P.season, today) + (P.season.notes ? '<ul class="clean" style="margin-top:12px">' + P.season.notes.map(function (n) { return "<li>" + rich(n) + "</li>"; }).join("") + "</ul>" : "") + "</section>";
 
     /* ===== Footer ===== */
-    h += '<a class="next" href="#sources">Sources ↓</a><section id="sources"><h2>Sources</h2><ol class="src">' + (E.sources || []).map(function (s) { return '<li id="s' + s[0] + '" value="' + s[0] + '"><a href="' + esc(s[3]) + '" target="_blank" rel="noopener">' + esc(s[1]) + '</a><span class="o"> · ' + esc(s[2]) + "</span></li>"; }).join("") + "</ol>";
+    h += '<a class="next" href="#sources">Sources ↓</a><section id="sources"><h2>Sources</h2><ol class="src">' + (E.sources || []).map(function (s) { return '<li id="s' + s[0] + '" value="' + s[0] + '"' + (s[4] ? ' class="t' + esc(s[4]) + '"' : "") + '><a href="' + esc(s[3]) + '" target="_blank" rel="noopener">' + esc(s[1]) + '</a><span class="o"> · ' + esc(s[2]) + "</span>" + (s[4] == 1 ? ' <span class="chip st tier">official</span>' : s[4] == 2 ? ' <span class="chip st tier">primary</span>' : "") + "</li>"; }).join("") + "</ol>" + ((E.sources || []).some(function (x) { return x[4]; }) ? '<p class="small">Tiers: official or primary document, wire or secondary document, reputable outlet, other.</p>' : "");
     if (E.flags) h += '<p class="small" style="margin-top:12px"><b>Sourcing flags:</b> ' + rich(E.flags) + "</p>";
+    h += correctionsBlock(ctx, E, TD);
+    h += aboutBlock(E, TD);
     h += '<div class="foot"><div class="arch"><label class="small" for="arch">Past editions</label><select id="arch"></select></div>';
     h += '<div class="search"><form id="searchform" role="search"><label class="small" for="q">Archive search</label><input id="q" type="search" placeholder="Search headlines in every edition" autocomplete="off"><button type="submit">Search</button></form><div id="hits" class="small"></div></div>';
     if (E.changelog) h += '<div><div class="small"><b>What changed in the Readbook</b></div><ul class="clean small" style="margin-top:6px">' + E.changelog.map(function (c) { return "<li>" + esc(c[0]) + ": " + rich(c[1]) + "</li>"; }).join("") + "</ul></div>";
@@ -1110,7 +1241,7 @@
 
     /* health */
     var words0 = 0, stop0 = false;
-    Array.prototype.forEach.call(app.children, function (el) { if (stop0 || el.id === "p-plan" || el.id === "sources") { stop0 = true; return; } if (el.id !== "slim") words0 += (el.textContent || "").split(/\s+/).length; });
+    Array.prototype.forEach.call(app.children, function (el) { if (stop0 || el.id === "weekreview" || el.id === "week" || el.id === "sources") { stop0 = true; return; } if (el.id !== "slim") words0 += (el.textContent || "").split(/\s+/).length; });
     var HR = health(E, ctx, TD, words0), nAct = HR.filter(function (r) { return r[1] === "act"; }).length, nWatch = HR.filter(function (r) { return r[1] === "watch"; }).length;
     var HB = HR.filter(function (r) { return r[1] !== "ok"; }).sort(function (a, b) { return (a[1] === "act" ? 0 : 1) - (b[1] === "act" ? 0 : 1); }), HG = HR.filter(function (r) { return r[1] === "ok"; });
     document.getElementById("healthbody").innerHTML = '<p class="hsum"><span class="chip hs ' + (nAct ? "act" : nWatch ? "watch" : "ok") + '">' + (nAct ? nAct + " to act on" : nWatch ? "nothing to act on" : "all clear") + "</span> " + HR.length + " checks · " + nWatch + " to watch · " + HG.length + " ok</p>" + (HB.length ? '<ul class="hl">' + HB.map(function (r) { return '<li class="h-' + r[1] + '"><span class="chip hs ' + r[1] + '">' + r[1] + "</span><b>" + esc(r[0]) + "</b> " + esc(r[2]) + "</li>"; }).join("") + "</ul>" : "") + (HG.length ? '<p class="small hok"><b>OK:</b> ' + HG.map(function (r) { return '<span title="' + esc(r[2]) + '">' + esc(r[0]) + "</span>"; }).join(" · ") + "</p>" : "");
@@ -1121,8 +1252,13 @@
 
     /* read time: Front through Hockey */
     var words = 0, stop = false;
-    Array.prototype.forEach.call(app.children, function (el) { if (stop || el.id === "p-plan" || el.id === "sources") { stop = true; return; } if (el.id !== "slim") words += (el.textContent || "").split(/\s+/).length; });
+    Array.prototype.forEach.call(app.children, function (el) { if (stop || el.id === "weekreview" || el.id === "week" || el.id === "sources") { stop = true; return; } if (el.id !== "slim") words += (el.textContent || "").split(/\s+/).length; });
     document.getElementById("readtime").textContent = "≈ " + Math.max(1, Math.round(words / 230)) + " min read";
+    var aw = document.getElementById("aboutwords"); if (aw) aw.textContent = "about " + Math.round(words / 50) * 50 + " words through the reading tier";
+    /* read time per tier for the contents block */
+    var tierWords = {}, curTier = "front";
+    Array.prototype.forEach.call(app.children, function (el) { if (el.classList && el.classList.contains("part")) { curTier = PART_CLASSES.filter(function (c) { return el.classList.contains(c); })[0] || curTier; return; } if (el.id === "slim" || el.id === "sources" || el.id === "health") return; tierWords[curTier] = (tierWords[curTier] || 0) + (el.textContent || "").split(/\s+/).length; });
+    app.querySelectorAll(".toc [data-tier]").forEach(function (li) { var t = li.getAttribute("data-tier"); li.querySelector(".tm").textContent = "≈ " + Math.max(1, Math.round((tierWords[t] || 0) / 230)) + " min"; });
 
     /* theme control and status line */
     var themeBtns = app.querySelectorAll(".theme button");
@@ -1151,7 +1287,7 @@
       store("rb:newonly", newOnly ? "1" : "0");
     }
     tg.addEventListener("click", function () { newOnly = !newOnly; applyNewOnly(); });
-    document.getElementById("newcount").addEventListener("click", function () { newOnly = true; applyNewOnly(); document.getElementById("p-world").scrollIntoView(); });
+    document.getElementById("newcount").addEventListener("click", function () { newOnly = true; applyNewOnly(); document.getElementById("p-news").scrollIntoView(); });
     applyNewOnly();
 
     /* USD/EUR range toggle */
@@ -1266,15 +1402,16 @@
     var target = date || ctx.index.latest;
     return getJSON("data/editions/" + target + ".json").then(function (E) { render(E, ctx); if (!location.hash || location.hash.indexOf("/") < 0) window.scrollTo(0, 0); });
   }
-  function fail(e) { app.innerHTML = '<div class="err"><b>Couldn\'t load the Readbook.</b><br>' + esc(e.message || e) + "<br>Check your connection and pull down to refresh.</div>"; }
+  function fail(e) { if (window.console && console.error) console.error(e && e.stack || e); app.innerHTML = '<div class="err"><b>Couldn\'t load the Readbook.</b><br>' + esc(e.message || e) + "<br>Check your connection and pull down to refresh.</div>"; }
   function opt(url) { return getJSON(url).catch(function () { return null; }); }
   Promise.all([
     getJSON("data/index.json"),
     opt("data/incidents.json"), opt("data/bins.json"), opt("data/threads.json"), opt("data/horizon.json"),
     opt("data/fx.json"), opt("data/series.json"), opt("data/canes.json"),
     opt("data/conflicts.json"), opt("data/world-series.json"), opt("data/calendar.json"), opt("data/deadlines.json"),
-    opt("data/congress.json"), opt("data/exercises.json"), opt("data/releases.json"), opt("data/events.json"), opt("data/idioms.json"), opt("data/ski.json"), opt("data/search-index.json"), opt("data/land.json")
+    opt("data/congress.json"), opt("data/exercises.json"), opt("data/releases.json"), opt("data/events.json"), opt("data/idioms.json"), opt("data/ski.json"), opt("data/search-index.json"), opt("data/land.json"), opt("data/week.json"), opt("data/corrections.json")
   ]).then(function (r) {
+    ctx.week = r[20]; ctx.corrections = r[21];
     ctx.fetchedAt = Date.now();
     ctx.congress = r[12] && r[12].items; ctx.congressWatch = r[12] && r[12].watch; ctx.congressTiers = r[12] && r[12].tiers; ctx.exercises = r[13] && r[13].exercises; ctx.releases = r[14]; ctx.events = r[15] && r[15].events; ctx.idioms = r[16] && r[16].idioms; ctx.ski = r[17]; ctx.searchIndex = r[18]; ctx.land = r[19] && r[19].rings;
     ctx.index = r[0]; ctx.incidents = r[1] && r[1].incidents; ctx.attrLog = r[1] && r[1].attrLog; ctx.bins = r[2];

@@ -1,6 +1,6 @@
-# Readbook data format (v5.0)
+# Readbook data format (v6.0)
 
-The site is static. `index.html` + `app.js` + `styles.css` never change day to day; each morning's run only writes data files. The page renders every earlier format (2.5, 3.0 and 4.0) as well: see "Compatibility" at the end. Everything on the page is expanded by default; nothing is folded. Run `node tools/validate.js` before committing; it checks everything listed here.
+The site is static. `index.html` + `app.js` + `styles.css` never change day to day; each morning's run only writes data files. The page renders every earlier format (2.5 to 5.0) as well: see "Compatibility" at the end. Wording rules live in STYLE.md. Everything on the page is expanded by default; nothing is folded. Run `node tools/validate.js` before committing; it checks everything listed here.
 
 ## Files the daily run writes
 
@@ -23,17 +23,19 @@ The site is static. `index.html` + `app.js` + `styles.css` never change day to d
 | `data/idioms.json` | Append today's idiom (rotate `nl`, `fr`, `it`); never repeat a phrase. |
 | `data/ski.json` | 1 Dec to 31 Mar only: refresh `snow` daily from Open-Meteo for every resort; resorts stay as they are. Outside the season, leave the file alone. |
 | `data/search-index.json` | Append today's headline block (same fields as the page's search). |
+| `data/corrections.json` | Append an entry when an earlier item was wrong: `{date, edition, section, t, src}`. Never edit or delete. |
 | `data/calendar.json` | Only when a school year or holiday list is newly published: add the missing segments. Otherwise leave alone. |
 | `data/bins.json` | Only when a new Rd4 calendar is supplied. |
 
-Never written by the run: `data/deadlines.json` (Nick's own list). Write the standing files first and the edition second, so a run that stops early still leaves the memory current.
+Never written by the run: `data/deadlines.json` and `data/week.json` (Nick's own lists). Write the standing files first and the edition second, so a run that stops early still leaves the memory current.
 
 The standing files are the Readbook's memory. The page reads them; it never writes.
 
 ## Text conventions (all string fields)
 
 - Plain text, no HTML. `**bold**`, `*italic*`.
-- Citations: `[12]` or `[3, 45]` at the end of a sentence; numbers refer to the edition's `sources`.
+- Citations: `[12]` or `[3, 45]` at the end of a sentence; numbers refer to the edition's `sources`. Source rows carry a tier as a fifth field: `[n, title, outlet, url, tier]`, tier 1 official or primary, 2 wire or secondary document, 3 reputable outlet, 4 other.
+- Cross-links: any item may carry `"links": ["theatre:<id>", "thread:<id>", "congress:<id>", "post:<id>", "exercise:<id>", "release:<id>", "event:<id>"]` naming the standing-file entries it updates. The page shows them as chips on the item and marks the tracker row "in today's edition".
 - Every link appears once, in `sources`. No URLs in body text.
 - Badges: `"badge": "NEW"` or `"UPDATED"`; omit when unchanged. The Today strip counts badges and the "New only" toggle hides everything without one. Standing files carry no badges; the page derives them from dates.
 - Empty arrays are fine: the page shows a one-line "No significant change today."
@@ -112,9 +114,12 @@ The standing files are the Readbook's memory. The page reads them; it never writ
    "events": [[date,"nl|be|de|us|mkt|pro",label,where,what,effect,priority?]] (only what calendar.json does not already hold; a 7th element true puts the row in This week),
    "season": {"title","intro","from","to","ticks","rows":[{"name","sub","color","segs"}],"notes"} | null,
    "otd": {"title","body"}, "culture": {"title","body"} | null},
- "sources": [[n,title,outlet,url]], "flags": "…", "changelog": [[date,text]]
+ "weekreview": {"title","body":["para",...],"rows":[[date,text]]} | omitted (Sundays: the week ahead, dated; the page adds a computed week-behind scorecard),
+ "sources": [[n,title,outlet,url,tier]], "flags": "…", "changelog": [[date,text]]
 }
 ```
+
+`item` may also carry `"links": [...]` (see Text conventions).
 
 `item` = `{"h","tag","conf","badge","body","sw","fy"}` (all optional except `h`).
 
@@ -127,6 +132,12 @@ The World feature rota: Monday "Theatre in numbers" (table), Tuesday "Actor on t
 - This week lists only holidays, AFNORTH days, bins, deadlines, career dates, Christmas markets opening, events with `prio`, planner rows with the priority flag, exercise start and end dates, and Canes games that start between 07:00 and 22:59 CET. Spans show on their first and last day only.
 - New section `weather` in the Planner: the seven-day forecast from `today.weather.week`, today's sunrise, sunset and day length, and the daylight curve (moved out of School year).
 - The NATO spending table shows only in the week NATO publishes. The Congress tracker shows only what moved in 7 days; the register is compact chips coloured by state. The exercise calendar is one line per exercise. Readbook health lists act and watch items and puts the ok checks on one line.
+
+### Changes from v5.0
+
+- The page is organised in five tiers (Today, The news, The watch, The reading, Home and planning); every edition object stays where it was, so no field moved. Jump ids added: `congress-sec`, `exercises-sec`, `production`, `depth`, `ttpsec`, `since`, `decisions`, `year`, `weekreview`.
+- `sources` rows gain the tier field; items gain optional `links`; `weekreview` added for Sundays.
+- `"v": "6.0"`.
 
 ### Changes from v4.0
 
@@ -205,6 +216,14 @@ Append one row per published value; never backfill estimates. A weekly series ke
 
 Edited rarely. Add a school year when the ministry publishes it. The page merges holidays, school breaks, markets, bins, Canes games, horizon events, deadlines and `planner.events` into one calendar with month navigation, a seven-day strip, countdown tiles and the twelve-month school overlap chart.
 
+### `data/week.json`
+
+`{ "items": [ {"date","end","t","note","act":bool} ] }`. Hand-maintained by Nick. Entries appear on the week board, the calendar (category Yours), the year-ahead board and, when `act` is true, in Decisions due. Names and dates only.
+
+### `data/corrections.json`
+
+`{ "items": [ {"date","edition","section","t","src"} ] }`. Append-only. The footer shows the last 30 days.
+
 ### `data/deadlines.json`
 
 ```
@@ -240,6 +259,7 @@ As before, plus `attrLog`: `[{"id","date","from","to","t","src"}]`.
 
 ## Compatibility
 
+- A 5.0 edition renders in the five tiers unchanged; "About this edition" says source tiers are not assigned and the health section flags it until the prompt catches up.
 - A 4.0 edition renders with the Profession, Frontier and Home sections showing their standing-file content and quiet lines for the missing edition objects.
 - A 3.0 or 2.5 edition whose `world` is an array renders it under Developments; the board, the numbers and the planner come from the standing files; the feature block says there is none.
 - A 2.5 edition's `planner.threads` and `planner.horizon` still render when the standing files are empty; `planner.school` renders when `calendar.json` is missing.

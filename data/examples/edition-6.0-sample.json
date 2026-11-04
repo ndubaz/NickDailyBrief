@@ -1,5 +1,5 @@
 {
- "v": "5.0",
+ "v": "6.0",
  "date": "2026-11-07",
  "weekday": "Saturday",
  "edition": 0,
@@ -343,7 +343,10 @@
     "conf": "moderate",
     "badge": "NEW",
     "body": "A US official called Monday's strike on radar and missile launchers on Qeshm Island a “defensive operation” after Iranian surface-to-air fire; the Islamic Revolutionary Guard Corps (IRGC) claims it downed two US drones. [16] Foreign Minister Araghchi says Hormuz could reopen within two days if Washington ends its blockade, lifts oil sanctions and halts fighting on all fronts. Asked about returning to war this week, Trump said: “Let's say I did. Would I tell you?” [17]",
-    "next": "Araghchi's two-day reopening offer stands as of 3 Nov; the US has not replied in public. [17]"
+    "next": "Araghchi's two-day reopening offer stands as of 3 Nov; the US has not replied in public. [17]",
+    "links": [
+     "theatre:iran"
+    ]
    },
    {
     "region": "Russia–Ukraine",
@@ -351,7 +354,11 @@
     "conf": "high",
     "badge": "UPDATED",
     "body": "Envoy Steve Witkoff says the US will mediate working-level talks between Ukraine and Russia in Abu Dhabi on 10–11 Nov, covering post-war security, de-escalation and humanitarian steps. [14] On Monday Russian bombs killed at least 24 people at a school used for aid handouts in Komyshuvakha, Zaporizhzhia region. [18] Trump says he would be willing to invite Zelensky to the G20 summit in Florida next month. [19]",
-    "next": "Abu Dhabi talks 10–11 Nov; US negotiators meet European allies in Brussels this week. [14]"
+    "next": "Abu Dhabi talks 10–11 Nov; US negotiators meet European allies in Brussels this week. [14]",
+    "links": [
+     "theatre:ru-ua",
+     "thread:russia-ukraine-talks"
+    ]
    },
    {
     "region": "United States",
@@ -1357,373 +1364,435 @@
    1,
    "Het weer de komende 48 uur: Heerlen",
    "Weerplaza",
-   "https://www.weerplaza.nl/nederland/heerlen/10546/"
+   "https://www.weerplaza.nl/nederland/heerlen/10546/",
+   3
   ],
   [
    2,
    "Carolina Hurricanes schedule 2026–27",
    "NHL.com",
-   "https://www.nhl.com/hurricanes/schedule"
+   "https://www.nhl.com/hurricanes/schedule",
+   3
   ],
   [
    3,
    "Anche l'Italia colpita dagli attacchi hacker ai supermercati: Chigi convoca un vertice d'urgenza",
    "Open",
-   "https://www.open.online/2026/11/02/supermercati-frigoriferi-hacker-italia-sicilia/"
+   "https://www.open.online/2026/11/02/supermercati-frigoriferi-hacker-italia-sicilia/",
+   3
   ],
   [
    4,
    "Frigiderele din 6 magazine din România, posibil vizate în noul atac",
    "HotNews.ro",
-   "https://hotnews.ro/frigiderele-din-6-magazine-din-romania-ale-aceluiasi-lant-de-supermarketuri-posibil-vizate-in-noul-atac-care-a-ridicat-temperaturile-la-50-de-grade-2393059"
+   "https://hotnews.ro/frigiderele-din-6-magazine-din-romania-ale-aceluiasi-lant-de-supermarketuri-posibil-vizate-in-noul-atac-care-a-ridicat-temperaturile-la-50-de-grade-2393059",
+   3
   ],
   [
    5,
    "Federaal parket opent strafonderzoek na cyberaanval (liveblog)",
    "VRT NWS",
-   "https://www.vrt.be/vrtnws/nl/liveblog/federaal-parket-opent-strafonderzoek-na-cyberaanval-motief-van~1793610043244/"
+   "https://www.vrt.be/vrtnws/nl/liveblog/federaal-parket-opent-strafonderzoek-na-cyberaanval-motief-van~1793610043244/",
+   3
   ],
   [
    6,
    "Cyberattacks hit supermarket fridges and freezers in Europe, Belgium launches investigation",
    "Euronews",
-   "https://www.euronews.com/2026/11/02/cyberattack-hits-belgian-supermarket-fridges-and-freezers"
+   "https://www.euronews.com/2026/11/02/cyberattack-hits-belgian-supermarket-fridges-and-freezers",
+   3
   ],
   [
    7,
    "Hackers pushed freezers at French supermarkets to 122 degrees. Now the Pentagon is asking whether the same thing hit U.S. military bases",
    "Fortune",
-   "https://fortune.com/2026/11/01/hackers-pushed-freezers-at-hundreds-of-french-supermarkets-to-122-degrees-pentagon-investigating-us-military-bases/"
+   "https://fortune.com/2026/11/01/hackers-pushed-freezers-at-hundreds-of-french-supermarkets-to-122-degrees-pentagon-investigating-us-military-bases/",
+   3
   ],
   [
    8,
    "Germany tightens security at military bases over concerns about Russia, commander says",
    "Stars and Stripes",
-   "https://www.stripes.com/theaters/europe/2026-11-01/german-bases-security-threats-23326000.html"
+   "https://www.stripes.com/theaters/europe/2026-11-01/german-bases-security-threats-23326000.html",
+   3
   ],
   [
    9,
    "Poland prepares for possible sabotage near Russian Kaliningrad border",
    "Ukrainska Pravda",
-   "https://www.pravda.com.ua/eng/news/2026/11/02/8060934/"
+   "https://www.pravda.com.ua/eng/news/2026/11/02/8060934/",
+   3
   ],
   [
    10,
    "Top security official comments on West (Shoigu press conference)",
    "TASS",
-   "https://tass.com/russias-foreign-policy/2211895"
+   "https://tass.com/russias-foreign-policy/2211895",
+   3
   ],
   [
    11,
    "Election officials brace for foreign threats and an unpredictable Washington",
    "CNN via ABC17",
-   "https://abc17news.com/politics/national-politics/cnn-us-politics/2026/11/01/election-officials-brace-for-foreign-threats-and-an-unpredictable-washington/"
+   "https://abc17news.com/politics/national-politics/cnn-us-politics/2026/11/01/election-officials-brace-for-foreign-threats-and-an-unpredictable-washington/",
+   3
   ],
   [
    12,
    "NATO allies fear Trump could target alliance after potential US midterm defeat: report",
    "Anadolu (citing POLITICO)",
-   "https://m.aa.com.tr/en/world/nato-allies-fear-trump-could-target-alliance-after-potential-us-midterm-defeat-report/4108932"
+   "https://m.aa.com.tr/en/world/nato-allies-fear-trump-could-target-alliance-after-potential-us-midterm-defeat-report/4108932",
+   3
   ],
   [
    13,
    "Pentagon Europe posture review terms of reference",
    "Grosswald",
-   "https://www.grosswald.org/pentagon-europe-posture-review-terms-of-reference-four-option-sets-6-november/"
+   "https://www.grosswald.org/pentagon-europe-posture-review-terms-of-reference-four-option-sets-6-november/",
+   3
   ],
   [
    14,
    "U.S. to mediate new Ukraine-Russia talks in Abu Dhabi next week",
    "Xinhua",
-   "https://english.news.cn/20261103/caa9492cf0a74a6b97db0fe7ba3781fc/c.html"
+   "https://english.news.cn/20261103/caa9492cf0a74a6b97db0fe7ba3781fc/c.html",
+   3
   ],
   [
    15,
    "Protesters block RAF Lakenheath entrance over Iran war",
    "Stars and Stripes",
-   "https://www.stripes.com/theaters/europe/2026-11-02/protesters-block-entrance-raf-lakenheath-23339601.html"
+   "https://www.stripes.com/theaters/europe/2026-11-02/protesters-block-entrance-raf-lakenheath-23339601.html",
+   3
   ],
   [
    16,
    "US strikes Iran's Qeshm Island on eve of midterm elections",
    "Yahoo News",
-   "https://www.yahoo.com/news/politics/articles/us-strikes-irans-qeshm-island-035152273.html"
+   "https://www.yahoo.com/news/politics/articles/us-strikes-irans-qeshm-island-035152273.html",
+   3
   ],
   [
    17,
    "Oil slides on Hormuz deal hopes but Trump keeps Iran strikes on the table",
    "Euronews",
-   "https://www.euronews.com/2026/11/02/oil-slides-on-hormuz-deal-hopes-but-trump-keeps-iran-strikes-on-the-table"
+   "https://www.euronews.com/2026/11/02/oil-slides-on-hormuz-deal-hopes-but-trump-keeps-iran-strikes-on-the-table",
+   3
   ],
   [
    18,
    "Ukraine war latest: Russian bomb strikes kill 24 at humanitarian aid center in Zaporizhzhia Oblast",
    "Kyiv Independent",
-   "https://kyivindependent.com/ukraine-war-latest-russian-bomb-strikes-kill-24-at-humanitarian-aid-center-in-zaporizhzhia-oblast/"
+   "https://kyivindependent.com/ukraine-war-latest-russian-bomb-strikes-kill-24-at-humanitarian-aid-center-in-zaporizhzhia-oblast/",
+   3
   ],
   [
    19,
    "Russia-Ukraine talks to take place in Abu Dhabi this month, US says",
    "The National",
-   "https://www.thenationalnews.com/news/us/2026/11/02/russia-ukraine-witkoff-abu-dhabi/"
+   "https://www.thenationalnews.com/news/us/2026/11/02/russia-ukraine-witkoff-abu-dhabi/",
+   3
   ],
   [
    20,
    "The 2026 midterm general election season is upon us. Here's what to watch",
    "NPR via KJZZ",
-   "https://www.kjzz.org/npr-top-stories/2026-09-08/the-2026-midterm-general-election-season-is-upon-us-heres-what-to-watch"
+   "https://www.kjzz.org/npr-top-stories/2026-09-08/the-2026-midterm-general-election-season-is-upon-us-heres-what-to-watch",
+   3
   ],
   [
    21,
    "NDAA FY2027 and Dec. 11 funding deadline",
    "Buffalo Chronicle (thin source)",
-   "https://buffalochronicle.com/2026/10/24/ndaa-fy2027-lame-duck-dec-11-funding-deadline-niagara-falls/"
+   "https://buffalochronicle.com/2026/10/24/ndaa-fy2027-lame-duck-dec-11-funding-deadline-niagara-falls/",
+   3
   ],
   [
    22,
    "Liveblog zu Gen-Z-Protesten: Rund 2000 Menschen zogen bei Demo durch Aachen",
    "Aachener Zeitung",
-   "https://www.aachener-zeitung.de/lokales/region-aachen/aachen/liveblog-zu-gen-z-protesten-die-demo-zieht-durch-aachen/163833673.html"
+   "https://www.aachener-zeitung.de/lokales/region-aachen/aachen/liveblog-zu-gen-z-protesten-die-demo-zieht-durch-aachen/163833673.html",
+   3
   ],
   [
    23,
    "In first public speech as acting Army secretary, Telle highlights acquisition",
    "Stars and Stripes",
-   "https://www.stripes.com/branches/army/2026-10-12/acting-army-secretary-telle-ausa-conference-23134806.html"
+   "https://www.stripes.com/branches/army/2026-10-12/acting-army-secretary-telle-ausa-conference-23134806.html",
+   3
   ],
   [
    24,
    "Army meets Reserve, Special Forces recruiting goals for first time in a decade",
    "Army Times",
-   "https://www.armytimes.com/news/recruiting/2026/10/01/army-meets-reserve-special-forces-recruiting-goals-for-first-time-in-a-decade-general-confirms/"
+   "https://www.armytimes.com/news/recruiting/2026/10/01/army-meets-reserve-special-forces-recruiting-goals-for-first-time-in-a-decade-general-confirms/",
+   3
   ],
   [
    25,
    "Europe-assigned Army unit fires Tomahawk; no deployment to Europe planned",
    "Stars and Stripes",
-   "https://www.stripes.com/branches/army/2026-10-29/mdc-e-missile-battery-tests-tomahawk-23288680.html"
+   "https://www.stripes.com/branches/army/2026-10-29/mdc-e-missile-battery-tests-tomahawk-23288680.html",
+   3
   ],
   [
    26,
    "FY27 HQDA Board Schedule",
    "Army Human Resources Command",
-   "https://www.hrc.army.mil/content/FY27%20HQDA%20Board%20Schedule"
+   "https://www.hrc.army.mil/content/FY27%20HQDA%20Board%20Schedule",
+   1
   ],
   [
    27,
    "Crude oil prices sell off more than 7% on Iran peace talk hopes ahead of U.S. midterms",
    "CNBC",
-   "https://cnbc.com/2026/11/02/oil-prices-fall-as-iran-us-pursue-diplomacy.html"
+   "https://cnbc.com/2026/11/02/oil-prices-fall-as-iran-us-pursue-diplomacy.html",
+   3
   ],
   [
    28,
    "How major US stock indexes fared Monday 11/2/2026",
    "AP via WTOP",
-   "https://wtop.com/national/2026/11/how-major-us-stock-indexes-fared-monday-11-2-2026"
+   "https://wtop.com/national/2026/11/how-major-us-stock-indexes-fared-monday-11-2-2026",
+   2
   ],
   [
    29,
    "Asia Market Quick Take, 3 November 2026",
    "Saxo",
-   "https://www.home.saxo/en-sg/content/articles/macro/asia-market-quick-take-03-november-2026-03112026"
+   "https://www.home.saxo/en-sg/content/articles/macro/asia-market-quick-take-03-november-2026-03112026",
+   3
   ],
   [
    30,
    "Market data: ^AEX, TTF=F, GC=F, ^VIX, ^TNX daily closes",
    "Yahoo Finance",
-   "https://finance.yahoo.com/markets/"
+   "https://finance.yahoo.com/markets/",
+   3
   ],
   [
    31,
    "Euro foreign exchange reference rates: US dollar",
    "European Central Bank",
-   "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/eurofxref-graph-usd.en.html"
+   "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/eurofxref-graph-usd.en.html",
+   1
   ],
   [
    32,
    "Manufacturing PMI at 55.5%; October 2026 ISM Manufacturing PMI Report",
    "ISM via PR Newswire",
-   "https://www.prnewswire.com/news-releases/manufacturing-pmi-at-55-5-october-2026-ism-manufacturing-pmi-report-302925617.html"
+   "https://www.prnewswire.com/news-releases/manufacturing-pmi-at-55-5-october-2026-ism-manufacturing-pmi-report-302925617.html",
+   3
   ],
   [
    33,
    "Fed chooses patience, leaves rates unchanged",
    "Charles Schwab",
-   "https://www.schwab.com/learn/story/fomc-meeting"
+   "https://www.schwab.com/learn/story/fomc-meeting",
+   3
   ],
   [
    34,
    "ECB holds rates unchanged, EURUSD down",
    "XTB",
-   "https://www.xtb.com/en/market-analysis/ecb-holds-rates-unchanged-eurusd-down"
+   "https://www.xtb.com/en/market-analysis/ecb-holds-rates-unchanged-eurusd-down",
+   1
   ],
   [
    35,
    "US hiring rebound eyed as Fed weighs December rise; eurozone inflation near 4%",
    "IndexBox",
-   "https://www.indexbox.io/blog/us-hiring-expected-to-rebound-in-october-as-fed-rate-decision-looms-eurozone-inflation-in-focus-ahead-of-ecb/"
+   "https://www.indexbox.io/blog/us-hiring-expected-to-rebound-in-october-as-fed-rate-decision-looms-eurozone-inflation-in-focus-ahead-of-ecb/",
+   1
   ],
   [
    36,
    "Inflatie stijgt naar 3,4 procent in september",
    "CBS",
-   "https://www.cbs.nl/nl-nl/nieuws/2026/42/inflatie-stijgt-naar-3-4-procent-in-september"
+   "https://www.cbs.nl/nl-nl/nieuws/2026/42/inflatie-stijgt-naar-3-4-procent-in-september",
+   3
   ],
   [
    37,
    "November TTF hits 100 euros per MWh for the first time since 2022",
    "Il Sole 24 Ore",
-   "https://en.ilsole24ore.com/art/november-ttf-gas-price-hits-100-euros-per-mwh-for-the-first-time-in-2022-AJWn5twB"
+   "https://en.ilsole24ore.com/art/november-ttf-gas-price-hits-100-euros-per-mwh-for-the-first-time-in-2022-AJWn5twB",
+   3
   ],
   [
    38,
    "RBA lifts interest rates to highest level in 18 years to try to dampen inflation",
    "ABC News (Australia)",
-   "https://www.abc.net.au/news/2026-11-03/rba-lifts-interest-rates-november-2026-highest-rate-in-18-years/107340050"
+   "https://www.abc.net.au/news/2026-11-03/rba-lifts-interest-rates-november-2026-highest-rate-in-18-years/107340050",
+   3
   ],
   [
    39,
    "Geen deal met oppositie over belastingplan, woensdag debat in Tweede Kamer",
    "NOS",
-   "https://nos.nl/artikel/2637476-geen-deal-met-oppositie-over-belastingplan-woensdag-debat-in-tweede-kamer"
+   "https://nos.nl/artikel/2637476-geen-deal-met-oppositie-over-belastingplan-woensdag-debat-in-tweede-kamer",
+   3
   ],
   [
    40,
    "Now 74 municipalities placed under increased government pressure over asylum housing",
    "NL Times",
-   "https://nltimes.nl/2026/11/02/now-74-municipalities-placed-increased-government-pressure-asylum-housing"
+   "https://nltimes.nl/2026/11/02/now-74-municipalities-placed-increased-government-pressure-asylum-housing",
+   3
   ],
   [
    41,
    "Banning the infinite scroll: Pro MP files bill on addictive apps",
    "DutchNews",
-   "https://www.dutchnews.nl/2026/11/banning-the-infinite-scroll-pro-mp-files-bill-on-addictive-apps/"
+   "https://www.dutchnews.nl/2026/11/banning-the-infinite-scroll-pro-mp-files-bill-on-addictive-apps/",
+   3
   ],
   [
    42,
    "Prosecutors raise reward for arrest of “Bolle Jos” to €2m",
    "DutchNews",
-   "https://www.dutchnews.nl/2026/11/prosecutors-raise-reward-for-arrest-of-bolle-jos-to-e2m/"
+   "https://www.dutchnews.nl/2026/11/prosecutors-raise-reward-for-arrest-of-bolle-jos-to-e2m/",
+   3
   ],
   [
    43,
    "AFNORTH 2026–27 academic calendar (PDF)",
    "AFNORTH",
-   "https://afnorthmhs.dodea.edu/sites/g/files/afatmv2851/files/2026-05/afn-26-27-academic-calendar.pdf"
+   "https://afnorthmhs.dodea.edu/sites/g/files/afatmv2851/files/2026-05/afn-26-27-academic-calendar.pdf",
+   3
   ],
   [
    44,
    "106th Armistice anniversary remembrance service held in Brunssum War Cemetery (2024)",
    "JFC Brunssum",
-   "https://jfcbs.nato.int/page5964943/2024/106th-armistice-anniversary-remembrance-service-held-in-brunssum-war-cemetery-.aspx"
+   "https://jfcbs.nato.int/page5964943/2024/106th-armistice-anniversary-remembrance-service-held-in-brunssum-war-cemetery-.aspx",
+   3
   ],
   [
    45,
    "Dutch Mountain Film Festival (DMFF) 2026",
    "FilmFreeway",
-   "https://filmfreeway.com/DMFF"
+   "https://filmfreeway.com/DMFF",
+   3
   ],
   [
    46,
    "De Hubertusfeesten in Offelken",
    "Immaterieel Erfgoed",
-   "https://immaterieelerfgoed.be/nl/erfgoederen/de-hubertusfeesten-in-offelken/pdf"
+   "https://immaterieelerfgoed.be/nl/erfgoederen/de-hubertusfeesten-in-offelken/pdf",
+   3
   ],
   [
    47,
    "Geheimen van Parkstad brengt streekverhalen tot leven in Theater Heerlen",
    "Drimble / ParkstadActueel",
-   "https://drimble.nl/regio/limburg/heerlen/108460506/geheimen-van-parkstad-brengt-streekverhalen-tot-leven-in-theater-heerlen.html"
+   "https://drimble.nl/regio/limburg/heerlen/108460506/geheimen-van-parkstad-brengt-streekverhalen-tot-leven-in-theater-heerlen.html",
+   3
   ],
   [
    48,
    "Hurricanes bring 4-game win streak into matchup against the Predators",
    "AP via ABC News",
-   "https://abcnews.com/Sports/wireStory/hurricanes-bring-4-game-win-streak-matchup-predators-137763124"
+   "https://abcnews.com/Sports/wireStory/hurricanes-bring-4-game-win-streak-matchup-predators-137763124",
+   2
   ],
   [
    49,
    "Scores, Monday 2 November 2026",
    "NHL.com",
-   "https://www.nhl.com/scores/2026-11-02"
+   "https://www.nhl.com/scores/2026-11-02",
+   3
   ],
   [
    50,
    "Carolina, Seattle to play in 2026 Global Series Finland",
    "NHL.com",
-   "https://www.nhl.com/news/carolina-seattle-to-play-in-2026-global-series-finland"
+   "https://www.nhl.com/news/carolina-seattle-to-play-in-2026-global-series-finland",
+   3
   ],
   [
    51,
    "NHL News Roundup: Kucherov trade request, Larkin and more",
    "The Hockey Writers",
-   "https://thehockeywriters.com/nhl-news-roundup-kucherov-trade-request-larkin-more/"
+   "https://thehockeywriters.com/nhl-news-roundup-kucherov-trade-request-larkin-more/",
+   3
   ],
   [
    52,
    "Vacances scolaires 2026–2027",
    "La DH",
-   "https://www.dhnet.be/actu/belgique/2026/07/30/voici-les-vacances-scolaires-2026-2027-a-bruxelles-en-wallonie-et-en-flandre-ZWQBTQRCCNA3XESWPP6K5DGB5M/"
+   "https://www.dhnet.be/actu/belgique/2026/07/30/voici-les-vacances-scolaires-2026-2027-a-bruxelles-en-wallonie-et-en-flandre-ZWQBTQRCCNA3XESWPP6K5DGB5M/",
+   3
   ],
   [
    53,
    "School holiday dates 2026–2027",
    "Government.nl",
-   "https://www.government.nl/topics/school-holidays/overview-of-school-holiday-dates-per-academic-year/school-holiday-dates-2026-2027"
+   "https://www.government.nl/topics/school-holidays/overview-of-school-holiday-dates-per-academic-year/school-holiday-dates-2026-2027",
+   3
   ],
   [
    54,
    "Weihnachtsferien 2026",
    "Kalenderpedia",
-   "https://www.kalenderpedia.de/ferien/weihnachtsferien-2026.html"
+   "https://www.kalenderpedia.de/ferien/weihnachtsferien-2026.html",
+   3
   ],
   [
    55,
    "Weihnachtsmarkt am Kölner Dom",
    "koeln.de",
-   "https://www.koeln.de/weihnachten/weihnachtsmaerkte-koeln/weihnachtsmarkt-am-koelner-dom/"
+   "https://www.koeln.de/weihnachten/weihnachtsmaerkte-koeln/weihnachtsmarkt-am-koelner-dom/",
+   3
   ],
   [
    56,
    "Aachener Weihnachtsmarkt: dates and hours",
    "Aachen Christmas market",
-   "https://aachenweihnachtsmarkt.de/en/pages/offers/"
+   "https://aachenweihnachtsmarkt.de/en/pages/offers/",
+   3
   ],
   [
    57,
    "Christmas market Monschau",
    "Tourismus Kreis Düren",
-   "https://www.tourismus.kreis-dueren.de/en/e-christmas-market-monschau-2"
+   "https://www.tourismus.kreis-dueren.de/en/e-christmas-market-monschau-2",
+   3
   ],
   [
    58,
    "Magisch Maastricht",
    "Kidsproof",
-   "https://www.kidsproof.nl/zuid-limburg/eropuit/magisch-maastricht/magisch-maastricht-kerst-gezinsuitje-eu/"
+   "https://www.kidsproof.nl/zuid-limburg/eropuit/magisch-maastricht/magisch-maastricht-kerst-gezinsuitje-eu/",
+   3
   ],
   [
    59,
    "Village de Noël in Luik",
    "Visit Zuid-Limburg",
-   "https://www.visitzuidlimburg.com/experience-zuid-limburg/event/village-de-noel-in-luik/64128"
+   "https://www.visitzuidlimburg.com/experience-zuid-limburg/event/village-de-noel-in-luik/64128",
+   3
   ],
   [
    60,
    "Battle of Schmidt, 1944 (David T. Zabecki)",
    "HistoryNet",
-   "https://historynet.com/battle-of-schmidt-1944/"
+   "https://historynet.com/battle-of-schmidt-1944/",
+   3
   ],
   [
    61,
    "Sint-Hubertusfeesten in Wiemesmeer",
    "Immaterieel Erfgoed",
-   "https://immaterieelerfgoed.be/nl/erfgoederen/sint-hubertusfeesten-in-wiemesmeer/pdf"
+   "https://immaterieelerfgoed.be/nl/erfgoederen/sint-hubertusfeesten-in-wiemesmeer/pdf",
+   3
   ],
   [
    73,
    "World Oil Transit Chokepoints: Strait of Hormuz",
    "US Energy Information Administration",
-   "https://www.eia.gov/international/analysis/special-topics/World_Oil_Transit_Chokepoints"
+   "https://www.eia.gov/international/analysis/special-topics/World_Oil_Transit_Chokepoints",
+   1
   ]
  ],
  "flags": "Thin or single-source: Lithuania's extension of its Kaliningrad border measures (Ukrainska Pravda only); the FY27 colonel board dates (HRC schedule seen only in a search snippet, the page did not load); Sicilian store counts (four confirmed by the operator, at least 12 per unnamed trade sources); the IRGC drone claim (Tasnim, unverified); the 11 Dec funding-deadline source remains thin. Brent's front month rolled from December to January after 30 Oct, so the sparkline shows a bigger fall (117.64 to 104.77) than the −7.6% move on the January contract. Gold, VIX, AEX and TTF figures are Yahoo Finance closes. ECB history ZIP checked: latest row 2 Nov, already in fx.json, nothing appended.",
@@ -1741,7 +1810,7 @@
    "v1: first designed edition."
   ]
  ],
- "_note": "SAMPLE of the 5.0 edition shape, built from Edition 2's sourced facts and restructured. Not listed in index.json and never shown on the page; the morning run follows this shape and SCHEMA.md. Arrays left empty are legitimately empty for a sample; the run fills them from the day's reporting.",
+ "_note": "SAMPLE of the 6.0 edition shape, built from Edition 2's sourced facts and restructured. Not listed in index.json and never shown on the page; the morning run follows this shape and SCHEMA.md. Arrays left empty are legitimately empty for a sample; the run fills them from the day's reporting.",
  "deftech": {
   "items": [
    {
@@ -1764,5 +1833,6 @@
  },
  "frontier": {
   "items": []
- }
+ },
+ "weekreview": null
 }

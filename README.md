@@ -1,6 +1,6 @@
 # Nick's Daily Readbook
 
-A personal daily briefing, installed on the iPhone as a home-screen web app. Static site: no build step, no server code. Version 5.0.
+A personal daily briefing, installed on the iPhone as a home-screen web app. Static site: no build step, no server code. Version 6.0.
 
 ## How it works
 
@@ -11,15 +11,19 @@ A personal daily briefing, installed on the iPhone as a home-screen web app. Sta
 
 ## The page
 
-One scroll, everything expanded, nothing folded: Front (masthead, Today strip, Five things, Today and tomorrow), then Part 1 The World, Part 2 Security, Part 3 Watchlist, Part 4 Profession (Defence & Army with a Congress tracker, NATO & European militaries with an exercise calendar, Defence tech, Aperture), Part 5 Frontier (tech and AI releases, the release log, the Friday state-of-the-art table), Part 6 Money, Part 7 Home (Netherlands, AFNORTH, Out and about within 90 minutes, Taal with a daily idiom, Snow in season), Part 8 Hockey, Part 9 Planner (This week with priority items only, Weather and daylight, countdowns, the calendar, the school year), and the footer with Sources, Past editions, Archive search and the changelog. The sticky header has jump chips per part and a "New only" toggle that hides everything without a NEW or UPDATED badge (remembered on the phone).
+One scroll in five tiers, everything expanded, nothing folded:
 
-The World part is facts and summaries only: the board (ten theatres on a schematic map, each with a dated log and a four-week activity bar), overnight developments, a "By the numbers" row of open-source series with sparklines, and one feature a day on a seven-day rota (theatre in numbers, actor on the record, trend line, chronology, week on the board, geography, the record). The page draws every chart from data: tables, series, timelines and geography schematics come from the edition; no hand-made images.
+1. **Today.** Masthead with the data-update time, the Today strip, Five things, the pick, Today and tomorrow, a computed "Since yesterday" list of what moved in the memory, and a contents block with a read time per tier.
+2. **The news.** World developments, Security (hybrid, Europe, Euregio), Defence & Army (DoD, Army, Congress, Career, leaders on the record), NATO & allies, Defence tech, Frontier, Markets, Rates, Netherlands. Same item anatomy everywhere; items link to the trackers they update.
+3. **The watch.** The board with its map, the numbers row, the USD/EUR tracker, threads, horizon, the Congress tracker (bills, budget, confirmations as a stage matrix) with the watched-post register, the exercise calendar, the release log, the state-of-the-art table and production series.
+4. **The reading.** The World feature, the Army in depth piece, the Saturday week in war, Aperture.
+5. **Home and planning.** AFNORTH, Out and about (weekend first, nearest first, with the forecast), Taal, Snow in season, the Canes, then the Planner: the Sunday review, the week board, weather, countdowns, Decisions due, the calendar, the year-ahead board with leave windows, the school year and the seasonal planner.
 
-The exchange rate is shown everywhere as USD/EUR, euros per dollar. The three typefaces are self-hosted in `fonts/` (all SIL Open Font License) and precached, so the page looks the same offline. The masthead has a theme control (auto, light, dark) and a status line that says when the data was loaded and whether the phone is offline.
+The sticky header carries one chip per tier and the "New only" toggle. Anything dated (events, deadlines, exercises, decisions, the next games) has a "+ cal" link that downloads a calendar file. The footer holds Sources with their tiers, Corrections, About this edition, the archive, the search and Readbook health.
 
-The footer ends with **Readbook health**: 24 checks computed on the page (format drift, run cadence, read time against a 40-minute budget for the whole page, empty and quiet sections, freshness of every standing file, coverage running out). "Act" means the data model or the task prompt needs work.
+Wording rules for the run are in `STYLE.md`. The exchange rate is shown everywhere as USD/EUR, euros per dollar. The three typefaces are self-hosted in `fonts/`.
 
-`node tools/validate.js` checks the latest edition and every standing file (citations, jump ids, the USD/EUR rule, the no-assessment rule for the World part, record and series lengths). The morning run executes it before committing.
+`node tools/validate.js` checks the latest edition and every standing file (citations, jump ids, source tiers, cross-link ids, the USD/EUR rule, the no-assessment rule for the World part, record and series lengths). The morning run executes it before committing.
 
 ## The memory model
 
@@ -36,7 +40,9 @@ The edition is a daily snapshot. The standing files under `data/` are the Readbo
 | `data/series.json` | Thirty trading days per market series | Sparklines on the market cards |
 | `data/canes.json` | Carolina's results, upcoming games, record, points, Metro position | Results strip, next-ten strip, season chart, calendar, countdown |
 | `data/calendar.json` | Public holidays, school breaks for four systems, clocks, market seasons, 18 months | Calendar, week strip, countdowns, school overlap chart |
-| `data/deadlines.json` | Nick's own deadlines, hand-maintained, never touched by the run | Deadlines table, calendar, week strip |
+| `data/deadlines.json` | Nick's own deadlines, hand-maintained, never touched by the run | Deadlines table, Decisions due, calendar, week board |
+| `data/week.json` | Nick's own dated entries (TDY, duty, travel), hand-maintained | Week board, calendar, year ahead, Decisions due when `act` is set |
+| `data/corrections.json` | Corrections appended by the run | Footer |
 | `data/bins.json` | Rd4 collection dates | Bin day tile, calendar, countdown |
 | `data/congress.json` | Key defence bills, the budget cycle, confirmations, and the register of 38 watched posts (Army leadership, Joint Staff, combatant commands, Army four-star commands, Europe-based general officers) | Congress tracker in Profession, deadlines on the Planner |
 | `data/exercises.json` | NATO and allied exercises with dates | Exercise calendar, Planner |
@@ -51,6 +57,7 @@ Editions in the 2.5, 3.0 and 4.0 formats still render: an edition whose `world` 
 
 ## Keeping your own files current
 
+- **week.json:** add `{"date": "2026-11-20", "end": "2026-11-21", "t": "TDY Brussels", "act": false}` to `items`. Set `"act": true` for anything that needs a decision from you and it joins Decisions due.
 - **deadlines.json:** add `{"name": "APK", "date": "2027-03-14", "note": "garage booked", "cat": "car"}` to `items`. Set `"updated"` on an item to today's date and the page badges it UPDATED for that day. Keep names generic; no addresses, plate or document numbers.
 - **calendar.json:** when a ministry publishes a new school year, add its breaks under `school.<system>.segs` as `["YYYY-MM-DD", "YYYY-MM-DD", "label"]`. The AFNORTH entries come from the school's academic calendar PDF; the run completes them when it can read the PDF.
 - **bins.json:** paste the next Rd4 calendar as `[["YYYY-MM-DD","GFT · after 07:00"], ...]`.
