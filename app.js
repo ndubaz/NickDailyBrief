@@ -129,14 +129,14 @@
   function niceTicks(lo, hi) {
     var range = hi - lo || 1, base = Math.pow(10, Math.floor(Math.log(range / 3) / Math.LN10)), mults = [1, 2, 2.5, 5, 10, 20, 25, 50], best = null;
     for (var i = 0; i < mults.length; i++) {
-      var st = mults[i] * base, a = Math.ceil(lo / st - 1e-9) * st, t = [];
+      var st = mults[i] * base, a = Math.ceil(lo / st - 1e-9) * st || 0, t = [];
       for (var v = a; v <= hi + 1e-9; v += st) t.push(v);
       if (t.length >= 3 && t.length <= 4) return { ticks: t, step: st };
       if (t.length >= 3 && (!best || t.length < best.ticks.length)) best = { ticks: t, step: st };
     }
     return best ? { ticks: best.ticks.slice(0, 4), step: best.step } : { ticks: [lo, hi], step: range };
   }
-  function tickFmt(v, step) { var d = step >= 1 ? 0 : Math.min(4, Math.ceil(-Math.log(step) / Math.LN10)); return v.toLocaleString("en-GB", { minimumFractionDigits: d, maximumFractionDigits: d }); }
+  function tickFmt(v, step) { var e = Math.floor(Math.log(step) / Math.LN10 + 1e-9), m = Math.round(step / Math.pow(10, e) * 10) / 10, d = Math.min(4, Math.max(0, -e + (m % 1 ? 1 : 0))); return v.toLocaleString("en-GB", { minimumFractionDigits: d, maximumFractionDigits: d }); }
   /* generic line chart: series ascending [[date, value]], opts {W, days, avg, hi, lo, dec, label, zero} */
   function lineChart(series, o) {
     o = o || {};
@@ -196,13 +196,13 @@
     if (!rows || !rows.length) return "";
     var W = Math.max(240, Math.round(o.W || 360)), H = o.H || 150, T = 18, B = 20, L = 6, R = 6, n = rows.length, bw = (W - L - R) / n;
     var mx = Math.max.apply(null, rows.map(function (r) { return r[1]; })) || 1, mn = Math.min.apply(null, rows.map(function (r) { return r[1]; }));
-    var lo = o.zero ? 0 : Math.max(0, mn - (mx - mn) * 0.5), hi = mx;
+    var lo = o.zero || mn < 0 ? Math.min(0, mn) : Math.max(0, mn - (mx - mn) * 0.5), hi = Math.max(mx, lo + 1e-9);
     function Y(v) { return T + (1 - (v - lo) / (hi - lo || 1)) * (H - T - B); }
-    var s = '<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="' + esc(o.label || "Bar chart") + '">';
-    s += '<line x1="' + L + '" y1="' + (H - B) + '" x2="' + (W - R) + '" y2="' + (H - B) + '" stroke="var(--line)" stroke-width="1"/>';
+    var base = Y(Math.max(lo, Math.min(0, hi))), s = '<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="' + esc(o.label || "Bar chart") + '">';
+    s += '<line x1="' + L + '" y1="' + base.toFixed(1) + '" x2="' + (W - R) + '" y2="' + base.toFixed(1) + '" stroke="var(--line)" stroke-width="1"/>';
     rows.forEach(function (r, i) {
-      var x = L + i * bw + bw * 0.15, w = bw * 0.7, y = Y(r[1]), hot = r[3];
-      s += '<rect x="' + x.toFixed(1) + '" y="' + y.toFixed(1) + '" width="' + w.toFixed(1) + '" height="' + (H - B - y).toFixed(1) + '" fill="var(--pc)" fill-opacity="' + (hot ? ".9" : ".45") + '"><title>' + esc(r[0] + ": " + (o.fmt ? o.fmt(r[1]) : r[1])) + "</title></rect>";
+      var x = L + i * bw + bw * 0.15, w = bw * 0.7, yv = Y(r[1]), y = Math.min(yv, base), hot = r[3];
+      s += '<rect x="' + x.toFixed(1) + '" y="' + y.toFixed(1) + '" width="' + w.toFixed(1) + '" height="' + Math.abs(base - yv).toFixed(1) + '" fill="var(--pc)" fill-opacity="' + (hot ? ".9" : ".45") + '"><title>' + esc(r[0] + ": " + (o.fmt ? o.fmt(r[1]) : r[1])) + "</title></rect>";
       if (n <= 14) s += svgText(x + w / 2, y - 4, o.fmt ? o.fmt(r[1]) : String(r[1]), "middle", n > 10 ? 8.5 : 10) + svgText(x + w / 2, H - 6, r[0], "middle", n > 10 ? 9 : 10);
     });
     return s + "</svg>";
@@ -304,7 +304,7 @@
     s += '<path d="M' + path.join(" L") + " L" + X(ndays).toFixed(1) + "," + (H - B) + " L" + L + "," + (H - B) + ' Z" fill="var(--pc)" fill-opacity=".15"/><polyline points="' + path.join(" ") + '" fill="none" stroke="var(--pc)" stroke-width="1.5"/>';
     for (var m = 0; m < 12; m++) { var dm = Math.round((new Date(year, m, 1) - jan1) / DAY) + 1; s += svgText(X(dm) + 2, H - 7, MON[m].charAt(0), "start", 9); }
     var doy = Math.round((pd(todayKey) - jan1) / DAY) + 1, th = pts[doy - 1], tx = X(doy), ty = Y(th), lh = todayH > 0 ? todayH : th, hh = Math.floor(lh), mm = Math.round((lh - hh) * 60), minD0 = pts.indexOf(mn) + 1, nearMin = Math.abs(doy - minD0) < 75, ly = nearMin ? Math.max(T + 10, Y(mn) - 22) : ty - 8;
-    s += '<line x1="' + tx.toFixed(1) + '" y1="' + T + '" x2="' + tx.toFixed(1) + '" y2="' + (H - B) + '" stroke="var(--crit)" stroke-width="1" stroke-dasharray="2 2"/><circle cx="' + tx.toFixed(1) + '" cy="' + ty.toFixed(1) + '" r="3.5" fill="var(--crit)"/>' + svgText(tx + (doy > ndays * 0.7 ? -8 : 8), ly, "today " + hh + " h " + String(mm).padStart(2, "0") + " min" + (nearMin ? " · shortest " + mn.toFixed(1) + " h" : ""), doy > ndays * 0.7 ? "end" : "start", 10.5, true, "var(--ink)");
+    s += '<line x1="' + tx.toFixed(1) + '" y1="' + T + '" x2="' + tx.toFixed(1) + '" y2="' + (H - B) + '" stroke="var(--crit)" stroke-width="1" stroke-dasharray="2 2"/><circle cx="' + tx.toFixed(1) + '" cy="' + ty.toFixed(1) + '" r="3.5" fill="var(--crit)"/>' + svgText(tx + (doy > ndays * 0.7 ? -8 : 8), ly, "today " + hm(lh) + (nearMin ? " · shortest " + mn.toFixed(1) + " h" : ""), doy > ndays * 0.7 ? "end" : "start", 10.5, true, "var(--ink)");
     var minD = pts.indexOf(mn) + 1, maxD = pts.indexOf(mx) + 1;
     s += svgText(X(maxD), Y(mx) - 5, "longest " + mx.toFixed(1) + " h", "middle", 10, true) + (nearMin ? "" : svgText(X(minD) + (minD > ndays * 0.7 ? -6 : 6), Y(mn) - 5, "shortest " + mn.toFixed(1) + " h", minD > ndays * 0.7 ? "end" : "start", 10, true));
     return s + "</svg>";
@@ -388,7 +388,7 @@
   function renderThreads(view) {
     if (!view.length) return quiet("No threads are open.");
     return '<div class="fug">' + nq() + view.map(function (v) {
-      var h = '<details class="thread ' + fu(v.badge) + '" id="thread-' + esc(v.t.id) + '" open><summary><span class="tname">' + esc(v.t.name) + '<span class="chip st ' + v.status + '">' + v.status + "</span>" + badge(v.badge) + inToday("thread", v.t.id) + '</span><span class="tlast"><span class="d">' + esc(fmtShort(v.last.date)) + "</span>" + rich(v.last.t, srcMap(v.last.src)) + "</span></summary>";
+      var h = '<details class="thread ' + fu(v.badge) + '" id="thread-' + esc(v.t.id) + '" open><summary><span class="tname">' + esc(v.t.name) + '<span class="chip st ' + esc(v.status) + '">' + esc(v.status) + "</span>" + badge(v.badge) + inToday("thread", v.t.id) + '</span><span class="tlast"><span class="d">' + esc(fmtShort(v.last.date)) + "</span>" + rich(v.last.t, srcMap(v.last.src)) + "</span></summary>";
       h += '<div class="tlog">' + (v.log.length > 1 ? logList(v.log.slice(0, -1), "sub") : "") + '<div class="meta">Opened ' + esc(v.t.opened ? fmtLong(v.t.opened) : "—") + " · " + v.log.length + (v.log.length === 1 ? " entry" : " entries") + (v.status === "quiet" ? " · quiet: nothing logged for " + v.age + " days" : "") + "</div></div></details>";
       return h;
     }).join("") + "</div>";
@@ -569,7 +569,7 @@
     function Y(v) { return T + (1 - (v - lo) / (hi - lo)) * (H - T - B); }
     var ph = wk.map(function (r, i) { return X(i).toFixed(1) + "," + Y(+r[1]).toFixed(1); }), pl = wk.map(function (r, i) { return X(i).toFixed(1) + "," + Y(+r[2]).toFixed(1); });
     var svg = '<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="Highs and lows for the week">';
-    svg += '<line x1="' + L + '" y1="' + Y(0).toFixed(1) + '" x2="' + (W - R) + '" y2="' + Y(0).toFixed(1) + '" stroke="var(--line)" stroke-dasharray="2 3"/>' + (lo <= 0 && hi >= 0 ? svgText(W - R, Y(0) - 3, "0°", "end", 9) : "");
+    if (lo <= 0 && hi >= 0) svg += '<line x1="' + L + '" y1="' + Y(0).toFixed(1) + '" x2="' + (W - R) + '" y2="' + Y(0).toFixed(1) + '" stroke="var(--line)" stroke-dasharray="2 3"/>' + svgText(W - R, Y(0) - 3, "0°", "end", 9);
     svg += '<path d="M' + ph.join(" L") + " L" + pl.slice().reverse().join(" L") + ' Z" fill="var(--p-home)" fill-opacity=".15"/>';
     svg += '<polyline points="' + ph.join(" ") + '" fill="none" stroke="var(--p-home)" stroke-width="1.5"/><polyline points="' + pl.join(" ") + '" fill="none" stroke="var(--accent)" stroke-width="1.5"/>';
     wk.forEach(function (r, i) { svg += svgText(X(i), Y(+r[1]) - 5, r[1] + "°", "middle", 10, true, "var(--ink)") + svgText(X(i), Y(+r[2]) + 12, r[2] + "°", "middle", 10, true); });
@@ -587,7 +587,7 @@
     if (S) {
       var g = (S.games || []).slice(), lg = g[g.length - 1];
       h += '<div class="tile team"><div class="lbl">' + esc(S.name) + " · NFL " + esc(S.season) + '</div><div class="val">' + esc(S.record || "") + "</div>";
-      if (g.length) h += '<div class="season mini" role="list">' + g.slice(-8).map(function (x) { return '<div class="g ' + x.res + '" role="listitem" title="' + esc(fmtShort(x.date) + (x.home ? " vs " : " at ") + x.opp + ": " + x.res + " " + x.pf + "–" + x.pa) + '"><b>' + x.res + "</b>" + (x.home ? "" : "@") + esc(x.opp) + "</div>"; }).join("") + "</div>";
+      if (g.length) h += '<div class="season mini" role="list">' + g.slice(-8).map(function (x) { return '<div class="g ' + esc(x.res) + '" role="listitem" title="' + esc(fmtShort(x.date) + (x.home ? " vs " : " at ") + x.opp + ": " + x.res + " " + x.pf + "–" + x.pa) + '"><b>' + esc(x.res) + "</b>" + (x.home ? "" : "@") + esc(x.opp) + "</div>"; }).join("") + "</div>";
       if (lg) h += '<p class="small">Last: ' + esc(lg.res + " " + lg.pf + "–" + lg.pa + (lg.home ? " vs " : " at ") + lg.opp + ", " + fmtShort(lg.date)) + (S.standing ? " · " + esc(S.standing) : "") + "</p>";
       h += nextGameLine(S.upcoming, TD);
       var nx = (S.upcoming || []).filter(function (x) { return (x.utc ? cetDate(x.utc) : x.date) >= TD; })[0];
@@ -796,7 +796,7 @@
     var car = seg((((E.army || {}).career || {}).dates || []).map(function (d) { return [d[0], d[0], plain(d[1])]; })), cg = seg((ctx.congress || []).filter(function (c) { return c.deadline; }).map(function (c) { return [c.deadline, c.deadline, (c.title || c.post) + " deadline"]; }));
     if (car.length || cg.length) rows.push({ name: "Career and Congress", sub: "dates", color: "pro", segs: car.concat(cg) });
     var hz = seg((ctx.horizon || []).map(function (e) { return [e.date, e.date, e.t]; })); if (hz.length) rows.push({ name: "Horizon", sub: "dated events", color: "watch", segs: hz });
-    var mk = seg((cal.markets || []).map(function (m) { return [m[2], m[3], m[0]]; })), sk = ctx.ski && ctx.ski.season ? seg([[(today.getMonth() + 1 >= 12 ? today.getFullYear() : today.getFullYear()) + "-" + ctx.ski.season[0], (today.getMonth() + 1 >= 12 ? today.getFullYear() + 1 : today.getFullYear()) + "-" + ctx.ski.season[1], "Ski season"], [(today.getFullYear() + 1) + "-" + ctx.ski.season[0], (today.getFullYear() + 2) + "-" + ctx.ski.season[1], "Ski season"]]) : [];
+    var mk = seg((cal.markets || []).map(function (m) { return [m[2], m[3], m[0]]; })), y0 = today.getMonth() >= 11 ? today.getFullYear() : today.getFullYear() - 1, sk = ctx.ski && ctx.ski.season ? seg([[y0 + "-" + ctx.ski.season[0], (y0 + 1) + "-" + ctx.ski.season[1], "Ski season"], [(y0 + 1) + "-" + ctx.ski.season[0], (y0 + 2) + "-" + ctx.ski.season[1], "Ski season"]]) : [];
     if (mk.length || sk.length) rows.push({ name: "Seasons", sub: "markets, snow", color: "mkt", segs: mk.concat(sk) });
     var me = seg(((ctx.week && ctx.week.items) || []).map(function (w) { return [w.date, w.end || w.date, w.t]; })); if (me.length) rows.push({ name: "Yours", sub: "week.json", color: "me", segs: me });
     var ticks = []; for (var m = 0; m < 13; m++) { var t = new Date(today.getFullYear(), today.getMonth() + m + 1, 1); if (key(t) <= to) ticks.push(key(t)); }
@@ -816,7 +816,7 @@
     var tiles = [["Board entries", cnt([].concat.apply([], (ctx.conflicts || []).map(function (t) { return t.log || []; })), function (e) { return e.date > from && e.date <= TD; })], ["Thread entries", cnt([].concat.apply([], (ctx.threads || []).map(function (t) { return t.log || []; })), function (e) { return e.date > from && e.date <= TD; })], ["Congress moves", cnt(ctx.congress, function (c) { return (c.updated || c.added) > from; })], ["Releases", cnt((ctx.releases || {}).releases, function (r) { return r.date > from && r.date <= TD; })], ["Incidents", cnt(ctx.incidents, function (i) { return i.date > from && i.date <= TD; })], ["Idioms learned", cnt(ctx.idioms, function (i) { return i.date > from && i.date <= TD; })]];
     var h = '<section id="weekreview" class="home"><h2>The week <span class="num">' + esc(fmtShort(addDays(TD, -6)) + " – " + fmtShort(TD)) + "</span></h2>";
     h += '<div class="strip cds">' + tiles.map(function (t) { return '<div class="tile cd"><div class="lbl">' + esc(t[0]) + '</div><div class="val">' + t[1] + "</div><p>last 7 days</p></div>"; }).join("") + "</div>";
-    if (WR) { h += '<h3>' + esc(WR.title || "The week ahead") + "</h3>" + (WR.body || []).map(function (p) { return "<p>" + rich(p) + "</p>"; }).join(""); var wrows = (WR.rows || []).filter(function (r) { return !r[0] || r[0] >= TD; }); if (wrows.length) h += table(["Date", "Scheduled"], wrows.map(function (r) { return '<tr><td class="d">' + esc(fmtShort(r[0])) + "</td><td>" + rich(r[1]) + " " + icsLink(plain(r[1]), r[0]) + "</td></tr>"; }).join(""), "lbl1"); }
+    if (WR) { h += '<h3>' + esc(WR.title || "The week ahead") + "</h3>" + (WR.body || []).map(function (p) { return "<p>" + rich(p) + "</p>"; }).join(""); var wrows = (WR.rows || []).filter(function (r) { return !r[0] || r[0] >= TD; }); if (wrows.length) h += table(["Date", "Scheduled"], wrows.map(function (r) { return '<tr><td class="d">' + (r[0] ? esc(fmtShort(r[0])) : "—") + "</td><td>" + rich(r[1]) + " " + icsLink(plain(r[1]), r[0]) + "</td></tr>"; }).join(""), "lbl1"); }
     return h + "</section>";
   }
   function correctionsBlock(ctx, E, TD) {
