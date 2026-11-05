@@ -1327,6 +1327,8 @@
   }
 
   /* ---------- post-render wiring ---------- */
+  /* window listeners survive a re-render (archive picker, hash change): bind by name so the previous one is removed first */
+  function bindWin(name, type, fn, opts) { ctx._win = ctx._win || {}; if (ctx._win[name]) window.removeEventListener(type, ctx._win[name], opts); ctx._win[name] = fn; window.addEventListener(type, fn, opts); }
   function after(E, ctx) {
     var today = pd(E.date), TD = E.date;
     var log = (ctx.incidents || []).filter(function (x) { var d = pd(x.date); return (today - d) / DAY <= 29 && d <= today; });
@@ -1354,7 +1356,7 @@
       Object.keys(ctx._dts || {}).forEach(function (k) { var el = document.getElementById("dts-" + k); if (el) { var m = ((ctx.worldSeries || {}).meta || {})[k] || {}; el.innerHTML = lineChart(ctx._dts[k], { W: el.clientWidth, days: 400, dec: m.decimals != null ? m.decimals : 0, zero: true, label: m.label || k }); } });
     }
     drawCharts();
-    var rsz = null; window.addEventListener("resize", function () { clearTimeout(rsz); rsz = setTimeout(drawCharts, 150); });
+    var rsz = null; bindWin("charts", "resize", function () { clearTimeout(rsz); rsz = setTimeout(drawCharts, 150); });
     document.getElementById("logsrc").textContent = ctx.incidents ? log.length + " incidents in the running log over the last 30 days (" + ctx.incidents.length + " since the log began). Bubbles sized by count; outside the map: Ireland, Iberia and beyond." : "Running log unavailable; showing this edition's incidents only.";
 
     /* attribution moves, last 7 days */
@@ -1412,7 +1414,7 @@
     applyTheme(store("rb:theme") || "auto");
     var st = document.getElementById("status");
     function status() { var t = ctx.fetchedAt ? new Date(ctx.fetchedAt) : null; st.textContent = (t ? "Loaded " + String(t.getHours()).padStart(2, "0") + ":" + String(t.getMinutes()).padStart(2, "0") : "") + (navigator.onLine === false ? " · offline, showing the last copy" : ""); st.classList.toggle("off", navigator.onLine === false); }
-    window.addEventListener("online", status); window.addEventListener("offline", status); status();
+    bindWin("online", "online", status); bindWin("offline", "offline", status); status();
 
     /* out-and-about filter */
     var evf = document.getElementById("evfilt");
@@ -1451,7 +1453,7 @@
     /* scroll containers get a right-edge fade */
     function fades() { app.querySelectorAll(".tw, .scrollx").forEach(function (t) { t.classList.toggle("scroll", t.scrollWidth - t.clientWidth - t.scrollLeft > 4); }); }
     app.addEventListener("scroll", function (e) { var t = e.target; if (t && t.classList && (t.classList.contains("tw") || t.classList.contains("scrollx"))) fades(); }, true);
-    window.addEventListener("resize", fades);
+    bindWin("fades", "resize", fades);
 
     /* calendar: month navigation and filter chips */
     var calState = { y: today.getFullYear(), m: today.getMonth(), f: "all" }, calBody = document.getElementById("calbody"), calTitle = document.getElementById("caltitle");
@@ -1527,9 +1529,7 @@
       prog.style.width = (max > 0 ? Math.min(100, window.scrollY / max * 100) : 0) + "%";
     }
     totop.addEventListener("click", function () { window.scrollTo({ top: 0, behavior: "smooth" }); });
-    window.removeEventListener("scroll", window.__rbScroll || function () {});
-    window.__rbScroll = onScroll;
-    window.addEventListener("scroll", onScroll, { passive: true });
+    bindWin("scroll", "scroll", onScroll, { passive: true });
     onScroll();
     document.title = "Nick's Daily Readbook · " + fmt(today);
     var m = location.hash.match(/^#ed-(\d{4}-\d{2}-\d{2})(?:\/([\w-]+))?$/);
