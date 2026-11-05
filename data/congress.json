@@ -1,6 +1,6 @@
 {
  "note": "Congress tracker for the Profession part, three lanes in one list. kind = bill (stages introduced, committee, house, senate, conference, enacted; status 'stalled' or 'vetoed' greys the pipeline), budget (stages request, house, senate, cr, enacted, plus a deadline date), nomination (stages vacant, announced, nominated, hearing, committee, floor, confirmed, or withdrawn). dates holds the date each stage was reached. The run adds rows for key defence bills, the appropriations cycle and defence posts (service secretaries and chiefs, Joint Staff, combatant and NATO commanders, OSD, ambassadors to NATO and the host nations), moves stage and dates as Congress acts, sets updated, copies cited source rows into src, and never deletes rows (the page hides enacted, confirmed and withdrawn rows after 30 days). Deadlines feed the Planner. watch = the register of posts the tracker follows (tiers: army, joint, cocom, army4, europe; senate = requires Senate confirmation). The run fills holder, since, acting and src when it can source them, sets updated on a change, and opens a nomination row (with postId) when a post falls vacant or a name is announced. Never delete posts.",
- "updated": "2026-11-03",
+ "updated": "2026-11-05",
  "items": [
   {
    "id": "ndaa-fy27",
@@ -268,31 +268,6 @@
    "number": "PN1413",
    "status": "Referred to SASC on 29 Sep; no hearing recorded.",
    "updated": "2026-11-03"
-  },
-  {
-   "id": "jfcbs-2026",
-   "kind": "nomination",
-   "post": "Commander, JFC Brunssum",
-   "title": "Commander, JFC Brunssum",
-   "org": "NATO",
-   "nominee": "Polish four-star, name not yet reported",
-   "stage": "announced",
-   "dates": {
-    "announced": "2026-02-27"
-   },
-   "committee": "NATO (no Senate role)",
-   "next": "Gerhartz completes his term first; handover date not announced.",
-   "postId": "jfcbs",
-   "added": "2026-11-03",
-   "src": [
-    [
-     152,
-     "Polish general to lead NATO's Joint Force Command Brunssum",
-     "Polskie Radio",
-     "https://www.polskieradio.pl/395/7784/Artykul/3646946"
-    ]
-   ],
-   "status": null
   },
   {
    "id": "autowarcom-2026",
@@ -1035,7 +1010,7 @@
    ],
    "updated": "2026-11-03",
    "verified": true,
-   "note": "Germany and Poland now rotate the post; a Polish four-star succeeds Gerhartz when his term ends."
+   "note": "Germany and Poland now rotate the post; Gerhartz's term runs its course first. Open a nomination row only when the Polish successor is named."
   },
   {
    "id": "shape-cos",
