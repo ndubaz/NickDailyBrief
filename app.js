@@ -12,7 +12,7 @@
   var CODE_COLORS = { CYB:"--c-us", SAB:"--crit", UAS:"--c-mkt", UWI:"--c-pro", GNSS:"--c-be", INF:"--c-nl", ELX:"--c-nl", MIG:"--c-de", PRX:"--warn", AIR:"--c-de", SEA:"--c-pro", COE:"--c-be", KIN:"--crit" };
   var PART_CLASSES = ["front","news","watch","reading","home"];
   var PARTS = [["front","Today","#front"],["news","The news","#p-news"],["watch","The watch","#p-watch"],["reading","The reading","#p-reading"],["home","Home and planning","#p-home"]];
-  var TIERS = { news: ["world","hybrid","europe","euregio","army","nato","deftech","frontier","markets","rates","nl"], watch: ["board","numbers","fx","threads","horizon","congress-sec","exercises-sec","releases","sota","production"], reading: ["feature","research","depth","ttpsec","aperture"], home: ["afnorth","offduty","dutch","snow","hockey","week","weather","countdown","decisions","calendar","year","school","season"] };
+  var TIERS = { news: ["world","hybrid","europe","euregio","army","nato","deftech","frontier","markets","rates","nl"], watch: ["board","numbers","fx","threads","horizon","congress-sec","exercises-sec","releases","sota","production"], reading: ["feature","research","depth","ttpsec","aperture"], home: ["afnorth","offduty","dutch","snow","hockey","week","weather","countdown","tv","calendar","year","school","season"] };
   var EVCAT = { music:"Music", markets:"Markets", museums:"Museums", sport:"Sport", kids:"Kids", food:"Food", outdoors:"Outdoors", festival:"Festivals" };
   var SERIES_BY_LABEL = [["s&p 500","spx"],["nasdaq","ndx"],["aex","aex"],["brent","brent"],["dutch ttf","ttf"],["ttf","ttf"]];
   var HOME = { lat: 50.89, lon: 5.98, name: "Heerlen" };
@@ -930,7 +930,7 @@
     }
     if (HY.pattern && HY.pattern.length) h += '<h3>Pattern check</h3><ul class="clean">' + HY.pattern.map(function (p) { return "<li>" + rich(p) + "</li>"; }).join("") + "</ul>";
     if (HY.tracker && HY.tracker.length) h += '<h3>Counter-hybrid tracker</h3><ul class="clean">' + HY.tracker.map(function (t) { return "<li>" + rich(t[0]) + ' <span class="act">' + esc(t[1]) + "</span></li>"; }).join("") + "</ul>";
-    if (HY.week) h += "<h3>Week in hybrid</h3>" + (HY.week.html ? HY.week.html : "<p>" + rich(HY.week.t || "") + "</p>");
+    if (HY.week) h += "<h3>Week in hybrid</h3>" + "<p>" + rich(HY.week.t || HY.week.html || "") + "</p>";
     if (HY.indicators && HY.indicators.length) {
       h += '<h3>Hybrid indicators</h3><div class="ind">';
       HY.indicators.forEach(function (x) { h += '<div class="ind-row"><div class="st ' + esc(x[0]) + '">' + (ICON[x[0]] || "") + (STLBL[x[0]] || esc(x[0])) + '</div><div style="min-width:0"><h4>' + esc(x[1]) + "</h4><p>" + rich(x[2]) + "</p></div></div>"; });
@@ -1256,7 +1256,7 @@
     var HK = E.hockey || {};
     h += '<section id="hockey" class="home"><h2>Hurricanes' + (CV ? ' <span class="num">' + esc(CV.season) + "</span>" : "") + "</h2>";
     if (CV) {
-      h += '<div class="season" role="list" aria-label="Last ten results">' + CV.games.slice(-10).map(function (g) { return '<div class="g ' + g.res + '" role="listitem" title="' + esc(fmtShort(g.date) + (g.home ? " vs " : " at ") + g.opp + ": " + g.res + " " + g.gf + "–" + g.ga) + '"><b>' + g.res + "</b>" + (g.home ? "" : "@") + esc(g.opp) + "</div>"; }).join("") + "</div>";
+      h += '<div class="season" role="list" aria-label="Last ten results">' + CV.games.slice(-10).map(function (g) { return '<div class="g ' + esc(g.res) + '" role="listitem" title="' + esc(fmtShort(g.date) + (g.home ? " vs " : " at ") + g.opp + ": " + g.res + " " + g.gf + "–" + g.ga) + '"><b>' + g.res + "</b>" + (g.home ? "" : "@") + esc(g.opp) + "</div>"; }).join("") + "</div>";
       h += '<p class="recline">Record <b>' + esc(CV.record) + "</b> · <b>" + CV.points + "</b> pts" + (CV.metro ? " · <b>" + ordinal(CV.metro) + "</b> in the Metro" : "") + " · " + CV.games.length + " games</p>";
       if (CV.upcoming.length) h += '<div class="lbl sched-l">Next ten · CET</div><div class="season up" role="list" aria-label="Next ten games">' + CV.upcoming.map(function (g) { var dk = g.utc ? cetDate(g.utc) : g.date, tm = g.utc ? cet(g.utc).replace(/^\w+,? /, "") : ""; return '<div class="g" role="listitem" title="' + esc(fmt(pd(dk)) + (g.home ? " vs " : " at ") + g.opp + (tm ? " · " + tm + " CET" : "")) + '"><b>' + esc(fmtShort(dk)) + "</b>" + (g.home ? "" : "@") + esc(g.opp) + (tm ? "<small>" + esc(tm) + "</small>" : "") + "</div>"; }).join("") + "</div>" + '<p class="small">' + CV.upcoming.slice(0, 3).map(function (g) { return icsLink("Canes " + (g.home ? "vs " : "at ") + g.opp, g.utc ? cetDate(g.utc) : g.date, null, "Carolina Hurricanes", g.utc); }).join(" ") + " for the next three games</p>";
     }
@@ -1313,7 +1313,7 @@
     if (P.season) h += '<section id="season" class="home"><h2>' + esc(P.season.title) + "</h2>" + (P.season.intro ? '<p class="small">' + rich(P.season.intro) + "</p>" : "") + gantt(P.season, today) + (P.season.notes ? '<ul class="clean" style="margin-top:12px">' + P.season.notes.map(function (n) { return "<li>" + rich(n) + "</li>"; }).join("") + "</ul>" : "") + "</section>";
 
     /* ===== Footer ===== */
-    h += '<a class="next" href="#sources">Sources ↓</a><section id="sources"><h2>Sources</h2><ol class="src">' + (E.sources || []).map(function (s) { return '<li id="s' + s[0] + '" value="' + s[0] + '"' + (s[4] ? ' class="t' + esc(s[4]) + '"' : "") + '><a href="' + esc(s[3]) + '" target="_blank" rel="noopener">' + esc(s[1]) + '</a><span class="o"> · ' + esc(s[2]) + "</span>" + (s[4] == 1 ? ' <span class="chip st tier">official</span>' : s[4] == 2 ? ' <span class="chip st tier">primary</span>' : "") + "</li>"; }).join("") + "</ol>" + ((E.sources || []).some(function (x) { return x[4]; }) ? '<p class="small">Tiers: official or primary document, wire or secondary document, reputable outlet, other.</p>' : "");
+    h += '<a class="next" href="#sources">Sources ↓</a><section id="sources"><h2>Sources</h2><ol class="src">' + (E.sources || []).map(function (s) { return '<li id="s' + esc(s[0]) + '" value="' + esc(s[0]) + '"' + (s[4] ? ' class="t' + esc(s[4]) + '"' : "") + '><a href="' + esc(s[3]) + '" target="_blank" rel="noopener">' + esc(s[1]) + '</a><span class="o"> · ' + esc(s[2]) + "</span>" + (s[4] == 1 ? ' <span class="chip st tier">official</span>' : s[4] == 2 ? ' <span class="chip st tier">primary</span>' : "") + "</li>"; }).join("") + "</ol>" + ((E.sources || []).some(function (x) { return x[4]; }) ? '<p class="small">Tiers: official or primary document, wire or secondary document, reputable outlet, other.</p>' : "");
     if (E.flags) h += '<p class="small" style="margin-top:12px"><b>Sourcing flags:</b> ' + rich(E.flags) + "</p>";
     h += correctionsBlock(ctx, E, TD);
     h += aboutBlock(E, TD);
@@ -1454,7 +1454,9 @@
 
     /* scroll containers get a right-edge fade */
     function fades() { app.querySelectorAll(".tw, .scrollx").forEach(function (t) { t.classList.toggle("scroll", t.scrollWidth - t.clientWidth - t.scrollLeft > 4); }); }
-    app.addEventListener("scroll", function (e) { var t = e.target; if (t && t.classList && (t.classList.contains("tw") || t.classList.contains("scrollx"))) fades(); }, true);
+    if (ctx._appScroll) app.removeEventListener("scroll", ctx._appScroll, true);
+    ctx._appScroll = function (e) { var t = e.target; if (t && t.classList && (t.classList.contains("tw") || t.classList.contains("scrollx"))) fades(); };
+    app.addEventListener("scroll", ctx._appScroll, true);
     bindWin("fades", "resize", fades);
 
     /* calendar: month navigation and filter chips */
@@ -1508,7 +1510,7 @@
         });
         out.sort(function (a, b) { return a.date < b.date ? 1 : a.date > b.date ? -1 : 0; });
         if (!viaIndex) {} 
-        hits.innerHTML = out.length ? '<ul class="hits">' + out.slice(0, 60).map(function (x) { return '<li><span class="d">' + esc(fmtShort(x.date) + " " + x.date.slice(0, 4)) + '</span><span><a href="#ed-' + x.date + "/" + esc(x.to) + '">' + esc(plain(x.t)) + '</a><span class="w">' + esc(x.where) + "</span></span></li>"; }).join("") + "</ul>" + (out.length > 60 ? '<p class="small">Showing 60 of ' + out.length + " hits.</p>" : "") : quiet("No headline matches “" + q + "” in " + eds.length + (eds.length === 1 ? " edition." : " editions."));
+        hits.innerHTML = out.length ? '<ul class="hits">' + out.slice(0, 60).map(function (x) { return '<li><span class="d">' + esc(fmtShort(x.date) + " " + x.date.slice(0, 4)) + '</span><span><a href="#ed-' + esc(x.date) + "/" + esc(x.to) + '">' + esc(plain(x.t)) + '</a><span class="w">' + esc(x.where) + "</span></span></li>"; }).join("") + "</ul>" + (out.length > 60 ? '<p class="small">Showing 60 of ' + out.length + " hits.</p>" : "") : quiet("No headline matches “" + q + "” in " + eds.length + (eds.length === 1 ? " edition." : " editions."));
       }).catch(function (e) { hits.innerHTML = quiet("Search failed: " + (e.message || e)); });
     });
 
@@ -1536,8 +1538,11 @@
     document.title = "Nick's Daily Readbook · " + fmt(today);
     var m = location.hash.match(/^#ed-(\d{4}-\d{2}-\d{2})(?:\/([\w-]+))?$/);
     var target = m ? m[2] : location.hash.slice(1);
-    if (target) { var t = document.getElementById(target); if (t) { var det = t.closest("details"); if (det && !det.open) det.open = true; t.scrollIntoView(); } }
+    jumpTo(target);
+    /* prune contents links whose section is not in this edition */
+    app.querySelectorAll(".toc .secs a").forEach(function (a) { if (!document.getElementById(a.getAttribute("href").slice(1))) { var nx = a.nextSibling; if (nx && nx.nodeType === 3) nx.parentNode.removeChild(nx); else if (a.previousSibling && a.previousSibling.nodeType === 3) a.parentNode.removeChild(a.previousSibling); a.parentNode.removeChild(a); } });
   }
+  function jumpTo(target) { if (!target) return false; var t = document.getElementById(target); if (!t) return false; var det = t.closest("details"); if (det && !det.open) det.open = true; t.scrollIntoView(); return true; }
 
   /* ---------- boot ---------- */
   var allEditions = null;
@@ -1548,12 +1553,15 @@
   }
   function load(date) {
     var target = date || ctx.index.latest;
-    return getJSON("data/editions/" + target + ".json").then(function (E) { render(E, ctx); if (!location.hash || location.hash.indexOf("/") < 0) window.scrollTo(0, 0); });
+    var p = ctx._pre && ctx._pre.date === target ? ctx._pre.p : getJSON("data/editions/" + target + ".json");
+    ctx._pre = null;
+    return p.then(function (E) { render(E, ctx); ctx._cur = E.date; if (!location.hash || /^#ed-\d{4}-\d{2}-\d{2}$/.test(location.hash)) window.scrollTo(0, 0); })
+      .catch(function (e) { if (date && date !== ctx.index.latest) { history.replaceState(null, "", location.pathname + location.search); return load(null); } throw e; });
   }
   function fail(e) { if (window.console && console.error) console.error(e && e.stack || e); app.innerHTML = '<div class="err"><b>Couldn\'t load the Readbook.</b><br>' + esc(e.message || e) + "<br>Check your connection and pull down to refresh.</div>"; }
   function opt(url) { return getJSON(url).catch(function () { return null; }); }
   Promise.all([
-    getJSON("data/index.json"),
+    getJSON("data/index.json").then(function (i) { var m = location.hash.match(/^#ed-(\d{4}-\d{2}-\d{2})/), d = m ? m[1] : i.latest; ctx._pre = { date: d, p: getJSON("data/editions/" + d + ".json") }; ctx._pre.p.catch(function () {}); return i; }),
     opt("data/incidents.json"), opt("data/bins.json"), opt("data/threads.json"), opt("data/horizon.json"),
     opt("data/fx.json"), opt("data/series.json"), opt("data/canes.json"),
     opt("data/conflicts.json"), opt("data/world-series.json"), opt("data/calendar.json"), opt("data/deadlines.json"),
@@ -1569,7 +1577,7 @@
     var m = location.hash.match(/^#ed-(\d{4}-\d{2}-\d{2})/);
     return load(m ? m[1] : null);
   }).catch(fail);
-  window.addEventListener("hashchange", function () { var m = location.hash.match(/^#ed-(\d{4}-\d{2}-\d{2})/); if (m && ctx.index) load(m[1]).catch(fail); });
+  window.addEventListener("hashchange", function () { var m = location.hash.match(/^#ed-(\d{4}-\d{2}-\d{2})(?:\/([\w-]+))?$/); if (!m || !ctx.index) return; if (m[1] === ctx._cur) { if (m[2]) jumpTo(m[2]); return; } load(m[1]).catch(fail); });
 
   if ("serviceWorker" in navigator) { window.addEventListener("load", function () { navigator.serviceWorker.register("sw.js").catch(function () {}); }); }
 })();
