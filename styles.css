@@ -638,3 +638,18 @@ ol.src li.t1 a,ol.src li.t2 a{font-weight:600}
 .wkwx b{color:var(--ink);font-weight:500}
 /* slim chips for the tiers */
 .slim a.news{--pc:var(--p-news)} .slim a.reading{--pc:var(--p-reading)}
+/* weather glyphs */
+.wxi{display:block;margin:2px auto 0;color:var(--muted)}
+.wxd .wxi{margin:3px auto 1px}
+.rn{display:inline-flex;align-items:center;gap:3px;font-family:var(--f-mono);font-size:11.5px;color:var(--accent)}
+.rn svg{display:inline-block;vertical-align:middle}
+.wnd{display:inline-flex;align-items:center;gap:3px;font-family:var(--f-mono);font-size:11px;color:var(--muted)}
+.wnd svg{display:inline-block;transform-origin:50% 50%}
+.wxd .r{margin-top:2px}
+.tile.wxt .wxtop{display:flex;align-items:center;gap:var(--s2);margin:2px 0}
+.tile.wxt .wxtop .wxi{margin:0;flex:none}
+.tile.wxt .wxtop .val{margin:0}
+.tile.wxt .wxmeta{display:flex;gap:var(--s2);margin:0 0 var(--s1)}
+.tile.wxt .wxtm{display:inline-block;vertical-align:-3px;margin-right:2px}
+.tile.wxt .wxtm .wxi{display:inline-block;margin:0}
+#tempband{margin-top:var(--s2)}

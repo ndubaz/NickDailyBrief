@@ -52,7 +52,7 @@ The standing files are the Readbook's memory. The page reads them; it never writ
  "note": "optional one-liner under the masthead",
  "today": {
    "weather": {"now","hi","lo","tomorrow","sunrise","sunset","src",
-               "week": [["YYYY-MM-DD", hi, lo, rainPct, "wind"], ... 7 rows from today]},
+               "week": [["YYYY-MM-DD", hi, lo, rainPct, "wind (direction and Beaufort, e.g. ENE 3)", "sky"], ... 7 rows from today; sky = sun|suncloud|cloud|fog|showers|rain|snow|storm, optional, from the forecast wording]},
    "canes": {"line": "W 7–0 vs WPG", "sub": "12-2-2 · …", "src"}   (optional; the strip derives it from canes.json when absent),
    "markets": [["S&P 500","−1.8%","down"], ...4 rows; dir = up|down|flat],
    "items": [{"k":"Wed","t":"…","cat":"nl|be|de|us|mkt|pro"}]

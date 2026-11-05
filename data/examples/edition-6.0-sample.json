@@ -1,1864 +1,1871 @@
 {
- "v": "6.0",
- "date": "2026-11-07",
- "weekday": "Saturday",
- "edition": 0,
- "lookback": "6–7 Nov (sample)",
- "note": "Sample 4.0 edition: the World part is facts and summaries only.",
- "today": {
-  "weather": {
-   "now": "8 °C, grey and dry",
-   "hi": 9,
-   "lo": 4,
-   "tomorrow": "Wed brighter and mostly dry, 2–10 °C, east-northeast wind",
-   "sunrise": "07:31",
-   "sunset": "17:07",
-   "src": 1,
-   "week": [
-    [
-     "2026-11-07",
-     9,
-     4,
-     20,
-     "NW 3"
+  "v": "6.0",
+  "date": "2026-11-07",
+  "weekday": "Saturday",
+  "edition": 0,
+  "lookback": "6–7 Nov (sample)",
+  "note": "Sample 4.0 edition: the World part is facts and summaries only.",
+  "today": {
+    "weather": {
+      "now": "8 °C, grey and dry",
+      "hi": 9,
+      "lo": 4,
+      "tomorrow": "Wed brighter and mostly dry, 2–10 °C, east-northeast wind",
+      "sunrise": "07:31",
+      "sunset": "17:07",
+      "src": 1,
+      "week": [
+        [
+          "2026-11-07",
+          9,
+          4,
+          20,
+          "NW 3",
+          "suncloud"
+        ],
+        [
+          "2026-11-08",
+          8,
+          3,
+          10,
+          "N 2",
+          "rain"
+        ],
+        [
+          "2026-11-09",
+          9,
+          5,
+          60,
+          "SW 4",
+          "showers"
+        ],
+        [
+          "2026-11-10",
+          11,
+          7,
+          70,
+          "SW 5",
+          "cloud"
+        ],
+        [
+          "2026-11-11",
+          10,
+          6,
+          40,
+          "W 4",
+          "fog"
+        ],
+        [
+          "2026-11-12",
+          8,
+          4,
+          20,
+          "NW 3",
+          "sun"
+        ],
+        [
+          "2026-11-13",
+          8,
+          3,
+          10,
+          "N 2",
+          "suncloud"
+        ]
+      ],
+      "weekNote": "Sample numbers for layout only."
+    },
+    "canes": {
+      "line": "No game Monday",
+      "sub": "12-2-2 · at Nashville tonight, Wed 02:00 CET",
+      "src": 2
+    },
+    "markets": [
+      [
+        "S&P 500",
+        "−0.5%",
+        "down"
+      ],
+      [
+        "Nasdaq",
+        "−1.1%",
+        "down"
+      ],
+      [
+        "Brent",
+        "$104.77",
+        "down"
+      ],
+      [
+        "Dutch gas",
+        "€93.45",
+        "down"
+      ]
     ],
-    [
-     "2026-11-08",
-     8,
-     3,
-     10,
-     "N 2"
-    ],
-    [
-     "2026-11-09",
-     9,
-     5,
-     60,
-     "SW 4"
-    ],
-    [
-     "2026-11-10",
-     11,
-     7,
-     70,
-     "SW 5"
-    ],
-    [
-     "2026-11-11",
-     10,
-     6,
-     40,
-     "W 4"
-    ],
-    [
-     "2026-11-12",
-     8,
-     4,
-     20,
-     "NW 3"
-    ],
-    [
-     "2026-11-13",
-     8,
-     3,
-     10,
-     "N 2"
+    "items": [
+      {
+        "k": "Today",
+        "t": "US midterm elections. Results come in overnight; the first polls close around midnight CET.",
+        "cat": "pro"
+      },
+      {
+        "k": "Today",
+        "t": "Sint-Hubertus: bread blessings and hunters' masses across Limburg; Wiemesmeer (Zutendaal) holds its feast today.",
+        "cat": "be"
+      },
+      {
+        "k": "Today",
+        "t": "Australia's central bank raised rates to 4.85% this morning; AMD, Pfizer and Shopify report.",
+        "cat": "mkt"
+      },
+      {
+        "k": "Wed",
+        "t": "AFNORTH parent conferences Wed and Thu, **12:30 release** both days. Canes at Nashville, 02:00 CET.",
+        "cat": "us"
+      },
+      {
+        "k": "Wed",
+        "t": "The Tweede Kamer debates the 2027 tax plan in the evening; the fuel-duty cut rides on it.",
+        "cat": "nl"
+      }
     ]
-   ],
-   "weekNote": "Sample numbers for layout only."
   },
-  "canes": {
-   "line": "No game Monday",
-   "sub": "12-2-2 · at Nashville tonight, Wed 02:00 CET",
-   "src": 2
-  },
-  "markets": [
-   [
-    "S&P 500",
-    "−0.5%",
-    "down"
-   ],
-   [
-    "Nasdaq",
-    "−1.1%",
-    "down"
-   ],
-   [
-    "Brent",
-    "$104.77",
-    "down"
-   ],
-   [
-    "Dutch gas",
-    "€93.45",
-    "down"
-   ]
+  "five": [
+    {
+      "t": "**The supermarket fridge attacks reached Italy and Romania**, nine countries from one night. Italy's prime minister's office meets its intelligence chiefs at 11:30 today.",
+      "to": "board",
+      "part": "world"
+    },
+    {
+      "t": "**Oil fell 7.6% to $104.77** on an Iranian two-day plan to reopen Hormuz, even as US jets struck Qeshm Island. Dutch gas dropped 10%.",
+      "to": "markets",
+      "part": "money"
+    },
+    {
+      "t": "**US election day.** Five NATO diplomats expect more pressure on the alliance if Republicans lose; the Pentagon's Europe posture options are due Friday.",
+      "to": "europe",
+      "part": "sec"
+    },
+    {
+      "t": "**Germany is hardening its bases** and says US sites have drawn suspected drone surveillance (sample link to Profession).",
+      "to": "nato",
+      "part": "pro"
+    },
+    {
+      "t": "**The Dutch tax plan reaches the Kamer without a majority.** If it falls on 12 Nov, the fuel-duty discount falls with it.",
+      "to": "nl",
+      "part": "home"
+    }
   ],
-  "items": [
-   {
-    "k": "Today",
-    "t": "US midterm elections. Results come in overnight; the first polls close around midnight CET.",
-    "cat": "pro"
-   },
-   {
-    "k": "Today",
-    "t": "Sint-Hubertus: bread blessings and hunters' masses across Limburg; Wiemesmeer (Zutendaal) holds its feast today.",
-    "cat": "be"
-   },
-   {
-    "k": "Today",
-    "t": "Australia's central bank raised rates to 4.85% this morning; AMD, Pfizer and Shopify report.",
-    "cat": "mkt"
-   },
-   {
-    "k": "Wed",
-    "t": "AFNORTH parent conferences Wed and Thu, **12:30 release** both days. Canes at Nashville, 02:00 CET.",
-    "cat": "us"
-   },
-   {
-    "k": "Wed",
-    "t": "The Tweede Kamer debates the 2027 tax plan in the evening; the fuel-duty cut rides on it.",
-    "cat": "nl"
-   }
-  ]
- },
- "five": [
-  {
-   "t": "**The supermarket fridge attacks reached Italy and Romania**, nine countries from one night. Italy's prime minister's office meets its intelligence chiefs at 11:30 today.",
-   "to": "board",
-   "part": "world"
+  "pick": {
+    "t": "If you read one thing: the cold-chain lead. The Pentagon is already asking whether the same trick hit US commissaries, so this is now a force-protection question as well as a food one.",
+    "to": "lead-1"
   },
-  {
-   "t": "**Oil fell 7.6% to $104.77** on an Iranian two-day plan to reopen Hormuz, even as US jets struck Qeshm Island. Dutch gas dropped 10%.",
-   "to": "markets",
-   "part": "money"
+  "hybrid": {
+    "incidents": [
+      {
+        "id": "2026-11-02-it-cyb-coldchain",
+        "date": "2026-11-02",
+        "when": "2 Nov, about 04:00",
+        "code": "CYB",
+        "attr": "A0",
+        "local": false,
+        "country": "IT",
+        "place": "Italy: Catania and Palermo (Sicily); cases also in Tuscany and Emilia-Romagna",
+        "lat": 37.5,
+        "lon": 15.09,
+        "text": "Display-case controllers at three Coop-brand stores in Catania and one in Palermo were reset remotely around 04:00; trade sources say at least 12 Sicilian stores. Italy's National Cybersecurity Agency (ACN) also found a catering firm in Tuscany and a frozen-food producer in Emilia-Romagna hit. [3]",
+        "badge": "NEW"
+      },
+      {
+        "id": "2026-11-02-ro-cyb-coldchain",
+        "date": "2026-11-02",
+        "when": "night of 1–2 Nov, 01:00–01:30",
+        "code": "CYB",
+        "attr": "A0",
+        "local": false,
+        "country": "RO",
+        "place": "Romania: six stores of one chain (cities not named)",
+        "lat": 44.43,
+        "lon": 26.1,
+        "text": "Fridges in six stores heated up overnight and staff found them at 08:00. The National Cyber Security Directorate (DNSC) says the controllers sat behind cellular (GSM) routers with fixed IP addresses, reachable from the internet, on old software. [4]",
+        "badge": "NEW"
+      }
+    ],
+    "leads": [
+      {
+        "id": "lead-1",
+        "title": "The fridge wave reaches nine countries and two crisis rooms",
+        "teaser": "Italy and Romania reported late on Monday; Rome now treats it as a security matter. The Pentagon is checking its own commissaries.",
+        "rows": [
+          [
+            "What",
+            "By Monday night the 1–2 Nov wave covered Belgium, the Netherlands, Luxembourg, Sweden, Estonia, Finland, Ireland, Italy and Romania, after France on 11–12 Oct. [5] Hits cluster between 01:00 and 04:00 local time. [4, 3] Belgium alone counts about 75 sites. [6]"
+          ],
+          [
+            "Attribution",
+            "A0 everywhere: no claim, no named suspect. The director of the Centre for Cybersecurity Belgium (CCB) says it is not yet clear whether criminals, a state or hacktivists are behind it; Interior Minister Bernard Quintin rules out no lead. [5]"
+          ],
+          [
+            "Alternatives",
+            "Opportunists scanning for default passwords, which fits the old devices and the lack of a ransom demand; or a state-linked actor testing reach cheaply. Nine countries in one night with one method looks like a single operator or a shared toolkit."
+          ],
+          [
+            "Response",
+            "Italy's prime minister's office meets the ACN and intelligence chiefs at 11:30 today; parliament's intelligence committee holds hearings today and Wednesday. [3] Sabcobel, which runs Delhaize's systems, says a patch will not fix the flaw: the units need physical changes, and “that requires investment”. [6]"
+          ],
+          [
+            "Context",
+            "Reuters reported on 29 Oct that the Defense Criminal Investigative Service (DCIS) leads a joint probe into whether August refrigeration failures at US commissaries on more than half a dozen bases were a cyberattack. No link to Europe has been shown. [7]"
+          ]
+        ],
+        "sw": "Baseline requirement 4 (food and water) now has a military mirror: commissaries and contracted cold stores run the same kind of controllers. Ask the J4 and the host-nation support cell which contracted cold storage in the Netherlands, Belgium and Germany is remote-managed, and who can order it offline at 02:00."
+      },
+      {
+        "id": "lead-2",
+        "title": "Germany hardens its bases as Poland's alert runs to Sunday",
+        "teaser": "Berlin's top operational commander says US sites have drawn suspected drone surveillance; Warsaw keeps its police on full readiness. Moscow calls the whole thing a European fantasy.",
+        "rows": [
+          [
+            "What",
+            "Lt. Gen. Alexander Sollfrank, head of the Bundeswehr's operational command, said on Sunday that Germany will raise security at military sites and expand counter-drone capability. Russian spying and sabotage are growing, American bases have drawn suspected drone surveillance, and Germany plans to move at least 20,000 troops toward the Baltic states in a crisis. He named no sites or start date. [8]"
+          ],
+          [
+            "Poland",
+            "Day two of the police readiness order (2–8 Nov); no incident reported. Lithuania has reportedly extended its own Kaliningrad border measures to mid-November. [9]"
+          ],
+          [
+            "Attribution",
+            "Sollfrank names Russia; he calls an attack on NATO territory realistic but not imminent. [8] The Polish warning still rests on anonymous sourcing (A1)."
+          ],
+          [
+            "Moscow's line",
+            "On Monday, Russian Security Council secretary Sergei Shoigu said Europe is wrong to accuse Russia of hybrid war, and added: “God forbid you live to see a day when Russia launches a hybrid war against you.” [10]"
+          ]
+        ],
+        "sw": "Germany is the transit hub for any US reinforcement. Tighter base access and counter-drone rules will reach US installations and convoy routes first, so reception, staging and onward movement (RSOM) timelines should assume slower gates and more escorts."
+      }
+    ],
+    "pattern": [
+      "**Same door, more rooms:** nine countries in one night, all through internet-reachable controllers with default or outdated credentials, now including cellular routers. The method has not changed since France. [4, 6]",
+      "**Night shift:** hits land between 01:00 and 04:00 on a Sunday night, so food spoils before staff arrive. [4, 3]",
+      "**From retail incident to security file:** Italy is the first government to put the wave in front of its intelligence chiefs in public. [3]"
+    ],
+    "tracker": [
+      [
+        "Italy convenes its cybersecurity agency and intelligence chiefs; parliamentary committee hearings today and Wednesday",
+        "Resilience"
+      ],
+      [
+        "Romania's cyber directorate investigates six stores",
+        "Defend"
+      ],
+      [
+        "Sabcobel: controllers need physical modification, not only a patch",
+        "Defend"
+      ],
+      [
+        "Germany raises base security and expands counter-drone capability",
+        "Defend"
+      ],
+      [
+        "Polish police readiness, day 2 of 7",
+        "Deny"
+      ],
+      [
+        "Lithuania extends Kaliningrad border measures to mid-November (reported)",
+        "Deny"
+      ]
+    ],
+    "indicators": [
+      [
+        "rising",
+        "Cyber against civil infrastructure",
+        "Italy and Romania added; nine countries in the 1–2 Nov wave"
+      ],
+      [
+        "steady",
+        "Proxy-recruitment arrests",
+        "No new arrests reported in the window"
+      ],
+      [
+        "watch",
+        "Attacks on public warning channels (new)",
+        "No repeat since the 1 Nov alert-app hacks"
+      ],
+      [
+        "watch",
+        "Drones near JOA-C military and logistics nodes",
+        "Germany cites suspected drone surveillance of US bases; no new confirmed incident"
+      ],
+      [
+        "steady",
+        "Undersea infrastructure",
+        "No new incident"
+      ],
+      [
+        "nodata",
+        "GNSS interference over the Baltic",
+        "No new open-source reporting in the window"
+      ],
+      [
+        "nodata",
+        "Belarus border pressure",
+        "Nothing new in the window"
+      ]
+    ],
+    "week": null,
+    "note": "Election interference is still not tracked: no national election in the area falls soon. For the US vote, warning channels to election officials are at their weakest since 2016; no tampering with voting systems has been reported. [11]"
   },
-  {
-   "t": "**US election day.** Five NATO diplomats expect more pressure on the alliance if Republicans lose; the Pentagon's Europe posture options are due Friday.",
-   "to": "europe",
-   "part": "sec"
+  "europe": [
+    {
+      "h": "Election day: what allies fear from a Republican loss",
+      "tag": "US in Europe",
+      "conf": "moderate",
+      "badge": "UPDATED",
+      "body": "Five NATO diplomats told POLITICO that a Republican defeat could push President Trump toward a harder line: thousands more troops out of Europe, smaller payments into NATO's common funding, limits on the Prioritized Ukraine Requirements List (PURL) through which allies buy US arms for Kyiv. Oana Lungescu of the Royal United Services Institute (RUSI) warned Washington could tie its troop presence to Europe accepting a US-backed Ukraine deal. The White House says Trump “has done more for NATO than anyone else.” [12] Posture options are still due to Hegseth on Friday. [13]",
+      "sw": "Watch for linkage: a troop decision tied to a Ukraine deal reaches host nations as politics before it reaches them as a planning order."
+    },
+    {
+      "h": "Europe's seat at the Ukraine table is still open",
+      "tag": "Diplomacy",
+      "conf": "high",
+      "badge": "NEW",
+      "body": "US negotiators meet France, Germany, Britain, the EU and NATO in Brussels this week on security guarantees for Ukraine, Europe's post-war security architecture and reconstruction. [14] Moscow says the Abu Dhabi delegations stay as before, the US, Ukraine and Russia, and that how Europe is represented “requires discussion and a decision by all three sides.” [10]",
+      "sw": "Guarantees drafted in Brussels become force-generation questions; expect taskers on what a reassurance force needs from the rear area."
+    },
+    {
+      "h": "Ten arrested blocking the gate at RAF Lakenheath",
+      "tag": "UK",
+      "conf": "high",
+      "badge": "NEW",
+      "body": "On Monday the Lakenheath Alliance for Peace blocked the main entrance of the US fighter base in Suffolk over the Iran war, Gaza and a possible return of US nuclear weapons. Six activists locked themselves together and four blocked the road with a vehicle; the base tightened gate security. [15]",
+      "sw": "Host-nation police handled it. The force-protection question is whether hostile services use protests as cover for reconnaissance."
+    }
+  ],
+  "world": {
+    "items": [
+      {
+        "region": "Middle East",
+        "h": "US jets hit Qeshm while Iran offers a two-day Hormuz plan",
+        "conf": "moderate",
+        "badge": "NEW",
+        "body": "A US official called Monday's strike on radar and missile launchers on Qeshm Island a “defensive operation” after Iranian surface-to-air fire; the Islamic Revolutionary Guard Corps (IRGC) claims it downed two US drones. [16] Foreign Minister Araghchi says Hormuz could reopen within two days if Washington ends its blockade, lifts oil sanctions and halts fighting on all fronts. Asked about returning to war this week, Trump said: “Let's say I did. Would I tell you?” [17]",
+        "next": "Araghchi's two-day reopening offer stands as of 3 Nov; the US has not replied in public. [17]",
+        "links": [
+          "theatre:iran"
+        ]
+      },
+      {
+        "region": "Russia–Ukraine",
+        "h": "Abu Dhabi talks set for 10–11 Nov as the strikes go on",
+        "conf": "high",
+        "badge": "UPDATED",
+        "body": "Envoy Steve Witkoff says the US will mediate working-level talks between Ukraine and Russia in Abu Dhabi on 10–11 Nov, covering post-war security, de-escalation and humanitarian steps. [14] On Monday Russian bombs killed at least 24 people at a school used for aid handouts in Komyshuvakha, Zaporizhzhia region. [18] Trump says he would be willing to invite Zelensky to the G20 summit in Florida next month. [19]",
+        "next": "Abu Dhabi talks 10–11 Nov; US negotiators meet European allies in Brussels this week. [14]",
+        "links": [
+          "theatre:ru-ua",
+          "thread:russia-ukraine-talks"
+        ]
+      },
+      {
+        "region": "United States",
+        "h": "Midterms: results overnight, foreign influence already in play",
+        "conf": "moderate",
+        "badge": "NEW",
+        "body": "Republicans go in with narrow majorities in both chambers, and the party in power usually loses ground in midterms. [20] Russia is the most active foreign influence actor, posting AI-altered videos on X, including a fabricated claim against Texas Senate nominee James Talarico; Iran has been quiet. [11]",
+        "next": "Results overnight; new Congress seated 3 Jan 2027. [20]"
+      }
+    ],
+    "numbers": [
+      "ru-personnel-day",
+      "ru-uav-day",
+      "brent",
+      "ttf"
+    ],
+    "feature": {
+      "rota": "sat",
+      "kind": "Saturday · Geography",
+      "title": "The Strait of Hormuz, by the numbers",
+      "body": [
+        "The strait is 21 nautical miles (39 km) wide at its narrowest point, between Iran's Larak Island and Oman's Musandam peninsula. The inbound and outbound shipping lanes are each 2 nautical miles wide, separated by a 2-nautical-mile buffer. [73]",
+        "In 2023 about 20.9 million barrels of oil a day moved through the strait, roughly 20% of world consumption, plus about a fifth of global liquefied natural gas trade, nearly all of it from Qatar. Saudi Arabia's East-West pipeline and the UAE's Habshan–Fujairah line can bypass the strait with about 2.6 million barrels a day of spare capacity between them. [73]"
+      ],
+      "table": {
+        "head": [
+          "Measure",
+          "Value",
+          "Source"
+        ],
+        "rows": [
+          [
+            "Narrowest width",
+            "21 nmi · 39 km",
+            "EIA [73]"
+          ],
+          [
+            "Shipping lane width",
+            "2 nmi each way, 2 nmi buffer",
+            "EIA [73]"
+          ],
+          [
+            "Oil flow, 2023",
+            "20.9 mb/d",
+            "EIA [73]"
+          ],
+          [
+            "Share of world oil consumption",
+            "about 20%",
+            "EIA [73]"
+          ],
+          [
+            "Bypass pipeline spare capacity",
+            "about 2.6 mb/d",
+            "EIA [73]"
+          ]
+        ]
+      },
+      "geo": {
+        "title": "Hormuz schematic · distances by great circle",
+        "bbox": [
+          54.5,
+          24.6,
+          57.6,
+          27.6
+        ],
+        "points": [
+          {
+            "n": "Bandar Abbas",
+            "lat": 27.19,
+            "lon": 56.28,
+            "k": "port"
+          },
+          {
+            "n": "Qeshm Island",
+            "lat": 26.8,
+            "lon": 55.95,
+            "k": "city",
+            "align": "left"
+          },
+          {
+            "n": "Larak",
+            "lat": 26.85,
+            "lon": 56.37,
+            "k": "city"
+          },
+          {
+            "n": "Khasab (Musandam)",
+            "lat": 26.18,
+            "lon": 56.25,
+            "k": "city",
+            "align": "left"
+          },
+          {
+            "n": "Fujairah",
+            "lat": 25.12,
+            "lon": 56.33,
+            "k": "port"
+          },
+          {
+            "n": "Jebel Ali",
+            "lat": 25.01,
+            "lon": 55.06,
+            "k": "port"
+          },
+          {
+            "n": "Abu Musa",
+            "lat": 25.87,
+            "lon": 55.03,
+            "k": "base",
+            "align": "left"
+          },
+          {
+            "n": "Strait",
+            "lat": 26.56,
+            "lon": 56.42,
+            "k": "chokepoint"
+          }
+        ],
+        "lines": [
+          {
+            "a": [
+              26.85,
+              56.37
+            ],
+            "b": [
+              26.18,
+              56.25
+            ],
+            "t": "Larak – Musandam · 39 km"
+          },
+          {
+            "a": [
+              27.19,
+              56.28
+            ],
+            "b": [
+              25.12,
+              56.33
+            ]
+          }
+        ],
+        "labels": [
+          {
+            "t": "Persian Gulf",
+            "lat": 25.6,
+            "lon": 54.9
+          },
+          {
+            "t": "Gulf of Oman",
+            "lat": 24.9,
+            "lon": 57.2
+          }
+        ]
+      },
+      "after": [
+        "Coordinates are public and approximate to the nearest 0.01 degree; the dashed lines are great-circle distances computed by the page."
+      ]
+    }
   },
-  {
-   "t": "**Germany is hardening its bases** and says US sites have drawn suspected drone surveillance (sample link to Profession).",
-   "to": "nato",
-   "part": "pro"
+  "euregio": [
+    {
+      "h": "Aachen's Gen Z march stays peaceful",
+      "tag": "Aachen",
+      "conf": "moderate",
+      "badge": "NEW",
+      "body": "About 2,000 people (police said about 1,500) marched from the Elisenbrunnen to the Kennedypark on Saturday. Organisers billed it as a protest about education and the cost of living; the Aachener Zeitung says conscription and Palestine dominated. Pyrotechnics went off at the front of the march, but police reported no notable incidents, unlike the Frankfurt riot. [22]",
+      "sw": "Opposition to military-service screening is visible 25 minutes from Brunssum. Public consent for host-nation support is a local question too."
+    }
+  ],
+  "army": {
+    "cards": [
+      {
+        "l": "Leadership",
+        "v": "Telle, LaNeve (both acting)",
+        "n": "Secretary since early Sep; Chief of Staff since April, still no nominee. [23]"
+      },
+      {
+        "l": "FY26 recruiting",
+        "v": "All goals met",
+        "n": "Reserve and Special Forces too, a first in a decade. [24]"
+      },
+      {
+        "l": "Funding",
+        "v": "CR to 11 Dec",
+        "n": "New-start ban; tonight's result sets the lame-duck mood. [21]"
+      },
+      {
+        "l": "Moved",
+        "v": "Commissary probe",
+        "n": "DCIS leads a joint probe into August fridge failures at 7+ bases. [7]"
+      }
+    ],
+    "dod": [
+      {
+        "h": "Was it a hack? Pentagon investigators look at commissary freezers",
+        "tag": "DoD",
+        "conf": "moderate",
+        "badge": "NEW",
+        "body": "Four officials told Reuters the Pentagon treats August refrigeration outages at commissaries as a possible cyberattack. Sites include Fort Irwin, Fort Huachuca, Holloman, Robins and Naval Station Newport. The US and France are cooperating on the French case; there is no proof yet that the US failures were a hack. [7]",
+        "sw": "If the probe confirms a hack, expect a department-wide check of facility controllers. Get ahead of it: ask Benelux garrison facilities staff which cold rooms are remote-managed."
+      }
+    ],
+    "news": [],
+    "congress": [],
+    "career": {
+      "items": [
+        {
+          "h": "Personnel and promotions",
+          "body": "The FY27 colonel board (Army competitive category) is listed as sitting from 20 Oct to 5 Nov; the lieutenant colonel board convened on 9 Sep. [26] No new evaluation or assignment policy for field-grade officers surfaced in the window.",
+          "fy": "Results post on the Army Human Resources Command (HRC) site some weeks after a board recesses; nothing to do until the release message."
+        }
+      ],
+      "dates": [],
+      "note": "Sample: career items are what touches a field-grade officer in a NATO billet in Europe."
+    },
+    "depth": null
   },
-  {
-   "t": "**The Dutch tax plan reaches the Kamer without a majority.** If it falls on 12 Nov, the fuel-duty discount falls with it.",
-   "to": "nl",
-   "part": "home"
-  }
- ],
- "pick": {
-  "t": "If you read one thing: the cold-chain lead. The Pentagon is already asking whether the same trick hit US commissaries, so this is now a force-protection question as well as a food one.",
-  "to": "lead-1"
- },
- "hybrid": {
-  "incidents": [
-   {
-    "id": "2026-11-02-it-cyb-coldchain",
-    "date": "2026-11-02",
-    "when": "2 Nov, about 04:00",
-    "code": "CYB",
-    "attr": "A0",
-    "local": false,
-    "country": "IT",
-    "place": "Italy: Catania and Palermo (Sicily); cases also in Tuscany and Emilia-Romagna",
-    "lat": 37.5,
-    "lon": 15.09,
-    "text": "Display-case controllers at three Coop-brand stores in Catania and one in Palermo were reset remotely around 04:00; trade sources say at least 12 Sicilian stores. Italy's National Cybersecurity Agency (ACN) also found a catering firm in Tuscany and a frozen-food producer in Emilia-Romagna hit. [3]",
+  "aperture": {
+    "contrarian": "Monday's oil drop prices a deal Washington has not accepted. Araghchi's two-day plan needs the US to end the blockade, lift oil sanctions and stop fighting on every front; there are no direct talks; and US jets hit Qeshm the same day. Earlier sell-offs in this war reversed when talks failed. [27, 17] The best case for the drop holding: Goldman puts the war premium near $27 a barrel, so even a partial deal takes a lot out. [17]",
+    "weak": "Romania's detail that the hacked controllers sat behind cellular (GSM) routers with fixed addresses. The same cheap modems connect pumping stations, wind turbines and building systems, including on bases. Confirmation that the target is access in general: an advisory naming router models, or a hit outside food. [4]",
+    "number": {
+      "n": "9",
+      "t": "Countries reporting fridge attacks from the night of 1–2 Nov alone, after France in October. [5]"
+    },
+    "inject": "STARTEX + 3, 02:40. A host-nation contracted cold store holding a corps rear area's blood products and two days of chilled rations reports freezers at +12 °C and rising. The controllers are remote-managed through a cellular router; a second site on the same contract shows setpoint changes. Stresses baseline requirements 4 (food and water) and 5 (mass casualties). First calls: the contracting officer and the host-nation support cell for an order to disconnect, then the medical logistics officer for a redistribution plan before 06:00.",
+    "question": "Which host-nation support contracts in our area (cold storage, water treatment, fuel) depend on remote-access controllers, and who in each nation has the authority to take them offline at night?",
+    "deep": {
+      "kind": "Tuesday deep cut · Outside-in",
+      "title": "“God forbid”: how Moscow tells the hybrid story",
+      "body": [
+        "On Monday Sergei Shoigu, secretary of Russia's Security Council, said Putin has ruled out attacking Europe “three or four times in the past two months”, then added: “God forbid you live to see a day when Russia launches a hybrid war against you.” [10]",
+        "Heard from Moscow, the line does three jobs. It denies, keeping every incident below the level of a collective response. It threatens, implying that what Europe sees is not yet the real thing. And it recasts Polish police readiness and German base hardening as hysteria. The third job matters most: a public told its alarm is overblown is slower to pay for resilience.",
+        "Log statements like this next to incidents, by date. Shoigu spoke on the day Italy and Romania reported freezer attacks. Whether or not Moscow ordered the fridge wave, it is using the gap between European alarm and missing attribution."
+      ],
+      "table": null
+    },
+    "longread": null,
+    "rota": "tue"
+  },
+  "money": {
+    "asof": "last full session: Mon 2 Nov",
+    "cards": [
+      [
+        "S&P 500",
+        "7,541.40",
+        "−0.5%",
+        "down",
+        "Mon close",
+        28,
+        "spx"
+      ],
+      [
+        "Dow",
+        "51,983.98",
+        "+0.4%",
+        "up",
+        "Mon close; cheaper oil helped",
+        28
+      ],
+      [
+        "Nasdaq",
+        "25,164.36",
+        "−1.1%",
+        "down",
+        "Nasdaq 100 now in correction",
+        29,
+        "ndx"
+      ],
+      [
+        "Russell 2000",
+        "2,805.88",
+        "−0.2%",
+        "down",
+        "Mon close",
+        28
+      ],
+      [
+        "AEX",
+        "1,132.54",
+        "−0.2%",
+        "down",
+        "Mon close",
+        30,
+        "aex"
+      ],
+      [
+        "Stoxx 600",
+        "649.44",
+        "+0.4%",
+        "up",
+        "DAX +0.6% to 25,981",
+        29
+      ],
+      [
+        "Brent",
+        "$104.77",
+        "−7.6%",
+        "down",
+        "Mon settle; WTI $96.46",
+        27,
+        "brent"
+      ],
+      [
+        "Dutch TTF gas",
+        "€93.45",
+        "−10.1%",
+        "down",
+        "December contract, Mon",
+        30,
+        "ttf"
+      ],
+      [
+        "Gold",
+        "$3,970",
+        "+1.8%",
+        "up",
+        "Mon settle; about $3,936 Tue early",
+        30
+      ],
+      [
+        "USD/EUR",
+        "0.8916",
+        "+0.4%",
+        "up",
+        "euros per dollar",
+        31
+      ],
+      [
+        "US 10-year",
+        "4.91%",
+        "−4 bp",
+        "down",
+        "Lowest since Sep; 2-year 4.60%",
+        29
+      ],
+      [
+        "VIX",
+        "21.15",
+        "+8.9%",
+        "up",
+        "Back above 20",
+        30
+      ]
+    ],
+    "ytd": [
+      [
+        "Russell 2000",
+        13.1
+      ],
+      [
+        "S&P 500",
+        10.2
+      ],
+      [
+        "Nasdaq",
+        8.3
+      ],
+      [
+        "Dow",
+        8.2
+      ]
+    ],
+    "ytdSrc": 28,
+    "driver": "Cheaper oil lifted Europe and the Dow, but tech kept sliding: the Nasdaq 100 is now 10% below its peak, and Marvell's all-stock bid for Lumentum sent both shares down more than 10%. [29] Factories were strong: the Institute for Supply Management (ISM) index rose to 55.5, with its prices gauge still at 75.2. [32]",
+    "rates": [
+      [
+        "Fed funds",
+        "3.75–4.00%",
+        "Held 28 Oct; markets price high odds of a December hike. [33]"
+      ],
+      [
+        "ECB deposit rate",
+        "2.50%",
+        "Held 29 Oct; next meeting 17 Dec. [34]"
+      ],
+      [
+        "US CPI (Sep)",
+        "3.7% y/y",
+        "Core 2.6%. [33]"
+      ],
+      [
+        "Euro-area HICP (Sep)",
+        "3.8% y/y",
+        "October flash due Wednesday; consensus 3.9%. [35]"
+      ],
+      [
+        "Dutch CPI (Sep)",
+        "3.4% y/y",
+        "Fuel +27.2% y/y. [36]"
+      ],
+      [
+        "EU gas storage",
+        "~75% full",
+        "Low for the season (ACER, 28 Oct). [37]"
+      ],
+      [
+        "US ISM prices (Oct)",
+        "75.2",
+        "Ninth straight month above 70; headline index 55.5. [32]"
+      ],
+      [
+        "RBA cash rate",
+        "4.85%",
+        "Raised today on a 6–3 vote, the fifth hike of 2026 and an 18-year high. [38]"
+      ]
+    ],
+    "week": [
+      "**Mon 2:** ISM manufacturing 55.5, above forecasts; oil −7.6%. [32, 27]",
+      "**Tue 3:** US midterms; Reserve Bank of Australia (RBA) hikes to 4.85%; AMD, Pfizer and Shopify report. [38, 29]",
+      "**Wed 4:** US Treasury quarterly refunding; euro-area inflation flash (consensus 3.9%). [29, 35]",
+      "**Thu 5:** Bank of England, where a first hike in more than three years is expected. [29]",
+      "**Fri 6:** US October payrolls, forecast +60,000; unemployment 4.2%. [35]"
+    ],
+    "fy": "At Monday's ECB rate of 1.1216, $1,000 of pay buys €891.58, about €3.50 less than at Friday's 1.1172. [31] If the oil drop holds, Dutch pump prices should ease over the next week or two; the bigger pump risk is the 12 Nov tax vote, because the fuel-duty discount falls if the tax plan does. [39]",
+    "fuel": null
+  },
+  "nl": {
+    "items": [
+      {
+        "h": "Tax plan goes to the Kamer today without a majority",
+        "badge": "UPDATED",
+        "body": "The minority Jetten cabinet must send the 2027 tax plan to parliament today; the debate is Wednesday evening and the vote on 12 Nov. Pro and Volt have walked away. JA21, SGP and BBB want commitments on asylum, nitrogen, abortion and surrogacy, which D66 and the CDA resist. ChristenUnie and 50Plus, with Groep Markuszower, could just about make a majority. [39]",
+        "fy": "If the plan falls, the fuel-duty discount falls with it. [39]"
+      },
+      {
+        "h": "Asylum: 74 municipalities now under state pressure, three in Limburg",
+        "badge": "NEW",
+        "body": "Asylum minister Bart van den Brink moved 11 more municipalities, including Gennep, Mook en Middelaar and Roerdalen, into active supervision under the asylum distribution law (Spreidingswet). If they still fall short, The Hague can house asylum seekers there and send the bill. [40]"
+      },
+      {
+        "h": "A Pro bill to outlaw the infinite scroll",
+        "badge": "NEW",
+        "body": "Pro MP Barbara Kathmann filed a bill on Monday that would class manipulative design in social media, games, dating apps and chatbots, such as endless scrolling, as an unfair commercial practice under consumer law. [41]",
+        "fy": "If it passes, the apps your children use would have to change their Dutch versions."
+      },
+      {
+        "h": "Record €2 million reward for “Bolle Jos”",
+        "badge": "NEW",
+        "body": "Prosecutors raised the reward for convicted drug boss Jos Leijdekkers to €2 million, the largest the Netherlands has offered; he is believed to be in Sierra Leone. [42]"
+      }
+    ],
+    "temp": "Hot. Both routes to a majority cost the cabinet: the right bloc wants concessions D66 cannot easily give, and the Christian-social route rests on a handful of seats.",
+    "lees": {
+      "nl": "“Het huiswerk is nog niet af, de tijdsdruk is groot en er is nog geen meerderheid.”",
+      "gloss": [
+        [
+          "het huiswerk is nog niet af",
+          "the homework is not done yet; politicians use it for unfinished preparation, and “af” means finished"
+        ],
+        [
+          "de tijdsdruk",
+          "time pressure; a compound of tijd (time) and druk (pressure)"
+        ],
+        [
+          "er is nog geen meerderheid",
+          "there is no majority yet; “er is” = there is"
+        ],
+        [
+          "nog niet / nog geen",
+          "not yet: “niet” goes with verbs and adjectives, “geen” with nouns"
+        ]
+      ],
+      "src": 39
+    },
+    "phrase": {
+      "w": "de kogel is door de kerk",
+      "en": "the decision has finally been made (literally: the bullet is through the church)",
+      "lvl": "B2",
+      "note": "Used when a long argument ends. Watch for it on 12 Nov: “Is de kogel al door de kerk?” means “has it been decided yet?”"
+    }
+  },
+  "afnorth": {
+    "intro": "From the AFNORTH International School 2026–27 academic calendar, which governs. [43]",
+    "rows": [
+      [
+        "4–5 Nov",
+        "12:30 release for parent conferences",
+        "Book slot; afternoon pick-up",
+        "soon"
+      ],
+      [
+        "Every Wed",
+        "Early release (including 11 Nov)",
+        "Standing pick-up",
+        ""
+      ],
+      [
+        "16 Nov",
+        "No school, staff and students",
+        "Childcare",
+        "soon"
+      ],
+      [
+        "7 Dec",
+        "No school, Q2 training day",
+        "Childcare",
+        ""
+      ],
+      [
+        "18 Dec – 1 Jan",
+        "Winter break",
+        "Travel window",
+        ""
+      ]
+    ],
+    "note": "The calendar does not mark Veterans Day (11 Nov) or Thanksgiving (26–27 Nov) as days off; treat them as school days unless the school says otherwise. Belgium is off on 11 Nov; the Netherlands works. Brunssum War Cemetery has held an Armistice service on or near 11 Nov in past years; the 2026 time is not yet published. [44]"
+  },
+  "offduty": {
+    "items": [
+      {
+        "h": "Dutch Mountain Film Festival",
+        "tag": "NL",
+        "badge": "NEW",
+        "body": "The 16th edition runs 6–15 Nov in Heerlen and Aachen: mountain and adventure films, with prizes for the most original film and the best debut. About 10 minutes to the Heerlen screens. [45]"
+      },
+      {
+        "h": "Sint-Hubertus procession in Offelken (Tongeren)",
+        "tag": "BE",
+        "badge": "NEW",
+        "body": "Eight days of festivities from the first Thursday of November (5 Nov this year): a procession with horses and dogs to the racecourse, where the dean of Tongeren says Mass and blesses the bread. About 40 minutes away. [46]"
+      },
+      {
+        "h": "Geheimen van Parkstad, a family show at Theater Heerlen",
+        "tag": "NL",
+        "badge": "NEW",
+        "body": "Sat 21 and Sun 22 Nov: Tutta Musica Voerendaal and Koninklijke Harmonie Heerlen stage regional folk tales with music. About 10 minutes away. [47]"
+      }
+    ],
+    "weekend": null,
+    "weather": null
+  },
+  "hockey": {
+    "canes": {
+      "result": null,
+      "noGame": "Carolina did not play on Monday. Tonight they visit Nashville (5-4-5) for the first meeting of the season, puck drop 02:00 CET Wednesday. Taylor Hall (upper body), Jordan Staal (calf) and Alexander Nikishin (not injury related) are out. [48]",
+      "next": [
+        [
+          "Tue 3 Nov",
+          "at Nashville",
+          "20:00 ET",
+          "Wed 02:00 CET",
+          false
+        ],
+        [
+          "Thu 5 Nov",
+          "at NY Islanders",
+          "19:00 ET",
+          "Fri 01:00 CET",
+          false
+        ],
+        [
+          "Sat 7 Nov",
+          "vs Chicago",
+          "20:00 ET",
+          "Sun 02:00 CET",
+          false
+        ]
+      ],
+      "nextSrc": 2
+    },
+    "scores": [
+      [
+        "VGK",
+        2,
+        "BOS",
+        3,
+        "SO"
+      ],
+      [
+        "DET",
+        5,
+        "FLA",
+        3,
+        ""
+      ],
+      [
+        "COL",
+        5,
+        "CHI",
+        2,
+        ""
+      ],
+      [
+        "CGY",
+        2,
+        "SJS",
+        1,
+        ""
+      ]
+    ],
+    "scoresDate": "Mon 2 Nov",
+    "scoresNote": "Away team listed first. No games pending.",
+    "scoresSrc": 49,
+    "news": [
+      {
+        "h": "The Canes play two in Helsinki at European prime time",
+        "badge": "NEW",
+        "body": "Carolina meets Seattle at Veikkaus Arena on Thu 12 Nov (18:00 CET) and Sat 14 Nov (19:00 CET), the Kraken's first games outside North America. Aho and Kotkaniemi are Finnish, as are Seattle's Tolvanen and Kakko. [50, 2]"
+      },
+      {
+        "h": "Closer still: Senators and Blackhawks in Düsseldorf",
+        "badge": "NEW",
+        "body": "Ottawa and Chicago play in Düsseldorf on 18 and 20 Dec, about an hour's drive from Hoensbroek. [50]"
+      },
+      {
+        "h": "Detroit turned down a big Larkin offer",
+        "badge": "UPDATED",
+        "body": "TSN's Chris Johnston reports that Minnesota offered two roster players and several first-round picks for the suspended Dylan Larkin, and Detroit said no. Elliotte Friedman says Larkin could change his trade list within 24 to 48 hours. [51]"
+      },
+      {
+        "h": "Nashville's new centre could debut against Carolina",
+        "badge": "NEW",
+        "body": "Shane Wright arrived from Seattle for Matthew Wood on Sunday; Wood had three points in 14 games this season. [51]"
+      },
+      {
+        "h": "Montreal's Fowler is the hot goalie",
+        "badge": "NEW",
+        "body": "Jacob Fowler has a .932 save percentage in eight appearances as the Canadiens won five straight; they sit a point behind Boston in the Atlantic. [51]"
+      }
+    ]
+  },
+  "planner": {
+    "calFrom": "2026-11-03",
+    "calTo": "2026-12-03",
+    "events": [
+      [
+        "2026-11-03",
+        "pro",
+        "US midterms",
+        "US",
+        "Elections",
+        "Results overnight"
+      ],
+      [
+        "2026-11-03",
+        "be",
+        "Sint-Hubertus",
+        "BE/NL Limburg",
+        "Bread blessings",
+        "Wiemesmeer feast today"
+      ],
+      [
+        "2026-11-04",
+        "us",
+        "AFNORTH conferences (4–5)",
+        "AFNORTH",
+        "12:30 release",
+        "Afternoon pick-up"
+      ],
+      [
+        "2026-11-04",
+        "pro",
+        "TK tax-plan debate",
+        "NL",
+        "Parliament",
+        "Fuel duty at stake"
+      ],
+      [
+        "2026-11-05",
+        "mkt",
+        "Bank of England",
+        "UK",
+        "Rate decision",
+        "Hike expected"
+      ],
+      [
+        "2026-11-06",
+        "pro",
+        "US payrolls · posture options",
+        "US",
+        "Jobs report; DoD review",
+        ""
+      ],
+      [
+        "2026-11-06",
+        "nl",
+        "Mountain film festival (to 15 Nov)",
+        "Heerlen/Aachen",
+        "Festival",
+        ""
+      ],
+      [
+        "2026-11-10",
+        "pro",
+        "Abu Dhabi talks (10–11)",
+        "UAE",
+        "US–Russia–Ukraine",
+        ""
+      ],
+      [
+        "2026-11-11",
+        "be",
+        "Armistice Day",
+        "BE",
+        "Public holiday",
+        "Offices, banks, schools closed"
+      ],
+      [
+        "2026-11-11",
+        "nl",
+        "Sint Maarten · 11/11 carnival",
+        "NL Limburg / NRW",
+        "Lantern walks; season opens 11:11",
+        "Crowds in Maastricht and Köln"
+      ],
+      [
+        "2026-11-11",
+        "us",
+        "Veterans Day",
+        "US",
+        "Federal holiday",
+        "AFNORTH calendar shows no closure"
+      ],
+      [
+        "2026-11-12",
+        "pro",
+        "Dutch tax-plan vote",
+        "NL",
+        "Parliament",
+        ""
+      ],
+      [
+        "2026-11-12",
+        "us",
+        "Canes vs Kraken, Helsinki",
+        "FI",
+        "NHL Global Series",
+        "18:00 CET, watch live"
+      ],
+      [
+        "2026-11-13",
+        "mkt",
+        "Valkenburg opens · JazzOUT",
+        "NL",
+        "Cave markets; concert",
+        "Book time slots"
+      ],
+      [
+        "2026-11-14",
+        "nl",
+        "Sinterklaas arrives in Grave",
+        "NL",
+        "National intocht",
+        "NPO 3 from 12:00"
+      ],
+      [
+        "2026-11-14",
+        "us",
+        "Canes vs Kraken, Helsinki",
+        "FI",
+        "Game 2",
+        "19:00 CET"
+      ],
+      [
+        "2026-11-15",
+        "de",
+        "Volkstrauertag",
+        "DE",
+        "National day of mourning",
+        "Quiet-day rules"
+      ],
+      [
+        "2026-11-15",
+        "be",
+        "DG day · King's Feast",
+        "BE (east)",
+        "Community holiday",
+        "Public offices in Eupen closed"
+      ],
+      [
+        "2026-11-16",
+        "mkt",
+        "Köln Dom market opens",
+        "DE",
+        "Christmas market",
+        ""
+      ],
+      [
+        "2026-11-16",
+        "us",
+        "AFNORTH no school",
+        "AFNORTH",
+        "No school",
+        "Childcare"
+      ],
+      [
+        "2026-11-20",
+        "mkt",
+        "Aachen market opens",
+        "DE",
+        "Christmas market",
+        "Heavy downtown traffic"
+      ],
+      [
+        "2026-11-21",
+        "nl",
+        "Geheimen van Parkstad (21–22)",
+        "Heerlen",
+        "Family show",
+        ""
+      ],
+      [
+        "2026-11-22",
+        "de",
+        "Totensonntag",
+        "DE",
+        "Quiet day",
+        "Köln market closed; Aachen evening only"
+      ],
+      [
+        "2026-11-26",
+        "us",
+        "Thanksgiving",
+        "US",
+        "Federal holiday",
+        "AFNORTH calendar shows no closure"
+      ],
+      [
+        "2026-11-27",
+        "mkt",
+        "Maastricht, Liège, Monschau open",
+        "NL/BE/DE",
+        "Christmas markets",
+        ""
+      ],
+      [
+        "2026-11-29",
+        "de",
+        "First Advent",
+        "NL/BE/DE",
+        "Season marker",
+        ""
+      ]
+    ],
+    "school": {
+      "from": "2026-12-14",
+      "to": "2027-01-10",
+      "ticks": [
+        "2026-12-14",
+        "2026-12-21",
+        "2026-12-28",
+        "2027-01-04"
+      ],
+      "rows": [
+        {
+          "name": "AFNORTH",
+          "color": "us",
+          "segs": [
+            [
+              "2026-12-18",
+              "2027-01-01"
+            ]
+          ]
+        },
+        {
+          "name": "NL region Zuid",
+          "color": "nl",
+          "segs": [
+            [
+              "2026-12-19",
+              "2027-01-03"
+            ]
+          ]
+        },
+        {
+          "name": "Belgium (all)",
+          "color": "be",
+          "segs": [
+            [
+              "2026-12-21",
+              "2027-01-03"
+            ]
+          ]
+        },
+        {
+          "name": "NRW",
+          "color": "de",
+          "segs": [
+            [
+              "2026-12-23",
+              "2027-01-06"
+            ]
+          ]
+        }
+      ],
+      "note": "Flanders is on autumn break to 8 Nov. [52] Sources: AFNORTH [43], NL [53], BE [52], NRW [54]."
+    },
+    "season": {
+      "title": "Christmas market planner",
+      "from": "2026-11-02",
+      "to": "2027-01-05",
+      "ticks": [
+        "2026-11-02",
+        "2026-11-16",
+        "2026-12-01",
+        "2026-12-15",
+        "2027-01-01"
+      ],
+      "rows": [
+        {
+          "name": "Valkenburg caves",
+          "sub": "NL · ~20 min",
+          "color": "mkt",
+          "segs": [
+            [
+              "2026-11-13",
+              "2027-01-03"
+            ]
+          ]
+        },
+        {
+          "name": "Köln Dom",
+          "sub": "DE · ~1 h 5 min",
+          "color": "de",
+          "segs": [
+            [
+              "2026-11-16",
+              "2026-11-21"
+            ],
+            [
+              "2026-11-23",
+              "2026-12-23"
+            ]
+          ]
+        },
+        {
+          "name": "Aachen",
+          "sub": "DE · ~25 min",
+          "color": "de",
+          "segs": [
+            [
+              "2026-11-20",
+              "2026-12-23"
+            ]
+          ]
+        },
+        {
+          "name": "Magisch Maastricht",
+          "sub": "NL · ~30 min",
+          "color": "nl",
+          "segs": [
+            [
+              "2026-11-27",
+              "2026-12-27"
+            ]
+          ]
+        },
+        {
+          "name": "Liège Village de Noël",
+          "sub": "BE · ~45 min",
+          "color": "be",
+          "segs": [
+            [
+              "2026-11-27",
+              "2026-12-30"
+            ]
+          ]
+        },
+        {
+          "name": "Monschau",
+          "sub": "DE · ~50 min · Fri–Sun",
+          "color": "de",
+          "segs": [
+            [
+              "2026-11-27",
+              "2026-11-29"
+            ],
+            [
+              "2026-12-04",
+              "2026-12-06"
+            ],
+            [
+              "2026-12-11",
+              "2026-12-13"
+            ],
+            [
+              "2026-12-18",
+              "2026-12-20"
+            ]
+          ]
+        }
+      ],
+      "notes": [
+        "**Köln Dom:** closed Sun 22 Nov (Totensonntag). Sat 10:00–22:00. [55]",
+        "**Aachen:** Sun 22 Nov open 18:00–21:00 only; long day Sat 12 Dec until 22:00. [56]",
+        "**Monschau:** four weekends only (Fri–Sat 11:00–21:00, Sun to 20:00). [57]",
+        "**Magisch Maastricht:** free entry, covered ice rink on the Vrijthof. [58] **Liège:** Village de Noël 27 Nov – 30 Dec. [59]"
+      ],
+      "intro": "Dates from organisers' or tourism-office pages. Drive times from Hoensbroek are approximate. Dotted red line = today; grey line = 25 Dec."
+    },
+    "otd": {
+      "title": "On this day · 3 November 1944",
+      "body": "The 112th Infantry of the US 28th Infantry Division crossed the Kall gorge and took Schmidt, about 40 km from Heerlen, the deepest point of the first Hürtgen attack. A single logging trail and a bridge over the Kall served as both attack route and supply line, and nobody had sent a patrol down it first. German counterattacks drove the regiment back across the Kall by 8 Nov; the division lost 6,184 men in the battle. Source: David T. Zabecki, HistoryNet. [60]"
+    },
+    "culture": {
+      "title": "Sint-Hubertus, today",
+      "body": "Hubert, patron saint of hunters since the 11th century, has his feast on 3 November. Across Belgian and Dutch Limburg, priests bless bread rolls (“hubkes”), once eaten as protection against rabies, along with horses and dogs. In Wiemesmeer (Zutendaal), about 35 minutes away, the feast has been held on 3 November every year since 1947, with hunting horns and an animal blessing. [61]"
+    }
+  },
+  "sources": [
+    [
+      1,
+      "Het weer de komende 48 uur: Heerlen",
+      "Weerplaza",
+      "https://www.weerplaza.nl/nederland/heerlen/10546/",
+      3
+    ],
+    [
+      2,
+      "Carolina Hurricanes schedule 2026–27",
+      "NHL.com",
+      "https://www.nhl.com/hurricanes/schedule",
+      3
+    ],
+    [
+      3,
+      "Anche l'Italia colpita dagli attacchi hacker ai supermercati: Chigi convoca un vertice d'urgenza",
+      "Open",
+      "https://www.open.online/2026/11/02/supermercati-frigoriferi-hacker-italia-sicilia/",
+      3
+    ],
+    [
+      4,
+      "Frigiderele din 6 magazine din România, posibil vizate în noul atac",
+      "HotNews.ro",
+      "https://hotnews.ro/frigiderele-din-6-magazine-din-romania-ale-aceluiasi-lant-de-supermarketuri-posibil-vizate-in-noul-atac-care-a-ridicat-temperaturile-la-50-de-grade-2393059",
+      3
+    ],
+    [
+      5,
+      "Federaal parket opent strafonderzoek na cyberaanval (liveblog)",
+      "VRT NWS",
+      "https://www.vrt.be/vrtnws/nl/liveblog/federaal-parket-opent-strafonderzoek-na-cyberaanval-motief-van~1793610043244/",
+      3
+    ],
+    [
+      6,
+      "Cyberattacks hit supermarket fridges and freezers in Europe, Belgium launches investigation",
+      "Euronews",
+      "https://www.euronews.com/2026/11/02/cyberattack-hits-belgian-supermarket-fridges-and-freezers",
+      3
+    ],
+    [
+      7,
+      "Hackers pushed freezers at French supermarkets to 122 degrees. Now the Pentagon is asking whether the same thing hit U.S. military bases",
+      "Fortune",
+      "https://fortune.com/2026/11/01/hackers-pushed-freezers-at-hundreds-of-french-supermarkets-to-122-degrees-pentagon-investigating-us-military-bases/",
+      3
+    ],
+    [
+      8,
+      "Germany tightens security at military bases over concerns about Russia, commander says",
+      "Stars and Stripes",
+      "https://www.stripes.com/theaters/europe/2026-11-01/german-bases-security-threats-23326000.html",
+      3
+    ],
+    [
+      9,
+      "Poland prepares for possible sabotage near Russian Kaliningrad border",
+      "Ukrainska Pravda",
+      "https://www.pravda.com.ua/eng/news/2026/11/02/8060934/",
+      3
+    ],
+    [
+      10,
+      "Top security official comments on West (Shoigu press conference)",
+      "TASS",
+      "https://tass.com/russias-foreign-policy/2211895",
+      3
+    ],
+    [
+      11,
+      "Election officials brace for foreign threats and an unpredictable Washington",
+      "CNN via ABC17",
+      "https://abc17news.com/politics/national-politics/cnn-us-politics/2026/11/01/election-officials-brace-for-foreign-threats-and-an-unpredictable-washington/",
+      3
+    ],
+    [
+      12,
+      "NATO allies fear Trump could target alliance after potential US midterm defeat: report",
+      "Anadolu (citing POLITICO)",
+      "https://m.aa.com.tr/en/world/nato-allies-fear-trump-could-target-alliance-after-potential-us-midterm-defeat-report/4108932",
+      3
+    ],
+    [
+      13,
+      "Pentagon Europe posture review terms of reference",
+      "Grosswald",
+      "https://www.grosswald.org/pentagon-europe-posture-review-terms-of-reference-four-option-sets-6-november/",
+      3
+    ],
+    [
+      14,
+      "U.S. to mediate new Ukraine-Russia talks in Abu Dhabi next week",
+      "Xinhua",
+      "https://english.news.cn/20261103/caa9492cf0a74a6b97db0fe7ba3781fc/c.html",
+      3
+    ],
+    [
+      15,
+      "Protesters block RAF Lakenheath entrance over Iran war",
+      "Stars and Stripes",
+      "https://www.stripes.com/theaters/europe/2026-11-02/protesters-block-entrance-raf-lakenheath-23339601.html",
+      3
+    ],
+    [
+      16,
+      "US strikes Iran's Qeshm Island on eve of midterm elections",
+      "Yahoo News",
+      "https://www.yahoo.com/news/politics/articles/us-strikes-irans-qeshm-island-035152273.html",
+      3
+    ],
+    [
+      17,
+      "Oil slides on Hormuz deal hopes but Trump keeps Iran strikes on the table",
+      "Euronews",
+      "https://www.euronews.com/2026/11/02/oil-slides-on-hormuz-deal-hopes-but-trump-keeps-iran-strikes-on-the-table",
+      3
+    ],
+    [
+      18,
+      "Ukraine war latest: Russian bomb strikes kill 24 at humanitarian aid center in Zaporizhzhia Oblast",
+      "Kyiv Independent",
+      "https://kyivindependent.com/ukraine-war-latest-russian-bomb-strikes-kill-24-at-humanitarian-aid-center-in-zaporizhzhia-oblast/",
+      3
+    ],
+    [
+      19,
+      "Russia-Ukraine talks to take place in Abu Dhabi this month, US says",
+      "The National",
+      "https://www.thenationalnews.com/news/us/2026/11/02/russia-ukraine-witkoff-abu-dhabi/",
+      3
+    ],
+    [
+      20,
+      "The 2026 midterm general election season is upon us. Here's what to watch",
+      "NPR via KJZZ",
+      "https://www.kjzz.org/npr-top-stories/2026-09-08/the-2026-midterm-general-election-season-is-upon-us-heres-what-to-watch",
+      3
+    ],
+    [
+      21,
+      "NDAA FY2027 and Dec. 11 funding deadline",
+      "Buffalo Chronicle (thin source)",
+      "https://buffalochronicle.com/2026/10/24/ndaa-fy2027-lame-duck-dec-11-funding-deadline-niagara-falls/",
+      3
+    ],
+    [
+      22,
+      "Liveblog zu Gen-Z-Protesten: Rund 2000 Menschen zogen bei Demo durch Aachen",
+      "Aachener Zeitung",
+      "https://www.aachener-zeitung.de/lokales/region-aachen/aachen/liveblog-zu-gen-z-protesten-die-demo-zieht-durch-aachen/163833673.html",
+      3
+    ],
+    [
+      23,
+      "In first public speech as acting Army secretary, Telle highlights acquisition",
+      "Stars and Stripes",
+      "https://www.stripes.com/branches/army/2026-10-12/acting-army-secretary-telle-ausa-conference-23134806.html",
+      3
+    ],
+    [
+      24,
+      "Army meets Reserve, Special Forces recruiting goals for first time in a decade",
+      "Army Times",
+      "https://www.armytimes.com/news/recruiting/2026/10/01/army-meets-reserve-special-forces-recruiting-goals-for-first-time-in-a-decade-general-confirms/",
+      3
+    ],
+    [
+      25,
+      "Europe-assigned Army unit fires Tomahawk; no deployment to Europe planned",
+      "Stars and Stripes",
+      "https://www.stripes.com/branches/army/2026-10-29/mdc-e-missile-battery-tests-tomahawk-23288680.html",
+      3
+    ],
+    [
+      26,
+      "FY27 HQDA Board Schedule",
+      "Army Human Resources Command",
+      "https://www.hrc.army.mil/content/FY27%20HQDA%20Board%20Schedule",
+      1
+    ],
+    [
+      27,
+      "Crude oil prices sell off more than 7% on Iran peace talk hopes ahead of U.S. midterms",
+      "CNBC",
+      "https://cnbc.com/2026/11/02/oil-prices-fall-as-iran-us-pursue-diplomacy.html",
+      3
+    ],
+    [
+      28,
+      "How major US stock indexes fared Monday 11/2/2026",
+      "AP via WTOP",
+      "https://wtop.com/national/2026/11/how-major-us-stock-indexes-fared-monday-11-2-2026",
+      2
+    ],
+    [
+      29,
+      "Asia Market Quick Take, 3 November 2026",
+      "Saxo",
+      "https://www.home.saxo/en-sg/content/articles/macro/asia-market-quick-take-03-november-2026-03112026",
+      3
+    ],
+    [
+      30,
+      "Market data: ^AEX, TTF=F, GC=F, ^VIX, ^TNX daily closes",
+      "Yahoo Finance",
+      "https://finance.yahoo.com/markets/",
+      3
+    ],
+    [
+      31,
+      "Euro foreign exchange reference rates: US dollar",
+      "European Central Bank",
+      "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/eurofxref-graph-usd.en.html",
+      1
+    ],
+    [
+      32,
+      "Manufacturing PMI at 55.5%; October 2026 ISM Manufacturing PMI Report",
+      "ISM via PR Newswire",
+      "https://www.prnewswire.com/news-releases/manufacturing-pmi-at-55-5-october-2026-ism-manufacturing-pmi-report-302925617.html",
+      3
+    ],
+    [
+      33,
+      "Fed chooses patience, leaves rates unchanged",
+      "Charles Schwab",
+      "https://www.schwab.com/learn/story/fomc-meeting",
+      3
+    ],
+    [
+      34,
+      "ECB holds rates unchanged, EURUSD down",
+      "XTB",
+      "https://www.xtb.com/en/market-analysis/ecb-holds-rates-unchanged-eurusd-down",
+      1
+    ],
+    [
+      35,
+      "US hiring rebound eyed as Fed weighs December rise; eurozone inflation near 4%",
+      "IndexBox",
+      "https://www.indexbox.io/blog/us-hiring-expected-to-rebound-in-october-as-fed-rate-decision-looms-eurozone-inflation-in-focus-ahead-of-ecb/",
+      1
+    ],
+    [
+      36,
+      "Inflatie stijgt naar 3,4 procent in september",
+      "CBS",
+      "https://www.cbs.nl/nl-nl/nieuws/2026/42/inflatie-stijgt-naar-3-4-procent-in-september",
+      3
+    ],
+    [
+      37,
+      "November TTF hits 100 euros per MWh for the first time since 2022",
+      "Il Sole 24 Ore",
+      "https://en.ilsole24ore.com/art/november-ttf-gas-price-hits-100-euros-per-mwh-for-the-first-time-in-2022-AJWn5twB",
+      3
+    ],
+    [
+      38,
+      "RBA lifts interest rates to highest level in 18 years to try to dampen inflation",
+      "ABC News (Australia)",
+      "https://www.abc.net.au/news/2026-11-03/rba-lifts-interest-rates-november-2026-highest-rate-in-18-years/107340050",
+      3
+    ],
+    [
+      39,
+      "Geen deal met oppositie over belastingplan, woensdag debat in Tweede Kamer",
+      "NOS",
+      "https://nos.nl/artikel/2637476-geen-deal-met-oppositie-over-belastingplan-woensdag-debat-in-tweede-kamer",
+      3
+    ],
+    [
+      40,
+      "Now 74 municipalities placed under increased government pressure over asylum housing",
+      "NL Times",
+      "https://nltimes.nl/2026/11/02/now-74-municipalities-placed-increased-government-pressure-asylum-housing",
+      3
+    ],
+    [
+      41,
+      "Banning the infinite scroll: Pro MP files bill on addictive apps",
+      "DutchNews",
+      "https://www.dutchnews.nl/2026/11/banning-the-infinite-scroll-pro-mp-files-bill-on-addictive-apps/",
+      3
+    ],
+    [
+      42,
+      "Prosecutors raise reward for arrest of “Bolle Jos” to €2m",
+      "DutchNews",
+      "https://www.dutchnews.nl/2026/11/prosecutors-raise-reward-for-arrest-of-bolle-jos-to-e2m/",
+      3
+    ],
+    [
+      43,
+      "AFNORTH 2026–27 academic calendar (PDF)",
+      "AFNORTH",
+      "https://afnorthmhs.dodea.edu/sites/g/files/afatmv2851/files/2026-05/afn-26-27-academic-calendar.pdf",
+      3
+    ],
+    [
+      44,
+      "106th Armistice anniversary remembrance service held in Brunssum War Cemetery (2024)",
+      "JFC Brunssum",
+      "https://jfcbs.nato.int/page5964943/2024/106th-armistice-anniversary-remembrance-service-held-in-brunssum-war-cemetery-.aspx",
+      3
+    ],
+    [
+      45,
+      "Dutch Mountain Film Festival (DMFF) 2026",
+      "FilmFreeway",
+      "https://filmfreeway.com/DMFF",
+      3
+    ],
+    [
+      46,
+      "De Hubertusfeesten in Offelken",
+      "Immaterieel Erfgoed",
+      "https://immaterieelerfgoed.be/nl/erfgoederen/de-hubertusfeesten-in-offelken/pdf",
+      3
+    ],
+    [
+      47,
+      "Geheimen van Parkstad brengt streekverhalen tot leven in Theater Heerlen",
+      "Drimble / ParkstadActueel",
+      "https://drimble.nl/regio/limburg/heerlen/108460506/geheimen-van-parkstad-brengt-streekverhalen-tot-leven-in-theater-heerlen.html",
+      3
+    ],
+    [
+      48,
+      "Hurricanes bring 4-game win streak into matchup against the Predators",
+      "AP via ABC News",
+      "https://abcnews.com/Sports/wireStory/hurricanes-bring-4-game-win-streak-matchup-predators-137763124",
+      2
+    ],
+    [
+      49,
+      "Scores, Monday 2 November 2026",
+      "NHL.com",
+      "https://www.nhl.com/scores/2026-11-02",
+      3
+    ],
+    [
+      50,
+      "Carolina, Seattle to play in 2026 Global Series Finland",
+      "NHL.com",
+      "https://www.nhl.com/news/carolina-seattle-to-play-in-2026-global-series-finland",
+      3
+    ],
+    [
+      51,
+      "NHL News Roundup: Kucherov trade request, Larkin and more",
+      "The Hockey Writers",
+      "https://thehockeywriters.com/nhl-news-roundup-kucherov-trade-request-larkin-more/",
+      3
+    ],
+    [
+      52,
+      "Vacances scolaires 2026–2027",
+      "La DH",
+      "https://www.dhnet.be/actu/belgique/2026/07/30/voici-les-vacances-scolaires-2026-2027-a-bruxelles-en-wallonie-et-en-flandre-ZWQBTQRCCNA3XESWPP6K5DGB5M/",
+      3
+    ],
+    [
+      53,
+      "School holiday dates 2026–2027",
+      "Government.nl",
+      "https://www.government.nl/topics/school-holidays/overview-of-school-holiday-dates-per-academic-year/school-holiday-dates-2026-2027",
+      3
+    ],
+    [
+      54,
+      "Weihnachtsferien 2026",
+      "Kalenderpedia",
+      "https://www.kalenderpedia.de/ferien/weihnachtsferien-2026.html",
+      3
+    ],
+    [
+      55,
+      "Weihnachtsmarkt am Kölner Dom",
+      "koeln.de",
+      "https://www.koeln.de/weihnachten/weihnachtsmaerkte-koeln/weihnachtsmarkt-am-koelner-dom/",
+      3
+    ],
+    [
+      56,
+      "Aachener Weihnachtsmarkt: dates and hours",
+      "Aachen Christmas market",
+      "https://aachenweihnachtsmarkt.de/en/pages/offers/",
+      3
+    ],
+    [
+      57,
+      "Christmas market Monschau",
+      "Tourismus Kreis Düren",
+      "https://www.tourismus.kreis-dueren.de/en/e-christmas-market-monschau-2",
+      3
+    ],
+    [
+      58,
+      "Magisch Maastricht",
+      "Kidsproof",
+      "https://www.kidsproof.nl/zuid-limburg/eropuit/magisch-maastricht/magisch-maastricht-kerst-gezinsuitje-eu/",
+      3
+    ],
+    [
+      59,
+      "Village de Noël in Luik",
+      "Visit Zuid-Limburg",
+      "https://www.visitzuidlimburg.com/experience-zuid-limburg/event/village-de-noel-in-luik/64128",
+      3
+    ],
+    [
+      60,
+      "Battle of Schmidt, 1944 (David T. Zabecki)",
+      "HistoryNet",
+      "https://historynet.com/battle-of-schmidt-1944/",
+      3
+    ],
+    [
+      61,
+      "Sint-Hubertusfeesten in Wiemesmeer",
+      "Immaterieel Erfgoed",
+      "https://immaterieelerfgoed.be/nl/erfgoederen/sint-hubertusfeesten-in-wiemesmeer/pdf",
+      3
+    ],
+    [
+      73,
+      "World Oil Transit Chokepoints: Strait of Hormuz",
+      "US Energy Information Administration",
+      "https://www.eia.gov/international/analysis/special-topics/World_Oil_Transit_Chokepoints",
+      1
+    ],
+    [
+      74,
+      "Lessons from Africa's Drone Wars (Africa Security Brief No. 49)",
+      "Africa Center for Strategic Studies",
+      "https://africacenter.org/publication/asb49-lessons-africa-drone-wars/",
+      1
+    ]
+  ],
+  "flags": "Thin or single-source: Lithuania's extension of its Kaliningrad border measures (Ukrainska Pravda only); the FY27 colonel board dates (HRC schedule seen only in a search snippet, the page did not load); Sicilian store counts (four confirmed by the operator, at least 12 per unnamed trade sources); the IRGC drone claim (Tasnim, unverified); the 11 Dec funding-deadline source remains thin. Brent's front month rolled from December to January after 30 Oct, so the sparkline shows a bigger fall (117.64 to 104.77) than the −7.6% move on the January contract. Gold, VIX, AEX and TTF figures are Yahoo Finance closes. ECB history ZIP checked: latest row 2 Nov, already in fx.json, nothing appended.",
+  "changelog": [
+    [
+      "2026-11-02",
+      "v2.5: data-driven page, Today strip, Five things, Hockey section, Planner, running hybrid incident log, weekly fuel comparison, Lees mee, archive."
+    ],
+    [
+      "2026-11-02",
+      "v2: four parts (Security, Profession, Money, Home), World expanded, Markets added, AFNORTH calendar governs."
+    ],
+    [
+      "2026-11-02",
+      "v1: first designed edition."
+    ]
+  ],
+  "_note": "SAMPLE of the 6.0 edition shape, built from Edition 2's sourced facts and restructured. Not listed in index.json and never shown on the page; the morning run follows this shape and SCHEMA.md. Arrays left empty are legitimately empty for a sample; the run fills them from the day's reporting.",
+  "deftech": {
+    "items": [
+      {
+        "h": "The Europe-assigned Typhon battery fires a Tomahawk, but Germany is still off",
+        "tag": "USAREUR-AF",
+        "conf": "high",
+        "badge": "NEW",
+        "body": "The Mid-Range Capability battery of 3rd Battalion, 12th Field Artillery, under Multi-Domain Command Europe (MDC-E), fired a Tomahawk from the Typhon launcher at China Lake, California, on 28 Sep. MDC-E says the battery is certified, but there are “no current plans” to deploy it to Europe; the Pentagon cancelled the 2026 Germany deployment in May. [25]",
+        "sw": "Without US ground-launched long-range fires in theatre, Berlin's own deep-strike plans weigh more in the regional plans."
+      }
+    ],
+    "series": [
+      "ru-uav-day"
+    ],
+    "ttp": null
+  },
+  "nato": {
+    "items": [],
+    "table": null
+  },
+  "frontier": {
+    "items": []
+  },
+  "weekreview": null,
+  "research": {
+    "org": "Africa Center for Strategic Studies",
+    "title": "Lessons from Africa's Drone Wars",
+    "authors": "Nate Allen",
+    "date": "2026-10-28",
+    "kind": "Africa Security Brief No. 49",
+    "src": 74,
+    "summary": [
+      "The brief argues that cheap, expendable unmanned systems in the hands of armed non-state groups are eroding the airpower advantage African governments have long held, and that non-state actors, not militaries, are so far exploiting the shift best. It opens with Mali's Bayraktar TB2 fleet failing to stop an assault, and sorts drones into four classes by cost, range and role, noting that long-endurance types are the most widely bought military drones on the continent. [74]"
+    ],
+    "findings": [
+      "Non-state armed groups are adapting faster to small drones than the militaries they fight. [74]",
+      "Long-endurance drones are the most widely acquired military type in Africa but have not delivered decisive results. [74]",
+      "Recommendation: a risk-based doctrine that pairs layered counter-drone defences with limits on illicit supply chains and small unmanned systems built into forces for irregular warfare. [74]"
+    ],
+    "method": "Policy brief drawing on reported strikes and acquisitions; the sample lists only what the publisher's summary states.",
+    "sw": "Sample line: the counter-drone layering argument reads across to force protection at Benelux sites.",
     "badge": "NEW"
-   },
-   {
-    "id": "2026-11-02-ro-cyb-coldchain",
-    "date": "2026-11-02",
-    "when": "night of 1–2 Nov, 01:00–01:30",
-    "code": "CYB",
-    "attr": "A0",
-    "local": false,
-    "country": "RO",
-    "place": "Romania: six stores of one chain (cities not named)",
-    "lat": 44.43,
-    "lon": 26.1,
-    "text": "Fridges in six stores heated up overnight and staff found them at 08:00. The National Cyber Security Directorate (DNSC) says the controllers sat behind cellular (GSM) routers with fixed IP addresses, reachable from the internet, on old software. [4]",
-    "badge": "NEW"
-   }
-  ],
-  "leads": [
-   {
-    "id": "lead-1",
-    "title": "The fridge wave reaches nine countries and two crisis rooms",
-    "teaser": "Italy and Romania reported late on Monday; Rome now treats it as a security matter. The Pentagon is checking its own commissaries.",
-    "rows": [
-     [
-      "What",
-      "By Monday night the 1–2 Nov wave covered Belgium, the Netherlands, Luxembourg, Sweden, Estonia, Finland, Ireland, Italy and Romania, after France on 11–12 Oct. [5] Hits cluster between 01:00 and 04:00 local time. [4, 3] Belgium alone counts about 75 sites. [6]"
-     ],
-     [
-      "Attribution",
-      "A0 everywhere: no claim, no named suspect. The director of the Centre for Cybersecurity Belgium (CCB) says it is not yet clear whether criminals, a state or hacktivists are behind it; Interior Minister Bernard Quintin rules out no lead. [5]"
-     ],
-     [
-      "Alternatives",
-      "Opportunists scanning for default passwords, which fits the old devices and the lack of a ransom demand; or a state-linked actor testing reach cheaply. Nine countries in one night with one method looks like a single operator or a shared toolkit."
-     ],
-     [
-      "Response",
-      "Italy's prime minister's office meets the ACN and intelligence chiefs at 11:30 today; parliament's intelligence committee holds hearings today and Wednesday. [3] Sabcobel, which runs Delhaize's systems, says a patch will not fix the flaw: the units need physical changes, and “that requires investment”. [6]"
-     ],
-     [
-      "Context",
-      "Reuters reported on 29 Oct that the Defense Criminal Investigative Service (DCIS) leads a joint probe into whether August refrigeration failures at US commissaries on more than half a dozen bases were a cyberattack. No link to Europe has been shown. [7]"
-     ]
-    ],
-    "sw": "Baseline requirement 4 (food and water) now has a military mirror: commissaries and contracted cold stores run the same kind of controllers. Ask the J4 and the host-nation support cell which contracted cold storage in the Netherlands, Belgium and Germany is remote-managed, and who can order it offline at 02:00."
-   },
-   {
-    "id": "lead-2",
-    "title": "Germany hardens its bases as Poland's alert runs to Sunday",
-    "teaser": "Berlin's top operational commander says US sites have drawn suspected drone surveillance; Warsaw keeps its police on full readiness. Moscow calls the whole thing a European fantasy.",
-    "rows": [
-     [
-      "What",
-      "Lt. Gen. Alexander Sollfrank, head of the Bundeswehr's operational command, said on Sunday that Germany will raise security at military sites and expand counter-drone capability. Russian spying and sabotage are growing, American bases have drawn suspected drone surveillance, and Germany plans to move at least 20,000 troops toward the Baltic states in a crisis. He named no sites or start date. [8]"
-     ],
-     [
-      "Poland",
-      "Day two of the police readiness order (2–8 Nov); no incident reported. Lithuania has reportedly extended its own Kaliningrad border measures to mid-November. [9]"
-     ],
-     [
-      "Attribution",
-      "Sollfrank names Russia; he calls an attack on NATO territory realistic but not imminent. [8] The Polish warning still rests on anonymous sourcing (A1)."
-     ],
-     [
-      "Moscow's line",
-      "On Monday, Russian Security Council secretary Sergei Shoigu said Europe is wrong to accuse Russia of hybrid war, and added: “God forbid you live to see a day when Russia launches a hybrid war against you.” [10]"
-     ]
-    ],
-    "sw": "Germany is the transit hub for any US reinforcement. Tighter base access and counter-drone rules will reach US installations and convoy routes first, so reception, staging and onward movement (RSOM) timelines should assume slower gates and more escorts."
-   }
-  ],
-  "pattern": [
-   "**Same door, more rooms:** nine countries in one night, all through internet-reachable controllers with default or outdated credentials, now including cellular routers. The method has not changed since France. [4, 6]",
-   "**Night shift:** hits land between 01:00 and 04:00 on a Sunday night, so food spoils before staff arrive. [4, 3]",
-   "**From retail incident to security file:** Italy is the first government to put the wave in front of its intelligence chiefs in public. [3]"
-  ],
-  "tracker": [
-   [
-    "Italy convenes its cybersecurity agency and intelligence chiefs; parliamentary committee hearings today and Wednesday",
-    "Resilience"
-   ],
-   [
-    "Romania's cyber directorate investigates six stores",
-    "Defend"
-   ],
-   [
-    "Sabcobel: controllers need physical modification, not only a patch",
-    "Defend"
-   ],
-   [
-    "Germany raises base security and expands counter-drone capability",
-    "Defend"
-   ],
-   [
-    "Polish police readiness, day 2 of 7",
-    "Deny"
-   ],
-   [
-    "Lithuania extends Kaliningrad border measures to mid-November (reported)",
-    "Deny"
-   ]
-  ],
-  "indicators": [
-   [
-    "rising",
-    "Cyber against civil infrastructure",
-    "Italy and Romania added; nine countries in the 1–2 Nov wave"
-   ],
-   [
-    "steady",
-    "Proxy-recruitment arrests",
-    "No new arrests reported in the window"
-   ],
-   [
-    "watch",
-    "Attacks on public warning channels (new)",
-    "No repeat since the 1 Nov alert-app hacks"
-   ],
-   [
-    "watch",
-    "Drones near JOA-C military and logistics nodes",
-    "Germany cites suspected drone surveillance of US bases; no new confirmed incident"
-   ],
-   [
-    "steady",
-    "Undersea infrastructure",
-    "No new incident"
-   ],
-   [
-    "nodata",
-    "GNSS interference over the Baltic",
-    "No new open-source reporting in the window"
-   ],
-   [
-    "nodata",
-    "Belarus border pressure",
-    "Nothing new in the window"
-   ]
-  ],
-  "week": null,
-  "note": "Election interference is still not tracked: no national election in the area falls soon. For the US vote, warning channels to election officials are at their weakest since 2016; no tampering with voting systems has been reported. [11]"
- },
- "europe": [
-  {
-   "h": "Election day: what allies fear from a Republican loss",
-   "tag": "US in Europe",
-   "conf": "moderate",
-   "badge": "UPDATED",
-   "body": "Five NATO diplomats told POLITICO that a Republican defeat could push President Trump toward a harder line: thousands more troops out of Europe, smaller payments into NATO's common funding, limits on the Prioritized Ukraine Requirements List (PURL) through which allies buy US arms for Kyiv. Oana Lungescu of the Royal United Services Institute (RUSI) warned Washington could tie its troop presence to Europe accepting a US-backed Ukraine deal. The White House says Trump “has done more for NATO than anyone else.” [12] Posture options are still due to Hegseth on Friday. [13]",
-   "sw": "Watch for linkage: a troop decision tied to a Ukraine deal reaches host nations as politics before it reaches them as a planning order."
-  },
-  {
-   "h": "Europe's seat at the Ukraine table is still open",
-   "tag": "Diplomacy",
-   "conf": "high",
-   "badge": "NEW",
-   "body": "US negotiators meet France, Germany, Britain, the EU and NATO in Brussels this week on security guarantees for Ukraine, Europe's post-war security architecture and reconstruction. [14] Moscow says the Abu Dhabi delegations stay as before, the US, Ukraine and Russia, and that how Europe is represented “requires discussion and a decision by all three sides.” [10]",
-   "sw": "Guarantees drafted in Brussels become force-generation questions; expect taskers on what a reassurance force needs from the rear area."
-  },
-  {
-   "h": "Ten arrested blocking the gate at RAF Lakenheath",
-   "tag": "UK",
-   "conf": "high",
-   "badge": "NEW",
-   "body": "On Monday the Lakenheath Alliance for Peace blocked the main entrance of the US fighter base in Suffolk over the Iran war, Gaza and a possible return of US nuclear weapons. Six activists locked themselves together and four blocked the road with a vehicle; the base tightened gate security. [15]",
-   "sw": "Host-nation police handled it. The force-protection question is whether hostile services use protests as cover for reconnaissance."
   }
- ],
- "world": {
-  "items": [
-   {
-    "region": "Middle East",
-    "h": "US jets hit Qeshm while Iran offers a two-day Hormuz plan",
-    "conf": "moderate",
-    "badge": "NEW",
-    "body": "A US official called Monday's strike on radar and missile launchers on Qeshm Island a “defensive operation” after Iranian surface-to-air fire; the Islamic Revolutionary Guard Corps (IRGC) claims it downed two US drones. [16] Foreign Minister Araghchi says Hormuz could reopen within two days if Washington ends its blockade, lifts oil sanctions and halts fighting on all fronts. Asked about returning to war this week, Trump said: “Let's say I did. Would I tell you?” [17]",
-    "next": "Araghchi's two-day reopening offer stands as of 3 Nov; the US has not replied in public. [17]",
-    "links": [
-     "theatre:iran"
-    ]
-   },
-   {
-    "region": "Russia–Ukraine",
-    "h": "Abu Dhabi talks set for 10–11 Nov as the strikes go on",
-    "conf": "high",
-    "badge": "UPDATED",
-    "body": "Envoy Steve Witkoff says the US will mediate working-level talks between Ukraine and Russia in Abu Dhabi on 10–11 Nov, covering post-war security, de-escalation and humanitarian steps. [14] On Monday Russian bombs killed at least 24 people at a school used for aid handouts in Komyshuvakha, Zaporizhzhia region. [18] Trump says he would be willing to invite Zelensky to the G20 summit in Florida next month. [19]",
-    "next": "Abu Dhabi talks 10–11 Nov; US negotiators meet European allies in Brussels this week. [14]",
-    "links": [
-     "theatre:ru-ua",
-     "thread:russia-ukraine-talks"
-    ]
-   },
-   {
-    "region": "United States",
-    "h": "Midterms: results overnight, foreign influence already in play",
-    "conf": "moderate",
-    "badge": "NEW",
-    "body": "Republicans go in with narrow majorities in both chambers, and the party in power usually loses ground in midterms. [20] Russia is the most active foreign influence actor, posting AI-altered videos on X, including a fabricated claim against Texas Senate nominee James Talarico; Iran has been quiet. [11]",
-    "next": "Results overnight; new Congress seated 3 Jan 2027. [20]"
-   }
-  ],
-  "numbers": [
-   "ru-personnel-day",
-   "ru-uav-day",
-   "brent",
-   "ttf"
-  ],
-  "feature": {
-   "rota": "sat",
-   "kind": "Saturday · Geography",
-   "title": "The Strait of Hormuz, by the numbers",
-   "body": [
-    "The strait is 21 nautical miles (39 km) wide at its narrowest point, between Iran's Larak Island and Oman's Musandam peninsula. The inbound and outbound shipping lanes are each 2 nautical miles wide, separated by a 2-nautical-mile buffer. [73]",
-    "In 2023 about 20.9 million barrels of oil a day moved through the strait, roughly 20% of world consumption, plus about a fifth of global liquefied natural gas trade, nearly all of it from Qatar. Saudi Arabia's East-West pipeline and the UAE's Habshan–Fujairah line can bypass the strait with about 2.6 million barrels a day of spare capacity between them. [73]"
-   ],
-   "table": {
-    "head": [
-     "Measure",
-     "Value",
-     "Source"
-    ],
-    "rows": [
-     [
-      "Narrowest width",
-      "21 nmi · 39 km",
-      "EIA [73]"
-     ],
-     [
-      "Shipping lane width",
-      "2 nmi each way, 2 nmi buffer",
-      "EIA [73]"
-     ],
-     [
-      "Oil flow, 2023",
-      "20.9 mb/d",
-      "EIA [73]"
-     ],
-     [
-      "Share of world oil consumption",
-      "about 20%",
-      "EIA [73]"
-     ],
-     [
-      "Bypass pipeline spare capacity",
-      "about 2.6 mb/d",
-      "EIA [73]"
-     ]
-    ]
-   },
-   "geo": {
-    "title": "Hormuz schematic · distances by great circle",
-    "bbox": [
-     54.5,
-     24.6,
-     57.6,
-     27.6
-    ],
-    "points": [
-     {
-      "n": "Bandar Abbas",
-      "lat": 27.19,
-      "lon": 56.28,
-      "k": "port"
-     },
-     {
-      "n": "Qeshm Island",
-      "lat": 26.8,
-      "lon": 55.95,
-      "k": "city",
-      "align": "left"
-     },
-     {
-      "n": "Larak",
-      "lat": 26.85,
-      "lon": 56.37,
-      "k": "city"
-     },
-     {
-      "n": "Khasab (Musandam)",
-      "lat": 26.18,
-      "lon": 56.25,
-      "k": "city",
-      "align": "left"
-     },
-     {
-      "n": "Fujairah",
-      "lat": 25.12,
-      "lon": 56.33,
-      "k": "port"
-     },
-     {
-      "n": "Jebel Ali",
-      "lat": 25.01,
-      "lon": 55.06,
-      "k": "port"
-     },
-     {
-      "n": "Abu Musa",
-      "lat": 25.87,
-      "lon": 55.03,
-      "k": "base",
-      "align": "left"
-     },
-     {
-      "n": "Strait",
-      "lat": 26.56,
-      "lon": 56.42,
-      "k": "chokepoint"
-     }
-    ],
-    "lines": [
-     {
-      "a": [
-       26.85,
-       56.37
-      ],
-      "b": [
-       26.18,
-       56.25
-      ],
-      "t": "Larak – Musandam · 39 km"
-     },
-     {
-      "a": [
-       27.19,
-       56.28
-      ],
-      "b": [
-       25.12,
-       56.33
-      ]
-     }
-    ],
-    "labels": [
-     {
-      "t": "Persian Gulf",
-      "lat": 25.6,
-      "lon": 54.9
-     },
-     {
-      "t": "Gulf of Oman",
-      "lat": 24.9,
-      "lon": 57.2
-     }
-    ]
-   },
-   "after": [
-    "Coordinates are public and approximate to the nearest 0.01 degree; the dashed lines are great-circle distances computed by the page."
-   ]
-  }
- },
- "euregio": [
-  {
-   "h": "Aachen's Gen Z march stays peaceful",
-   "tag": "Aachen",
-   "conf": "moderate",
-   "badge": "NEW",
-   "body": "About 2,000 people (police said about 1,500) marched from the Elisenbrunnen to the Kennedypark on Saturday. Organisers billed it as a protest about education and the cost of living; the Aachener Zeitung says conscription and Palestine dominated. Pyrotechnics went off at the front of the march, but police reported no notable incidents, unlike the Frankfurt riot. [22]",
-   "sw": "Opposition to military-service screening is visible 25 minutes from Brunssum. Public consent for host-nation support is a local question too."
-  }
- ],
- "army": {
-  "cards": [
-   {
-    "l": "Leadership",
-    "v": "Telle, LaNeve (both acting)",
-    "n": "Secretary since early Sep; Chief of Staff since April, still no nominee. [23]"
-   },
-   {
-    "l": "FY26 recruiting",
-    "v": "All goals met",
-    "n": "Reserve and Special Forces too, a first in a decade. [24]"
-   },
-   {
-    "l": "Funding",
-    "v": "CR to 11 Dec",
-    "n": "New-start ban; tonight's result sets the lame-duck mood. [21]"
-   },
-   {
-    "l": "Moved",
-    "v": "Commissary probe",
-    "n": "DCIS leads a joint probe into August fridge failures at 7+ bases. [7]"
-   }
-  ],
-  "dod": [
-   {
-    "h": "Was it a hack? Pentagon investigators look at commissary freezers",
-    "tag": "DoD",
-    "conf": "moderate",
-    "badge": "NEW",
-    "body": "Four officials told Reuters the Pentagon treats August refrigeration outages at commissaries as a possible cyberattack. Sites include Fort Irwin, Fort Huachuca, Holloman, Robins and Naval Station Newport. The US and France are cooperating on the French case; there is no proof yet that the US failures were a hack. [7]",
-    "sw": "If the probe confirms a hack, expect a department-wide check of facility controllers. Get ahead of it: ask Benelux garrison facilities staff which cold rooms are remote-managed."
-   }
-  ],
-  "news": [],
-  "congress": [],
-  "career": {
-   "items": [
-    {
-     "h": "Personnel and promotions",
-     "body": "The FY27 colonel board (Army competitive category) is listed as sitting from 20 Oct to 5 Nov; the lieutenant colonel board convened on 9 Sep. [26] No new evaluation or assignment policy for field-grade officers surfaced in the window.",
-     "fy": "Results post on the Army Human Resources Command (HRC) site some weeks after a board recesses; nothing to do until the release message."
-    }
-   ],
-   "dates": [],
-   "note": "Sample: career items are what touches a field-grade officer in a NATO billet in Europe."
-  },
-  "depth": null
- },
- "aperture": {
-  "contrarian": "Monday's oil drop prices a deal Washington has not accepted. Araghchi's two-day plan needs the US to end the blockade, lift oil sanctions and stop fighting on every front; there are no direct talks; and US jets hit Qeshm the same day. Earlier sell-offs in this war reversed when talks failed. [27, 17] The best case for the drop holding: Goldman puts the war premium near $27 a barrel, so even a partial deal takes a lot out. [17]",
-  "weak": "Romania's detail that the hacked controllers sat behind cellular (GSM) routers with fixed addresses. The same cheap modems connect pumping stations, wind turbines and building systems, including on bases. Confirmation that the target is access in general: an advisory naming router models, or a hit outside food. [4]",
-  "number": {
-   "n": "9",
-   "t": "Countries reporting fridge attacks from the night of 1–2 Nov alone, after France in October. [5]"
-  },
-  "inject": "STARTEX + 3, 02:40. A host-nation contracted cold store holding a corps rear area's blood products and two days of chilled rations reports freezers at +12 °C and rising. The controllers are remote-managed through a cellular router; a second site on the same contract shows setpoint changes. Stresses baseline requirements 4 (food and water) and 5 (mass casualties). First calls: the contracting officer and the host-nation support cell for an order to disconnect, then the medical logistics officer for a redistribution plan before 06:00.",
-  "question": "Which host-nation support contracts in our area (cold storage, water treatment, fuel) depend on remote-access controllers, and who in each nation has the authority to take them offline at night?",
-  "deep": {
-   "kind": "Tuesday deep cut · Outside-in",
-   "title": "“God forbid”: how Moscow tells the hybrid story",
-   "body": [
-    "On Monday Sergei Shoigu, secretary of Russia's Security Council, said Putin has ruled out attacking Europe “three or four times in the past two months”, then added: “God forbid you live to see a day when Russia launches a hybrid war against you.” [10]",
-    "Heard from Moscow, the line does three jobs. It denies, keeping every incident below the level of a collective response. It threatens, implying that what Europe sees is not yet the real thing. And it recasts Polish police readiness and German base hardening as hysteria. The third job matters most: a public told its alarm is overblown is slower to pay for resilience.",
-    "Log statements like this next to incidents, by date. Shoigu spoke on the day Italy and Romania reported freezer attacks. Whether or not Moscow ordered the fridge wave, it is using the gap between European alarm and missing attribution."
-   ],
-   "table": null
-  },
-  "longread": null,
-  "rota": "tue"
- },
- "money": {
-  "asof": "last full session: Mon 2 Nov",
-  "cards": [
-   [
-    "S&P 500",
-    "7,541.40",
-    "−0.5%",
-    "down",
-    "Mon close",
-    28,
-    "spx"
-   ],
-   [
-    "Dow",
-    "51,983.98",
-    "+0.4%",
-    "up",
-    "Mon close; cheaper oil helped",
-    28
-   ],
-   [
-    "Nasdaq",
-    "25,164.36",
-    "−1.1%",
-    "down",
-    "Nasdaq 100 now in correction",
-    29,
-    "ndx"
-   ],
-   [
-    "Russell 2000",
-    "2,805.88",
-    "−0.2%",
-    "down",
-    "Mon close",
-    28
-   ],
-   [
-    "AEX",
-    "1,132.54",
-    "−0.2%",
-    "down",
-    "Mon close",
-    30,
-    "aex"
-   ],
-   [
-    "Stoxx 600",
-    "649.44",
-    "+0.4%",
-    "up",
-    "DAX +0.6% to 25,981",
-    29
-   ],
-   [
-    "Brent",
-    "$104.77",
-    "−7.6%",
-    "down",
-    "Mon settle; WTI $96.46",
-    27,
-    "brent"
-   ],
-   [
-    "Dutch TTF gas",
-    "€93.45",
-    "−10.1%",
-    "down",
-    "December contract, Mon",
-    30,
-    "ttf"
-   ],
-   [
-    "Gold",
-    "$3,970",
-    "+1.8%",
-    "up",
-    "Mon settle; about $3,936 Tue early",
-    30
-   ],
-   [
-    "USD/EUR",
-    "0.8916",
-    "+0.4%",
-    "up",
-    "euros per dollar",
-    31
-   ],
-   [
-    "US 10-year",
-    "4.91%",
-    "−4 bp",
-    "down",
-    "Lowest since Sep; 2-year 4.60%",
-    29
-   ],
-   [
-    "VIX",
-    "21.15",
-    "+8.9%",
-    "up",
-    "Back above 20",
-    30
-   ]
-  ],
-  "ytd": [
-   [
-    "Russell 2000",
-    13.1
-   ],
-   [
-    "S&P 500",
-    10.2
-   ],
-   [
-    "Nasdaq",
-    8.3
-   ],
-   [
-    "Dow",
-    8.2
-   ]
-  ],
-  "ytdSrc": 28,
-  "driver": "Cheaper oil lifted Europe and the Dow, but tech kept sliding: the Nasdaq 100 is now 10% below its peak, and Marvell's all-stock bid for Lumentum sent both shares down more than 10%. [29] Factories were strong: the Institute for Supply Management (ISM) index rose to 55.5, with its prices gauge still at 75.2. [32]",
-  "rates": [
-   [
-    "Fed funds",
-    "3.75–4.00%",
-    "Held 28 Oct; markets price high odds of a December hike. [33]"
-   ],
-   [
-    "ECB deposit rate",
-    "2.50%",
-    "Held 29 Oct; next meeting 17 Dec. [34]"
-   ],
-   [
-    "US CPI (Sep)",
-    "3.7% y/y",
-    "Core 2.6%. [33]"
-   ],
-   [
-    "Euro-area HICP (Sep)",
-    "3.8% y/y",
-    "October flash due Wednesday; consensus 3.9%. [35]"
-   ],
-   [
-    "Dutch CPI (Sep)",
-    "3.4% y/y",
-    "Fuel +27.2% y/y. [36]"
-   ],
-   [
-    "EU gas storage",
-    "~75% full",
-    "Low for the season (ACER, 28 Oct). [37]"
-   ],
-   [
-    "US ISM prices (Oct)",
-    "75.2",
-    "Ninth straight month above 70; headline index 55.5. [32]"
-   ],
-   [
-    "RBA cash rate",
-    "4.85%",
-    "Raised today on a 6–3 vote, the fifth hike of 2026 and an 18-year high. [38]"
-   ]
-  ],
-  "week": [
-   "**Mon 2:** ISM manufacturing 55.5, above forecasts; oil −7.6%. [32, 27]",
-   "**Tue 3:** US midterms; Reserve Bank of Australia (RBA) hikes to 4.85%; AMD, Pfizer and Shopify report. [38, 29]",
-   "**Wed 4:** US Treasury quarterly refunding; euro-area inflation flash (consensus 3.9%). [29, 35]",
-   "**Thu 5:** Bank of England, where a first hike in more than three years is expected. [29]",
-   "**Fri 6:** US October payrolls, forecast +60,000; unemployment 4.2%. [35]"
-  ],
-  "fy": "At Monday's ECB rate of 1.1216, $1,000 of pay buys €891.58, about €3.50 less than at Friday's 1.1172. [31] If the oil drop holds, Dutch pump prices should ease over the next week or two; the bigger pump risk is the 12 Nov tax vote, because the fuel-duty discount falls if the tax plan does. [39]",
-  "fuel": null
- },
- "nl": {
-  "items": [
-   {
-    "h": "Tax plan goes to the Kamer today without a majority",
-    "badge": "UPDATED",
-    "body": "The minority Jetten cabinet must send the 2027 tax plan to parliament today; the debate is Wednesday evening and the vote on 12 Nov. Pro and Volt have walked away. JA21, SGP and BBB want commitments on asylum, nitrogen, abortion and surrogacy, which D66 and the CDA resist. ChristenUnie and 50Plus, with Groep Markuszower, could just about make a majority. [39]",
-    "fy": "If the plan falls, the fuel-duty discount falls with it. [39]"
-   },
-   {
-    "h": "Asylum: 74 municipalities now under state pressure, three in Limburg",
-    "badge": "NEW",
-    "body": "Asylum minister Bart van den Brink moved 11 more municipalities, including Gennep, Mook en Middelaar and Roerdalen, into active supervision under the asylum distribution law (Spreidingswet). If they still fall short, The Hague can house asylum seekers there and send the bill. [40]"
-   },
-   {
-    "h": "A Pro bill to outlaw the infinite scroll",
-    "badge": "NEW",
-    "body": "Pro MP Barbara Kathmann filed a bill on Monday that would class manipulative design in social media, games, dating apps and chatbots, such as endless scrolling, as an unfair commercial practice under consumer law. [41]",
-    "fy": "If it passes, the apps your children use would have to change their Dutch versions."
-   },
-   {
-    "h": "Record €2 million reward for “Bolle Jos”",
-    "badge": "NEW",
-    "body": "Prosecutors raised the reward for convicted drug boss Jos Leijdekkers to €2 million, the largest the Netherlands has offered; he is believed to be in Sierra Leone. [42]"
-   }
-  ],
-  "temp": "Hot. Both routes to a majority cost the cabinet: the right bloc wants concessions D66 cannot easily give, and the Christian-social route rests on a handful of seats.",
-  "lees": {
-   "nl": "“Het huiswerk is nog niet af, de tijdsdruk is groot en er is nog geen meerderheid.”",
-   "gloss": [
-    [
-     "het huiswerk is nog niet af",
-     "the homework is not done yet; politicians use it for unfinished preparation, and “af” means finished"
-    ],
-    [
-     "de tijdsdruk",
-     "time pressure; a compound of tijd (time) and druk (pressure)"
-    ],
-    [
-     "er is nog geen meerderheid",
-     "there is no majority yet; “er is” = there is"
-    ],
-    [
-     "nog niet / nog geen",
-     "not yet: “niet” goes with verbs and adjectives, “geen” with nouns"
-    ]
-   ],
-   "src": 39
-  },
-  "phrase": {
-   "w": "de kogel is door de kerk",
-   "en": "the decision has finally been made (literally: the bullet is through the church)",
-   "lvl": "B2",
-   "note": "Used when a long argument ends. Watch for it on 12 Nov: “Is de kogel al door de kerk?” means “has it been decided yet?”"
-  }
- },
- "afnorth": {
-  "intro": "From the AFNORTH International School 2026–27 academic calendar, which governs. [43]",
-  "rows": [
-   [
-    "4–5 Nov",
-    "12:30 release for parent conferences",
-    "Book slot; afternoon pick-up",
-    "soon"
-   ],
-   [
-    "Every Wed",
-    "Early release (including 11 Nov)",
-    "Standing pick-up",
-    ""
-   ],
-   [
-    "16 Nov",
-    "No school, staff and students",
-    "Childcare",
-    "soon"
-   ],
-   [
-    "7 Dec",
-    "No school, Q2 training day",
-    "Childcare",
-    ""
-   ],
-   [
-    "18 Dec – 1 Jan",
-    "Winter break",
-    "Travel window",
-    ""
-   ]
-  ],
-  "note": "The calendar does not mark Veterans Day (11 Nov) or Thanksgiving (26–27 Nov) as days off; treat them as school days unless the school says otherwise. Belgium is off on 11 Nov; the Netherlands works. Brunssum War Cemetery has held an Armistice service on or near 11 Nov in past years; the 2026 time is not yet published. [44]"
- },
- "offduty": {
-  "items": [
-   {
-    "h": "Dutch Mountain Film Festival",
-    "tag": "NL",
-    "badge": "NEW",
-    "body": "The 16th edition runs 6–15 Nov in Heerlen and Aachen: mountain and adventure films, with prizes for the most original film and the best debut. About 10 minutes to the Heerlen screens. [45]"
-   },
-   {
-    "h": "Sint-Hubertus procession in Offelken (Tongeren)",
-    "tag": "BE",
-    "badge": "NEW",
-    "body": "Eight days of festivities from the first Thursday of November (5 Nov this year): a procession with horses and dogs to the racecourse, where the dean of Tongeren says Mass and blesses the bread. About 40 minutes away. [46]"
-   },
-   {
-    "h": "Geheimen van Parkstad, a family show at Theater Heerlen",
-    "tag": "NL",
-    "badge": "NEW",
-    "body": "Sat 21 and Sun 22 Nov: Tutta Musica Voerendaal and Koninklijke Harmonie Heerlen stage regional folk tales with music. About 10 minutes away. [47]"
-   }
-  ],
-  "weekend": null,
-  "weather": null
- },
- "hockey": {
-  "canes": {
-   "result": null,
-   "noGame": "Carolina did not play on Monday. Tonight they visit Nashville (5-4-5) for the first meeting of the season, puck drop 02:00 CET Wednesday. Taylor Hall (upper body), Jordan Staal (calf) and Alexander Nikishin (not injury related) are out. [48]",
-   "next": [
-    [
-     "Tue 3 Nov",
-     "at Nashville",
-     "20:00 ET",
-     "Wed 02:00 CET",
-     false
-    ],
-    [
-     "Thu 5 Nov",
-     "at NY Islanders",
-     "19:00 ET",
-     "Fri 01:00 CET",
-     false
-    ],
-    [
-     "Sat 7 Nov",
-     "vs Chicago",
-     "20:00 ET",
-     "Sun 02:00 CET",
-     false
-    ]
-   ],
-   "nextSrc": 2
-  },
-  "scores": [
-   [
-    "VGK",
-    2,
-    "BOS",
-    3,
-    "SO"
-   ],
-   [
-    "DET",
-    5,
-    "FLA",
-    3,
-    ""
-   ],
-   [
-    "COL",
-    5,
-    "CHI",
-    2,
-    ""
-   ],
-   [
-    "CGY",
-    2,
-    "SJS",
-    1,
-    ""
-   ]
-  ],
-  "scoresDate": "Mon 2 Nov",
-  "scoresNote": "Away team listed first. No games pending.",
-  "scoresSrc": 49,
-  "news": [
-   {
-    "h": "The Canes play two in Helsinki at European prime time",
-    "badge": "NEW",
-    "body": "Carolina meets Seattle at Veikkaus Arena on Thu 12 Nov (18:00 CET) and Sat 14 Nov (19:00 CET), the Kraken's first games outside North America. Aho and Kotkaniemi are Finnish, as are Seattle's Tolvanen and Kakko. [50, 2]"
-   },
-   {
-    "h": "Closer still: Senators and Blackhawks in Düsseldorf",
-    "badge": "NEW",
-    "body": "Ottawa and Chicago play in Düsseldorf on 18 and 20 Dec, about an hour's drive from Hoensbroek. [50]"
-   },
-   {
-    "h": "Detroit turned down a big Larkin offer",
-    "badge": "UPDATED",
-    "body": "TSN's Chris Johnston reports that Minnesota offered two roster players and several first-round picks for the suspended Dylan Larkin, and Detroit said no. Elliotte Friedman says Larkin could change his trade list within 24 to 48 hours. [51]"
-   },
-   {
-    "h": "Nashville's new centre could debut against Carolina",
-    "badge": "NEW",
-    "body": "Shane Wright arrived from Seattle for Matthew Wood on Sunday; Wood had three points in 14 games this season. [51]"
-   },
-   {
-    "h": "Montreal's Fowler is the hot goalie",
-    "badge": "NEW",
-    "body": "Jacob Fowler has a .932 save percentage in eight appearances as the Canadiens won five straight; they sit a point behind Boston in the Atlantic. [51]"
-   }
-  ]
- },
- "planner": {
-  "calFrom": "2026-11-03",
-  "calTo": "2026-12-03",
-  "events": [
-   [
-    "2026-11-03",
-    "pro",
-    "US midterms",
-    "US",
-    "Elections",
-    "Results overnight"
-   ],
-   [
-    "2026-11-03",
-    "be",
-    "Sint-Hubertus",
-    "BE/NL Limburg",
-    "Bread blessings",
-    "Wiemesmeer feast today"
-   ],
-   [
-    "2026-11-04",
-    "us",
-    "AFNORTH conferences (4–5)",
-    "AFNORTH",
-    "12:30 release",
-    "Afternoon pick-up"
-   ],
-   [
-    "2026-11-04",
-    "pro",
-    "TK tax-plan debate",
-    "NL",
-    "Parliament",
-    "Fuel duty at stake"
-   ],
-   [
-    "2026-11-05",
-    "mkt",
-    "Bank of England",
-    "UK",
-    "Rate decision",
-    "Hike expected"
-   ],
-   [
-    "2026-11-06",
-    "pro",
-    "US payrolls · posture options",
-    "US",
-    "Jobs report; DoD review",
-    ""
-   ],
-   [
-    "2026-11-06",
-    "nl",
-    "Mountain film festival (to 15 Nov)",
-    "Heerlen/Aachen",
-    "Festival",
-    ""
-   ],
-   [
-    "2026-11-10",
-    "pro",
-    "Abu Dhabi talks (10–11)",
-    "UAE",
-    "US–Russia–Ukraine",
-    ""
-   ],
-   [
-    "2026-11-11",
-    "be",
-    "Armistice Day",
-    "BE",
-    "Public holiday",
-    "Offices, banks, schools closed"
-   ],
-   [
-    "2026-11-11",
-    "nl",
-    "Sint Maarten · 11/11 carnival",
-    "NL Limburg / NRW",
-    "Lantern walks; season opens 11:11",
-    "Crowds in Maastricht and Köln"
-   ],
-   [
-    "2026-11-11",
-    "us",
-    "Veterans Day",
-    "US",
-    "Federal holiday",
-    "AFNORTH calendar shows no closure"
-   ],
-   [
-    "2026-11-12",
-    "pro",
-    "Dutch tax-plan vote",
-    "NL",
-    "Parliament",
-    ""
-   ],
-   [
-    "2026-11-12",
-    "us",
-    "Canes vs Kraken, Helsinki",
-    "FI",
-    "NHL Global Series",
-    "18:00 CET, watch live"
-   ],
-   [
-    "2026-11-13",
-    "mkt",
-    "Valkenburg opens · JazzOUT",
-    "NL",
-    "Cave markets; concert",
-    "Book time slots"
-   ],
-   [
-    "2026-11-14",
-    "nl",
-    "Sinterklaas arrives in Grave",
-    "NL",
-    "National intocht",
-    "NPO 3 from 12:00"
-   ],
-   [
-    "2026-11-14",
-    "us",
-    "Canes vs Kraken, Helsinki",
-    "FI",
-    "Game 2",
-    "19:00 CET"
-   ],
-   [
-    "2026-11-15",
-    "de",
-    "Volkstrauertag",
-    "DE",
-    "National day of mourning",
-    "Quiet-day rules"
-   ],
-   [
-    "2026-11-15",
-    "be",
-    "DG day · King's Feast",
-    "BE (east)",
-    "Community holiday",
-    "Public offices in Eupen closed"
-   ],
-   [
-    "2026-11-16",
-    "mkt",
-    "Köln Dom market opens",
-    "DE",
-    "Christmas market",
-    ""
-   ],
-   [
-    "2026-11-16",
-    "us",
-    "AFNORTH no school",
-    "AFNORTH",
-    "No school",
-    "Childcare"
-   ],
-   [
-    "2026-11-20",
-    "mkt",
-    "Aachen market opens",
-    "DE",
-    "Christmas market",
-    "Heavy downtown traffic"
-   ],
-   [
-    "2026-11-21",
-    "nl",
-    "Geheimen van Parkstad (21–22)",
-    "Heerlen",
-    "Family show",
-    ""
-   ],
-   [
-    "2026-11-22",
-    "de",
-    "Totensonntag",
-    "DE",
-    "Quiet day",
-    "Köln market closed; Aachen evening only"
-   ],
-   [
-    "2026-11-26",
-    "us",
-    "Thanksgiving",
-    "US",
-    "Federal holiday",
-    "AFNORTH calendar shows no closure"
-   ],
-   [
-    "2026-11-27",
-    "mkt",
-    "Maastricht, Liège, Monschau open",
-    "NL/BE/DE",
-    "Christmas markets",
-    ""
-   ],
-   [
-    "2026-11-29",
-    "de",
-    "First Advent",
-    "NL/BE/DE",
-    "Season marker",
-    ""
-   ]
-  ],
-  "school": {
-   "from": "2026-12-14",
-   "to": "2027-01-10",
-   "ticks": [
-    "2026-12-14",
-    "2026-12-21",
-    "2026-12-28",
-    "2027-01-04"
-   ],
-   "rows": [
-    {
-     "name": "AFNORTH",
-     "color": "us",
-     "segs": [
-      [
-       "2026-12-18",
-       "2027-01-01"
-      ]
-     ]
-    },
-    {
-     "name": "NL region Zuid",
-     "color": "nl",
-     "segs": [
-      [
-       "2026-12-19",
-       "2027-01-03"
-      ]
-     ]
-    },
-    {
-     "name": "Belgium (all)",
-     "color": "be",
-     "segs": [
-      [
-       "2026-12-21",
-       "2027-01-03"
-      ]
-     ]
-    },
-    {
-     "name": "NRW",
-     "color": "de",
-     "segs": [
-      [
-       "2026-12-23",
-       "2027-01-06"
-      ]
-     ]
-    }
-   ],
-   "note": "Flanders is on autumn break to 8 Nov. [52] Sources: AFNORTH [43], NL [53], BE [52], NRW [54]."
-  },
-  "season": {
-   "title": "Christmas market planner",
-   "from": "2026-11-02",
-   "to": "2027-01-05",
-   "ticks": [
-    "2026-11-02",
-    "2026-11-16",
-    "2026-12-01",
-    "2026-12-15",
-    "2027-01-01"
-   ],
-   "rows": [
-    {
-     "name": "Valkenburg caves",
-     "sub": "NL · ~20 min",
-     "color": "mkt",
-     "segs": [
-      [
-       "2026-11-13",
-       "2027-01-03"
-      ]
-     ]
-    },
-    {
-     "name": "Köln Dom",
-     "sub": "DE · ~1 h 5 min",
-     "color": "de",
-     "segs": [
-      [
-       "2026-11-16",
-       "2026-11-21"
-      ],
-      [
-       "2026-11-23",
-       "2026-12-23"
-      ]
-     ]
-    },
-    {
-     "name": "Aachen",
-     "sub": "DE · ~25 min",
-     "color": "de",
-     "segs": [
-      [
-       "2026-11-20",
-       "2026-12-23"
-      ]
-     ]
-    },
-    {
-     "name": "Magisch Maastricht",
-     "sub": "NL · ~30 min",
-     "color": "nl",
-     "segs": [
-      [
-       "2026-11-27",
-       "2026-12-27"
-      ]
-     ]
-    },
-    {
-     "name": "Liège Village de Noël",
-     "sub": "BE · ~45 min",
-     "color": "be",
-     "segs": [
-      [
-       "2026-11-27",
-       "2026-12-30"
-      ]
-     ]
-    },
-    {
-     "name": "Monschau",
-     "sub": "DE · ~50 min · Fri–Sun",
-     "color": "de",
-     "segs": [
-      [
-       "2026-11-27",
-       "2026-11-29"
-      ],
-      [
-       "2026-12-04",
-       "2026-12-06"
-      ],
-      [
-       "2026-12-11",
-       "2026-12-13"
-      ],
-      [
-       "2026-12-18",
-       "2026-12-20"
-      ]
-     ]
-    }
-   ],
-   "notes": [
-    "**Köln Dom:** closed Sun 22 Nov (Totensonntag). Sat 10:00–22:00. [55]",
-    "**Aachen:** Sun 22 Nov open 18:00–21:00 only; long day Sat 12 Dec until 22:00. [56]",
-    "**Monschau:** four weekends only (Fri–Sat 11:00–21:00, Sun to 20:00). [57]",
-    "**Magisch Maastricht:** free entry, covered ice rink on the Vrijthof. [58] **Liège:** Village de Noël 27 Nov – 30 Dec. [59]"
-   ],
-   "intro": "Dates from organisers' or tourism-office pages. Drive times from Hoensbroek are approximate. Dotted red line = today; grey line = 25 Dec."
-  },
-  "otd": {
-   "title": "On this day · 3 November 1944",
-   "body": "The 112th Infantry of the US 28th Infantry Division crossed the Kall gorge and took Schmidt, about 40 km from Heerlen, the deepest point of the first Hürtgen attack. A single logging trail and a bridge over the Kall served as both attack route and supply line, and nobody had sent a patrol down it first. German counterattacks drove the regiment back across the Kall by 8 Nov; the division lost 6,184 men in the battle. Source: David T. Zabecki, HistoryNet. [60]"
-  },
-  "culture": {
-   "title": "Sint-Hubertus, today",
-   "body": "Hubert, patron saint of hunters since the 11th century, has his feast on 3 November. Across Belgian and Dutch Limburg, priests bless bread rolls (“hubkes”), once eaten as protection against rabies, along with horses and dogs. In Wiemesmeer (Zutendaal), about 35 minutes away, the feast has been held on 3 November every year since 1947, with hunting horns and an animal blessing. [61]"
-  }
- },
- "sources": [
-  [
-   1,
-   "Het weer de komende 48 uur: Heerlen",
-   "Weerplaza",
-   "https://www.weerplaza.nl/nederland/heerlen/10546/",
-   3
-  ],
-  [
-   2,
-   "Carolina Hurricanes schedule 2026–27",
-   "NHL.com",
-   "https://www.nhl.com/hurricanes/schedule",
-   3
-  ],
-  [
-   3,
-   "Anche l'Italia colpita dagli attacchi hacker ai supermercati: Chigi convoca un vertice d'urgenza",
-   "Open",
-   "https://www.open.online/2026/11/02/supermercati-frigoriferi-hacker-italia-sicilia/",
-   3
-  ],
-  [
-   4,
-   "Frigiderele din 6 magazine din România, posibil vizate în noul atac",
-   "HotNews.ro",
-   "https://hotnews.ro/frigiderele-din-6-magazine-din-romania-ale-aceluiasi-lant-de-supermarketuri-posibil-vizate-in-noul-atac-care-a-ridicat-temperaturile-la-50-de-grade-2393059",
-   3
-  ],
-  [
-   5,
-   "Federaal parket opent strafonderzoek na cyberaanval (liveblog)",
-   "VRT NWS",
-   "https://www.vrt.be/vrtnws/nl/liveblog/federaal-parket-opent-strafonderzoek-na-cyberaanval-motief-van~1793610043244/",
-   3
-  ],
-  [
-   6,
-   "Cyberattacks hit supermarket fridges and freezers in Europe, Belgium launches investigation",
-   "Euronews",
-   "https://www.euronews.com/2026/11/02/cyberattack-hits-belgian-supermarket-fridges-and-freezers",
-   3
-  ],
-  [
-   7,
-   "Hackers pushed freezers at French supermarkets to 122 degrees. Now the Pentagon is asking whether the same thing hit U.S. military bases",
-   "Fortune",
-   "https://fortune.com/2026/11/01/hackers-pushed-freezers-at-hundreds-of-french-supermarkets-to-122-degrees-pentagon-investigating-us-military-bases/",
-   3
-  ],
-  [
-   8,
-   "Germany tightens security at military bases over concerns about Russia, commander says",
-   "Stars and Stripes",
-   "https://www.stripes.com/theaters/europe/2026-11-01/german-bases-security-threats-23326000.html",
-   3
-  ],
-  [
-   9,
-   "Poland prepares for possible sabotage near Russian Kaliningrad border",
-   "Ukrainska Pravda",
-   "https://www.pravda.com.ua/eng/news/2026/11/02/8060934/",
-   3
-  ],
-  [
-   10,
-   "Top security official comments on West (Shoigu press conference)",
-   "TASS",
-   "https://tass.com/russias-foreign-policy/2211895",
-   3
-  ],
-  [
-   11,
-   "Election officials brace for foreign threats and an unpredictable Washington",
-   "CNN via ABC17",
-   "https://abc17news.com/politics/national-politics/cnn-us-politics/2026/11/01/election-officials-brace-for-foreign-threats-and-an-unpredictable-washington/",
-   3
-  ],
-  [
-   12,
-   "NATO allies fear Trump could target alliance after potential US midterm defeat: report",
-   "Anadolu (citing POLITICO)",
-   "https://m.aa.com.tr/en/world/nato-allies-fear-trump-could-target-alliance-after-potential-us-midterm-defeat-report/4108932",
-   3
-  ],
-  [
-   13,
-   "Pentagon Europe posture review terms of reference",
-   "Grosswald",
-   "https://www.grosswald.org/pentagon-europe-posture-review-terms-of-reference-four-option-sets-6-november/",
-   3
-  ],
-  [
-   14,
-   "U.S. to mediate new Ukraine-Russia talks in Abu Dhabi next week",
-   "Xinhua",
-   "https://english.news.cn/20261103/caa9492cf0a74a6b97db0fe7ba3781fc/c.html",
-   3
-  ],
-  [
-   15,
-   "Protesters block RAF Lakenheath entrance over Iran war",
-   "Stars and Stripes",
-   "https://www.stripes.com/theaters/europe/2026-11-02/protesters-block-entrance-raf-lakenheath-23339601.html",
-   3
-  ],
-  [
-   16,
-   "US strikes Iran's Qeshm Island on eve of midterm elections",
-   "Yahoo News",
-   "https://www.yahoo.com/news/politics/articles/us-strikes-irans-qeshm-island-035152273.html",
-   3
-  ],
-  [
-   17,
-   "Oil slides on Hormuz deal hopes but Trump keeps Iran strikes on the table",
-   "Euronews",
-   "https://www.euronews.com/2026/11/02/oil-slides-on-hormuz-deal-hopes-but-trump-keeps-iran-strikes-on-the-table",
-   3
-  ],
-  [
-   18,
-   "Ukraine war latest: Russian bomb strikes kill 24 at humanitarian aid center in Zaporizhzhia Oblast",
-   "Kyiv Independent",
-   "https://kyivindependent.com/ukraine-war-latest-russian-bomb-strikes-kill-24-at-humanitarian-aid-center-in-zaporizhzhia-oblast/",
-   3
-  ],
-  [
-   19,
-   "Russia-Ukraine talks to take place in Abu Dhabi this month, US says",
-   "The National",
-   "https://www.thenationalnews.com/news/us/2026/11/02/russia-ukraine-witkoff-abu-dhabi/",
-   3
-  ],
-  [
-   20,
-   "The 2026 midterm general election season is upon us. Here's what to watch",
-   "NPR via KJZZ",
-   "https://www.kjzz.org/npr-top-stories/2026-09-08/the-2026-midterm-general-election-season-is-upon-us-heres-what-to-watch",
-   3
-  ],
-  [
-   21,
-   "NDAA FY2027 and Dec. 11 funding deadline",
-   "Buffalo Chronicle (thin source)",
-   "https://buffalochronicle.com/2026/10/24/ndaa-fy2027-lame-duck-dec-11-funding-deadline-niagara-falls/",
-   3
-  ],
-  [
-   22,
-   "Liveblog zu Gen-Z-Protesten: Rund 2000 Menschen zogen bei Demo durch Aachen",
-   "Aachener Zeitung",
-   "https://www.aachener-zeitung.de/lokales/region-aachen/aachen/liveblog-zu-gen-z-protesten-die-demo-zieht-durch-aachen/163833673.html",
-   3
-  ],
-  [
-   23,
-   "In first public speech as acting Army secretary, Telle highlights acquisition",
-   "Stars and Stripes",
-   "https://www.stripes.com/branches/army/2026-10-12/acting-army-secretary-telle-ausa-conference-23134806.html",
-   3
-  ],
-  [
-   24,
-   "Army meets Reserve, Special Forces recruiting goals for first time in a decade",
-   "Army Times",
-   "https://www.armytimes.com/news/recruiting/2026/10/01/army-meets-reserve-special-forces-recruiting-goals-for-first-time-in-a-decade-general-confirms/",
-   3
-  ],
-  [
-   25,
-   "Europe-assigned Army unit fires Tomahawk; no deployment to Europe planned",
-   "Stars and Stripes",
-   "https://www.stripes.com/branches/army/2026-10-29/mdc-e-missile-battery-tests-tomahawk-23288680.html",
-   3
-  ],
-  [
-   26,
-   "FY27 HQDA Board Schedule",
-   "Army Human Resources Command",
-   "https://www.hrc.army.mil/content/FY27%20HQDA%20Board%20Schedule",
-   1
-  ],
-  [
-   27,
-   "Crude oil prices sell off more than 7% on Iran peace talk hopes ahead of U.S. midterms",
-   "CNBC",
-   "https://cnbc.com/2026/11/02/oil-prices-fall-as-iran-us-pursue-diplomacy.html",
-   3
-  ],
-  [
-   28,
-   "How major US stock indexes fared Monday 11/2/2026",
-   "AP via WTOP",
-   "https://wtop.com/national/2026/11/how-major-us-stock-indexes-fared-monday-11-2-2026",
-   2
-  ],
-  [
-   29,
-   "Asia Market Quick Take, 3 November 2026",
-   "Saxo",
-   "https://www.home.saxo/en-sg/content/articles/macro/asia-market-quick-take-03-november-2026-03112026",
-   3
-  ],
-  [
-   30,
-   "Market data: ^AEX, TTF=F, GC=F, ^VIX, ^TNX daily closes",
-   "Yahoo Finance",
-   "https://finance.yahoo.com/markets/",
-   3
-  ],
-  [
-   31,
-   "Euro foreign exchange reference rates: US dollar",
-   "European Central Bank",
-   "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/eurofxref-graph-usd.en.html",
-   1
-  ],
-  [
-   32,
-   "Manufacturing PMI at 55.5%; October 2026 ISM Manufacturing PMI Report",
-   "ISM via PR Newswire",
-   "https://www.prnewswire.com/news-releases/manufacturing-pmi-at-55-5-october-2026-ism-manufacturing-pmi-report-302925617.html",
-   3
-  ],
-  [
-   33,
-   "Fed chooses patience, leaves rates unchanged",
-   "Charles Schwab",
-   "https://www.schwab.com/learn/story/fomc-meeting",
-   3
-  ],
-  [
-   34,
-   "ECB holds rates unchanged, EURUSD down",
-   "XTB",
-   "https://www.xtb.com/en/market-analysis/ecb-holds-rates-unchanged-eurusd-down",
-   1
-  ],
-  [
-   35,
-   "US hiring rebound eyed as Fed weighs December rise; eurozone inflation near 4%",
-   "IndexBox",
-   "https://www.indexbox.io/blog/us-hiring-expected-to-rebound-in-october-as-fed-rate-decision-looms-eurozone-inflation-in-focus-ahead-of-ecb/",
-   1
-  ],
-  [
-   36,
-   "Inflatie stijgt naar 3,4 procent in september",
-   "CBS",
-   "https://www.cbs.nl/nl-nl/nieuws/2026/42/inflatie-stijgt-naar-3-4-procent-in-september",
-   3
-  ],
-  [
-   37,
-   "November TTF hits 100 euros per MWh for the first time since 2022",
-   "Il Sole 24 Ore",
-   "https://en.ilsole24ore.com/art/november-ttf-gas-price-hits-100-euros-per-mwh-for-the-first-time-in-2022-AJWn5twB",
-   3
-  ],
-  [
-   38,
-   "RBA lifts interest rates to highest level in 18 years to try to dampen inflation",
-   "ABC News (Australia)",
-   "https://www.abc.net.au/news/2026-11-03/rba-lifts-interest-rates-november-2026-highest-rate-in-18-years/107340050",
-   3
-  ],
-  [
-   39,
-   "Geen deal met oppositie over belastingplan, woensdag debat in Tweede Kamer",
-   "NOS",
-   "https://nos.nl/artikel/2637476-geen-deal-met-oppositie-over-belastingplan-woensdag-debat-in-tweede-kamer",
-   3
-  ],
-  [
-   40,
-   "Now 74 municipalities placed under increased government pressure over asylum housing",
-   "NL Times",
-   "https://nltimes.nl/2026/11/02/now-74-municipalities-placed-increased-government-pressure-asylum-housing",
-   3
-  ],
-  [
-   41,
-   "Banning the infinite scroll: Pro MP files bill on addictive apps",
-   "DutchNews",
-   "https://www.dutchnews.nl/2026/11/banning-the-infinite-scroll-pro-mp-files-bill-on-addictive-apps/",
-   3
-  ],
-  [
-   42,
-   "Prosecutors raise reward for arrest of “Bolle Jos” to €2m",
-   "DutchNews",
-   "https://www.dutchnews.nl/2026/11/prosecutors-raise-reward-for-arrest-of-bolle-jos-to-e2m/",
-   3
-  ],
-  [
-   43,
-   "AFNORTH 2026–27 academic calendar (PDF)",
-   "AFNORTH",
-   "https://afnorthmhs.dodea.edu/sites/g/files/afatmv2851/files/2026-05/afn-26-27-academic-calendar.pdf",
-   3
-  ],
-  [
-   44,
-   "106th Armistice anniversary remembrance service held in Brunssum War Cemetery (2024)",
-   "JFC Brunssum",
-   "https://jfcbs.nato.int/page5964943/2024/106th-armistice-anniversary-remembrance-service-held-in-brunssum-war-cemetery-.aspx",
-   3
-  ],
-  [
-   45,
-   "Dutch Mountain Film Festival (DMFF) 2026",
-   "FilmFreeway",
-   "https://filmfreeway.com/DMFF",
-   3
-  ],
-  [
-   46,
-   "De Hubertusfeesten in Offelken",
-   "Immaterieel Erfgoed",
-   "https://immaterieelerfgoed.be/nl/erfgoederen/de-hubertusfeesten-in-offelken/pdf",
-   3
-  ],
-  [
-   47,
-   "Geheimen van Parkstad brengt streekverhalen tot leven in Theater Heerlen",
-   "Drimble / ParkstadActueel",
-   "https://drimble.nl/regio/limburg/heerlen/108460506/geheimen-van-parkstad-brengt-streekverhalen-tot-leven-in-theater-heerlen.html",
-   3
-  ],
-  [
-   48,
-   "Hurricanes bring 4-game win streak into matchup against the Predators",
-   "AP via ABC News",
-   "https://abcnews.com/Sports/wireStory/hurricanes-bring-4-game-win-streak-matchup-predators-137763124",
-   2
-  ],
-  [
-   49,
-   "Scores, Monday 2 November 2026",
-   "NHL.com",
-   "https://www.nhl.com/scores/2026-11-02",
-   3
-  ],
-  [
-   50,
-   "Carolina, Seattle to play in 2026 Global Series Finland",
-   "NHL.com",
-   "https://www.nhl.com/news/carolina-seattle-to-play-in-2026-global-series-finland",
-   3
-  ],
-  [
-   51,
-   "NHL News Roundup: Kucherov trade request, Larkin and more",
-   "The Hockey Writers",
-   "https://thehockeywriters.com/nhl-news-roundup-kucherov-trade-request-larkin-more/",
-   3
-  ],
-  [
-   52,
-   "Vacances scolaires 2026–2027",
-   "La DH",
-   "https://www.dhnet.be/actu/belgique/2026/07/30/voici-les-vacances-scolaires-2026-2027-a-bruxelles-en-wallonie-et-en-flandre-ZWQBTQRCCNA3XESWPP6K5DGB5M/",
-   3
-  ],
-  [
-   53,
-   "School holiday dates 2026–2027",
-   "Government.nl",
-   "https://www.government.nl/topics/school-holidays/overview-of-school-holiday-dates-per-academic-year/school-holiday-dates-2026-2027",
-   3
-  ],
-  [
-   54,
-   "Weihnachtsferien 2026",
-   "Kalenderpedia",
-   "https://www.kalenderpedia.de/ferien/weihnachtsferien-2026.html",
-   3
-  ],
-  [
-   55,
-   "Weihnachtsmarkt am Kölner Dom",
-   "koeln.de",
-   "https://www.koeln.de/weihnachten/weihnachtsmaerkte-koeln/weihnachtsmarkt-am-koelner-dom/",
-   3
-  ],
-  [
-   56,
-   "Aachener Weihnachtsmarkt: dates and hours",
-   "Aachen Christmas market",
-   "https://aachenweihnachtsmarkt.de/en/pages/offers/",
-   3
-  ],
-  [
-   57,
-   "Christmas market Monschau",
-   "Tourismus Kreis Düren",
-   "https://www.tourismus.kreis-dueren.de/en/e-christmas-market-monschau-2",
-   3
-  ],
-  [
-   58,
-   "Magisch Maastricht",
-   "Kidsproof",
-   "https://www.kidsproof.nl/zuid-limburg/eropuit/magisch-maastricht/magisch-maastricht-kerst-gezinsuitje-eu/",
-   3
-  ],
-  [
-   59,
-   "Village de Noël in Luik",
-   "Visit Zuid-Limburg",
-   "https://www.visitzuidlimburg.com/experience-zuid-limburg/event/village-de-noel-in-luik/64128",
-   3
-  ],
-  [
-   60,
-   "Battle of Schmidt, 1944 (David T. Zabecki)",
-   "HistoryNet",
-   "https://historynet.com/battle-of-schmidt-1944/",
-   3
-  ],
-  [
-   61,
-   "Sint-Hubertusfeesten in Wiemesmeer",
-   "Immaterieel Erfgoed",
-   "https://immaterieelerfgoed.be/nl/erfgoederen/sint-hubertusfeesten-in-wiemesmeer/pdf",
-   3
-  ],
-  [
-   73,
-   "World Oil Transit Chokepoints: Strait of Hormuz",
-   "US Energy Information Administration",
-   "https://www.eia.gov/international/analysis/special-topics/World_Oil_Transit_Chokepoints",
-   1
-  ],
-  [
-   74,
-   "Lessons from Africa's Drone Wars (Africa Security Brief No. 49)",
-   "Africa Center for Strategic Studies",
-   "https://africacenter.org/publication/asb49-lessons-africa-drone-wars/",
-   1
-  ]
- ],
- "flags": "Thin or single-source: Lithuania's extension of its Kaliningrad border measures (Ukrainska Pravda only); the FY27 colonel board dates (HRC schedule seen only in a search snippet, the page did not load); Sicilian store counts (four confirmed by the operator, at least 12 per unnamed trade sources); the IRGC drone claim (Tasnim, unverified); the 11 Dec funding-deadline source remains thin. Brent's front month rolled from December to January after 30 Oct, so the sparkline shows a bigger fall (117.64 to 104.77) than the −7.6% move on the January contract. Gold, VIX, AEX and TTF figures are Yahoo Finance closes. ECB history ZIP checked: latest row 2 Nov, already in fx.json, nothing appended.",
- "changelog": [
-  [
-   "2026-11-02",
-   "v2.5: data-driven page, Today strip, Five things, Hockey section, Planner, running hybrid incident log, weekly fuel comparison, Lees mee, archive."
-  ],
-  [
-   "2026-11-02",
-   "v2: four parts (Security, Profession, Money, Home), World expanded, Markets added, AFNORTH calendar governs."
-  ],
-  [
-   "2026-11-02",
-   "v1: first designed edition."
-  ]
- ],
- "_note": "SAMPLE of the 6.0 edition shape, built from Edition 2's sourced facts and restructured. Not listed in index.json and never shown on the page; the morning run follows this shape and SCHEMA.md. Arrays left empty are legitimately empty for a sample; the run fills them from the day's reporting.",
- "deftech": {
-  "items": [
-   {
-    "h": "The Europe-assigned Typhon battery fires a Tomahawk, but Germany is still off",
-    "tag": "USAREUR-AF",
-    "conf": "high",
-    "badge": "NEW",
-    "body": "The Mid-Range Capability battery of 3rd Battalion, 12th Field Artillery, under Multi-Domain Command Europe (MDC-E), fired a Tomahawk from the Typhon launcher at China Lake, California, on 28 Sep. MDC-E says the battery is certified, but there are “no current plans” to deploy it to Europe; the Pentagon cancelled the 2026 Germany deployment in May. [25]",
-    "sw": "Without US ground-launched long-range fires in theatre, Berlin's own deep-strike plans weigh more in the regional plans."
-   }
-  ],
-  "series": [
-   "ru-uav-day"
-  ],
-  "ttp": null
- },
- "nato": {
-  "items": [],
-  "table": null
- },
- "frontier": {
-  "items": []
- },
- "weekreview": null,
- "research": {
-  "org": "Africa Center for Strategic Studies",
-  "title": "Lessons from Africa's Drone Wars",
-  "authors": "Nate Allen",
-  "date": "2026-10-28",
-  "kind": "Africa Security Brief No. 49",
-  "src": 74,
-  "summary": [
-   "The brief argues that cheap, expendable unmanned systems in the hands of armed non-state groups are eroding the airpower advantage African governments have long held, and that non-state actors, not militaries, are so far exploiting the shift best. It opens with Mali's Bayraktar TB2 fleet failing to stop an assault, and sorts drones into four classes by cost, range and role, noting that long-endurance types are the most widely bought military drones on the continent. [74]"
-  ],
-  "findings": [
-   "Non-state armed groups are adapting faster to small drones than the militaries they fight. [74]",
-   "Long-endurance drones are the most widely acquired military type in Africa but have not delivered decisive results. [74]",
-   "Recommendation: a risk-based doctrine that pairs layered counter-drone defences with limits on illicit supply chains and small unmanned systems built into forces for irregular warfare. [74]"
-  ],
-  "method": "Policy brief drawing on reported strikes and acquisitions; the sample lists only what the publisher's summary states.",
-  "sw": "Sample line: the counter-drone layering argument reads across to force protection at Benelux sites.",
-  "badge": "NEW"
- }
 }

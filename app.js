@@ -500,11 +500,61 @@
     }
     return h + "</div></div>";
   }
+
+  /* ---------- weather glyphs (inline SVG, currentColor) ---------- */
+  var WXK = { sun: "Sunny", suncloud: "Sun and cloud", cloud: "Cloudy", fog: "Fog", showers: "Showers", rain: "Rain", snow: "Snow", storm: "Thunder", wind: "Windy" };
+  function wxIcon(kind, size) {
+    size = size || 28;
+    var sun = '<circle cx="12" cy="12" r="4.2" fill="var(--c-be)"/><g stroke="var(--c-be)" stroke-width="1.6" stroke-linecap="round"><path d="M12 3v2.4M12 18.6V21M3 12h2.4M18.6 12H21M5.6 5.6l1.7 1.7M16.7 16.7l1.7 1.7M5.6 18.4l1.7-1.7M16.7 7.3l1.7-1.7"/></g>';
+    var cloud = '<path d="M7 18h10.5a3.5 3.5 0 0 0 .4-7A5.5 5.5 0 0 0 7.3 9.6 4.2 4.2 0 0 0 7 18z" fill="var(--surface)" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>';
+    var drops = function (n) { var d = ""; for (var i = 0; i < n; i++) d += '<path d="M' + (8 + i * 4) + ' 19.5l-1 2.4a1.1 1.1 0 1 0 2 0z" fill="var(--accent)"/>'; return d; };
+    var body = {
+      sun: sun,
+      suncloud: '<g transform="translate(-3 -3) scale(.8)">' + sun + "</g>" + cloud,
+      cloud: cloud,
+      fog: cloud + '<g stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity=".7"><path d="M5 21h9M9 23.5h10"/></g>',
+      showers: '<g transform="translate(-3 -3) scale(.8)">' + sun + "</g>" + cloud + drops(2),
+      rain: cloud + drops(3),
+      snow: cloud + '<g fill="currentColor"><circle cx="8.5" cy="21" r="1.1"/><circle cx="12.5" cy="22.5" r="1.1"/><circle cx="16.5" cy="21" r="1.1"/></g>',
+      storm: cloud + '<path d="M12.5 17.5l-2.5 4.5h2.2l-1 3 3.6-5h-2.3l1.3-2.5z" fill="var(--warn)"/>',
+      wind: '<g stroke="currentColor" stroke-width="1.6" stroke-linecap="round" fill="none"><path d="M3 9h11a2.5 2.5 0 1 0-2.5-2.5M3 14h15a2.5 2.5 0 1 1-2.5 2.5M3 19h8"/></g>'
+    };
+    return '<svg class="wxi" width="' + size + '" height="' + size + '" viewBox="0 0 24 26" role="img" aria-label="' + esc(WXK[kind] || kind) + '"><title>' + esc(WXK[kind] || kind) + "</title>" + (body[kind] || body.cloud) + "</svg>";
+  }
+  function wxKind(row, text) {
+    var sky = row && row[5] ? String(row[5]).toLowerCase() : "", r = row && row[3] != null && row[3] !== "" ? +row[3] : null, t = String(text || "").toLowerCase();
+    if (sky && WXK[sky]) return sky;
+    if (/thunder|storm/.test(t)) return "storm"; if (/snow|sleet/.test(t)) return "snow"; if (/fog|mist/.test(t)) return "fog";
+    if (r != null) return r >= 60 ? "rain" : r >= 30 ? "showers" : r >= 10 ? "suncloud" : (/cloud|grey|overcast/.test(t) ? "cloud" : "sun");
+    if (/rain|wet|shower/.test(t)) return "rain"; if (/sunny|clear|bright/.test(t)) return "sun"; if (/cloud|grey|overcast/.test(t)) return "cloud";
+    return "suncloud";
+  }
+  var WDIR = { N: 0, NNE: 22.5, NE: 45, ENE: 67.5, E: 90, ESE: 112.5, SE: 135, SSE: 157.5, S: 180, SSW: 202.5, SW: 225, WSW: 247.5, W: 270, WNW: 292.5, NW: 315, NNW: 337.5, O: 90, Z: 180, ZW: 225, ZO: 135, NO: 45 };
+  function windGlyph(txt) {
+    var m = /^([NESWOZ]{1,3})\s*(\d+)?/i.exec(String(txt || "").trim()); if (!m || WDIR[m[1].toUpperCase()] == null) return txt ? '<span class="wnd">' + esc(txt) + "</span>" : "";
+    var deg = WDIR[m[1].toUpperCase()], bft = m[2] ? +m[2] : null;
+    return '<span class="wnd" title="Wind from ' + esc(m[1].toUpperCase()) + (bft != null ? ", force " + bft : "") + '"><svg width="12" height="12" viewBox="0 0 12 12" style="transform:rotate(' + (deg + 180) + 'deg)"><path d="M6 1l3.2 6.2H7.2V11H4.8V7.2H2.8z" fill="currentColor"/></svg>' + esc(m[1].toUpperCase()) + (bft != null ? " " + bft : "") + "</span>";
+  }
+  function rainGlyph(pct) { if (pct == null || pct === "") return ""; var p = +pct, n = p >= 60 ? 3 : p >= 30 ? 2 : p > 0 ? 1 : 0; return '<span class="rn" title="' + p + '% chance of rain">' + (n ? '<svg width="' + (n * 6 + 2) + '" height="11" viewBox="0 0 ' + (n * 6 + 2) + ' 11">' + Array.apply(null, Array(n)).map(function (_, i) { return '<path d="M' + (4 + i * 6) + ' 1l-2.4 4.6a2.4 2.4 0 1 0 4.8 0z" fill="var(--accent)"/>'; }).join("") + "</svg>" : "") + p + "%</span>"; }
+  function tempBand(wk, W) {
+    if (!wk || wk.length < 2) return "";
+    W = Math.max(240, Math.round(W || 360)); var H = 84, T = 16, B = 18, L = 8, R = 8, n = wk.length, hi = Math.max.apply(null, wk.map(function (r) { return +r[1]; })), lo = Math.min.apply(null, wk.map(function (r) { return +r[2]; }));
+    if (hi - lo < 6) { hi += 3; lo -= 3; }
+    function X(i) { return L + (i + 0.5) * (W - L - R) / n; }
+    function Y(v) { return T + (1 - (v - lo) / (hi - lo)) * (H - T - B); }
+    var ph = wk.map(function (r, i) { return X(i).toFixed(1) + "," + Y(+r[1]).toFixed(1); }), pl = wk.map(function (r, i) { return X(i).toFixed(1) + "," + Y(+r[2]).toFixed(1); });
+    var svg = '<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="Highs and lows for the week">';
+    svg += '<line x1="' + L + '" y1="' + Y(0).toFixed(1) + '" x2="' + (W - R) + '" y2="' + Y(0).toFixed(1) + '" stroke="var(--line)" stroke-dasharray="2 3"/>' + (lo <= 0 && hi >= 0 ? svgText(W - R, Y(0) - 3, "0°", "end", 9) : "");
+    svg += '<path d="M' + ph.join(" L") + " L" + pl.slice().reverse().join(" L") + ' Z" fill="var(--p-home)" fill-opacity=".15"/>';
+    svg += '<polyline points="' + ph.join(" ") + '" fill="none" stroke="var(--p-home)" stroke-width="1.5"/><polyline points="' + pl.join(" ") + '" fill="none" stroke="var(--accent)" stroke-width="1.5"/>';
+    wk.forEach(function (r, i) { svg += svgText(X(i), Y(+r[1]) - 5, r[1] + "°", "middle", 10, true, "var(--ink)") + svgText(X(i), Y(+r[2]) + 12, r[2] + "°", "middle", 10, true); });
+    return svg + "</svg>";
+  }
   function dayHours(lat, k) { var d = pd(k), doy = Math.round((d - new Date(d.getFullYear(), 0, 1)) / DAY) + 1, decl = 23.44 * Math.PI / 180 * Math.sin(2 * Math.PI * (284 + doy) / 365), x = Math.max(-1, Math.min(1, -Math.tan(lat * Math.PI / 180) * Math.tan(decl))); return 24 / Math.PI * Math.acos(x); }
   function hm(hrs) { var a = Math.abs(hrs), hh = Math.floor(a), mm = Math.round((a - hh) * 60); if (mm === 60) { hh++; mm = 0; } return hh + " h " + String(mm).padStart(2, "0") + " min"; }
   function weatherBlock(E, TD) {
     var w = (E.today || {}).weather || {}, wk = w.week || [], h = "";
-    if (wk.length) h += '<div class="wxrow scrollx"><div class="wx-in">' + wk.slice(0, 7).map(function (r, i) { var d = pd(r[0]); return '<div class="wxd' + (r[0] === TD ? " today" : "") + '"><div class="wd"><b>' + DOW[d.getDay()] + "</b> " + d.getDate() + '</div><div class="t"><span class="hi">' + esc(r[1]) + "°</span> " + esc(r[2]) + '°</div><div class="r">' + (r[3] != null && r[3] !== "" ? esc(r[3]) + "%" : "–") + '</div><div class="small">' + esc(r[4] || "") + "</div></div>"; }).join("") + "</div></div>";
+    if (wk.length) h += '<div class="wxrow scrollx"><div class="wx-in">' + wk.slice(0, 7).map(function (r, i) { var d = pd(r[0]), k = wxKind(r, i === 0 ? w.now : ""); return '<div class="wxd' + (r[0] === TD ? " today" : "") + '"><div class="wd"><b>' + DOW[d.getDay()] + "</b> " + d.getDate() + "</div>" + wxIcon(k, 30) + '<div class="t"><span class="hi">' + esc(r[1]) + "°</span> " + esc(r[2]) + '°</div><div class="r">' + (rainGlyph(r[3]) || "–") + '</div><div class="small">' + windGlyph(r[4]) + "</div></div>"; }).join("") + '</div></div><div class="chart" id="tempband" style="min-height:70px"></div>';
     else h += quiet("No forecast in this edition.");
     var geo = dayHours(HOME.lat, TD), diff = (geo - dayHours(HOME.lat, addDays(TD, -7))) * 60, now = geo, sr = /^(\d{1,2}):(\d{2})$/.exec(w.sunrise || ""), ss = /^(\d{1,2}):(\d{2})$/.exec(w.sunset || "");
     if (sr && ss) now = (ss[1] * 60 + +ss[2] - sr[1] * 60 - +sr[2]) / 60;
@@ -740,7 +790,7 @@
 
     /* today strip */
     h += '<div class="strip" id="front" data-part="Front">';
-    if (T.weather) { var w = T.weather; h += '<div class="tile"><div class="lbl">Weather · ' + esc(E.town || "Hoensbroek") + '</div><div class="val">' + esc(w.hi) + "° / " + esc(w.lo) + "°</div><p>" + esc(w.now) + ". " + esc(w.tomorrow) + ". Sun " + esc(w.sunrise) + "–" + esc(w.sunset) + "." + cite(w.src) + "</p></div>"; }
+    if (T.weather) { var w = T.weather, w0 = (w.week || []).filter(function (r) { return r[0] === TD; })[0] || (w.week || [])[0], w1 = (w.week || []).filter(function (r) { return r[0] === addDays(TD, 1); })[0]; h += '<div class="tile wxt"><div class="lbl">Weather · ' + esc(E.town || "Hoensbroek") + '</div><div class="wxtop">' + wxIcon(wxKind(w0, w.now), 36) + '<div class="val">' + esc(w.hi) + "° / " + esc(w.lo) + "°</div></div>" + (w0 ? '<div class="wxmeta">' + rainGlyph(w0[3]) + " " + windGlyph(w0[4]) + "</div>" : "") + "<p>" + esc(w.now) + ". " + (w1 ? '<span class="wxtm">' + wxIcon(wxKind(w1, w.tomorrow), 16) + "</span>" : "") + esc(w.tomorrow) + ". Sun " + esc(w.sunrise) + "–" + esc(w.sunset) + "." + cite(w.src) + "</p></div>"; }
     if (T.canes) h += '<div class="tile hockey"><div class="lbl">Hurricanes</div><div class="val">' + esc(T.canes.line) + "</div><p>" + esc(T.canes.sub) + cite(T.canes.src) + "</p></div>";
     else if (CV) { var lg = CV.games[CV.games.length - 1]; h += '<div class="tile hockey"><div class="lbl">Hurricanes</div><div class="val">' + esc(lg.res + " " + lg.gf + "–" + lg.ga + (lg.home ? " vs " : " at ") + lg.opp) + "</div><p>" + esc(CV.record + " · " + CV.points + " pts") + "</p></div>"; }
     if (T.markets) h += '<div class="tile"><div class="lbl">Markets</div><div class="mini-mk">' + T.markets.map(function (m) { var g = fxGuard(m[0], m[1], null, m[2]); return "<span>" + esc(g.label) + '</span><span class="chg ' + esc(g.dir) + '">' + esc(g.value) + "</span>"; }).join("") + "</div></div>";
@@ -1223,6 +1273,7 @@
       var fb = document.getElementById("fbars"); if (fb && E.world && E.world.feature && E.world.feature.bars) fb.innerHTML = vbars(E.world.feature.bars.rows, { W: fb.clientWidth, zero: true, label: E.world.feature.bars.label || "" });
       var fg = document.getElementById("fgeo"); if (fg && ctx._geo) fg.innerHTML = geoSchematic(ctx._geo, fg.clientWidth);
       var hk = document.getElementById("hkchart"); if (hk && ctx.canes) hk.innerHTML = hockeyChart(canesView(ctx.canes, TD).games, hk.clientWidth);
+      var tb = document.getElementById("tempband"); if (tb) tb.innerHTML = tempBand(((E.today || {}).weather || {}).week, tb.clientWidth);
       var dlc = document.getElementById("daylight"); if (dlc) dlc.innerHTML = daylight(HOME.lat, TD, dlc.clientWidth, parseFloat(dlc.getAttribute("data-h")));
       var ab = document.getElementById("armybars"); if (ab && E.army && E.army.depth && E.army.depth.bars) ab.innerHTML = vbars(E.army.depth.bars.rows, { W: ab.clientWidth, zero: true, label: E.army.depth.bars.label || "" });
       Object.keys(ctx._dts || {}).forEach(function (k) { var el = document.getElementById("dts-" + k); if (el) { var m = ((ctx.worldSeries || {}).meta || {})[k] || {}; el.innerHTML = lineChart(ctx._dts[k], { W: el.clientWidth, days: 400, dec: m.decimals != null ? m.decimals : 0, zero: true, label: m.label || k }); } });
