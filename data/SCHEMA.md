@@ -23,6 +23,7 @@ The site is static. `index.html` + `app.js` + `styles.css` never change day to d
 | `data/idioms.json` | Append today's idiom (rotate `nl`, `fr`, `it`); never repeat a phrase. |
 | `data/ski.json` | 1 Dec to 31 Mar only: refresh `snow` daily from Open-Meteo for every resort; resorts stay as they are. Outside the season, leave the file alone. |
 | `data/search-index.json` | Append today's headline block (same fields as the page's search). |
+| `data/research.json` | Append today's piece to `covered` (`{date, org, title, authors, url}`); take it from `queue` when it was queued; add to `queue` the publications picked for coming days. Never delete from `covered`. |
 | `data/corrections.json` | Append an entry when an earlier item was wrong: `{date, edition, section, t, src}`. Never edit or delete. |
 | `data/calendar.json` | Only when a school year or holiday list is newly published: add the missing segments. Otherwise leave alone. |
 | `data/bins.json` | Only when a new Rd4 calendar is supplied. |
@@ -114,6 +115,9 @@ The standing files are the Readbook's memory. The page reads them; it never writ
    "events": [[date,"nl|be|de|us|mkt|pro",label,where,what,effect,priority?]] (only what calendar.json does not already hold; a 7th element true puts the row in This week),
    "season": {"title","intro","from","to","ticks","rows":[{"name","sub","color","segs"}],"notes"} | null,
    "otd": {"title","body"}, "culture": {"title","body"} | null},
+ "research": {"org","title","authors","date","kind":"brief|report|article|monograph|CRS report|paper","length":"24 pp","src":n,
+   "summary":["para",...] (what it argues and shows, 150–250 words), "findings":["…"] (3–6 bullets with the numbers), "table": {...} | omitted,
+   "method":"how it was done and what it cannot show", "sw":"For Brunssum line", "links":[...], "badge":"NEW"} | omitted,
  "weekreview": {"title","body":["para",...],"rows":[[date,text]]} | omitted (Sundays: the week ahead, dated; the page adds a computed week-behind scorecard),
  "sources": [[n,title,outlet,url,tier]], "flags": "…", "changelog": [[date,text]]
 }
@@ -135,7 +139,7 @@ The World feature rota: Monday "Theatre in numbers" (table), Tuesday "Actor on t
 
 ### Changes from v5.0
 
-- The page is organised in five tiers (Today, The news, The watch, The reading, Home and planning); every edition object stays where it was, so no field moved. Jump ids added: `congress-sec`, `exercises-sec`, `production`, `depth`, `ttpsec`, `since`, `decisions`, `year`, `weekreview`.
+- The page is organised in five tiers (Today, The news, The watch, The reading, Home and planning); every edition object stays where it was, so no field moved. Jump ids added: `research`, `congress-sec`, `exercises-sec`, `production`, `depth`, `ttpsec`, `since`, `decisions`, `year`, `weekreview`.
 - `sources` rows gain the tier field; items gain optional `links`; `weekreview` added for Sundays.
 - `"v": "6.0"`.
 
@@ -215,6 +219,10 @@ Append one row per published value; never backfill estimates. A weekly series ke
 ```
 
 Edited rarely. Add a school year when the ministry publishes it. The page merges holidays, school breaks, markets, bins, Canes games, horizon events, deadlines and `planner.events` into one calendar with month navigation, a seven-day strip, countdown tiles and the twelve-month school overlap chart.
+
+### `data/research.json`
+
+`{ "rotation": [institutions], "queue": [{"org","title","authors","date","url","for","note"}], "covered": [{"date","org","title","authors","url"}] }`. The page shows the last ten covered and the open queue under the day's piece; health flags an institution repeated within 10 days.
 
 ### `data/week.json`
 

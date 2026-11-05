@@ -1793,6 +1793,13 @@
    "US Energy Information Administration",
    "https://www.eia.gov/international/analysis/special-topics/World_Oil_Transit_Chokepoints",
    1
+  ],
+  [
+   74,
+   "Lessons from Africa's Drone Wars (Africa Security Brief No. 49)",
+   "Africa Center for Strategic Studies",
+   "https://africacenter.org/publication/asb49-lessons-africa-drone-wars/",
+   1
   ]
  ],
  "flags": "Thin or single-source: Lithuania's extension of its Kaliningrad border measures (Ukrainska Pravda only); the FY27 colonel board dates (HRC schedule seen only in a search snippet, the page did not load); Sicilian store counts (four confirmed by the operator, at least 12 per unnamed trade sources); the IRGC drone claim (Tasnim, unverified); the 11 Dec funding-deadline source remains thin. Brent's front month rolled from December to January after 30 Oct, so the sparkline shows a bigger fall (117.64 to 104.77) than the −7.6% move on the January contract. Gold, VIX, AEX and TTF figures are Yahoo Finance closes. ECB history ZIP checked: latest row 2 Nov, already in fx.json, nothing appended.",
@@ -1834,5 +1841,24 @@
  "frontier": {
   "items": []
  },
- "weekreview": null
+ "weekreview": null,
+ "research": {
+  "org": "Africa Center for Strategic Studies",
+  "title": "Lessons from Africa's Drone Wars",
+  "authors": "Nate Allen",
+  "date": "2026-10-28",
+  "kind": "Africa Security Brief No. 49",
+  "src": 74,
+  "summary": [
+   "The brief argues that cheap, expendable unmanned systems in the hands of armed non-state groups are eroding the airpower advantage African governments have long held, and that non-state actors, not militaries, are so far exploiting the shift best. It opens with Mali's Bayraktar TB2 fleet failing to stop an assault, and sorts drones into four classes by cost, range and role, noting that long-endurance types are the most widely bought military drones on the continent. [74]"
+  ],
+  "findings": [
+   "Non-state armed groups are adapting faster to small drones than the militaries they fight. [74]",
+   "Long-endurance drones are the most widely acquired military type in Africa but have not delivered decisive results. [74]",
+   "Recommendation: a risk-based doctrine that pairs layered counter-drone defences with limits on illicit supply chains and small unmanned systems built into forces for irregular warfare. [74]"
+  ],
+  "method": "Policy brief drawing on reported strikes and acquisitions; the sample lists only what the publisher's summary states.",
+  "sw": "Sample line: the counter-drone layering argument reads across to force protection at Benelux sites.",
+  "badge": "NEW"
+ }
 }

@@ -12,7 +12,7 @@
   var CODE_COLORS = { CYB:"--c-us", SAB:"--crit", UAS:"--c-mkt", UWI:"--c-pro", GNSS:"--c-be", INF:"--c-nl", ELX:"--c-nl", MIG:"--c-de", PRX:"--warn", AIR:"--c-de", SEA:"--c-pro", COE:"--c-be", KIN:"--crit" };
   var PART_CLASSES = ["front","news","watch","reading","home"];
   var PARTS = [["front","Today","#front"],["news","The news","#p-news"],["watch","The watch","#p-watch"],["reading","The reading","#p-reading"],["home","Home and planning","#p-home"]];
-  var TIERS = { news: ["world","hybrid","europe","euregio","army","nato","deftech","frontier","markets","rates","nl"], watch: ["board","numbers","fx","threads","horizon","congress-sec","exercises-sec","releases","sota","production"], reading: ["feature","depth","ttpsec","aperture"], home: ["afnorth","offduty","dutch","snow","hockey","week","weather","countdown","decisions","calendar","year","school","season"] };
+  var TIERS = { news: ["world","hybrid","europe","euregio","army","nato","deftech","frontier","markets","rates","nl"], watch: ["board","numbers","fx","threads","horizon","congress-sec","exercises-sec","releases","sota","production"], reading: ["feature","research","depth","ttpsec","aperture"], home: ["afnorth","offduty","dutch","snow","hockey","week","weather","countdown","decisions","calendar","year","school","season"] };
   var EVCAT = { music:"Music", markets:"Markets", museums:"Museums", sport:"Sport", kids:"Kids", food:"Food", outdoors:"Outdoors", festival:"Festivals" };
   var SERIES_BY_LABEL = [["s&p 500","spx"],["nasdaq","ndx"],["aex","aex"],["brent","brent"],["dutch ttf","ttf"],["ttf","ttf"]];
   var HOME = { lat: 50.89, lon: 5.98, name: "Heerlen" };
@@ -592,6 +592,8 @@
     var dl = ((ctx.deadlines || {}).items || []).length; add("Deadlines", dl ? "ok" : "watch", dl ? dl + " listed" : "empty: add yours to data/deadlines.json");
     var tiered = (E.sources || []).filter(function (x) { return x[4]; }).length, t12 = (E.sources || []).filter(function (x) { return x[4] == 1 || x[4] == 2; }).length;
     add("Source tiers", !tiered ? "act" : t12 / tiered < 0.25 ? "watch" : "ok", tiered ? Math.round(100 * t12 / tiered) + "% of " + tiered + " tiered sources are official, primary or wire" : "no tiers assigned: the task prompt is behind the page");
+    var rsOrgs = ((ctx.research || {}).covered || []).filter(function (c) { return daysBetween(c.date, TD) <= 10 && c.date <= TD; }).map(function (c) { return c.org; }), rsDup = rsOrgs.filter(function (o, i) { return rsOrgs.indexOf(o) !== i; }), rsQ = ((ctx.research || {}).queue || []).filter(function (q) { return !q.for || q.for >= TD; }).length;
+    add("Research rotation", !E.research ? "watch" : rsDup.length ? "watch" : "ok", (E.research ? "today: " + E.research.org : "no piece today") + (rsDup.length ? "; repeated within 10 days: " + rsDup.join(", ") : "") + " · " + rsQ + " queued");
     var xl = Object.keys(ctx._linked || {}).length; add("Cross-links", xl ? "ok" : "watch", xl ? xl + " items link to trackers" : "no item links to a tracker yet");
     var siToday = ctx.searchIndex && ctx.searchIndex.editions && ctx.searchIndex.editions.some(function (b) { return b.date === TD; }); add("Search index", siToday ? "ok" : "watch", siToday ? "has today's edition" : "today's edition not indexed yet");
     return rows;
@@ -643,13 +645,14 @@
     row("Exercises", (ctx.exercises || []).filter(function (x) { return x.added === TD || x.updated === TD; }).map(function (x) { return x.name; }), "#exercises-sec");
     row("Releases", (((ctx.releases || {}).releases) || []).filter(function (r) { return r.date === TD; }).map(function (r) { return r.t; }), "#releases");
     row("Events", (ctx.events || []).filter(function (e) { return e.added === TD; }).map(function (e) { return e.t; }), "#offduty");
+    if (E.research) rows.push('<li><a href="#research"><b>Research</b></a> ' + esc(E.research.org + ": " + E.research.title) + "</li>");
     var inc = (ctx.incidents || []).filter(function (i) { return i.date === TD || i.date === y; }).length; if (inc) rows.push('<li><a href="#hybrid"><b>Incidents</b></a> ' + inc + " logged in the last two days</li>");
     var mv = (ctx.attrLog || []).filter(function (m) { return m.date === TD; }).length; if (mv) rows.push('<li><a href="#hybrid"><b>Attribution</b></a> ' + mv + " move" + (mv > 1 ? "s" : "") + "</li>");
     return '<h3 id="since">Since yesterday <span class="small">what moved in the memory</span></h3>' + (rows.length ? '<ul class="since">' + rows.join("") + "</ul>" : quiet("Nothing in the standing files moved since yesterday."));
   }
   function contentsBlock() {
     var tiers = [["news", "The news", TIERS.news], ["watch", "The watch", TIERS.watch], ["reading", "The reading", TIERS.reading], ["home", "Home and planning", TIERS.home]];
-    var SN = { world: "World", hybrid: "Hybrid", europe: "Europe", euregio: "Euregio", army: "Defence & Army", nato: "NATO & allies", deftech: "Defence tech", frontier: "Frontier", markets: "Markets", rates: "Rates", nl: "Netherlands", board: "The board", numbers: "Numbers", fx: "USD/EUR", threads: "Threads", horizon: "Horizon", "congress-sec": "Congress", "exercises-sec": "Exercises", releases: "Releases", sota: "State of the art", production: "Production", feature: "World feature", depth: "Army in depth", ttpsec: "Week in war", aperture: "Aperture", afnorth: "AFNORTH", offduty: "Out and about", dutch: "Taal", snow: "Snow", hockey: "Canes", week: "This week", weather: "Weather", countdown: "Countdowns", decisions: "Decisions due", calendar: "Calendar", year: "Year ahead", school: "School year", season: "Season" };
+    var SN = { world: "World", hybrid: "Hybrid", europe: "Europe", euregio: "Euregio", army: "Defence & Army", nato: "NATO & allies", deftech: "Defence tech", frontier: "Frontier", markets: "Markets", rates: "Rates", nl: "Netherlands", board: "The board", numbers: "Numbers", fx: "USD/EUR", threads: "Threads", horizon: "Horizon", "congress-sec": "Congress", "exercises-sec": "Exercises", releases: "Releases", sota: "State of the art", production: "Production", feature: "World feature", research: "Research", depth: "Army in depth", ttpsec: "Week in war", aperture: "Aperture", afnorth: "AFNORTH", offduty: "Out and about", dutch: "Taal", snow: "Snow", hockey: "Canes", week: "This week", weather: "Weather", countdown: "Countdowns", decisions: "Decisions due", calendar: "Calendar", year: "Year ahead", school: "School year", season: "Season" };
     return '<h3>In this edition</h3><ol class="toc">' + tiers.map(function (t, i) { return '<li data-tier="' + t[0] + '" class="' + t[0] + '"><a href="#p-' + t[0] + '"><b>' + (i + 1) + " · " + esc(t[1]) + '</b></a><span class="tm"></span><span class="secs">' + t[2].map(function (id) { return '<a href="#' + id + '">' + esc(SN[id] || id) + "</a>"; }).join(" · ") + "</span></li>"; }).join("") + "</ol>";
   }
   function decisionsDue(PEV, ctx, E, TD) {
@@ -1016,6 +1019,22 @@
     } else h += quiet("No feature in this edition (format 3.0 and earlier).");
     h += '<div class="ap-c"><div class="lbl">World feature rota</div><div class="rota">' + WROT.map(function (r) { return '<div class="' + (r[0] === (FE && FE.rota) ? "on " : "") + '"><b>' + r[1] + "</b>" + r[2] + "</div>"; }).join("") + "</div></div></section>";
 
+    var RS = E.research, RJ = ctx.research || {};
+    h += '<section id="research" class="reading"><h2>Research <span class="num">one publication a day, rotating</span></h2>';
+    if (RS) {
+      h += '<article class="feature ' + fu(RS.badge || "NEW") + '"><div class="lbl" style="color:var(--pc)">' + esc(RS.org || "") + (RS.kind ? " · " + esc(RS.kind) : "") + '</div><h3 class="ft">' + esc(RS.title) + "</h3>";
+      h += '<p class="small">' + esc([RS.authors, RS.date ? fmtLong(RS.date) : "", RS.length].filter(Boolean).join(" · ")) + cite(RS.src) + "</p>";
+      h += (RS.summary || []).map(function (q) { return "<p>" + rich(q) + "</p>"; }).join("");
+      if (RS.findings && RS.findings.length) h += '<h4>What it finds</h4><ul class="clean">' + RS.findings.map(function (f) { return "<li>" + rich(f) + "</li>"; }).join("") + "</ul>";
+      if (RS.table) h += table(RS.table.head, RS.table.rows.map(function (r) { return "<tr>" + r.map(function (c, j) { return "<td" + (j > 0 && /^[\d.,%$€+−\- ]+$/.test(String(c)) ? ' class="d"' : "") + ">" + rich(c) + "</td>"; }).join("") + "</tr>"; }).join(""), "lbl1");
+      if (RS.method) h += '<p class="small"><b>Method and limits:</b> ' + rich(RS.method) + "</p>";
+      if (RS.sw) h += '<p class="sw-line"><b class="l">For Brunssum</b>' + rich(RS.sw) + "</p>";
+      h += linkChips(RS.links) + "</article>";
+    } else h += quiet("No research piece in this edition.");
+    var RC = (RJ.covered || []).filter(function (c) { return c.date <= TD; }).sort(function (a, b) { return a.date < b.date ? 1 : -1; }).slice(0, 10), RQ = (RJ.queue || []).filter(function (q) { return !q.for || q.for >= TD; });
+    if (RC.length) h += '<h3>Covered recently</h3><ul class="exl">' + RC.map(function (c) { return '<li><span class="d">' + esc(fmtShort(c.date)) + '</span><span><b>' + esc(c.org) + "</b> · " + (c.url ? '<a href="' + esc(c.url) + '" target="_blank" rel="noopener">' + esc(c.title) + "</a>" : esc(c.title)) + "</span></li>"; }).join("") + "</ul>";
+    if (RQ.length) h += '<h3>In the queue</h3><ul class="exl">' + RQ.map(function (q) { return '<li><span class="d">' + esc(q.for ? fmtShort(q.for) : "soon") + '</span><span><b>' + esc(q.org) + "</b> · " + (q.url ? '<a href="' + esc(q.url) + '" target="_blank" rel="noopener">' + esc(q.title) + "</a>" : esc(q.title)) + (q.note ? ' <span class="small">· ' + esc(q.note) + "</span>" : "") + "</span></li>"; }).join("") + "</ul>";
+    h += "</section>";
     h += '<section id="depth" class="reading"><h2>Army in depth <span class="num">Mon numbers · Wed programme · Fri decisions</span></h2>';
     var DP = AR.depth, PROT = [["mon","Mon","Readiness and recruiting in numbers"],["wed","Wed","An acquisition programme in numbers"],["fri","Fri","The week's personnel and policy decisions"]];
     if (DP) {
@@ -1355,6 +1374,7 @@
           ((ed.nl || {}).items || []).forEach(function (i) { add(i.h, "nl", "Netherlands"); });
           ((ed.offduty || {}).items || []).forEach(function (i) { add(i.h, "offduty", "Off duty"); });
           ((ed.hockey || {}).news || []).forEach(function (i) { add(i.h, "hockey", "NHL"); });
+          if (ed.research) add(ed.research.title, "research", "Research");
         });
         out.sort(function (a, b) { return a.date < b.date ? 1 : a.date > b.date ? -1 : 0; });
         if (!viaIndex) {} 
@@ -1409,9 +1429,9 @@
     opt("data/incidents.json"), opt("data/bins.json"), opt("data/threads.json"), opt("data/horizon.json"),
     opt("data/fx.json"), opt("data/series.json"), opt("data/canes.json"),
     opt("data/conflicts.json"), opt("data/world-series.json"), opt("data/calendar.json"), opt("data/deadlines.json"),
-    opt("data/congress.json"), opt("data/exercises.json"), opt("data/releases.json"), opt("data/events.json"), opt("data/idioms.json"), opt("data/ski.json"), opt("data/search-index.json"), opt("data/land.json"), opt("data/week.json"), opt("data/corrections.json")
+    opt("data/congress.json"), opt("data/exercises.json"), opt("data/releases.json"), opt("data/events.json"), opt("data/idioms.json"), opt("data/ski.json"), opt("data/search-index.json"), opt("data/land.json"), opt("data/week.json"), opt("data/corrections.json"), opt("data/research.json")
   ]).then(function (r) {
-    ctx.week = r[20]; ctx.corrections = r[21];
+    ctx.week = r[20]; ctx.corrections = r[21]; ctx.research = r[22];
     ctx.fetchedAt = Date.now();
     ctx.congress = r[12] && r[12].items; ctx.congressWatch = r[12] && r[12].watch; ctx.congressTiers = r[12] && r[12].tiers; ctx.exercises = r[13] && r[13].exercises; ctx.releases = r[14]; ctx.events = r[15] && r[15].events; ctx.idioms = r[16] && r[16].idioms; ctx.ski = r[17]; ctx.searchIndex = r[18]; ctx.land = r[19] && r[19].rings;
     ctx.index = r[0]; ctx.incidents = r[1] && r[1].incidents; ctx.attrLog = r[1] && r[1].attrLog; ctx.bins = r[2];

@@ -16,7 +16,7 @@ One scroll in five tiers, everything expanded, nothing folded:
 1. **Today.** Masthead with the data-update time, the Today strip, Five things, the pick, Today and tomorrow, a computed "Since yesterday" list of what moved in the memory, and a contents block with a read time per tier.
 2. **The news.** World developments, Security (hybrid, Europe, Euregio), Defence & Army (DoD, Army, Congress, Career, leaders on the record), NATO & allies, Defence tech, Frontier, Markets, Rates, Netherlands. Same item anatomy everywhere; items link to the trackers they update.
 3. **The watch.** The board with its map, the numbers row, the USD/EUR tracker, threads, horizon, the Congress tracker (bills, budget, confirmations as a stage matrix) with the watched-post register, the exercise calendar, the release log, the state-of-the-art table and production series.
-4. **The reading.** The World feature, the Army in depth piece, the Saturday week in war, Aperture.
+4. **The reading.** The World feature, the Research piece (one recent publication a day, rotating across institutions), the Army in depth piece, the Saturday week in war, Aperture.
 5. **Home and planning.** AFNORTH, Out and about (weekend first, nearest first, with the forecast), Taal, Snow in season, the Canes, then the Planner: the Sunday review, the week board, weather, countdowns, Decisions due, the calendar, the year-ahead board with leave windows, the school year and the seasonal planner.
 
 The sticky header carries one chip per tier and the "New only" toggle. Anything dated (events, deadlines, exercises, decisions, the next games) has a "+ cal" link that downloads a calendar file. The footer holds Sources with their tiers, Corrections, About this edition, the archive, the search and Readbook health.
@@ -42,6 +42,7 @@ The edition is a daily snapshot. The standing files under `data/` are the Readbo
 | `data/calendar.json` | Public holidays, school breaks for four systems, clocks, market seasons, 18 months | Calendar, week strip, countdowns, school overlap chart |
 | `data/deadlines.json` | Nick's own deadlines, hand-maintained, never touched by the run | Deadlines table, Decisions due, calendar, week board |
 | `data/week.json` | Nick's own dated entries (TDY, duty, travel), hand-maintained | Week board, calendar, year ahead, Decisions due when `act` is set |
+| `data/research.json` | Research rotation: the queue of publications to cover and the log of those covered | Research in The reading |
 | `data/corrections.json` | Corrections appended by the run | Footer |
 | `data/bins.json` | Rd4 collection dates | Bin day tile, calendar, countdown |
 | `data/congress.json` | Key defence bills, the budget cycle, confirmations, and the register of 38 watched posts (Army leadership, Joint Staff, combatant commands, Army four-star commands, Europe-based general officers) | Congress tracker in Profession, deadlines on the Planner |
