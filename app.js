@@ -49,7 +49,7 @@
   function store(k, v) { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } }
   function quiet(t, cls) { return '<p class="quiet' + (cls ? " " + cls : "") + '">' + esc(t || "No significant change today.") + "</p>"; }
   function nq() { return quiet("Nothing new or updated here today.", "nq"); }
-  function getJSON(url) { return fetch(url, { cache: "no-store" }).then(function (r) { if (!r.ok) throw new Error(url + " " + r.status); var lm = r.headers.get("last-modified"); if (lm) { var t = Date.parse(lm); if (t && (!ctx.dataUpdated || t > ctx.dataUpdated)) ctx.dataUpdated = t; } return r.json(); }); }
+  function getJSON(url) { return fetch(url, { cache: "no-cache" }).then(function (r) { if (!r.ok) throw new Error(url + " " + r.status); var lm = r.headers.get("last-modified"); if (lm) { var t = Date.parse(lm); if (t && (!ctx.dataUpdated || t > ctx.dataUpdated)) ctx.dataUpdated = t; } return r.json(); }); }
   function stamp(ms) { try { var d = new Date(ms); return new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Amsterdam", weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" }).format(d).replace(",", "") + " CET"; } catch (e) { return new Date(ms).toISOString().slice(0, 16).replace("T", " "); } }
   function num(v, dp) { return (v < 0 ? "−" : "") + Math.abs(v).toLocaleString("en-GB", { minimumFractionDigits: dp, maximumFractionDigits: dp }); }
   function signed(v, dp, suffix) { return (v > 0 ? "+" : v < 0 ? "−" : "") + Math.abs(v).toLocaleString("en-GB", { minimumFractionDigits: dp, maximumFractionDigits: dp }) + (suffix || ""); }
