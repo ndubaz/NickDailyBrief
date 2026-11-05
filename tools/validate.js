@@ -12,7 +12,7 @@ const appSrc = fs.readFileSync(path.join(root, "app.js"), "utf8"), ids = Array.f
 const judge = /\b(likely|probably|unlikely|suggests|signals that|we assess|means that|so what|could lead to|is expected to)\b/i;
 function walk(o, fn, p) { p = p || ""; if (typeof o === "string") fn(o, p); else if (Array.isArray(o)) o.forEach((v, i) => walk(v, fn, p + "[" + i + "]")); else if (o && typeof o === "object") Object.keys(o).forEach((k) => walk(o[k], fn, p + "." + k)); }
 if (E) {
-  if (E.v !== "6.0") warns.push("edition v is " + E.v + ", expected 6.0");
+  if (["6.0", "6.1", "6.5"].indexOf(String(E.v)) < 0) warns.push("edition v is " + E.v + ", expected 6.5");
   (E.sources || []).forEach((x) => { if (x[4] != null && !(x[4] >= 1 && x[4] <= 4)) errors.push("source [" + x[0] + "] tier must be 1 to 4"); });
   if (!(E.sources || []).some((x) => x[4])) warns.push("no source tiers assigned");
   if (!/^\d{4}-\d{2}-\d{2}$/.test(E.date || "")) errors.push("edition date missing");

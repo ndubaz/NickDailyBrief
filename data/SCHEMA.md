@@ -143,7 +143,7 @@ The World feature rota: Monday "Theatre in numbers" (table), Tuesday "Actor on t
 
 - The page is organised in five tiers (Today, The news, The watch, The reading, Home and planning); every edition object stays where it was, so no field moved. Jump ids added: `research`, `congress-sec`, `exercises-sec`, `production`, `depth`, `ttpsec`, `since`, `year`, `weekreview`, `tv` (6.1). Decisions due was removed in 6.1.
 - `sources` rows gain the tier field; items gain optional `links`; `weekreview` added for Sundays.
-- `"v": "6.0"`.
+- `"v": "6.5"` (6.0 and 6.1 still validate).
 
 ### Changes from v4.0
 
