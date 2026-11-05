@@ -847,6 +847,8 @@
 
     /* masthead */
     h += '<div class="topline"><span>Data updated <b id="dataup">' + (ctx.dataUpdated ? esc(stamp(ctx.dataUpdated)) : "—") + "</b></span><span>Edition " + esc(E.edition) + " · " + esc(fmtShort(E.date)) + "</span></div>";
+    var realTD = key(new Date()), lagDays = ctx.index && ctx.index.latest === E.date ? daysBetween(E.date, realTD) : 0;
+    if (lagDays > 0) h += '<p class="stale">This is the edition of <b>' + esc(fmt(today)) + "</b>. Today is " + esc(fmt(pd(realTD))) + " and the morning run has not posted yet, so the planner counts from " + esc(fmtShort(E.date)) + ".</p>";
     h += '<header class="mast"><div class="eyebrow">' + esc(E.place || "Hoensbroek · Parkstad Limburg") + "</div><h1>Nick's Daily Readbook</h1>";
     h += '<div class="date">' + esc(E.weekday + " " + today.getDate() + " " + MON[today.getMonth()] + " " + today.getFullYear()) + "</div>";
     h += '<div class="mast-meta"><span><b>Edition ' + esc(E.edition) + "</b></span><span>Look-back " + esc(E.lookback) + '</span><span id="readtime"></span></div>';

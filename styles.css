@@ -677,3 +677,4 @@ ol.src li.t1 a,ol.src li.t2 a{font-weight:600}
 ul.rec li{margin-bottom:var(--s2)}
 ul.rec li .small{margin-top:2px}
 ul.rec .like{color:var(--muted)}
+.stale{margin:0 0 var(--s3);padding:var(--s2) var(--s3);border:1px solid var(--warn);border-radius:var(--r-card);color:var(--ink);font-size:14px}
