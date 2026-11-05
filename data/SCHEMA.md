@@ -7,7 +7,7 @@ The site is static. `index.html` + `app.js` + `styles.css` never change day to d
 | File | What to do |
 |---|---|
 | `data/editions/YYYY-MM-DD.json` | Create the day's edition (format below). Never edit past editions. |
-| `data/index.json` | Set `latest` to today's date and append `{"date","edition"}` to `editions`. |
+| `data/index.json` | Set `latest` to today's date and append `{"date","edition","generated"}` to `editions`, `generated` being the ISO timestamp with offset when the run finished; the page shows it as "Last run". |
 | `data/conflicts.json` | Append one dated fact entry to each theatre that had a reportable event. Never edit or delete old entries. No status labels. |
 | `data/world-series.json` | Append one row per published value to each series the source published. |
 | `data/incidents.json` | Append each new hybrid incident (same id never twice). When an older incident is newly attributed or charged, update its `attr` in place **and** append an entry to `attrLog`. Prune incidents older than 400 days. |

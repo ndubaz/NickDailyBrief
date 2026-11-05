@@ -758,6 +758,23 @@
     function walk(o) { if (Array.isArray(o)) { o.forEach(walk); return; } if (o && typeof o === "object") { if (Array.isArray(o.links)) o.links.forEach(function (l) { set[l] = 1; }); Object.keys(o).forEach(function (k) { if (k !== "sources" && k !== "links") walk(o[k]); }); } }
     walk(E); return set;
   }
+  /* when each standing file last took in data: its updated field, else its newest dated entry */
+  function ingestLine(ctx, TD) {
+    function newest(list, f) { var m = ""; (list || []).forEach(function (x) { var d = f(x); if (d && d > m) m = d; }); return m; }
+    function logs(list) { return newest(list, function (t) { return newest(t.log, function (e) { return e.date; }); }); }
+    var rows = [
+      ["Board", logs(ctx.conflicts)], ["Threads", logs(ctx.threads)], ["Horizon", newest(ctx.horizon, function (e) { return e.updated || e.added; })],
+      ["Incidents", newest(ctx.incidents, function (i) { return i.date; })], ["Congress", newest(ctx.congress, function (c) { return c.updated || c.added; })],
+      ["Exercises", newest(ctx.exercises, function (x) { return x.updated || x.added; })], ["Releases", newest((ctx.releases || {}).releases, function (r) { return r.date; })],
+      ["Events", newest(ctx.events, function (e) { return e.added; })], ["Countries", ctx.countriesUpdated || logs(ctx.countries)],
+      ["World series", newest(Object.keys((ctx.worldSeries || {})).filter(function (k) { return k !== "meta" && Array.isArray(ctx.worldSeries[k]); }), function (k) { var a = ctx.worldSeries[k]; return a.length ? a[a.length - 1][0] : ""; })],
+      ["FX", ctx.fx ? (ctx.fx.updated || ctx.fx.series[ctx.fx.series.length - 1][0]) : ""], ["Markets", ctx.series ? newest(Object.keys(ctx.series).filter(function (k) { return k[0] !== "_" && Array.isArray(ctx.series[k]); }), function (k) { var a = ctx.series[k]; return a.length ? a[a.length - 1][0] : ""; }) : ""],
+      ["Canes", ctx.canes ? (ctx.canes.updated || newest(ctx.canes.games, function (g) { return g.date; })) : ""], ["Teams", (ctx.teams || {}).updated], ["TV", (ctx.tv || {}).updated],
+      ["Idioms", newest(ctx.idioms, function (i) { return i.date; })], ["Snow", ctx.ski && ctx.ski.snow ? newest(Object.keys(ctx.ski.snow), function (k) { return (ctx.ski.snow[k] || {}).asof; }) : ""], ["Research", newest((ctx.research || {}).covered, function (c) { return c.date; })]
+    ].filter(function (r) { return r[1]; });
+    if (!rows.length) return "";
+    return '<p class="ingest"><span class="lbl">Data ingest</span>' + rows.map(function (r) { var n = daysBetween(r[1], TD); return '<span class="' + (n <= 0 ? "ok" : n <= 2 ? "" : "old") + '" title="' + esc(r[0] + ": newest entry " + fmtShort(r[1])) + '">' + esc(r[0]) + " <b>" + (n <= 0 ? "today" : n === 1 ? "1 d" : n + " d") + "</b></span>"; }).join("") + "</p>";
+  }
   /* priority countries: standing profile per country, then today's items for it */
   function countriesBlock(E, ctx, TD) {
     var list = ctx.countries || [], its = E.countries || [], BLR = (ctx.countriesBLR || []);
@@ -874,7 +891,9 @@
     ctx._pev = PEV; ctx._ws = {}; ctx._fser = null; ctx._geo = null;
 
     /* masthead */
-    h += '<div class="topline"><span>Data updated <b id="dataup">' + (ctx.dataUpdated ? esc(stamp(ctx.dataUpdated)) : "—") + "</b></span><span>Edition " + esc(E.edition) + " · " + esc(fmtShort(E.date)) + "</span></div>";
+    var idxE = ((ctx.index || {}).editions || []).filter(function (x) { return x.date === E.date; })[0] || {}, gen = E.generated || idxE.generated;
+    h += '<div class="topline"><span>Last run <b id="dataup">' + (gen ? esc(stamp(Date.parse(gen))) : esc(fmt(today)) + ", time not recorded") + "</b></span><span>Edition " + esc(E.edition) + " · " + esc(fmtShort(E.date)) + "</span></div>";
+    h += ingestLine(ctx, TD);
     var realTD = key(new Date()), lagDays = ctx.index && ctx.index.latest === E.date ? daysBetween(E.date, realTD) : 0;
     if (lagDays > 0) h += '<p class="stale">This is the edition of <b>' + esc(fmt(today)) + "</b>. Today is " + esc(fmt(pd(realTD))) + " and the morning run has not posted yet, so the planner counts from " + esc(fmtShort(E.date)) + ".</p>";
     h += '<header class="mast"><div class="eyebrow">' + esc(E.place || "Hoensbroek · Parkstad Limburg") + "</div><h1>Nick's Daily Readbook</h1>";

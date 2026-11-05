@@ -685,3 +685,9 @@ ul.rec .like{color:var(--muted)}
 .ctry-log li{margin-bottom:4px}
 .ctry .srcl{color:var(--muted)}
 .ctry .item{margin-top:var(--s2);padding-top:var(--s2);border-top:1px dashed var(--line)}
+/* data ingest line */
+.ingest{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:baseline;margin:var(--s1) 0 var(--s3);font-family:var(--f-mono);font-size:11px;color:var(--muted);border-bottom:1px dotted var(--line);padding-bottom:var(--s2)}
+.ingest .lbl{margin:0 4px 0 0}
+.ingest span b{font-weight:500;color:var(--ink)}
+.ingest span.ok b{color:var(--up)}
+.ingest span.old b{color:var(--warn)}
