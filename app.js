@@ -773,7 +773,9 @@
       ["Idioms", newest(ctx.idioms, function (i) { return i.date; })], ["Snow", ctx.ski && ctx.ski.snow ? newest(Object.keys(ctx.ski.snow), function (k) { return (ctx.ski.snow[k] || {}).asof; }) : ""], ["Research", newest((ctx.research || {}).covered, function (c) { return c.date; })]
     ].filter(function (r) { return r[1]; });
     if (!rows.length) return "";
-    return '<p class="ingest"><span class="lbl">Data ingest</span>' + rows.map(function (r) { var n = daysBetween(r[1], TD); return '<span class="' + (n <= 0 ? "ok" : n <= 2 ? "" : "old") + '" title="' + esc(r[0] + ": newest entry " + fmtShort(r[1])) + '">' + esc(r[0]) + " <b>" + (n <= 0 ? "today" : n === 1 ? "1 d" : n + " d") + "</b></span>"; }).join("") + "</p>";
+    var size = { Board: cnt(ctx.conflicts, function (t) { return (t.log || []).length; }), Threads: cnt(ctx.threads, function (t) { return (t.log || []).length; }), Horizon: (ctx.horizon || []).length, Incidents: (ctx.incidents || []).length, Congress: (ctx.congress || []).length, Exercises: (ctx.exercises || []).length, Releases: ((ctx.releases || {}).releases || []).length, Events: (ctx.events || []).length, Countries: cnt(ctx.countries, function (c) { return (c.log || []).length; }), "World series": cnt(Object.keys(ctx.worldSeries || {}), function (k) { return Array.isArray(ctx.worldSeries[k]) ? ctx.worldSeries[k].length : 0; }), FX: ctx.fx ? ctx.fx.series.length : 0, Markets: cnt(Object.keys(ctx.series || {}), function (k) { return Array.isArray(ctx.series[k]) ? ctx.series[k].length : 0; }), Canes: ctx.canes ? (ctx.canes.games || []).length : 0, Teams: cnt(Object.keys(ctx.teams || {}), function (k) { return ((ctx.teams[k] || {}).games || []).length; }), TV: ((ctx.tv || {}).shows || []).length, Idioms: (ctx.idioms || []).length, Snow: Object.keys((ctx.ski || {}).snow || {}).length, Research: ((ctx.research || {}).covered || []).length };
+    function cnt(list, f) { var n = 0; (list || []).forEach(function (x) { n += f(x) || 0; }); return n; }
+    return '<h3>Data ingest <span class="small">newest entry per standing file, as of this edition</span></h3>' + table(["File", "Newest", "Age", "Rows"], rows.map(function (r) { var n = daysBetween(r[1], TD); return '<tr class="' + (n >= 3 ? "soon" : "") + '"><td><b>' + esc(r[0]) + '</b></td><td class="d">' + esc(fmtShort(r[1])) + (r[1].slice(0, 4) !== TD.slice(0, 4) ? " " + r[1].slice(0, 4) : "") + '</td><td class="d">' + (n <= 0 ? "today" : n === 1 ? "1 day" : n + " days") + '</td><td class="d">' + (size[r[0]] != null ? size[r[0]].toLocaleString("en-GB") : "") + "</td></tr>"; }).join(""), "lbl1 ingest").replace('class="tw stack"', 'class="tw"');
   }
   /* priority countries: standing profile per country, then today's items for it */
   function countriesBlock(E, ctx, TD) {
@@ -892,15 +894,14 @@
 
     /* masthead */
     var idxE = ((ctx.index || {}).editions || []).filter(function (x) { return x.date === E.date; })[0] || {}, gen = E.generated || idxE.generated;
-    h += '<div class="topline"><span>Last run <b id="dataup">' + (gen ? esc(stamp(Date.parse(gen))) : esc(fmt(today)) + ", time not recorded") + "</b></span><span>Edition " + esc(E.edition) + " · " + esc(fmtShort(E.date)) + "</span></div>";
-    h += ingestLine(ctx, TD);
+    h += '<div class="topline"><span>Last run <b id="dataup">' + (gen ? esc(stamp(Date.parse(gen))) : esc(fmt(today)) + ", time not recorded") + '</b></span><span id="status"></span></div>';
     var realTD = key(new Date()), lagDays = ctx.index && ctx.index.latest === E.date ? daysBetween(E.date, realTD) : 0;
     if (lagDays > 0) h += '<p class="stale">This is the edition of <b>' + esc(fmt(today)) + "</b>. Today is " + esc(fmt(pd(realTD))) + " and the morning run has not posted yet, so the planner counts from " + esc(fmtShort(E.date)) + ".</p>";
     h += '<header class="mast"><div class="eyebrow">' + esc(E.place || "Hoensbroek · Parkstad Limburg") + "</div><h1>Nick's Daily Readbook</h1>";
     h += '<div class="date">' + esc(E.weekday + " " + today.getDate() + " " + MON[today.getMonth()] + " " + today.getFullYear()) + "</div>";
     h += '<div class="mast-meta"><span><b>Edition ' + esc(E.edition) + "</b></span><span>Look-back " + esc(E.lookback) + '</span><span id="readtime"></span></div>';
     h += '<div class="rule" aria-hidden="true">' + ["--ink","--p-news","--p-watch","--p-reading","--p-home"].map(function (c) { return '<i style="background:var(' + c + ')"></i>'; }).join("") + "</div>";
-    h += '<div class="status"><span id="status"></span><span class="theme" role="group" aria-label="Theme"><button type="button" data-theme="auto">Auto</button><button type="button" data-theme="light">Light</button><button type="button" data-theme="dark">Dark</button></span></div>';
+    h += '<div class="status"><span></span><span class="theme" role="group" aria-label="Theme"><button type="button" data-theme="auto">Auto</button><button type="button" data-theme="light">Light</button><button type="button" data-theme="dark">Dark</button></span></div>';
     if (E.note) h += '<p class="note">' + rich(E.note) + "</p>";
     h += "</header>";
 
@@ -1441,7 +1442,7 @@
     Array.prototype.forEach.call(app.children, function (el) { if (stop0 || el.id === "weekreview" || el.id === "week" || el.id === "sources") { stop0 = true; return; } if (el.id !== "slim") words0 += (el.textContent || "").split(/\s+/).length; });
     var HR = health(E, ctx, TD, words0), nAct = HR.filter(function (r) { return r[1] === "act"; }).length, nWatch = HR.filter(function (r) { return r[1] === "watch"; }).length;
     var HB = HR.filter(function (r) { return r[1] !== "ok"; }).sort(function (a, b) { return (a[1] === "act" ? 0 : 1) - (b[1] === "act" ? 0 : 1); }), HG = HR.filter(function (r) { return r[1] === "ok"; });
-    document.getElementById("healthbody").innerHTML = '<p class="hsum"><span class="chip hs ' + (nAct ? "act" : nWatch ? "watch" : "ok") + '">' + (nAct ? nAct + " to act on" : nWatch ? "nothing to act on" : "all clear") + "</span> " + HR.length + " checks · " + nWatch + " to watch · " + HG.length + " ok</p>" + (HB.length ? '<ul class="hl">' + HB.map(function (r) { return '<li class="h-' + r[1] + '"><span class="chip hs ' + r[1] + '">' + r[1] + "</span><b>" + esc(r[0]) + "</b> " + esc(r[2]) + "</li>"; }).join("") + "</ul>" : "") + (HG.length ? '<p class="small hok"><b>OK:</b> ' + HG.map(function (r) { return '<span title="' + esc(r[2]) + '">' + esc(r[0]) + "</span>"; }).join(" · ") + "</p>" : "");
+    document.getElementById("healthbody").innerHTML = '<p class="hsum"><span class="chip hs ' + (nAct ? "act" : nWatch ? "watch" : "ok") + '">' + (nAct ? nAct + " to act on" : nWatch ? "nothing to act on" : "all clear") + "</span> " + HR.length + " checks · " + nWatch + " to watch · " + HG.length + " ok</p>" + (HB.length ? '<ul class="hl">' + HB.map(function (r) { return '<li class="h-' + r[1] + '"><span class="chip hs ' + r[1] + '">' + r[1] + "</span><b>" + esc(r[0]) + "</b> " + esc(r[2]) + "</li>"; }).join("") + "</ul>" : "") + (HG.length ? '<p class="small hok"><b>OK:</b> ' + HG.map(function (r) { return '<span title="' + esc(r[2]) + '">' + esc(r[0]) + "</span>"; }).join(" · ") + "</p>" : "") + ingestLine(ctx, TD);
 
     /* new / updated count */
     document.getElementById("nnew").textContent = app.querySelectorAll(".badge.new").length + " new";
