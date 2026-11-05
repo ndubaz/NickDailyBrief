@@ -1,6 +1,6 @@
 # Nick's Daily Readbook
 
-A personal daily briefing, installed on the iPhone as a home-screen web app. Static site: no build step, no server code. Version 6.0.
+A personal daily briefing, installed on the iPhone as a home-screen web app. Static site: no build step, no server code. Version 6.1.
 
 ## How it works
 
@@ -17,9 +17,9 @@ One scroll in five tiers, everything expanded, nothing folded:
 2. **The news.** World developments, Security (hybrid, Europe, Euregio), Defence & Army (DoD, Army, Congress, Career, leaders on the record), NATO & allies, Defence tech, Frontier, Markets, Rates, Netherlands. Same item anatomy everywhere; items link to the trackers they update.
 3. **The watch.** The board with its map, the numbers row, the USD/EUR tracker, threads, horizon, the Congress tracker (bills, budget, confirmations as a stage matrix) with the watched-post register, the exercise calendar, the release log, the state-of-the-art table and production series.
 4. **The reading.** The World feature, the Research piece (one recent publication a day, rotating across institutions), the Army in depth piece, the Saturday week in war, Aperture.
-5. **Home and planning.** AFNORTH, Out and about (weekend first, nearest first, with the forecast), Taal, Snow in season, the Canes, then the Planner: the Sunday review, the week board, weather, countdowns, Decisions due, the calendar, the year-ahead board with leave windows, the school year and the seasonal planner.
+5. **Home and planning.** AFNORTH, Out and about (weekend first, nearest first, with the forecast), Taal, Snow in season, the Canes with the Saints and Cardinals beneath, then the Planner: the Sunday review, the week board, weather, countdowns, TV, the calendar (the agenda starts today and folds after two weeks), the year-ahead board with leave windows, the school year and the seasonal planner.
 
-The sticky header carries one chip per tier and the "New only" toggle. Anything dated (events, deadlines, exercises, decisions, the next games) has a "+ cal" link that downloads a calendar file. The footer holds Sources with their tiers, Corrections, About this edition, the archive, the search and Readbook health.
+The sticky header carries one chip per tier and the "New only" toggle. Anything dated (events, deadlines, exercises, the next games, the next episodes) has a "+ cal" link that downloads a calendar file. The footer holds Sources with their tiers, Corrections, About this edition, the archive, the search and Readbook health.
 
 Wording rules for the run are in `STYLE.md`. The exchange rate is shown everywhere as USD/EUR, euros per dollar. The three typefaces are self-hosted in `fonts/`.
 
@@ -40,8 +40,10 @@ The edition is a daily snapshot. The standing files under `data/` are the Readbo
 | `data/series.json` | Thirty trading days per market series | Sparklines on the market cards |
 | `data/canes.json` | Carolina's results, upcoming games, record, points, Metro position | Results strip, next-ten strip, season chart, calendar, countdown |
 | `data/calendar.json` | Public holidays, school breaks for four systems, clocks, market seasons, 18 months | Calendar, week strip, countdowns, school overlap chart |
-| `data/deadlines.json` | Nick's own deadlines, hand-maintained, never touched by the run | Deadlines table, Decisions due, calendar, week board |
-| `data/week.json` | Nick's own dated entries (TDY, duty, travel), hand-maintained | Week board, calendar, year ahead, Decisions due when `act` is set |
+| `data/deadlines.json` | Nick's own deadlines, hand-maintained, never touched by the run | Deadlines table, calendar, week board |
+| `data/week.json` | Nick's own dated entries (TDY, duty, travel), hand-maintained | Week board, calendar, year ahead |
+| `data/teams.json` | Saints and Cardinals: record, results, next games, refreshed by the run from the ESPN and MLB feeds | Also following, calendar, countdowns |
+| `data/tv.json` | Followed shows with last and next episodes from TVMaze, renewal notes, and similar shows | TV section, week board, calendar, countdowns |
 | `data/research.json` | Research rotation: the queue of publications to cover and the log of those covered | Research in The reading |
 | `data/corrections.json` | Corrections appended by the run | Footer |
 | `data/bins.json` | Rd4 collection dates | Bin day tile, calendar, countdown |
@@ -58,7 +60,7 @@ Editions in the 2.5, 3.0 and 4.0 formats still render: an edition whose `world` 
 
 ## Keeping your own files current
 
-- **week.json:** add `{"date": "2026-11-20", "end": "2026-11-21", "t": "TDY Brussels", "act": false}` to `items`. Set `"act": true` for anything that needs a decision from you and it joins Decisions due.
+- **week.json:** add `{"date": "2026-11-20", "end": "2026-11-21", "t": "TDY Brussels", "act": false}` to `items`. `act` is kept for compatibility and no longer changes the page.
 - **deadlines.json:** add `{"name": "APK", "date": "2027-03-14", "note": "garage booked", "cat": "car"}` to `items`. Set `"updated"` on an item to today's date and the page badges it UPDATED for that day. Keep names generic; no addresses, plate or document numbers.
 - **calendar.json:** when a ministry publishes a new school year, add its breaks under `school.<system>.segs` as `["YYYY-MM-DD", "YYYY-MM-DD", "label"]`. The AFNORTH entries come from the school's academic calendar PDF; the run completes them when it can read the PDF.
 - **bins.json:** paste the next Rd4 calendar as `[["YYYY-MM-DD","GFT · after 07:00"], ...]`.

@@ -1,0 +1,175 @@
+{
+ "updated": "2026-11-05",
+ "note": "Secondary teams. Less detail than the Canes: record, last result, next game. The run refreshes this from the ESPN and MLB feeds named in SCHEMA.md.",
+ "saints": {
+  "name": "New Orleans Saints",
+  "abbr": "NO",
+  "league": "NFL",
+  "season": 2026,
+  "record": "2-5",
+  "standing": "NFC South",
+  "src": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/no/schedule",
+  "games": [
+   {
+    "date": "2026-09-13",
+    "opp": "DET",
+    "home": false,
+    "pf": 30,
+    "pa": 31,
+    "res": "L",
+    "week": 1
+   },
+   {
+    "date": "2026-09-20",
+    "opp": "BAL",
+    "home": false,
+    "pf": 24,
+    "pa": 17,
+    "res": "W",
+    "week": 2
+   },
+   {
+    "date": "2026-09-27",
+    "opp": "LV",
+    "home": true,
+    "pf": 27,
+    "pa": 35,
+    "res": "L",
+    "week": 3
+   },
+   {
+    "date": "2026-10-05",
+    "opp": "ATL",
+    "home": true,
+    "pf": 24,
+    "pa": 45,
+    "res": "L",
+    "week": 4
+   },
+   {
+    "date": "2026-10-11",
+    "opp": "MIN",
+    "home": true,
+    "pf": 13,
+    "pa": 23,
+    "res": "L",
+    "week": 5
+   },
+   {
+    "date": "2026-10-18",
+    "opp": "NYG",
+    "home": false,
+    "pf": 34,
+    "pa": 27,
+    "res": "W",
+    "week": 6
+   },
+   {
+    "date": "2026-10-25",
+    "opp": "PIT",
+    "home": true,
+    "pf": 10,
+    "pa": 16,
+    "res": "L",
+    "week": 7
+   }
+  ],
+  "upcoming": [
+   {
+    "date": "2026-11-08",
+    "opp": "CLE",
+    "home": true,
+    "utc": "2026-11-08T18:00:00Z",
+    "week": 9
+   },
+   {
+    "date": "2026-11-15",
+    "opp": "CAR",
+    "home": true,
+    "utc": "2026-11-15T18:00:00Z",
+    "week": 10
+   },
+   {
+    "date": "2026-11-22",
+    "opp": "CHI",
+    "home": false,
+    "utc": "2026-11-22T18:00:00Z",
+    "week": 11
+   },
+   {
+    "date": "2026-11-29",
+    "opp": "CIN",
+    "home": false,
+    "utc": "2026-11-29T18:00:00Z",
+    "week": 12
+   },
+   {
+    "date": "2026-12-06",
+    "opp": "GB",
+    "home": true,
+    "utc": "2026-12-06T18:00:00Z",
+    "week": 13
+   },
+   {
+    "date": "2026-12-13",
+    "opp": "CAR",
+    "home": false,
+    "utc": "2026-12-13T18:00:00Z",
+    "week": 14
+   },
+   {
+    "date": "2026-12-20",
+    "opp": "TB",
+    "home": false,
+    "utc": "2026-12-20T18:00:00Z",
+    "week": 15
+   },
+   {
+    "date": "2026-12-27",
+    "opp": "ARI",
+    "home": true,
+    "utc": "2026-12-27T18:00:00Z",
+    "week": 16
+   },
+   {
+    "date": "2027-01-03",
+    "opp": "ATL",
+    "home": false,
+    "utc": "2027-01-03T18:00:00Z",
+    "week": 17
+   },
+   {
+    "date": "2027-01-10",
+    "opp": "TB",
+    "home": true,
+    "utc": "2027-01-10T05:00:00Z",
+    "week": 18
+   }
+  ]
+ },
+ "cardinals": {
+  "name": "St. Louis Cardinals",
+  "abbr": "STL",
+  "league": "MLB",
+  "season": 2027,
+  "status": "off-season",
+  "last": "2026: 77-85, 4th in the NL Central",
+  "src": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&teamId=138&season=2027",
+  "springTraining": {
+   "date": "2027-02-19",
+   "opp": "MIA",
+   "home": false,
+   "note": "Grapefruit League opener, Jupiter FL"
+  },
+  "opener": {
+   "date": "2027-03-25",
+   "opp": "CIN",
+   "home": false,
+   "utc": "2027-03-25T20:10:00Z",
+   "note": "Opening Day at Great American Ball Park"
+  },
+  "homeOpener": null,
+  "games": [],
+  "upcoming": []
+ }
+}

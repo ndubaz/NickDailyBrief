@@ -653,3 +653,27 @@ ol.src li.t1 a,ol.src li.t2 a{font-weight:600}
 .tile.wxt .wxtm{display:inline-block;vertical-align:-3px;margin-right:2px}
 .tile.wxt .wxtm .wxi{display:inline-block;margin:0}
 #tempband{margin-top:var(--s2)}
+/* 6.1: gantt month cells, agenda fold, teams, tv */
+.g-axis .ticks .mo{transform:none;text-align:center;overflow:hidden;top:4px;letter-spacing:0}
+@media (max-width:480px){.g-axis .ticks .mo{overflow:visible;font-size:9.5px}.g-axis .ticks .mo.alt{visibility:hidden}}
+.g-m{position:absolute;top:0;bottom:0;width:0;border-left:1px solid var(--line);opacity:.7}
+.agenda details.more{margin-top:var(--s2);border:1px solid var(--line);border-radius:var(--r-card);padding:var(--s2) var(--s3)}
+.agenda details.more summary{cursor:pointer;font-family:var(--f-display);font-weight:600;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.agenda details.more[open] summary{margin-bottom:var(--s2)}
+.nextg{margin:var(--s1) 0 0;font-size:14px}
+.nextg.muted{color:var(--muted)}
+.tile .nextg{font-size:13px}
+.teams{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--s3);margin:var(--s2) 0 var(--s4)}
+.tile.team .val{font-size:26px}
+.season.mini{margin:var(--s1) 0}
+.season.mini .g{min-width:0;padding:3px 6px;font-size:11px}
+.shows{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--s3)}
+.show{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card);padding:var(--s3)}
+.show .sh{display:flex;align-items:center;justify-content:space-between;gap:var(--s2);font-size:16px}
+.show .sh b{font-family:var(--f-display);font-size:19px;font-weight:600;letter-spacing:.01em}
+.show .chip.on{color:var(--c-be);border-color:var(--c-be)}
+.show .note{margin-top:var(--s1)}
+.show .srcl{color:var(--muted)}
+ul.rec li{margin-bottom:var(--s2)}
+ul.rec li .small{margin-top:2px}
+ul.rec .like{color:var(--muted)}

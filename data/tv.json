@@ -1,0 +1,205 @@
+{
+ "updated": "2026-11-05",
+ "note": "Shows Nick follows. The run refreshes last and next from the TVMaze API (https://api.tvmaze.com/shows/<tvmaze>?embed[]=previousepisode&embed[]=nextepisode) and keeps the renewal note current from press reports. Dates are the broadcaster's local air date.",
+ "shows": [
+  {
+   "id": "gbbo",
+   "tvmaze": 2950,
+   "title": "The Great British Bake Off",
+   "where": "Channel 4",
+   "status": "airing",
+   "last": {
+    "s": 17,
+    "e": 7,
+    "date": "2026-11-03",
+    "name": "Free-from Party Week"
+   },
+   "next": {
+    "s": 17,
+    "e": 8,
+    "date": "2026-11-10",
+    "name": "Caramel Week",
+    "time": "20:00 UK"
+   },
+   "note": "Series 17, Tuesdays at 20:00 UK. Nigella Lawson judges with Paul Hollywood. Fan schedules list the final for 24 Nov; Channel 4 has not published the date.",
+   "src": [
+    [
+     "TVMaze: The Great British Bake Off",
+     "https://www.tvmaze.com/shows/2950/the-great-british-bake-off"
+    ],
+    [
+     "Stylist: GBBO 2026 release date",
+     "https://www.stylist.co.uk/entertainment/tv/gbbo-2026-release-date/1112545"
+    ]
+   ]
+  },
+  {
+   "id": "sewingbee",
+   "tvmaze": 3909,
+   "title": "The Great British Sewing Bee",
+   "where": "BBC One",
+   "status": "between",
+   "last": {
+    "s": 12,
+    "e": 10,
+    "date": "2026-09-15",
+    "name": "The Final"
+   },
+   "next": null,
+   "note": "Series 12 ran 14 Jul to 15 Sep 2026. Series 13 casting is open; no air date announced. The last three series started between May and July.",
+   "src": [
+    [
+     "TVMaze: The Great British Sewing Bee",
+     "https://www.tvmaze.com/shows/3909/the-great-british-sewing-bee"
+    ],
+    [
+     "Wikipedia: The Great British Sewing Bee",
+     "https://en.wikipedia.org/wiki/The_Great_British_Sewing_Bee"
+    ]
+   ]
+  },
+  {
+   "id": "ludwig",
+   "tvmaze": 68919,
+   "title": "Ludwig",
+   "where": "BBC One and iPlayer",
+   "status": "renewed",
+   "last": {
+    "s": 2,
+    "e": 6,
+    "date": "2026-09-10",
+    "name": "Series 2 finale"
+   },
+   "next": null,
+   "note": "Series 3 ordered by the BBC on 8 Jul 2026, six episodes, filming since September 2026. Expected 2027; no date. Reports of a Christmas special are unconfirmed.",
+   "src": [
+    [
+     "Chortle: BBC orders a third series of Ludwig",
+     "https://www.chortle.co.uk/news/2026/07/08/60931/bbc_orders_a_third_series_of_david_mitchell%E2%80%99s_ludwig"
+    ],
+    [
+     "TV Insider: Ludwig season 3 filming",
+     "https://www.tvinsider.com/1298567/ludwig-season-3-premiere-date-cast-trailer/"
+    ]
+   ]
+  },
+  {
+   "id": "omitb",
+   "tvmaze": 48830,
+   "title": "Only Murders in the Building",
+   "where": "Hulu (Disney+ outside the US)",
+   "status": "scheduled",
+   "last": {
+    "s": 5,
+    "e": 10,
+    "date": "2025-10-28",
+    "name": "The House Always Wins"
+   },
+   "next": {
+    "s": 6,
+    "e": 1,
+    "date": "2026-12-08",
+    "name": "Season 6 premiere",
+    "time": "Tuesdays"
+   },
+   "note": "Season 6 moves the trio to London and premieres Tue 8 Dec 2026, then weekly on Tuesdays.",
+   "src": [
+    [
+     "TVLine: Only Murders in the Building season 6 release date",
+     "https://www.tvline.com/2243637/only-murders-in-the-building-season-6-release-date-hulu/"
+    ],
+    [
+     "TVMaze: Only Murders in the Building",
+     "https://www.tvmaze.com/shows/48830/only-murders-in-the-building"
+    ]
+   ]
+  },
+  {
+   "id": "deathvalley",
+   "tvmaze": 84670,
+   "title": "Death Valley",
+   "where": "BBC One and iPlayer",
+   "status": "awaiting",
+   "last": {
+    "s": 2,
+    "e": 6,
+    "date": "2026-05-17",
+    "name": "Series 2 finale"
+   },
+   "next": null,
+   "note": "Series 2 ended 17 May 2026. A third series is not announced; the BBC renewed series 2 three months after series 1 ended.",
+   "src": [
+    [
+     "TV Guide: Death Valley series 3",
+     "https://www.tvguide.co.uk/articles/death-valley-series-3-plot-cast-series-2-ending-recap/"
+    ],
+    [
+     "Wikipedia: Death Valley (British TV series)",
+     "https://en.wikipedia.org/wiki/Death_Valley_(British_TV_series)"
+    ]
+   ]
+  }
+ ],
+ "similar": [
+  {
+   "title": "Bookish",
+   "where": "U&Alibi (UK), PBS Masterpiece (US)",
+   "like": [
+    "ludwig",
+    "deathvalley"
+   ],
+   "why": "Mark Gatiss as a 1946 London bookseller who solves murders; the same puzzle-a-week warmth as Ludwig."
+  },
+  {
+   "title": "Poker Face",
+   "where": "Peacock",
+   "like": [
+    "omitb",
+    "ludwig"
+   ],
+   "why": "Natasha Lyonne's human lie detector in a case-of-the-week road show; Rian Johnson's answer to Columbo."
+  },
+  {
+   "title": "Elsbeth",
+   "where": "CBS, Paramount+",
+   "like": [
+    "omitb"
+   ],
+   "why": "An inverted-mystery comedy in Manhattan with a guest villain each week."
+  },
+  {
+   "title": "Beyond Paradise",
+   "where": "BBC One",
+   "like": [
+    "deathvalley"
+   ],
+   "why": "Kris Marshall's gentle Devon spin-off of Death in Paradise; small town, small team, one case per episode."
+  },
+  {
+   "title": "Magpie Murders and Moonflower Murders",
+   "where": "BBC One, PBS Masterpiece",
+   "like": [
+    "ludwig",
+    "omitb"
+   ],
+   "why": "Anthony Horowitz's book-within-a-book whodunits with Lesley Manville."
+  },
+  {
+   "title": "The Great Pottery Throw Down",
+   "where": "Channel 4",
+   "like": [
+    "gbbo",
+    "sewingbee"
+   ],
+   "why": "The same production company and format as Bake Off and Sewing Bee, in a Stoke pottery; Keith Brymer Jones cries at good work."
+  },
+  {
+   "title": "Taskmaster",
+   "where": "Channel 4",
+   "like": [
+    "gbbo"
+   ],
+   "why": "Five comedians, absurd tasks, Greg Davies judging; the other Channel 4 show a whole family watches together."
+  }
+ ]
+}

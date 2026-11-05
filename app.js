@@ -8,7 +8,7 @@
   var MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
   var DOW = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
   var CAT = { nl:["Netherlands","--c-nl"], be:["Belgium","--c-be"], de:["Germany","--c-de"], us:["US / AFNORTH","--c-us"], mkt:["Markets & events","--c-mkt"], pro:["Work & world","--c-pro"],
-              hockey:["Hurricanes","--p-hockey"], home:["Bins & home","--p-home"], school:["School breaks","--p-pro"], watch:["Horizon","--p-watch"], deadline:["Deadlines","--crit"], info:["Clocks","--muted"], out:["Out and about","--c-mkt"], ex:["Exercises","--p-pro"], me:["Yours","--ink"] };
+              hockey:["Hurricanes","--p-hockey"], home:["Bins & home","--p-home"], school:["School breaks","--p-pro"], watch:["Horizon","--p-watch"], deadline:["Deadlines","--crit"], info:["Clocks","--muted"], out:["Out and about","--c-mkt"], ex:["Exercises","--p-pro"], me:["Yours","--ink"], nfl:["Saints & Cardinals","--p-sec"], tv:["TV","--p-reading"] };
   var CODE_COLORS = { CYB:"--c-us", SAB:"--crit", UAS:"--c-mkt", UWI:"--c-pro", GNSS:"--c-be", INF:"--c-nl", ELX:"--c-nl", MIG:"--c-de", PRX:"--warn", AIR:"--c-de", SEA:"--c-pro", COE:"--c-be", KIN:"--crit" };
   var PART_CLASSES = ["front","news","watch","reading","home"];
   var PARTS = [["front","Today","#front"],["news","The news","#p-news"],["watch","The watch","#p-watch"],["reading","The reading","#p-reading"],["home","Home and planning","#p-home"]];
@@ -103,12 +103,16 @@
     opts = opts || {};
     var from = pd(g.from), to = pd(g.to), span = (to - from) / DAY;
     function pct(d) { return Math.max(0, Math.min(100, ((d - from) / DAY) / span * 100)); }
-    var h = '<div class="g-axis"><div></div><div class="ticks">';
-    (g.ticks || []).forEach(function (t) { var d = pd(t); h += '<span style="left:' + pct(d) + '%">' + d.getDate() + " " + MON[d.getMonth()] + (opts.year ? " " + String(d.getFullYear()).slice(2) : "") + "</span>"; });
+    var h = '<div class="g-axis"><div></div><div class="ticks">', grid = "";
+    if (opts.year) {
+      var ms = [], cur = new Date(from.getFullYear(), from.getMonth(), 1);
+      while (cur <= to) { var nx = new Date(cur.getFullYear(), cur.getMonth() + 1, 1), a = Math.max(+cur, +from), b = Math.min(+nx, +to + DAY), l = pct(new Date(a)), w = pct(new Date(b)) - l; if (w >= 3.5) ms.push({ l: l, w: w, d: cur, first: a === +cur }); cur = nx; }
+      ms.forEach(function (m, i) { h += '<span class="mo' + (i % 2 ? " alt" : "") + '" style="left:' + m.l.toFixed(2) + "%;width:" + m.w.toFixed(2) + '%">' + MON[m.d.getMonth()] + (m.d.getMonth() === 0 || (i === 0 && m.w >= 8) ? " ’" + String(m.d.getFullYear()).slice(2) : "") + "</span>"; if (m.first && m.l > 0.5) grid += '<i class="g-m" style="left:' + m.l.toFixed(2) + '%"></i>'; });
+    } else (g.ticks || []).forEach(function (t) { var d = pd(t); h += '<span style="left:' + pct(d) + '%">' + d.getDate() + " " + MON[d.getMonth()] + "</span>"; });
     h += "</div></div>";
     var xmas = new Date(from.getFullYear(), 11, 25);
     g.rows.forEach(function (r) {
-      h += '<div class="g-row' + (r.all ? " all" : "") + '"><div class="g-name">' + esc(r.name) + (r.sub ? "<small>" + esc(r.sub) + "</small>" : "") + '</div><div class="g-track">';
+      h += '<div class="g-row' + (r.all ? " all" : "") + '"><div class="g-name">' + esc(r.name) + (r.sub ? "<small>" + esc(r.sub) + "</small>" : "") + '</div><div class="g-track">' + grid;
       r.segs.forEach(function (s) {
         var a = pd(s[0]), b = pd(s[1]); if (b < from || a > to) return;
         var w = Math.max(0.8, pct(new Date(+b + DAY)) - pct(a));
@@ -433,6 +437,20 @@
       (ctx.canes.games || []).forEach(function (g) { ev.push({ date: g.date, cat: "hockey", t: "CAR " + g.res + " " + g.gf + "–" + g.ga + (g.home ? " vs " : " at ") + g.opp, sub: "Final", src: "canes" }); });
       (ctx.canes.upcoming || []).forEach(function (g) { var d = g.utc ? cetDate(g.utc) : g.date, hr = g.utc ? cetHour(g.utc) : -1; ev.push({ date: d, cat: "hockey", t: "Canes " + (g.home ? "vs " : "at ") + g.opp, sub: g.utc ? "Puck drop " + cet(g.utc) + " CET" : "", src: "canes", live: hr >= 7 && hr <= 22 }); });
     }
+    if (ctx.teams) {
+      var TS = ctx.teams.saints, TC = ctx.teams.cardinals;
+      if (TS) {
+        (TS.games || []).forEach(function (g) { ev.push({ date: g.date, cat: "nfl", t: "Saints " + g.res + " " + g.pf + "–" + g.pa + (g.home ? " vs " : " at ") + g.opp, sub: "Final", src: "teams" }); });
+        (TS.upcoming || []).forEach(function (g) { var d = g.utc ? cetDate(g.utc) : g.date, hr = g.utc ? cetHour(g.utc) : -1; ev.push({ date: d, cat: "nfl", t: "Saints " + (g.home ? "vs " : "at ") + g.opp, sub: g.utc ? "Kick-off " + cet(g.utc) + " CET" : "", src: "teams", live: hr >= 7 && hr <= 22 }); });
+      }
+      if (TC) {
+        if (TC.springTraining && TC.springTraining.date) ev.push({ date: TC.springTraining.date, cat: "nfl", t: "Cardinals spring training opens", sub: TC.springTraining.note || "", src: "teams" });
+        if (TC.opener && TC.opener.date) ev.push({ date: TC.opener.date, cat: "nfl", t: "Cardinals Opening Day" + (TC.opener.home ? " vs " : " at ") + TC.opener.opp, sub: TC.opener.utc ? "First pitch " + cet(TC.opener.utc) + " CET" : TC.opener.note || "", src: "teams", prio: true });
+        (TC.games || []).forEach(function (g) { ev.push({ date: g.date, cat: "nfl", t: "Cardinals " + g.res + " " + g.pf + "–" + g.pa + (g.home ? " vs " : " at ") + g.opp, sub: "Final", src: "teams" }); });
+        (TC.upcoming || []).forEach(function (g) { var d = g.utc ? cetDate(g.utc) : g.date, hr = g.utc ? cetHour(g.utc) : -1; ev.push({ date: d, cat: "nfl", t: "Cardinals " + (g.home ? "vs " : "at ") + g.opp, sub: g.utc ? "First pitch " + cet(g.utc) + " CET" : "", src: "teams", live: hr >= 7 && hr <= 22 }); });
+      }
+    }
+    ((ctx.tv && ctx.tv.shows) || []).forEach(function (x) { if (x.next && x.next.date) ev.push({ date: x.next.date, cat: "tv", t: x.title + " " + epCode(x.next), sub: [x.next.name, x.next.time, x.where].filter(Boolean).join(" · "), src: "tv" }); });
     (ctx.horizon || []).forEach(function (e) { if (e.date) ev.push({ date: e.date, cat: "watch", t: e.t, sub: (e.dateText || "") + (e.n ? " · " + plain(e.n) : ""), src: "horizon" }); });
     var cal = ctx.calendar;
     if (cal) {
@@ -466,21 +484,28 @@
       h += "</div>";
     }
     h += "</div>";
-    var ym = key(from).slice(0, 7), rows = ev.filter(function (e) { return e.date.slice(0, 7) === ym && filter(e.cat); }), lastW = null, body = "";
-    rows.forEach(function (e) {
-      var dd = pd(e.date), wk = key(new Date(dd.getFullYear(), dd.getMonth(), dd.getDate() - ((dd.getDay() + 6) % 7)));
-      if (wk !== lastW) { lastW = wk; var we = addDays(wk, 6); body += '<tr class="wk"><td colspan="2">Week of ' + esc(fmtShort(wk)) + " – " + esc(fmtShort(we)) + "</td></tr>"; }
-      body += '<tr class="' + (e.date === TD ? "soon" : e.date < TD ? "past" : "") + '"><td class="d"><span class="dot" style="background:' + catColor(e.cat) + '"></span>' + DOW[dd.getDay()] + " " + dd.getDate() + "</td><td><b>" + esc(e.t) + "</b>" + (e.sub ? '<div class="small">' + esc(e.sub) + "</div>" : "") + "</td></tr>";
-    });
-    h += '<div class="agenda">' + (rows.length ? table(["Date", "What"], body) : quiet("Nothing in this category this month.")) + "</div>";
-    return h;
+    var ym = key(from).slice(0, 7), curM = ym === TD.slice(0, 7), rows = ev.filter(function (e) { return e.date.slice(0, 7) === ym && filter(e.cat) && (!curM || e.date >= TD); });
+    function agendaBody(list) {
+      var lastW = null, body = "";
+      list.forEach(function (e) {
+        var dd = pd(e.date), wk = key(new Date(dd.getFullYear(), dd.getMonth(), dd.getDate() - ((dd.getDay() + 6) % 7)));
+        if (wk !== lastW) { lastW = wk; var we = addDays(wk, 6); body += '<tr class="wk"><td colspan="2">Week of ' + esc(fmtShort(wk)) + " – " + esc(fmtShort(we)) + "</td></tr>"; }
+        body += '<tr class="' + (e.date === TD ? "soon" : e.date < TD ? "past" : "") + '"><td class="d"><span class="dot" style="background:' + catColor(e.cat) + '"></span>' + DOW[dd.getDay()] + " " + dd.getDate() + "</td><td><b>" + esc(e.t) + "</b>" + (e.sub ? '<div class="small">' + esc(e.sub) + "</div>" : "") + "</td></tr>";
+      });
+      return table(["Date", "What"], body);
+    }
+    var cut = addDays(TD, 14), near = curM ? rows.filter(function (e) { return e.date <= cut; }) : rows, later = curM ? rows.filter(function (e) { return e.date > cut; }) : [];
+    h += '<div class="agenda">' + (near.length ? agendaBody(near) : later.length ? "" : quiet(curM ? "Nothing more in this category this month." : "Nothing in this category this month."));
+    if (later.length) h += '<details class="more"><summary>' + later.length + " more from " + esc(fmtShort(addDays(cut, 1))) + " to " + esc(fmtShort(key(to))) + "</summary>" + agendaBody(later) + "</details>";
+    return h + "</div>";
   }
   /* This week: only what Nick has to do or will plan around (holidays, AFNORTH days, bins, deadlines, career dates,
      major festivals marked prio, Christmas markets opening, exercise start and end, Canes games watchable live in CET) */
   function weekPrio(e) {
     if (e.src === "bins" || e.src === "deadlines" || e.src === "career" || e.src === "exercises" || e.src === "week") return true;
     if (e.src === "calendar") return e.cat !== "school" || e.sys === "afnorth";
-    if (e.src === "canes") return !!e.live;
+    if (e.src === "canes" || e.src === "teams") return !!e.live || !!e.prio;
+    if (e.src === "tv") return true;
     if (e.src === "events" || e.src === "edition") return !!e.prio;
     return false;
   }
@@ -550,6 +575,60 @@
     wk.forEach(function (r, i) { svg += svgText(X(i), Y(+r[1]) - 5, r[1] + "°", "middle", 10, true, "var(--ink)") + svgText(X(i), Y(+r[2]) + 12, r[2] + "°", "middle", 10, true); });
     return svg + "</svg>";
   }
+  function nextGameLine(up, TD) {
+    var g = null; (up || []).forEach(function (x) { var dk = x.utc ? cetDate(x.utc) : x.date; if (!g && dk >= TD) g = x; });
+    if (!g) return "";
+    var dk = g.utc ? cetDate(g.utc) : g.date, tm = g.utc ? cet(g.utc).replace(/^\w+,? /, "") : "", n = daysBetween(TD, dk);
+    return '<p class="nextg">Next game <b>' + (n === 0 ? "tonight" : n === 1 ? "tomorrow" : DOW[pd(dk).getDay()] + " " + fmtShort(dk)) + "</b>" + (tm ? " " + esc(tm) + " CET" : "") + (g.home ? " vs " : " at ") + esc(g.opp) + "</p>";
+  }
+  function teamsBlock(TM, TD) {
+    if (!TM) return "";
+    var h = '<h3>Also following</h3><div class="teams">', S = TM.saints, C = TM.cardinals;
+    if (S) {
+      var g = (S.games || []).slice(), lg = g[g.length - 1];
+      h += '<div class="tile team"><div class="lbl">' + esc(S.name) + " · NFL " + esc(S.season) + '</div><div class="val">' + esc(S.record || "") + "</div>";
+      if (g.length) h += '<div class="season mini" role="list">' + g.slice(-8).map(function (x) { return '<div class="g ' + x.res + '" role="listitem" title="' + esc(fmtShort(x.date) + (x.home ? " vs " : " at ") + x.opp + ": " + x.res + " " + x.pf + "–" + x.pa) + '"><b>' + x.res + "</b>" + (x.home ? "" : "@") + esc(x.opp) + "</div>"; }).join("") + "</div>";
+      if (lg) h += '<p class="small">Last: ' + esc(lg.res + " " + lg.pf + "–" + lg.pa + (lg.home ? " vs " : " at ") + lg.opp + ", " + fmtShort(lg.date)) + (S.standing ? " · " + esc(S.standing) : "") + "</p>";
+      h += nextGameLine(S.upcoming, TD);
+      var nx = (S.upcoming || []).filter(function (x) { return (x.utc ? cetDate(x.utc) : x.date) >= TD; })[0];
+      if (nx) h += '<p class="small">' + icsLink("Saints " + (nx.home ? "vs " : "at ") + nx.opp, nx.utc ? cetDate(nx.utc) : nx.date, null, "New Orleans Saints", nx.utc) + "</p>";
+      h += "</div>";
+    }
+    if (C) {
+      var op = C.opener, st = C.springTraining, nxc = (C.upcoming || []).filter(function (x) { return (x.utc ? cetDate(x.utc) : x.date) >= TD; })[0];
+      h += '<div class="tile team"><div class="lbl">' + esc(C.name) + " · MLB " + esc(C.season) + '</div><div class="val">' + esc(C.record || (C.status === "off-season" ? "Off-season" : C.status || "")) + "</div>";
+      if (C.last) h += '<p class="small">' + esc(C.last) + "</p>";
+      if (nxc) h += nextGameLine(C.upcoming, TD);
+      else {
+        if (st && st.date >= TD) h += '<p class="small">Spring training opens <b>' + esc(fmtShort(st.date)) + "</b>" + (st.home ? " vs " : " at ") + esc(st.opp) + " · " + daysBetween(TD, st.date) + " days</p>";
+        if (op && op.date >= TD) h += '<p class="nextg">Opening Day <b>' + esc(DOW[pd(op.date).getDay()] + " " + fmtShort(op.date)) + "</b>" + (op.utc ? " " + esc(cet(op.utc).replace(/^\w+,? /, "")) + " CET" : "") + (op.home ? " vs " : " at ") + esc(op.opp) + " · " + daysBetween(TD, op.date) + " days</p>" + '<p class="small">' + icsLink("Cardinals Opening Day " + (op.home ? "vs " : "at ") + op.opp, op.date, null, op.note || "", op.utc) + "</p>";
+      }
+      h += "</div>";
+    }
+    return h + "</div>";
+  }
+  var TVST = { airing: "Airing", scheduled: "Date set", renewed: "Renewed", between: "Between series", awaiting: "Awaiting renewal", ended: "Ended" };
+  function epCode(x) { return x ? "S" + x.s + "E" + x.e : ""; }
+  function tvBlock(ctx, TD) {
+    var TV = ctx.tv; if (!TV || !(TV.shows || []).length) return quiet("No shows tracked. Add them to data/tv.json.");
+    var shows = TV.shows.slice().sort(function (a, b) { var ad = a.next && a.next.date ? a.next.date : "9", bd = b.next && b.next.date ? b.next.date : "9"; return ad < bd ? -1 : ad > bd ? 1 : 0; });
+    var h = '<div class="shows">' + shows.map(function (x) {
+      var n = x.next, l = x.last, nd = n && n.date ? daysBetween(TD, n.date) : null, past = n && n.date && n.date < TD;
+      var c = '<div class="show"><div class="sh"><b>' + esc(x.title) + '</b><span class="chip st tier' + (x.status === "airing" || x.status === "scheduled" ? " on" : "") + '">' + esc(TVST[x.status] || x.status || "") + "</span></div>";
+      c += '<div class="small">' + esc(x.where || "") + "</div>";
+      if (n && n.date && !past) c += '<p class="nextg">' + (nd === 0 ? "Tonight" : nd === 1 ? "Tomorrow" : "In " + nd + " days") + " · <b>" + esc(DOW[pd(n.date).getDay()] + " " + fmtShort(n.date)) + "</b> · " + esc(epCode(n) + (n.name ? " " + n.name : "")) + (n.time ? " · " + esc(n.time) : "") + " " + icsLink(x.title + " " + epCode(n), n.date, null, n.name || "") + "</p>";
+      else c += '<p class="nextg muted">No date for the next episode</p>';
+      if (l && l.date) c += '<p class="small">Last: ' + esc(epCode(l) + (l.name ? " " + l.name : "") + ", " + fmtShort(l.date) + (l.date.slice(0, 4) !== TD.slice(0, 4) ? " " + l.date.slice(0, 4) : "")) + "</p>";
+      if (x.note) c += '<p class="small note">' + esc(x.note) + (x.src && x.src.length ? ' <a href="' + esc(x.src[0][1]) + '" target="_blank" rel="noopener" class="srcl">source</a>' : "") + "</p>";
+      return c + "</div>";
+    }).join("") + "</div>";
+    if ((TV.similar || []).length) {
+      var byId = {}; TV.shows.forEach(function (x) { byId[x.id] = x.title; });
+      h += '<h3>If you like these</h3><ul class="clean rec">' + TV.similar.map(function (r) { return "<li><b>" + esc(r.title) + "</b>" + (r.where ? ' <span class="small">' + esc(r.where) + "</span>" : "") + (r.like && r.like.length ? ' <span class="small like">· like ' + esc(r.like.map(function (k) { return byId[k] || k; }).join(" and ")) + "</span>" : "") + (r.why ? '<div class="small">' + esc(r.why) + "</div>" : "") + "</li>"; }).join("") + "</ul>";
+    }
+    if (TV.updated) h += '<p class="small">Episode data from TVMaze, refreshed ' + esc(fmtShort(TV.updated)) + ". Dates are the broadcaster's local air date.</p>";
+    return h;
+  }
   function dayHours(lat, k) { var d = pd(k), doy = Math.round((d - new Date(d.getFullYear(), 0, 1)) / DAY) + 1, decl = 23.44 * Math.PI / 180 * Math.sin(2 * Math.PI * (284 + doy) / 365), x = Math.max(-1, Math.min(1, -Math.tan(lat * Math.PI / 180) * Math.tan(decl))); return 24 / Math.PI * Math.acos(x); }
   function hm(hrs) { var a = Math.abs(hrs), hh = Math.floor(a), mm = Math.round((a - hh) * 60); if (mm === 60) { hh++; mm = 0; } return hh + " h " + String(mm).padStart(2, "0") + " min"; }
   function weatherBlock(E, TD) {
@@ -567,6 +646,8 @@
     function tile(lbl, e, alt) { if (!e) return; var n = daysBetween(TD, e.date); tiles.push('<div class="tile cd"><div class="lbl">' + esc(lbl) + '</div><div class="val">' + (n === 0 ? "Today" : n === 1 ? "Tomorrow" : n + " days") + "</div><p>" + esc((alt || e.t) + " · " + fmt(pd(e.date))) + "</p></div>"); }
     tile("Next bin day", next(function (e) { return e.cat === "home" && e.src === "bins"; }), null);
     var g = next(function (e) { return e.cat === "hockey" && e.src === "canes" && e.t.indexOf("Canes") === 0; }); if (g) tile("Next Canes game", g, g.t + (g.sub ? " · " + g.sub.replace("Puck drop ", "") : ""));
+    var sg = next(function (e) { return e.cat === "nfl" && /^Saints (vs|at)/.test(e.t); }); if (sg) tile("Next Saints game", sg, sg.t + (sg.sub ? " · " + sg.sub.replace("Kick-off ", "") : ""));
+    var te = next(function (e) { return e.cat === "tv"; }); if (te) tile("Next episode", te, te.t);
     tile("Next AFNORTH day off", next(function (e) { return e.cat === "school" && e.sys === "afnorth" && e.end; }), null);
     tile("Next school break", next(function (e) { return e.cat === "school" && e.sys === "afnorth" && e.end && daysBetween(e.date, e.end) > 1; }), null);
     tile("Next central bank", next(function (e) { return e.cat === "watch" && /ECB|Fed\b|FOMC|Federal Reserve|rate decision/i.test(e.t); }), null);
@@ -590,7 +671,7 @@
   }
 
   /* ---------- health checks: when to remodel ---------- */
-  var PAGE_V = "6.0";
+  var PAGE_V = "6.1";
   function health(E, ctx, TD, words) {
     var rows = [], realToday = key(new Date());
     function add(name, level, detail) { rows.push([name, level, detail]); }
@@ -624,6 +705,8 @@
     var WS = ctx.worldSeries || { meta: {}, series: {} }, wsRows = Object.keys(WS.series || {}).map(function (k) { var sr = WS.series[k] || [], m = (WS.meta || {})[k] || {}, last = sr.length ? sr[sr.length - 1][0] : null, lim = m.cadence === "weekly" ? 10 : 3; return [k, last, last ? daysBetween(last, TD) > lim : true]; });
     var wsBad = wsRows.filter(function (r) { return r[2]; }).map(function (r) { return r[0] + (r[1] ? " (" + fmtShort(r[1]) + ")" : " (empty)"); });
     add("World series", wsBad.length >= wsRows.length ? "act" : wsBad.length ? "watch" : "ok", wsBad.length ? "not kept up: " + wsBad.join(", ") : wsRows.length + " series current");
+    if (ctx.teams) fresh("Saints and Cardinals", ctx.teams.updated, 5, 12, "last refresh");
+    if (ctx.tv) fresh("TV shows", ctx.tv.updated, 8, 21, "last refresh");
     if (ctx.canes) fresh("Canes results", ctx.canes.updated || lastDate(ctx.canes.games, function (g) { return g.date; }), 4, 8, "last game logged");
     var cgA = (ctx.congress || []).filter(function (c) { return !/^(enacted|confirmed|withdrawn|vetoed)$/.test(c.stage); }), cgStale = cgA.filter(function (c) { var d = c.dates || {}, last = [c.updated || "", c.added || ""].concat(Object.keys(d).map(function (k) { return d[k]; })).sort().pop(); return !last || daysBetween(last, TD) > 45; }).length, cgDl = cgA.filter(function (c) { return c.deadline && daysBetween(TD, c.deadline) >= 0 && daysBetween(TD, c.deadline) <= 14; }).length;
     var cwUnk = (ctx.congressWatch || []).filter(function (w) { return !w.holder; }).length;
@@ -702,18 +785,8 @@
   }
   function contentsBlock() {
     var tiers = [["news", "The news", TIERS.news], ["watch", "The watch", TIERS.watch], ["reading", "The reading", TIERS.reading], ["home", "Home and planning", TIERS.home]];
-    var SN = { world: "World", hybrid: "Hybrid", europe: "Europe", euregio: "Euregio", army: "Defence & Army", nato: "NATO & allies", deftech: "Defence tech", frontier: "Frontier", markets: "Markets", rates: "Rates", nl: "Netherlands", board: "The board", numbers: "Numbers", fx: "USD/EUR", threads: "Threads", horizon: "Horizon", "congress-sec": "Congress", "exercises-sec": "Exercises", releases: "Releases", sota: "State of the art", production: "Production", feature: "World feature", research: "Research", depth: "Army in depth", ttpsec: "Week in war", aperture: "Aperture", afnorth: "AFNORTH", offduty: "Out and about", dutch: "Taal", snow: "Snow", hockey: "Canes", week: "This week", weather: "Weather", countdown: "Countdowns", decisions: "Decisions due", calendar: "Calendar", year: "Year ahead", school: "School year", season: "Season" };
+    var SN = { world: "World", hybrid: "Hybrid", europe: "Europe", euregio: "Euregio", army: "Defence & Army", nato: "NATO & allies", deftech: "Defence tech", frontier: "Frontier", markets: "Markets", rates: "Rates", nl: "Netherlands", board: "The board", numbers: "Numbers", fx: "USD/EUR", threads: "Threads", horizon: "Horizon", "congress-sec": "Congress", "exercises-sec": "Exercises", releases: "Releases", sota: "State of the art", production: "Production", feature: "World feature", research: "Research", depth: "Army in depth", ttpsec: "Week in war", aperture: "Aperture", afnorth: "AFNORTH", offduty: "Out and about", dutch: "Taal", snow: "Snow", hockey: "Canes", week: "This week", weather: "Weather", countdown: "Countdowns", tv: "TV", calendar: "Calendar", year: "Year ahead", school: "School year", season: "Season" };
     return '<h3>In this edition</h3><ol class="toc">' + tiers.map(function (t, i) { return '<li data-tier="' + t[0] + '" class="' + t[0] + '"><a href="#p-' + t[0] + '"><b>' + (i + 1) + " · " + esc(t[1]) + '</b></a><span class="tm"></span><span class="secs">' + t[2].map(function (id) { return '<a href="#' + id + '">' + esc(SN[id] || id) + "</a>"; }).join(" · ") + "</span></li>"; }).join("") + "</ol>";
-  }
-  function decisionsDue(PEV, ctx, E, TD) {
-    var rows = [];
-    ((ctx.deadlines || {}).items || []).forEach(function (d) { rows.push({ date: d.date, t: d.name, sub: d.note || "", why: "your deadline" }); });
-    (ctx.events || []).forEach(function (e) { if (e.to >= TD && /book|ticket|register|reserve|sold out|time slot|sign up|reserv/i.test(e.cost || "")) rows.push({ date: e.from, end: e.to, t: e.t, sub: [e.town, e.cost].filter(Boolean).join(" · "), why: "booking" }); });
-    (((E.army || {}).career || {}).dates || []).forEach(function (d) { rows.push({ date: d[0], t: plain(d[1]), sub: "career milestone", why: "career" }); });
-    (ctx.congress || []).forEach(function (c) { if (c.deadline && c.deadline >= TD) rows.push({ date: c.deadline, t: (c.title || c.post) + " deadline", sub: plain(c.next || ""), why: "Congress" }); });
-    ((ctx.week && ctx.week.items) || []).forEach(function (w) { if (w.act) rows.push({ date: w.date, end: w.end, t: w.t, sub: w.note || "", why: "yours" }); });
-    rows = rows.filter(function (r) { return r.date >= TD && daysBetween(TD, r.date) <= 60; }).sort(function (a, b) { return a.date < b.date ? -1 : a.date > b.date ? 1 : 0; });
-    return rows.length ? table(["In", "What"], rows.map(function (r) { var n = daysBetween(TD, r.date); return '<tr class="' + (n <= 7 ? "soon" : "") + '"><td class="d">' + (n === 0 ? "today" : n + " d") + '<div class="small">' + esc(fmtShort(r.date)) + "</div></td><td><b>" + esc(r.t) + '</b> <span class="chip st quiet">' + esc(r.why) + "</span> " + icsLink(r.t, r.date, r.end, r.sub) + (r.sub ? '<div class="small">' + esc(r.sub) + "</div>" : "") + "</td></tr>"; }).join(""), "lbl1") : quiet("Nothing needs a decision in the next 60 days. Deadlines, bookings, career dates, Congress deadlines and your own week.json entries marked act appear here.");
   }
   function yearAhead(ctx, E, TD, today) {
     var from = TD, to = addDays(TD, 365), rows = [], cal = ctx.calendar || {};
@@ -743,7 +816,7 @@
     var tiles = [["Board entries", cnt([].concat.apply([], (ctx.conflicts || []).map(function (t) { return t.log || []; })), function (e) { return e.date > from && e.date <= TD; })], ["Thread entries", cnt([].concat.apply([], (ctx.threads || []).map(function (t) { return t.log || []; })), function (e) { return e.date > from && e.date <= TD; })], ["Congress moves", cnt(ctx.congress, function (c) { return (c.updated || c.added) > from; })], ["Releases", cnt((ctx.releases || {}).releases, function (r) { return r.date > from && r.date <= TD; })], ["Incidents", cnt(ctx.incidents, function (i) { return i.date > from && i.date <= TD; })], ["Idioms learned", cnt(ctx.idioms, function (i) { return i.date > from && i.date <= TD; })]];
     var h = '<section id="weekreview" class="home"><h2>The week <span class="num">' + esc(fmtShort(addDays(TD, -6)) + " – " + fmtShort(TD)) + "</span></h2>";
     h += '<div class="strip cds">' + tiles.map(function (t) { return '<div class="tile cd"><div class="lbl">' + esc(t[0]) + '</div><div class="val">' + t[1] + "</div><p>last 7 days</p></div>"; }).join("") + "</div>";
-    if (WR) { h += '<h3>' + esc(WR.title || "The week ahead") + "</h3>" + (WR.body || []).map(function (p) { return "<p>" + rich(p) + "</p>"; }).join(""); if (WR.rows && WR.rows.length) h += table(["Date", "Scheduled"], WR.rows.map(function (r) { return '<tr><td class="d">' + esc(fmtShort(r[0])) + "</td><td>" + rich(r[1]) + " " + icsLink(plain(r[1]), r[0]) + "</td></tr>"; }).join(""), "lbl1"); }
+    if (WR) { h += '<h3>' + esc(WR.title || "The week ahead") + "</h3>" + (WR.body || []).map(function (p) { return "<p>" + rich(p) + "</p>"; }).join(""); var wrows = (WR.rows || []).filter(function (r) { return !r[0] || r[0] >= TD; }); if (wrows.length) h += table(["Date", "Scheduled"], wrows.map(function (r) { return '<tr><td class="d">' + esc(fmtShort(r[0])) + "</td><td>" + rich(r[1]) + " " + icsLink(plain(r[1]), r[0]) + "</td></tr>"; }).join(""), "lbl1"); }
     return h + "</section>";
   }
   function correctionsBlock(ctx, E, TD) {
@@ -791,8 +864,9 @@
     /* today strip */
     h += '<div class="strip" id="front" data-part="Front">';
     if (T.weather) { var w = T.weather, w0 = (w.week || []).filter(function (r) { return r[0] === TD; })[0] || (w.week || [])[0], w1 = (w.week || []).filter(function (r) { return r[0] === addDays(TD, 1); })[0]; h += '<div class="tile wxt"><div class="lbl">Weather · ' + esc(E.town || "Hoensbroek") + '</div><div class="wxtop">' + wxIcon(wxKind(w0, w.now), 36) + '<div class="val">' + esc(w.hi) + "° / " + esc(w.lo) + "°</div></div>" + (w0 ? '<div class="wxmeta">' + rainGlyph(w0[3]) + " " + windGlyph(w0[4]) + "</div>" : "") + "<p>" + esc(w.now) + ". " + (w1 ? '<span class="wxtm">' + wxIcon(wxKind(w1, w.tomorrow), 16) + "</span>" : "") + esc(w.tomorrow) + ". Sun " + esc(w.sunrise) + "–" + esc(w.sunset) + "." + cite(w.src) + "</p></div>"; }
-    if (T.canes) h += '<div class="tile hockey"><div class="lbl">Hurricanes</div><div class="val">' + esc(T.canes.line) + "</div><p>" + esc(T.canes.sub) + cite(T.canes.src) + "</p></div>";
-    else if (CV) { var lg = CV.games[CV.games.length - 1]; h += '<div class="tile hockey"><div class="lbl">Hurricanes</div><div class="val">' + esc(lg.res + " " + lg.gf + "–" + lg.ga + (lg.home ? " vs " : " at ") + lg.opp) + "</div><p>" + esc(CV.record + " · " + CV.points + " pts") + "</p></div>"; }
+    var nxg = CV ? nextGameLine(CV.upcoming, TD) : "";
+    if (T.canes) h += '<div class="tile hockey"><div class="lbl">Hurricanes</div><div class="val">' + esc(T.canes.line) + "</div><p>" + esc(T.canes.sub) + cite(T.canes.src) + "</p>" + nxg + "</div>";
+    else if (CV) { var lg = CV.games[CV.games.length - 1]; h += '<div class="tile hockey"><div class="lbl">Hurricanes</div><div class="val">' + esc(lg.res + " " + lg.gf + "–" + lg.ga + (lg.home ? " vs " : " at ") + lg.opp) + "</div><p>" + esc(CV.record + " · " + CV.points + " pts") + "</p>" + nxg + "</div>"; }
     if (T.markets) h += '<div class="tile"><div class="lbl">Markets</div><div class="mini-mk">' + T.markets.map(function (m) { var g = fxGuard(m[0], m[1], null, m[2]); return "<span>" + esc(g.label) + '</span><span class="chg ' + esc(g.dir) + '">' + esc(g.value) + "</span>"; }).join("") + "</div></div>";
     if (FX) h += '<div class="tile money"><div class="lbl">USD/EUR · ECB</div><div class="val">' + FX.last[1].toFixed(4) + '</div><p><span class="chg ' + dir(FX.d1) + '">' + signed(FX.d1, 4) + " (" + signed(FX.d1 / FX.prev[1] * 100, 2, "%") + ")</span> vs " + esc(fmtShort(FX.prev[0])) + "</p></div>";
     h += '<div class="tile" id="bins"><div class="lbl">Bin day</div><div class="val">…</div><p></p></div>';
@@ -1197,6 +1271,7 @@
       h += "</div>";
     }
     if (CV && CV.games.length > 1) h += '<div class="panel" style="margin-top:12px"><div class="lbl">Season so far · points by game, goals for and against</div><div class="chart" id="hkchart" style="min-height:170px"></div></div>';
+    h += teamsBlock(ctx.teams, TD);
     h += '<h3>Scores <span class="small">' + esc(HK.scoresDate || "") + "</span></h3>";
     if (HK.scores && HK.scores.length) {
       h += '<div class="scores">' + HK.scores.map(function (g) {
@@ -1211,10 +1286,10 @@
     h += '<section id="week" class="home"><h2>This week <span class="num">holidays, school, bins, deadlines, major events</span></h2>' + weekStrip(PEV, E, TD) + "</section>";
     h += '<section id="weather" class="home"><h2>Weather and daylight <span class="num">' + esc(HOME.name) + " · 7 days</span></h2>" + weatherBlock(E, TD) + "</section>";
     h += '<section id="countdown" class="home"><h2>Countdowns</h2>' + countdowns(PEV, ctx, TD) + "</section>";
-    h += '<section id="decisions" class="home"><h2>Decisions due <span class="num">next 60 days · needs an action from you</span></h2>' + decisionsDue(PEV, ctx, E, TD) + "</section>";
+    h += '<section id="tv" class="home"><h2>TV <span class="num">what you follow, what comes next</span></h2>' + tvBlock(ctx, TD) + "</section>";
     h += '<section id="calendar" class="home"><h2>Calendar</h2>';
     if (P.otd) h += '<div class="ap-c" style="margin-bottom:14px"><div class="lbl">' + esc(P.otd.title) + '</div><p style="margin:0">' + rich(P.otd.body) + "</p></div>";
-    var FILT = [["all","All"],["me","Yours"],["nl","NL"],["be","BE"],["de","DE"],["us","US"],["ev","Events"],["out","Out and about"],["hockey","Hockey"],["homed","Home"],["school","School"],["watch","Horizon"],["ex","Exercises"]];
+    var FILT = [["all","All"],["me","Yours"],["nl","NL"],["be","BE"],["de","DE"],["us","US"],["ev","Events"],["out","Out and about"],["teams","Teams"],["tv","TV"],["homed","Home"],["school","School"],["watch","Horizon"],["ex","Exercises"]];
     h += '<div class="cal-nav"><button type="button" id="calprev" aria-label="Previous month">‹</button><span class="cal-title" id="caltitle"></span><button type="button" id="calnext" aria-label="Next month">›</button><button type="button" id="caltoday">This month</button></div>';
     h += '<div class="filt" id="calfilt" role="group" aria-label="Filter the calendar">' + FILT.map(function (f) { return '<button type="button" data-f="' + f[0] + '" aria-pressed="' + (f[0] === "all") + '">' + f[1] + "</button>"; }).join("") + "</div>";
     h += '<div class="legend">' + Object.keys(CAT).map(function (k) { return '<span><i style="background:' + catColor(k) + '"></i>' + esc(CAT[k][0]) + "</span>"; }).join("") + "</div>";
@@ -1380,7 +1455,7 @@
 
     /* calendar: month navigation and filter chips */
     var calState = { y: today.getFullYear(), m: today.getMonth(), f: "all" }, calBody = document.getElementById("calbody"), calTitle = document.getElementById("caltitle");
-    function calFilter(cat) { var f = calState.f; return f === "all" || (f === "ev" ? (cat === "mkt" || cat === "pro") : f === "homed" ? (cat === "home" || cat === "deadline") : cat === f); }
+    function calFilter(cat) { var f = calState.f; return f === "all" || (f === "ev" ? (cat === "mkt" || cat === "pro") : f === "homed" ? (cat === "home" || cat === "deadline") : f === "teams" ? (cat === "hockey" || cat === "nfl") : cat === f); }
     function drawCal() { calBody.innerHTML = calMonth(ctx._pev, calState.y, calState.m, TD, calFilter); calTitle.textContent = MON[calState.m] + " " + calState.y; fades(); }
     document.getElementById("calprev").addEventListener("click", function () { calState.m--; if (calState.m < 0) { calState.m = 11; calState.y--; } drawCal(); });
     document.getElementById("calnext").addEventListener("click", function () { calState.m++; if (calState.m > 11) { calState.m = 0; calState.y++; } drawCal(); });
@@ -1480,9 +1555,9 @@
     opt("data/incidents.json"), opt("data/bins.json"), opt("data/threads.json"), opt("data/horizon.json"),
     opt("data/fx.json"), opt("data/series.json"), opt("data/canes.json"),
     opt("data/conflicts.json"), opt("data/world-series.json"), opt("data/calendar.json"), opt("data/deadlines.json"),
-    opt("data/congress.json"), opt("data/exercises.json"), opt("data/releases.json"), opt("data/events.json"), opt("data/idioms.json"), opt("data/ski.json"), opt("data/search-index.json"), opt("data/land.json"), opt("data/week.json"), opt("data/corrections.json"), opt("data/research.json")
+    opt("data/congress.json"), opt("data/exercises.json"), opt("data/releases.json"), opt("data/events.json"), opt("data/idioms.json"), opt("data/ski.json"), opt("data/search-index.json"), opt("data/land.json"), opt("data/week.json"), opt("data/corrections.json"), opt("data/research.json"), opt("data/teams.json"), opt("data/tv.json")
   ]).then(function (r) {
-    ctx.week = r[20]; ctx.corrections = r[21]; ctx.research = r[22];
+    ctx.week = r[20]; ctx.corrections = r[21]; ctx.research = r[22]; ctx.teams = r[23]; ctx.tv = r[24];
     ctx.fetchedAt = Date.now();
     ctx.congress = r[12] && r[12].items; ctx.congressWatch = r[12] && r[12].watch; ctx.congressTiers = r[12] && r[12].tiers; ctx.exercises = r[13] && r[13].exercises; ctx.releases = r[14]; ctx.events = r[15] && r[15].events; ctx.idioms = r[16] && r[16].idioms; ctx.ski = r[17]; ctx.searchIndex = r[18]; ctx.land = r[19] && r[19].rings;
     ctx.index = r[0]; ctx.incidents = r[1] && r[1].incidents; ctx.attrLog = r[1] && r[1].attrLog; ctx.bins = r[2];

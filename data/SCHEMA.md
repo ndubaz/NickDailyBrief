@@ -23,6 +23,8 @@ The site is static. `index.html` + `app.js` + `styles.css` never change day to d
 | `data/idioms.json` | Append today's idiom (rotate `nl`, `fr`, `it`); never repeat a phrase. |
 | `data/ski.json` | 1 Dec to 31 Mar only: refresh `snow` daily from Open-Meteo for every resort; resorts stay as they are. Outside the season, leave the file alone. |
 | `data/search-index.json` | Append today's headline block (same fields as the page's search). |
+| `data/teams.json` | Secondary teams (6.1). Saints: append each completed game to `games` as `{date, opp, home, pf, pa, res, week}`, refresh `upcoming` (`{date, opp, home, utc, week}`) and `record` from `https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/no/schedule` (record also at `.../teams/no`). Cardinals: off-season until spring training; then the same shape from `https://statsapi.mlb.com/api/v1/schedule?sportId=1&teamId=138&season=<year>` and `record` from the standings endpoint. Set `updated`. |
+| `data/tv.json` | Followed shows (6.1). For each show refresh `last` and `next` from `https://api.tvmaze.com/shows/<tvmaze>?embed[]=previousepisode&embed[]=nextepisode` (season, number, airdate, name); update `status` (airing, scheduled, renewed, between, awaiting, ended) and `note` when a renewal, premiere date or final is reported, with the source. Set `updated`. Leave `similar` unless Nick asks. |
 | `data/research.json` | Append today's piece to `covered` (`{date, org, title, authors, url}`); take it from `queue` when it was queued; add to `queue` the publications picked for coming days. Never delete from `covered`. |
 | `data/corrections.json` | Append an entry when an earlier item was wrong: `{date, edition, section, t, src}`. Never edit or delete. |
 | `data/calendar.json` | Only when a school year or holiday list is newly published: add the missing segments. Otherwise leave alone. |
@@ -139,7 +141,7 @@ The World feature rota: Monday "Theatre in numbers" (table), Tuesday "Actor on t
 
 ### Changes from v5.0
 
-- The page is organised in five tiers (Today, The news, The watch, The reading, Home and planning); every edition object stays where it was, so no field moved. Jump ids added: `research`, `congress-sec`, `exercises-sec`, `production`, `depth`, `ttpsec`, `since`, `decisions`, `year`, `weekreview`.
+- The page is organised in five tiers (Today, The news, The watch, The reading, Home and planning); every edition object stays where it was, so no field moved. Jump ids added: `research`, `congress-sec`, `exercises-sec`, `production`, `depth`, `ttpsec`, `since`, `year`, `weekreview`, `tv` (6.1). Decisions due was removed in 6.1.
 - `sources` rows gain the tier field; items gain optional `links`; `weekreview` added for Sundays.
 - `"v": "6.0"`.
 
@@ -224,9 +226,17 @@ Edited rarely. Add a school year when the ministry publishes it. The page merges
 
 `{ "rotation": [institutions], "queue": [{"org","title","authors","date","url","for","note"}], "covered": [{"date","org","title","authors","url"}] }`. The page shows the last ten covered and the open queue under the day's piece; health flags an institution repeated within 10 days.
 
+### `data/teams.json`
+
+`{ "updated", "saints": {"name","abbr","league","season","record","standing","src","games":[{"date","opp","home","pf","pa","res","week"}],"upcoming":[{"date","opp","home","utc","week"}]}, "cardinals": {"name","abbr","league","season","status","record","last","src","springTraining":{"date","opp","home","note"},"opener":{"date","opp","home","utc","note"},"games":[],"upcoming":[]} }`. Shown as "Also following" under the Hurricanes, on the calendar (category Saints & Cardinals), in the countdowns and, when a game is watchable between 07:00 and 22:00 CET, on the week board. `record` must match `games`.
+
+### `data/tv.json`
+
+`{ "updated", "shows": [{"id","tvmaze","title","where","status","last":{"s","e","date","name"},"next":{"s","e","date","name","time"}|null,"note","src":[[title,url]]}], "similar": [{"title","where","like":[ids],"why"}] }`. The TV section in the Planner sorts shows by next air date, puts the next episode on the week board, the calendar (category TV) and the countdowns, and lists `similar` under "If you like these".
+
 ### `data/week.json`
 
-`{ "items": [ {"date","end","t","note","act":bool} ] }`. Hand-maintained by Nick. Entries appear on the week board, the calendar (category Yours), the year-ahead board and, when `act` is true, in Decisions due. Names and dates only.
+`{ "items": [ {"date","end","t","note","act":bool} ] }`. Hand-maintained by Nick. Entries appear on the week board, the calendar (category Yours), the year-ahead board. `act` is kept for compatibility and no longer changes the page. Names and dates only.
 
 ### `data/corrections.json`
 
