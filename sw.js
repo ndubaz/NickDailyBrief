@@ -20,8 +20,10 @@ self.addEventListener("fetch", (e) => {
     // network first, fall back to the last cached copy when offline
     e.respondWith(
       fetch(e.request).then((res) => {
-        if (res.ok) { const copy = res.clone(); caches.open(isData ? DATA : SHELL).then((c) => c.put(e.request, copy)); }
-        return res;
+        if (res.ok) { const copy = res.clone(); caches.open(isData ? DATA : SHELL).then((c) => c.put(e.request, copy)); return res; }
+        // a server error during a deploy: prefer the last good copy, else pass the error through
+        if (res.status < 500) return res; // a 404 is an answer; only a server error falls back
+        return caches.match(e.request, { ignoreSearch: true }).then((hit) => hit || res);
       }).catch(() => caches.match(e.request, { ignoreSearch: true }))
     );
   }
