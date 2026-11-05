@@ -1,5 +1,20 @@
 {
  "note": "Corrections log. The morning run appends an entry when an earlier item was wrong: {date, edition, section, t (what was wrong and what is right), src}. Never edit or delete entries. The page shows the last 30 days in the footer.",
- "updated": "2026-11-04",
- "items": []
+ "updated": "2026-11-05",
+ "items": [
+  {
+   "date": "2026-11-05",
+   "edition": 3,
+   "section": "Money",
+   "t": "The Dutch TTF gas card gave Tuesday 3 Nov's settle as €92.07 (−2.94%); Yahoo Finance's final close for that day is €91.60 (−3.44%). series.json now holds €91.60.",
+   "src": [
+    [
+     88,
+     "Daily closes: S&P 500, Dow, Nasdaq Composite, Russell 2000, AEX, Stoxx 600, DAX, Brent, TTF, gold, VIX",
+     "Yahoo Finance",
+     "https://finance.yahoo.com/markets/"
+    ]
+   ]
+  }
+ ]
 }

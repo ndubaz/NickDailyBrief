@@ -1,0 +1,2346 @@
+{
+ "v": "6.0",
+ "date": "2026-11-05",
+ "weekday": "Thursday",
+ "edition": 4,
+ "lookback": "4–5 Nov",
+ "note": "Democrats' sweep moves oil and Washington; the fridge attacks reach French blood plasma; Belgium's government waits on the King.",
+ "today": {
+  "weather": {
+   "now": "3 °C and clear at 05:00, east-northeast wind 2, no warnings",
+   "hi": 11,
+   "lo": 3,
+   "tomorrow": "Fri sunny afternoon, 1–10 °C, south-east wind 2",
+   "sunrise": "07:35",
+   "sunset": "17:04",
+   "src": 1,
+   "week": [
+    [
+     "2026-11-05",
+     11,
+     3,
+     0,
+     "ENE 3"
+    ],
+    [
+     "2026-11-06",
+     10,
+     1,
+     5,
+     "SE 2"
+    ],
+    [
+     "2026-11-07",
+     10,
+     3,
+     5,
+     "WSW 2"
+    ],
+    [
+     "2026-11-08",
+     11,
+     6,
+     5,
+     "SSW 2"
+    ],
+    [
+     "2026-11-09",
+     10,
+     3,
+     15,
+     "E 2"
+    ],
+    [
+     "2026-11-10",
+     12,
+     4,
+     45,
+     "ESE 3"
+    ],
+    [
+     "2026-11-11",
+     13,
+     7,
+     80,
+     "ESE 3"
+    ]
+   ],
+   "weekNote": "Dry and sunny to Sunday, fog possible on Saturday morning, wetter from Tuesday. [1, 2]"
+  },
+  "markets": [
+   [
+    "S&P 500",
+    "+1.6% Wed",
+    "up"
+   ],
+   [
+    "Nasdaq",
+    "+1.4% Wed",
+    "up"
+   ],
+   [
+    "Brent",
+    "$94.62",
+    "down"
+   ],
+   [
+    "Dutch gas",
+    "€85.03",
+    "down"
+   ]
+  ],
+  "items": [
+   {
+    "k": "Today",
+    "t": "AFNORTH **12:30 release**, second day of parent conferences. [3]",
+    "cat": "us"
+   },
+   {
+    "k": "Today",
+    "t": "Bank of England at 13:00 CET, a first hike to 4% widely expected; the White House hosts Russian and Ukrainian representatives on Oleshky at 17:00 CET. [4, 5]",
+    "cat": "mkt"
+   },
+   {
+    "k": "Tonight",
+    "t": "A4 toward Köln: one lane between Eschweiler-West and Eschweiler-Ost, 19:00–05:00. Canes at the Islanders, Fri 01:00 CET. [6, 7]",
+    "cat": "de"
+   },
+   {
+    "k": "Fri",
+    "t": "Posture options due to Hegseth; Belgium's King sees De Wever at 10:30; US payrolls 14:30 CET; Sint Maarten parade in Brunssum's Langeberg. [8, 9, 10, 11]",
+    "cat": "pro"
+   }
+  ]
+ },
+ "five": [
+  {
+   "t": "**Trump asked advisers whether Hegseth should stay,** then called his work “a very good job”; the Europe posture options reach Hegseth tomorrow.",
+   "to": "dod",
+   "part": "pro"
+  },
+  {
+   "t": "**Oil fell 8.7% to $94.62 and the Dow rose 3.0%** as traders read the Democratic sweep as a push toward an Iran deal; Khamenei warned against any “inclination towards surrender”.",
+   "to": "markets",
+   "part": "money"
+  },
+  {
+   "t": "**The fridge attacks reached France's blood plasma stores;** a Scottish firm puts Russian involvement at “about 95 percent”, Romania's cyber chief rules out a state actor.",
+   "to": "lead-1",
+   "part": "sec"
+  },
+  {
+   "t": "**SACEUR warned Warsaw about Kaliningrad,** Tusk says; Poland moved police, counter-terror units and border guards to the north-east.",
+   "to": "lead-2",
+   "part": "sec"
+  },
+  {
+   "t": "**Belgium's government hangs on a royal meeting on Friday;** the King has held De Wever's resignation since Monday's budget collapse.",
+   "to": "europe",
+   "part": "sec"
+  }
+ ],
+ "pick": {
+  "t": "If you read one thing: the plasma-store lead. The cold-chain attacks have moved from groceries to blood, which puts them inside baseline requirement 5.",
+  "to": "lead-1"
+ },
+ "world": {
+  "items": [
+   {
+    "region": "Russia–Ukraine",
+    "h": "Brussels talks turn to post-war money; the Komyshuvakha toll reaches 40",
+    "conf": "high",
+    "badge": "UPDATED",
+    "body": "The European Commission hosted Ukraine, the United States, Germany, France, Britain, NATO and the World Bank on 4 Nov on “post-war economic development” scenarios. [12] Rustem Umerov said they worked on the Prosperity Plan and Ukraine's 2027 war funding: “We are not disclosing details yet. Substantive work on the document is underway.” [13] After a call with Steve Witkoff and Jared Kushner, President Zelensky said: “We are preparing for a trilateral format at the team level between Ukraine, the United States, and Russia.” [14] Zelensky put the toll of the 2 Nov bombing in Komyshuvakha at 40, with more than 30 people possibly still under rubble; Kyiv had its worst water outage of the war after the 3 Nov strikes on the power system. [15, 16]",
+    "next": "Talks on security guarantees continue in Brussels today; the White House event on Oleshky is at 11:00 ET (17:00 CET) today; Abu Dhabi on 10–11 Nov. [13, 5, 17]",
+    "links": [
+     "theatre:ru-ua",
+     "thread:russia-ukraine-talks"
+    ]
+   },
+   {
+    "region": "Middle East",
+    "h": "Khamenei calls US power in decline; the IRGC claims four tankers hit by mines",
+    "conf": "moderate",
+    "badge": "UPDATED",
+    "body": "In a written message for the anniversary of the 1979 embassy seizure on 4 Nov, Supreme Leader Mojtaba Khamenei said US power is in “irreversible decline” and that “the slightest inclination towards surrender will embolden the arrogant enemy.” Parliament speaker Mohammad Bagher Ghalibaf wrote on X: “Conscience or the cost of living, Americans said NO TO WAR, and we endorse this message.” [18] The Revolutionary Guards (IRGC) claim, through IRNA, that four tankers struck mines in a prohibited lane south of the strait and that they downed a US MQ-9 drone; US Central Command has not commented. [19, 20] President Trump told the Financial Times: “We seem to be getting everything we want.” [20]",
+    "next": "Qatar says it is facilitating a “real-time exchange of proposals”; no reply to its draft has been published and no date is set for direct talks. [20, 21]",
+    "links": [
+     "theatre:iran",
+     "thread:iran-hormuz"
+    ]
+   },
+   {
+    "region": "United States",
+    "h": "AP calls the Senate for Democrats; Mississippi and Alaska are still counting",
+    "conf": "high",
+    "badge": "UPDATED",
+    "body": "AP called the Senate for Democrats late on 3 Nov. [22] By CNBC's count on 4 Nov, Democrats flipped seven Republican Senate seats and at least 24 House seats, and Republicans flipped none. [23] In Mississippi Scott Colom led Sen. Cindy Hyde-Smith by 1,138 votes, 464,926 to 463,788; in Alaska Mary Peltola led Sen. Dan Sullivan by 626 votes with about 74% counted. [24, 25] Vice President JD Vance wrote on X: “The reason we lost is the war.” [26]",
+    "next": "Mississippi resolves provisional ballots by 10 Nov; Alaska's ranked-choice count is set for 18 Nov if no candidate passes 50%; the lame-duck Congress returns on 9 Nov. [25, 27]"
+   },
+   {
+    "region": "Asia",
+    "h": "North Korea tests a new air-defence missile; 19 PLA aircraft cross the median line",
+    "conf": "high",
+    "badge": "UPDATED",
+    "body": "KCNA said on 5 Nov that the Missile Administration tested a “new-type anti-aircraft missile system” on 4 Nov under Kim Jong Sik, and that a strategic cruise missile subunit “flawlessly carried out the strike mission against a hypothetical airfield target”. South Korea's Joint Chiefs of Staff (JCS) had detected several missiles from the Sondok area flying less than 300 km that morning. [28, 29] Kim Yo Jong said on 4 Nov that “the options for safeguarding peace certainly include dialogue”. [30] Taiwan counted 21 Chinese military aircraft sorties in the 24 hours to 06:00 on 5 Nov, 19 across the median line. [31]",
+    "next": "Asia-Pacific Economic Cooperation (APEC) leaders meet in Shenzhen on 18–19 Nov.",
+    "links": [
+     "theatre:korea",
+     "theatre:taiwan"
+    ]
+   },
+   {
+    "region": "Africa and Yemen",
+    "h": "Drones hit Sudan's grid again; fighting returns to Masisi",
+    "conf": "moderate",
+    "badge": "UPDATED",
+    "body": "Radio Dabanga reports drone strikes on two power stations in Kassala and a substation at Merowe on 3 Nov, and drone attacks that killed eight people in Um Dibo, West Kordofan, on 2 Nov and at least four at a fuel station in El Abbasiya Tagali, South Kordofan, on 3 Nov. UN spokesman Stéphane Dujarric said the Secretary-General “strongly condemned the escalating drone attacks by parties to the conflict.” [32] In Yemen a Houthi ballistic missile hit the al-Jumaima training camp in al-Dhalea, killing eight, a military source told Al Jazeera. [33] In eastern Congo the army (FARDC) and allied Wazalendo fighters attacked M23 positions in Masisi from 3 Nov; local sources told Radio Okapi at least four civilians were killed. [34]",
+    "next": "MONUSCO's mandate expires in December; its head, James Swan, has been in Goma since 2 Nov. [35]",
+    "links": [
+     "theatre:sudan",
+     "theatre:red-sea",
+     "theatre:drc"
+    ]
+   }
+  ],
+  "numbers": [
+   "ua-air",
+   "ru-personnel-day",
+   "ru-uav-day",
+   "ua-drones-month",
+   "brent",
+   "ttf"
+  ],
+  "feature": {
+   "rota": "thu",
+   "kind": "Thursday · Chronology",
+   "title": "North Korea's month of launches, 6 Oct to 5 Nov",
+   "body": [
+    "In the 30 days to 5 Nov, South Korea's Joint Chiefs of Staff and North Korea's state agency KCNA reported launches or weapons tests on six days, and South Korea flew its first hypersonic glide vehicle on 8 Oct, with President Lee Jae Myung watching. [36] On 12 Oct North Korea fired ballistic missiles from the Pyongyang area; the JCS said one flew more than 900 km, and Japan's defence ministry counted two, of about 220 km and more than 900 km. KCNA called it a “tactical ballistic missile” test that “verified a technical upgrade”. [37]",
+    "On 14 Oct a submarine fired two types of cruise missile, and Missile Administration director Jang Chan Ha said it was “hard to believe” that the South's glide vehicle had flown at hypersonic speed. [36] On 29 Oct, at about 12:30 local time, about 10 short-range ballistic missiles flew about 250 km from the Wonsan area, the JCS said. [38]",
+    "The tempo rose in the last week. KCNA reported a tactical ballistic missile with a cluster warhead on 31 Oct and strategic cruise missiles with a dispersal warhead on 2 Nov. [39, 40] On 4 Nov the JCS detected several missiles from Sondok flying under 300 km, and KCNA said that day's tests were a new anti-aircraft missile system and a cruise missile drill against a simulated airfield. [28]"
+   ],
+   "timeline": [
+    [
+     "2026-10-08",
+     "South Korea flies its first hypersonic glide vehicle.",
+     false
+    ],
+    [
+     "2026-10-12",
+     "Ballistic missiles from the Pyongyang area; the JCS says one flew more than 900 km.",
+     false
+    ],
+    [
+     "2026-10-13",
+     "KCNA: the “tactical ballistic missile” test “verified a technical upgrade”.",
+     false
+    ],
+    [
+     "2026-10-14",
+     "Two types of cruise missile fired from a submarine; KCNA reports it on 15 Oct.",
+     false
+    ],
+    [
+     "2026-10-29",
+     "About 10 short-range ballistic missiles from the Wonsan area, about 250 km.",
+     false
+    ],
+    [
+     "2026-10-31",
+     "KCNA: tactical ballistic missile tested with a cluster warhead.",
+     false
+    ],
+    [
+     "2026-11-02",
+     "KCNA: strategic cruise missiles tested with a dispersal warhead.",
+     false
+    ],
+    [
+     "2026-11-04",
+     "JCS: several missiles from Sondok, under 300 km. KCNA: new anti-aircraft missile system tested.",
+     false
+    ]
+   ],
+   "after": [
+    "The JCS announced the launches of 12 Oct, 29 Oct and 4 Nov; the 31 Oct and 2 Nov tests are known only from KCNA, and Seoul announced neither. Ranges are as the JCS and Japan's defence ministry gave them, converted from miles where outlets reported miles. [37, 39, 40]"
+   ],
+   "links": [
+    "theatre:korea"
+   ]
+  }
+ },
+ "hybrid": {
+  "incidents": [
+   {
+    "id": "2026-11-02-fr-cyb-efs-plasma",
+    "date": "2026-11-02",
+    "when": "2 Nov; disclosed late 3 Nov",
+    "code": "CYB",
+    "attr": "A0",
+    "local": false,
+    "country": "FR",
+    "place": "France: three EFS plasma cold stores (sites not named; marker at EFS headquarters, Saint-Denis)",
+    "lat": 48.92,
+    "lon": 2.36,
+    "text": "Temperature and defrost thresholds were raised to “extremely high levels” through refrigeration supplier Coolworld, which blames a third-party component; alarms caught it and the blood service says no products were compromised. France's cyber agency ANSSI and the health ministry are investigating. [41, 42]",
+    "badge": "NEW"
+   },
+   {
+    "id": "2026-11-04-gb-cyb-meat",
+    "date": "2026-11-04",
+    "when": "reported 4 Nov",
+    "code": "CYB",
+    "attr": "A0",
+    "local": false,
+    "country": "GB",
+    "place": "United Kingdom: small meat-processing firms (not named; marker at Birmingham)",
+    "lat": 52.48,
+    "lon": -1.9,
+    "text": "Richard Horne, chief executive of the National Cyber Security Centre (NCSC), said hackers tried to target small meat processors with minimal impact and that “vulnerable technology had been exploited” in a couple of cases. [43]",
+    "badge": "NEW"
+   }
+  ],
+  "leads": [
+   {
+    "id": "lead-1",
+    "title": "The fridge attacks reach France's blood plasma",
+    "teaser": "Three plasma stores were pushed toward 110 °C through a refrigeration supplier and alarms caught it. Attribution claims now point three ways.",
+    "rows": [
+     [
+      "What",
+      "On 2 Nov temperature and defrost thresholds at three plasma cold stores of the French blood service (EFS) were raised to “extremely high levels”; Le Canard Enchaîné reported a change from about −30 °C to 110 °C. Alarms caught it, and EFS says no blood products or samples were compromised. [41, 42]"
+     ],
+     [
+      "Method",
+      "The intrusion came through refrigeration supplier Coolworld, which says the flaw sat in a third-party component “outside Coolworld's direct control”. [41]"
+     ],
+     [
+      "Scale",
+      "RetailDetail counts 76 Belgian and 17 Dutch stores hit without naming its source; Italy reports about 20 and Romania six. [44, 43] Four commissaries in Germany and England had refrigeration outages in late September, which the Defense Commissary Agency puts down to equipment failure and parts delays. [45]"
+     ],
+     [
+      "Attribution",
+      "A0. The Scottish firm Lupovis logged 256 break-in attempts on a decoy Danfoss controller from 91 sources between 20 and 30 Oct, some from infrastructure it links to Russian state groups; its chief executive, Xavier Bellekens, puts it at “about 95 percent”. [46] Dan Cîmpean of Romania's cyber directorate called the attack “semi-amateurish”: “We do not suspect, under any circumstances, that it is a state actor.” [43] Two former US officials told NPR on 3 Nov that some evidence points to Iran. [47]"
+     ],
+     [
+      "Response",
+      "EU spokesperson Thomas Regnier: “These are not isolated incidents.” [43]"
+     ]
+    ],
+    "sw": "Blood plasma falls under baseline requirement 5 (mass casualties): ask the medical planners which NATO and host-nation blood and pharmacy stores in our area use remote-managed refrigeration, and who can cut that access at night.",
+    "links": [
+     "thread:cold-chain"
+    ]
+   },
+   {
+    "id": "lead-2",
+    "title": "SACEUR's warning moves Polish police to the Kaliningrad line",
+    "teaser": "Tusk says Grynkewich warned of possible hostile activity; border guards then saw people with lights near Sępopol who went back across.",
+    "rows": [
+     [
+      "What",
+      "Prime Minister Donald Tusk told a cabinet meeting in Warsaw that Gen. Grynkewich had warned Poland of possible hostile activity in the north-east; Poland sent extra police, counter-terror units and border-security personnel there on 2 Nov. [48]"
+     ],
+     [
+      "Seen",
+      "Late on 3 Nov border guards near Sępopol saw people with flashlights close to the border; they withdrew into the Kaliningrad oblast without crossing, broadcaster RMF reported. [48]"
+     ],
+     [
+      "Attribution",
+      "A0: no actor named and no crossing."
+     ],
+     [
+      "Context",
+      "Grynkewich's line in Warsaw in October: “If someone is foolish enough to attack us, we will fight.” [48]"
+     ]
+    ],
+    "sw": "Poland's north-east is in JFC Brunssum's area: a SACEUR warning acted on through national police is the below-threshold response the regional plans assume, so make sure the readout reaches the J2 and the Polish liaison cell.",
+    "links": [
+     "post:eucom",
+     "thread:us-europe-posture"
+    ]
+   }
+  ],
+  "pattern": [
+   "**Health joins food:** the refrigeration route reached France's blood plasma through a supplier's third-party component, after supermarkets in more than ten countries. [41]",
+   "**Attribution splits three ways:** a private firm points to Russia, Romania's cyber chief rules out a state actor, and former US officials pointed to Iran. [46, 43, 47]",
+   "**The arson network loses an alleged organiser:** German police hold a man accused of sending two men to burn a Starlink station in Poland. [49]"
+  ],
+  "tracker": [
+   [
+    "EU spokesperson: “not isolated incidents”; Commission crisis meetings with ENISA and Europol",
+    "Defend"
+   ],
+   [
+    "France's ANSSI and health ministry investigate the plasma-store intrusion",
+    "Punish"
+   ],
+   [
+    "Germany arrests the alleged organiser of the Starlink arson in Poland",
+    "Punish"
+   ],
+   [
+    "Poland reinforces police and border guards near Kaliningrad after SACEUR's warning",
+    "Deny"
+   ],
+   [
+    "Coolworld traces the plasma-store intrusion to a third-party component",
+    "Resilience"
+   ]
+  ],
+  "indicators": [
+   [
+    "rising",
+    "Cyber against civil infrastructure",
+    "France's blood service and UK meat processors added; the EU calls it “not isolated”"
+   ],
+   [
+    "steady",
+    "Proxy-recruitment arrests",
+    "One arrest in Germany in the Starlink arson case"
+   ],
+   [
+    "watch",
+    "Attacks on public warning channels",
+    "No repeat since 1 Nov"
+   ],
+   [
+    "watch",
+    "Drones near JOA-C military and logistics nodes",
+    "No new sighting reported"
+   ],
+   [
+    "steady",
+    "Undersea infrastructure",
+    "No new incident"
+   ],
+   [
+    "nodata",
+    "GNSS interference over the Baltic",
+    "A headline reports jamming along NATO borders; not verified"
+   ],
+   [
+    "watch",
+    "Belarus border pressure",
+    "No Belarus event; Poland reinforced the Kaliningrad line instead"
+   ]
+  ],
+  "week": null,
+  "note": "Within 100 km of Heerlen there is no confirmed case: RetailDetail's 17 Dutch and 76 Belgian stores are not named. [44]"
+ },
+ "europe": [
+  {
+   "h": "Belgium's King holds De Wever's resignation and sees him again on Friday",
+   "tag": "Belgium",
+   "conf": "high",
+   "badge": "NEW",
+   "body": "Prime Minister Bart De Wever offered his government's resignation to King Philippe on 2 Nov after the five-party coalition failed to agree a budget. [50] The King has kept the decision in suspense, has met the coalition party leaders since Tuesday and sees De Wever again on Friday at 10:30; the Palace regretted the lack of a budget agreement “crédible et à la hauteur des défis actuels”, credible and equal to the present challenges. [9] Without a budget Belgium runs on provisional twelfths, each month at a twelfth of this year's spending. [50]",
+   "sw": "SHAPE and NATO headquarters sit in Belgium; a budget on provisional twelfths holds Belgian spending at this year's level, so new defence commitments wait for a government.",
+   "links": [
+    "thread:be-government-crisis"
+   ]
+  },
+  {
+   "h": "European diplomats greet the midterm result with relief and caution",
+   "tag": "US in Europe",
+   "conf": "moderate",
+   "badge": "NEW",
+   "body": "A senior EU diplomat told AFP: “There is relief here that this is the beginning of the end of the Trump era and nobody is happier than Europeans.” Another said: “If anything the US will turn even more inwards.” Allies await the Pentagon's review of US forces in Europe in December, AFP reports. [51] Roberta Haar of Maastricht University told L1 the shift matters for the NATO headquarters in Brunssum. [52]",
+   "sw": "The option sets reach Hegseth tomorrow and the review closes in December, before the new Congress sits; European relief does not change that sequence.",
+   "links": [
+    "thread:us-europe-posture"
+   ]
+  },
+  {
+   "h": "Colby and Duffey head to Poland as Warsaw waits on a base answer",
+   "tag": "Poland · Posture",
+   "conf": "moderate",
+   "badge": "NEW",
+   "body": "The Department of War says Under Secretaries Elbridge Colby (policy) and Michael Duffey (acquisition and sustainment) are travelling to Poland to meet the “Bergen Group” in Kraków; it gave no dates or agenda. [53] Defence24 described the permanent-base request on 4 Nov as still at the stage of “negotiations and political consultations”, for a site in western Poland. [54]",
+   "sw": "Colby is the Pentagon's policy chief: a Polish offer to host and pay for a base is in front of him in the week the Europe options reach Hegseth.",
+   "links": [
+    "thread:us-europe-posture"
+   ]
+  },
+  {
+   "h": "Germany arrests the alleged organiser of the Starlink arson in Poland",
+   "tag": "Germany · Poland",
+   "conf": "high",
+   "badge": "NEW",
+   "body": "Police arrested a Turkish national in the Reutlingen district, accused of preparing a terrorist offence by sending two men from Germany to set fire to a Starlink ground station in Poland on 23 Sep. Warsaw suspects Russian intelligence. [49]",
+   "sw": "Arsonists recruited in one country to strike in another is the proxy pattern host-nation police see first; ask how German and Polish case files reach NATO's counter-intelligence staff.",
+   "links": [
+    "thread:starlink-arson"
+   ]
+  }
+ ],
+ "euregio": [
+  {
+   "h": "Oirsbeek's Provincialeweg Zuid reopens on Friday, two months early",
+   "tag": "Parkstad",
+   "badge": "NEW",
+   "body": "The roadworks in Oirsbeek, about 8 km from Heerlen, finish on Fri 6 Nov, more than two months ahead of schedule, and Arriva's buses return to their normal route. [55]",
+   "fy": "The detour through Oirsbeek ends on Friday."
+  },
+  {
+   "h": "Heerlen closes its central square from Friday for the carnival opening",
+   "tag": "Heerlen",
+   "badge": "NEW",
+   "body": "For Aod op Nuj on Tue 10 Nov, which the council expects to draw about 7,500 people, the Burgemeester van Grunsvenplein is closed to traffic from Fri 6 Nov 08:00 to Thu 12 Nov 16:00 and the Geerstraat from 18:00 on Tuesday to 01:30. Entry is free. [56]",
+   "fy": "Avoid driving through Heerlen centre on Tuesday evening."
+  }
+ ],
+ "nato": {
+  "items": [
+   {
+    "h": "Germany and Lithuania sign a deeper defence pact as Brigade 45 grows",
+    "tag": "Germany · Baltics · Posture",
+    "conf": "high",
+    "badge": "NEW",
+    "body": "Defence Ministers Boris Pistorius and Robertas Kaunas signed a declaration of intent on military and industrial cooperation at the Berlin Security Conference on 4 Nov; Brigade 45 “Litauen” is planned at about 4,800 soldiers and 200 civilians, fully ready at the end of 2027. [57] Pistorius: “Ein Angriff auf Litauen wäre ein Angriff auf uns alle”, an attack on Lithuania would be an attack on us all. [58]",
+    "sw": "Brigade 45 is in JFC Brunssum's area; its end-2027 readiness date is the one to hold German force offers against."
+   },
+   {
+    "h": "NATO's military chair: “We are not at war, but we are certainly not at peace”",
+    "tag": "NATO · Leaders' words",
+    "conf": "high",
+    "badge": "NEW",
+    "body": "Adm. Giuseppe Cavo Dragone, Chair of the NATO Military Committee, told the Berlin Security Conference on 4 Nov: “We are not at war, but we are certainly not at peace.” Lt Gen Remigijus Baltrėnas, Director General of the International Military Staff: “A key aspect of countering hybrid actions is the resilience of societies, as it is by itself a deterrent.” [59]",
+    "sw": "Baltrėnas's line is the case for the seven baseline requirements in one sentence; use it when resilience planning competes with combat lines for staff time."
+   },
+   {
+    "h": "The Bundestag releases six procurement packages, including weapons for Heron TP",
+    "tag": "Germany · Autonomy",
+    "conf": "high",
+    "badge": "NEW",
+    "body": "The Bundestag budget committee approved six submissions over €25 million on 4 Nov: more weapons for the Heron TP drone, troposcatter radios for the TaWAN tactical network, a Eurofighter radar retrofit, night sights, Role 2 medical facilities and 30 mm training rounds. The ministry gave no values or quantities. [60]",
+    "sw": "Armed Heron TP and troposcatter links add to the German sensing and command picture that feeds the regional plans."
+   },
+   {
+    "h": "Lithuania weighs a state drone company and buys Finnish sea mines",
+    "tag": "Baltics",
+    "conf": "moderate",
+    "badge": "NEW",
+    "body": "Defence Minister Robertas Kaunas told BNS on 4 Nov: “The idea is to create a state-owned drone holding company”; he gave no budget or timeline. [61] Lithuania's Defence Materiel Agency signed with Forcit Defence for Blocker naval mines under the ten-nation Naval Mines Cooperation; value and quantities were not disclosed. [62]",
+    "sw": "Baltic mine stocks shape the sea-denial part of the regional plans."
+   }
+  ],
+  "table": null
+ },
+ "deftech": {
+  "items": [
+   {
+    "h": "Rheinmetall cuts its 2026 forecast again as the Boxer order slips",
+    "tag": "Munitions production · Germany",
+    "conf": "moderate",
+    "badge": "NEW",
+    "body": "Rheinmetall now guides 2026 sales of about €13.2 billion, down from €13.7–14.2 billion, and an operating margin of about 18.5%, Reuters reported on 4 Nov. Third-quarter sales were €3.15 billion against €2.31 billion a year earlier, with operating profit up 62% to €553 million. The company cites no Arminius Boxer award in 2026, slower batch approvals for artillery ammunition and less revenue from new lines, including its drone cooperation with Destinus. [63]",
+    "sw": "Slower batch approvals hold back 155 mm deliveries the capability targets count on; ask the J4 how German ammunition delivery dates have moved."
+   },
+   {
+    "h": "Poland starts building its first guided-rocket factory",
+    "tag": "Munitions production · Poland",
+    "conf": "high",
+    "badge": "NEW",
+    "body": "Construction began on 4 Nov in Gorzów Wielkopolski on a plant run by Hanwha WB Advanced System, a venture of Hanwha Aerospace and WB Group, to make rockets for the Homar-K launcher under a contract worth about PLN 14 billion signed on 29 Dec 2025. Defence Minister Władysław Kosiniak-Kamysz: “Dzisiaj rozpoczynamy kolejny etap tego przedsięwzięcia”, today we start the next stage of this undertaking. [64]",
+    "sw": "Homar-K is the long-range fires backbone of Polish divisions in JFC Brunssum's area; domestic rockets from 2030 change the sustainment plan, not the 2027 one."
+   },
+   {
+    "h": "Helsing hands Germany the source code for its combat-drone mission software",
+    "tag": "Autonomy · Germany",
+    "conf": "moderate",
+    "badge": "NEW",
+    "body": "Helsing gave the procurement office BAAINBw the source code, documentation and a software development kit for MissionOSBw, the mission operating system at the core of the CFSN programme, on 4 Nov; the code is government-owned open source. CFSN, worth more than €220 million and approved in July, covers two experimental uncrewed combat aircraft, two ground stations, autonomy software and a reference architecture, with Hensoldt, Rohde & Schwarz, MBDA and Diehl Defence. [65]",
+    "sw": "Government-owned mission code is the model to cite when allied autonomy software has to work inside a NATO headquarters' network."
+   }
+  ],
+  "series": [
+   "ru-uav-day"
+  ],
+  "ttp": null
+ },
+ "frontier": {
+  "items": [
+   {
+    "h": "OpenAI's pipeline found 948 Linux kernel privilege-escalation flaws",
+    "tag": "Result",
+    "conf": "moderate",
+    "badge": "NEW",
+    "body": "OpenAI reported on 4 Nov that a prototype pipeline built on an unreleased cyber model scanned about 2.8 million lines of the Linux kernel in mid-October and produced 1,169 working local privilege-escalation exploits, 948 of them unique, for $1,213,430 in API credits, about $1,279 each. So far 61 are patched upstream and 43 have patches in staging. [66, 67]",
+    "links": [
+     "release:2026-11-04-openai-kernel-pipeline"
+    ]
+   },
+   {
+    "h": "Cognition ships SWE-2 Flash at a fifth of SWE-2's price",
+    "tag": "Model",
+    "conf": "high",
+    "badge": "NEW",
+    "body": "Cognition released SWE-2 Flash on 4 Nov, a coding model with 276 billion parameters, 12 billion active, built from Thinking Machines' Inkling-Small. It runs at about 200 tokens a second against 60 for SWE-2 and costs a fifth as much; it scores 24.0 on FrontierCode 2.0 against SWE-2's 23.8 but 60.1 on DeepSWE 1.1 against 73.0. The weights are withheld over cyber risk. [68]",
+    "links": [
+     "release:2026-11-04-cognition-swe-2-flash"
+    ]
+   },
+   {
+    "h": "Tencent releases Hy4 and holds back the weights",
+    "tag": "Model",
+    "conf": "moderate",
+    "badge": "NEW",
+    "body": "Tencent released its Hy4 model on 4 Nov, Reuters reported, limited its cyber training to defensive uses and plans to publish the weights later with a safety-testing report: “We recognise the potential safety risks posed by advanced cyber and biological capabilities.” No parameter count or benchmark was published. [69]",
+    "links": [
+     "release:2026-11-04-tencent-hy4"
+    ]
+   }
+  ]
+ },
+ "army": {
+  "cards": [
+   {
+    "l": "Leadership",
+    "v": "Telle, LaNeve (both acting)",
+    "n": "No nominee for either; no nomination record updated since 31 Oct. [70]"
+   },
+   {
+    "l": "Hegseth",
+    "v": "“A very good job”",
+    "n": "Trump on 4 Nov, after CBS reported he asked advisers whether Hegseth should stay. [71, 72]"
+   },
+   {
+    "l": "Next Congress",
+    "v": "Reed (SASC), Smith (HASC)",
+    "n": "Both poised to chair from 3 Jan; Smith promises “vigorous oversight”. [73, 74]"
+   },
+   {
+    "l": "Moved",
+    "v": "25,000+ drones to CENTCOM",
+    "n": "Autonomous and counter-drone systems delivered this year, the DRPM-UxS says. [75]"
+   }
+  ],
+  "words": [
+   {
+    "who": "Rep. Adam Smith",
+    "role": "Ranking member, House Armed Services Committee (HASC)",
+    "where": "Statement on HASC Democrats' priorities for the 120th Congress",
+    "date": "2026-11-04",
+    "quote": "the top priority will be to conduct vigorous oversight of the Department of Defense and the Trump Administration",
+    "context": "He also wants to re-establish an Oversight and Investigations Subcommittee and wrote that “the illegal war against Iran is top of mind”. [74]",
+    "badge": "NEW"
+   },
+   {
+    "who": "Donald Trump",
+    "role": "President and Commander in Chief",
+    "where": "Remarks to reporters, asked whether he was considering replacing Secretary Hegseth",
+    "date": "2026-11-04",
+    "quote": "No, I think he's doing a very good job.",
+    "context": "Reported by CBS News and Reuters on 4 Nov, after CBS said he had asked advisers whether Hegseth should stay. [71, 72]",
+    "badge": "NEW"
+   }
+  ],
+  "depth": null,
+  "dod": [
+   {
+    "h": "Trump backs Hegseth after asking advisers whether he should stay",
+    "tag": "Leaders' words · Posture",
+    "conf": "moderate",
+    "badge": "NEW",
+    "body": "CBS News reported on 4 Nov, citing multiple sources, that President Trump had asked advisers whether Secretary Hegseth should stay after the midterm losses, and that some White House aides expect part of the blame to fall on Adm. Brad Cooper of CENTCOM and Gen. Dan Caine. [71] Asked the same day whether he was considering replacing Hegseth, Trump said: “No, I think he's doing a very good job.” [72] The option sets on US force levels in Europe are due to Hegseth on 6 Nov; none had leaked by this morning. [8]",
+    "sw": "The Europe options land on a Secretary whose tenure the President was asked about this week; a cut below the 76,000-troop floor still needs the plan Congress requires first.",
+    "links": [
+     "thread:us-europe-posture",
+     "post:centcom",
+     "post:cjcs"
+    ]
+   },
+   {
+    "h": "More than 25,000 drones and counter-drone systems reached CENTCOM this year",
+    "tag": "Autonomy",
+    "conf": "high",
+    "badge": "NEW",
+    "body": "The Direct Reporting Portfolio Manager for Unmanned Systems (DRPM-UxS) says it delivered more than 25,000 autonomous and counter-unmanned systems to the CENTCOM area this year, under Project Agincourt and the drone dominance effort. [75, 76] AUTOWARCOM still has no commander nominee; Todd Harrison of the American Enterprise Institute told Defense One: “I think AUTOWARCOM is something they can do without Congress.” [77]",
+    "sw": "CENTCOM fields counter-drone kit by the thousand; ask what share of the DRPM-UxS pipeline is earmarked for EUCOM before the next drone sighting over a base in Europe.",
+    "links": [
+     "post:centcom",
+     "post:autowarcom",
+     "congress:autowarcom-2026"
+    ]
+   },
+   {
+    "h": "The Iran war toll reaches 23 US dead and 866 wounded",
+    "tag": "DoD",
+    "conf": "high",
+    "badge": "NEW",
+    "body": "Defense Casualty Analysis System figures reported by Military Times on 4 Nov count 23 US deaths and 866 wounded since 28 Feb: 15 deaths and 417 wounded in Operation Epic Fury, which the department counts as concluded, and 8 deaths and 449 wounded in overseas operations since 7 Jul. [78]",
+    "sw": "Smith has put the Iran war at the top of his oversight list; these are the figures the committees will start from.",
+    "links": [
+     "post:centcom"
+    ]
+   }
+  ],
+  "news": [
+   {
+    "h": "Wiesbaden soldiers who missed meals in the DFAC closure can claim the money back",
+    "tag": "USAREUR-AF",
+    "conf": "high",
+    "badge": "NEW",
+    "body": "The Clay Kaserne dining facility in Wiesbaden closed on 30 Sep after fibreglass dust from renovation work and partly reopened on 11 Oct; the closure coincided with Avenger Triad 26. Soldiers on meal cards who missed meals can file reimbursement claims. [79]",
+    "sw": "Dust closed the headquarters dining facility during USAREUR-AF's largest exercise of the autumn: a line for any garrison continuity review.",
+    "links": [
+     "exercise:avenger-triad-26"
+    ]
+   }
+  ],
+  "congress": [
+   {
+    "h": "Reed and Smith are poised to chair the Armed Services committees",
+    "tag": "Congress · Leaders' words · Strategy",
+    "conf": "moderate",
+    "badge": "NEW",
+    "body": "With Democrats in control from 3 Jan, Breaking Defense reports that Sen. Jack Reed is poised to lead the Senate Armed Services Committee (SASC), Rep. Adam Smith the House committee and Sen. Chris Coons Senate defence appropriations. [73] Smith's 4 Nov statement promises “vigorous oversight” and a budget approach that “does not require a defense budget in excess of $1 trillion”. [74] In the lame duck, the FY2027 NDAA (H.R. 8800) still sits in the Senate, where it was received on 14 Sep, and Lt. Gen. Kevin Admiral's nomination to USAREUR-AF (PN1188) is still Calendar No. 924. [80, 81]",
+    "sw": "The lame-duck NDAA is the last bill the current chairs write; from January Reed and Smith can question the Europe options and the 76,000-troop floor.",
+    "links": [
+     "congress:ndaa-fy27",
+     "congress:usareur-2026",
+     "post:usareur"
+    ]
+   }
+  ],
+  "career": {
+   "items": [
+    {
+     "h": "Federal benefits open season runs to 14 Dec, TRICARE's to 8 Dec",
+     "badge": "UPDATED",
+     "body": "OPM puts the Federal Benefits Open Season, which covers FEDVIP dental and vision, at 9 Nov to 14 Dec; TRICARE's open season runs 9 Nov to 8 Dec. [82, 83]",
+     "fy": "Doing nothing keeps current enrolments; decide on dental and vision before 14 Dec and on TRICARE before 8 Dec."
+    },
+    {
+     "h": "The 2027 raise rides on a lame-duck deal",
+     "badge": "UPDATED",
+     "body": "The House bill gives 7% to E-1 to E-5, 6% to E-6 to O-3 and 5% to O-4 and above; the Senate's gives 3.6% across the board. [84] The IRS had not published 2027 TSP limits by 4 Nov; the 2026 deferral limit is $24,500. [85]",
+     "fy": "Hold January TSP changes until the IRS notice; for a field-grade officer the bills differ by 5% against 3.6% of base pay."
+    }
+   ],
+   "dates": [
+    [
+     "2026-11-05",
+     "FY27 active-component colonel board recesses (date from a mirror of HRC messages)"
+    ],
+    [
+     "2026-11-09",
+     "TRICARE and Federal Benefits open seasons open"
+    ],
+    [
+     "2026-12-08",
+     "TRICARE Open Season closes"
+    ],
+    [
+     "2026-12-14",
+     "Federal Benefits Open Season (FEDVIP) closes"
+    ],
+    [
+     "2027-01-01",
+     "2027 pay raise and benefit changes take effect"
+    ]
+   ],
+   "note": "Priority topics with nothing in the window: special operations and force design."
+  }
+ },
+ "aperture": {
+  "contrarian": "Markets read the Democratic sweep as a road to an Iran deal: Andy Lipow said the result leads traders “to conclude that Trump might now be inclined to make a deal”. [86] Tehran's answer points the other way: Khamenei warned that “the slightest inclination towards surrender will embolden the arrogant enemy”, and the IRGC claims four more tankers hit by mines. [18, 19] The case for the market: Trump told the Financial Times “We seem to be getting everything we want”. [20]",
+  "weak": "The people with flashlights near Sępopol who went back into Kaliningrad, the night after SACEUR's warning reached Warsaw. [48] Confirmation that it is a pattern: a second Polish or Lithuanian report of probing at the Kaliningrad line this week, or a NATO statement naming it.",
+  "number": {
+   "n": "25,000+",
+   "t": "Autonomous and counter-unmanned systems the DRPM-UxS says it delivered to the CENTCOM area this year. [75]"
+  },
+  "inject": "STARTEX + 2, 23:40. Polish Border Guard reports about ten people crossing from the Kaliningrad oblast near Sępopol; a county emergency centre loses its radio net for 40 minutes. Stresses baseline requirements 3 (uncontrolled movement of people) and 6 (resilient communications). First calls: the Polish liaison for the national response, then the J2 for whether the Lithuanian side shows the same activity.",
+  "question": "When SACEUR passes a threat warning to a host nation through national channels, as Tusk describes, how does JFC Brunssum learn what that nation then deployed, and how fast?",
+  "deep": {
+   "kind": "Thursday deep cut · Concept",
+   "title": "Attritable, explained",
+   "body": [
+    "An attritable system is built cheaply enough to lose. It is meant to come back, but its loss ends neither the mission nor the budget line. Adam Smith's 4 Nov letter to colleagues asked for “an appropriate mix of high-end survivable systems and lower-cost attritable capabilities”, and the word now appears in budgets on both sides of the Atlantic. [87]",
+    "This week's numbers: more than 25,000 drones and counter-drone systems delivered to CENTCOM this year; two experimental uncrewed combat aircraft in Germany's CFSN programme, worth more than €220 million; a Lithuanian plan for a state drone company. [75, 65, 61] For a planner the shift is in the arithmetic: an attritable fleet is counted in production rate and resupply time, not tail numbers, so the logistics annex shows how much of it is left on day ten."
+   ],
+   "table": null
+  },
+  "longread": {
+   "title": "Cancellations, investigations, and even impeachment could be ahead under Democratic Congress",
+   "outlet": "Defense One",
+   "url": "https://www.defenseone.com/policy/2026/11/impeachment-investigations-canceled-projects-democratic-congress/417053/",
+   "why": "Meghann Myers on what a Democratic Congress means for Golden Dome, Golden Fleet and AUTOWARCOM, with Todd Harrison and Mark Cancian. [77]"
+  },
+  "rota": "thu"
+ },
+ "money": {
+  "asof": "last full session: Wed 4 Nov",
+  "cards": [
+   [
+    "S&P 500",
+    "7,688.62",
+    "+1.58%",
+    "up",
+    "Wed close",
+    88,
+    "spx"
+   ],
+   [
+    "Dow",
+    "53,356.12",
+    "+3.03%",
+    "up",
+    "Up 1,569.40 points, best day since April 2025",
+    89
+   ],
+   [
+    "Nasdaq",
+    "25,736.51",
+    "+1.44%",
+    "up",
+    "Wed close",
+    88,
+    "ndx"
+   ],
+   [
+    "Russell 2000",
+    "2,856.95",
+    "+1.58%",
+    "up",
+    "Wed close",
+    88
+   ],
+   [
+    "AEX",
+    "1,136.29",
+    "+1.30%",
+    "up",
+    "Ahold +6.6% on results; ASML, ASMI, Besi −5%+",
+    90,
+    "aex"
+   ],
+   [
+    "Stoxx 600",
+    "657.40",
+    "+1.82%",
+    "up",
+    "DAX +2.22% to 26,437.67",
+    88
+   ],
+   [
+    "Brent",
+    "$94.62",
+    "−8.67%",
+    "down",
+    "Wed settle; WTI $88.12; $93.82 at 05:08 CET",
+    86,
+    "brent"
+   ],
+   [
+    "Dutch TTF gas",
+    "€85.03",
+    "−7.17%",
+    "down",
+    "Front month, Wed",
+    88,
+    "ttf"
+   ],
+   [
+    "Gold",
+    "$4,073",
+    "+3.37%",
+    "up",
+    "Wed settle; $4,143 early Thu",
+    88
+   ],
+   [
+    "USD/EUR",
+    "0.8876",
+    "−0.77%",
+    "down",
+    "euros per dollar",
+    91
+   ],
+   [
+    "US 10-year",
+    "4.90%",
+    "−5 bp",
+    "down",
+    "Treasury par curve; 2-year 4.58%",
+    92
+   ],
+   [
+    "VIX",
+    "16.61",
+    "−20.3%",
+    "down",
+    "Back below 20",
+    88
+   ]
+  ],
+  "ytd": [
+   [
+    "AEX",
+    19.4
+   ],
+   [
+    "Russell 2000",
+    15.1
+   ],
+   [
+    "S&P 500",
+    12.3
+   ],
+   [
+    "Dow",
+    11.0
+   ],
+   [
+    "Stoxx 600",
+    10.9
+   ],
+   [
+    "Nasdaq",
+    10.7
+   ]
+  ],
+  "ytdSrc": 88,
+  "driver": "The Democratic sweep set off a broad rally: the Dow gained 1,569.40 points, its best day since April 2025. [89] Brent fell 8.7% and WTI 8.3%; Andy Lipow of Lipow Oil Associates: “The elections are leading the market to conclude that Trump might now be inclined to make a deal.” [86] In Amsterdam Ahold Delhaize rose 6.6% on third-quarter results while ASMI, ASML and Besi fell more than 5%. [90] US data held up: ADP counted 86,000 new private jobs in October and the ISM services index slipped to 54.5, with prices at 73.0. [93, 94] After the close Qualcomm fell about 6.5% on its outlook. [89] The 10-year Treasury yield eased to 4.90%. [92] Closes are from Yahoo Finance. [88]",
+  "rates": [
+   [
+    "Fed funds",
+    "3.75–4.00%",
+    "Held 28 Oct by 10–2; Cook and Hammack wanted a hike. [95]"
+   ],
+   [
+    "European Central Bank (ECB) deposit rate",
+    "2.50%",
+    "Held 29 Oct; next meeting 17 Dec. [96]"
+   ],
+   [
+    "Bank of England rate",
+    "3.75%",
+    "Decision today 13:00 CET; a hike to 4% widely expected, Goldman sees a 7–2 vote. [4]"
+   ],
+   [
+    "Euro-area inflation (Oct flash)",
+    "4.0% y/y",
+    "Core 2.5%, energy 20.8%. [97]"
+   ],
+   [
+    "Dutch inflation (Oct flash)",
+    "3.7% y/y",
+    "Energy including fuels 14.4%; full figures 10 Nov. [98]"
+   ],
+   [
+    "US ISM services prices (Oct)",
+    "73.0",
+    "Above 70 for the seventh time in eight months. [94]"
+   ],
+   [
+    "EU gas storage",
+    "74.3% full",
+    "4 Nov, below the 80% target. [99]"
+   ]
+  ],
+  "week": [
+   "**Wed 4:** Democratic sweep; Dow +3.0%, Brent −8.7%; ADP +86,000, ISM services 54.5. [89, 86, 93, 94]",
+   "**Thu 5:** Bank of England 13:00 CET; US jobless claims 14:30 CET, consensus 196,000. [4, 100]",
+   "**Fri 6:** US October payrolls 14:30 CET, consensus +65,000, unemployment 4.2%. [10]",
+   "**Mon 9 – Thu 12:** Treasury sells $58 billion of 3-year, $42 billion of 10-year and $25 billion of 30-year debt. [101]"
+  ],
+  "fy": "At Wednesday's ECB fix, USD/EUR stood at 0.8876: $1,000 of pay buys €887.55, €6.99 less than at Tuesday's 0.8945. [91] Dutch gas fell 7.2% to €85.03: a variable energy contract passes that on, a fixed one does not.",
+  "fuel": null
+ },
+ "nl": {
+  "items": [
+   {
+    "h": "The tax-plan debate ends past midnight with a thin Kamer majority in sight",
+    "badge": "UPDATED",
+    "body": "The Tweede Kamer debated the 2027 tax plan until 00:37 on Thursday; NOS says ChristenUnie, 50Plus and Groep Markuszower now appear to back it, enough for a small majority, while a majority in the Eerste Kamer is “ver weg”, far away. [102, 103] PVV leader Geert Wilders said his party will vote against the plan and every budget. [102] The cabinet answers the amendments on Tuesday 10 Nov and the Kamer votes on Thursday 12 Nov. [102]",
+    "fy": "The 2027 fuel-duty discount is settled only when both chambers have voted; the Eerste Kamer takes the plan in December.",
+    "links": [
+     "thread:nl-tax-plan-2027"
+    ]
+   },
+   {
+    "h": "Nitrogen plans could close 10–30% more livestock farms, researchers find",
+    "badge": "NEW",
+    "body": "A first analysis by Wageningen researchers for the agriculture ministry, led by Petra Berkhout, finds Minister Van Essen's nitrogen plans would make 10–30% more livestock farms stop; with about 10% stopping anyway, there would be 20–40% fewer by 2035. The plans require a 42–46% cut in ammonia; the researchers say food security is not at risk. [104]"
+   },
+   {
+    "h": "Five consumer bodies warn against doorstep sales of batteries and heat pumps",
+    "badge": "NEW",
+    "body": "The competition authority ACM, the Consumentenbond, the Fraudehelpdesk, Juridisch Loket and Vereniging Eigen Huis warned on 2 Nov against aggressive phone and doorstep sales of solar panels, home batteries and heat pumps; home batteries get no national subsidy. ACM board member Manon Leijten: “Daarom zijn dit soort producten niet geschikt voor verkoop aan de telefoon of aan de deur.” [105]",
+    "fy": "Anything agreed at the door or by phone can be cancelled free within 14 days; the joint advice is “Hang op of sluit de deur”, hang up or close the door. [105]"
+   }
+  ],
+  "temp": "Warm. A Kamer majority looks within reach after Wednesday's debate; the Eerste Kamer in December is the harder test, and the PVV has promised to vote against every budget.",
+  "lees": {
+   "nl": "“We zullen alles doen om het kabinet te laten vallen.”",
+   "gloss": [
+    [
+     "we zullen ... doen",
+     "we will do; zullen plus an infinitive makes the future tense"
+    ],
+    [
+     "alles",
+     "everything"
+    ],
+    [
+     "om ... te",
+     "in order to; opens a purpose clause and sends the verb to the end"
+    ],
+    [
+     "het kabinet laten vallen",
+     "to bring down the cabinet; literally to let the cabinet fall"
+    ]
+   ],
+   "src": 102
+  },
+  "phrase": {
+   "w": "een kat in de zak kopen",
+   "en": "to buy something that turns out worthless (literally: to buy a cat in a bag); the English 'a pig in a poke'",
+   "lvl": "B1",
+   "note": "Common in consumer advice, and the point of this week's warning about doorstep battery deals. Example: Wie aan de deur tekent, koopt vaak een kat in de zak."
+  }
+ },
+ "afnorth": {
+  "intro": "From the AFNORTH 2026–2027 Academic Calendar, which governs; rows for the next 60 days. [3]",
+  "rows": [
+   [
+    "5 Nov",
+    "12:30 release, parent conferences",
+    "Afternoon pick-up today",
+    "soon"
+   ],
+   [
+    "11 Nov",
+    "Veterans Day: a school day",
+    "Belgium is off, the Netherlands works",
+    "soon"
+   ],
+   [
+    "16 Nov",
+    "No school, staff and students",
+    "Childcare",
+    "soon"
+   ],
+   [
+    "26–27 Nov",
+    "Thanksgiving: school days",
+    "No closure on the calendar",
+    ""
+   ],
+   [
+    "7 Dec",
+    "No school, Q2 CCRS/PD training",
+    "Childcare",
+    ""
+   ],
+   [
+    "18 Dec – 1 Jan",
+    "Winter break",
+    "Travel window; back Mon 4 Jan",
+    ""
+   ]
+  ],
+  "note": "The next 14 days are marked. Brunssum's Poppy Day commemoration is on 11 Nov at the War Cemetery. [106]"
+ },
+ "offduty": {
+  "items": [
+   {
+    "h": "Sint-Hubertus feasts start today in Tongeren",
+    "tag": "BE",
+    "badge": "UPDATED",
+    "body": "The Hubertus festivities at the Offelken racecourse run 5–12 Nov, a listed living-heritage tradition with a procession, horses and dogs, and the blessing of bread; free, about 40 minutes away. [107]",
+    "links": [
+     "event:sint-hubertus-tongeren-2026"
+    ]
+   },
+   {
+    "h": "Sinterklaas arrives in Hoensbroek on Saturday 21 Nov",
+    "tag": "NL",
+    "badge": "NEW",
+    "body": "The council has granted the permit for the intocht on the Gebrookerplein on Sat 21 Nov; Heerlen's is at De Bongerd on Sun 15 Nov. Times are not yet published. About 5 minutes away. [108, 109]",
+    "links": [
+     "event:sinterklaas-hoensbroek-2026"
+    ]
+   }
+  ],
+  "weekend": null,
+  "weather": null
+ },
+ "hockey": {
+  "canes": {
+   "result": null,
+   "noGame": "Carolina did not play on Wednesday. Tonight they visit the New York Islanders (7-5-2) at UBS Arena, puck drop 01:00 CET Friday. The club lists Taylor Hall (upper body) as skating and possibly back for this game; Jordan Staal (calf tear) is out “a month or two” from 13 Oct. [110]",
+   "next": [
+    [
+     "Thu 5 Nov",
+     "at NY Islanders",
+     "19:00 ET",
+     "Fri 01:00 CET",
+     false
+    ],
+    [
+     "Sat 7 Nov",
+     "vs Chicago",
+     "20:00 ET",
+     "Sun 02:00 CET",
+     false
+    ],
+    [
+     "Thu 12 Nov",
+     "vs Seattle, Helsinki",
+     "12:00 ET",
+     "Thu 18:00 CET",
+     true
+    ],
+    [
+     "Sat 14 Nov",
+     "vs Seattle, Helsinki",
+     "13:00 ET",
+     "Sat 19:00 CET",
+     true
+    ],
+    [
+     "Thu 19 Nov",
+     "vs Montreal",
+     "19:00 ET",
+     "Fri 01:00 CET",
+     false
+    ]
+   ],
+   "nextSrc": 7
+  },
+  "scores": [
+   [
+    "OTT",
+    2,
+    "BUF",
+    1,
+    ""
+   ],
+   [
+    "CHI",
+    3,
+    "FLA",
+    5,
+    ""
+   ],
+   [
+    "SJS",
+    1,
+    "LAK",
+    5,
+    "pending"
+   ],
+   [
+    "CGY",
+    1,
+    "SEA",
+    1,
+    "pending"
+   ]
+  ],
+  "scoresDate": "Wed 4 Nov",
+  "scoresNote": "Away team listed first; finals from the NHL API. [111] Scores marked pending were still in play at 06:00 CET.",
+  "scoresSrc": 111,
+  "news": [
+   {
+    "h": "The Metro lead stays at six points",
+    "badge": "UPDATED",
+    "body": "No Metropolitan team played on Wednesday: Carolina has 26 points from 17 games, New Jersey 20 from 15, the Rangers 17, and Washington and the Islanders 16. [112]"
+   },
+   {
+    "h": "Helsinki sets up a free Fan Fest for the Canes and Kraken",
+    "badge": "NEW",
+    "body": "The NHL runs a free Fan Fest at Narinkkatori in Helsinki on 12–14 Nov around Carolina's two games against Seattle. [113]"
+   },
+   {
+    "h": "Düsseldorf's Kö on Ice opens on Friday with an NHL theme",
+    "badge": "NEW",
+    "body": "The rink on Corneliusplatz runs 6 Nov to 10 Jan: adults €9, children under 11 €6, skate hire €6, with Stanley Cup visits in the week of the Düsseldorf games on 18 and 20 Dec. About 75 minutes away. [114]"
+   }
+  ]
+ },
+ "planner": {
+  "events": [
+   [
+    "2026-11-05",
+    "mkt",
+    "Bank of England",
+    "UK",
+    "13:00 CET decision",
+    "Hike to 4% expected"
+   ],
+   [
+    "2026-11-05",
+    "pro",
+    "White House event on Oleshky",
+    "US",
+    "11:00 ET (17:00 CET)",
+    "Russian and Ukrainian representatives"
+   ],
+   [
+    "2026-11-05",
+    "de",
+    "A4 one lane between Eschweiler-West and -Ost toward Köln",
+    "A4",
+    "Thu 19:00 – Fri 05:00",
+    "Allow extra time on a Köln run"
+   ],
+   [
+    "2026-11-06",
+    "pro",
+    "Posture options due to Hegseth",
+    "US",
+    "Europe force levels",
+    "Review complete in December"
+   ],
+   [
+    "2026-11-06",
+    "be",
+    "King Philippe sees De Wever",
+    "Brussels",
+    "10:30",
+    "Belgian government's fate"
+   ],
+   [
+    "2026-11-06",
+    "mkt",
+    "US October payrolls",
+    "US",
+    "14:30 CET",
+    "Consensus +65,000"
+   ],
+   [
+    "2026-11-06",
+    "nl",
+    "Sint Maarten parade, Langeberg",
+    "Brunssum",
+    "Lantern walk",
+    "Time not published",
+    true
+   ],
+   [
+    "2026-11-06",
+    "nl",
+    "Provincialeweg Zuid reopens",
+    "Oirsbeek",
+    "Roadworks end",
+    "Buses back on route"
+   ],
+   [
+    "2026-11-10",
+    "nl",
+    "Aod op Nuj, carnival opening",
+    "Heerlen",
+    "Burgemeester van Grunsvenplein, evening",
+    "Square closed 6–12 Nov; Geerstraat 18:00–01:30",
+    true
+   ],
+   [
+    "2026-11-10",
+    "nl",
+    "Sint Maarten, Schinveld",
+    "Schinveld",
+    "Lantern walk",
+    "Time not published"
+   ],
+   [
+    "2026-11-10",
+    "nl",
+    "Tax plan debate, part 2",
+    "NL",
+    "Cabinet answers amendments",
+    "Vote Thu 12 Nov"
+   ],
+   [
+    "2026-11-10",
+    "mkt",
+    "US October CPI",
+    "US",
+    "14:30 CET",
+    ""
+   ],
+   [
+    "2026-11-11",
+    "nl",
+    "Poppy Day, Brunssum War Cemetery",
+    "Brunssum",
+    "Remembrance, 10:30",
+    "",
+    true
+   ],
+   [
+    "2026-11-13",
+    "nl",
+    "Sint Maarten parade",
+    "Heerlen",
+    "From basisschool De Schakel",
+    "Time not published"
+   ],
+   [
+    "2026-11-13",
+    "nl",
+    "A2 tunnel closed in Maastricht (to 16 Nov)",
+    "Maastricht",
+    "Fri 21:00 – Mon 06:00",
+    "Allow extra time",
+    true
+   ],
+   [
+    "2026-11-14",
+    "nl",
+    "Sinterklaas arrives",
+    "Grave; Maastricht",
+    "National and Maastricht intocht",
+    "Heerlen on 15 Nov"
+   ],
+   [
+    "2026-11-15",
+    "nl",
+    "Sinterklaas in Heerlen",
+    "De Bongerd",
+    "Intocht; time not yet published",
+    "",
+    true
+   ],
+   [
+    "2026-11-15",
+    "be",
+    "DG day · King's Feast",
+    "BE (east)",
+    "Community holiday",
+    "Public offices in Eupen closed"
+   ],
+   [
+    "2026-11-18",
+    "us",
+    "Alaska ranked-choice count",
+    "US",
+    "If no candidate passes 50%",
+    "Senate seat"
+   ],
+   [
+    "2026-11-19",
+    "pro",
+    "ERAM replies due",
+    "US",
+    "Air Force request for information",
+    "1,000+ cruise missiles for Ukraine"
+   ],
+   [
+    "2026-11-29",
+    "nl",
+    "First Advent",
+    "NL/BE/DE",
+    "Season marker",
+    ""
+   ],
+   [
+    "2026-12-10",
+    "nl",
+    "Wintertijd Heerlen opens (to 3 Jan)",
+    "Heerlen",
+    "Ice rink, Pancratiusplein",
+    "Daily from 10:00"
+   ]
+  ],
+  "season": {
+   "title": "Christmas market planner",
+   "intro": "Dates from organisers' or tourism-office pages. Drive times from Hoensbroek are approximate. Dotted red line = today; grey line = 25 Dec.",
+   "from": "2026-11-02",
+   "to": "2027-01-05",
+   "ticks": [
+    "2026-11-02",
+    "2026-11-16",
+    "2026-12-01",
+    "2026-12-15",
+    "2027-01-01"
+   ],
+   "rows": [
+    {
+     "name": "Valkenburg caves",
+     "sub": "NL · ~20 min",
+     "color": "mkt",
+     "segs": [
+      [
+       "2026-11-13",
+       "2027-01-03"
+      ]
+     ]
+    },
+    {
+     "name": "Köln Dom",
+     "sub": "DE · ~1 h 5 min",
+     "color": "de",
+     "segs": [
+      [
+       "2026-11-16",
+       "2026-11-21"
+      ],
+      [
+       "2026-11-23",
+       "2026-12-23"
+      ]
+     ]
+    },
+    {
+     "name": "Aachen",
+     "sub": "DE · ~25 min",
+     "color": "de",
+     "segs": [
+      [
+       "2026-11-20",
+       "2026-12-23"
+      ]
+     ]
+    },
+    {
+     "name": "Magisch Maastricht",
+     "sub": "NL · ~30 min",
+     "color": "nl",
+     "segs": [
+      [
+       "2026-11-27",
+       "2026-12-27"
+      ]
+     ]
+    },
+    {
+     "name": "Liège Village de Noël",
+     "sub": "BE · ~45 min",
+     "color": "be",
+     "segs": [
+      [
+       "2026-11-27",
+       "2026-12-30"
+      ]
+     ]
+    },
+    {
+     "name": "Monschau",
+     "sub": "DE · ~50 min · Fri–Sun",
+     "color": "de",
+     "segs": [
+      [
+       "2026-11-27",
+       "2026-11-29"
+      ],
+      [
+       "2026-12-04",
+       "2026-12-06"
+      ],
+      [
+       "2026-12-11",
+       "2026-12-13"
+      ],
+      [
+       "2026-12-18",
+       "2026-12-20"
+      ]
+     ]
+    }
+   ],
+   "notes": [
+    "**Köln Dom:** closed Sun 22 Nov (Totensonntag). Sat 10:00–22:00. [115]",
+    "**Aachen:** Sun 22 Nov open 18:00–21:00 only; long day Sat 12 Dec until 22:00. [116]",
+    "**Monschau:** four weekends only (Fri–Sat 11:00–21:00, Sun to 20:00). [117]",
+    "**Magisch Maastricht:** free entry, covered ice rink on the Vrijthof. [118] **Liège:** Village de Noël 27 Nov – 30 Dec. [119]"
+   ]
+  },
+  "otd": {
+   "title": "On this day · 5 November 1944",
+   "body": "Just before dawn the first infantry supplies since the loss of Schmidt reached the 112th Infantry's battalions at Kommerscheidt over the Kall trail, while German shelling and attacks went on. That afternoon Maj. Gen. Norman Cota ordered Task Force Ripple to retake Schmidt the next day. Kommerscheidt lies in the Hürtgen Forest, about 40 km from Heerlen. [120]"
+  },
+  "culture": {
+   "title": "The intocht: Sinterklaas comes to town",
+   "body": "Each November Sinterklaas arrives by steamboat for a national intocht, then makes local arrivals town by town until pakjesavond, the present-giving evening of 5 Dec. Parkstad's dates are set by permit: Heerlen at De Bongerd on Sun 15 Nov and Hoensbroek on the Gebrookerplein on Sat 21 Nov, while Brunssum has applied for the same Saturday. [109, 108, 121] In between, children leave a shoe by the door or the fireplace at night and find a small present or pepernoten in the morning."
+  }
+ },
+ "flags": "Single-source or thin: Rheinmetall's guidance cut (one Reuters story; the company's own third-quarter statement is due today); RetailDetail's counts of 76 Belgian and 17 Dutch stores and its report of Commission crisis meetings with ENISA and Europol (tier 4, source not named); the Lupovis estimate of Russian involvement (a private firm, not an official finding); the IRGC's tanker and MQ-9 claims (IRNA, no CENTCOM comment); the CBS report that Trump asked advisers about Hegseth (unnamed sources); the UK meat-processor attacks (the NCSC chief as quoted by Al Jazeera); Tusk's account of SACEUR's warning and the Sępopol sighting (Stars and Stripes citing RMF); the colonel board recess date (a mirror of HRC messages). OpenAI's kernel-pipeline figures come from Unite.AI and Interesting Engineering because OpenAI's own post returned 403. Tencent published no Hy4 specifications; an unverified report of 770 billion parameters is left out. Two items predate the window and appear because no earlier edition carried them: the Belgian resignation (2 Nov) and the consumer bodies' doorstep-sales warning (2 Nov). Translations of Dutch, German, French and Polish quotes are in the text. Gold, VIX, Russell 2000, Stoxx 600, DAX and TTF are Yahoo Finance closes; Dow Jones Newswires gave TTF at €88.19 in Wednesday afternoon trading, so €85.03 is Yahoo's front-month settle. Year-to-date figures are computed from Yahoo's 2025 year-end closes (Stoxx 600 and DAX from 30 Dec). Priority topics with nothing in the window: special operations and force design; no remarks found from Hegseth, Caine, Telle or LaNeve; no leak of the posture options. Not reached: war.gov article pages and the 4 Nov contracts list (403), jcs.mil, europeafrica.army.mil, the SASC site and congress.gov web pages (nomination and bill data via api.congress.gov), Politico, Aachener Zeitung, De Limburger, Het Belang van Limburg, WDR, and the CCB, ENISA, NCSC-NL and BSI advisory pages. A report that a German state politician was found dead in Berlin rests on one outlet and is left out. Data checks: the ECB history ZIP's latest fix is 4 Nov, 1.1267 dollars per euro (USD/EUR 0.8876), appended to fx.json; Yahoo closes for 4 Nov appended to series.json, where Yahoo's final 3 Nov TTF close of €91.60 replaces €92.07 (see Corrections). minfin's 5 Nov row (+2,380 personnel, +1,163 drones) is appended; the Air Force tally for the night of 4–5 Nov had not been published by 06:00 CET, with the attack still under way, so ua-air has no 5 Nov row. canes.json is unchanged: Carolina did not play, and the NHL standings match 12-3-2 and 26 points. The Open-Meteo snow forecast was refreshed for all 12 resorts. The AFNORTH rows are carried from the 3 Nov check of the PDF. Two late NHL games, San Jose at Los Angeles and Calgary at Seattle, were still in play at 06:00 CET and are marked pending.",
+ "changelog": [
+  [
+   "2026-11-04",
+   "v6.0: five tiers (Today, The news, The watch, The reading, Home and planning), cross-links from items to the trackers they update, source tiers, Since yesterday, Decisions due, calendar files, the year-ahead board, corrections and a style guide. This edition was reissued in the 6.0 format at 13:00."
+  ],
+  [
+   "2026-11-03",
+   "Planner: This week lists priority items only and a new Weather and daylight section holds the seven-day forecast and daylight; the Congress tracker and exercise calendar are compact; the NATO spending table shows only in the week NATO publishes; read-time budget 40 minutes. This edition was reissued to the revised brief in the afternoon."
+  ],
+  [
+   "2026-11-03",
+   "v5.0: Profession rebuilt (NATO and allied armies with NATO's spending table, Defence tech, a Congress tracker with a register of watched posts, senior leaders on the record, priority-topic tags), Part 5 Frontier with a release log, Out and about from a curated event file, Taal with a daily idiom, Snow in season. This edition was reissued in the new layout at 14:30."
+  ],
+  [
+   "2026-11-03",
+   "v4.0: The World part (the board, developments, By the numbers, a daily feature), the Defence & Army section split into DoD, Army, Congress and Career, one merged calendar in the Planner, a seven-day weather strip. This edition was reissued in the new layout at 09:00."
+  ],
+  [
+   "2026-11-03",
+   "v3.0: Watchlist with tracked threads and horizon, USD/EUR tracker and pay bars, standing data files."
+  ],
+  [
+   "2026-11-02",
+   "v2.5: data-driven page, Today strip, Five things, Hockey section, Planner, running hybrid incident log, weekly fuel comparison, Lees mee, archive."
+  ],
+  [
+   "2026-11-02",
+   "v2: four parts (Security, Profession, Money, Home), World expanded, Markets added, AFNORTH calendar governs."
+  ],
+  [
+   "2026-11-02",
+   "v1: first designed edition."
+  ]
+ ],
+ "sources": [
+  [
+   1,
+   "Weer Heerlen",
+   "Weerplaza",
+   "https://www.weerplaza.nl/nederland/heerlen/10546/",
+   3
+  ],
+  [
+   2,
+   "Weersverwachtingen",
+   "KNMI",
+   "https://www.knmi.nl/nederland-nu/weer/verwachtingen",
+   1
+  ],
+  [
+   3,
+   "AFNORTH 2026–27 academic calendar (PDF)",
+   "AFNORTH",
+   "https://afnorthmhs.dodea.edu/sites/g/files/afatmv2851/files/2026-05/afn-26-27-academic-calendar.pdf",
+   1
+  ],
+  [
+   4,
+   "Bank of England preview: first hike to 4% expected as energy pushes inflation to 3.5%",
+   "investingLive",
+   "https://investinglive.com/central-banks/bank-of-england-preview-first-hike-to-4-expected-as-energy-pushes-inflation-to-3-5/",
+   3
+  ],
+  [
+   5,
+   "First Lady Melania Trump to convene Russian and Ukrainian representatives at the White House",
+   "The White House",
+   "https://www.whitehouse.gov/briefings-statements/2026/11/first-lady-melania-trump-to-convene-russian-and-ukrainian-representatives-at-the-white-house/",
+   1
+  ],
+  [
+   6,
+   "A4 bei Aachen: Verkehrschaos droht an zwei Tagen",
+   "t-online Aachen",
+   "https://aachen.t-online.de/region/aachen/id_101508454/a4-bei-aachen-verkehrschaos-droht-an-zwei-tagen-spur-gesperrt.html",
+   3
+  ],
+  [
+   7,
+   "Carolina Hurricanes schedule 2026–27",
+   "NHL.com",
+   "https://www.nhl.com/hurricanes/schedule",
+   2
+  ],
+  [
+   8,
+   "Pentagon's NATO review preparing troop options for Hegseth by November 6",
+   "Reuters via Defense News",
+   "https://www.defensenews.com/pentagon/2026/08/27/pentagons-nato-review-preparing-troop-options-for-hegseth-by-november-6/",
+   2
+  ],
+  [
+   9,
+   "L'Arizona au pied du mur : la démission de Bart De Wever en suspens, le Roi entame ses entrevues ce mardi",
+   "RTBF",
+   "https://www.rtbf.be/article/crise-dans-le-gouvernement-arizona-le-kern-se-quitte-sans-accord-bart-de-wever-se-rend-chez-le-roi-11809122",
+   3
+  ],
+  [
+   10,
+   "US private payrolls rise in October, ADP says",
+   "Reuters via KFGO",
+   "https://kfgo.com/2026/11/04/us-private-payrolls-rise-in-october-adp-says/",
+   2
+  ],
+  [
+   11,
+   "Toestemming voor een St. Maartensoptocht, Langeberg",
+   "Gemeente Brunssum (Gemeenteblad)",
+   "https://zoek.officielebekendmakingen.nl/gmb-2026-497320.html",
+   1
+  ],
+  [
+   12,
+   "Statement following meeting on prosperity talks today (STATEMENT/26/2348)",
+   "European Commission",
+   "https://ec.europa.eu/commission/presscorner/detail/en/statement_26_2348",
+   1
+  ],
+  [
+   13,
+   "Umerov outlines initial results of talks in Brussels",
+   "Ukrinform",
+   "https://www.ukrinform.net/rubric-polytics/4181539-umerov-outlines-initial-results-of-talks-in-brussels.html",
+   2
+  ],
+  [
+   14,
+   "Zelensky speaks with Witkoff, Kushner ahead of trilateral meeting in Abu Dhabi",
+   "Ukrinform",
+   "https://www.ukrinform.net/rubric-polytics/4181550-zelensky-speaks-with-witkoff-kushner-ahead-of-trilateral-meeting-in-abu-dhabi.html",
+   2
+  ],
+  [
+   15,
+   "Zelensky: Death toll in Komyshuvakha rises to 40, more than 30 may remain trapped under rubble",
+   "Ukrinform",
+   "https://www.ukrinform.net/rubric-ato/4181429-zelensky-death-toll-in-komyshuvakha-rises-to-40-more-than-30-may-remain-trapped-under-rubble.html",
+   2
+  ],
+  [
+   16,
+   "Russian strikes cause Kyiv's worst water outage of full-scale war",
+   "Kyiv Independent",
+   "https://kyivindependent.com/russian-strikes-cause-kyivs-worst-water-outage-of-full-scale-war/",
+   3
+  ],
+  [
+   17,
+   "Ukraine, partners coordinate peace efforts ahead of Abu Dhabi talks with Russia",
+   "Kyiv Independent",
+   "https://kyivindependent.com/ukraine-partners-coordinate-peace-efforts-ahead-of-abu-dhabi-talks-with-russia-2/",
+   3
+  ],
+  [
+   18,
+   "Iran live updates",
+   "ABC News",
+   "https://abcnews.com/International/live-updates/iran-live-updates-trump-good-call-netanyahu/?id=137762456",
+   3
+  ],
+  [
+   19,
+   "Iran claims strikes on multiple tankers, emboldened after US elections",
+   "The Maritime Executive",
+   "https://maritime-executive.com/article/iran-claims-strikes-on-multiple-tankers-emboldened-after-us-elections",
+   3
+  ],
+  [
+   20,
+   "Iran says US reply to Hormuz plan 'unconvincing'; Trump confirms strikes",
+   "Al Jazeera",
+   "https://www.aljazeera.com/news/2026/11/4/iran-says-us-reply-to-hormuz-plan-unconvincing-trump-confirms-strikes",
+   3
+  ],
+  [
+   21,
+   "Iran, US still far apart on deal to end war as Qatar pushes mediation",
+   "Reuters via Korea Times",
+   "https://www.koreatimes.co.kr/world/20261104/iran-us-still-far-apart-on-deal-to-end-war-as-qatar-pushes-mediation",
+   2
+  ],
+  [
+   22,
+   "Democrats take control of the Senate after winning key midterm races",
+   "AP via PBS NewsHour",
+   "https://www.pbs.org/newshour/politics/democrats-take-control-of-the-senate-after-winning-key-midterm-races",
+   2
+  ],
+  [
+   23,
+   "Democrats flip dozens of GOP seats in 2026 midterms",
+   "CNBC",
+   "https://www.cnbc.com/2026/11/04/democrats-2026-midterm-election-results.html",
+   2
+  ],
+  [
+   24,
+   "Did your county help make Mississippi's Senate race this close?",
+   "WLBT",
+   "https://www.wlbt.com/2026/11/05/did-your-county-help-make-mississippis-senate-race-this-close/",
+   3
+  ],
+  [
+   25,
+   "Which races are still uncalled by AP",
+   "AP via Baltimore Sun",
+   "https://www.baltimoresun.com/2026/11/04/election-2026-uncalled-races/",
+   2
+  ],
+  [
+   26,
+   "'The reason we lost is the war': Vance blames midterm GOP losses on Iran conflict",
+   "Army Times",
+   "https://www.armytimes.com/news/pentagon-congress/2026/11/04/the-reason-we-lost-is-the-war-vance-blames-midterm-gop-losses-iran-conflict/",
+   3
+  ],
+  [
+   27,
+   "Sullivan and Peltola locked in tight race",
+   "Alaska Public Media",
+   "https://alaskapublic.org/news/politics/elections/2026-11-03/peltola-takes-early-lead-in-alaskas-u-s-senate-race",
+   3
+  ],
+  [
+   28,
+   "N. Korea says it test-fired new air defense missile system",
+   "Yonhap via Korea Times",
+   "https://www.koreatimes.co.kr/foreignaffairs/northkorea/20261105/n-korea-says-it-test-fired-new-air-defense-missile-system",
+   2
+  ],
+  [
+   29,
+   "North Korea says it test-fired new anti-aircraft missile",
+   "SBS News",
+   "https://news.sbs.co.kr/english/article.do?news_id=N1008831384",
+   3
+  ],
+  [
+   30,
+   "North Korea mentions 'dialogue option'",
+   "SBS News",
+   "https://news.sbs.co.kr/english/article.do?news_id=N1008830231",
+   3
+  ],
+  [
+   31,
+   "PLA activities in the waters and airspace around Taiwan, 5 Nov",
+   "Taiwan Ministry of National Defense",
+   "https://www.mnd.gov.tw/news/plaact/88145",
+   1
+  ],
+  [
+   32,
+   "Drone attacks kill civilians and cripple Sudan’s power infrastructure; UN warns of growing humanitarian toll",
+   "Radio Dabanga",
+   "https://www.dabangasudan.org/en/all-news/article/drone-attacks-kill-civilians-and-cripple-sudans-power-infrastructure-un-warns-of-growing-humanitarian-toll",
+   3
+  ],
+  [
+   33,
+   "Yemeni government forces claim control of strategic al-Jawf mountain range",
+   "Al Jazeera",
+   "https://www.aljazeera.com/news/2026/11/4/yemeni-government-forces-claim-control-of-strategic-al-jawf-mountain-range",
+   3
+  ],
+  [
+   34,
+   "Au moins quatre civils tués dans des affrontements entre les FARDC et le M23 à Masisi",
+   "Radio Okapi",
+   "https://www.radiookapi.net/2026/11/04/actualite/securite/au-moins-quatre-civils-tues-dans-des-affrontements-entre-les-fardc-et",
+   3
+  ],
+  [
+   35,
+   "Rencontre James Swan et Joseph Kabila : un signe encourageant",
+   "Radio Okapi",
+   "https://www.radiookapi.net/2026/11/04/actualite/securite/rencontre-james-swan-et-joseph-kabila-un-signe-encourageant-pour-le",
+   3
+  ],
+  [
+   36,
+   "North Korea and South Korea launch missiles amid tensions",
+   "Arms Control Association",
+   "https://www.armscontrol.org/act/2026-11/news/north-korea-and-south-korea-launch-missiles-amid-tensions",
+   2
+  ],
+  [
+   37,
+   "North Korea says 'tactical' ballistic missile test verified technical upgrade",
+   "UPI",
+   "https://www.upi.com/Top_News/World-News/2026/10/13/North-Korea-tactical-ballistic-missile-launch-KCNA-Hwasong-11/4141791875032",
+   3
+  ],
+  [
+   38,
+   "North Korea fires salvo of around 10 ballistic missiles toward sea",
+   "NK News",
+   "https://www.nknews.org/2026/10/north-korea-fires-unidentified-projectile-toward-sea-rok-military/",
+   3
+  ],
+  [
+   39,
+   "North Korea tests missile with cluster-bomb warhead",
+   "Stars and Stripes",
+   "https://www.stripes.com/theaters/asia_pacific/2026-11-02/north-korea-cluster-bomb-warhead-23335418.html",
+   3
+  ],
+  [
+   40,
+   "North Korea test-fires strategic cruise missiles: KCNA",
+   "AFP via Manila Times",
+   "https://www.manilatimes.net/2026/11/03/world/asia-oceania/north-korea-test-fires-strategic-cruise-missiles-kcna/2460150",
+   2
+  ],
+  [
+   41,
+   "Blood banks hit by cyberattack in France days after European freezer hacks",
+   "CBS News (AP)",
+   "https://www.cbsnews.com/news/cyberattack-france-blood-bank/",
+   2
+  ],
+  [
+   42,
+   "French blood banks foil new cyberattack targeting refrigerators",
+   "France 24",
+   "https://www.france24.com/en/france/20261104-french-blood-banks-foil-new-cyberattack-targeting-refrigerators",
+   3
+  ],
+  [
+   43,
+   "EU urges action as Germany, Romania and UK report supermarket cyberattacks",
+   "Al Jazeera",
+   "https://www.aljazeera.com/news/2026/11/4/eu-urges-action-as-germany-romania-and-uk-report-supermarket-cyberattacks",
+   3
+  ],
+  [
+   44,
+   "Cyberattack on cooling systems 95% certain to be Russian sabotage",
+   "RetailDetail",
+   "https://www.retaildetail.eu/news/food/cyberattack-on-cooling-systems-95-certain-to-be-russian-sabotage/",
+   4
+  ],
+  [
+   45,
+   "2 months after commissary freezer outages, Pentagon still investigating, quiet on the cause",
+   "Stars and Stripes",
+   "https://www.stripes.com/theaters/us/2026-11-04/cyber-attacks-commissary-freezers-23362522.html",
+   3
+  ],
+  [
+   46,
+   "Cyberattack on supermarket refrigeration systems \"may be the work of hackers with links to Russia\"",
+   "VRT NWS",
+   "https://www.vrt.be/vrtnws/en/2026/11/04/cyberattack-on-supermarket-refrigeration-systems-may-be-the-work/",
+   3
+  ],
+  [
+   47,
+   "A new cold war: hackers target fridges across the globe",
+   "NPR via OPB",
+   "https://www.opb.org/article/2026/11/03/hackers-target-fridges-in-israel-europe-and-the-u-s/",
+   3
+  ],
+  [
+   48,
+   "NATO's military chief tells Poland to keep wary eye on area near Russian border",
+   "Stars and Stripes",
+   "https://www.stripes.com/theaters/europe/2026-11-04/poland-russia-border-threat-eucom-23360076.html",
+   3
+  ],
+  [
+   49,
+   "Suspected mastermind behind Starlink attack arrested",
+   "dpa via Yahoo News",
+   "https://www.yahoo.com/news/world/articles/suspected-mastermind-behind-starlink-attack-193334658.html",
+   2
+  ],
+  [
+   50,
+   "Prime Minister De Wever offers resignation to King Filip",
+   "VRT NWS",
+   "https://www.vrt.be/vrtnws/en/2026/11/02/prime-minister-de-wever-offers-resignation-to-king-filip/",
+   3
+  ],
+  [
+   51,
+   "After Trump's midterm bashing, Europe watches for shifts",
+   "AFP via France 24",
+   "https://www.france24.com/en/live-news/20261104-after-trump-s-midterm-bashing-europe-watches-for-shifts",
+   2
+  ],
+  [
+   52,
+   "De politieke ommezwaai in de Verenigde Staten kan ook voor Limburg relevant zijn",
+   "L1 Nieuws",
+   "https://www.l1nieuws.nl/nieuws/3266909/",
+   3
+  ],
+  [
+   53,
+   "Under Secretary of War for Policy Elbridge Colby and Under Secretary of War for Acquisition and Sustainment Michael Duffey travel to Poland",
+   "US Department of War",
+   "https://www.war.gov/News/Advisories/Advisory/Article/4640190/under-secretary-of-war-for-policy-elbridge-colby-and-under-secretary-of-war-for/",
+   1
+  ],
+  [
+   54,
+   "New US base in Poland. Beyond Trump's presidency",
+   "Defence24",
+   "https://defence24.com/geopolitics/new-us-base-in-poland-beyond-trumps-presidency",
+   3
+  ],
+  [
+   55,
+   "Sneller dan gedacht: wegwerkzaamheden in Oirsbeek eerder klaar",
+   "L1 Nieuws",
+   "https://www.l1nieuws.nl/nieuws/3267164/",
+   3
+  ],
+  [
+   56,
+   "Aod op Nuj, 10 november 2026: verkeersbesluit",
+   "Gemeente Heerlen (Gemeenteblad)",
+   "https://zoek.officielebekendmakingen.nl/gmb-2026-495671.html",
+   1
+  ],
+  [
+   57,
+   "BSC 2026: Deutschland und Litauen stärken die NATO-Ostflanke",
+   "Bundesministerium der Verteidigung",
+   "https://www.bmvg.de/de/aktuelles/deutschland-litauen-staerken-nato-ostflanke-6167472",
+   1
+  ],
+  [
+   58,
+   "Boris Pistorius bei BSC: „In Litauen die Reihen schließen“",
+   "Bundesministerium der Verteidigung",
+   "https://www.bmvg.de/de/mediathek/redebeitrag-verteidigungsminister-berliner-sicherheitskonferenz-6169120",
+   1
+  ],
+  [
+   59,
+   "The Chair of the NATO Military Committee and the Director General of the International Military Staff attend the Berlin Security Conference",
+   "NATO",
+   "https://www.nato.int/en/news-and-events/articles/news/2026/11/04/the-chair-of-the-nato-military-committee-and-the-director-general-of-the-nato-international-military-staff-attend-the-berlin-security-conference",
+   1
+  ],
+  [
+   60,
+   "Bewaffnung für Drohnen freigegeben: 25-Millionen-Euro-Vorlagen",
+   "Bundesministerium der Verteidigung",
+   "https://www.bmvg.de/de/beschaffung-25-millionen-euro-vorlagen/beschaffungsvorhaben-bundeswehr-troposcatter-german-herontp-6167568",
+   1
+  ],
+  [
+   61,
+   "Lithuania considers state-owned drone holding company to boost domestic industry",
+   "LRT (BNS)",
+   "https://www.lrt.lt/en/news-in-english/19/3103099/lithuania-considers-state-owned-drone-holding-company-to-boost-domestic-industry",
+   3
+  ],
+  [
+   62,
+   "Litauen beschafft Blocker-Seeminen des finnischen Unternehmens Forcit Defence",
+   "hartpunkt",
+   "https://www.hartpunkt.de/litauen-beschafft-blocker-seeminen-des-finnischen-unternehmens-forcit-defence/",
+   3
+  ],
+  [
+   63,
+   "Rheinmetall cuts 2026 sales forecast again as Boxer order slips",
+   "Reuters via SRN News",
+   "https://srnnews.com/rheinmetall-cuts-2026-sales-forecast-again-as-boxer-order-slips/",
+   2
+  ],
+  [
+   64,
+   "Powstaje fabryka nowoczesnej amunicji rakietowej",
+   "Polish Ministry of National Defence",
+   "https://www.gov.pl/web/obrona-narodowa/powstaje-fabryka-nowoczesnej-amunicji-rakietowej-to-inwestycja-w-bezpieczenstwo-na-dekady",
+   1
+  ],
+  [
+   65,
+   "Helsing übergibt Software für offene Missionssysteme an das BAAINBw",
+   "hartpunkt",
+   "https://www.hartpunkt.de/combat-fighter-system-of-systems-nucleus-helsing-uebergibt-software-fuer-offene-missionssysteme-an-das-baainbw/",
+   3
+  ],
+  [
+   66,
+   "OpenAI pipeline finds 948 Linux kernel privilege escalation flaws",
+   "Unite.AI",
+   "https://www.unite.ai/openai-pipeline-finds-948-linux-kernel-privilege-escalation-flaws/",
+   3
+  ],
+  [
+   67,
+   "OpenAI agents expose 948 Linux flaws",
+   "Interesting Engineering",
+   "https://interestingengineering.com/ai-robotics/openai-agents-linux-kernel-vulnerabilities-exploits",
+   3
+  ],
+  [
+   68,
+   "SWE-2 Flash",
+   "Cognition",
+   "https://cognition.com/blog/swe-2-flash",
+   1
+  ],
+  [
+   69,
+   "Tencent releases new AI model, pledges safeguards against cyberattack use",
+   "Reuters via BusinessDay",
+   "https://www.businessday.co.za/world/international-companies/2026-11-04-tencent-releases-new-ai-model-pledges-safeguards-against-cyberattack-use/",
+   2
+  ],
+  [
+   70,
+   "Nominations, 119th Congress, sorted by latest update",
+   "Congress.gov",
+   "https://api.congress.gov/v3/nomination/119?sort=updateDate+desc",
+   1
+  ],
+  [
+   71,
+   "Trump asking advisers if Hegseth should stay after midterm losses",
+   "CBS News",
+   "https://www.cbsnews.com/news/trump-hegseth-midterm-election-losses/",
+   3
+  ],
+  [
+   72,
+   "Trump backs Hegseth amid reports of possible firing",
+   "Reuters via Jerusalem Post",
+   "https://www.jpost.com/american-politics/article-913858",
+   2
+  ],
+  [
+   73,
+   "Congress's defense advocates take big hit in 2026 midterm elections",
+   "Breaking Defense",
+   "https://breakingdefense.com/2026/11/congresss-defense-advocates-take-big-hit-in-2026-midterm-elections/",
+   3
+  ],
+  [
+   74,
+   "Smith Statement on HASC Democrats' Priorities for the 120th Congress",
+   "House Armed Services Committee Democrats",
+   "https://democrats-armedservices.house.gov/press-releases?ID=F07348F3-F6B5-491F-9D9A-6145FE78C683",
+   1
+  ],
+  [
+   75,
+   "DRPM-UxS deliver over 25,000 autonomous and counter-unmanned systems to CENTCOM AOR",
+   "US Department of War",
+   "https://www.war.gov/News/Releases/Release/Article/4641098/drpm-uxs-deliver-over-25000-autonomous-and-counter-unmanned-systems-to-centcom/",
+   1
+  ],
+  [
+   76,
+   "Centcom benefits from Project Agincourt, drone dominance efforts",
+   "US Department of War",
+   "https://www.war.gov/News/News-Stories/Article/Article/4641652/centcom-benefits-from-project-agincourt-drone-dominance-efforts/",
+   1
+  ],
+  [
+   77,
+   "Cancellations, investigations, and even impeachment could be ahead under Democratic Congress",
+   "Defense One",
+   "https://www.defenseone.com/policy/2026/11/impeachment-investigations-canceled-projects-democratic-congress/417053/",
+   3
+  ],
+  [
+   78,
+   "Amid Iran conflict, 'non-hostile' deaths of 2 US airmen raise overseas toll to 23",
+   "Military Times",
+   "https://www.militarytimes.com/news/2026/11/04/amid-iran-conflict-non-hostile-deaths-of-2-us-airmen-raise-overseas-toll-to-23/",
+   3
+  ],
+  [
+   79,
+   "USAG Wiesbaden community steps up to feed the force during precautionary DFAC closure",
+   "army.mil",
+   "https://www.army.mil/article/296532/usag_wiesbaden_community_steps_up_to_feed_the_force_during_precautionary_dfac_closure",
+   1
+  ],
+  [
+   80,
+   "H.R. 8800: actions",
+   "Congress.gov",
+   "https://api.congress.gov/v3/bill/119/hr/8800/actions",
+   1
+  ],
+  [
+   81,
+   "PN1188: Lt. Gen. Kevin Admiral, nomination record",
+   "Congress.gov",
+   "https://api.congress.gov/v3/nomination/119/1188",
+   1
+  ],
+  [
+   82,
+   "OPM announces 2026 Federal Benefits Open Season",
+   "US Office of Personnel Management",
+   "https://www.opm.gov/news/news-releases/opm-announces-2026-federal-benefits-open-season-as-premium-growth-slows-for-second-consecutive-year/",
+   1
+  ],
+  [
+   83,
+   "TRICARE, Medicare, FEDVIP open season dates set",
+   "MOAA",
+   "https://www.moaa.org/content/publications-and-media/news-articles/2026-news-articles/benefits/tricare,-medicare,-fedvip-open-season-dates-set/",
+   3
+  ],
+  [
+   84,
+   "NDAA and military pay: House and Senate versions differ on your 2027 raise",
+   "MOAA",
+   "https://www.moaa.org/content/publications-and-media/news-articles/2026-news-articles/finance/ndaa-and-military-pay-house-and-senate-versions-differ-on-your-2027-raise/",
+   3
+  ],
+  [
+   85,
+   "News releases for current month",
+   "Internal Revenue Service",
+   "https://www.irs.gov/newsroom/news-releases-for-current-month",
+   1
+  ],
+  [
+   86,
+   "Crude oil prices fall below $90 a barrel as Vance blames GOP election defeat on Iran war",
+   "CNBC",
+   "https://www.cnbc.com/2026/11/04/oil-price-iran-war-us-election-strait-hormuz.html",
+   2
+  ],
+  [
+   87,
+   "Congressman calls for tougher Pentagon oversight in bid for committee chair",
+   "Military Times",
+   "https://www.militarytimes.com/news/pentagon-congress/2026/11/04/congressman-calls-for-tougher-pentagon-oversight-in-bid-for-committee-chair/",
+   3
+  ],
+  [
+   88,
+   "Daily closes: S&P 500, Dow, Nasdaq Composite, Russell 2000, AEX, Stoxx 600, DAX, Brent, TTF, gold, VIX",
+   "Yahoo Finance",
+   "https://finance.yahoo.com/markets/",
+   2
+  ],
+  [
+   89,
+   "Stock futures are little changed after big rally following Democrats' decisive midterm wins",
+   "CNBC",
+   "https://www.cnbc.com/2026/11/04/stock-market-today-live-updates.html",
+   2
+  ],
+  [
+   90,
+   "Ahold grote winnaar in AEX, groene energie in de plus na midterms",
+   "ANP via Welingelichte Kringen",
+   "https://www.welingelichtekringen.nl/economie/ahold-grote-winnaar-in-aex-groene-energie-in-de-plus-na-midterms",
+   2
+  ],
+  [
+   91,
+   "Euro foreign exchange reference rates: US dollar",
+   "European Central Bank",
+   "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/eurofxref-graph-usd.en.html",
+   1
+  ],
+  [
+   92,
+   "Daily Treasury par yield curve rates, November 2026",
+   "US Treasury",
+   "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202611",
+   1
+  ],
+  [
+   93,
+   "ADP National Employment Report: private-sector employment increased by 86,000 jobs in October",
+   "ADP",
+   "https://mediacenter.adp.com/2026-11-04-ADP-National-Employment-Report-Private-Sector-Employment-Increased-by-86,000-Jobs-in-October",
+   1
+  ],
+  [
+   94,
+   "Services PMI at 54.5%; October 2026 ISM Services PMI Report",
+   "Institute for Supply Management",
+   "https://www.prnewswire.com/news-releases/services-pmi-at-54-5-october-2026-ism-services-pmi-report-302928112.html",
+   1
+  ],
+  [
+   95,
+   "Federal Reserve issues FOMC statement, 28 Oct 2026",
+   "Federal Reserve",
+   "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
+   1
+  ],
+  [
+   96,
+   "European Central Bank keeps key interest rate on hold at 2.5%",
+   "CNBC",
+   "https://www.cnbc.com/2026/10/29/european-central-bank-interest-rates.html",
+   2
+  ],
+  [
+   97,
+   "Euro area annual inflation up to 4.0% (flash estimate, October 2026)",
+   "Eurostat",
+   "https://ec.europa.eu/eurostat/web/products-euro-indicators/w/2-04112026-ap",
+   1
+  ],
+  [
+   98,
+   "Inflatie in oktober 3,7 procent bij snelle raming",
+   "CBS",
+   "https://www.cbs.nl/nl-nl/nieuws/2026/45/inflatie-in-oktober-3-7-procent-bij-snelle-raming",
+   1
+  ],
+  [
+   99,
+   "EU Natural Gas TTF",
+   "Trading Economics",
+   "https://tradingeconomics.com/commodity/eu-natural-gas",
+   3
+  ],
+  [
+   100,
+   "United States initial jobless claims",
+   "Trading Economics",
+   "https://tradingeconomics.com/united-states/jobless-claims",
+   3
+  ],
+  [
+   101,
+   "Quarterly Refunding Statement",
+   "US Treasury",
+   "https://home.treasury.gov/news/press-releases/sb0678",
+   1
+  ],
+  [
+   102,
+   "Kamer debatteert over belastingplan, Pro wil 1,5 miljard minder belasting voor werkenden",
+   "NOS",
+   "https://nos.nl/liveblog/2638042-kamer-debatteert-over-belastingplan-pro-wil-1-5-miljard-minder-belasting-voor-werkenden",
+   3
+  ],
+  [
+   103,
+   "Meerderheid vinden voor belastingplan blijft complexe puzzel voor minderheidskabinet",
+   "NOS",
+   "https://nos.nl/artikel/2638075-meerderheid-vinden-voor-belastingplan-blijft-complexe-puzzel-voor-minderheidskabinet",
+   3
+  ],
+  [
+   104,
+   "Tot 30 procent minder veehouderijen verwacht als gevolg van stikstofplannen",
+   "NOS",
+   "https://nos.nl/artikel/2638061-tot-30-procent-minder-veehouderijen-verwacht-als-gevolg-van-stikstofplannen",
+   3
+  ],
+  [
+   105,
+   "Organisaties waarschuwen voor malafide verduurzamingsbedrijven: dit zijn rode vlaggen",
+   "AVROTROS Radar",
+   "https://radar.avrotros.nl/artikel/organisaties-waarschuwen-voor-malafide-verduurzamingsbedrijven-dit-zijn-rode-vlaggen-63148",
+   3
+  ],
+  [
+   106,
+   "Herdenking Poppy Day op 11 november",
+   "Gemeente Brunssum",
+   "https://www.brunssum.nl/nieuws_en_actualiteit/nieuwsberichten/Herdenking_Poppy_Day_op_11_november",
+   1
+  ],
+  [
+   107,
+   "De Hubertusfeesten in Offelken",
+   "Immaterieel Erfgoed Vlaanderen",
+   "https://immaterieelerfgoed.be/nl/erfgoederen/de-hubertusfeesten-in-offelken/pdf",
+   3
+  ],
+  [
+   108,
+   "Besluit evenementenvergunning: Sinterklaasintocht Hoensbroek",
+   "Gemeente Heerlen (Gemeenteblad)",
+   "https://zoek.officielebekendmakingen.nl/gmb-2026-501394.html",
+   1
+  ],
+  [
+   109,
+   "Besluit evenementenvergunning: Intocht Sinterklaas, Bongerd",
+   "Gemeente Heerlen (Gemeenteblad)",
+   "https://zoek.officielebekendmakingen.nl/gmb-2026-491274.html",
+   1
+  ],
+  [
+   110,
+   "Projected lineup: November 3 at Nashville",
+   "Hurricanes.com",
+   "https://www.nhl.com/hurricanes/news/projected-lineup-november-3-at-nashville",
+   1
+  ],
+  [
+   111,
+   "Scores, Wednesday 4 November 2026",
+   "NHL.com",
+   "https://www.nhl.com/scores/2026-11-04",
+   2
+  ],
+  [
+   112,
+   "NHL standings",
+   "NHL.com",
+   "https://www.nhl.com/standings",
+   2
+  ],
+  [
+   113,
+   "NHL bringing Global Series Fan Fest to Helsinki for Hurricanes, Kraken games",
+   "NHL.com",
+   "https://www.nhl.com/news/nhl-bringing-global-series-fan-fest-to-helsinki-for-hurricanes-kraken-games",
+   2
+  ],
+  [
+   114,
+   "NHL partners with Düsseldorf's Kö on Ice ahead of Global Series",
+   "NHL.com",
+   "https://www.nhl.com/news/nhl-partners-with-dusseldorf-s-ko-on-ice-ahead-of-global-series",
+   2
+  ],
+  [
+   115,
+   "Weihnachtsmarkt am Kölner Dom",
+   "koeln.de",
+   "https://www.koeln.de/weihnachten/weihnachtsmaerkte-koeln/weihnachtsmarkt-am-koelner-dom/",
+   2
+  ],
+  [
+   116,
+   "Aachener Weihnachtsmarkt: dates and hours",
+   "Aachen Christmas market",
+   "https://aachenweihnachtsmarkt.de/en/pages/offers/",
+   1
+  ],
+  [
+   117,
+   "Christmas market Monschau",
+   "Tourismus Kreis Düren",
+   "https://www.tourismus.kreis-dueren.de/en/e-christmas-market-monschau-2",
+   1
+  ],
+  [
+   118,
+   "Magisch Maastricht",
+   "Kidsproof",
+   "https://www.kidsproof.nl/zuid-limburg/eropuit/magisch-maastricht/magisch-maastricht-kerst-gezinsuitje-eu/",
+   4
+  ],
+  [
+   119,
+   "Village de Noël in Luik",
+   "Visit Zuid-Limburg",
+   "https://www.visitzuidlimburg.com/experience-zuid-limburg/event/village-de-noel-in-luik/64128",
+   2
+  ],
+  [
+   120,
+   "Three Battles: Arnaville, Altuzzo, and Schmidt, \"More Action at Kommerscheidt (5 November)\"",
+   "US Army Center of Military History (HyperWar transcription)",
+   "http://www.ibiblio.org/hyperwar/USA/USA-SS-Three/USA-SS-Three-III-4.html",
+   1
+  ],
+  [
+   121,
+   "Aanvraag evenementenvergunning intocht van Sinterklaas, Brunssum",
+   "Gemeente Brunssum (Gemeenteblad)",
+   "https://zoek.officielebekendmakingen.nl/gmb-2026-496513.html",
+   1
+  ]
+ ]
+}

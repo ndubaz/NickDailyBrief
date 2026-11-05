@@ -2,74 +2,6 @@
  "note": "Standing horizon of dated events. The morning run adds events (added = today), sets updated when it changes one, and removes events after they pass. Events without a firm date carry date as the first day of their window and dateText as the human text.",
  "events": [
   {
-   "id": "brussels-ukraine-guarantees",
-   "date": "2026-11-04",
-   "dateText": "4 Nov",
-   "t": "Technical talks on Ukraine at the European Commission",
-   "n": "France, Germany, UK, EU and NATO; post-war security architecture",
-   "h": true,
-   "status": "confirmed",
-   "added": "2026-11-03",
-   "src": [
-    [
-     16,
-     "Ukraine's allies to coordinate peace efforts ahead of planned talks with Russia, US",
-     "Kyiv Independent",
-     "https://kyivindependent.com/ukraines-allies-to-coordinate-peace-efforts-ahead-of-planned-talks-with-russia-us/"
-    ]
-   ],
-   "updated": "2026-11-04"
-  },
-  {
-   "id": "tk-budget-debate",
-   "date": "2026-11-04",
-   "dateText": "4 Nov",
-   "t": "Tweede Kamer tax-plan debate",
-   "n": "Wednesday evening; cabinet signed off the plan on 3 Nov; no majority yet; fuel-duty cut at stake",
-   "h": false,
-   "status": "confirmed",
-   "added": "2026-11-02",
-   "src": [
-    [
-     137,
-     "No sign of deal on budget ahead of crucial week",
-     "DutchNews",
-     "https://www.dutchnews.nl/2026/11/no-sign-of-deal-on-budget-ahead-of-crucial-week-in-parliament/"
-    ],
-    [
-     110,
-     "Geen deal met oppositie over belastingplan, woensdag debat in Tweede Kamer",
-     "NOS",
-     "https://nos.nl/artikel/2637476-geen-deal-met-oppositie-over-belastingplan-woensdag-debat-in-tweede-kamer"
-    ],
-    [
-     138,
-     "Kabinet eens over koers Belastingplan 2027",
-     "Salaris Vanmorgen",
-     "https://www.salarisvanmorgen.nl/2026/11/03/kabinet-eens-over-koers-belastingplan-2027"
-    ]
-   ],
-   "updated": "2026-11-03"
-  },
-  {
-   "id": "bundestag-budget-4nov",
-   "date": "2026-11-04",
-   "dateText": "4 Nov",
-   "t": "Bundestag budget committee: seven arms purchases",
-   "n": "Eurofighter Tranche 4 and 5 contract change, Role 2B field hospitals, SPIKE-ER2 missiles",
-   "h": false,
-   "status": "reported",
-   "added": "2026-11-03",
-   "src": [
-    [
-     81,
-     "Bundeswehr: 7 neue Rüstungsvorhaben vor Entscheidung",
-     "ESUT",
-     "https://esut.de/2026/11/meldungen/76427/bundeswehr-7-ruestungsvorhaben-ent/"
-    ]
-   ]
-  },
-  {
    "id": "army-fy27-col-board",
    "date": "2026-11-05",
    "dateText": "5 Nov",
@@ -88,24 +20,6 @@
    ]
   },
   {
-   "id": "white-house-oleshky",
-   "date": "2026-11-05",
-   "dateText": "5 Nov, 11:00 ET",
-   "t": "White House event on an Oleshky ceasefire",
-   "n": "Melania Trump convenes Russian and Ukrainian representatives",
-   "h": false,
-   "status": "reported",
-   "added": "2026-11-04",
-   "src": [
-    [
-     17,
-     "Melania Trump to convene Russian and Ukrainian representatives at White House",
-     "Ukrinform",
-     "https://www.ukrinform.net/rubric-polytics/4180964-melania-trump-to-convene-russian-and-ukrainian-representatives-at-white-house.html"
-    ]
-   ]
-  },
-  {
    "id": "qatar-iran-window",
    "date": "2026-11-05",
    "dateText": "about 5 Nov",
@@ -120,6 +34,49 @@
      "Iran, US still far apart on deal to end war as Qatar pushes mediation",
      "Reuters via TimesLIVE",
      "https://www.timeslive.co.za/news/world/2026-11-03-iran-us-still-far-apart-on-deal-to-end-war-as-qatar-pushes-mediation/"
+    ]
+   ]
+  },
+  {
+   "id": "white-house-oleshky",
+   "date": "2026-11-05",
+   "dateText": "5 Nov, 11:00 ET",
+   "t": "White House event with Russian and Ukrainian representatives on Oleshky",
+   "n": "Melania Trump convenes Russian and Ukrainian representatives",
+   "h": false,
+   "status": "confirmed",
+   "added": "2026-11-04",
+   "src": [
+    [
+     17,
+     "Melania Trump to convene Russian and Ukrainian representatives at White House",
+     "Ukrinform",
+     "https://www.ukrinform.net/rubric-polytics/4180964-melania-trump-to-convene-russian-and-ukrainian-representatives-at-white-house.html"
+    ],
+    [
+     5,
+     "First Lady Melania Trump to convene Russian and Ukrainian representatives at the White House",
+     "The White House",
+     "https://www.whitehouse.gov/briefings-statements/2026/11/first-lady-melania-trump-to-convene-russian-and-ukrainian-representatives-at-the-white-house/"
+    ]
+   ],
+   "updated": "2026-11-05"
+  },
+  {
+   "id": "be-king-de-wever",
+   "date": "2026-11-06",
+   "dateText": "6 Nov, 10:30",
+   "t": "King Philippe sees De Wever on the government's resignation",
+   "n": "Resignation held in suspense since 2 Nov",
+   "h": false,
+   "status": "confirmed",
+   "added": "2026-11-05",
+   "src": [
+    [
+     9,
+     "L'Arizona au pied du mur : la démission de Bart De Wever en suspens, le Roi entame ses entrevues ce mardi",
+     "RTBF",
+     "https://www.rtbf.be/article/crise-dans-le-gouvernement-arizona-le-kern-se-quitte-sans-accord-bart-de-wever-se-rend-chez-le-roi-11809122"
     ]
    ]
   },
@@ -144,24 +101,6 @@
      "Pentagon's NATO review preparing troop options by November 6",
      "Defense News / Reuters",
      "https://www.defensenews.com/pentagon/2026/08/27/pentagons-nato-review-preparing-troop-options-for-hegseth-by-november-6/"
-    ]
-   ]
-  },
-  {
-   "id": "us-congress-returns",
-   "date": "2026-11-09",
-   "dateText": "9 Nov",
-   "t": "US Congress returns",
-   "n": "NDAA, appropriations",
-   "h": false,
-   "status": "confirmed",
-   "added": "2026-11-02",
-   "src": [
-    [
-     24,
-     "NDAA FY2027 and Dec. 11 funding deadline",
-     "Buffalo Chronicle (thin source)",
-     "https://buffalochronicle.com/2026/10/24/ndaa-fy2027-lame-duck-dec-11-funding-deadline-niagara-falls/"
     ]
    ]
   },
@@ -214,6 +153,24 @@
    ]
   },
   {
+   "id": "us-congress-returns",
+   "date": "2026-11-09",
+   "dateText": "9 Nov",
+   "t": "US Congress returns",
+   "n": "NDAA, appropriations",
+   "h": false,
+   "status": "confirmed",
+   "added": "2026-11-02",
+   "src": [
+    [
+     24,
+     "NDAA FY2027 and Dec. 11 funding deadline",
+     "Buffalo Chronicle (thin source)",
+     "https://buffalochronicle.com/2026/10/24/ndaa-fy2027-lame-duck-dec-11-funding-deadline-niagara-falls/"
+    ]
+   ]
+  },
+  {
    "id": "abu-dhabi-talks",
    "date": "2026-11-10",
    "dateText": "10–11 Nov",
@@ -245,20 +202,20 @@
    "updated": "2026-11-03"
   },
   {
-   "id": "nl-budget-votes",
-   "date": "2026-11-12",
-   "dateText": "12 Nov",
-   "t": "Dutch budget votes",
-   "n": "Fuel duty, Box 3",
+   "id": "tk-tax-plan-debate-2",
+   "date": "2026-11-10",
+   "dateText": "10 Nov",
+   "t": "Tweede Kamer tax-plan debate, part two",
+   "n": "Cabinet answers the amendments; vote 12 Nov",
    "h": false,
    "status": "confirmed",
-   "added": "2026-11-02",
+   "added": "2026-11-05",
    "src": [
     [
-     30,
-     "No sign of deal on budget ahead of crucial week",
-     "DutchNews",
-     "https://www.dutchnews.nl/2026/11/no-sign-of-deal-on-budget-ahead-of-crucial-week-in-parliament/"
+     102,
+     "Kamer debatteert over belastingplan, Pro wil 1,5 miljard minder belasting voor werkenden",
+     "NOS",
+     "https://nos.nl/liveblog/2638042-kamer-debatteert-over-belastingplan-pro-wil-1-5-miljard-minder-belasting-voor-werkenden"
     ]
    ]
   },
@@ -281,6 +238,24 @@
    ]
   },
   {
+   "id": "nl-budget-votes",
+   "date": "2026-11-12",
+   "dateText": "12 Nov",
+   "t": "Dutch budget votes",
+   "n": "Fuel duty, Box 3",
+   "h": false,
+   "status": "confirmed",
+   "added": "2026-11-02",
+   "src": [
+    [
+     30,
+     "No sign of deal on budget ahead of crucial week",
+     "DutchNews",
+     "https://www.dutchnews.nl/2026/11/no-sign-of-deal-on-budget-ahead-of-crucial-week-in-parliament/"
+    ]
+   ]
+  },
+  {
    "id": "nl-bus-strikes",
    "date": "2026-11-17",
    "dateText": "from 17 Nov",
@@ -295,6 +270,24 @@
      "Vakbonden verwachten nieuwe stakingen in streekvervoer",
      "RTV Noord",
      "https://rtvnoord.nl/verkeer/1449544/vakbonden-verwachten-nieuwe-stakingen-in-streekvervoer"
+    ]
+   ]
+  },
+  {
+   "id": "alaska-rcv",
+   "date": "2026-11-18",
+   "dateText": "18 Nov",
+   "t": "Alaska ranked-choice count for the Senate, if no one passes 50%",
+   "n": "Peltola led Sullivan by 626 votes",
+   "h": false,
+   "status": "reported",
+   "added": "2026-11-05",
+   "src": [
+    [
+     27,
+     "Sullivan and Peltola locked in tight race",
+     "Alaska Public Media",
+     "https://alaskapublic.org/news/politics/elections/2026-11-03/peltola-takes-early-lead-in-alaskas-u-s-senate-race"
     ]
    ]
   },
@@ -353,20 +346,20 @@
    ]
   },
   {
-   "id": "posture-review-complete",
+   "id": "eerste-kamer-tax-plan",
    "date": "2026-12-01",
    "dateText": "December",
-   "t": "Posture review complete",
-   "n": "Basing decisions",
+   "t": "Eerste Kamer takes the 2027 tax plan",
+   "n": "After the 12 Nov Kamer vote",
    "h": false,
    "status": "reported",
-   "added": "2026-11-02",
+   "added": "2026-11-04",
    "src": [
     [
-     23,
-     "Pentagon's NATO review preparing troop options by November 6",
-     "Defense News / Reuters",
-     "https://www.defensenews.com/pentagon/2026/08/27/pentagons-nato-review-preparing-troop-options-for-hegseth-by-november-6/"
+     5,
+     "CU en 50Plus positief, andere bondjes willen doorpraten over belastingplan",
+     "NOS",
+     "https://nos.nl/artikel/2637885"
     ]
    ]
   },
@@ -389,24 +382,6 @@
    ]
   },
   {
-   "id": "pl-us-base-decision",
-   "date": "2026-12-01",
-   "dateText": "December",
-   "t": "US decision on a permanent base in Poland",
-   "n": "Pentagon talks in mid-November first",
-   "h": false,
-   "status": "reported",
-   "added": "2026-11-04",
-   "src": [
-    [
-     51,
-     "Stała baza USA w Polsce głównym tematem obrad RBN",
-     "Defence24",
-     "https://defence24.pl/polityka-obronna/stala-baza-usa-w-polsce-glownym-tematem-obrad-rbn"
-    ]
-   ]
-  },
-  {
    "id": "monusco-mandate",
    "date": "2026-12-01",
    "dateText": "December",
@@ -425,20 +400,38 @@
    ]
   },
   {
-   "id": "eerste-kamer-tax-plan",
+   "id": "pl-us-base-decision",
    "date": "2026-12-01",
    "dateText": "December",
-   "t": "Eerste Kamer takes the 2027 tax plan",
-   "n": "After the 12 Nov Kamer vote",
+   "t": "US decision on a permanent base in Poland",
+   "n": "Pentagon talks in mid-November first",
    "h": false,
    "status": "reported",
    "added": "2026-11-04",
    "src": [
     [
-     5,
-     "CU en 50Plus positief, andere bondjes willen doorpraten over belastingplan",
-     "NOS",
-     "https://nos.nl/artikel/2637885"
+     51,
+     "Stała baza USA w Polsce głównym tematem obrad RBN",
+     "Defence24",
+     "https://defence24.pl/polityka-obronna/stala-baza-usa-w-polsce-glownym-tematem-obrad-rbn"
+    ]
+   ]
+  },
+  {
+   "id": "posture-review-complete",
+   "date": "2026-12-01",
+   "dateText": "December",
+   "t": "Posture review complete",
+   "n": "Basing decisions",
+   "h": false,
+   "status": "reported",
+   "added": "2026-11-02",
+   "src": [
+    [
+     23,
+     "Pentagon's NATO review preparing troop options by November 6",
+     "Defense News / Reuters",
+     "https://www.defensenews.com/pentagon/2026/08/27/pentagons-nato-review-preparing-troop-options-for-hegseth-by-november-6/"
     ]
    ]
   },

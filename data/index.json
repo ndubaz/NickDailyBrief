@@ -1,8 +1,9 @@
 {
-  "latest": "2026-11-04",
+  "latest": "2026-11-05",
   "editions": [
     {"date": "2026-11-02", "edition": 1},
     {"date": "2026-11-03", "edition": 2},
-    {"date": "2026-11-04", "edition": 3}
+    {"date": "2026-11-04", "edition": 3},
+    {"date": "2026-11-05", "edition": 4}
   ]
 }

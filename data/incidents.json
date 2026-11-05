@@ -328,6 +328,54 @@
      "https://www.933thedrive.com/2026/11/03/latvia-believes-one-of-two-drones-that-violated-its-airspace-was-russian-the-other-ukrainian/"
     ]
    ]
+  },
+  {
+   "id": "2026-11-02-fr-cyb-efs-plasma",
+   "date": "2026-11-02",
+   "code": "CYB",
+   "attr": "A0",
+   "local": false,
+   "country": "FR",
+   "place": "France: three EFS plasma cold stores (sites not named; marker at EFS headquarters, Saint-Denis)",
+   "lat": 48.92,
+   "lon": 2.36,
+   "summary": "Temperature and defrost thresholds were raised to “extremely high levels” through refrigeration supplier Coolworld, which blames a third-party component; alarms caught it and the blood service says no products were compromised. France's cyber agency ANSSI and the health ministry are investigating.",
+   "edition": "2026-11-05",
+   "src": [
+    [
+     41,
+     "Blood banks hit by cyberattack in France days after European freezer hacks",
+     "CBS News (AP)",
+     "https://www.cbsnews.com/news/cyberattack-france-blood-bank/"
+    ],
+    [
+     42,
+     "French blood banks foil new cyberattack targeting refrigerators",
+     "France 24",
+     "https://www.france24.com/en/france/20261104-french-blood-banks-foil-new-cyberattack-targeting-refrigerators"
+    ]
+   ]
+  },
+  {
+   "id": "2026-11-04-gb-cyb-meat",
+   "date": "2026-11-04",
+   "code": "CYB",
+   "attr": "A0",
+   "local": false,
+   "country": "GB",
+   "place": "United Kingdom: small meat-processing firms (not named; marker at Birmingham)",
+   "lat": 52.48,
+   "lon": -1.9,
+   "summary": "Richard Horne, chief executive of the National Cyber Security Centre (NCSC), said hackers tried to target small meat processors with minimal impact and that “vulnerable technology had been exploited” in a couple of cases.",
+   "edition": "2026-11-05",
+   "src": [
+    [
+     43,
+     "EU urges action as Germany, Romania and UK report supermarket cyberattacks",
+     "Al Jazeera",
+     "https://www.aljazeera.com/news/2026/11/4/eu-urges-action-as-germany-romania-and-uk-report-supermarket-cyberattacks"
+    ]
+   ]
   }
  ],
  "attrLog": [

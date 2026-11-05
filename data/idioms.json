@@ -1,6 +1,6 @@
 {
  "note": "Taal: the idiom bank. One featured idiom per day rotating nl, fr, it. The run appends one entry per day and never repeats a phrase. The page shows today's and a review line (yesterday, a week ago, a month ago).",
- "updated": "2026-11-04",
+ "updated": "2026-11-05",
  "idioms": [
   {
    "date": "2026-11-01",
@@ -41,6 +41,16 @@
    "example": "Als het kabinet op 12 november een meerderheid wil, zal het water bij de wijn moeten doen.",
    "register": "neutral; heard daily in politics and in meetings",
    "note": "The standard phrase for coalition bargaining, so expect it all week around the tax-plan vote. A colleague who says 'we moeten allebei wat water bij de wijn doen' is offering a deal, not a lecture."
+  },
+  {
+   "date": "2026-11-05",
+   "lang": "fr",
+   "phrase": "mettre la charrue avant les bœufs",
+   "literal": "to put the plough before the oxen",
+   "meaning": "to do things in the wrong order; to decide before the groundwork is done",
+   "example": "Signer le contrat avant d'avoir vu le devis, c'est mettre la charrue avant les bœufs.",
+   "register": "everyday, across France and Wallonia",
+   "note": "The English cousin is 'to put the cart before the horse'. Heard in meetings when someone wants a decision before the facts are in; the negative form, 'il ne faut pas mettre la charrue avant les bœufs', is the usual brake."
   }
  ]
 }

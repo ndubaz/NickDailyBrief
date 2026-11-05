@@ -1,6 +1,6 @@
 {
  "note": "Out and about: curated events within about 90 minutes by car (Maastricht, Aachen, Liège, Köln, Düsseldorf, Bonn, Eindhoven, Antwerp, Brussels, the Eifel and Ardennes). The run adds events with a source, prunes those that have passed, and sets updated when details change. cat = music|markets|museums|sport|kids|food|outdoors|festival. kid = suitable for children. drive = minutes from Hoensbroek, approximate. prio = true marks the few major events (big festivals, Sinterklaas arrivals, the carnival opening) that also appear in the Planner's This week; Christmas markets come from calendar.json.",
- "updated": "2026-11-04",
+ "updated": "2026-11-05",
  "events": [
   {
    "id": "born-to-play-bonnefanten-2026",
@@ -464,6 +464,29 @@
      "Geheimen van Parkstad brengt streekverhalen tot leven in Theater Heerlen",
      "Drimble / ParkstadActueel",
      "https://drimble.nl/regio/limburg/heerlen/108460506/geheimen-van-parkstad-brengt-streekverhalen-tot-leven-in-theater-heerlen.html"
+    ]
+   ]
+  },
+  {
+   "id": "sinterklaas-hoensbroek-2026",
+   "t": "Sinterklaas arrives in Hoensbroek",
+   "cat": "kids",
+   "from": "2026-11-21",
+   "to": "2026-11-21",
+   "town": "Hoensbroek",
+   "venue": "Gebrookerplein; time not yet published",
+   "cc": "NL",
+   "drive": 5,
+   "cost": "Free",
+   "kid": true,
+   "prio": true,
+   "added": "2026-11-05",
+   "src": [
+    [
+     108,
+     "Besluit evenementenvergunning: Sinterklaasintocht Hoensbroek",
+     "Gemeente Heerlen (Gemeenteblad)",
+     "https://zoek.officielebekendmakingen.nl/gmb-2026-501394.html"
     ]
    ]
   },

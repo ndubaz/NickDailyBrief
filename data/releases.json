@@ -1,6 +1,6 @@
 {
  "note": "Frontier log: dated releases, published results and shipped capabilities in AI, chips, robotics and autonomy. One entry per release; the run appends and never edits. kind = model|chip|robot|autonomy|result|tool.",
- "updated": "2026-11-04",
+ "updated": "2026-11-05",
  "releases": [
   {
    "date": "2026-11-02",
@@ -119,6 +119,60 @@
      "China's Baidu launches AI model simulating road environment for robotaxis",
      "Reuters via WTVB",
      "https://wtvbam.com/2026/11/03/chinas-baidu-launches-ai-model-simulating-road-environment-for-robotaxis/"
+    ]
+   ]
+  },
+  {
+   "id": "2026-11-04-openai-kernel-pipeline",
+   "date": "2026-11-04",
+   "kind": "result",
+   "t": "OpenAI pipeline finds 948 unique Linux kernel privilege-escalation exploits",
+   "lab": "OpenAI",
+   "n": "About 2.8 million lines scanned; 1,169 working exploits, 948 unique; $1,213,430 in API credits, about $1,279 each; 61 patched upstream.",
+   "src": [
+    [
+     66,
+     "OpenAI pipeline finds 948 Linux kernel privilege escalation flaws",
+     "Unite.AI",
+     "https://www.unite.ai/openai-pipeline-finds-948-linux-kernel-privilege-escalation-flaws/"
+    ],
+    [
+     67,
+     "OpenAI agents expose 948 Linux flaws",
+     "Interesting Engineering",
+     "https://interestingengineering.com/ai-robotics/openai-agents-linux-kernel-vulnerabilities-exploits"
+    ]
+   ]
+  },
+  {
+   "id": "2026-11-04-cognition-swe-2-flash",
+   "date": "2026-11-04",
+   "kind": "model",
+   "t": "Cognition releases SWE-2 Flash coding model",
+   "lab": "Cognition",
+   "n": "276B parameters, 12B active; about 200 tokens a second; a fifth of SWE-2's price; FrontierCode 2.0 24.0; weights withheld.",
+   "src": [
+    [
+     68,
+     "SWE-2 Flash",
+     "Cognition",
+     "https://cognition.com/blog/swe-2-flash"
+    ]
+   ]
+  },
+  {
+   "id": "2026-11-04-tencent-hy4",
+   "date": "2026-11-04",
+   "kind": "model",
+   "t": "Tencent releases Hy4",
+   "lab": "Tencent",
+   "n": "No parameter count or benchmarks published; weights to follow with a safety-testing report.",
+   "src": [
+    [
+     69,
+     "Tencent releases new AI model, pledges safeguards against cyberattack use",
+     "Reuters via BusinessDay",
+     "https://www.businessday.co.za/world/international-companies/2026-11-04-tencent-releases-new-ai-model-pledges-safeguards-against-cyberattack-use/"
     ]
    ]
   }

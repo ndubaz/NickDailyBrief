@@ -1,6 +1,6 @@
 {
  "note": "The board: ten tracked theatres with a dated log of facts per theatre. The morning run appends one entry per theatre that had a reportable event (newest last) with the cited source rows copied into src, and never edits or deletes old entries. No status labels: the page derives activity from the dates. lat/lon place the marker on the schematic map. short = map label; lp = label position (above, below, left, right).",
- "updated": "2026-11-04",
+ "updated": "2026-11-05",
  "theatres": [
   {
    "id": "ru-ua",
@@ -85,6 +85,24 @@
        "https://www.ukrinform.net/rubric-economy/4181119-russia-targets-substation-critical-to-stable-operation-of-khmelnytskyi-npp.html"
       ]
      ]
+    },
+    {
+     "date": "2026-11-05",
+     "t": "The European Commission hosted post-war prosperity talks with Ukraine, the US, Germany, France, Britain, NATO and the World Bank on 4 Nov; Zelensky put the 2 Nov Komyshuvakha toll at 40. [12, 15]",
+     "src": [
+      [
+       12,
+       "Statement following meeting on prosperity talks today (STATEMENT/26/2348)",
+       "European Commission",
+       "https://ec.europa.eu/commission/presscorner/detail/en/statement_26_2348"
+      ],
+      [
+       15,
+       "Zelensky: Death toll in Komyshuvakha rises to 40, more than 30 may remain trapped under rubble",
+       "Ukrinform",
+       "https://www.ukrinform.net/rubric-ato/4181429-zelensky-death-toll-in-komyshuvakha-rises-to-40-more-than-30-may-remain-trapped-under-rubble.html"
+      ]
+     ]
     }
    ],
    "short": "Ukraine",
@@ -153,6 +171,30 @@
        "Iran and the United States strike Qeshm Island in the Strait of Hormuz",
        "Il Sole 24 Ore",
        "https://en.ilsole24ore.com/art/iran-and-the-united-states-strike-qeshm-island-in-the-strait-of-hormuz-AJEnHl2B"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-05",
+     "t": "Supreme Leader Mojtaba Khamenei said US power is in “irreversible decline”; the IRGC claims four tankers struck mines south of the strait and a US MQ-9 was downed, without comment from CENTCOM; Brent settled at $94.62 on 4 Nov, down 8.7%. [18, 19, 86]",
+     "src": [
+      [
+       18,
+       "Iran live updates",
+       "ABC News",
+       "https://abcnews.com/International/live-updates/iran-live-updates-trump-good-call-netanyahu/?id=137762456"
+      ],
+      [
+       19,
+       "Iran claims strikes on multiple tankers, emboldened after US elections",
+       "The Maritime Executive",
+       "https://maritime-executive.com/article/iran-claims-strikes-on-multiple-tankers-emboldened-after-us-elections"
+      ],
+      [
+       86,
+       "Crude oil prices fall below $90 a barrel as Vance blames GOP election defeat on Iran war",
+       "CNBC",
+       "https://www.cnbc.com/2026/11/04/oil-price-iran-war-us-election-strait-hormuz.html"
       ]
      ]
     }
@@ -241,6 +283,18 @@
        "https://www.khaleejtimes.com/world/mena/us-israel-iran-saudi-arabia-yemen-war-live-updates-november-3-2026"
       ]
      ]
+    },
+    {
+     "date": "2026-11-05",
+     "t": "A Houthi ballistic missile hit the al-Jumaima training camp in al-Dhalea, killing eight, a military source said; government forces claim ground in eastern al-Jawf. [33]",
+     "src": [
+      [
+       33,
+       "Yemeni government forces claim control of strategic al-Jawf mountain range",
+       "Al Jazeera",
+       "https://www.aljazeera.com/news/2026/11/4/yemeni-government-forces-claim-control-of-strategic-al-jawf-mountain-range"
+      ]
+     ]
     }
    ],
    "short": "Red Sea",
@@ -299,6 +353,18 @@
        "https://www.taipeitimes.com/News/taiwan/archives/2026/11/04/2003867122"
       ]
      ]
+    },
+    {
+     "date": "2026-11-05",
+     "t": "Taiwan's defence ministry counted 21 Chinese military aircraft sorties, 19 of them across the median line, and eight navy and eight official ships in the 24 hours to 06:00 on 5 Nov. [31]",
+     "src": [
+      [
+       31,
+       "PLA activities in the waters and airspace around Taiwan, 5 Nov",
+       "Taiwan Ministry of National Defense",
+       "https://www.mnd.gov.tw/news/plaact/88145"
+      ]
+     ]
     }
    ],
    "short": "Taiwan",
@@ -337,6 +403,18 @@
        "North Korea fires 'several missiles' east into the sea",
        "NK News",
        "https://www.nknews.org/2026/11/north-korea-fires-unidentified-projectile-east-toward-sea-south-korean-military/"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-05",
+     "t": "KCNA said North Korea tested a new-type anti-aircraft missile system and held a strategic cruise missile drill on 4 Nov; South Korea's JCS detected several missiles from Sondok flying under 300 km. [28]",
+     "src": [
+      [
+       28,
+       "N. Korea says it test-fired new air defense missile system",
+       "Yonhap via Korea Times",
+       "https://www.koreatimes.co.kr/foreignaffairs/northkorea/20261105/n-korea-says-it-test-fired-new-air-defense-missile-system"
       ]
      ]
     }
@@ -391,6 +469,18 @@
        "https://www.aljazeera.com/news/2026/11/3/deadly-rsf-drone-strikes-reveal-deep-divisions-between-sudan-and-ethiopia"
       ]
      ]
+    },
+    {
+     "date": "2026-11-05",
+     "t": "Drones hit two power stations in Kassala and a substation at Merowe on 3 Nov and killed at least 12 civilians in West and South Kordofan on 2–3 Nov; the UN Secretary-General condemned the escalating drone attacks. [32]",
+     "src": [
+      [
+       32,
+       "Drone attacks kill civilians and cripple Sudan’s power infrastructure; UN warns of growing humanitarian toll",
+       "Radio Dabanga",
+       "https://www.dabangasudan.org/en/all-news/article/drone-attacks-kill-civilians-and-cripple-sudans-power-infrastructure-un-warns-of-growing-humanitarian-toll"
+      ]
+     ]
     }
    ],
    "short": "Sudan",
@@ -439,6 +529,18 @@
        "Plus de 100 000 personnes marchent à Uvira pour exiger la paix",
        "Radio Okapi",
        "https://www.radiookapi.net/2026/11/04/actualite/politique/plus-de-100-000-personnes-marchent-uvira-pour-exiger-la-paix-dans"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-05",
+     "t": "The FARDC and Wazalendo fighters attacked M23 positions in Masisi from 3 Nov; local sources report at least four civilians killed. [34]",
+     "src": [
+      [
+       34,
+       "Au moins quatre civils tués dans des affrontements entre les FARDC et le M23 à Masisi",
+       "Radio Okapi",
+       "https://www.radiookapi.net/2026/11/04/actualite/securite/au-moins-quatre-civils-tues-dans-des-affrontements-entre-les-fardc-et"
       ]
      ]
     }
