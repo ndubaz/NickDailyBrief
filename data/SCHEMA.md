@@ -19,6 +19,7 @@ The site is static. `index.html` + `app.js` + `styles.css` never change day to d
 | `data/congress.json` | Three lanes: key defence bills, the budget cycle, confirmations. Add a row when a bill is introduced, a budget deadline is set, a post falls vacant or a nominee is named; move `stage`, add the date to `dates`, set `updated`, copy cited source rows into `src`. Never delete rows. |
 | `data/exercises.json` | Add announced NATO and allied exercises; set `updated` when dates change; never delete (the page hides those older than 60 days). |
 | `data/releases.json` | Append one entry per AI, chip, robotics or autonomy release, published result or shipped capability (`id` as `YYYY-MM-DD-lab-slug`, `kind`, `t`, `lab`, `n`, `date`, `src`). On Fridays rewrite `sota` (leading system per domain) with sources. |
+| `data/countries.json` | Priority countries (6.6): Hungary and Slovakia (priority), Germany (secondary). Append `{date, t, src}` to a country's `log` for each dated fact on international relations, internal politics relevant to NATO, or civil resilience; update `gov`, `election`, `nato`, `stance` and `blr` only when the fact changes, with the source in `src`; set `verified: true` once every profile line is checked against an official page. Never delete log entries. Set `updated`. |
 | `data/events.json` | Add events within about 90 minutes of Hoensbroek with a source; prune events whose `to` has passed; set `updated` when details change. |
 | `data/idioms.json` | Append today's idiom (rotate `nl`, `fr`, `it`); never repeat a phrase. |
 | `data/ski.json` | 1 Dec to 31 Mar only: refresh `snow` daily from Open-Meteo for every resort; resorts stay as they are. Outside the season, leave the file alone. |
@@ -81,7 +82,7 @@ The standing files are the Readbook's memory. The page reads them; it never writ
    "week": {"t": "Fridays only: week in hybrid summary"} | null,
    "note": "…"
  },
- "europe": [item], "euregio": [item] (section omitted when empty),
+ "europe": [item], "countries": [item + {"cc": "hu|sk|de"}] (6.6: today's news from the priority countries, shown under each country's profile; omit when nothing happened), "euregio": [item] (section omitted when empty),
  "nato": {"items": [item] (3–5: NATO HQ and the allied armies: DE, NL, BE, FR, PL, UK, Nordics, Baltics),
    "table": {"title","asof","head":[...],"rows":[[...]],"src"} | null (allied spending and strength, from NATO's own figures; only in the edition of the day NATO publishes new figures, otherwise null. The page shows it only when asof is within 7 days)},
  "deftech": {"items": [item] (3: drones, counter-drone, air defence, EW, autonomy, munitions production),
@@ -177,6 +178,10 @@ The same file carries `tiers` and `watch`: the register of posts the confirmatio
 ### `data/releases.json`
 
 `{ "releases": [ {"id","date","kind":"model|chip|robot|autonomy|result|tool","t","lab","n","src"} ], "sota": {"asof","rows":[[domain, system, lab, sinceDate, src]]} }`. The release log shows the last 45 days; `sota` is rewritten on Fridays.
+
+### `data/countries.json`
+
+`{ "updated", "blr": [seven requirement names], "countries": [ {"id":"hu|sk|de","name","role":"priority|secondary","gov":{"head","title","party","since","majority","president","fm","defmin"},"election":{"last","next","dateText"},"nato":{"member","spend","posture":[...]},"stance":[{"k","t"}],"blr":[{"n":1-7,"t","date"}],"log":[{"date","t","src":[[title,url]]}],"src":[[title,url]],"verified":bool} ] }`. The page draws one profile card per country in The news after Europe, with the seven-baseline-requirement notes numbered, the last four log entries, and today's `countries` items beneath. Items link with `country:hu`. Health flags the file when no log entry is younger than 7 days.
 
 ### `data/events.json`
 

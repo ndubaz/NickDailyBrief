@@ -12,7 +12,7 @@
   var CODE_COLORS = { CYB:"--c-us", SAB:"--crit", UAS:"--c-mkt", UWI:"--c-pro", GNSS:"--c-be", INF:"--c-nl", ELX:"--c-nl", MIG:"--c-de", PRX:"--warn", AIR:"--c-de", SEA:"--c-pro", COE:"--c-be", KIN:"--crit" };
   var PART_CLASSES = ["front","news","watch","reading","home"];
   var PARTS = [["front","Today","#front"],["news","The news","#p-news"],["watch","The watch","#p-watch"],["reading","The reading","#p-reading"],["home","Home and planning","#p-home"]];
-  var TIERS = { news: ["world","hybrid","europe","euregio","army","nato","deftech","frontier","markets","rates","nl"], watch: ["board","numbers","fx","threads","horizon","congress-sec","exercises-sec","releases","sota","production"], reading: ["feature","research","depth","ttpsec","aperture"], home: ["afnorth","offduty","dutch","snow","hockey","week","weather","countdown","tv","calendar","year","school","season"] };
+  var TIERS = { news: ["world","hybrid","europe","countries","euregio","army","nato","deftech","frontier","markets","rates","nl"], watch: ["board","numbers","fx","threads","horizon","congress-sec","exercises-sec","releases","sota","production"], reading: ["feature","research","depth","ttpsec","aperture"], home: ["afnorth","offduty","dutch","snow","hockey","week","weather","countdown","tv","calendar","year","school","season"] };
   var EVCAT = { music:"Music", markets:"Markets", museums:"Museums", sport:"Sport", kids:"Kids", food:"Food", outdoors:"Outdoors", festival:"Festivals" };
   var SERIES_BY_LABEL = [["s&p 500","spx"],["nasdaq","ndx"],["aex","aex"],["brent","brent"],["dutch ttf","ttf"],["ttf","ttf"]];
   var HOME = { lat: 50.89, lon: 5.98, name: "Heerlen" };
@@ -705,6 +705,7 @@
     var WS = ctx.worldSeries || { meta: {}, series: {} }, wsRows = Object.keys(WS.series || {}).map(function (k) { var sr = WS.series[k] || [], m = (WS.meta || {})[k] || {}, last = sr.length ? sr[sr.length - 1][0] : null, lim = m.cadence === "weekly" ? 10 : 3; return [k, last, last ? daysBetween(last, TD) > lim : true]; });
     var wsBad = wsRows.filter(function (r) { return r[2]; }).map(function (r) { return r[0] + (r[1] ? " (" + fmtShort(r[1]) + ")" : " (empty)"); });
     add("World series", wsBad.length >= wsRows.length ? "act" : wsBad.length ? "watch" : "ok", wsBad.length ? "not kept up: " + wsBad.join(", ") : wsRows.length + " series current");
+    if (ctx.countries) fresh("Priority countries", ctx.countriesUpdated || lastDate(ctx.countries, function (c) { return lastDate(c.log, function (e) { return e.date; }); }), 7, 14, "last log entry");
     if (ctx.teams) fresh("Saints and Cardinals", ctx.teams.updated, 5, 12, "last refresh");
     if (ctx.tv) fresh("TV shows", ctx.tv.updated, 8, 21, "last refresh");
     if (ctx.canes) fresh("Canes results", ctx.canes.updated || lastDate(ctx.canes.games, function (g) { return g.date; }), 4, 8, "last game logged");
@@ -734,9 +735,10 @@
 
 
   /* ---------- 6.0: cross-links, calendar files, since yesterday, contents, decisions, year ahead, review, corrections, about ---------- */
-  var LINK_KIND = { theatre: ["#th-", "Board"], thread: ["#thread-", "Thread"], congress: ["#cg-", "Congress"], post: ["#congresstracker", "Post"], exercise: ["#exercises-sec", "Exercise"], release: ["#releases", "Release"], event: ["#offduty", "Event"] };
+  var LINK_KIND = { theatre: ["#th-", "Board"], thread: ["#thread-", "Thread"], congress: ["#cg-", "Congress"], post: ["#congresstracker", "Post"], exercise: ["#exercises-sec", "Exercise"], release: ["#releases", "Release"], event: ["#offduty", "Event"], country: ["#ctry-", "Country"] };
   function linkNames(ctx) {
-    var n = { theatre: {}, thread: {}, congress: {}, post: {}, exercise: {}, release: {}, event: {} };
+    var n = { theatre: {}, thread: {}, congress: {}, post: {}, exercise: {}, release: {}, event: {}, country: {} };
+    (ctx.countries || []).forEach(function (c) { n.country[c.id] = c.name; });
     (ctx.conflicts || []).forEach(function (t) { n.theatre[t.id] = t.short || t.name; });
     (ctx.threads || []).forEach(function (t) { n.thread[t.id] = t.name; });
     (ctx.congress || []).forEach(function (c) { n.congress[c.id] = c.title || c.post; });
@@ -756,6 +758,31 @@
     function walk(o) { if (Array.isArray(o)) { o.forEach(walk); return; } if (o && typeof o === "object") { if (Array.isArray(o.links)) o.links.forEach(function (l) { set[l] = 1; }); Object.keys(o).forEach(function (k) { if (k !== "sources" && k !== "links") walk(o[k]); }); } }
     walk(E); return set;
   }
+  /* priority countries: standing profile per country, then today's items for it */
+  function countriesBlock(E, ctx, TD) {
+    var list = ctx.countries || [], its = E.countries || [], BLR = (ctx.countriesBLR || []);
+    if (!list.length && !its.length) return "";
+    var h = '<section id="countries" class="news"><h2>Priority countries <span class="num">Hungary · Slovakia · Germany</span></h2>';
+    h += '<p class="small">Hungary and Slovakia are the J9 priority countries, Germany the secondary. Profiles come from data/countries.json and change only when the facts do; the items are today\'s news. Numbers refer to NATO\'s seven baseline requirements for resilience.</p>';
+    list.forEach(function (c) {
+      var g = c.gov || {}, el = c.election || {}, nato = c.nato || {}, mine = its.filter(function (i) { return i.cc === c.id; }), log = (c.log || []).slice().sort(function (a, b) { return a.date < b.date ? 1 : -1; }).slice(0, 4);
+      var age = log.length ? daysBetween(log[0].date, TD) : null;
+      h += '<div class="ctry ' + fu(age === 0 ? "NEW" : "") + '" id="ctry-' + esc(c.id) + '"><div class="ctry-h"><b>' + esc(c.name) + '</b><span class="chip st tier">' + esc(c.role || "") + "</span>" + (c.verified === false ? '<span class="chip st">profile to confirm</span>' : "") + inToday("country", c.id) + badge(age === 0 ? "NEW" : age === 1 ? "UPDATED" : "") + "</div>";
+      h += '<dl class="kv">';
+      if (g.head) h += "<dt>Government</dt><dd>" + esc(g.head) + (g.title ? ", " + esc(g.title) : "") + (g.party ? " (" + esc(g.party) + ")" : "") + (g.since ? ", since " + esc(fmtLong(g.since)) : "") + (g.majority ? ". " + esc(g.majority) + "." : "") + (g.defmin ? " Defence: " + esc(g.defmin) + "." : "") + (g.fm ? " Foreign: " + esc(g.fm) + "." : "") + "</dd>";
+      if (el.dateText || el.next) h += "<dt>Election</dt><dd>" + esc(el.dateText || "") + (el.next ? " · <b>" + daysBetween(TD, el.next) + " days</b> " + icsLink(c.name + " election", el.next) : "") + "</dd>";
+      if (nato.member || nato.spend) h += "<dt>NATO</dt><dd>" + (nato.member ? "Member since " + esc(nato.member) + ". " : "") + esc(nato.spend || "") + "</dd>";
+      if ((nato.posture || []).length) h += "<dt>Posture</dt><dd>" + nato.posture.map(esc).join(" · ") + "</dd>";
+      (c.stance || []).forEach(function (st) { h += "<dt>" + esc(st.k) + "</dt><dd>" + esc(st.t) + "</dd>"; });
+      h += "</dl>";
+      if ((c.blr || []).length) h += '<div class="blr">' + c.blr.slice().sort(function (a, b) { return a.n - b.n; }).map(function (b) { return '<div class="blr-r"><span class="blr-n" title="' + esc(BLR[b.n - 1] || "") + '">' + esc(b.n) + "</span><span>" + (BLR[b.n - 1] ? "<b>" + esc(BLR[b.n - 1]) + ".</b> " : "") + esc(b.t) + (b.date ? ' <span class="small">(' + esc(fmtShort(b.date)) + ")</span>" : "") + "</span></div>"; }).join("") + "</div>";
+      if (log.length) h += '<ul class="clean small ctry-log">' + log.map(function (e) { return "<li><b>" + esc(fmtShort(e.date)) + (e.date.slice(0, 4) !== TD.slice(0, 4) ? " " + e.date.slice(0, 4) : "") + "</b> · " + esc(e.t) + ((e.src || []).length ? ' <a href="' + esc(e.src[0][1]) + '" target="_blank" rel="noopener" class="srcl">source</a>' : "") + "</li>"; }).join("") + "</ul>";
+      h += mine.length ? '<div class="fug">' + nq() + mine.map(function (i) { return item(i); }).join("") + "</div>" : quiet("Nothing new from " + c.name + " today.", "nq");
+      h += "</div>";
+    });
+    its.filter(function (i) { return !list.some(function (c) { return c.id === i.cc; }); }).forEach(function (i) { h += item(i); });
+    return h + "</section>";
+  }
   function inToday(kind, id) { return ctx._linked && ctx._linked[kind + ":" + id] ? '<a class="chip st intoday" href="#p-news" title="An item in today\'s edition updates this">in today\'s edition</a>' : ""; }
   /* .ics file as a data link: all-day when no time */
   function icsLink(title, date, end, desc, utc) {
@@ -772,6 +799,7 @@
     function row(label, items, href) { if (items.length) rows.push('<li><a href="' + href + '"><b>' + esc(label) + "</b></a> " + items.map(esc).join(" · ") + "</li>"); }
     row("Board", (ctx.conflicts || []).filter(function (t) { return (t.log || []).some(function (e) { return e.date === TD || e.date === y; }); }).map(function (t) { return t.short || t.name; }), "#board");
     row("Threads", (ctx.threads || []).filter(function (t) { return (t.log || []).some(function (e) { return e.date === TD || e.date === y; }); }).map(function (t) { return t.name; }), "#threads");
+    row("Countries", (ctx.countries || []).filter(function (c) { return (c.log || []).some(function (e) { return e.date === TD || e.date === y; }); }).map(function (c) { return c.name; }), "#countries");
     row("Horizon", (ctx.horizon || []).filter(function (e) { return e.added === TD || e.updated === TD; }).map(function (e) { return e.t; }), "#horizon");
     row("Congress", (ctx.congress || []).filter(function (c) { return c.added === TD || c.updated === TD; }).map(function (c) { return c.title || c.post; }), "#congress-sec");
     row("Posts", (ctx.congressWatch || []).filter(function (w) { return w.updated === TD; }).map(function (w) { return w.post; }), "#congress-sec");
@@ -785,7 +813,7 @@
   }
   function contentsBlock() {
     var tiers = [["news", "The news", TIERS.news], ["watch", "The watch", TIERS.watch], ["reading", "The reading", TIERS.reading], ["home", "Home and planning", TIERS.home]];
-    var SN = { world: "World", hybrid: "Hybrid", europe: "Europe", euregio: "Euregio", army: "Defence & Army", nato: "NATO & allies", deftech: "Defence tech", frontier: "Frontier", markets: "Markets", rates: "Rates", nl: "Netherlands", board: "The board", numbers: "Numbers", fx: "USD/EUR", threads: "Threads", horizon: "Horizon", "congress-sec": "Congress", "exercises-sec": "Exercises", releases: "Releases", sota: "State of the art", production: "Production", feature: "World feature", research: "Research", depth: "Army in depth", ttpsec: "Week in war", aperture: "Aperture", afnorth: "AFNORTH", offduty: "Out and about", dutch: "Taal", snow: "Snow", hockey: "Canes", week: "This week", weather: "Weather", countdown: "Countdowns", tv: "TV", calendar: "Calendar", year: "Year ahead", school: "School year", season: "Season" };
+    var SN = { world: "World", hybrid: "Hybrid", europe: "Europe", countries: "Priority countries", euregio: "Euregio", army: "Defence & Army", nato: "NATO & allies", deftech: "Defence tech", frontier: "Frontier", markets: "Markets", rates: "Rates", nl: "Netherlands", board: "The board", numbers: "Numbers", fx: "USD/EUR", threads: "Threads", horizon: "Horizon", "congress-sec": "Congress", "exercises-sec": "Exercises", releases: "Releases", sota: "State of the art", production: "Production", feature: "World feature", research: "Research", depth: "Army in depth", ttpsec: "Week in war", aperture: "Aperture", afnorth: "AFNORTH", offduty: "Out and about", dutch: "Taal", snow: "Snow", hockey: "Canes", week: "This week", weather: "Weather", countdown: "Countdowns", tv: "TV", calendar: "Calendar", year: "Year ahead", school: "School year", season: "Season" };
     return '<h3>In this edition</h3><ol class="toc">' + tiers.map(function (t, i) { return '<li data-tier="' + t[0] + '" class="' + t[0] + '"><a href="#p-' + t[0] + '"><b>' + (i + 1) + " · " + esc(t[1]) + '</b></a><span class="tm"></span><span class="secs">' + t[2].map(function (id) { return '<a href="#' + id + '">' + esc(SN[id] || id) + "</a>"; }).join(" · ") + "</span></li>"; }).join("") + "</ol>";
   }
   function yearAhead(ctx, E, TD, today) {
@@ -939,6 +967,7 @@
     if (HY.note) h += '<p class="small" style="margin-top:8px">' + rich(HY.note) + "</p>";
     h += "</section>";
     h += '<section id="europe" class="news"><h2>Europe</h2>' + items(E.europe) + "</section>";
+    h += countriesBlock(E, ctx, TD);
     if (E.euregio && E.euregio.length) h += '<section id="euregio" class="news"><h2>Local &amp; Euregio</h2>' + items(E.euregio) + "</section>";
 
     var AR = E.army || {}, AP = E.aperture || {}, NA = E.nato || {}, DT = E.deftech || {};
@@ -1565,9 +1594,10 @@
     opt("data/incidents.json"), opt("data/bins.json"), opt("data/threads.json"), opt("data/horizon.json"),
     opt("data/fx.json"), opt("data/series.json"), opt("data/canes.json"),
     opt("data/conflicts.json"), opt("data/world-series.json"), opt("data/calendar.json"), opt("data/deadlines.json"),
-    opt("data/congress.json"), opt("data/exercises.json"), opt("data/releases.json"), opt("data/events.json"), opt("data/idioms.json"), opt("data/ski.json"), opt("data/search-index.json"), opt("data/land.json"), opt("data/week.json"), opt("data/corrections.json"), opt("data/research.json"), opt("data/teams.json"), opt("data/tv.json")
+    opt("data/congress.json"), opt("data/exercises.json"), opt("data/releases.json"), opt("data/events.json"), opt("data/idioms.json"), opt("data/ski.json"), opt("data/search-index.json"), opt("data/land.json"), opt("data/week.json"), opt("data/corrections.json"), opt("data/research.json"), opt("data/teams.json"), opt("data/tv.json"), opt("data/countries.json")
   ]).then(function (r) {
     ctx.week = r[20]; ctx.corrections = r[21]; ctx.research = r[22]; ctx.teams = r[23]; ctx.tv = r[24];
+    ctx.countries = r[25] && r[25].countries; ctx.countriesBLR = r[25] && r[25].blr; ctx.countriesUpdated = r[25] && r[25].updated;
     ctx.fetchedAt = Date.now();
     ctx.congress = r[12] && r[12].items; ctx.congressWatch = r[12] && r[12].watch; ctx.congressTiers = r[12] && r[12].tiers; ctx.exercises = r[13] && r[13].exercises; ctx.releases = r[14]; ctx.events = r[15] && r[15].events; ctx.idioms = r[16] && r[16].idioms; ctx.ski = r[17]; ctx.searchIndex = r[18]; ctx.land = r[19] && r[19].rings;
     ctx.index = r[0]; ctx.incidents = r[1] && r[1].incidents; ctx.attrLog = r[1] && r[1].attrLog; ctx.bins = r[2];

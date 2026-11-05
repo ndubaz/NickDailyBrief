@@ -17,10 +17,11 @@ if (E) {
   if (!(E.sources || []).some((x) => x[4])) warns.push("no source tiers assigned");
   if (!/^\d{4}-\d{2}-\d{2}$/.test(E.date || "")) errors.push("edition date missing");
   if (index && index.latest !== E.date && !process.argv[2]) errors.push("index.latest " + index.latest + " differs from edition date " + E.date);
-  if (edPath && path.basename(edPath, ".json") !== E.date) errors.push("edition file " + path.basename(edPath) + " does not match its date field " + E.date);
-  if (index && !(index.editions || []).some((x) => x.date === E.date)) errors.push("index.editions does not list " + E.date);
+  if (edPath && !/examples/.test(edPath) && path.basename(edPath, ".json") !== E.date) errors.push("edition file " + path.basename(edPath) + " does not match its date field " + E.date);
+  if (index && !process.argv[2] && !(index.editions || []).some((x) => x.date === E.date)) errors.push("index.editions does not list " + E.date);
   if (E.weekday) { const wd = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"][new Date(E.date + "T12:00:00").getDay()]; if (String(E.weekday).toLowerCase() !== wd.toLowerCase()) errors.push("weekday " + E.weekday + " does not match " + E.date + " (" + wd + ")"); }
   (E.five || []).forEach((f, i) => { if (f.part && ["world","sec","watch","pro","frontier","money","home","hockey"].indexOf(f.part) < 0) errors.push("five[" + i + "].part " + f.part + " is not a known part"); });
+  (E.countries || []).forEach((i, k) => { if (["hu", "sk", "de"].indexOf(i.cc) < 0) errors.push("countries[" + k + "].cc must be hu, sk or de"); if (!i.h || !i.body) errors.push("countries[" + k + "] needs h and body"); });
   const wk0 = E.today && E.today.weather && E.today.weather.week && E.today.weather.week[0]; if (wk0 && wk0[0] !== E.date) warns.push("today.weather.week starts " + wk0[0] + ", not " + E.date);
   (E.hybrid && E.hybrid.incidents || []).forEach((i) => { if (i.badge) { if (["NEW","UPDATED"].indexOf(i.badge) < 0) errors.push("incident badge " + i.badge); } });
   const src = new Set((E.sources || []).map((s) => s[0])), used = new Set();
@@ -40,15 +41,15 @@ if (E) {
 }
 /* cross-links */
 if (E) {
-  const reg = {}; const grab = (f, key, idk) => { const j = load(D(f)); if (j && Array.isArray(j[key])) j[key].forEach((x) => { if (x[idk || "id"]) reg[f.split(".")[0].replace("conflicts", "theatre").replace("threads", "thread").replace("congress", "congress").replace("exercises", "exercise").replace("events", "event").replace("releases", "release") + ":" + x[idk || "id"]] = 1; }); };
-  grab("conflicts.json", "theatres"); grab("threads.json", "threads"); grab("congress.json", "items"); grab("exercises.json", "exercises"); grab("events.json", "events"); grab("releases.json", "releases");
+  const reg = {}; const grab = (f, key, idk) => { const j = load(D(f)); if (j && Array.isArray(j[key])) j[key].forEach((x) => { if (x[idk || "id"]) reg[f.split(".")[0].replace("conflicts", "theatre").replace("threads", "thread").replace("congress", "congress").replace("exercises", "exercise").replace("events", "event").replace("releases", "release").replace("countries", "country") + ":" + x[idk || "id"]] = 1; }); };
+  grab("conflicts.json", "theatres"); grab("threads.json", "threads"); grab("congress.json", "items"); grab("exercises.json", "exercises"); grab("events.json", "events"); grab("releases.json", "releases"); grab("countries.json", "countries");
   const cj = load(D("congress.json")); if (cj && cj.watch) cj.watch.forEach((w) => { reg["post:" + w.id] = 1; });
   const seenLinks = new Set();
   (function walk(o, p) { if (Array.isArray(o)) { o.forEach((v, i) => walk(v, p + "[" + i + "]")); return; } if (o && typeof o === "object") { if (Array.isArray(o.links)) o.links.forEach((l) => { seenLinks.add(l); if (!reg[l]) errors.push("link " + l + " at " + p + " matches nothing in the standing files"); }); Object.keys(o).forEach((k) => { if (k !== "sources") walk(o[k], p + "." + k); }); } })(E, "");
   if (!seenLinks.size) warns.push("no item carries links to the trackers");
 }
 /* standing files */
-const files = { "conflicts.json": "theatres", "threads.json": "threads", "horizon.json": "events", "incidents.json": "incidents", "exercises.json": "exercises", "events.json": "events", "idioms.json": "idioms", "congress.json": "items", "releases.json": "releases" };
+const files = { "countries.json": "countries", "conflicts.json": "theatres", "threads.json": "threads", "horizon.json": "events", "incidents.json": "incidents", "exercises.json": "exercises", "events.json": "events", "idioms.json": "idioms", "congress.json": "items", "releases.json": "releases" };
 const TD = E ? E.date : null;
 Object.keys(files).forEach((f) => { const j = load(D(f)); if (!j) return; if (!Array.isArray(j[files[f]])) { errors.push(f + ": missing array " + files[f]); return; }
   const seen = new Set(); j[files[f]].forEach((x) => { if (x && x.id) { if (seen.has(x.id)) errors.push(f + " repeats id " + x.id); seen.add(x.id); } });

@@ -1807,6 +1807,13 @@
       "Africa Center for Strategic Studies",
       "https://africacenter.org/publication/asb49-lessons-africa-drone-wars/",
       1
+    ],
+    [
+      75,
+      "Government of Hungary: press release on the EU funds agreement",
+      "kormany.hu",
+      "https://kormany.hu/",
+      1
     ]
   ],
   "flags": "Thin or single-source: Lithuania's extension of its Kaliningrad border measures (Ukrainska Pravda only); the FY27 colonel board dates (HRC schedule seen only in a search snippet, the page did not load); Sicilian store counts (four confirmed by the operator, at least 12 per unnamed trade sources); the IRGC drone claim (Tasnim, unverified); the 11 Dec funding-deadline source remains thin. Brent's front month rolled from December to January after 30 Oct, so the sparkline shows a bigger fall (117.64 to 104.77) than the −7.6% move on the January contract. Gold, VIX, AEX and TTF figures are Yahoo Finance closes. ECB history ZIP checked: latest row 2 Nov, already in fx.json, nothing appended.",
@@ -1867,5 +1874,19 @@
     "method": "Policy brief drawing on reported strikes and acquisitions; the sample lists only what the publisher's summary states.",
     "sw": "Sample line: the counter-drone layering argument reads across to force protection at Benelux sites.",
     "badge": "NEW"
-  }
+  },
+  "countries": [
+    {
+      "cc": "hu",
+      "h": "Budapest and the Commission agree a timetable for the frozen funds",
+      "tag": "Hungary · EU",
+      "conf": "high",
+      "badge": "NEW",
+      "body": "The government and the Commission published a timetable on 7 Nov for releasing the cohesion funds frozen since 2022, tied to judicial and procurement milestones through 2027. [75]",
+      "sw": "Funds release changes Hungary's room to fund the 2027 defence budget line; watch the NATO spending estimate in March.",
+      "links": [
+        "country:hu"
+      ]
+    }
+  ]
 }

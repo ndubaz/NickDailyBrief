@@ -1,0 +1,275 @@
+{
+ "updated": "2026-11-05",
+ "note": "Priority countries for Nick's J9 portfolio: Hungary and Slovakia (priority), Germany (secondary). The run appends dated facts to each country's log and keeps the profile current. Facts and summaries only; the item in the edition carries the So what. verified:false marks a fact to confirm against an official page.",
+ "blr": [
+  "Continuity of government and critical services",
+  "Resilient energy supplies",
+  "Uncontrolled movement of people",
+  "Resilient food and water",
+  "Mass casualties",
+  "Resilient civil communications",
+  "Resilient civil transportation"
+ ],
+ "countries": [
+  {
+   "id": "hu",
+   "name": "Hungary",
+   "role": "priority",
+   "gov": {
+    "head": "Péter Magyar",
+    "title": "Prime Minister",
+    "party": "Tisza",
+    "since": "2026-05-09",
+    "majority": "Tisza alone holds a two-thirds majority after the April 2026 election",
+    "president": "Tamás Sulyok",
+    "fm": "Anita Orbán (Deputy PM and Foreign Minister; to confirm against the government site)",
+    "defmin": null
+   },
+   "election": {
+    "last": "2026-04-12",
+    "next": null,
+    "dateText": "Parliamentary election due spring 2030"
+   },
+   "nato": {
+    "member": 1999,
+    "spend": "2.07% of GDP in 2025, down from 2.21% in 2024 (NATO estimates, March 2026)",
+    "posture": [
+     "Croft training area used in the Spanish-led Strong Lineage 26 exercise, May to June 2026",
+     "Headquarters Multinational Division Centre at Székesfehérvár (to confirm current status)"
+    ]
+   },
+   "stance": [
+    {
+     "k": "Ukraine",
+     "t": "Magyar has said Hungary will deliver neither military vehicles nor lethal arms to Ukraine; first bilateral meeting with Zelensky in Brussels on 16 Oct 2026."
+    },
+    {
+     "k": "Russia",
+     "t": "Foreign Minister Anita Orbán: Russia's current foreign policy is a risk; Hungary seeks a transparent bilateral relationship based on mutual interests."
+    },
+    {
+     "k": "EU",
+     "t": "The government is negotiating the release of about $20bn in frozen EU funds."
+    }
+   ],
+   "blr": [
+    {
+     "n": 2,
+     "t": "Russian crude imports to end by October 2027, the government's stated deadline; gas still arrives via TurkStream through Serbia; the Economy and Energy Ministry ordered a financial review of the Paks II expansion in May 2026 and the government later proposed doubling its 2026 state financing.",
+     "date": "2026-10-31"
+    }
+   ],
+   "log": [
+    {
+     "date": "2026-05-09",
+     "t": "The National Assembly elected Péter Magyar prime minister; Tisza holds a two-thirds majority on its own.",
+     "src": [
+      [
+       "Euronews: Péter Magyar sworn in",
+       "https://www.euronews.com/my-europe/2026/05/09/peter-magyar-sworn-in-as-hungarys-new-prime-minister-after-landslide-april-election-victor"
+      ]
+     ]
+    },
+    {
+     "date": "2026-10-16",
+     "t": "Magyar held his first bilateral meeting with President Zelensky in Brussels.",
+     "src": [
+      [
+       "Just Security: Hungary's election is already paying dividends",
+       "https://www.justsecurity.org/137964/hungary-election-eu-ukraine-us/"
+      ]
+     ]
+    }
+   ],
+   "src": [
+    [
+     "Euronews: Péter Magyar sworn in",
+     "https://www.euronews.com/my-europe/2026/05/09/peter-magyar-sworn-in-as-hungarys-new-prime-minister-after-landslide-april-election-victor"
+    ],
+    [
+     "IISS: Hungary, the Balkans and Europe's energy security (Sep 2026)",
+     "https://www.iiss.org/publications/strategic-comments/2026/09/hungary-the-balkans-and-europes-energy-security/"
+    ],
+    [
+     "Jamestown: Hungary shifts West under Magyar",
+     "https://jamestown.org/hungary-shifts-west-under-magyar/"
+    ],
+    [
+     "Euronews: European defence spending 2025",
+     "https://www.euronews.com/2026/06/17/european-defence-spending-poland-spends-larger-share-of-gdp-than-us"
+    ]
+   ],
+   "verified": false
+  },
+  {
+   "id": "sk",
+   "name": "Slovakia",
+   "role": "priority",
+   "gov": {
+    "head": "Robert Fico",
+    "title": "Prime Minister",
+    "party": "Smer-SD",
+    "since": "2023-10-25",
+    "majority": "Coalition Smer-SD, Hlas-SD and the Slovak National Party; confidence vote won 18 Jun 2026; majority in doubt since the September 2026 coalition dispute",
+    "president": "Peter Pellegrini",
+    "fm": "Juraj Blanár",
+    "defmin": "Robert Kaliňák"
+   },
+   "election": {
+    "last": "2023-09-30",
+    "next": null,
+    "dateText": "Parliamentary election due by late September 2027; Fico has floated a snap vote as early as January 2027"
+   },
+   "nato": {
+    "member": 2004,
+    "spend": "2.0% of GDP in the 2026 budget, more than €2.88bn; government plan 3.5% by 2034",
+    "posture": [
+     "Spain-led NATO Multinational Brigade at Lešť, Spain framework nation since July 2024 providing about 75% of the force; contributors include Slovakia, the Czech Republic, Portugal, Romania, Slovenia and Turkey",
+     "Parliament approved up to 101 soldiers for NATO's Eastern Sentry"
+    ]
+   },
+   "stance": [
+    {
+     "k": "NATO",
+     "t": "Fico said on 21 Oct 2026 that neutrality would suit Slovakia better and spoke of the alliance's 'false solidarity', while saying Slovakia honours its commitments."
+    },
+    {
+     "k": "Ukraine",
+     "t": "No military aid from state stocks; commercial exports by Slovak manufacturers continue."
+    },
+    {
+     "k": "Russia",
+     "t": "Opposes further sanctions packages that touch Slovak energy; gas arrives via TurkStream through Hungary."
+    }
+   ],
+   "blr": [
+    {
+     "n": 2,
+     "t": "Gas supply depends on TurkStream flows through Hungary since Ukrainian transit ended; Druzhba crude via Ukraine remains exposed to strikes and transit decisions.",
+     "date": "2026-10-31"
+    }
+   ],
+   "log": [
+    {
+     "date": "2026-06-18",
+     "t": "The National Council expressed confidence in the Fico government.",
+     "src": [
+      [
+       "Wikipedia: Fico's Fourth Cabinet",
+       "https://en.wikipedia.org/wiki/Fico%27s_Fourth_Cabinet"
+      ]
+     ]
+    },
+    {
+     "date": "2026-09-27",
+     "t": "In a televised debate Fico threatened snap elections if his coalition partners did not settle their dispute, suggesting January 2027.",
+     "src": [
+      [
+       "Eurointegration: Why Slovakia could call snap elections",
+       "https://www.eurointegration.com.ua/eng/news/2026/10/1/7246677/"
+      ]
+     ]
+    },
+    {
+     "date": "2026-10-21",
+     "t": "Fico said neutrality would suit Slovakia better than NATO's 'false solidarity'.",
+     "src": [
+      [
+       "Balkan Insight: NATO's 'false solidarity'",
+       "https://balkaninsight.com/2026/10/21/natos-false-solidarity-fico-says-neutrality-would-suit-slovakia-better/rd/"
+      ]
+     ]
+    }
+   ],
+   "src": [
+    [
+     "TASR: Budget26, 2 percent of GDP to defence",
+     "https://www.tasr.sk/tasr-clanok/TASR:2025102100000312"
+    ],
+    [
+     "Spanish Defence Staff: Strong Lineage 26 concluded",
+     "https://emad.defensa.gob.es/en/operaciones/operaciones-en-el-exterior/31_Forward_Land_Forces/31.2-FLF_Eslovaquia/noticias/listado/260608-ni-StrongLineage26-verificacion.html"
+    ],
+    [
+     "Wikipedia: Next Slovak parliamentary election",
+     "https://en.wikipedia.org/wiki/Next_Slovak_parliamentary_election"
+    ]
+   ],
+   "verified": false
+  },
+  {
+   "id": "de",
+   "name": "Germany",
+   "role": "secondary",
+   "gov": {
+    "head": "Friedrich Merz",
+    "title": "Federal Chancellor",
+    "party": "CDU",
+    "since": "2025-05-06",
+    "majority": "CDU/CSU and SPD coalition",
+    "president": "Frank-Walter Steinmeier",
+    "fm": "Johann Wadephul",
+    "defmin": "Boris Pistorius"
+   },
+   "election": {
+    "last": "2025-02-23",
+    "next": null,
+    "dateText": "Bundestag election due by spring 2029"
+   },
+   "nato": {
+    "member": 1955,
+    "spend": "Government plans 3.5% of GDP on core defence by 2029 (to confirm against the 2027 budget)",
+    "posture": [
+     "Operationsplan Deutschland: the Bundeswehr's plan linking national and alliance defence with civil support, covering peacetime, hybrid threat, crisis and war",
+     "Host nation support: up to 800,000 allied troops and 200,000 vehicles must be able to move through Germany within six months (Bundeswehr)",
+     "Wehrdienst-Modernisierungsgesetz passed 5 Dec 2025: all 18-year-old men receive a questionnaire from January 2026; service stays voluntary with a compulsory fallback"
+    ]
+   },
+   "stance": [
+    {
+     "k": "Ukraine",
+     "t": "Largest European supplier of military aid; Merz hosts the Coalition of the Willing in Berlin on 19 Nov 2026."
+    },
+    {
+     "k": "Allies",
+     "t": "Germany is NATO's logistics hub; Joint Support and Enabling Command (JSEC) at Ulm; the Bundeswehr Joint Force Command runs host nation support as a whole-of-government task."
+    }
+   ],
+   "blr": [
+    {
+     "n": 1,
+     "t": "Operationsplan Deutschland covers the military side only; civil defence sits with the Interior Ministry and the BBK; a reported €10bn civil-defence line by 2029 is not yet confirmed from an official source.",
+     "date": "2026-10-31"
+    },
+    {
+     "n": 7,
+     "t": "Host nation support planning assumes 800,000 troops and 200,000 vehicles in transit within six months; cost sharing between federal, state and municipal levels is still being examined.",
+     "date": "2026-10-31"
+    }
+   ],
+   "log": [
+    {
+     "date": "2025-12-05",
+     "t": "The Bundestag passed the Wehrdienst-Modernisierungsgesetz in its final readings.",
+     "src": [
+      [
+       "BMVg: Gesetzentwurf zur Modernisierung des Wehrdienstes",
+       "https://www.bmvg.de/de/presse/gesetzentwurf-zur-modernisierung-des-wehrdienstes-6049090"
+      ]
+     ]
+    }
+   ],
+   "src": [
+    [
+     "Bundeswehr: Host Nation Support",
+     "https://www.bundeswehr.de/en/organization/bundeswehr-joint-force-command/missions/host-nation-support"
+    ],
+    [
+     "Bundeswehr: Operational Plan for Germany",
+     "https://www.bundeswehr.de/en/organization/bundeswehr-joint-force-command/missions/operational-plan-for-germany"
+    ]
+   ],
+   "verified": false
+  }
+ ]
+}
