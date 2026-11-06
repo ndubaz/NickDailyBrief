@@ -782,7 +782,7 @@
     var list = ctx.countries || [], its = E.countries || [], BLR = (ctx.countriesBLR || []);
     if (!list.length && !its.length) return "";
     var h = '<section id="countries" class="news"><h2>Priority countries <span class="num">Hungary · Slovakia · Germany</span></h2>';
-    h += '<p class="small">Hungary and Slovakia are the J9 priority countries, Germany the secondary. Profiles come from data/countries.json and change only when the facts do; the items are today\'s news. Numbers refer to NATO\'s seven baseline requirements for resilience.</p>';
+    h += '<p class="small">Hungary and Slovakia are Nick\'s assigned priority countries as an analyst, Germany his secondary. Profiles come from data/countries.json and change only when the facts do; the items are today\'s news. Numbers refer to NATO\'s seven baseline requirements for resilience.</p>';
     list.forEach(function (c) {
       var g = c.gov || {}, el = c.election || {}, nato = c.nato || {}, mine = its.filter(function (i) { return i.cc === c.id; }), log = (c.log || []).slice().sort(function (a, b) { return a.date < b.date ? 1 : -1; }).slice(0, 4);
       var age = log.length ? daysBetween(log[0].date, TD) : null;
