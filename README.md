@@ -62,7 +62,7 @@ Editions in the 2.5, 3.0 and 4.0 formats still render: an edition whose `world` 
 
 ## Keeping your own files current
 
-- **week.json:** add `{"date": "2026-11-20", "end": "2026-11-21", "t": "TDY Brussels", "act": false}` to `items`. `act` is kept for compatibility and no longer changes the page.
+- **week.json:** add `{"date": "2026-11-20", "end": "2026-11-21", "t": "TDY Brussels", "time": "16:00–17:00", "note": "…", "url": "https://…"}` to `items`; `time` and `url` are optional and show on the board and the calendar. `act` is kept for compatibility and no longer changes the page.
 - **deadlines.json:** add `{"name": "APK", "date": "2027-03-14", "note": "garage booked", "cat": "car"}` to `items`. Set `"updated"` on an item to today's date and the page badges it UPDATED for that day. Keep names generic; no addresses, plate or document numbers.
 - **calendar.json:** when a ministry publishes a new school year, add its breaks under `school.<system>.segs` as `["YYYY-MM-DD", "YYYY-MM-DD", "label"]`. The AFNORTH entries come from the school's academic calendar PDF; the run completes them when it can read the PDF.
 - **bins.json:** paste the next Rd4 calendar as `[["YYYY-MM-DD","GFT · after 07:00"], ...]`.

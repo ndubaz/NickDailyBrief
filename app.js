@@ -467,7 +467,7 @@
     (ctx.events || []).forEach(function (e) { if (e.from) ev.push({ date: e.from, end: e.to !== e.from ? e.to : undefined, cat: "out", t: e.t, sub: [e.town, e.drive != null ? "~" + e.drive + " min" : "", e.to !== e.from ? "to " + fmtShort(e.to) : ""].filter(Boolean).join(" · "), src: "events", prio: e.prio === true }); });
     (ctx.congress || []).forEach(function (c) { if (c.deadline) ev.push({ date: c.deadline, cat: "pro", t: (c.title || c.post) + ": deadline", sub: c.next ? plain(c.next) : "Congress", src: "congress" }); });
     (ctx.exercises || []).forEach(function (x) { if (x.from) ev.push({ date: x.from, end: x.to !== x.from ? x.to : undefined, cat: "ex", t: x.name, sub: [x.lead, x.where].filter(Boolean).join(" · "), src: "exercises" }); });
-    ((ctx.week && ctx.week.items) || []).forEach(function (w) { if (w.date) ev.push({ date: w.date, end: w.end && w.end !== w.date ? w.end : undefined, cat: "me", t: w.t, sub: w.note || "", src: "week", prio: true }); });
+    ((ctx.week && ctx.week.items) || []).forEach(function (w) { if (w.date) ev.push({ date: w.date, end: w.end && w.end !== w.date ? w.end : undefined, cat: "me", t: w.t + (w.time ? " · " + w.time : ""), sub: [w.note, w.url ? "Join: " + w.url : ""].filter(Boolean).join(" · "), src: "week", prio: true }); });
     var seen = {};
     return ev.filter(function (e) { if (!e.date || !/^\d{4}-\d{2}-\d{2}$/.test(e.date)) return false; var k = e.date + "|" + e.cat + "|" + e.t; if (seen[k]) return false; seen[k] = 1; return true; }).sort(function (a, b) { return a.date < b.date ? -1 : a.date > b.date ? 1 : 0; });
   }

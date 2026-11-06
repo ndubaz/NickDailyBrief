@@ -1,5 +1,14 @@
 {
- "note": "Hand-maintained by Nick, never by the morning run. Your own dated entries for the week board, the calendar, the year-ahead board and Decisions due: {date, end (optional), t, note (optional), act (true when it needs an action from you)}. Names and dates only; nothing sensitive.",
- "updated": "2026-11-04",
- "items": []
+ "note": "Hand-maintained by Nick, never by the morning run. Your own dated entries for the week board, the calendar and the year-ahead board: {date, end (optional), t, note (optional), time (optional, e.g. \"16:00–17:00\"), url (optional join link), act (kept for compatibility)}. Names and dates only; nothing sensitive.",
+ "updated": "2026-11-06",
+ "items": [
+  {
+   "date": "2026-11-12",
+   "t": "AFNORTH PTA meeting",
+   "time": "16:00–17:00",
+   "note": "Teacher's Lounge, 2nd floor next to the library. Agenda and October minutes were sent ahead; read them before the meeting.",
+   "url": "https://meet.google.com/fqb-efia-pra",
+   "act": false
+  }
+ ]
 }

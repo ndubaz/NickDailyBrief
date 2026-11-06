@@ -241,7 +241,7 @@ Edited rarely. Add a school year when the ministry publishes it. The page merges
 
 ### `data/week.json`
 
-`{ "items": [ {"date","end","t","note","act":bool} ] }`. Hand-maintained by Nick. Entries appear on the week board, the calendar (category Yours), the year-ahead board. `act` is kept for compatibility and no longer changes the page. Names and dates only.
+`{ "items": [ {"date","end","t","note","time","url","act":bool} ] }`. Hand-maintained by Nick. `time` (e.g. "16:00–17:00") joins the title; `url` is a join link shown with the note. Entries appear on the week board, the calendar (category Yours), the year-ahead board. `act` is kept for compatibility and no longer changes the page. Names and dates only.
 
 ### `data/corrections.json`
 
