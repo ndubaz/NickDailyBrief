@@ -50,7 +50,8 @@ The edition is a daily snapshot. The standing files under `data/` are the Readbo
 | `data/congress.json` | Key defence bills, the budget cycle, confirmations, and the register of 38 watched posts (Army leadership, Joint Staff, combatant commands, Army four-star commands, Europe-based general officers) | Congress tracker in Profession, deadlines on the Planner |
 | `data/exercises.json` | NATO and allied exercises with dates | Exercise calendar, Planner |
 | `data/releases.json` | Dated AI and tech releases, plus the Friday state-of-the-art table | Frontier |
-| `data/countries.json` | Profiles and dated logs for Hungary, Slovakia and Germany: government, election clock, NATO posture, stances, seven-baseline-requirement notes | Priority countries in The news, Since yesterday, health |
+| `data/countries.json` | Profiles and dated logs for Hungary, Slovakia and Germany: government, election clock, NATO posture and spending series, stances, seven-baseline-requirement notes, map points | Priority countries in The news (map, spending chart, election clocks, resilience grids), Since yesterday, health |
+| `data/ceu.json` | Central Europe country outlines (Natural Earth, static) | The priority-countries map |
 | `data/events.json` | Curated events within about 90 minutes, with sources | Out and about, calendar, week strip |
 | `data/idioms.json` | The idiom bank, one a day in Dutch, French or Italian | Taal |
 | `data/ski.json` | Twelve resorts and a daily Open-Meteo snow forecast | Snow, December to March |

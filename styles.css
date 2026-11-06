@@ -687,3 +687,25 @@ ul.rec .like{color:var(--muted)}
 .ctry .item{margin-top:var(--s2);padding-top:var(--s2);border-top:1px dashed var(--line)}
 table.ingest td,table.ingest th{padding:4px 8px;font-size:12.5px}
 table.ingest td.d{font-family:var(--f-mono);font-size:12px}
+/* priority countries graphics */
+.ctry-h .actw{margin-left:auto;display:inline-flex;align-items:flex-end}
+.eclock{margin:var(--s1) 0 2px}
+.eclock-l{display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:10.5px;color:var(--muted);margin-bottom:3px}
+.eclock-bar{position:relative;height:8px;background:var(--line);border-radius:4px;overflow:visible}
+.eclock-bar i{position:absolute;top:0;bottom:0;border-radius:4px}
+.eclock-bar i.done{left:0}
+.eclock-bar i.snap{background:repeating-linear-gradient(135deg,var(--warn) 0 3px,transparent 3px 6px);opacity:.7}
+.eclock-bar b{position:absolute;top:-3px;width:2px;height:14px;margin-left:-1px;background:var(--ink)}
+.blrg{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;margin:var(--s2) 0 var(--s1)}
+.blrc{border:1px solid var(--line);border-radius:var(--r-chip);padding:4px 2px;text-align:center;min-width:0;color:var(--muted)}
+.blrc b{display:block;font-family:var(--f-mono);font-size:12px;font-weight:500}
+.blrc span{display:block;font-size:9px;line-height:1.1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.blrc.has{border-color:var(--p-sec);color:var(--ink);background:color-mix(in srgb,var(--p-sec) 12%,transparent)}
+.blrc.has b{color:var(--p-sec)}
+.maplegend{display:flex;flex-wrap:wrap;gap:4px 12px;margin:var(--s1) 0 0}
+.maplegend i{display:inline-block;width:10px;height:10px;margin-right:4px;vertical-align:-1px}
+.maplegend i.sq{background:var(--c-us)}
+.maplegend i.tri{width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-bottom:10px solid var(--up);background:none}
+.maplegend i.ring{border:2px solid var(--warn);border-radius:50%;width:7px;height:7px}
+.maplegend i.dash{height:0;border-top:2px dashed var(--c-be);width:14px;vertical-align:2px}
+.maplegend i.solid{height:0;border-top:2px solid var(--c-nl);width:14px;vertical-align:2px}

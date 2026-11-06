@@ -777,23 +777,93 @@
     function cnt(list, f) { var n = 0; (list || []).forEach(function (x) { n += f(x) || 0; }); return n; }
     return '<h3>Data ingest <span class="small">newest entry per standing file, as of this edition</span></h3>' + table(["File", "Newest", "Age", "Rows"], rows.map(function (r) { var n = daysBetween(r[1], TD); return '<tr class="' + (n >= 3 ? "soon" : "") + '"><td><b>' + esc(r[0]) + '</b></td><td class="d">' + esc(fmtShort(r[1])) + (r[1].slice(0, 4) !== TD.slice(0, 4) ? " " + r[1].slice(0, 4) : "") + '</td><td class="d">' + (n <= 0 ? "today" : n === 1 ? "1 day" : n + " days") + '</td><td class="d">' + (size[r[0]] != null ? size[r[0]].toLocaleString("en-GB") : "") + "</td></tr>"; }).join(""), "lbl1 ingest").replace('class="tw stack"', 'class="tw"');
   }
+
+  /* ---------- priority countries: map, spending, election clock, resilience grid, activity ---------- */
+  var CTRY_COL = { hu: "var(--p-sec)", sk: "var(--accent)", de: "var(--c-de)" }, CTRY_ISO = { hu: "HUN", sk: "SVK", de: "DEU" };
+  function ceuMap(ctx, W) {
+    var geo = ctx.ceu || {}, M = ctx.countriesMap || {}, list = ctx.countries || [];
+    W = Math.max(240, Math.round(W || 360)); var ph = W < 420, lon0 = ph ? 4.5 : 3.5, lon1 = ph ? 24.5 : 25.5, lat0 = 45.3, lat1 = 55.3, H = Math.round(W * (lat1 - lat0) / (lon1 - lon0) * (ph ? 1.9 : 1.5));
+    function X(lon) { return (lon - lon0) / (lon1 - lon0) * W; }
+    function Y(lat) { return H - (lat - lat0) / (lat1 - lat0) * H; }
+    var s = '<svg viewBox="0 0 ' + W + " " + H + '" style="overflow:hidden" role="img" aria-label="Map of the priority countries with NATO sites and energy corridors">';
+    s += '<rect width="' + W + '" height="' + H + '" fill="var(--pc)" fill-opacity=".04"/>';
+    var role = {}; list.forEach(function (c) { role[CTRY_ISO[c.id]] = c; });
+    Object.keys(geo).forEach(function (iso) {
+      var c = role[iso], d = "";
+      geo[iso].forEach(function (ring) { d += "M" + ring.map(function (p) { return X(p[0]).toFixed(1) + "," + Y(p[1]).toFixed(1); }).join("L") + "Z"; });
+      s += '<path d="' + d + '" fill="' + (c ? CTRY_COL[c.id] : "var(--surface)") + '" fill-opacity="' + (c ? (c.role === "priority" ? ".28" : ".16") : "1") + '" stroke="' + (c ? CTRY_COL[c.id] : "var(--muted)") + '" stroke-opacity="' + (c ? ".9" : ".45") + '" stroke-width="' + (c ? 1.3 : .7) + '" stroke-linejoin="round"/>';
+    });
+    (M.lines || []).forEach(function (l) { s += '<polyline points="' + l.pts.map(function (p) { return X(p[1]).toFixed(1) + "," + Y(p[0]).toFixed(1); }).join(" ") + '" fill="none" stroke="' + (l.k === "gas" ? "var(--c-be)" : "var(--c-nl)") + '" stroke-width="2.2" stroke-dasharray="' + (l.k === "gas" ? "5 3" : "1 0") + '" stroke-linecap="round" stroke-opacity=".9"><title>' + esc(l.n) + "</title></polyline>"; });
+    (M.points || []).forEach(function (pt) {
+      var x = X(pt.lon), y = Y(pt.lat), k = pt.k;
+      if (k === "capital") s += '<circle cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="2.6" fill="var(--ink)"/>';
+      else if (k === "hq") s += '<rect x="' + (x - 4).toFixed(1) + '" y="' + (y - 4).toFixed(1) + '" width="8" height="8" fill="var(--c-us)" stroke="var(--surface)" stroke-width="1"/>';
+      else if (k === "force") s += '<path d="M' + x.toFixed(1) + " " + (y - 5.5).toFixed(1) + "l5 9h-10z" + '" fill="var(--up)" stroke="var(--surface)" stroke-width="1"/>';
+      else s += '<circle cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="4" fill="none" stroke="var(--warn)" stroke-width="2"/>';
+      var right = pt.lon < (lon0 + lon1) / 2 + 6, lab = pt.n; if (ph) { if (k === "capital" || k === "energy") lab = ""; else lab = pt.s || pt.n; }
+      if (lab && k === "energy") s += svgText(x, y + 13, lab, "middle", 8.5, true, "var(--muted)");
+      else if (lab && k === "capital") s += svgText(x, y - 5, lab, "middle", 8.5, true, "var(--muted)");
+      else if (lab) s += svgText(x + (right ? 6 : -6), y + 3.5, lab, right ? "start" : "end", ph ? 8.5 : 9.5, true, "var(--ink)");
+    });
+    list.forEach(function (c) { var pt = { hu: [46.5, 17.0], sk: [49.1, 20.6], de: [51.3, 10.2] }[c.id]; if (pt) s += svgText(X(pt[1]), Y(pt[0]), c.name.toUpperCase(), "middle", ph ? 10 : 12, true, CTRY_COL[c.id]); });
+    return s + "</svg>";
+  }
+  function spendChart(list, W) {
+    var sets = list.filter(function (c) { return c.spend && (c.spend.pct || []).length > 1; }); if (!sets.length) return "";
+    W = Math.max(240, Math.round(W || 360)); var H = 180, L = 34, R = 12, T = 14, B = 22, y0 = 2014, y1 = 2025, lo = 0, hi = 3.6;
+    sets.forEach(function (c) { c.spend.pct.forEach(function (p) { y0 = Math.min(y0, p[0]); y1 = Math.max(y1, p[0]); hi = Math.max(hi, p[1] + 0.2); }); });
+    function X(y) { return L + (y - y0) / (y1 - y0) * (W - L - R); }
+    function Y(v) { return T + (1 - (v - lo) / (hi - lo)) * (H - T - B); }
+    var s = '<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="Defence spending as a share of GDP, NATO estimates">';
+    [1, 2, 3].forEach(function (v) { s += '<line x1="' + L + '" y1="' + Y(v).toFixed(1) + '" x2="' + (W - R) + '" y2="' + Y(v).toFixed(1) + '" stroke="var(--line)"/>' + svgText(L - 4, Y(v) + 3.5, v + "%", "end", 9.5); });
+    [[2, "NATO 2%"], [3.5, "core 3.5% by 2035"]].forEach(function (g) { s += '<line x1="' + L + '" y1="' + Y(g[0]).toFixed(1) + '" x2="' + (W - R) + '" y2="' + Y(g[0]).toFixed(1) + '" stroke="var(--crit)" stroke-dasharray="3 3" stroke-opacity=".8"/>' + svgText(L + 4, Y(g[0]) - 3, g[1], "start", 9, true, "var(--crit)"); });
+    for (var y = y0; y <= y1; y += (W < 420 ? 2 : 1)) s += svgText(X(y), H - 6, String(y).slice(2), "middle", 9);
+    sets.forEach(function (c) {
+      var pts = c.spend.pct.map(function (p) { return X(p[0]).toFixed(1) + "," + Y(p[1]).toFixed(1); }), last = c.spend.pct[c.spend.pct.length - 1];
+      s += '<polyline points="' + pts.join(" ") + '" fill="none" stroke="' + CTRY_COL[c.id] + '" stroke-width="' + (c.role === "priority" ? 2.2 : 1.5) + '" stroke-linejoin="round"' + (c.role !== "priority" ? ' stroke-dasharray="4 3"' : "") + "/>";
+      s += '<circle cx="' + X(last[0]).toFixed(1) + '" cy="' + Y(last[1]).toFixed(1) + '" r="3" fill="' + CTRY_COL[c.id] + '"/>';
+    });
+    return s + "</svg>" + '<p class="small maplegend">' + sets.map(function (c) { var last = c.spend.pct[c.spend.pct.length - 1]; return '<span><i class="' + (c.role === "priority" ? "solid" : "dash") + '" style="border-color:' + CTRY_COL[c.id] + '"></i>' + esc(c.name) + " <b>" + last[1].toFixed(2) + "%</b> in " + last[0] + "</span>"; }).join("") + "</p>";
+  }
+  function electionClock(c, TD) {
+    var el = c.election || {}; if (!el.last || !el.due) return "";
+    var a = pd(el.last), b = pd(el.due), span = (b - a) / DAY, t = Math.max(0, Math.min(1, (pd(TD) - a) / DAY / span)), snap = el.snapFrom ? Math.max(0, Math.min(1, (pd(el.snapFrom) - a) / DAY / span)) : null, left = daysBetween(TD, el.due);
+    var h = '<div class="eclock"><div class="eclock-l"><span>' + esc(fmtShort(el.last) + " " + el.last.slice(0, 4)) + '</span><span>' + (left > 0 ? Math.round(left / 30.4) + " months to the due date" : "due") + '</span><span>' + esc(fmtShort(el.due) + " " + el.due.slice(0, 4)) + "</span></div>";
+    h += '<div class="eclock-bar"><i class="done" style="width:' + (t * 100).toFixed(1) + '%;background:' + CTRY_COL[c.id] + '"></i>' + (snap != null ? '<i class="snap" title="' + esc(el.snapNote || "snap election possible") + '" style="left:' + (snap * 100).toFixed(1) + "%;width:" + ((1 - snap) * 100).toFixed(1) + '%"></i>' : "") + '<b style="left:' + (t * 100).toFixed(1) + '%"></b></div>';
+    if (el.snapFrom) h += '<p class="small" style="margin:2px 0 0">Hatched: ' + esc(el.snapNote || "snap election possible") + ".</p>";
+    return h + "</div>";
+  }
+  var BLR_SHORT = ["Govt", "Energy", "People", "Food, water", "Casualties", "Comms", "Transport"];
+  function blrGrid(c, BLR) {
+    var notes = {}; (c.blr || []).forEach(function (b) { notes[b.n] = b; });
+    return '<div class="blrg" role="list" aria-label="Seven baseline requirements">' + BLR.map(function (name, i) { var b = notes[i + 1]; return '<div class="blrc' + (b ? " has" : "") + '" role="listitem" title="' + esc((i + 1) + ". " + name + (b ? ": " + b.t : ": no note yet")) + '"><b>' + (i + 1) + "</b><span>" + esc(BLR_SHORT[i] || name) + "</span></div>"; }).join("") + "</div>";
+  }
+  function activityBars(c, TD) {
+    var weeks = []; for (var i = 11; i >= 0; i--) weeks.push(0);
+    (c.log || []).forEach(function (e) { var n = daysBetween(e.date, TD); if (n >= 0 && n < 84) weeks[11 - Math.floor(n / 7)]++; });
+    var mx = Math.max.apply(null, weeks) || 1, W = 120, H = 26;
+    return '<svg class="actv" viewBox="0 0 ' + W + " " + H + '" width="' + W + '" height="' + H + '" role="img" aria-label="Log entries per week, last 12 weeks"><title>Log entries per week, last 12 weeks</title>' + weeks.map(function (v, i) { var h = v ? Math.max(3, v / mx * (H - 2)) : 1.5; return '<rect x="' + (i * 10) + '" y="' + (H - h).toFixed(1) + '" width="7" height="' + h.toFixed(1) + '" rx="1" fill="' + (v ? CTRY_COL[c.id] : "var(--line)") + '"/>'; }).join("") + "</svg>";
+  }
   /* priority countries: standing profile per country, then today's items for it */
   function countriesBlock(E, ctx, TD) {
     var list = ctx.countries || [], its = E.countries || [], BLR = (ctx.countriesBLR || []);
     if (!list.length && !its.length) return "";
     var h = '<section id="countries" class="news"><h2>Priority countries <span class="num">Hungary · Slovakia · Germany</span></h2>';
     h += '<p class="small">Hungary and Slovakia are Nick\'s assigned priority countries as an analyst, Germany his secondary. Profiles come from data/countries.json and change only when the facts do; the items are today\'s news. Numbers refer to NATO\'s seven baseline requirements for resilience.</p>';
+    if (ctx.ceu) h += '<div class="panel"><div class="lbl">NATO sites and energy corridors</div><div class="chart" id="ceumap" style="min-height:200px"></div><p class="small maplegend"><span><i class="sq"></i>NATO headquarters</span><span><i class="tri"></i>NATO force</span><span><i class="ring"></i>nuclear plant</span><span><i class="dash"></i>TurkStream gas</span><span><i class="solid"></i>Druzhba oil</span></p></div>';
+    if (list.some(function (c) { return c.spend; })) h += '<div class="panel"><div class="lbl">Defence spending, share of GDP · NATO estimates' + (list.some(function (c) { return c.spend && c.spend.verified === false; }) ? " · to confirm" : "") + '</div><div class="chart" id="spendchart" style="min-height:180px"></div></div>';
     list.forEach(function (c) {
       var g = c.gov || {}, el = c.election || {}, nato = c.nato || {}, mine = its.filter(function (i) { return i.cc === c.id; }), log = (c.log || []).slice().sort(function (a, b) { return a.date < b.date ? 1 : -1; }).slice(0, 4);
       var age = log.length ? daysBetween(log[0].date, TD) : null;
-      h += '<div class="ctry ' + fu(age === 0 ? "NEW" : "") + '" id="ctry-' + esc(c.id) + '"><div class="ctry-h"><b>' + esc(c.name) + '</b><span class="chip st tier">' + esc(c.role || "") + "</span>" + (c.verified === false ? '<span class="chip st">profile to confirm</span>' : "") + inToday("country", c.id) + badge(age === 0 ? "NEW" : age === 1 ? "UPDATED" : "") + "</div>";
+      h += '<div class="ctry ' + fu(age === 0 ? "NEW" : "") + '" id="ctry-' + esc(c.id) + '"><div class="ctry-h"><b>' + esc(c.name) + '</b><span class="chip st tier">' + esc(c.role || "") + "</span>" + (c.verified === false ? '<span class="chip st">profile to confirm</span>' : "") + inToday("country", c.id) + badge(age === 0 ? "NEW" : age === 1 ? "UPDATED" : "") + '<span class="actw" title="Log entries per week, last 12 weeks">' + activityBars(c, TD) + "</span></div>";
       h += '<dl class="kv">';
       if (g.head) h += "<dt>Government</dt><dd>" + esc(g.head) + (g.title ? ", " + esc(g.title) : "") + (g.party ? " (" + esc(g.party) + ")" : "") + (g.since ? ", since " + esc(fmtLong(g.since)) : "") + (g.majority ? ". " + esc(g.majority) + "." : "") + (g.defmin ? " Defence: " + esc(g.defmin) + "." : "") + (g.fm ? " Foreign: " + esc(g.fm) + "." : "") + "</dd>";
-      if (el.dateText || el.next) h += "<dt>Election</dt><dd>" + esc(el.dateText || "") + (el.next ? " · <b>" + daysBetween(TD, el.next) + " days</b> " + icsLink(c.name + " election", el.next) : "") + "</dd>";
+      if (el.dateText || el.next) h += "<dt>Election</dt><dd>" + esc(el.dateText || "") + (el.next ? " · <b>" + daysBetween(TD, el.next) + " days</b> " + icsLink(c.name + " election", el.next) : "") + electionClock(c, TD) + "</dd>";
       if (nato.member || nato.spend) h += "<dt>NATO</dt><dd>" + (nato.member ? "Member since " + esc(nato.member) + ". " : "") + esc(nato.spend || "") + "</dd>";
       if ((nato.posture || []).length) h += "<dt>Posture</dt><dd>" + nato.posture.map(esc).join(" · ") + "</dd>";
       (c.stance || []).forEach(function (st) { h += "<dt>" + esc(st.k) + "</dt><dd>" + esc(st.t) + "</dd>"; });
       h += "</dl>";
+      if (BLR.length) h += blrGrid(c, BLR);
       if ((c.blr || []).length) h += '<div class="blr">' + c.blr.slice().sort(function (a, b) { return a.n - b.n; }).map(function (b) { return '<div class="blr-r"><span class="blr-n" title="' + esc(BLR[b.n - 1] || "") + '">' + esc(b.n) + "</span><span>" + (BLR[b.n - 1] ? "<b>" + esc(BLR[b.n - 1]) + ".</b> " : "") + esc(b.t) + (b.date ? ' <span class="small">(' + esc(fmtShort(b.date)) + ")</span>" : "") + "</span></div>"; }).join("") + "</div>";
       if (log.length) h += '<ul class="clean small ctry-log">' + log.map(function (e) { return "<li><b>" + esc(fmtShort(e.date)) + (e.date.slice(0, 4) !== TD.slice(0, 4) ? " " + e.date.slice(0, 4) : "") + "</b> · " + esc(e.t) + ((e.src || []).length ? ' <a href="' + esc(e.src[0][1]) + '" target="_blank" rel="noopener" class="srcl">source</a>' : "") + "</li>"; }).join("") + "</ul>";
       h += mine.length ? '<div class="fug">' + nq() + mine.map(function (i) { return item(i); }).join("") + "</div>" : quiet("Nothing new from " + c.name + " today.", "nq");
@@ -1401,6 +1471,8 @@
       var fb = document.getElementById("fbars"); if (fb && E.world && E.world.feature && E.world.feature.bars) fb.innerHTML = vbars(E.world.feature.bars.rows, { W: fb.clientWidth, zero: true, label: E.world.feature.bars.label || "" });
       var fg = document.getElementById("fgeo"); if (fg && ctx._geo) fg.innerHTML = geoSchematic(ctx._geo, fg.clientWidth);
       var hk = document.getElementById("hkchart"); if (hk && ctx.canes) hk.innerHTML = hockeyChart(canesView(ctx.canes, TD).games, hk.clientWidth);
+      var cm = document.getElementById("ceumap"); if (cm) cm.innerHTML = ceuMap(ctx, cm.clientWidth);
+      var sc = document.getElementById("spendchart"); if (sc) sc.innerHTML = spendChart(ctx.countries || [], sc.clientWidth);
       var tb = document.getElementById("tempband"); if (tb) tb.innerHTML = tempBand(((E.today || {}).weather || {}).week, tb.clientWidth);
       var dlc = document.getElementById("daylight"); if (dlc) dlc.innerHTML = daylight(HOME.lat, TD, dlc.clientWidth, parseFloat(dlc.getAttribute("data-h")));
       var ab = document.getElementById("armybars"); if (ab && E.army && E.army.depth && E.army.depth.bars) ab.innerHTML = vbars(E.army.depth.bars.rows, { W: ab.clientWidth, zero: true, label: E.army.depth.bars.label || "" });
@@ -1614,8 +1686,9 @@
     opt("data/incidents.json"), opt("data/bins.json"), opt("data/threads.json"), opt("data/horizon.json"),
     opt("data/fx.json"), opt("data/series.json"), opt("data/canes.json"),
     opt("data/conflicts.json"), opt("data/world-series.json"), opt("data/calendar.json"), opt("data/deadlines.json"),
-    opt("data/congress.json"), opt("data/exercises.json"), opt("data/releases.json"), opt("data/events.json"), opt("data/idioms.json"), opt("data/ski.json"), opt("data/search-index.json"), opt("data/land.json"), opt("data/week.json"), opt("data/corrections.json"), opt("data/research.json"), opt("data/teams.json"), opt("data/tv.json"), opt("data/countries.json")
+    opt("data/congress.json"), opt("data/exercises.json"), opt("data/releases.json"), opt("data/events.json"), opt("data/idioms.json"), opt("data/ski.json"), opt("data/search-index.json"), opt("data/land.json"), opt("data/week.json"), opt("data/corrections.json"), opt("data/research.json"), opt("data/teams.json"), opt("data/tv.json"), opt("data/countries.json"), opt("data/ceu.json")
   ]).then(function (r) {
+    ctx.ceu = r[26] && r[26].countries; ctx.countriesMap = r[25] && r[25].map;
     ctx.week = r[20]; ctx.corrections = r[21]; ctx.research = r[22]; ctx.teams = r[23]; ctx.tv = r[24];
     ctx.countries = r[25] && r[25].countries; ctx.countriesBLR = r[25] && r[25].blr; ctx.countriesUpdated = r[25] && r[25].updated;
     ctx.fetchedAt = Date.now();
