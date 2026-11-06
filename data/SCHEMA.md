@@ -18,7 +18,7 @@ The site is static. `index.html` + `app.js` + `styles.css` never change day to d
 | `data/canes.json` | Append each completed Carolina game; refresh `upcoming` (next 15 scheduled games with UTC start); update `record`, `points`, `metro`. |
 | `data/congress.json` | Three lanes: key defence bills, the budget cycle, confirmations. Add a row when a bill is introduced, a budget deadline is set, a post falls vacant or a nominee is named; move `stage`, add the date to `dates`, set `updated`, copy cited source rows into `src`. Never delete rows. |
 | `data/exercises.json` | Add announced NATO and allied exercises; set `updated` when dates change; never delete (the page hides those older than 60 days). |
-| `data/releases.json` | Append one entry per AI, chip, robotics or autonomy release, published result or shipped capability (`id` as `YYYY-MM-DD-lab-slug`, `kind`, `t`, `lab`, `n`, `date`, `src`). On Fridays rewrite `sota` (leading system per domain) with sources. |
+| `data/releases.json` | Append one entry per AI, chip, robotics or autonomy release, published result or shipped capability (`id` as `YYYY-MM-DD-lab-slug`, `kind`, `t`, `lab`, `n`, `date`, `src`). On Fridays rewrite `sota` (one object per domain: group, system, lab, cc, open, metric, score, unit, since, runner, changed, note, src). |
 | `data/countries.json` | Priority countries (6.6): Hungary and Slovakia (priority), Germany (secondary). Append `{date, t, src}` to a country's `log` for each dated fact on international relations, internal politics relevant to NATO, or civil resilience; update `gov`, `election`, `nato`, `stance` and `blr` only when the fact changes, with the source in `src`; set `verified: true` once every profile line is checked against an official page. Never delete log entries. Set `updated`. |
 | `data/events.json` | Add events within about 90 minutes of Hoensbroek with a source; prune events whose `to` has passed; set `updated` when details change. |
 | `data/idioms.json` | Append today's idiom (rotate `nl`, `fr`, `it`); never repeat a phrase. |
@@ -177,7 +177,7 @@ The same file carries `tiers` and `watch`: the register of posts the confirmatio
 
 ### `data/releases.json`
 
-`{ "releases": [ {"id","date","kind":"model|chip|robot|autonomy|result|tool","t","lab","n","src"} ], "sota": {"asof","rows":[[domain, system, lab, sinceDate, src]]} }`. The release log shows the last 45 days; `sota` is rewritten on Fridays.
+`{ "releases": [ {"id","date","kind":"model|chip|robot|autonomy|result|tool","t","lab","n","src"} ], "sota": {"asof","rows":[{"domain","group":"Models|Media|Physical|Compute","system","lab","cc","open":bool,"metric","score","unit","since","runner":{"system","lab","score"},"changed":bool,"note","src":[[n,title,outlet,url]]}]} }`. The release log shows the last 45 days; `sota` is rewritten on Fridays. The page shows a summary strip (leads by country, leads changed this week, open-weights leaders, longest-held lead), a bar chart of days each lead has been held, then one card per domain grouped by `group` with the lab, country and open-weights chips, the metric and score, the challenger and gap on the same metric, the lead date and the note. The older array form `[domain, system, lab, since, src]` still renders.
 
 ### `data/countries.json`
 

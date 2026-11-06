@@ -778,6 +778,51 @@
     return '<h3>Data ingest <span class="small">newest entry per standing file, as of this edition</span></h3>' + table(["File", "Newest", "Age", "Rows"], rows.map(function (r) { var n = daysBetween(r[1], TD); return '<tr class="' + (n >= 3 ? "soon" : "") + '"><td><b>' + esc(r[0]) + '</b></td><td class="d">' + esc(fmtShort(r[1])) + (r[1].slice(0, 4) !== TD.slice(0, 4) ? " " + r[1].slice(0, 4) : "") + '</td><td class="d">' + (n <= 0 ? "today" : n === 1 ? "1 day" : n + " days") + '</td><td class="d">' + (size[r[0]] != null ? size[r[0]].toLocaleString("en-GB") : "") + "</td></tr>"; }).join(""), "lbl1 ingest").replace('class="tw stack"', 'class="tw"');
   }
 
+  /* ---------- state of the art: one card per domain, grouped, with lead held, score, challenger and sources ---------- */
+  var SOTA_GROUPS = ["Models", "Media", "Physical", "Compute", "Other"];
+  function sotaRow(r) {
+    if (Array.isArray(r)) { var parts = String(r[1] || "").split(" · "); return { domain: r[0], system: parts[0], label: r[1], metric: parts.length > 1 ? parts.slice(1).join(" · ") : "", lab: r[2], since: r[3], src: r[4] || [] }; }
+    return r || {};
+  }
+  function sotaGroup(r) { if (r.group) return r.group; var d = String(r.domain || "").toLowerCase(); return /model|coding|reasoning|agent|weights/.test(d) ? "Models" : /image|video|audio|voice|music/.test(d) ? "Media" : /robot|taxi|humanoid|drone|autonom/.test(d) ? "Physical" : /chip|accelerator|compute|cluster|fab/.test(d) ? "Compute" : "Other"; }
+  function fmtScore(r) { if (r.score == null || r.score === "") return ""; var v = +r.score; return (isNaN(v) ? esc(r.score) : v >= 10000 ? v.toLocaleString("en-GB") : String(v)) + esc(r.unit || ""); }
+  function sotaBlock(SO, TD) {
+    var h = '<section id="sota" class="watch"><h2>State of the art <span class="num">' + (SO.asof ? "as of " + esc(fmtShort(SO.asof)) + " · rewritten Fridays" : "updated Fridays") + "</span></h2>";
+    var rows = (SO.rows || []).map(sotaRow).filter(function (r) { return r.domain; });
+    if (!rows.length) return h + quiet("The Friday table has not been written yet.") + "</section>";
+    /* summary strip */
+    var byCc = {}, open = 0, changed = 0, longest = null;
+    rows.forEach(function (r) { if (r.cc) byCc[r.cc] = (byCc[r.cc] || 0) + 1; if (r.open) open++; if (r.changed) changed++; if (r.since) { var n = daysBetween(r.since, TD); if (!longest || n > longest[1]) longest = [r, n]; } });
+    var ccs = Object.keys(byCc).sort(function (a, b) { return byCc[b] - byCc[a]; });
+    h += '<div class="strip cds sota-sum">';
+    h += '<div class="tile cd"><div class="lbl">Leads by country</div><div class="val">' + (ccs.length ? ccs.map(function (c) { return esc(c) + " " + byCc[c]; }).join(" · ") : "—") + "</div><p>" + rows.length + " domains tracked</p></div>";
+    h += '<div class="tile cd"><div class="lbl">Changed this week</div><div class="val">' + changed + "</div><p>" + (changed ? rows.filter(function (r) { return r.changed; }).map(function (r) { return esc(r.domain); }).join(", ") : "no lead changed hands") + "</p></div>";
+    h += '<div class="tile cd"><div class="lbl">Open weights</div><div class="val">' + open + " of " + rows.length + "</div><p>" + (open ? rows.filter(function (r) { return r.open; }).map(function (r) { return esc(r.system); }).join(", ") : "every leader is closed") + "</p></div>";
+    if (longest) h += '<div class="tile cd"><div class="lbl">Longest-held lead</div><div class="val">' + longest[1] + " days</div><p>" + esc(longest[0].domain + " · " + longest[0].system) + "</p></div>";
+    h += "</div>";
+    /* lead held, all domains on one bar chart */
+    var dated = rows.filter(function (r) { return r.since; }).sort(function (a, b) { return daysBetween(b.since, TD) - daysBetween(a.since, TD); });
+    if (dated.length) h += '<div class="panel"><div class="lbl">Days the current leader has held each domain</div>' + hbars(dated.map(function (r) { return [r.domain + " · " + r.system, daysBetween(r.since, TD)]; }), { inner: true, fmt: function (v) { return v + " d"; } }) + "</div>";
+    /* cards by group */
+    var groups = {}; rows.forEach(function (r) { var g = sotaGroup(r); (groups[g] = groups[g] || []).push(r); });
+    SOTA_GROUPS.forEach(function (g) {
+      if (!groups[g]) return;
+      h += "<h3>" + esc(g) + ' <span class="small">' + groups[g].length + (groups[g].length === 1 ? " domain" : " domains") + "</span></h3><div class=\"sota\">";
+      groups[g].forEach(function (r) {
+        var n = r.since ? daysBetween(r.since, TD) : null, map = srcMap(r.src), cites = (r.src || []).length ? '<sup class="r">' + r.src.map(function (z) { return citeLink(z[0], map); }).join("") + "</sup>" : "";
+        h += '<div class="sotac' + (r.changed ? " chg" : "") + '"><div class="sc-d">' + esc(r.domain) + (r.changed ? '<span class="badge new">NEW LEADER</span>' : "") + "</div>";
+        h += '<div class="sc-s">' + esc(r.system) + cites + "</div>";
+        h += '<div class="sc-m">' + (r.lab ? '<span class="chip st">' + esc(r.lab) + "</span>" : "") + (r.cc ? '<span class="chip st cc">' + esc(r.cc) + "</span>" : "") + (r.open ? '<span class="chip st open">open weights</span>' : "") + "</div>";
+        if (r.metric || r.score != null) h += '<div class="sc-k"><span class="small">' + esc(r.metric || "") + "</span>" + (r.score != null && r.score !== "" ? " <b>" + fmtScore(r) + "</b>" : "") + "</div>";
+        if (r.runner && r.runner.system) h += '<div class="sc-r small">Challenger: ' + esc(r.runner.system) + (r.runner.lab ? " (" + esc(r.runner.lab) + ")" : "") + (r.runner.score != null ? " · " + esc(String(r.runner.score)) + esc(r.unit || "") : "") + (r.score != null && r.runner.score != null && !isNaN(+r.score) && !isNaN(+r.runner.score) ? '<span class="gap">gap ' + esc(String(Math.round((+r.score - +r.runner.score) * 100) / 100)) + esc(r.unit || "") + "</span>" : "") + "</div>";
+        h += '<div class="sc-t small">' + (r.since ? "Lead since <b>" + esc(fmtShort(r.since)) + (r.since.slice(0, 4) !== TD.slice(0, 4) ? " " + r.since.slice(0, 4) : "") + "</b> · " + n + (n === 1 ? " day" : " days") : "Lead date not recorded") + "</div>";
+        if (r.note) h += '<p class="small sc-n">' + esc(r.note) + "</p>";
+        h += "</div>";
+      });
+      h += "</div>";
+    });
+    return h + '<p class="small">Leader per domain on the stated public benchmark or published figure; the lab\'s country, not the benchmark\'s. Challenger and gap are on the same metric.</p></section>';
+  }
   /* ---------- priority countries: map, spending, election clock, resilience grid, activity ---------- */
   var CTRY_COL = { hu: "var(--p-sec)", sk: "var(--accent)", de: "var(--c-de)" }, CTRY_ISO = { hu: "HUN", sk: "SVK", de: "DEU" };
   function ceuMap(ctx, W) {
@@ -1236,9 +1281,7 @@
     h += RL.length ? '<div class="fug">' + nq() + '<div class="tl">' + RL.map(function (r) { var b = r.date === TD ? "NEW" : r.date === addDays(TD, -1) ? "UPDATED" : ""; return '<div class="tl-i ' + fu(b) + '"><div class="d"><span>' + esc(fmtLong(r.date)) + '</span><span class="chip rep">' + esc(r.kind || "release") + "</span></div><h4>" + esc(r.t) + "</h4>" + badge(b) + '<p class="ink">' + esc(r.lab || "") + (r.lab && r.n ? " · " : "") + rich(r.n || "", srcMap(r.src)) + "</p></div>"; }).join("") + "</div></div>" : quiet("No releases logged yet.");
     h += "</section>";
     var SO = REL.sota || {};
-    h += '<section id="sota" class="watch"><h2>State of the art <span class="num">' + (SO.asof ? "as of " + esc(fmtShort(SO.asof)) : "updated Fridays") + "</span></h2>";
-    h += SO.rows && SO.rows.length ? table(["Domain", "Leading system", "Since"], SO.rows.map(function (r) { return "<tr><td>" + esc(r[0]) + "</td><td><b>" + esc(r[1]) + "</b>" + (r[2] ? '<div class="small">' + esc(r[2]) + "</div>" : "") + (r[4] && r[4].length ? '<sup class="r">' + r[4].map(function (z) { return citeLink(z[0], srcMap(r[4])); }).join("") + "</sup>" : "") + '</td><td class="d">' + esc(r[3] ? fmtShort(r[3]) : "—") + "</td></tr>"; }).join(""), "lbl1") : quiet("The Friday table has not been written yet.");
-    h += "</section>";
+    h += sotaBlock(SO, TD);
 
     h += '<section id="production" class="watch"><h2>Production and capacity <span class="num">series the run keeps up</span></h2>';
     var DTS = (DT.series || []).filter(function (k) { return ((WS.series || {})[k] || []).length > 1; });

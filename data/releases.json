@@ -241,14 +241,14 @@
  ],
  "sota": {
   "asof": "2026-11-06",
-  "note": "Friday table: leading system per domain with the date it took the lead. The run rewrites this block on Fridays with sources.",
+  "note": "Friday table: leading system per domain. Rows are objects: domain, group (Models, Media, Physical, Compute), system, lab, cc (country of the lab), open (open weights), metric, score, unit, since (date the lead was taken), runner {system, lab, score} (the closest challenger on the same metric), changed (true when the leader changed this week), note, src. The run rewrites it on Fridays.",
   "rows": [
-   [
-    "General frontier model (public)",
-    "Gemini 4 Argon · Arena text 1520",
-    "Google",
-    "2026-10-13",
-    [
+   {
+    "domain": "General frontier model (public)",
+    "system": "Gemini 4 Argon",
+    "lab": "Google",
+    "since": "2026-10-13",
+    "src": [
      [
       1,
       "Gemini 4 Argon: built to solve your hardest problems",
@@ -261,14 +261,26 @@
       "BenchLeader",
       "https://www.benchleader.com/benchmarks/lmarena_text"
      ]
-    ]
-   ],
-   [
-    "Agentic coding",
-    "Claude Opus 5.5 · Terminal-Bench 4.0 64.8%",
-    "Anthropic",
-    "2026-09-22",
-    [
+    ],
+    "group": "Models",
+    "cc": "US",
+    "open": false,
+    "metric": "LMArena text Elo",
+    "score": 1520,
+    "runner": {
+     "system": "Claude Opus 5.5",
+     "lab": "Anthropic",
+     "score": null
+    },
+    "note": "Lead taken on the Arena text board at launch on 13 Oct.",
+    "label": "Gemini 4 Argon · Arena text 1520"
+   },
+   {
+    "domain": "Agentic coding",
+    "system": "Claude Opus 5.5",
+    "lab": "Anthropic",
+    "since": "2026-09-22",
+    "src": [
      [
       1,
       "Terminal-Bench 4.0 leaderboard",
@@ -281,78 +293,119 @@
       "Anthropic",
       "https://www.anthropic.com/claude-opus-5-5"
      ]
-    ]
-   ],
-   [
-    "Open-weights model",
-    "Kimi K3.1 Pro · Intelligence Index 46",
-    "Moonshot AI",
-    "2026-11-04",
-    [
+    ],
+    "group": "Models",
+    "cc": "US",
+    "open": false,
+    "metric": "Terminal-Bench 4.0",
+    "score": 64.8,
+    "unit": "%",
+    "note": "Held since the Opus 5.5 release on 22 Sep.",
+    "label": "Claude Opus 5.5 · Terminal-Bench 4.0 64.8%"
+   },
+   {
+    "domain": "Open-weights model",
+    "system": "Kimi K3.1 Pro",
+    "lab": "Moonshot AI",
+    "since": "2026-11-04",
+    "src": [
      [
       1,
       "Models",
       "Artificial Analysis",
       "https://artificialanalysis.ai/models"
      ]
-    ]
-   ],
-   [
-    "Image generation",
-    "GPT Image 2.5 Sunburst · Image Arena 1227",
-    "OpenAI",
-    "2026-09-08",
-    [
+    ],
+    "group": "Models",
+    "cc": "CN",
+    "open": true,
+    "metric": "Artificial Analysis Intelligence Index",
+    "score": 46,
+    "note": "Took the open-weights lead on 4 Nov.",
+    "label": "Kimi K3.1 Pro · Intelligence Index 46"
+   },
+   {
+    "domain": "Image generation",
+    "system": "GPT Image 2.5 Sunburst",
+    "lab": "OpenAI",
+    "since": "2026-09-08",
+    "src": [
      [
       1,
       "Text-to-image leaderboard",
       "Artificial Analysis",
       "https://artificialanalysis.ai/embed/text-to-image-leaderboard/leaderboard/text-to-image"
      ]
-    ]
-   ],
-   [
-    "Video generation",
-    "Wan 3.0 · text-to-video Elo 1172",
-    "Alibaba",
-    null,
-    [
+    ],
+    "group": "Media",
+    "cc": "US",
+    "open": false,
+    "metric": "Artificial Analysis text-to-image Elo",
+    "score": 1227,
+    "label": "GPT Image 2.5 Sunburst · Image Arena 1227"
+   },
+   {
+    "domain": "Video generation",
+    "system": "Wan 3.0",
+    "lab": "Alibaba",
+    "since": null,
+    "src": [
      [
       1,
       "Text-to-video leaderboard",
       "Artificial Analysis",
       "https://artificialanalysis.ai/embed/text-to-video-leaderboard/leaderboard/text-to-video"
      ]
-    ]
-   ],
-   [
-    "Robotaxi at scale",
-    "Waymo · 500,000 paid driverless rides a week (March)",
-    "Waymo (Alphabet)",
-    null,
-    [
+    ],
+    "group": "Media",
+    "cc": "CN",
+    "open": true,
+    "metric": "Artificial Analysis text-to-video Elo",
+    "score": 1172,
+    "label": "Wan 3.0 · text-to-video Elo 1172"
+   },
+   {
+    "domain": "Robotaxi at scale",
+    "system": "Waymo",
+    "lab": "Waymo (Alphabet)",
+    "since": null,
+    "src": [
      [
       1,
       "Waymo has doubled its weekly ridership in under a year",
       "InsideEVs",
       "https://insideevs.com/news/791245/waymo-rides-per-week-2026-doubled/"
      ]
-    ]
-   ],
-   [
-    "AI accelerator shipping",
-    "Nvidia Vera Rubin NVL72 · generally available on Oracle Cloud",
-    "Nvidia",
-    "2026-10-27",
-    [
+    ],
+    "group": "Physical",
+    "cc": "US",
+    "open": false,
+    "metric": "Paid driverless rides per week",
+    "score": 500000,
+    "note": "Figure from March 2026; the run should refresh it when Waymo publishes a new one.",
+    "label": "Waymo · 500,000 paid driverless rides a week (March)"
+   },
+   {
+    "domain": "AI accelerator shipping",
+    "system": "Nvidia Vera Rubin NVL72",
+    "lab": "Nvidia",
+    "since": "2026-10-27",
+    "src": [
      [
       1,
       "NVIDIA and Oracle expand NVIDIA Vera Rubin to multi-gigawatt scale",
       "Nvidia",
       "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-and-Oracle-Expand-NVIDIA-Vera-Rubin-to-Multi-Gigawatt-Scale-and-Bring-NVIDIA-Vera-CPU-to-Oracle-Cloud-Infrastructure/default.aspx"
      ]
-    ]
-   ]
+    ],
+    "group": "Compute",
+    "cc": "US",
+    "open": false,
+    "metric": "Rack-scale system generally available",
+    "score": null,
+    "note": "Vera Rubin NVL72 generally available on Oracle Cloud from 27 Oct.",
+    "label": "Nvidia Vera Rubin NVL72 · generally available on Oracle Cloud"
+   }
   ]
  }
 }

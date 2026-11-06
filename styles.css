@@ -709,3 +709,18 @@ table.ingest td.d{font-family:var(--f-mono);font-size:12px}
 .maplegend i.ring{border:2px solid var(--warn);border-radius:50%;width:7px;height:7px}
 .maplegend i.dash{height:0;border-top:2px dashed var(--c-be);width:14px;vertical-align:2px}
 .maplegend i.solid{height:0;border-top:2px solid var(--c-nl);width:14px;vertical-align:2px}
+/* state of the art cards */
+.sota{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:var(--s3);margin-bottom:var(--s2)}
+.sotac{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card);padding:var(--s3);min-width:0;border-left:4px solid var(--pc)}
+.sotac.chg{border-left-color:var(--crit)}
+.sc-d{font-family:var(--f-display);font-weight:600;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:var(--s2);flex-wrap:wrap}
+.sc-s{font-family:var(--f-display);font-weight:700;font-size:21px;line-height:1.15;margin:2px 0 var(--s1);overflow-wrap:anywhere}
+.sc-m{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:var(--s1)}
+.sc-m .chip.cc{color:var(--c-us)}
+.sc-m .chip.open{color:var(--up);border-color:var(--up)}
+.sc-k{font-size:14px;margin:2px 0}
+.sc-k b{font-family:var(--f-mono);font-weight:500;font-size:16px}
+.sc-r .gap{font-family:var(--f-mono);margin-left:6px;color:var(--ink)}
+.sc-t{margin-top:2px}
+.sc-n{margin:var(--s1) 0 0}
+.sota-sum{margin-bottom:var(--s3)}
