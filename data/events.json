@@ -1,6 +1,6 @@
 {
  "note": "Out and about: curated events within about 90 minutes by car (Maastricht, Aachen, Liège, Köln, Düsseldorf, Bonn, Eindhoven, Antwerp, Brussels, the Eifel and Ardennes). The run adds events with a source, prunes those that have passed, and sets updated when details change. cat = music|markets|museums|sport|kids|food|outdoors|festival. kid = suitable for children. drive = minutes from Hoensbroek, approximate. prio = true marks the few major events (big festivals, Sinterklaas arrivals, the carnival opening) that also appear in the Planner's This week; Christmas markets come from calendar.json.",
- "updated": "2026-11-05",
+ "updated": "2026-11-06",
  "events": [
   {
    "id": "born-to-play-bonnefanten-2026",
@@ -885,6 +885,52 @@
      "Wanneer is welke cross? Dit is de complete veldritkalender 2026-2027",
      "Sporza",
      "https://sporza.be/nl/2026/09/29/wanneer-is-welke-cross-en-welke-wedstrijden-zijn-live-bij-sporza-dit-is-de-complete-veldritkalender-2026-2027~1790685673220/"
+    ]
+   ]
+  },
+  {
+   "id": "cannerberg-navo-tour-2026",
+   "t": "Guided tour of the former NATO headquarters caves in the Cannerberg",
+   "cat": "museums",
+   "from": "2026-11-06",
+   "to": "2027-01-03",
+   "town": "Maastricht",
+   "venue": "Cannerberg caves; Fridays, Saturdays and Sundays; tours in Dutch and English",
+   "cc": "NL",
+   "drive": 30,
+   "cost": "€7.25–€9.75; book a time slot",
+   "kid": true,
+   "added": "2026-11-06",
+   "src": [
+    [
+     106,
+     "Rondleiding grotten NAVO-hoofdkwartier",
+     "Explore Maastricht",
+     "https://www.exploremaastricht.nl/rondleiding/rondleiding-grotten-navo-hoofdkwartier",
+     1
+    ]
+   ]
+  },
+  {
+   "id": "marres-eceiza-2026",
+   "t": "Celina Eceiza: Rubyfruit Jungle, hand-worked textile installation",
+   "cat": "museums",
+   "from": "2026-11-06",
+   "to": "2027-01-03",
+   "town": "Maastricht",
+   "venue": "Marres, Capucijnenstraat; Tue–Sun 12:00–17:00, Fri to 20:00",
+   "cc": "NL",
+   "drive": 30,
+   "cost": "Free on Fridays 17:00–20:00; workshops listed",
+   "kid": false,
+   "added": "2026-11-06",
+   "src": [
+    [
+     9,
+     "Celina Eceiza: Rubyfruit Jungle",
+     "Marres",
+     "https://marres.org/program/celina-eceiza/",
+     1
     ]
    ]
   }

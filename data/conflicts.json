@@ -1,6 +1,6 @@
 {
  "note": "The board: ten tracked theatres with a dated log of facts per theatre. The morning run appends one entry per theatre that had a reportable event (newest last) with the cited source rows copied into src, and never edits or deletes old entries. No status labels: the page derives activity from the dates. lat/lon place the marker on the schematic map. short = map label; lp = label position (above, below, left, right).",
- "updated": "2026-11-05",
+ "updated": "2026-11-06",
  "theatres": [
   {
    "id": "ru-ua",
@@ -103,6 +103,33 @@
        "https://www.ukrinform.net/rubric-ato/4181429-zelensky-death-toll-in-komyshuvakha-rises-to-40-more-than-30-may-remain-trapped-under-rubble.html"
       ]
      ]
+    },
+    {
+     "date": "2026-11-06",
+     "t": "Melania Trump hosted Kremlin envoy Kirill Dmitriev and Ukrainian officials Davyd Arakhamia and Dmytro Lubinets at the White House on 5 Nov; President Trump met Dmitriev separately. Russia launched 128 drones and two Kh-35 missiles overnight into 5 Nov and the Air Force reported 105 drones downed; the Komyshuvakha toll reached 43. [12, 15, 16]",
+     "src": [
+      [
+       12,
+       "First lady Melania Trump hosted Russian and Ukrainian officials. Trump met with Putin's envoy",
+       "AP via PBS NewsHour",
+       "https://www.pbs.org/newshour/politics/watch-first-lady-melania-trump-hosted-russian-and-ukrainian-officials-trump-met-with-putins-envoy",
+       2
+      ],
+      [
+       15,
+       "Shot down or suppressed: 105 enemy targets (statement for the night of 4–5 Nov)",
+       "Ukrainian Air Force (Telegram)",
+       "https://t.me/kpszsu/93214",
+       1
+      ],
+      [
+       16,
+       "Death toll from Russian airstrike on Komyshuvakha rises to 43 – Zelensky",
+       "Ukrinform",
+       "https://www.ukrinform.net/rubric-ato/4181787-death-toll-from-russian-airstrike-on-komyshuvakha-rises-to-43-zelensky.html",
+       2
+      ]
+     ]
     }
    ],
    "short": "Ukraine",
@@ -197,6 +224,40 @@
        "https://www.cnbc.com/2026/11/04/oil-price-iran-war-us-election-strait-hormuz.html"
       ]
      ]
+    },
+    {
+     "date": "2026-11-06",
+     "t": "A senior Iranian official said Iran sent the US a nuclear proposal through Qatar, to be discussed only after seven demands are met; President Trump said of a decision on the war: “You'll know soon enough.” The Revolutionary Guards said three tankers were damaged on 5 Nov; Brent settled at $98.29. [17, 18, 19, 91]",
+     "src": [
+      [
+       17,
+       "Iran sent nuclear proposal to the US via Qatar, senior Iranian official says",
+       "Reuters via Arab News",
+       "https://www.arabnews.com/middle-east/iran-sent-nuclear-proposal-to-the-us-via-qatar-senior-iranian-official-says-3010067",
+       2
+      ],
+      [
+       18,
+       "Trump meets with national security team, says Iran war decision coming \"soon\"",
+       "Axios",
+       "https://www.axios.com/2026/11/05/trump-iran-war-national-security-team-decision",
+       3
+      ],
+      [
+       19,
+       "Iran reports three tankers damaged in Hormuz on November 5",
+       "Reuters via Nation Thailand",
+       "https://www.nationthailand.com/news/world/40073163",
+       2
+      ],
+      [
+       91,
+       "Daily closes: S&P 500, Dow, Nasdaq Composite, Russell 2000, AEX, Stoxx 600, DAX, Brent, WTI, TTF, gold, VIX",
+       "Yahoo Finance",
+       "https://finance.yahoo.com/markets/",
+       2
+      ]
+     ]
     }
    ],
    "short": "Iran",
@@ -235,6 +296,26 @@
        "Israeli forces kill four in Gaza as fifth Palestinian dies of wounds",
        "Al Jazeera",
        "https://aljazeera.com/news/2026/11/3/israeli-forces-kill-four-in-gaza-as-fifth-palestinian-dies-of-wounds"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-06",
+     "t": "WAFA said an Israeli airstrike on Al-Shati camp killed three people on 5 Nov; Gaza's health ministry counts 1,602 killed since the October 2025 ceasefire. [119, 120]",
+     "src": [
+      [
+       119,
+       "Three Palestinians killed in Israeli airstrike on Gaza City",
+       "WAFA",
+       "https://english.wafa.ps/Pages/Details/176683",
+       1
+      ],
+      [
+       120,
+       "Four people, including a child, killed in Israeli attacks on Gaza",
+       "Al Jazeera",
+       "https://www.aljazeera.com/news/2026/11/5/four-people-including-a-child-killed-in-israeli-attacks-on-gaza",
+       3
       ]
      ]
     }
@@ -293,6 +374,26 @@
        "Yemeni government forces claim control of strategic al-Jawf mountain range",
        "Al Jazeera",
        "https://www.aljazeera.com/news/2026/11/4/yemeni-government-forces-claim-control-of-strategic-al-jawf-mountain-range"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-06",
+     "t": "Houthi spokesman Yahya Saree claimed a drone strike on King Fahd International Airport in Dammam on 5 Nov; no Saudi statement on damage was published. [121, 122]",
+     "src": [
+      [
+       121,
+       "Trump weighs resuming Iran war as CENTCOM prepares for possible strikes (live updates, 5 Nov)",
+       "Fox News",
+       "https://www.foxnews.com/live-news/iran-war-news-trump-israel-elections-november-5",
+       3
+      ],
+      [
+       122,
+       "Houthis claim drone attack on Saudi Arabia's Dammam airport",
+       "APA",
+       "https://en.apa.az/asia/houthis-claim-drone-attack-on-saudi-arabias-dammam-airport-534394",
+       4
       ]
      ]
     }
@@ -365,6 +466,19 @@
        "https://www.mnd.gov.tw/news/plaact/88145"
       ]
      ]
+    },
+    {
+     "date": "2026-11-06",
+     "t": "Taiwan's defence ministry counted three Chinese military aircraft sorties, nine navy ships and eight official ships in the 24 hours to 06:00 on 6 Nov. [26]",
+     "src": [
+      [
+       26,
+       "PLA activities in the waters and airspace around Taiwan (2026.11.06)",
+       "Taiwan Ministry of National Defense",
+       "https://www.mnd.gov.tw/en/news/plaact/88159",
+       1
+      ]
+     ]
     }
    ],
    "short": "Taiwan",
@@ -415,6 +529,26 @@
        "N. Korea says it test-fired new air defense missile system",
        "Yonhap via Korea Times",
        "https://www.koreatimes.co.kr/foreignaffairs/northkorea/20261105/n-korea-says-it-test-fired-new-air-defense-missile-system"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-06",
+     "t": "Chinese Foreign Minister Wang Yi met Workers' Party secretary Kim Song-nam in Beijing on 5 Nov; on 6 Nov North Korea's foreign ministry rejected the FATF's decision to keep it on the blacklist. [24, 25]",
+     "src": [
+      [
+       24,
+       "Chinese foreign minister, senior North Korean official meet in Beijing",
+       "Korea JoongAng Daily (Yonhap)",
+       "https://www.koreajoongangdaily.com/korea/chinese-foreign-minister-senior-north-korean-official-meet-in-beijing/12958638",
+       3
+      ],
+      [
+       25,
+       "North Korea lashes out at anti-laundering body over blacklist decision",
+       "Korea JoongAng Daily",
+       "https://www.koreajoongangdaily.com/korea/north-korea-lashes-out-at-antilaundering-body-over-blacklist-decision/12959295",
+       3
       ]
      ]
     }
@@ -481,6 +615,19 @@
        "https://www.dabangasudan.org/en/all-news/article/drone-attacks-kill-civilians-and-cripple-sudans-power-infrastructure-un-warns-of-growing-humanitarian-toll"
       ]
      ]
+    },
+    {
+     "date": "2026-11-06",
+     "t": "UN peacekeeping chief Jean-Pierre Lacroix told the Security Council on 5 Nov that drone strikes are “a new and concerning dimension” in Abyei, where strikes on 19 Oct killed at least 30. [27]",
+     "src": [
+      [
+       27,
+       "Abyei: Deadly drone strikes mark 'new and concerning' threat, UN peacekeeping chief warns",
+       "UN News",
+       "https://news.un.org/en/story/2026/11/1168749",
+       1
+      ]
+     ]
     }
    ],
    "short": "Sudan",
@@ -543,6 +690,26 @@
        "https://www.radiookapi.net/2026/11/04/actualite/securite/au-moins-quatre-civils-tues-dans-des-affrontements-entre-les-fardc-et"
       ]
      ]
+    },
+    {
+     "date": "2026-11-06",
+     "t": "Radio Okapi reports the FARDC and Wazalendo retook Mahanga and Kilongo in Masisi from the FRN on the night of 4–5 Nov; MONUSCO head James Swan visited Beni on 5 Nov. [28, 29]",
+     "src": [
+      [
+       28,
+       "Combats à Masisi : les FARDC reprennent le contrôle des villages de Mahanga et Kilongo",
+       "Radio Okapi",
+       "https://www.radiookapi.net/2026/11/05/actualite/securite/combats-masisi-les-fardc-reprennent-le-controle-des-villages-de",
+       3
+      ],
+      [
+       29,
+       "James Swan à Beni : « La protection des civils reste notre priorité »",
+       "Radio Okapi",
+       "https://www.radiookapi.net/2026/11/05/actualite/securite/james-swan-beni-la-protection-des-civils-reste-notre-priorite",
+       3
+      ]
+     ]
     }
    ],
    "short": "DRC",
@@ -563,6 +730,19 @@
        "US urges Venezuela to follow phased plan for democratic transition",
        "Al Jazeera",
        "https://www.aljazeera.com/news/2026/11/3/us-urges-venezuela-to-follow-phased-plan-for-democratic-transition"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-06",
+     "t": "OFAC designated two individuals, six entities and two vessels on 5 Nov under a new determination covering Cuba's electronics, manufacturing, marine and technology sectors. [123]",
+     "src": [
+      [
+       123,
+       "Recent actions, 5 November 2026: Cuba designations and Cuba-related determination",
+       "US Treasury, OFAC",
+       "https://ofac.treasury.gov/recent-actions/20261105",
+       1
       ]
      ]
     }

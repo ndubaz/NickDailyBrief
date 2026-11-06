@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05",
+ "updated": "2026-11-06",
  "note": "Priority countries for Nick's J9 portfolio: Hungary and Slovakia (priority), Germany (secondary). The run appends dated facts to each country's log and keeps the profile current. Facts and summaries only; the item in the edition carries the So what. verified:false marks a fact to confirm against an official page.",
  "blr": [
   "Continuity of government and critical services",
@@ -22,8 +22,8 @@
     "since": "2026-05-09",
     "majority": "Tisza alone holds a two-thirds majority after the April 2026 election",
     "president": "Tamás Sulyok",
-    "fm": "Anita Orbán (Deputy PM and Foreign Minister; to confirm against the government site)",
-    "defmin": null
+    "fm": "Anita Orbán",
+    "defmin": "Romulusz Ruszin-Szendi (since 12 May 2026)"
    },
    "election": {
     "last": "2026-04-12",
@@ -79,6 +79,16 @@
        "https://www.justsecurity.org/137964/hungary-election-eu-ukraine-us/"
       ]
      ]
+    },
+    {
+     "date": "2026-11-05",
+     "t": "In Vilnius Foreign Minister Anita Orbán said a 2030 EU accession date for Ukraine is not realistic and Hungary does not support a fast track, while backing Ukraine's bid.",
+     "src": [
+      [
+       "LRT (BNS): Ukraine's EU accession by 2030 unrealistic, says Hungarian FM in Vilnius",
+       "https://www.lrt.lt/en/news-in-english/19/3105409/ukraine-s-eu-accession-by-2030-unrealistic-says-hungarian-fm-in-vilnius"
+      ]
+     ]
     }
    ],
    "src": [
@@ -97,6 +107,14 @@
     [
      "Euronews: European defence spending 2025",
      "https://www.euronews.com/2026/06/17/european-defence-spending-poland-spends-larger-share-of-gdp-than-us"
+    ],
+    [
+     "Hungarian Ministry of Defence: The Tisza government has been formed",
+     "https://defence.hu/news/the-tisza-government-has-been-formed.html"
+    ],
+    [
+     "Embassy of Hungary, Abu Dhabi: Péter Magyar is the Prime Minister of Hungary, Anita Orbán is the new Foreign Minister",
+     "https://abudhabi.mfa.gov.hu/en/articles/peter-magyar-is-the-prime-minister-of-hungary-anita-orban-is-the-new-foreign-minister"
     ]
    ],
    "verified": false
@@ -110,7 +128,7 @@
     "title": "Prime Minister",
     "party": "Smer-SD",
     "since": "2023-10-25",
-    "majority": "Coalition Smer-SD, Hlas-SD and the Slovak National Party; confidence vote won 18 Jun 2026; majority in doubt since the September 2026 coalition dispute",
+    "majority": "Smer-SD, Hlas-SD and the Slovak National Party hold 75 secure votes of 150 since MP Roman Malatinec left Strana vidieka on 3 Nov 2026; confidence vote won 18 Jun 2026",
     "president": "Peter Pellegrini",
     "fm": "Juraj Blanár",
     "defmin": "Robert Kaliňák"
@@ -179,6 +197,30 @@
        "https://balkaninsight.com/2026/10/21/natos-false-solidarity-fico-says-neutrality-would-suit-slovakia-better/rd/"
       ]
      ]
+    },
+    {
+     "date": "2026-11-03",
+     "t": "MP Roman Malatinec moved to Tomáš Taraba's party, leaving the coalition with 75 secure votes of 150; parliamentary votes were postponed to 10 Nov.",
+     "src": [
+      [
+       "STVR: Koalícia prichádza o väčšinu: Roman Malatinec odchádza od Huliakovcov a pridáva sa k Tarabovej strane",
+       "https://spravy.stvr.sk/2026/11/roman-malatinec-odchadza-od-huliakovcov-a-pridava-sa-k-tarabovej-strane/"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-05",
+     "t": "At government consultations in Lviv Fico and Ukrainian PM Serhiy Koretskyi signed a joint declaration; Slovakia pledged €500,000 for 54 generators, €300,000 for shelters, €200,000 for hospital equipment and three locomotives.",
+     "src": [
+      [
+       "Ukrinform: Koretskyi, Fico sign Ukraine-Slovakia cooperation agreement in Lviv",
+       "https://www.ukrinform.net/rubric-polytics/4181869-koretskyi-fico-sign-ukraineslovakia-cooperation-agreement-in-lviv.html"
+      ],
+      [
+       "Interfax-Ukraine: Slovakia to provide Ukraine with generators and locomotives",
+       "https://en.interfax.com.ua/news/general/1231908.html"
+      ]
+     ]
     }
    ],
    "src": [
@@ -193,6 +235,10 @@
     [
      "Wikipedia: Next Slovak parliamentary election",
      "https://en.wikipedia.org/wiki/Next_Slovak_parliamentary_election"
+    ],
+    [
+     "STVR: Koalícia prichádza o väčšinu: Roman Malatinec odchádza od Huliakovcov a pridáva sa k Tarabovej strane",
+     "https://spravy.stvr.sk/2026/11/roman-malatinec-odchadza-od-huliakovcov-a-pridava-sa-k-tarabovej-strane/"
     ]
    ],
    "verified": false
@@ -255,6 +301,20 @@
       [
        "BMVg: Gesetzentwurf zur Modernisierung des Wehrdienstes",
        "https://www.bmvg.de/de/presse/gesetzentwurf-zur-modernisierung-des-wehrdienstes-6049090"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-05",
+     "t": "Defence Minister Pistorius named Lt Gen Christian Freuding the next Generalinspekteur from early February 2027, succeeding Gen Carsten Breuer, who becomes Chair of the NATO Military Committee in summer 2027.",
+     "src": [
+      [
+       "Defense News (Reuters): Germany names Army Chief Freuding as next chief of defense",
+       "https://www.defensenews.com/global/europe/2026/11/05/germany-names-army-chief-freuding-as-next-chief-of-defense/"
+      ],
+      [
+       "hartpunkt: Generalleutnant Christian Freuding wird neuer Generalinspekteur der Bundeswehr",
+       "https://www.hartpunkt.de/generalleutnant-christian-freuding-wird-neuer-generalinspekteur-der-bundeswehr/"
       ]
      ]
     }

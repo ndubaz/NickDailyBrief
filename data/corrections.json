@@ -1,6 +1,6 @@
 {
  "note": "Corrections log. The morning run appends an entry when an earlier item was wrong: {date, edition, section, t (what was wrong and what is right), src}. Never edit or delete entries. The page shows the last 30 days in the footer.",
- "updated": "2026-11-05",
+ "updated": "2026-11-06",
  "items": [
   {
    "date": "2026-11-05",
@@ -13,6 +13,28 @@
      "Daily closes: S&P 500, Dow, Nasdaq Composite, Russell 2000, AEX, Stoxx 600, DAX, Brent, TTF, gold, VIX",
      "Yahoo Finance",
      "https://finance.yahoo.com/markets/"
+    ]
+   ]
+  },
+  {
+   "date": "2026-11-06",
+   "edition": 4,
+   "section": "Money",
+   "t": "The Dutch TTF gas card and the driver gave Wednesday 4 Nov's settle as €85.03 (−7.17%); Yahoo Finance's final close for that day is €88.08 (−3.84%), and series.json now holds €88.08. The same edition's USD/EUR card read 0.8876; the ECB's 1.1267 dollars per euro gives 0.8875 at four decimals (the pay line's €887.55 was right).",
+   "src": [
+    [
+     91,
+     "Daily closes: S&P 500, Dow, Nasdaq Composite, Russell 2000, AEX, Stoxx 600, DAX, Brent, WTI, TTF, gold, VIX",
+     "Yahoo Finance",
+     "https://finance.yahoo.com/markets/",
+     2
+    ],
+    [
+     93,
+     "Euro foreign exchange reference rates (history ZIP)",
+     "European Central Bank",
+     "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist.zip",
+     1
     ]
    ]
   }

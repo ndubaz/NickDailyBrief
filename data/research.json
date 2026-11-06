@@ -1,6 +1,6 @@
 {
  "note": "Research rotation for The reading tier. The morning run summarises one recent publication a day (brief, report, article, monograph, CRS report, war-college paper) and appends it to covered; queue holds publications picked for coming days (Nick or the run adds them). Rotation rules in the prompt: no institution twice within 10 days; alternate regions and themes; prefer the publication's own page as the source (tier 1).",
- "updated": "2026-11-05",
+ "updated": "2026-11-06",
  "rotation": [
   "Africa Center for Strategic Studies",
   "Institute for the Study of War",
@@ -23,16 +23,14 @@
   "Brookings",
   "Egmont"
  ],
- "queue": [
+ "queue": [],
+ "covered": [
   {
+   "date": "2026-11-06",
    "org": "Africa Center for Strategic Studies",
    "title": "Lessons from Africa's Drone Wars (Africa Security Brief No. 49)",
    "authors": "Nate Allen",
-   "date": "2026-10-28",
-   "url": "https://africacenter.org/publication/asb49-lessons-africa-drone-wars/",
-   "for": "2026-11-06",
-   "note": "Requested by Nick"
+   "url": "https://africacenter.org/publication/asb49-lessons-africa-drone-wars/"
   }
- ],
- "covered": []
+ ]
 }

@@ -1,6 +1,6 @@
 {
  "note": "Frontier log: dated releases, published results and shipped capabilities in AI, chips, robotics and autonomy. One entry per release; the run appends and never edits. kind = model|chip|robot|autonomy|result|tool.",
- "updated": "2026-11-05",
+ "updated": "2026-11-06",
  "releases": [
   {
    "date": "2026-11-02",
@@ -179,11 +179,180 @@
      "https://www.businessday.co.za/world/international-companies/2026-11-04-tencent-releases-new-ai-model-pledges-safeguards-against-cyberattack-use/"
     ]
    ]
+  },
+  {
+   "id": "2026-11-05-openai-gpt-6-cyber",
+   "date": "2026-11-05",
+   "kind": "model",
+   "t": "OpenAI releases GPT-6 Cyber to vetted defenders",
+   "lab": "OpenAI",
+   "n": "Rated Critical for cybersecurity; ExploitGym 48.45% against GPT-6 Astra's 42.43%; working exploits for 948 of 1,724 reproduced Linux kernel flaws. [67, 68]",
+   "src": [
+    [
+     67,
+     "GPT-6 Cyber System Card",
+     "OpenAI",
+     "https://deploymentsafety.openai.com/gpt-6-cyber",
+     1
+    ],
+    [
+     68,
+     "OpenAI debuts GPT-6 Cyber",
+     "CyberScoop",
+     "https://cyberscoop.com/openai-gpt-6-cyber-security-model/",
+     3
+    ]
+   ]
+  },
+  {
+   "id": "2026-11-05-google-gemini-omni-1-2-flash",
+   "date": "2026-11-05",
+   "kind": "model",
+   "t": "Google ships Gemini Omni 1.2 Flash video model",
+   "lab": "Google DeepMind",
+   "n": "Clips up to 15 seconds, up to 4K after upscaling, $0.07 a second at 720p, 30% below Omni 1.1. [69]",
+   "src": [
+    [
+     69,
+     "Gemini Omni 1.2 Flash: fast and cost-effective with longer clips",
+     "Google",
+     "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
+     1
+    ]
+   ]
+  },
+  {
+   "id": "2026-11-05-meta-muse-voice-avatars",
+   "date": "2026-11-05",
+   "kind": "tool",
+   "t": "Meta adds real-time voice and avatars to Muse",
+   "lab": "Meta",
+   "n": "US rollout on mobile, web and Mac; hundreds of voices; no latency figures published. [70]",
+   "src": [
+    [
+     70,
+     "Introducing Muse AI voice and expressive avatars",
+     "Meta",
+     "https://about.fb.com/news/2026/11/introducing-muse-ai-voice-expressive-avatars/",
+     1
+    ]
+   ]
   }
  ],
  "sota": {
-  "asof": null,
+  "asof": "2026-11-06",
   "note": "Friday table: leading system per domain with the date it took the lead. The run rewrites this block on Fridays with sources.",
-  "rows": []
+  "rows": [
+   [
+    "General frontier model (public)",
+    "Gemini 4 Argon · Arena text 1520",
+    "Google",
+    "2026-10-13",
+    [
+     [
+      1,
+      "Gemini 4 Argon: built to solve your hardest problems",
+      "Google",
+      "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/"
+     ],
+     [
+      2,
+      "Arena text leaderboard (mirror)",
+      "BenchLeader",
+      "https://www.benchleader.com/benchmarks/lmarena_text"
+     ]
+    ]
+   ],
+   [
+    "Agentic coding",
+    "Claude Opus 5.5 · Terminal-Bench 4.0 64.8%",
+    "Anthropic",
+    "2026-09-22",
+    [
+     [
+      1,
+      "Terminal-Bench 4.0 leaderboard",
+      "Snorkel AI",
+      "https://snorkel.ai/leaderboard/terminal-bench/"
+     ],
+     [
+      2,
+      "Introducing Claude Opus 5.5",
+      "Anthropic",
+      "https://www.anthropic.com/claude-opus-5-5"
+     ]
+    ]
+   ],
+   [
+    "Open-weights model",
+    "Kimi K3.1 Pro · Intelligence Index 46",
+    "Moonshot AI",
+    "2026-11-04",
+    [
+     [
+      1,
+      "Models",
+      "Artificial Analysis",
+      "https://artificialanalysis.ai/models"
+     ]
+    ]
+   ],
+   [
+    "Image generation",
+    "GPT Image 2.5 Sunburst · Image Arena 1227",
+    "OpenAI",
+    "2026-09-08",
+    [
+     [
+      1,
+      "Text-to-image leaderboard",
+      "Artificial Analysis",
+      "https://artificialanalysis.ai/embed/text-to-image-leaderboard/leaderboard/text-to-image"
+     ]
+    ]
+   ],
+   [
+    "Video generation",
+    "Wan 3.0 · text-to-video Elo 1172",
+    "Alibaba",
+    null,
+    [
+     [
+      1,
+      "Text-to-video leaderboard",
+      "Artificial Analysis",
+      "https://artificialanalysis.ai/embed/text-to-video-leaderboard/leaderboard/text-to-video"
+     ]
+    ]
+   ],
+   [
+    "Robotaxi at scale",
+    "Waymo · 500,000 paid driverless rides a week (March)",
+    "Waymo (Alphabet)",
+    null,
+    [
+     [
+      1,
+      "Waymo has doubled its weekly ridership in under a year",
+      "InsideEVs",
+      "https://insideevs.com/news/791245/waymo-rides-per-week-2026-doubled/"
+     ]
+    ]
+   ],
+   [
+    "AI accelerator shipping",
+    "Nvidia Vera Rubin NVL72 · generally available on Oracle Cloud",
+    "Nvidia",
+    "2026-10-27",
+    [
+     [
+      1,
+      "NVIDIA and Oracle expand NVIDIA Vera Rubin to multi-gigawatt scale",
+      "Nvidia",
+      "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-and-Oracle-Expand-NVIDIA-Vera-Rubin-to-Multi-Gigawatt-Scale-and-Bring-NVIDIA-Vera-CPU-to-Oracle-Cloud-Infrastructure/default.aspx"
+     ]
+    ]
+   ]
+  ]
  }
 }

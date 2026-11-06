@@ -28,12 +28,13 @@
    "note": "Ukrainian claim, not independently verified"
   },
   "hormuz-transits": {
-   "label": "Tanker transits of Hormuz per day (weekly average)",
+   "label": "Non-Iranian-linked transits of Hormuz per week",
    "unit": "",
    "cadence": "weekly",
-   "source": "Lloyd's List or Windward weekly figure",
-   "url": "",
-   "decimals": 0
+   "source": "Lloyd's List Intelligence, Strait of Hormuz Brief",
+   "url": "https://www.lloydslistintelligence.com/resources/blog/strait-of-hormuz-brief-5-november-2026",
+   "decimals": 0,
+   "note": "Rows dated by the Monday that starts the week counted. First published values from the 5 Nov 2026 brief: 12–18 Oct and 19–25 Oct."
   },
   "ua-strikes-week": {
    "label": "Ukrainian long-range strikes claimed per week",
@@ -66,6 +67,10 @@
    [
     "2026-11-04",
     310
+   ],
+   [
+    "2026-11-05",
+    130
    ]
   ],
   "ru-personnel-day": [
@@ -112,7 +117,16 @@
     1163
    ]
   ],
-  "hormuz-transits": [],
+  "hormuz-transits": [
+   [
+    "2026-10-12",
+    124
+   ],
+   [
+    "2026-10-19",
+    116
+   ]
+  ],
   "ua-strikes-week": [],
   "ua-drones-month": [
    [

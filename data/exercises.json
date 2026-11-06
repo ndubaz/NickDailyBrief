@@ -1,6 +1,6 @@
 {
  "note": "NATO and allied exercise calendar. The run adds exercises with dates, lead, location and forces when announced, sets updated when dates change, and never deletes past ones (the page hides those older than 60 days). Feeds the Planner and the Horizon.",
- "updated": "2026-11-04",
+ "updated": "2026-11-06",
  "exercises": [
   {
    "id": "avenger-triad-26",
@@ -81,12 +81,12 @@
   },
   {
    "id": "combined-resolve-2026",
-   "name": "Combined Resolve",
-   "from": null,
+   "name": "Combined Resolve 27-01",
+   "from": "2026-10-04",
    "to": "2026-11-04",
    "lead": "USAREUR-AF (7th Army Training Command)",
    "where": "Joint Multinational Readiness Center, Hohenfels, Germany",
-   "forces": "1st Armored Brigade, 1st Armored Division; more than 3,500 personnel from seven nations, about 50 Ukrainian soldiers",
+   "forces": "1st Armored Brigade, 1st Armored Division; more than 3,500 personnel from seven nations, about 50 Ukrainian soldiers; 1st Infantry Division provided the higher command (HICOM)",
    "status": "complete",
    "added": "2026-11-03",
    "src": [
@@ -95,10 +95,16 @@
      "Ukrainian soldiers tap front-line experience to scout for US armor in Bavaria exercise",
      "Stars and Stripes",
      "https://www.stripes.com/branches/army/2026-10-26/ukraine-drones-combined-resolve-germany-23266051.html"
+    ],
+    [
+     124,
+     "1st Infantry Division provides higher command element for Combined Resolve 27-01",
+     "US Army",
+     "https://www.army.mil/article/296538/1st_infantry_division_provides_higher_command_element_for_combined_resolve_27_01",
+     1
     ]
    ],
-   "dateText": "to 4 Nov (start not published)",
-   "updated": "2026-11-05"
+   "updated": "2026-11-06"
   },
   {
    "id": "resolute-reforger-2026",
@@ -127,7 +133,7 @@
    "lead": "NATO (STRIKFORNATO; JFC Norfolk)",
    "where": "North Atlantic and High North",
    "forces": "17 allies; Italian carrier group (ITS Cavour), Turkish amphibious group (TCG Anadolu), UK carrier group (HMS Prince of Wales)",
-   "status": "under way",
+   "status": "complete",
    "added": "2026-11-03",
    "src": [
     [
@@ -136,7 +142,8 @@
      "Defence Industry Europe",
      "https://defence-industry.eu/nato-says-three-maritime-strike-groups-and-forces-from-17-allies-are-testing-joint-combat-readiness-in-neptune-strike-26-4/"
     ]
-   ]
+   ],
+   "updated": "2026-11-06"
   },
   {
    "id": "steadfast-dart-27",

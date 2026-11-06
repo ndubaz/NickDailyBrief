@@ -376,6 +376,86 @@
      "https://www.aljazeera.com/news/2026/11/4/eu-urges-action-as-germany-romania-and-uk-report-supermarket-cyberattacks"
     ]
    ]
+  },
+  {
+   "id": "2026-11-05-be-air-bomb-hoaxes",
+   "date": "2026-11-05",
+   "code": "AIR",
+   "attr": "A0",
+   "local": false,
+   "country": "BE",
+   "place": "Europe: at least 27 flights (BE, FR, RO, BG, ES, CZ, AT, IT, DK); marker at Brussels Airport, about 105 km from Heerlen",
+   "lat": 50.9,
+   "lon": 4.48,
+   "summary": "Hoax bomb threats hit at least 27 flights; LOT's Warsaw–Brussels flight landed normally after a threat, a note reading “bom” was found on a Ryanair aircraft at Charleroi, and an Aer Lingus flight was diverted to Évreux. No device found.",
+   "edition": "2026-11-06",
+   "src": [
+    [
+     31,
+     "New bomb threats force more European flights into emergency landings",
+     "Al Jazeera",
+     "https://www.aljazeera.com/news/2026/11/5/bomb-threat-diverts-dublin-rome-flight-to-france",
+     3
+    ],
+    [
+     32,
+     "Nieuwe bommeldingen op luchthaven Boekarest, ook verdachte melding op vlucht vanuit Charleroi",
+     "VRT NWS",
+     "https://www.vrt.be/vrtnws/nl/2026/11/05/bommelding-vlucht-warschau-naar-brussel/",
+     3
+    ]
+   ]
+  },
+  {
+   "id": "2025-12-31-fi-sea-fitburg-cables",
+   "date": "2025-12-31",
+   "code": "SEA",
+   "attr": "A5",
+   "local": false,
+   "country": "FI",
+   "place": "Gulf of Finland: two Finland–Estonia telecom cables (marker mid-gulf)",
+   "lat": 59.9,
+   "lon": 24.9,
+   "summary": "Helsinki District Court convicted the Fitburg's Russian captain (3 years 6 months) and Azerbaijani boatswain (2 years 10 months) of aggravated criminal damage on 5 Nov 2026; the anchor was lowered deliberately and dragged about 130 km. Appeal intended.",
+   "edition": "2026-11-06",
+   "src": [
+    [
+     33,
+     "Finnish court jails Russian captain over Baltic Sea cable sabotage",
+     "Euronews",
+     "https://www.euronews.com/2026/11/05/finnish-court-jails-russian-captain-over-baltic-sea-cable-sabotage",
+     3
+    ],
+    [
+     34,
+     "Vrachtschip sleepte anker 130 km over zeebodem: 2 bemanningsleden veroordeeld voor zware sabotage",
+     "VRT NWS",
+     "https://www.vrt.be/vrtnws/nl/2026/11/05/rechtbank-helsinki-finland-onderzeese-telecommunicatie-kabels-sc/",
+     3
+    ]
+   ]
+  },
+  {
+   "id": "2026-11-05-pl-prx-kaliningrad-smuggling",
+   "date": "2026-11-05",
+   "code": "PRX",
+   "attr": "A4",
+   "local": false,
+   "country": "PL",
+   "place": "Poland: towns not named (marker at Warsaw)",
+   "lat": 52.23,
+   "lon": 21.01,
+   "summary": "ABW arrested five Poles and a Russian accused of smuggling military components worth more than PLN 2 million into Kaliningrad, June 2023 – December 2025; four charged with espionage.",
+   "edition": "2026-11-06",
+   "src": [
+    [
+     35,
+     "Poland arrests six suspected of spying for Russia and supplying its military",
+     "Euronews",
+     "https://www.euronews.com/2026/11/05/poland-arrests-six-suspected-of-spying-for-russia-and-supplying-its-military",
+     3
+    ]
+   ]
   }
  ],
  "attrLog": [
@@ -391,6 +471,22 @@
      "Latvia believes one of two drones that violated its airspace was Russian, the other Ukrainian",
      "Reuters via 93.3 The Drive",
      "https://www.933thedrive.com/2026/11/03/latvia-believes-one-of-two-drones-that-violated-its-airspace-was-russian-the-other-ukrainian/"
+    ]
+   ]
+  },
+  {
+   "id": "2025-12-31-fi-sea-fitburg-cables",
+   "date": "2026-11-05",
+   "from": "A4",
+   "to": "A5",
+   "t": "Helsinki District Court convicted the Fitburg's captain and boatswain at first instance; an appeal is intended. [33]",
+   "src": [
+    [
+     33,
+     "Finnish court jails Russian captain over Baltic Sea cable sabotage",
+     "Euronews",
+     "https://www.euronews.com/2026/11/05/finnish-court-jails-russian-captain-over-baltic-sea-cable-sabotage",
+     3
     ]
    ]
   }
