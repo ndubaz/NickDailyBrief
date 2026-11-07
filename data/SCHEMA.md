@@ -150,7 +150,7 @@ The World feature rota: Monday "Theatre in numbers" (table), Tuesday "Actor on t
 
 - The page is organised in five tiers (Today, The news, The watch, The reading, Home and planning); every edition object stays where it was, so no field moved. Jump ids added: `research`, `congress-sec`, `exercises-sec`, `production`, `depth`, `ttpsec`, `since`, `year`, `weekreview`, `tv` (6.1). Decisions due was removed in 6.1.
 - `sources` rows gain the tier field; items gain optional `links`; `weekreview` added for Sundays.
-- `"v": "7.0"` (6.0 to 6.5 still validate). 7.0 reorders the page: the Brief (takeaways, what changed, what to watch, what we do not know, indicators), then The news, The reading and The record (the former watch, each tracker showing its last ten log entries), then Home and planning. On Saturdays and Sundays The reading comes before The news. New record sections: Ukraine, Indicators and warning, Forecast ledger.
+- `"v": "7.0"` (6.0 to 6.5 still validate). 7.0 reorders the page: the Brief (takeaways, what changed, what to watch, what we do not know, indicators), then The news, The reading and The watch (each tracker showing its last ten log entries), then Home and planning. On Saturdays and Sundays The reading comes before The news. New watch sections: Ukraine, Indicators and warning, Forecast ledger.
 
 ### Changes from v4.0
 
@@ -187,7 +187,7 @@ The same file carries `tiers` and `watch`: the register of posts the confirmatio
 
 ### `data/indicators.json`
 
-`{ "updated", "items": [ {"id","name","theatre","country","congress","threshold","series","rule":"mean7|incidents7|fx","status":"green|amber|red","src","history":[{"date","status","t"}]} ] }`. The page draws the status row in the Brief, lists the ones that changed in two days, and the board in The record with the current value for numeric rules, the last change and the last eight changes as a strip.
+`{ "updated", "items": [ {"id","name","theatre","country","congress","threshold","series","rule":"mean7|incidents7|fx","status":"green|amber|red","src","history":[{"date","status","t"}]} ] }`. The page draws the status row in the Brief, lists the ones that changed in two days, and the board in The watch with the current value for numeric rules, the last change and the last eight changes as a strip.
 
 ### `data/forecasts.json`
 
@@ -199,7 +199,7 @@ The same file carries `tiers` and `watch`: the register of posts the confirmatio
 
 ### `data/ua-front.json`
 
-Written by `tools/uafront.js`: `{ "asof", "asofText", "countries": {ISO: rings}, "occupied", "occupied2014", "unknown", "liberated": [rings], "arrows": [[lat, lon]] }`, coordinates [lon, lat] rounded to 0.001. Drawn in the Ukraine panel of The record.
+Written by `tools/uafront.js`: `{ "asof", "asofText", "countries": {ISO: rings}, "occupied", "occupied2014", "unknown", "liberated": [rings], "arrows": [[lat, lon]] }`, coordinates [lon, lat] rounded to 0.001. Drawn in the Ukraine panel of The watch.
 
 ### `data/novel.json`
 

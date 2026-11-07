@@ -11,7 +11,7 @@
               hockey:["Hurricanes","--p-hockey"], home:["Bins & home","--p-home"], school:["School breaks","--p-pro"], watch:["Horizon","--p-watch"], deadline:["Deadlines","--crit"], info:["Clocks","--muted"], out:["Out and about","--c-mkt"], ex:["Exercises","--p-pro"], me:["Yours","--ink"], nfl:["Saints & Cardinals","--p-sec"], tv:["TV","--p-reading"] };
   var CODE_COLORS = { CYB:"--c-us", SAB:"--crit", UAS:"--c-mkt", UWI:"--c-pro", GNSS:"--c-be", INF:"--c-nl", ELX:"--c-nl", MIG:"--c-de", PRX:"--warn", AIR:"--c-de", SEA:"--c-pro", COE:"--c-be", KIN:"--crit" };
   var PART_CLASSES = ["front","news","watch","reading","home"];
-  var PART_DEF = { front: ["front","Today","#front"], news: ["news","The news","#p-news"], watch: ["watch","The record","#p-watch"], reading: ["reading","The reading","#p-reading"], home: ["home","Home and planning","#p-home"] };
+  var PART_DEF = { front: ["front","Today","#front"], news: ["news","The news","#p-news"], watch: ["watch","The watch","#p-watch"], reading: ["reading","The reading","#p-reading"], home: ["home","Home and planning","#p-home"] };
   var PARTS = ["front","news","reading","watch","home"].map(function (k) { return PART_DEF[k]; });
   function setPartOrder(weekend) { PARTS = (weekend ? ["front","reading","news","watch","home"] : ["front","news","reading","watch","home"]).map(function (k) { return PART_DEF[k]; }); }
   function pn(cls) { var i = PARTS.map(function (p) { return p[0]; }).indexOf(cls); return "Part " + i; }
@@ -1290,7 +1290,7 @@
 
     /* ===== Part 2 · The watch ===== */
     TIER_HTML.news = h; h = "";
-    h += part("watch", pn("watch"), "The record", "The memory: the board, Ukraine, the indicators, the trackers, the registers and the forecast ledger. Each opens with its state; logs show the last ten entries.", "p-watch");
+    h += part("watch", pn("watch"), "The watch", "The memory: the board, Ukraine, the indicators, the trackers, the registers and the forecast ledger. Logs show the last ten entries.", "p-watch");
     h += '<section id="board" class="watch"><h2>The board <span class="num">events logged, not a measure of intensity</span></h2>';
     if (board) {
       h += '<div class="panel"><div class="lbl">' + (ctx.conflicts || []).length + ' theatres · filled marker = events logged in 7 days, sized by count</div><div class="chart" id="worldmap" style="min-height:150px"></div></div>';
@@ -1705,7 +1705,7 @@
     var inRec = false;
     Array.prototype.forEach.call(app.children, function (el) { if (stop || el.id === "weekreview" || el.id === "week" || el.id === "sources") { stop = true; return; } if (el.classList && el.classList.contains("part")) inRec = el.classList.contains("watch"); if (inRec || el.id === "slim") return; words += (el.textContent || "").split(/\s+/).length; });
     document.getElementById("readtime").textContent = "≈ " + Math.max(1, Math.round(words / 230)) + " min read";
-    var aw = document.getElementById("aboutwords"); if (aw) aw.textContent = "about " + Math.round(words / 50) * 50 + " words in the Brief, the news and the reading; the record is read on need";
+    var aw = document.getElementById("aboutwords"); if (aw) aw.textContent = "about " + Math.round(words / 50) * 50 + " words in the Brief, the news and the reading; the watch is read on need";
     /* read time per tier for the contents block */
     var tierWords = {}, curTier = "front";
     Array.prototype.forEach.call(app.children, function (el) { if (el.classList && el.classList.contains("part")) { curTier = PART_CLASSES.filter(function (c) { return el.classList.contains(c); })[0] || curTier; return; } if (el.id === "slim" || el.id === "sources" || el.id === "health") return; tierWords[curTier] = (tierWords[curTier] || 0) + (el.textContent || "").split(/\s+/).length; });
