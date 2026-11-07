@@ -261,7 +261,7 @@ Edited rarely. Add a school year when the ministry publishes it. The page merges
 
 ### `data/philosophy.json`
 
-`{ "updated", "traditions": [...], "covered": [{"date","thinker","work","tradition"}] }`. Append one row per edition; no thinker within 30 days, no work within 90; touch every tradition within a fortnight.
+`{ "updated", "traditions": [...], "covered": [{"date","thinker","work","tradition"}] }`. Serious philosophy only: the `canon` list names the pool (Plato to Parfit, Kant, Hegel, Nietzsche, Kierkegaard, Arendt and their peers). Append one row per edition; no thinker within 30 days, no work within 90; touch every tradition within a fortnight.
 
 ### `data/teams.json`
 

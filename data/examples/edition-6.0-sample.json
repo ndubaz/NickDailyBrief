@@ -1831,9 +1831,9 @@
     ],
     [
       78,
-      "Meditations, Book 6 (Hays translation)",
-      "Modern Library",
-      "https://www.penguinrandomhouse.com/",
+      "Groundwork of the Metaphysics of Morals, 4:421 (Gregor translation)",
+      "Cambridge University Press",
+      "https://www.cambridge.org/",
       1
     ]
   ],
@@ -1979,15 +1979,15 @@
     ]
   },
   "philosophy": {
-    "thinker": "Marcus Aurelius",
-    "work": "Meditations",
-    "where": "Book 6, 2",
-    "year": "c. 170",
-    "tradition": "Ancient Greek and Roman",
-    "quote": "Just that you do the right thing. The rest doesn't matter.",
-    "translation": "Gregory Hays, Modern Library, 2002",
-    "gloss": "Two to four sentences on the idea in plain words: what the author meant, in context, and the objection a good student would raise. [78]",
-    "why": "One question for a staff officer's day, not a lesson.",
+    "thinker": "Immanuel Kant",
+    "work": "Groundwork of the Metaphysics of Morals",
+    "where": "Section II, Ak. 4:421",
+    "year": "1785",
+    "tradition": "Enlightenment (Kant, Hume, Rousseau)",
+    "quote": "Act only in accordance with that maxim through which you can at the same time will that it become a universal law.",
+    "translation": "Mary Gregor, Cambridge, 1997",
+    "gloss": "The first formulation of the categorical imperative: a test on the principle behind an act, not on its consequences. Kant's point is that a maxim fails if it could not hold as a law for everyone without contradiction, as a false promise destroys the practice of promising it relies on. The standing objection, from Hegel onward, is that the test is empty: many maxims universalise without contradiction and the work is done by how the maxim is described. [78]",
+    "why": "Which of today's orders would you be content to see issued to every commander in the same position?",
     "src": 78
   }
 }
