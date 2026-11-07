@@ -19,6 +19,7 @@ The site is static. `index.html` + `app.js` + `styles.css` never change day to d
 | `data/congress.json` | Three lanes: key defence bills, the budget cycle, confirmations. Add a row when a bill is introduced, a budget deadline is set, a post falls vacant or a nominee is named; move `stage`, add the date to `dates`, set `updated`, copy cited source rows into `src`. Never delete rows. |
 | `data/exercises.json` | Add announced NATO and allied exercises; set `updated` when dates change; never delete (the page hides those older than 60 days). |
 | `data/releases.json` | Append one entry per AI, chip, robotics or autonomy release, published result or shipped capability (`id` as `YYYY-MM-DD-lab-slug`, `kind`, `t`, `lab`, `n`, `date`, `src`). On Fridays rewrite `sota` (one object per domain: group, system, lab, cc, open, metric, score, unit, since, runner, changed, note, src). |
+| `data/inbox.json` | Mail check (7.1). Each run, search Gmail for the last three days from the AFNORTH school office, the AFNorth PTA, JFCBS MWA, USAG Benelux-Brunssum CYS, and travel and ticket confirmations; append every dated item not already present as `{id, date, end, time, t, note, src: "AFNORTH|PTA|MWA|CYS|TRAVEL|TICKETS", added}`. Dates, titles, times and places only; never a name, grade, score, confirmation code, booking reference, ticket, order or seat number, price, medical detail or tokenised link. Set `updated` every run, even when nothing was added. |
 | `data/indicators.json` | Indicators and warning (7.0). For each indicator with a fact in the window, set `status` (green, amber, red) against its `threshold`; append to `history` only when the status changes, with the date and the fact. Add an indicator when a thread or theatre gains a watchable threshold; never delete. Set `updated` every day you checked. |
 | `data/forecasts.json` | Forecast ledger (7.0, run only). One to three new calls a week: a falsifiable question, `p` strictly between 0 and 1, `made`, `resolves`, `domain`, optional theatre, country or congress id, and `why`. Never edit a call after it is made. On or after `resolves`, set `status` yes, no or void, `resolvedDate` and `note` with the fact and source. |
 | `data/questions.json` | Open questions (7.0). Add a question when an item turns on a fact nobody has published; close it with `status: "closed"`, `closed` date and `answer` with its source. Never delete. |
@@ -186,6 +187,10 @@ The same file carries `tiers` and `watch`: the register of posts the confirmatio
 ### `data/releases.json`
 
 `{ "releases": [ {"id","date","kind":"model|chip|robot|autonomy|result|tool","t","lab","n","src"} ], "sota": {"asof","rows":[{"domain","group":"Models|Media|Physical|Compute","system","lab","cc","open":bool,"metric","score","unit","since","runner":{"system","lab","score"},"changed":bool,"note","src":[[n,title,outlet,url]]}]} }`. The release log shows the last 45 days; `sota` is rewritten on Fridays. The page shows a summary strip (leads by country, leads changed this week, open-weights leaders, longest-held lead), a bar chart of days each lead has been held, then one card per domain grouped by `group` with the lab, country and open-weights chips, the metric and score, the challenger and gap on the same metric, the lead date and the note. The older array form `[domain, system, lab, since, src]` still renders.
+
+### `data/inbox.json`
+
+`{ "updated", "items": [ {"id","date","end","time","t","note","src":"AFNORTH|PTA|MWA|CYS|TRAVEL|TICKETS","added","url"} ] }`. Shown as "From your mail" in Home and planning (next 45 days), on the week board, on the calendar (category From your mail) and in the Brief's What to watch. The validator rejects ticket or order numbers and tracking links.
 
 ### `data/indicators.json`
 

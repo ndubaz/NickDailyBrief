@@ -8,14 +8,14 @@
   var MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
   var DOW = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
   var CAT = { nl:["Netherlands","--c-nl"], be:["Belgium","--c-be"], de:["Germany","--c-de"], us:["US / AFNORTH","--c-us"], mkt:["Markets & events","--c-mkt"], pro:["Work & world","--c-pro"],
-              hockey:["Hurricanes","--p-hockey"], home:["Bins & home","--p-home"], school:["School breaks","--p-pro"], watch:["Horizon","--p-watch"], deadline:["Deadlines","--crit"], info:["Clocks","--muted"], out:["Out and about","--c-mkt"], ex:["Exercises","--p-pro"], me:["Yours","--ink"], nfl:["Saints & Cardinals","--p-sec"], tv:["TV","--p-reading"] };
+              hockey:["Hurricanes","--p-hockey"], home:["Bins & home","--p-home"], school:["School breaks","--p-pro"], watch:["Horizon","--p-watch"], deadline:["Deadlines","--crit"], info:["Clocks","--muted"], out:["Out and about","--c-mkt"], ex:["Exercises","--p-pro"], me:["Yours","--ink"], nfl:["Saints & Cardinals","--p-sec"], tv:["TV","--p-reading"], mail:["From your mail","--c-us"] };
   var CODE_COLORS = { CYB:"--c-us", SAB:"--crit", UAS:"--c-mkt", UWI:"--c-pro", GNSS:"--c-be", INF:"--c-nl", ELX:"--c-nl", MIG:"--c-de", PRX:"--warn", AIR:"--c-de", SEA:"--c-pro", COE:"--c-be", KIN:"--crit" };
   var PART_CLASSES = ["front","news","watch","reading","home"];
   var PART_DEF = { front: ["front","Today","#front"], news: ["news","The news","#p-news"], watch: ["watch","The watch","#p-watch"], reading: ["reading","The reading","#p-reading"], home: ["home","Home and planning","#p-home"] };
   var PARTS = ["front","news","reading","watch","home"].map(function (k) { return PART_DEF[k]; });
   function setPartOrder(weekend) { PARTS = (weekend ? ["front","reading","news","watch","home"] : ["front","news","reading","watch","home"]).map(function (k) { return PART_DEF[k]; }); }
   function pn(cls) { var i = PARTS.map(function (p) { return p[0]; }).indexOf(cls); return "Part " + i; }
-  var TIERS = { news: ["world","hybrid","europe","countries","euregio","army","nato","deftech","frontier","markets","rates","nl"], watch: ["board","ukraine","indicators","novel","numbers","fx","threads","horizon","congress-sec","exercises-sec","releases","sota","production","forecasts"], reading: ["feature","research","philosophy","depth","ttpsec","aperture"], home: ["afnorth","offduty","dutch","snow","hockey","week","weather","countdown","tv","calendar","year","school","season"] };
+  var TIERS = { news: ["world","hybrid","europe","countries","euregio","army","nato","deftech","frontier","markets","rates","nl"], watch: ["board","ukraine","indicators","novel","numbers","fx","threads","horizon","congress-sec","exercises-sec","releases","sota","production","forecasts"], reading: ["feature","research","philosophy","depth","ttpsec","aperture"], home: ["afnorth","offduty","dutch","snow","hockey","week","mail","weather","countdown","tv","calendar","year","school","season"] };
   var EVCAT = { music:"Music", markets:"Markets", museums:"Museums", sport:"Sport", kids:"Kids", food:"Food", outdoors:"Outdoors", festival:"Festivals" };
   var SERIES_BY_LABEL = [["s&p 500","spx"],["nasdaq","ndx"],["aex","aex"],["brent","brent"],["dutch ttf","ttf"],["ttf","ttf"]];
   var HOME = { lat: 50.89, lon: 5.98, name: "Heerlen" };
@@ -471,6 +471,7 @@
     (ctx.events || []).forEach(function (e) { if (e.from) ev.push({ date: e.from, end: e.to !== e.from ? e.to : undefined, cat: "out", t: e.t, sub: [e.town, e.drive != null ? "~" + e.drive + " min" : "", e.to !== e.from ? "to " + fmtShort(e.to) : ""].filter(Boolean).join(" · "), src: "events", prio: e.prio === true }); });
     (ctx.congress || []).forEach(function (c) { if (c.deadline) ev.push({ date: c.deadline, cat: "pro", t: (c.title || c.post) + ": deadline", sub: c.next ? plain(c.next) : "Congress", src: "congress" }); });
     (ctx.exercises || []).forEach(function (x) { if (x.from) ev.push({ date: x.from, end: x.to !== x.from ? x.to : undefined, cat: "ex", t: x.name, sub: [x.lead, x.where].filter(Boolean).join(" · "), src: "exercises" }); });
+    (((ctx.inbox || {}).items) || []).forEach(function (m) { if (m.date) ev.push({ date: m.date, end: m.end && m.end !== m.date ? m.end : undefined, cat: "mail", t: m.t + (m.time ? " · " + m.time : ""), sub: [m.src, m.note].filter(Boolean).join(" · "), src: "inbox", prio: true }); });
     ((ctx.week && ctx.week.items) || []).forEach(function (w) { if (w.date) ev.push({ date: w.date, end: w.end && w.end !== w.date ? w.end : undefined, cat: "me", t: w.t + (w.time ? " · " + w.time : ""), sub: [w.note, w.url ? "Join: " + w.url : ""].filter(Boolean).join(" · "), src: "week", prio: true }); });
     var seen = {};
     return ev.filter(function (e) { if (!e.date || !/^\d{4}-\d{2}-\d{2}$/.test(e.date)) return false; var k = e.date + "|" + e.cat + "|" + e.t; if (seen[k]) return false; seen[k] = 1; return true; }).sort(function (a, b) { return a.date < b.date ? -1 : a.date > b.date ? 1 : 0; });
@@ -509,7 +510,7 @@
     if (e.src === "bins" || e.src === "deadlines" || e.src === "career" || e.src === "exercises" || e.src === "week") return true;
     if (e.src === "calendar") return e.cat !== "school" || e.sys === "afnorth";
     if (e.src === "canes" || e.src === "teams") return !!e.live || !!e.prio;
-    if (e.src === "tv") return true;
+    if (e.src === "tv" || e.src === "inbox") return true;
     if (e.src === "events" || e.src === "edition") return !!e.prio;
     return false;
   }
@@ -709,6 +710,7 @@
     var WS = ctx.worldSeries || { meta: {}, series: {} }, wsRows = Object.keys(WS.series || {}).map(function (k) { var sr = WS.series[k] || [], m = (WS.meta || {})[k] || {}, last = sr.length ? sr[sr.length - 1][0] : null, lim = m.cadence === "weekly" ? 10 : 3; return [k, last, last ? daysBetween(last, TD) > lim : true]; });
     var wsBad = wsRows.filter(function (r) { return r[2]; }).map(function (r) { return r[0] + (r[1] ? " (" + fmtShort(r[1]) + ")" : " (empty)"); });
     add("World series", wsBad.length >= wsRows.length ? "act" : wsBad.length ? "watch" : "ok", wsBad.length ? "not kept up: " + wsBad.join(", ") : wsRows.length + " series current");
+    if (ctx.inbox) fresh("Mail check", ctx.inbox.updated, 3, 7, "last pull");
     if (ctx.indicators) fresh("Indicators", ctx.indicators.updated, 3, 7, "last status check");
     if (ctx.forecasts) { var fo = (ctx.forecasts.items || []).filter(function (f) { return f.status === "open" && f.resolves < TD; }); add("Forecast ledger", fo.length ? "act" : "ok", fo.length ? fo.length + " overdue to resolve" : (ctx.forecasts.items || []).filter(function (f) { return f.status === "open"; }).length + " open, none overdue"); }
     if (ctx.uaFront) fresh("Ukraine front line", ctx.uaFront.asof, 8, 15, "DeepState layer as of");
@@ -1069,7 +1071,7 @@
   }
   function contentsBlock() {
     var tiers = PARTS.slice(1).map(function (p) { return [p[0], p[1], TIERS[p[0]]]; });
-    var SN = { world: "World", hybrid: "Hybrid", europe: "Europe", countries: "Priority countries", euregio: "Euregio", army: "Defence & Army", nato: "NATO & allies", deftech: "Defence tech", frontier: "Frontier", markets: "Markets", rates: "Rates", nl: "Netherlands", board: "The board", ukraine: "Ukraine", indicators: "Indicators", forecasts: "Forecasts", novel: "New in war", numbers: "Numbers", fx: "USD/EUR", threads: "Threads", horizon: "Horizon", "congress-sec": "Congress", "exercises-sec": "Exercises", releases: "Releases", sota: "State of the art", production: "Production", feature: "World feature", research: "Research", philosophy: "Philosophy", depth: "Army in depth", ttpsec: "Week in war", aperture: "Aperture", afnorth: "AFNORTH", offduty: "Out and about", dutch: "Taal", snow: "Snow", hockey: "Canes", week: "This week", weather: "Weather", countdown: "Countdowns", tv: "TV", calendar: "Calendar", year: "Year ahead", school: "School year", season: "Season" };
+    var SN = { world: "World", hybrid: "Hybrid", europe: "Europe", countries: "Priority countries", euregio: "Euregio", army: "Defence & Army", nato: "NATO & allies", deftech: "Defence tech", frontier: "Frontier", markets: "Markets", rates: "Rates", nl: "Netherlands", board: "The board", ukraine: "Ukraine", indicators: "Indicators", forecasts: "Forecasts", novel: "New in war", numbers: "Numbers", fx: "USD/EUR", threads: "Threads", horizon: "Horizon", "congress-sec": "Congress", "exercises-sec": "Exercises", releases: "Releases", sota: "State of the art", production: "Production", feature: "World feature", research: "Research", philosophy: "Philosophy", depth: "Army in depth", ttpsec: "Week in war", aperture: "Aperture", afnorth: "AFNORTH", offduty: "Out and about", dutch: "Taal", snow: "Snow", hockey: "Canes", week: "This week", mail: "From your mail", weather: "Weather", countdown: "Countdowns", tv: "TV", calendar: "Calendar", year: "Year ahead", school: "School year", season: "Season" };
     return '<h3>In this edition</h3><ol class="toc">' + tiers.map(function (t, i) { return '<li data-tier="' + t[0] + '" class="' + t[0] + '"><a href="#p-' + t[0] + '"><b>' + (i + 1) + " · " + esc(t[1]) + '</b></a><span class="tm"></span><span class="secs">' + t[2].map(function (id) { return '<a href="#' + id + '">' + esc(SN[id] || id) + "</a>"; }).join(" · ") + "</span></li>"; }).join("") + "</ol>";
   }
   function yearAhead(ctx, E, TD, today) {
@@ -1596,12 +1598,17 @@
 
     h += weekReview(E, ctx, TD, today);
     h += '<section id="week" class="home"><h2>This week <span class="num">holidays, school, bins, deadlines, major events</span></h2>' + weekStrip(PEV, E, TD) + "</section>";
+    var IB = ((ctx.inbox || {}).items || []).filter(function (m) { return m.date && (m.end || m.date) >= TD && daysBetween(TD, m.date) <= 45; }).sort(function (a, b) { return a.date < b.date ? -1 : 1; });
+    h += '<section id="mail" class="home"><h2>From your mail <span class="num">school, PTA, MWA, CYS, travel and tickets · next 45 days</span></h2>';
+    h += IB.length ? '<ul class="clean wn">' + IB.map(function (m) { var n = daysBetween(TD, m.date); return '<li><span class="d">' + esc(DOW[pd(m.date).getDay()] + " " + fmtShort(m.date)) + (m.end && m.end !== m.date ? " – " + esc(fmtShort(m.end)) : "") + '</span><span class="w"><span class="dot" style="background:' + catColor("mail") + '"></span><b>' + esc(m.t) + "</b>" + (m.time ? " · " + esc(m.time) : "") + " " + icsLink(m.t, m.date, m.end, m.note) + '<span class="small">' + esc([m.src, m.note, n === 0 ? "today" : n === 1 ? "tomorrow" : "in " + n + " days"].filter(Boolean).join(" · ")) + "</span></span></li>"; }).join("") + "</ul>" : quiet("Nothing dated in the last school, PTA, MWA, CYS or travel mail.");
+    if (ctx.inbox && ctx.inbox.updated) h += '<p class="small">Pulled by the morning run from the school office, the PTA, MWA, CYS and travel and ticket mail; last check ' + esc(fmtShort(ctx.inbox.updated)) + ". Dates and titles only.</p>";
+    h += "</section>";
     h += '<section id="weather" class="home"><h2>Weather and daylight <span class="num">' + esc(HOME.name) + " · 7 days</span></h2>" + weatherBlock(E, TD) + "</section>";
     h += '<section id="countdown" class="home"><h2>Countdowns</h2>' + countdowns(PEV, ctx, TD) + "</section>";
     h += '<section id="tv" class="home"><h2>TV <span class="num">what you follow, what comes next</span></h2>' + tvBlock(ctx, TD) + "</section>";
     h += '<section id="calendar" class="home"><h2>Calendar</h2>';
     if (P.otd) h += '<div class="ap-c" style="margin-bottom:14px"><div class="lbl">' + esc(P.otd.title) + '</div><p style="margin:0">' + rich(P.otd.body) + "</p></div>";
-    var FILT = [["all","All"],["me","Yours"],["nl","NL"],["be","BE"],["de","DE"],["us","US"],["ev","Events"],["out","Out and about"],["teams","Teams"],["tv","TV"],["homed","Home"],["school","School"],["watch","Horizon"],["ex","Exercises"]];
+    var FILT = [["all","All"],["me","Yours"],["nl","NL"],["be","BE"],["de","DE"],["us","US"],["ev","Events"],["out","Out and about"],["teams","Teams"],["tv","TV"],["mail","Mail"],["homed","Home"],["school","School"],["watch","Horizon"],["ex","Exercises"]];
     h += '<div class="cal-nav"><button type="button" id="calprev" aria-label="Previous month">‹</button><span class="cal-title" id="caltitle"></span><button type="button" id="calnext" aria-label="Next month">›</button><button type="button" id="caltoday">This month</button></div>';
     h += '<div class="filt" id="calfilt" role="group" aria-label="Filter the calendar">' + FILT.map(function (f) { return '<button type="button" data-f="' + f[0] + '" aria-pressed="' + (f[0] === "all") + '">' + f[1] + "</button>"; }).join("") + "</div>";
     h += '<div class="legend">' + Object.keys(CAT).map(function (k) { return '<span><i style="background:' + catColor(k) + '"></i>' + esc(CAT[k][0]) + "</span>"; }).join("") + "</div>";
@@ -1908,9 +1915,9 @@
     opt("data/incidents.json"), opt("data/bins.json"), opt("data/threads.json"), opt("data/horizon.json"),
     opt("data/fx.json"), opt("data/series.json"), opt("data/canes.json"),
     opt("data/conflicts.json"), opt("data/world-series.json"), opt("data/calendar.json"), opt("data/deadlines.json"),
-    opt("data/congress.json"), opt("data/exercises.json"), opt("data/releases.json"), opt("data/events.json"), opt("data/idioms.json"), opt("data/ski.json"), opt("data/search-index.json"), opt("data/land.json"), opt("data/week.json"), opt("data/corrections.json"), opt("data/research.json"), opt("data/teams.json"), opt("data/tv.json"), opt("data/countries.json"), opt("data/ceu.json"), opt("data/novel.json"), opt("data/indicators.json"), opt("data/forecasts.json"), opt("data/questions.json"), opt("data/ua-front.json"), opt("data/philosophy.json")
+    opt("data/congress.json"), opt("data/exercises.json"), opt("data/releases.json"), opt("data/events.json"), opt("data/idioms.json"), opt("data/ski.json"), opt("data/search-index.json"), opt("data/land.json"), opt("data/week.json"), opt("data/corrections.json"), opt("data/research.json"), opt("data/teams.json"), opt("data/tv.json"), opt("data/countries.json"), opt("data/ceu.json"), opt("data/novel.json"), opt("data/indicators.json"), opt("data/forecasts.json"), opt("data/questions.json"), opt("data/ua-front.json"), opt("data/philosophy.json"), opt("data/inbox.json")
   ]).then(function (r) {
-    ctx.novel = r[27]; ctx.indicators = r[28]; ctx.forecasts = r[29]; ctx.questions = r[30]; ctx.uaFront = r[31]; ctx.philosophy = r[32];
+    ctx.novel = r[27]; ctx.indicators = r[28]; ctx.forecasts = r[29]; ctx.questions = r[30]; ctx.uaFront = r[31]; ctx.philosophy = r[32]; ctx.inbox = r[33];
     ctx.ceu = r[26] && r[26].countries; ctx.countriesMap = r[25] && r[25].map;
     ctx.week = r[20]; ctx.corrections = r[21]; ctx.research = r[22]; ctx.teams = r[23]; ctx.tv = r[24];
     ctx.countries = r[25] && r[25].countries; ctx.countriesBLR = r[25] && r[25].blr; ctx.countriesUpdated = r[25] && r[25].updated;
