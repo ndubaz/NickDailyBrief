@@ -15,7 +15,7 @@ One scroll in five tiers, everything expanded, nothing folded:
 
 1. **Today.** Masthead with the data-update time, the Today strip, Five things, the pick, Today and tomorrow, a computed "Since yesterday" list of what moved in the memory, and a contents block with a read time per tier.
 2. **The news.** World developments, Security (hybrid, Europe, Priority countries: Hungary, Slovakia, Germany, then Euregio), Defence & Army (DoD, Army, Congress, Career, leaders on the record), NATO & allies, Defence tech, Frontier, Markets, Rates, Netherlands. Same item anatomy everywhere; items link to the trackers they update.
-3. **The watch.** The board with its map, the numbers row, the USD/EUR tracker, threads, horizon, the Congress tracker (bills, budget, confirmations as a stage matrix) with the watched-post register, the exercise calendar, the release log, the state-of-the-art table and production series.
+3. **The watch.** The board with its map, New in war, the numbers row, the USD/EUR tracker, threads, horizon, the Congress tracker (bills, budget, confirmations as a stage matrix) with the watched-post register, the exercise calendar, the release log, the state-of-the-art table and production series.
 4. **The reading.** The World feature, the Research piece (one recent publication a day, rotating across institutions), the Army in depth piece, the Saturday week in war, Aperture.
 5. **Home and planning.** AFNORTH, Out and about (weekend first, nearest first, with the forecast), Taal, Snow in season, the Canes with the Saints and Cardinals beneath, then the Planner: the Sunday review, the week board, weather, countdowns, TV, the calendar (the agenda starts today and folds after two weeks), the year-ahead board with leave windows, the school year and the seasonal planner.
 
@@ -50,6 +50,7 @@ The edition is a daily snapshot. The standing files under `data/` are the Readbo
 | `data/congress.json` | Key defence bills, the budget cycle, confirmations, and the register of 38 watched posts (Army leadership, Joint Staff, combatant commands, Army four-star commands, Europe-based general officers) | Congress tracker in Profession, deadlines on the Planner |
 | `data/exercises.json` | NATO and allied exercises with dates | Exercise calendar, Planner |
 | `data/releases.json` | Dated AI and tech releases, plus the Friday state-of-the-art table | Frontier |
+| `data/novel.json` | First-seen uses of technology in war: what happened, what is new, domains, theatre, sources | New in war in The watch; NEW USE badge on the news item |
 | `data/countries.json` | Profiles and dated logs for Hungary, Slovakia and Germany: government, election clock, NATO posture and spending series, stances, seven-baseline-requirement notes, map points | Priority countries in The news (map, spending chart, election clocks, resilience grids), Since yesterday, health |
 | `data/ceu.json` | Central Europe country outlines (Natural Earth, static) | The priority-countries map |
 | `data/events.json` | Curated events within about 90 minutes, with sources | Out and about, calendar, week strip |

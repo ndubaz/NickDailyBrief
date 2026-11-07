@@ -12,7 +12,7 @@
   var CODE_COLORS = { CYB:"--c-us", SAB:"--crit", UAS:"--c-mkt", UWI:"--c-pro", GNSS:"--c-be", INF:"--c-nl", ELX:"--c-nl", MIG:"--c-de", PRX:"--warn", AIR:"--c-de", SEA:"--c-pro", COE:"--c-be", KIN:"--crit" };
   var PART_CLASSES = ["front","news","watch","reading","home"];
   var PARTS = [["front","Today","#front"],["news","The news","#p-news"],["watch","The watch","#p-watch"],["reading","The reading","#p-reading"],["home","Home and planning","#p-home"]];
-  var TIERS = { news: ["world","hybrid","europe","countries","euregio","army","nato","deftech","frontier","markets","rates","nl"], watch: ["board","numbers","fx","threads","horizon","congress-sec","exercises-sec","releases","sota","production"], reading: ["feature","research","depth","ttpsec","aperture"], home: ["afnorth","offduty","dutch","snow","hockey","week","weather","countdown","tv","calendar","year","school","season"] };
+  var TIERS = { news: ["world","hybrid","europe","countries","euregio","army","nato","deftech","frontier","markets","rates","nl"], watch: ["board","novel","numbers","fx","threads","horizon","congress-sec","exercises-sec","releases","sota","production"], reading: ["feature","research","depth","ttpsec","aperture"], home: ["afnorth","offduty","dutch","snow","hockey","week","weather","countdown","tv","calendar","year","school","season"] };
   var EVCAT = { music:"Music", markets:"Markets", museums:"Museums", sport:"Sport", kids:"Kids", food:"Food", outdoors:"Outdoors", festival:"Festivals" };
   var SERIES_BY_LABEL = [["s&p 500","spx"],["nasdaq","ndx"],["aex","aex"],["brent","brent"],["dutch ttf","ttf"],["ttf","ttf"]];
   var HOME = { lat: 50.89, lon: 5.98, name: "Heerlen" };
@@ -72,8 +72,9 @@
 
   function item(it, opts) {
     opts = opts || {};
-    var h = '<div class="item ' + fu(it.badge) + '">';
-    h += "<h4>" + rich(it.h) + badge(it.badge) + (opts.inlineTag && it.tag ? ' <span class="tag">' + esc(it.tag) + "</span>" : "") + "</h4>";
+    var nu = (it.links || []).some(function (l) { return String(l).indexOf("novel:") === 0; });
+    var h = '<div class="item ' + fu(it.badge) + (nu ? " nu" : "") + '">';
+    h += "<h4>" + rich(it.h) + badge(it.badge) + (nu ? '<span class="badge nu">NEW USE</span>' : "") + (opts.inlineTag && it.tag ? ' <span class="tag">' + esc(it.tag) + "</span>" : "") + "</h4>";
     if (!opts.inlineTag && (it.tag || it.conf)) h += "<div>" + (it.tag ? '<span class="tag">' + esc(it.tag) + "</span>" : "") + (it.conf ? '<span class="conf">confidence: ' + esc(it.conf) + "</span>" : "") + "</div>";
     if (it.body) h += "<p>" + rich(it.body) + "</p>";
     h += linkChips(it.links);
@@ -705,6 +706,7 @@
     var WS = ctx.worldSeries || { meta: {}, series: {} }, wsRows = Object.keys(WS.series || {}).map(function (k) { var sr = WS.series[k] || [], m = (WS.meta || {})[k] || {}, last = sr.length ? sr[sr.length - 1][0] : null, lim = m.cadence === "weekly" ? 10 : 3; return [k, last, last ? daysBetween(last, TD) > lim : true]; });
     var wsBad = wsRows.filter(function (r) { return r[2]; }).map(function (r) { return r[0] + (r[1] ? " (" + fmtShort(r[1]) + ")" : " (empty)"); });
     add("World series", wsBad.length >= wsRows.length ? "act" : wsBad.length ? "watch" : "ok", wsBad.length ? "not kept up: " + wsBad.join(", ") : wsRows.length + " series current");
+    if (ctx.novel) fresh("New in war log", (ctx.novel.items || []).length ? lastDate(ctx.novel.items, function (x) { return x.date; }) : "", 10, 21, "last technique logged");
     if (ctx.countries) fresh("Priority countries", ctx.countriesUpdated || lastDate(ctx.countries, function (c) { return lastDate(c.log, function (e) { return e.date; }); }), 7, 14, "last log entry");
     if (ctx.teams) fresh("Saints and Cardinals", ctx.teams.updated, 5, 12, "last refresh");
     if (ctx.tv) fresh("TV shows", ctx.tv.updated, 8, 21, "last refresh");
@@ -735,9 +737,10 @@
 
 
   /* ---------- 6.0: cross-links, calendar files, since yesterday, contents, decisions, year ahead, review, corrections, about ---------- */
-  var LINK_KIND = { theatre: ["#th-", "Board"], thread: ["#thread-", "Thread"], congress: ["#cg-", "Congress"], post: ["#congresstracker", "Post"], exercise: ["#exercises-sec", "Exercise"], release: ["#releases", "Release"], event: ["#offduty", "Event"], country: ["#ctry-", "Country"] };
+  var LINK_KIND = { theatre: ["#th-", "Board"], thread: ["#thread-", "Thread"], congress: ["#cg-", "Congress"], post: ["#congresstracker", "Post"], exercise: ["#exercises-sec", "Exercise"], release: ["#releases", "Release"], event: ["#offduty", "Event"], country: ["#ctry-", "Country"], novel: ["#novel-", "New use"] };
   function linkNames(ctx) {
-    var n = { theatre: {}, thread: {}, congress: {}, post: {}, exercise: {}, release: {}, event: {}, country: {} };
+    var n = { theatre: {}, thread: {}, congress: {}, post: {}, exercise: {}, release: {}, event: {}, country: {}, novel: {} };
+    (((ctx.novel || {}).items) || []).forEach(function (x) { n.novel[x.id] = x.t; });
     (ctx.countries || []).forEach(function (c) { n.country[c.id] = c.name; });
     (ctx.conflicts || []).forEach(function (t) { n.theatre[t.id] = t.short || t.name; });
     (ctx.threads || []).forEach(function (t) { n.thread[t.id] = t.name; });
@@ -778,6 +781,29 @@
     return '<h3>Data ingest <span class="small">newest entry per standing file, as of this edition</span></h3>' + table(["File", "Newest", "Age", "Rows"], rows.map(function (r) { var n = daysBetween(r[1], TD); return '<tr class="' + (n >= 3 ? "soon" : "") + '"><td><b>' + esc(r[0]) + '</b></td><td class="d">' + esc(fmtShort(r[1])) + (r[1].slice(0, 4) !== TD.slice(0, 4) ? " " + r[1].slice(0, 4) : "") + '</td><td class="d">' + (n <= 0 ? "today" : n === 1 ? "1 day" : n + " days") + '</td><td class="d">' + (size[r[0]] != null ? size[r[0]].toLocaleString("en-GB") : "") + "</td></tr>"; }).join(""), "lbl1 ingest").replace('class="tw stack"', 'class="tw"');
   }
 
+  /* ---------- new uses of technology in war ---------- */
+  function novelBlock(ctx, E, TD) {
+    var NV = ctx.novel || {}, items = (NV.items || []).filter(function (x) { return x.date && x.date <= TD; }).sort(function (a, b) { return a.date < b.date ? 1 : a.date > b.date ? -1 : 0; }), DOM = NV.domains || {};
+    var h = '<section id="novel" class="watch"><h2>New in war <span class="num">first-seen uses of technology · ' + items.length + " logged</span></h2>";
+    if (!items.length) return h + quiet("Nothing logged yet. The run appends a technique the first time it is observed.") + "</section>";
+    h += '<p class="small">Techniques the run saw used for the first time, in any theatre and domain. The what-is-new line describes the mechanism as reported; it is not a forecast. Items in The news that carry one of these are marked NEW USE.</p>';
+    var recent = items.filter(function (x) { return daysBetween(x.date, TD) <= 90; }), byD = {};
+    recent.forEach(function (x) { (x.domains || []).forEach(function (d) { byD[d] = (byD[d] || 0) + 1; }); });
+    var th = {}; (ctx.conflicts || []).forEach(function (t) { th[t.id] = t.short || t.name; });
+    var byT = {}; recent.forEach(function (x) { var k = th[x.theatre] || x.theatre || "other"; byT[k] = (byT[k] || 0) + 1; });
+    h += '<div class="viz"><div class="panel"><div class="lbl">By domain · last 90 days</div>' + hbars(Object.keys(byD).sort(function (a, b) { return byD[b] - byD[a]; }).map(function (d) { return [DOM[d] || d, byD[d]]; }), { inner: true, empty: "No entries in 90 days." }) + '</div><div class="panel"><div class="lbl">By theatre · last 90 days</div>' + hbars(Object.keys(byT).sort(function (a, b) { return byT[b] - byT[a]; }).map(function (k) { return [k, byT[k]]; }), { inner: true, empty: "No entries in 90 days." }) + "</div></div>";
+    h += '<div class="nvlist">' + items.slice(0, 30).map(function (x) {
+      var age = daysBetween(x.date, TD), map = srcMap(x.src);
+      var c = '<div class="nv ' + fu(age <= 1 ? "NEW" : "") + '" id="novel-' + esc(x.id) + '"><div class="nv-h"><span class="d">' + esc(fmtShort(x.date)) + (x.date.slice(0, 4) !== TD.slice(0, 4) ? " " + x.date.slice(0, 4) : "") + "</span>" + (x.theatre ? '<a class="chip st" href="#th-' + esc(x.theatre) + '">' + esc(th[x.theatre] || x.theatre) + "</a>" : "") + (x.actor ? '<span class="chip st">' + esc(x.actor) + "</span>" : "") + (x.domains || []).map(function (d) { return '<span class="chip st dom">' + esc(DOM[d] || d) + "</span>"; }).join("") + badge(age === 0 ? "NEW" : age === 1 ? "UPDATED" : "") + inToday("novel", x.id) + "</div>";
+      c += "<h4>" + esc(x.t) + "</h4>";
+      if (x.what) c += "<p>" + rich(x.what, map) + "</p>";
+      if (x.new) c += '<p class="sw-line"><b class="l">What is new</b>' + esc(x.new) + "</p>";
+      if (x.prev) c += '<p class="small">Develops <a href="#novel-' + esc(x.prev) + '">' + esc(((NV.items || []).filter(function (y) { return y.id === x.prev; })[0] || {}).t || x.prev) + "</a></p>";
+      return c + "</div>";
+    }).join("") + "</div>";
+    if (items.length > 30) h += '<p class="small">' + (items.length - 30) + " older entries stay in data/novel.json.</p>";
+    return h + "</section>";
+  }
   /* ---------- state of the art: one card per domain, grouped, with lead held, score, challenger and sources ---------- */
   var SOTA_GROUPS = ["Models", "Media", "Physical", "Compute", "Other"];
   function sotaRow(r) {
@@ -933,6 +959,7 @@
     function row(label, items, href) { if (items.length) rows.push('<li><a href="' + href + '"><b>' + esc(label) + "</b></a> " + items.map(esc).join(" · ") + "</li>"); }
     row("Board", (ctx.conflicts || []).filter(function (t) { return (t.log || []).some(function (e) { return e.date === TD || e.date === y; }); }).map(function (t) { return t.short || t.name; }), "#board");
     row("Threads", (ctx.threads || []).filter(function (t) { return (t.log || []).some(function (e) { return e.date === TD || e.date === y; }); }).map(function (t) { return t.name; }), "#threads");
+    row("New in war", (((ctx.novel || {}).items) || []).filter(function (x) { return x.date === TD || x.date === y; }).map(function (x) { return x.t; }), "#novel");
     row("Countries", (ctx.countries || []).filter(function (c) { return (c.log || []).some(function (e) { return e.date === TD || e.date === y; }); }).map(function (c) { return c.name; }), "#countries");
     row("Horizon", (ctx.horizon || []).filter(function (e) { return e.added === TD || e.updated === TD; }).map(function (e) { return e.t; }), "#horizon");
     row("Congress", (ctx.congress || []).filter(function (c) { return c.added === TD || c.updated === TD; }).map(function (c) { return c.title || c.post; }), "#congress-sec");
@@ -947,7 +974,7 @@
   }
   function contentsBlock() {
     var tiers = [["news", "The news", TIERS.news], ["watch", "The watch", TIERS.watch], ["reading", "The reading", TIERS.reading], ["home", "Home and planning", TIERS.home]];
-    var SN = { world: "World", hybrid: "Hybrid", europe: "Europe", countries: "Priority countries", euregio: "Euregio", army: "Defence & Army", nato: "NATO & allies", deftech: "Defence tech", frontier: "Frontier", markets: "Markets", rates: "Rates", nl: "Netherlands", board: "The board", numbers: "Numbers", fx: "USD/EUR", threads: "Threads", horizon: "Horizon", "congress-sec": "Congress", "exercises-sec": "Exercises", releases: "Releases", sota: "State of the art", production: "Production", feature: "World feature", research: "Research", depth: "Army in depth", ttpsec: "Week in war", aperture: "Aperture", afnorth: "AFNORTH", offduty: "Out and about", dutch: "Taal", snow: "Snow", hockey: "Canes", week: "This week", weather: "Weather", countdown: "Countdowns", tv: "TV", calendar: "Calendar", year: "Year ahead", school: "School year", season: "Season" };
+    var SN = { world: "World", hybrid: "Hybrid", europe: "Europe", countries: "Priority countries", euregio: "Euregio", army: "Defence & Army", nato: "NATO & allies", deftech: "Defence tech", frontier: "Frontier", markets: "Markets", rates: "Rates", nl: "Netherlands", board: "The board", novel: "New in war", numbers: "Numbers", fx: "USD/EUR", threads: "Threads", horizon: "Horizon", "congress-sec": "Congress", "exercises-sec": "Exercises", releases: "Releases", sota: "State of the art", production: "Production", feature: "World feature", research: "Research", depth: "Army in depth", ttpsec: "Week in war", aperture: "Aperture", afnorth: "AFNORTH", offduty: "Out and about", dutch: "Taal", snow: "Snow", hockey: "Canes", week: "This week", weather: "Weather", countdown: "Countdowns", tv: "TV", calendar: "Calendar", year: "Year ahead", school: "School year", season: "Season" };
     return '<h3>In this edition</h3><ol class="toc">' + tiers.map(function (t, i) { return '<li data-tier="' + t[0] + '" class="' + t[0] + '"><a href="#p-' + t[0] + '"><b>' + (i + 1) + " · " + esc(t[1]) + '</b></a><span class="tm"></span><span class="secs">' + t[2].map(function (id) { return '<a href="#' + id + '">' + esc(SN[id] || id) + "</a>"; }).join(" · ") + "</span></li>"; }).join("") + "</ol>";
   }
   function yearAhead(ctx, E, TD, today) {
@@ -1188,6 +1215,7 @@
       tiles.push('<div class="tile nt"><div class="lbl">' + esc(label) + '</div><div class="val">' + num(last[1], dec) + (unit ? ' <small>' + esc(unit) + "</small>" : "") + "</div><p>" + (prev ? '<span class="chg ' + dir(last[1] - prev[1]) + '">' + signed(last[1] - prev[1], dec) + "</span> vs " + esc(fmtShort(prev[0])) + " · " : "") + "as of " + esc(fmtShort(last[0])) + (meta.cadence ? " · " + esc(meta.cadence) : "") + "</p>" + (ser.length > 1 ? '<div class="spark" data-ws="' + esc(k) + '"></div>' : "") + (meta.note ? '<p class="small">' + esc(meta.note) + "</p>" : "") + (meta.source ? '<p class="small">' + (meta.url ? '<a href="' + esc(meta.url) + '" target="_blank" rel="noopener">' + esc(meta.source) + "</a>" : esc(meta.source)) + "</p>" : "") + "</div>");
       ctx._ws[k] = ser.slice(-30);
     });
+    h += novelBlock(ctx, E, TD);
     h += '<section id="numbers" class="watch"><h2>By the numbers</h2>' + (tiles.length ? '<div class="strip nums">' + tiles.join("") + "</div>" : quiet("No series published yet.")) + "</section>";
     if (FX) {
       var range = store("rb:fx:range") === "1y" ? 365 : 90;
@@ -1729,8 +1757,9 @@
     opt("data/incidents.json"), opt("data/bins.json"), opt("data/threads.json"), opt("data/horizon.json"),
     opt("data/fx.json"), opt("data/series.json"), opt("data/canes.json"),
     opt("data/conflicts.json"), opt("data/world-series.json"), opt("data/calendar.json"), opt("data/deadlines.json"),
-    opt("data/congress.json"), opt("data/exercises.json"), opt("data/releases.json"), opt("data/events.json"), opt("data/idioms.json"), opt("data/ski.json"), opt("data/search-index.json"), opt("data/land.json"), opt("data/week.json"), opt("data/corrections.json"), opt("data/research.json"), opt("data/teams.json"), opt("data/tv.json"), opt("data/countries.json"), opt("data/ceu.json")
+    opt("data/congress.json"), opt("data/exercises.json"), opt("data/releases.json"), opt("data/events.json"), opt("data/idioms.json"), opt("data/ski.json"), opt("data/search-index.json"), opt("data/land.json"), opt("data/week.json"), opt("data/corrections.json"), opt("data/research.json"), opt("data/teams.json"), opt("data/tv.json"), opt("data/countries.json"), opt("data/ceu.json"), opt("data/novel.json")
   ]).then(function (r) {
+    ctx.novel = r[27];
     ctx.ceu = r[26] && r[26].countries; ctx.countriesMap = r[25] && r[25].map;
     ctx.week = r[20]; ctx.corrections = r[21]; ctx.research = r[22]; ctx.teams = r[23]; ctx.tv = r[24];
     ctx.countries = r[25] && r[25].countries; ctx.countriesBLR = r[25] && r[25].blr; ctx.countriesUpdated = r[25] && r[25].updated;

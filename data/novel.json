@@ -1,0 +1,69 @@
+{
+ "updated": "2026-11-07",
+ "note": "New uses of technology in war: first-seen or newly combined techniques observed in any theatre and any domain. Append-only. Each entry: id (YYYY-MM-DD-slug), date (when observed or first reported), theatre (board id), actor, t (headline), what (fact sentences with [n] citations), new (one or two sentences on what is new, in the reporters' and actors' terms, no prediction), domains (from the list below), src rows copied from the edition. The run checks ids and titles before appending so a technique is logged once; a later development of the same technique is a new entry that names the earlier id in prev.",
+ "domains": {
+  "uas": "Drones",
+  "cuas": "Counter-drone",
+  "ew": "Electronic warfare",
+  "cyber": "Cyber",
+  "info": "Information operations",
+  "ai": "AI and autonomy",
+  "space": "Space and GNSS",
+  "naval": "Naval and undersea",
+  "ad": "Air and missile defence",
+  "fires": "Fires and munitions",
+  "log": "Logistics and sustainment",
+  "med": "Medical",
+  "eng": "Engineering and fortification",
+  "c2": "Command and control"
+ },
+ "items": [
+  {
+   "id": "2026-11-04-shahed-qr-phishing-leaflets",
+   "date": "2026-11-04",
+   "theatre": "ru-ua",
+   "actor": "Russia",
+   "t": "A Shahed carried leaflets with a QR code that opened a phishing trap",
+   "what": "A Shahed downed over Ukraine on 4 Nov carried printed leaflets with a QR code. Unmanned Systems Forces commander Robert Brovdi called it “a cyber-phishing trap activated when scanning a QR code”. [1]",
+   "new": "A one-way attack drone used as a delivery vehicle for a cyber lure: the payload targets the phone of whoever picks up the wreckage, not the impact point.",
+   "domains": [
+    "uas",
+    "cyber",
+    "info"
+   ],
+   "src": [
+    [
+     1,
+     "Russia arming drones with propaganda, cyber threats, Ukraine's drone commander warns",
+     "Kyiv Independent",
+     "https://kyivindependent.com/russia-arming-drones-with-propaganda-cyber-threats-ukraines-drone-commander-warns",
+     3
+    ]
+   ],
+   "edition": 6
+  },
+  {
+   "id": "2026-11-07-ambush-drones-power-lines",
+   "date": "2026-11-07",
+   "theatre": "ru-ua",
+   "actor": "Russia",
+   "t": "Ambush drones perched on high-voltage power lines",
+   "what": "Defense Express published video of Russian crews landing FPV ambush drones on high-voltage power lines, where they wait powered down for passing vehicles; the outlet describes it as a technique first used by Ukrainian crews and now copied. [1]",
+   "new": "Power-line perches put the waiting drone above the clutter that ground-based detection searches, and the conductor height keeps it clear of infantry.",
+   "domains": [
+    "uas",
+    "eng"
+   ],
+   "src": [
+    [
+     1,
+     "High-voltage power lines become new positions for Russian ambush drones",
+     "Defense Express",
+     "https://en.defence-ua.com/news/high_voltage_power_lines_become_new_positions_for_russian_ambush_drones_video-20322.html",
+     3
+    ]
+   ],
+   "edition": 6
+  }
+ ]
+}

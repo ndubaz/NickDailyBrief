@@ -724,3 +724,13 @@ table.ingest td.d{font-family:var(--f-mono);font-size:12px}
 .sc-t{margin-top:2px}
 .sc-n{margin:var(--s1) 0 0}
 .sota-sum{margin-bottom:var(--s3)}
+/* new uses of technology in war */
+.item.nu{border-left:3px solid var(--c-mkt);padding-left:var(--s2)}
+.badge.nu{background:var(--c-mkt);color:var(--bg);margin-left:6px}
+.nvlist{display:grid;gap:var(--s3)}
+.nv{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--c-mkt);border-radius:var(--r-card);padding:var(--s3)}
+.nv-h{display:flex;flex-wrap:wrap;align-items:center;gap:4px;margin-bottom:var(--s1)}
+.nv-h .d{font-family:var(--f-mono);font-size:12px;color:var(--muted);margin-right:4px}
+.nv-h .chip.dom{color:var(--c-mkt);border-color:var(--c-mkt)}
+.nv h4{margin:0 0 var(--s1);font-family:var(--f-display);font-weight:700;font-size:19px;line-height:1.15}
+.nv p{margin:0 0 var(--s1)}

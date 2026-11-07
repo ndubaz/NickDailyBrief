@@ -41,21 +41,22 @@ if (E) {
 }
 /* cross-links */
 if (E) {
-  const reg = {}; const grab = (f, key, idk) => { const j = load(D(f)); if (j && Array.isArray(j[key])) j[key].forEach((x) => { if (x[idk || "id"]) reg[f.split(".")[0].replace("conflicts", "theatre").replace("threads", "thread").replace("congress", "congress").replace("exercises", "exercise").replace("events", "event").replace("releases", "release").replace("countries", "country") + ":" + x[idk || "id"]] = 1; }); };
-  grab("conflicts.json", "theatres"); grab("threads.json", "threads"); grab("congress.json", "items"); grab("exercises.json", "exercises"); grab("events.json", "events"); grab("releases.json", "releases"); grab("countries.json", "countries");
+  const reg = {}; const grab = (f, key, idk) => { const j = load(D(f)); if (j && Array.isArray(j[key])) j[key].forEach((x) => { if (x[idk || "id"]) reg[f.split(".")[0].replace("conflicts", "theatre").replace("threads", "thread").replace("congress", "congress").replace("exercises", "exercise").replace("events", "event").replace("releases", "release").replace("countries", "country").replace("novel", "novel") + ":" + x[idk || "id"]] = 1; }); };
+  grab("conflicts.json", "theatres"); grab("threads.json", "threads"); grab("congress.json", "items"); grab("exercises.json", "exercises"); grab("events.json", "events"); grab("releases.json", "releases"); grab("countries.json", "countries"); grab("novel.json", "items");
   const cj = load(D("congress.json")); if (cj && cj.watch) cj.watch.forEach((w) => { reg["post:" + w.id] = 1; });
   const seenLinks = new Set();
   (function walk(o, p) { if (Array.isArray(o)) { o.forEach((v, i) => walk(v, p + "[" + i + "]")); return; } if (o && typeof o === "object") { if (Array.isArray(o.links)) o.links.forEach((l) => { seenLinks.add(l); if (!reg[l]) errors.push("link " + l + " at " + p + " matches nothing in the standing files"); }); Object.keys(o).forEach((k) => { if (k !== "sources") walk(o[k], p + "." + k); }); } })(E, "");
   if (!seenLinks.size) warns.push("no item carries links to the trackers");
 }
 /* standing files */
-const files = { "countries.json": "countries", "conflicts.json": "theatres", "threads.json": "threads", "horizon.json": "events", "incidents.json": "incidents", "exercises.json": "exercises", "events.json": "events", "idioms.json": "idioms", "congress.json": "items", "releases.json": "releases" };
+const files = { "novel.json": "items", "countries.json": "countries", "conflicts.json": "theatres", "threads.json": "threads", "horizon.json": "events", "incidents.json": "incidents", "exercises.json": "exercises", "events.json": "events", "idioms.json": "idioms", "congress.json": "items", "releases.json": "releases" };
 const TD = E ? E.date : null;
 Object.keys(files).forEach((f) => { const j = load(D(f)); if (!j) return; if (!Array.isArray(j[files[f]])) { errors.push(f + ": missing array " + files[f]); return; }
   const seen = new Set(); j[files[f]].forEach((x) => { if (x && x.id) { if (seen.has(x.id)) errors.push(f + " repeats id " + x.id); seen.add(x.id); } });
   if (TD && f === "horizon.json") j.events.forEach((x) => { if (x.date && x.date < TD && x.status !== "done") warns.push("horizon.json " + x.id + " is dated " + x.date + ", before the edition (prune or mark done)"); });
   if (TD && f === "events.json") j.events.forEach((x) => { if (x.to && x.to < TD) warns.push("events.json " + x.id + " ended " + x.to + " (prune)"); });
   if (TD && f === "incidents.json") j.incidents.forEach((x) => { if (x.date && (new Date(TD) - new Date(x.date)) / 864e5 > 400) warns.push("incidents.json " + x.id + " is older than 400 days"); });
+  if (f === "novel.json") j.items.forEach((e) => { if (!e.t || !e.what || !(e.domains || []).length) errors.push("novel.json " + e.id + " needs t, what and domains"); (String(e.what || "").match(/\[(\d+(?:\s*,\s*\d+)*)\]/g) || []).forEach((m) => m.replace(/[\[\]]/g, "").split(/\s*,\s*/).forEach((n) => { if (!(e.src || []).some((s) => s[0] === +n)) errors.push("novel.json " + e.id + " cites [" + n + "] without a src row"); })); if (judge.test(e.new || "")) errors.push("novel.json " + e.id + " new line uses assessment language"); });
   if (f === "threads.json") j.threads.forEach((t) => (t.log || []).forEach((e) => { (String(e.t || "").match(/\[(\d+(?:\s*,\s*\d+)*)\]/g) || []).forEach((m) => m.replace(/[\[\]]/g, "").split(/\s*,\s*/).forEach((n) => { if (!(e.src || []).some((s) => s[0] === +n)) errors.push("threads.json " + t.id + " " + e.date + " cites [" + n + "] without a src row"); })); }));
 });
 if (E && TD) { const inc = load(D("incidents.json")); if (inc && Array.isArray(inc.incidents)) { const have = new Set(inc.incidents.map((i) => i.id)); (E.hybrid && E.hybrid.incidents || []).forEach((i) => { if (i.id && !have.has(i.id)) errors.push("edition incident " + i.id + " is not in incidents.json"); }); } }
