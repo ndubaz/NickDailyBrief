@@ -219,27 +219,27 @@
    ]
   },
   {
-   "id": "traitorsuk",
-   "tvmaze": 58174,
-   "title": "The Traitors (UK)",
+   "id": "destx",
+   "tvmaze": 75978,
+   "title": "Destination X",
    "where": "BBC One and iPlayer",
-   "status": "between",
+   "status": "awaiting",
    "last": {
-    "s": 4,
-    "e": 12,
-    "date": "2026-01-23",
-    "name": "The Final"
+    "s": 1,
+    "e": 10,
+    "date": "2025-08-28",
+    "name": "Episode 10"
    },
    "next": null,
-   "note": "Series 4 ended 23 Jan 2026. Series 5 is confirmed and expected in early January 2027; the BBC has not published the date.",
+   "note": "Series 1 ran 30 Jul to 28 Aug 2025 with Rob Brydon. Press reported a second series commissioned in August 2025 for 2026; the BBC has not announced a date or confirmed the host.",
    "src": [
     [
-     "TVMaze: The Traitors",
-     "https://www.tvmaze.com/shows/58174/the-traitors"
+     "TVMaze: Destination X (BBC)",
+     "https://www.tvmaze.com/shows/75978/destination-x"
     ],
     [
-     "TV Guide: The Traitors series 5 confirmed",
-     "https://www.tvguide.co.uk/articles/the-traitors-series-5-confirmed-how-to-apply-for-bbc-show-what-casting-directors-are-looking-for"
+     "Tech Advisor: Destination X season 2",
+     "https://www.techadvisor.com/article/2816387/bbcs-destination-x-season-2-release-date-contestants-host.html"
     ]
    ]
   }
@@ -310,26 +310,9 @@
    "where": "Channel 4",
    "like": [
     "ratw",
-    "traitorsuk"
+    "destx"
    ],
    "why": "Ordinary pairs go on the run from a team of real surveillance professionals; the same map-reading tension as Race Across the World."
-  },
-  {
-   "title": "Destination X",
-   "where": "BBC One (UK), NBC (US)",
-   "like": [
-    "ratw",
-    "amazingrace"
-   ],
-   "why": "Contestants ride a blacked-out bus across Europe and must work out where they are; a puzzle version of the race format."
-  },
-  {
-   "title": "The Traitors (US)",
-   "where": "Peacock",
-   "like": [
-    "traitorsuk"
-   ],
-   "why": "Alan Cumming hosts the Scottish-castle format with American reality veterans; louder than the UK edition but the same game."
   }
  ]
 }
