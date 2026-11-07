@@ -907,9 +907,9 @@
    "id": "arctic",
    "name": "Arctic and High North",
    "short": "Arctic",
-   "lp": "below",
-   "lat": 71.5,
-   "lon": 30.0,
+   "lp": "right",
+   "lat": 74.5,
+   "lon": 40.0,
    "scope": "Northern Fleet activity and the Bastion; NATO High North exercises and Arctic Sentry; Greenland and the US defence areas; Svalbard; the Northern Sea Route and Russian and Chinese Arctic shipping; seabed cables and energy infrastructure in the Barents and Norwegian Seas.",
    "log": [
     {

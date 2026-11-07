@@ -233,7 +233,7 @@
   }
   /* schematic world map for the board */
   function worldMap(theatres, counts, W, land) {
-    W = Math.max(240, Math.round(W || 360)); var lon0 = -100, lon1 = 150, lat0 = -40, lat1 = 72, H = Math.round(W * (lat1 - lat0) / (lon1 - lon0) * 1.25);
+    W = Math.max(240, Math.round(W || 360)); var lon0 = -100, lon1 = 150, lat0 = -40, lat1 = 80, H = Math.round(W * (lat1 - lat0) / (lon1 - lon0) * 1.2);
     function X(lon) { return (lon - lon0) / (lon1 - lon0) * W; }
     function Y(lat) { return H - (lat - lat0) / (lat1 - lat0) * H; }
     var s = '<svg viewBox="0 0 ' + W + " " + H + '" style="overflow:hidden" role="img" aria-label="Map of tracked theatres, sized by events logged in the last 7 days">';
