@@ -1,28 +1,122 @@
 {
- "note": "Research rotation for The reading tier. The morning run summarises one recent publication a day (brief, report, article, monograph, CRS report, war-college paper) and appends it to covered; queue holds publications picked for coming days (Nick or the run adds them). Rotation rules in the prompt: no institution twice within 10 days; alternate regions and themes; prefer the publication's own page as the source (tier 1).",
+ "note": "Research rotation. Three pieces a day: one military or security piece (field \"military\") and two from the wider fields. `rotation` maps each field to institutions and journals the run draws from; `queue` holds publications picked for coming days with their field; `covered` is the append-only log. No institution twice within 10 days within a field.",
  "updated": "2026-11-07",
- "rotation": [
-  "Africa Center for Strategic Studies",
-  "Institute for the Study of War",
-  "RUSI",
-  "IISS",
-  "CSIS",
-  "RAND",
-  "CNAS",
-  "Clingendael",
-  "HCSS",
-  "SWP",
-  "Modern War Institute",
-  "Army War College / SSI",
-  "CRS",
-  "NATO Defense College",
-  "Carnegie",
-  "Chatham House",
-  "ECFR",
-  "Hoover",
-  "Brookings",
-  "Egmont"
- ],
+ "rotation": {
+  "military": [
+   "Africa Center for Strategic Studies",
+   "Institute for the Study of War",
+   "RUSI",
+   "IISS",
+   "CSIS",
+   "RAND",
+   "CNAS",
+   "Clingendael",
+   "HCSS",
+   "SWP",
+   "Modern War Institute",
+   "Army War College / SSI",
+   "CRS",
+   "NATO Defense College",
+   "Carnegie",
+   "Chatham House",
+   "ECFR",
+   "Hoover",
+   "Brookings",
+   "Egmont"
+  ],
+  "economics": [
+   "NBER",
+   "CEPR / VoxEU",
+   "Peterson Institute",
+   "Bruegel",
+   "IMF working papers",
+   "BIS",
+   "ECB working papers",
+   "CPB Netherlands",
+   "Kiel Institute",
+   "Journal of Economic Perspectives"
+  ],
+  "polsci": [
+   "American Political Science Review",
+   "Journal of Democracy",
+   "V-Dem Institute",
+   "Pew Research Center",
+   "Comparative Political Studies",
+   "British Journal of Political Science",
+   "Annual Review of Political Science",
+   "Varieties of Democracy reports"
+  ],
+  "ir": [
+   "International Security",
+   "Foreign Affairs (research essays)",
+   "International Organization",
+   "Security Studies",
+   "Journal of Conflict Resolution",
+   "SIPRI",
+   "Uppsala Conflict Data Program",
+   "Council on Foreign Relations",
+   "Lowy Institute",
+   "Chatham House"
+  ],
+  "social": [
+   "Mobilization",
+   "Social Movement Studies",
+   "ACLED",
+   "Carnegie Civic Research Network",
+   "Crowd Counting Consortium",
+   "European Social Survey",
+   "Pew Research Center"
+  ],
+  "history": [
+   "Journal of Military History",
+   "War in History",
+   "Past & Present",
+   "Journal of Cold War Studies",
+   "Wilson Center History and Public Policy Program",
+   "Imperial War Museums research"
+  ],
+  "tech": [
+   "Stanford HAI",
+   "CSET Georgetown",
+   "Oxford Internet Institute",
+   "Ada Lovelace Institute",
+   "Nature (policy)",
+   "Science (policy forum)",
+   "Brookings TechTank",
+   "Epoch AI"
+  ],
+  "climate": [
+   "IEA",
+   "IPCC",
+   "Copernicus",
+   "PBL Netherlands",
+   "Ember",
+   "Carbon Brief (analysis)",
+   "Nature Climate Change"
+  ],
+  "demography": [
+   "Population and Development Review",
+   "Max Planck Institute for Demographic Research",
+   "UN DESA Population Division",
+   "Migration Policy Institute",
+   "CBS Netherlands",
+   "Eurostat"
+  ],
+  "psychology": [
+   "Psychological Science",
+   "Behavioral Public Policy",
+   "Judgment and Decision Making",
+   "Good Judgment / Forecasting Research Institute",
+   "Annual Review of Psychology"
+  ],
+  "philosophy": [
+   "Journal of Military Ethics",
+   "Ethics & International Affairs",
+   "Stockdale Center",
+   "Stanford Encyclopedia of Philosophy (new entries)",
+   "Philosophy & Public Affairs"
+  ]
+ },
  "queue": [
   {
    "org": "RAND",
@@ -31,7 +125,8 @@
    "date": "",
    "url": "https://www.rand.org/pubs/research_reports/RRA5006-1.html",
    "for": "",
-   "note": "Date reported as 28 Oct 2026 in a search summary, not verified; rand.org refused the request on 7 Nov."
+   "note": "Date reported as 28 Oct 2026 in a search summary, not verified; rand.org refused the request on 7 Nov.",
+   "field": "military"
   },
   {
    "org": "Egmont",
@@ -40,7 +135,8 @@
    "date": "2026-10-22",
    "url": "https://egmontinstitute.be/memoranda-of-understanding-minilateral-defence-frameworks-and-avoiding-the-fragmentation-of-european-defence/",
    "for": "",
-   "note": "Counts more than 160 defence arrangements among EU states, the UK and Ukraine since 2014."
+   "note": "Counts more than 160 defence arrangements among EU states, the UK and Ukraine since 2014.",
+   "field": "military"
   }
  ],
  "covered": [
@@ -49,14 +145,29 @@
    "org": "Africa Center for Strategic Studies",
    "title": "Lessons from Africa's Drone Wars (Africa Security Brief No. 49)",
    "authors": "Nate Allen",
-   "url": "https://africacenter.org/publication/asb49-lessons-africa-drone-wars/"
+   "url": "https://africacenter.org/publication/asb49-lessons-africa-drone-wars/",
+   "field": "military"
   },
   {
    "date": "2026-11-07",
    "org": "HCSS",
    "title": "How Europe can act when NATO cannot: From NATO 3.0 to a European Plan B",
    "authors": "Pieter-Jan Vandoren and Davis Ellison, with Nico Tak and Tim Sweijs",
-   "url": "https://hcss.nl/report/how-europe-can-act-when-nato-cannot-from-nato-3-0-to-a-european-plan-b/"
+   "url": "https://hcss.nl/report/how-europe-can-act-when-nato-cannot-from-nato-3-0-to-a-european-plan-b/",
+   "field": "military"
   }
- ]
+ ],
+ "fields": {
+  "military": "Military and security",
+  "economics": "Economics",
+  "polsci": "Political science",
+  "ir": "International relations",
+  "social": "Social movements and society",
+  "history": "History",
+  "tech": "Technology and science policy",
+  "climate": "Climate, energy and environment",
+  "demography": "Demography and migration",
+  "psychology": "Psychology and decision-making",
+  "philosophy": "Philosophy and ethics of war"
+ }
 }

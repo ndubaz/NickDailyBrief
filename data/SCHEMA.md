@@ -31,7 +31,8 @@ The site is static. `index.html` + `app.js` + `styles.css` never change day to d
 | `data/search-index.json` | Append today's headline block (same fields as the page's search). |
 | `data/teams.json` | Secondary teams (6.1). Saints: append each completed game to `games` as `{date, opp, home, pf, pa, res, week}`, refresh `upcoming` (`{date, opp, home, utc, week}`) and `record` from `https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/no/schedule` (record also at `.../teams/no`). Cardinals: off-season until spring training; then the same shape from `https://statsapi.mlb.com/api/v1/schedule?sportId=1&teamId=138&season=<year>` and `record` from the standings endpoint. Set `updated`. |
 | `data/tv.json` | Followed shows (6.1). For each show refresh `last` and `next` from `https://api.tvmaze.com/shows/<tvmaze>?embed[]=previousepisode&embed[]=nextepisode` (season, number, airdate, name); update `status` (airing, scheduled, renewed, between, awaiting, ended) and `note` when a renewal, premiere date or final is reported, with the source. Set `updated`. Leave `similar` unless Nick asks. |
-| `data/research.json` | Append today's piece to `covered` (`{date, org, title, authors, url}`); take it from `queue` when it was queued; add to `queue` the publications picked for coming days. Never delete from `covered`. |
+| `data/research.json` | Append today's three pieces to `covered` (`{date, field, org, title, authors, url}`); take them from `queue` when queued; add to `queue` the publications picked for coming days with their field. Never delete from `covered`. |
+| `data/philosophy.json` | Append today's note to `covered` (`{date, thinker, work, tradition}`). Never delete. |
 | `data/corrections.json` | Append an entry when an earlier item was wrong: `{date, edition, section, t, src}`. Never edit or delete. |
 | `data/calendar.json` | Only when a school year or holiday list is newly published: add the missing segments. Otherwise leave alone. |
 | `data/bins.json` | Only when a new Rd4 calendar is supplied. |
@@ -124,9 +125,10 @@ The standing files are the Readbook's memory. The page reads them; it never writ
    "events": [[date,"nl|be|de|us|mkt|pro",label,where,what,effect,priority?]] (only what calendar.json does not already hold; a 7th element true puts the row in This week),
    "season": {"title","intro","from","to","ticks","rows":[{"name","sub","color","segs"}],"notes"} | null,
    "otd": {"title","body"}, "culture": {"title","body"} | null},
- "research": {"org","title","authors","date","kind":"brief|report|article|monograph|CRS report|paper","length":"24 pp","src":n,
+ "research": [piece, piece, piece] (7.1: three a day; the first has field "military", the other two come from the wider fields in research.json; an older edition's single object still renders), where piece = {"field","org","title","authors","date","kind":"brief|report|article|monograph|CRS report|paper|working paper","length":"24 pp","src":n,
    "summary":["para",...] (what it argues and shows, 150–250 words), "findings":["…"] (3–6 bullets with the numbers), "table": {...} | omitted,
-   "method":"how it was done and what it cannot show", "sw":"For Brunssum line", "links":[...], "badge":"NEW"} | omitted,
+   "method":"how it was done and what it cannot show", "sw":"For Brunssum line on the military piece, a So what on the others", "links":[...], "badge":"NEW"},
+ "philosophy": {"thinker","work","where" (book, chapter or section),"year","tradition","quote" (exact, from a named edition or translation),"translation","gloss" (two to five sentences on the idea in plain words, with the objection a good student would raise),"why" (one question for the day, optional),"src":n} (7.1: one a day),
  "weekreview": {"title","body":["para",...],"rows":[[date,text]]} | omitted (Sundays: the week ahead, dated; the page adds a computed week-behind scorecard),
  "sources": [[n,title,outlet,url,tier]], "flags": "…", "changelog": [[date,text]]
 }
@@ -255,7 +257,11 @@ Edited rarely. Add a school year when the ministry publishes it. The page merges
 
 ### `data/research.json`
 
-`{ "rotation": [institutions], "queue": [{"org","title","authors","date","url","for","note"}], "covered": [{"date","org","title","authors","url"}] }`. The page shows the last ten covered and the open queue under the day's piece; health flags an institution repeated within 10 days.
+`{ "fields": {code: label}, "rotation": {field: [institutions and journals]}, "queue": [{"field","org","title","authors","date","url","for","note"}], "covered": [{"date","field","org","title","authors","url"}] }`. The page shows the last fifteen covered with their field and the open queue under the day's pieces; health expects three pieces a day with one military, and flags an institution repeated within 10 days in the same field.
+
+### `data/philosophy.json`
+
+`{ "updated", "traditions": [...], "covered": [{"date","thinker","work","tradition"}] }`. Append one row per edition; no thinker within 30 days, no work within 90; touch every tradition within a fortnight.
 
 ### `data/teams.json`
 

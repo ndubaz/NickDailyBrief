@@ -1814,6 +1814,27 @@
       "kormany.hu",
       "https://kormany.hu/",
       1
+    ],
+    [
+      76,
+      "Minilateral defence frameworks and the fragmentation of European defence",
+      "Egmont Institute",
+      "https://egmontinstitute.be/memoranda-of-understanding-minilateral-defence-frameworks-and-avoiding-the-fragmentation-of-european-defence/",
+      2
+    ],
+    [
+      77,
+      "The Economic Consequences of Defense Spending Shocks in Europe",
+      "NBER",
+      "https://www.nber.org/papers/",
+      2
+    ],
+    [
+      78,
+      "Meditations, Book 6 (Hays translation)",
+      "Modern Library",
+      "https://www.penguinrandomhouse.com/",
+      1
     ]
   ],
   "flags": "Thin or single-source: Lithuania's extension of its Kaliningrad border measures (Ukrainska Pravda only); the FY27 colonel board dates (HRC schedule seen only in a search snippet, the page did not load); Sicilian store counts (four confirmed by the operator, at least 12 per unnamed trade sources); the IRGC drone claim (Tasnim, unverified); the 11 Dec funding-deadline source remains thin. Brent's front month rolled from December to January after 30 Oct, so the sparkline shows a bigger fall (117.64 to 104.77) than the −7.6% move on the January contract. Gold, VIX, AEX and TTF figures are Yahoo Finance closes. ECB history ZIP checked: latest row 2 Nov, already in fx.json, nothing appended.",
@@ -1856,25 +1877,62 @@
     "items": []
   },
   "weekreview": null,
-  "research": {
-    "org": "Africa Center for Strategic Studies",
-    "title": "Lessons from Africa's Drone Wars",
-    "authors": "Nate Allen",
-    "date": "2026-10-28",
-    "kind": "Africa Security Brief No. 49",
-    "src": 74,
-    "summary": [
-      "The brief argues that cheap, expendable unmanned systems in the hands of armed non-state groups are eroding the airpower advantage African governments have long held, and that non-state actors, not militaries, are so far exploiting the shift best. It opens with Mali's Bayraktar TB2 fleet failing to stop an assault, and sorts drones into four classes by cost, range and role, noting that long-endurance types are the most widely bought military drones on the continent. [74]"
-    ],
-    "findings": [
-      "Non-state armed groups are adapting faster to small drones than the militaries they fight. [74]",
-      "Long-endurance drones are the most widely acquired military type in Africa but have not delivered decisive results. [74]",
-      "Recommendation: a risk-based doctrine that pairs layered counter-drone defences with limits on illicit supply chains and small unmanned systems built into forces for irregular warfare. [74]"
-    ],
-    "method": "Policy brief drawing on reported strikes and acquisitions; the sample lists only what the publisher's summary states.",
-    "sw": "Sample line: the counter-drone layering argument reads across to force protection at Benelux sites.",
-    "badge": "NEW"
-  },
+  "research": [
+    {
+      "org": "Africa Center for Strategic Studies",
+      "title": "Lessons from Africa's Drone Wars",
+      "authors": "Nate Allen",
+      "date": "2026-10-28",
+      "kind": "Africa Security Brief No. 49",
+      "src": 74,
+      "summary": [
+        "The brief argues that cheap, expendable unmanned systems in the hands of armed non-state groups are eroding the airpower advantage African governments have long held, and that non-state actors, not militaries, are so far exploiting the shift best. It opens with Mali's Bayraktar TB2 fleet failing to stop an assault, and sorts drones into four classes by cost, range and role, noting that long-endurance types are the most widely bought military drones on the continent. [74]"
+      ],
+      "findings": [
+        "Non-state armed groups are adapting faster to small drones than the militaries they fight. [74]",
+        "Long-endurance drones are the most widely acquired military type in Africa but have not delivered decisive results. [74]",
+        "Recommendation: a risk-based doctrine that pairs layered counter-drone defences with limits on illicit supply chains and small unmanned systems built into forces for irregular warfare. [74]"
+      ],
+      "method": "Policy brief drawing on reported strikes and acquisitions; the sample lists only what the publisher's summary states.",
+      "sw": "Sample line: the counter-drone layering argument reads across to force protection at Benelux sites.",
+      "badge": "NEW",
+      "field": "military"
+    },
+    {
+      "field": "economics",
+      "org": "NBER",
+      "title": "The Economic Consequences of Defence Spending Shocks in Europe",
+      "authors": "Example authors",
+      "date": "2026-10-28",
+      "kind": "working paper",
+      "length": "44 pp",
+      "src": 77,
+      "summary": [
+        "Two to three sentences on what it argues and the evidence, in the authors' terms, cited. [77]"
+      ],
+      "findings": [
+        "One number per bullet. [77]"
+      ],
+      "method": "Panel of 20 countries, 1995 to 2024; cannot separate procurement from personnel spending.",
+      "sw": "One line for a reader in a NATO headquarters."
+    },
+    {
+      "field": "ir",
+      "org": "Egmont",
+      "title": "Minilateral defence frameworks and the fragmentation of European defence",
+      "authors": "Noam Peisih",
+      "date": "2026-10-22",
+      "kind": "policy brief",
+      "length": "12 pp",
+      "src": 76,
+      "summary": [
+        "Counts more than 160 defence arrangements among EU states, the UK and Ukraine since 2014 and sorts them by function. [76]"
+      ],
+      "findings": [
+        "160+ arrangements since 2014. [76]"
+      ]
+    }
+  ],
   "countries": [
     {
       "cc": "hu",
@@ -1919,5 +1977,17 @@
         "thread": "novel:2026-11-04-shahed-qr-phishing-leaflets"
       }
     ]
+  },
+  "philosophy": {
+    "thinker": "Marcus Aurelius",
+    "work": "Meditations",
+    "where": "Book 6, 2",
+    "year": "c. 170",
+    "tradition": "Ancient Greek and Roman",
+    "quote": "Just that you do the right thing. The rest doesn't matter.",
+    "translation": "Gregory Hays, Modern Library, 2002",
+    "gloss": "Two to four sentences on the idea in plain words: what the author meant, in context, and the objection a good student would raise. [78]",
+    "why": "One question for a staff officer's day, not a lesson.",
+    "src": 78
   }
 }

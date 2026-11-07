@@ -780,3 +780,12 @@ html.compact .panel,.compact .card{padding:var(--s2)}
 .dens button,.theme button{font:inherit}
 .resume{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--accent);color:var(--accent);background:var(--surface);border-radius:var(--r-chip);padding:4px 10px;font-family:var(--f-mono);font-size:11.5px;text-decoration:none}
 .toc .rr{display:block;font-family:var(--f-mono);font-size:10.5px;color:var(--muted);margin-top:2px}
+/* research by field, philosophy note */
+.rsp{margin-bottom:var(--s3)}
+.rsp:not(.lead) .ft{font-size:20px}
+.rsp .chip.fld{color:var(--p-reading);border-color:var(--p-reading);margin-right:4px;vertical-align:1px}
+.exl .chip.fld{font-size:9.5px;margin-right:4px}
+.phil{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--p-reading);border-radius:var(--r-card);padding:var(--s3) var(--s4)}
+.phil blockquote{margin:0 0 var(--s2);font-family:var(--f-display);font-weight:500;font-size:24px;line-height:1.25;letter-spacing:.005em}
+.phil .attr{margin:0 0 var(--s2);color:var(--muted);font-size:14px}
+.phil .attr b{color:var(--ink)}

@@ -1,0 +1,19 @@
+{
+ "updated": "2026-11-07",
+ "note": "Philosophy note of the day. The run writes one note per edition (edition.philosophy) and appends {date, thinker, work, tradition} here so no thinker repeats within 30 days and no work within 90. `traditions` is the rotation; aim to touch each within a fortnight. Quotes are exact and from a named edition or translation; the gloss explains the idea in plain words; the `why` line may connect it to the day's edition or to a staff officer's work, as a question rather than a lesson.",
+ "traditions": [
+  "Ancient Greek and Roman",
+  "Chinese",
+  "Indian",
+  "Islamic",
+  "Medieval and scholastic",
+  "Early modern",
+  "Enlightenment",
+  "Nineteenth century",
+  "Twentieth century",
+  "Contemporary",
+  "African and diaspora",
+  "Just war and military ethics"
+ ],
+ "covered": []
+}
