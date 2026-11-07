@@ -31,7 +31,7 @@ The edition is a daily snapshot. The standing files under `data/` are the Readbo
 
 | File | Holds | Shown as |
 |---|---|---|
-| `data/conflicts.json` | Ten theatres with a dated log of facts and sources per theatre | The board: map, activity bars, logs |
+| `data/conflicts.json` | Eleven theatres (incl. the Arctic) with a dated log of facts and sources per theatre | The board: map, activity bars, logs |
 | `data/world-series.json` | Dated open-source counts (daily or weekly) | By the numbers tiles; the Wednesday and Sunday charts |
 | `data/threads.json` | Tracked threads with a dated log per thread and the sources behind each entry | Watchlist · Tracked threads |
 | `data/horizon.json` | Dated upcoming events with status and sources | Watchlist · Horizon; the calendar; countdowns |

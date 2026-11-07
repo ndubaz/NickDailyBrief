@@ -206,7 +206,7 @@ The same file carries `tiers` and `watch`: the register of posts the confirmatio
     "log": [ {"date": "2026-11-03", "t": "Fact sentence(s) with citations. [14, 18]", "src": [[14,"title","outlet","url"], ...]} ] } ] }
 ```
 
-Ten theatres. Append one entry per theatre per day it had a reportable event, copying the cited source rows into `src`. Never edit or delete entries; do not add status fields. The page orders rows by last entry, draws a four-week activity bar from the dates, sizes the map marker by the 7-day count, and shows NEW when the last entry is today, UPDATED when yesterday. `short` and `lp` (above, below, left, right) place the map label.
+Eleven theatres (the Arctic and High North added 7 Nov 2026). Append one entry per theatre per day it had a reportable event, copying the cited source rows into `src`. Never edit or delete entries; do not add status fields. The page orders rows by last entry, draws a four-week activity bar from the dates, sizes the map marker by the 7-day count, and shows NEW when the last entry is today, UPDATED when yesterday. `short` and `lp` (above, below, left, right) place the map label.
 
 ### `data/world-series.json`
 

@@ -902,6 +902,103 @@
    ],
    "short": "Venezuela",
    "lp": "below"
+  },
+  {
+   "id": "arctic",
+   "name": "Arctic and High North",
+   "short": "Arctic",
+   "lp": "below",
+   "lat": 71.5,
+   "lon": 30.0,
+   "scope": "Northern Fleet activity and the Bastion; NATO High North exercises and Arctic Sentry; Greenland and the US defence areas; Svalbard; the Northern Sea Route and Russian and Chinese Arctic shipping; seabed cables and energy infrastructure in the Barents and Norwegian Seas.",
+   "log": [
+    {
+     "date": "2026-03-19",
+     "t": "Norway-led Cold Response 26 ended after ten days with about 25,000 troops from 14 nations exercising in northern Norway, Sweden and Finland; it began on 9 Mar. [1]",
+     "src": [
+      [
+       1,
+       "NATO's Arctic moves pose 'direct threat' to Russia, Lavrov says (background on Cold Response 26)",
+       "Reuters via Arctic Today",
+       "https://www.arctictoday.com/natos-arctic-moves-pose-direct-threat-to-russia-foreign-minister-lavrov-says/",
+       2
+      ]
+     ]
+    },
+    {
+     "date": "2026-07-29",
+     "t": "The Northern Fleet began a large naval exercise in the Barents Sea off the Rybachy peninsula near the Norwegian border, with the stated aim of engaging enemy naval formations. [1]",
+     "src": [
+      [
+       1,
+       "Northern Fleet kicks off large Barents-Arctic naval exercise",
+       "The Barents Observer",
+       "https://www.thebarentsobserver.com/security/northern-fleet-kicks-off-large-barentsarctic-naval-exercise/161224",
+       3
+      ]
+     ]
+    },
+    {
+     "date": "2026-08-31",
+     "t": "Foreign Minister Sergei Lavrov wrote that NATO's Arctic activity, including the Arctic Sentry vigilance activity launched in February under Joint Force Command Norfolk, is a 'direct threat' to Russia's security and promised an 'asymmetric' response; SHAPE replied that the alliance is defensive and poses no threat to anyone. [1, 2]",
+     "src": [
+      [
+       1,
+       "NATO's Arctic moves pose 'direct threat' to Russia, foreign minister Lavrov says",
+       "Reuters via Internazionale",
+       "https://www.internazionale.it/ultime-notizie-reuters/2026/08/31/nato-s-arctic-moves-pose-direct-threat-to-russia-foreign-minister-lavrov-says",
+       2
+      ],
+      [
+       2,
+       "Lavrov calls NATO's Arctic operations 'direct threat'",
+       "Kyiv Independent",
+       "https://kyivindependent.com/russias-lavrov-calls-nato-arctic-operation-threat/",
+       3
+      ]
+     ]
+    },
+    {
+     "date": "2026-09-22",
+     "t": "The United States, Denmark and Greenland signed an arrangement supplementing the 1951 Greenland defence agreement at the UN General Assembly: the US may expand Pituffik Space Base and establish defence areas at Narsarsuaq and Mestersvig, with free movement between defence areas; new infrastructure needs trilateral consultation and Danish sovereignty is reaffirmed. Greenland's parliament later approved it. [1, 2]",
+     "src": [
+      [
+       1,
+       "Trump signs Greenland security deal allowing US to expand military presence",
+       "Euronews",
+       "https://www.euronews.com/2026/09/22/trump-signs-greenland-security-deal-allowing-us-to-expand-military-presence",
+       3
+      ],
+      [
+       2,
+       "What to know about the agreement signed by President Trump and the leaders of Denmark and Greenland",
+       "AP via ABC News",
+       "https://abcnews.com/International/wireStory/agreement-signed-president-trump-leaders-denmark-greenland-136678876",
+       2
+      ]
+     ]
+    },
+    {
+     "date": "2026-10-18",
+     "t": "The Barents Observer reported NOTAMs and navigational warnings for restricted areas near Franz Josef Land, Rybachy and Novaya Zemlya with overlapping periods, without a Northern Fleet announcement of a named exercise; NATO's Maritime Command said its High North posture is defensive and proportionate and that it will keep exercising and maintaining presence. [1, 2]",
+     "src": [
+      [
+       1,
+       "NATO maintains intensive surveillance amid Russian Arctic training and weapons testing",
+       "The Barents Observer",
+       "https://www.thebarentsobserver.com/security/nato-maintains-intensive-surveillance-amid-russian-arctic-training-and-weapons-testing/459831",
+       3
+      ],
+      [
+       2,
+       "NATO rebuffs Russia's claims Arctic mission is direct threat",
+       "Newsweek",
+       "https://www.newsweek.com/nato-rebuffs-russian-claims-arctic-mission-direct-threat-12386316",
+       3
+      ]
+     ]
+    }
+   ]
   }
  ]
 }

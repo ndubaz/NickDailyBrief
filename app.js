@@ -1166,7 +1166,7 @@
     h += part("watch", "Part 2", "The watch", "The memory: the board, the numbers, the trackers and the registers.", "p-watch");
     h += '<section id="board" class="watch"><h2>The board <span class="num">events logged, not a measure of intensity</span></h2>';
     if (board) {
-      h += '<div class="panel"><div class="lbl">Ten theatres · filled marker = events logged in 7 days, sized by count</div><div class="chart" id="worldmap" style="min-height:150px"></div></div>';
+      h += '<div class="panel"><div class="lbl">' + (ctx.conflicts || []).length + ' theatres · filled marker = events logged in 7 days, sized by count</div><div class="chart" id="worldmap" style="min-height:150px"></div></div>';
       h += '<div class="fug board">' + nq() + board.map(function (b) {
         var hd = '<details class="thread brow ' + fu(b.badge) + '" id="th-' + esc(b.t.id) + '" open><summary><span class="tname">' + esc(b.t.name) + act4(b.weeks) + badge(b.badge) + inToday("theatre", b.t.id) + "</span>";
         hd += b.last ? '<span class="tlast"><span class="d">' + esc(fmtShort(b.last.date)) + "</span>" + rich(b.last.t, srcMap(b.last.src)) + "</span>" : '<span class="tlast small">No events logged yet.</span>';
