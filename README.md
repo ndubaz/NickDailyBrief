@@ -1,6 +1,6 @@
 # Nick's Daily Readbook
 
-A personal daily briefing, installed on the iPhone as a home-screen web app. Static site: no build step, no server code. Version 6.1.
+A personal daily briefing, installed on the iPhone as a home-screen web app. Static site: no build step, no server code. Version 7.0.
 
 ## How it works
 
@@ -13,9 +13,9 @@ A personal daily briefing, installed on the iPhone as a home-screen web app. Sta
 
 One scroll in five tiers, everything expanded, nothing folded:
 
-1. **Today.** Masthead with the data-update time, the Today strip, Five things, the pick, Today and tomorrow, a computed "Since yesterday" list of what moved in the memory, and a contents block with a read time per tier.
+1. **The Brief.** Masthead with the last-run time, the Today strip, the takeaways (numbered, factual, written last by the run), the pick, Today and tomorrow, what changed in the memory since yesterday, what to watch in the next seven days, what we do not know, the indicator row, and a contents block with a read time and read receipt per tier.
 2. **The news.** World developments, Security (hybrid, Europe, Priority countries: Hungary, Slovakia, Germany, then Euregio), Defence & Army (DoD, Army, Congress, Career, leaders on the record), NATO & allies, Defence tech, Frontier, Markets, Rates, Netherlands. Same item anatomy everywhere; items link to the trackers they update.
-3. **The watch.** The board with its map, New in war, the numbers row, the USD/EUR tracker, threads, horizon, the Congress tracker (bills, budget, confirmations as a stage matrix) with the watched-post register, the exercise calendar, the release log, the state-of-the-art table and production series.
+3. **The record** (after The reading; at weekends The reading comes first). The board with its map, Ukraine (front line from DeepState, the nightly numbers, talks), Indicators and warning, New in war, the numbers row, the USD/EUR tracker, threads, horizon, the Congress tracker (bills, budget, confirmations as a stage matrix) with the watched-post register, the exercise calendar, the release log, the state-of-the-art table, production series and the forecast ledger. Every log shows its last ten entries; the rest stays in the file and the archive search.
 4. **The reading.** The World feature, the Research piece (one recent publication a day, rotating across institutions), the Army in depth piece, the Saturday week in war, Aperture.
 5. **Home and planning.** AFNORTH, Out and about (weekend first, nearest first, with the forecast), Taal, Snow in season, the Canes with the Saints and Cardinals beneath, then the Planner: the Sunday review, the week board, weather, countdowns, TV, the calendar (the agenda starts today and folds after two weeks), the year-ahead board with leave windows, the school year and the seasonal planner.
 
@@ -23,7 +23,7 @@ The sticky header carries one chip per tier and the "New only" toggle. Anything 
 
 Wording rules for the run are in `STYLE.md`. The exchange rate is shown everywhere as USD/EUR, euros per dollar. The three typefaces are self-hosted in `fonts/` and declared at the top of `styles.css`.
 
-`node tools/validate.js` checks the latest edition and every standing file (citations, jump ids, source tiers, cross-link ids, the USD/EUR rule, the no-assessment rule for the World part, record and series lengths). The morning run executes it before committing.
+`node tools/uafront.js` refreshes the Ukraine front line from DeepState. `node tools/validate.js` checks the latest edition and every standing file (citations, jump ids, source tiers, cross-link ids, the USD/EUR rule, the no-assessment rule for the World part, record and series lengths). The morning run executes it before committing.
 
 ## The memory model
 
@@ -50,6 +50,10 @@ The edition is a daily snapshot. The standing files under `data/` are the Readbo
 | `data/congress.json` | Key defence bills, the budget cycle, confirmations, and the register of 38 watched posts (Army leadership, Joint Staff, combatant commands, Army four-star commands, Europe-based general officers) | Congress tracker in Profession, deadlines on the Planner |
 | `data/exercises.json` | NATO and allied exercises with dates | Exercise calendar, Planner |
 | `data/releases.json` | Dated AI and tech releases, plus the Friday state-of-the-art table | Frontier |
+| `data/indicators.json` | Named indicators with thresholds, status and a change history | Indicator row in the Brief; Indicators and warning board |
+| `data/forecasts.json` | The run's dated, falsifiable calls with probabilities, resolved on their dates | Forecast ledger with Brier score; Sunday review |
+| `data/questions.json` | Open questions the Readbook is carrying, closed with the answer | What we do not know, in the Brief |
+| `data/ua-front.json` | Ukraine front line from DeepState, simplified by `tools/uafront.js` on Mondays | Ukraine panel map |
 | `data/novel.json` | First-seen uses of technology in war: what happened, what is new, domains, theatre, sources | New in war in The watch; NEW USE badge on the news item |
 | `data/countries.json` | Profiles and dated logs for Hungary, Slovakia and Germany: government, election clock, NATO posture and spending series, stances, seven-baseline-requirement notes, map points | Priority countries in The news (map, spending chart, election clocks, resilience grids), Since yesterday, health |
 | `data/ceu.json` | Central Europe country outlines (Natural Earth, static) | The priority-countries map |

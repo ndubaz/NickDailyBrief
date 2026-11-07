@@ -1,0 +1,38 @@
+{
+ "updated": "2026-11-07",
+ "note": "Forecast ledger, run only. Dated, falsifiable calls with a probability and a resolution date. The run adds one to three a week, never edits a call after it is made, resolves each on its date (yes, no, or void when the question stopped being meaningful) with the fact and source, and the page keeps a Brier score. Seed entries dated 7 Nov 2026 were made at the 7.0 build.",
+ "items": [
+  {
+   "id": "2026-11-07-abu-dhabi-round",
+   "q": "A trilateral Russia–Ukraine–US round is held in Abu Dhabi on 10 Nov with both delegations present",
+   "p": 0.8,
+   "made": "2026-11-07",
+   "resolves": "2026-11-11",
+   "domain": "Ukraine",
+   "theatre": "ru-ua",
+   "status": "open",
+   "why": "Putin named the date on 6 Nov and Ukraine named its delegation head."
+  },
+  {
+   "id": "2026-11-07-belgium-government",
+   "q": "The De Wever government is still in office on 30 Nov",
+   "p": 0.6,
+   "made": "2026-11-07",
+   "resolves": "2026-11-30",
+   "domain": "Europe",
+   "status": "open",
+   "why": "The King has held the resignation in suspense and is consulting party leaders."
+  },
+  {
+   "id": "2026-11-07-ndaa-conference",
+   "q": "The FY27 NDAA conference report is filed in the House before 19 Dec",
+   "p": 0.5,
+   "made": "2026-11-07",
+   "resolves": "2026-12-19",
+   "domain": "Congress",
+   "congress": "ndaa-fy27",
+   "status": "open",
+   "why": "Both chambers have passed bills; the last three years' reports were filed between 6 and 14 Dec."
+  }
+ ]
+}

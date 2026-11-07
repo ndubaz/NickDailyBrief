@@ -1,5 +1,5 @@
 {
-  "v": "6.0",
+  "v": "7.0",
   "date": "2026-11-07",
   "weekday": "Saturday",
   "edition": 0,
@@ -1888,5 +1888,36 @@
         "country:hu"
       ]
     }
-  ]
+  ],
+  "brief": {
+    "takeaways": [
+      {
+        "t": "Russia launched 227 drones overnight into 6 Nov and the Air Force reported 196 downed; trilateral talks are set for Abu Dhabi on 10 Nov. [9, 12]",
+        "to": "board",
+        "part": "world",
+        "links": [
+          "theatre:ru-ua"
+        ]
+      },
+      {
+        "t": "Belgium's King kept De Wever's resignation in suspense and sees him again on Friday; the budget runs on provisional twelfths. [50]",
+        "to": "europe",
+        "part": "sec"
+      },
+      {
+        "t": "Hungary's government and the Commission published a timetable for releasing the frozen cohesion funds. [75]",
+        "to": "countries",
+        "part": "sec",
+        "links": [
+          "country:hu"
+        ]
+      }
+    ],
+    "unknowns": [
+      {
+        "q": "What did the QR code on the 4 Nov Shahed leaflets link to?",
+        "thread": "novel:2026-11-04-shahed-qr-phishing-leaflets"
+      }
+    ]
+  }
 }

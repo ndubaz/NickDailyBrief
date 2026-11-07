@@ -19,6 +19,10 @@ The site is static. `index.html` + `app.js` + `styles.css` never change day to d
 | `data/congress.json` | Three lanes: key defence bills, the budget cycle, confirmations. Add a row when a bill is introduced, a budget deadline is set, a post falls vacant or a nominee is named; move `stage`, add the date to `dates`, set `updated`, copy cited source rows into `src`. Never delete rows. |
 | `data/exercises.json` | Add announced NATO and allied exercises; set `updated` when dates change; never delete (the page hides those older than 60 days). |
 | `data/releases.json` | Append one entry per AI, chip, robotics or autonomy release, published result or shipped capability (`id` as `YYYY-MM-DD-lab-slug`, `kind`, `t`, `lab`, `n`, `date`, `src`). On Fridays rewrite `sota` (one object per domain: group, system, lab, cc, open, metric, score, unit, since, runner, changed, note, src). |
+| `data/indicators.json` | Indicators and warning (7.0). For each indicator with a fact in the window, set `status` (green, amber, red) against its `threshold`; append to `history` only when the status changes, with the date and the fact. Add an indicator when a thread or theatre gains a watchable threshold; never delete. Set `updated` every day you checked. |
+| `data/forecasts.json` | Forecast ledger (7.0, run only). One to three new calls a week: a falsifiable question, `p` strictly between 0 and 1, `made`, `resolves`, `domain`, optional theatre, country or congress id, and `why`. Never edit a call after it is made. On or after `resolves`, set `status` yes, no or void, `resolvedDate` and `note` with the fact and source. |
+| `data/questions.json` | Open questions (7.0). Add a question when an item turns on a fact nobody has published; close it with `status: "closed"`, `closed` date and `answer` with its source. Never delete. |
+| `data/ua-front.json` | Ukraine front line (7.0). Mondays, run `node tools/uafront.js`; it downloads the DeepState layer and rewrites the file. Do not edit by hand. |
 | `data/novel.json` | New uses of technology in war (6.6). Each day, scan the window for a technique seen for the first time or newly combined, in any theatre and any domain (drones, counter-drone, electronic warfare, cyber, information operations, AI and autonomy, space and GNSS, naval and undersea, air and missile defence, fires, logistics, medical, engineering, command and control). Check `items` by id and title first; append `{id, date, theatre, actor, t, what, new, domains, src, edition, prev}` only when it is not already logged. Link the news item that reports it with `novel:<id>`. Zero to three a day; none is normal. |
 | `data/countries.json` | Priority countries (6.6): Hungary and Slovakia (priority), Germany (secondary). Append `{date, t, src}` to a country's `log` for each dated fact on international relations, internal politics relevant to NATO, or civil resilience; update `gov`, `election`, `nato`, `stance` and `blr` only when the fact changes, with the source in `src`; set `verified: true` once every profile line is checked against an official page. Never delete log entries. Set `updated`. |
 | `data/events.json` | Add events within about 90 minutes of Hoensbroek with a source; prune events whose `to` has passed; set `updated` when details change. |
@@ -83,6 +87,7 @@ The standing files are the Readbook's memory. The page reads them; it never writ
    "week": {"t": "Fridays only: week in hybrid summary"} | null,
    "note": "…"
  },
+ "brief": {"takeaways": [{"t", "to", "part", "links"}] (7.0: three to six numbered, quotable, factual sentences written last, after the edition; each names the fact and the date, no assessment language; they replace Five things at the top of the Brief), "unknowns": [{"q", "thread"}] (optional; otherwise the page shows the open items of questions.json)},
  "europe": [item], "countries": [item + {"cc": "hu|sk|de"}] (6.6: today's news from the priority countries, shown under each country's profile; omit when nothing happened), "euregio": [item] (section omitted when empty),
  "nato": {"items": [item] (3–5: NATO HQ and the allied armies: DE, NL, BE, FR, PL, UK, Nordics, Baltics),
    "table": {"title","asof","head":[...],"rows":[[...]],"src"} | null (allied spending and strength, from NATO's own figures; only in the edition of the day NATO publishes new figures, otherwise null. The page shows it only when asof is within 7 days)},
@@ -145,7 +150,7 @@ The World feature rota: Monday "Theatre in numbers" (table), Tuesday "Actor on t
 
 - The page is organised in five tiers (Today, The news, The watch, The reading, Home and planning); every edition object stays where it was, so no field moved. Jump ids added: `research`, `congress-sec`, `exercises-sec`, `production`, `depth`, `ttpsec`, `since`, `year`, `weekreview`, `tv` (6.1). Decisions due was removed in 6.1.
 - `sources` rows gain the tier field; items gain optional `links`; `weekreview` added for Sundays.
-- `"v": "6.5"` (6.0 and 6.1 still validate).
+- `"v": "7.0"` (6.0 to 6.5 still validate). 7.0 reorders the page: the Brief (takeaways, what changed, what to watch, what we do not know, indicators), then The news, The reading and The record (the former watch, each tracker showing its last ten log entries), then Home and planning. On Saturdays and Sundays The reading comes before The news. New record sections: Ukraine, Indicators and warning, Forecast ledger.
 
 ### Changes from v4.0
 
@@ -179,6 +184,22 @@ The same file carries `tiers` and `watch`: the register of posts the confirmatio
 ### `data/releases.json`
 
 `{ "releases": [ {"id","date","kind":"model|chip|robot|autonomy|result|tool","t","lab","n","src"} ], "sota": {"asof","rows":[{"domain","group":"Models|Media|Physical|Compute","system","lab","cc","open":bool,"metric","score","unit","since","runner":{"system","lab","score"},"changed":bool,"note","src":[[n,title,outlet,url]]}]} }`. The release log shows the last 45 days; `sota` is rewritten on Fridays. The page shows a summary strip (leads by country, leads changed this week, open-weights leaders, longest-held lead), a bar chart of days each lead has been held, then one card per domain grouped by `group` with the lab, country and open-weights chips, the metric and score, the challenger and gap on the same metric, the lead date and the note. The older array form `[domain, system, lab, since, src]` still renders.
+
+### `data/indicators.json`
+
+`{ "updated", "items": [ {"id","name","theatre","country","congress","threshold","series","rule":"mean7|incidents7|fx","status":"green|amber|red","src","history":[{"date","status","t"}]} ] }`. The page draws the status row in the Brief, lists the ones that changed in two days, and the board in The record with the current value for numeric rules, the last change and the last eight changes as a strip.
+
+### `data/forecasts.json`
+
+`{ "updated", "items": [ {"id","q","p","made","resolves","domain","theatre","country","congress","status":"open|yes|no|void","why","resolvedDate","note","src"} ] }`. The page shows open calls with a probability bar, resolved calls with their Brier contribution, and the mean Brier score, calibration and open count; the Sunday review counts the week's resolutions.
+
+### `data/questions.json`
+
+`{ "updated", "items": [ {"id","q","thread","opened","status":"open|closed","closed","answer","src"} ] }`. `thread` is a link id (`theatre:`, `thread:`, `country:`, `novel:`, `congress:`). Open questions show in the Brief under "What we do not know".
+
+### `data/ua-front.json`
+
+Written by `tools/uafront.js`: `{ "asof", "asofText", "countries": {ISO: rings}, "occupied", "occupied2014", "unknown", "liberated": [rings], "arrows": [[lat, lon]] }`, coordinates [lon, lat] rounded to 0.001. Drawn in the Ukraine panel of The record.
 
 ### `data/novel.json`
 

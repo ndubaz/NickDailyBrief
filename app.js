@@ -11,8 +11,11 @@
               hockey:["Hurricanes","--p-hockey"], home:["Bins & home","--p-home"], school:["School breaks","--p-pro"], watch:["Horizon","--p-watch"], deadline:["Deadlines","--crit"], info:["Clocks","--muted"], out:["Out and about","--c-mkt"], ex:["Exercises","--p-pro"], me:["Yours","--ink"], nfl:["Saints & Cardinals","--p-sec"], tv:["TV","--p-reading"] };
   var CODE_COLORS = { CYB:"--c-us", SAB:"--crit", UAS:"--c-mkt", UWI:"--c-pro", GNSS:"--c-be", INF:"--c-nl", ELX:"--c-nl", MIG:"--c-de", PRX:"--warn", AIR:"--c-de", SEA:"--c-pro", COE:"--c-be", KIN:"--crit" };
   var PART_CLASSES = ["front","news","watch","reading","home"];
-  var PARTS = [["front","Today","#front"],["news","The news","#p-news"],["watch","The watch","#p-watch"],["reading","The reading","#p-reading"],["home","Home and planning","#p-home"]];
-  var TIERS = { news: ["world","hybrid","europe","countries","euregio","army","nato","deftech","frontier","markets","rates","nl"], watch: ["board","novel","numbers","fx","threads","horizon","congress-sec","exercises-sec","releases","sota","production"], reading: ["feature","research","depth","ttpsec","aperture"], home: ["afnorth","offduty","dutch","snow","hockey","week","weather","countdown","tv","calendar","year","school","season"] };
+  var PART_DEF = { front: ["front","Today","#front"], news: ["news","The news","#p-news"], watch: ["watch","The record","#p-watch"], reading: ["reading","The reading","#p-reading"], home: ["home","Home and planning","#p-home"] };
+  var PARTS = ["front","news","reading","watch","home"].map(function (k) { return PART_DEF[k]; });
+  function setPartOrder(weekend) { PARTS = (weekend ? ["front","reading","news","watch","home"] : ["front","news","reading","watch","home"]).map(function (k) { return PART_DEF[k]; }); }
+  function pn(cls) { var i = PARTS.map(function (p) { return p[0]; }).indexOf(cls); return "Part " + i; }
+  var TIERS = { news: ["world","hybrid","europe","countries","euregio","army","nato","deftech","frontier","markets","rates","nl"], watch: ["board","ukraine","indicators","novel","numbers","fx","threads","horizon","congress-sec","exercises-sec","releases","sota","production","forecasts"], reading: ["feature","research","depth","ttpsec","aperture"], home: ["afnorth","offduty","dutch","snow","hockey","week","weather","countdown","tv","calendar","year","school","season"] };
   var EVCAT = { music:"Music", markets:"Markets", museums:"Museums", sport:"Sport", kids:"Kids", food:"Food", outdoors:"Outdoors", festival:"Festivals" };
   var SERIES_BY_LABEL = [["s&p 500","spx"],["nasdaq","ndx"],["aex","aex"],["brent","brent"],["dutch ttf","ttf"],["ttf","ttf"]];
   var HOME = { lat: 50.89, lon: 5.98, name: "Heerlen" };
@@ -390,7 +393,7 @@
     if (!view.length) return quiet("No threads are open.");
     return '<div class="fug">' + nq() + view.map(function (v) {
       var h = '<details class="thread ' + fu(v.badge) + '" id="thread-' + esc(v.t.id) + '" open><summary><span class="tname">' + esc(v.t.name) + '<span class="chip st ' + esc(v.status) + '">' + esc(v.status) + "</span>" + badge(v.badge) + inToday("thread", v.t.id) + '</span><span class="tlast"><span class="d">' + esc(fmtShort(v.last.date)) + "</span>" + rich(v.last.t, srcMap(v.last.src)) + "</span></summary>";
-      h += '<div class="tlog">' + (v.log.length > 1 ? logList(v.log.slice(0, -1), "sub") : "") + '<div class="meta">Opened ' + esc(v.t.opened ? fmtLong(v.t.opened) : "—") + " · " + v.log.length + (v.log.length === 1 ? " entry" : " entries") + (v.status === "quiet" ? " · quiet: nothing logged for " + v.age + " days" : "") + "</div></div></details>";
+      h += '<div class="tlog">' + (v.log.length > 1 ? logList(v.log.slice(0, -1).slice(-9), "sub") : "") + '<div class="meta">Opened ' + esc(v.t.opened ? fmtLong(v.t.opened) : "—") + " · " + v.log.length + (v.log.length === 1 ? " entry" : " entries") + (v.log.length > 10 ? ", last 10 shown" : "") + (v.status === "quiet" ? " · quiet: nothing logged for " + v.age + " days" : "") + "</div></div></details>";
       return h;
     }).join("") + "</div>";
   }
@@ -672,7 +675,7 @@
   }
 
   /* ---------- health checks: when to remodel ---------- */
-  var PAGE_V = "6.1";
+  var PAGE_V = "7.0";
   function health(E, ctx, TD, words) {
     var rows = [], realToday = key(new Date());
     function add(name, level, detail) { rows.push([name, level, detail]); }
@@ -706,6 +709,9 @@
     var WS = ctx.worldSeries || { meta: {}, series: {} }, wsRows = Object.keys(WS.series || {}).map(function (k) { var sr = WS.series[k] || [], m = (WS.meta || {})[k] || {}, last = sr.length ? sr[sr.length - 1][0] : null, lim = m.cadence === "weekly" ? 10 : 3; return [k, last, last ? daysBetween(last, TD) > lim : true]; });
     var wsBad = wsRows.filter(function (r) { return r[2]; }).map(function (r) { return r[0] + (r[1] ? " (" + fmtShort(r[1]) + ")" : " (empty)"); });
     add("World series", wsBad.length >= wsRows.length ? "act" : wsBad.length ? "watch" : "ok", wsBad.length ? "not kept up: " + wsBad.join(", ") : wsRows.length + " series current");
+    if (ctx.indicators) fresh("Indicators", ctx.indicators.updated, 3, 7, "last status check");
+    if (ctx.forecasts) { var fo = (ctx.forecasts.items || []).filter(function (f) { return f.status === "open" && f.resolves < TD; }); add("Forecast ledger", fo.length ? "act" : "ok", fo.length ? fo.length + " overdue to resolve" : (ctx.forecasts.items || []).filter(function (f) { return f.status === "open"; }).length + " open, none overdue"); }
+    if (ctx.uaFront) fresh("Ukraine front line", ctx.uaFront.asof, 8, 15, "DeepState layer as of");
     if (ctx.novel) fresh("New in war log", (ctx.novel.items || []).length ? lastDate(ctx.novel.items, function (x) { return x.date; }) : "", 10, 21, "last technique logged");
     if (ctx.countries) fresh("Priority countries", ctx.countriesUpdated || lastDate(ctx.countries, function (c) { return lastDate(c.log, function (e) { return e.date; }); }), 7, 14, "last log entry");
     if (ctx.teams) fresh("Saints and Cardinals", ctx.teams.updated, 5, 12, "last refresh");
@@ -781,6 +787,92 @@
     return '<h3>Data ingest <span class="small">newest entry per standing file, as of this edition</span></h3>' + table(["File", "Newest", "Age", "Rows"], rows.map(function (r) { var n = daysBetween(r[1], TD); return '<tr class="' + (n >= 3 ? "soon" : "") + '"><td><b>' + esc(r[0]) + '</b></td><td class="d">' + esc(fmtShort(r[1])) + (r[1].slice(0, 4) !== TD.slice(0, 4) ? " " + r[1].slice(0, 4) : "") + '</td><td class="d">' + (n <= 0 ? "today" : n === 1 ? "1 day" : n + " days") + '</td><td class="d">' + (size[r[0]] != null ? size[r[0]].toLocaleString("en-GB") : "") + "</td></tr>"; }).join(""), "lbl1 ingest").replace('class="tw stack"', 'class="tw"');
   }
 
+  /* ---------- 7.0: the Brief helpers ---------- */
+  function watchNext(PEV, ctx, TD) {
+    var end = addDays(TD, 7), rows = (PEV || []).filter(function (e) { return e.date > TD && e.date <= end && (e.cat === "watch" || e.cat === "pro" || e.cat === "ex" || e.cat === "deadline" || e.cat === "me" || e.src === "congress"); });
+    (ctx.countries || []).forEach(function (c) { if (c.election && c.election.next && c.election.next > TD && c.election.next <= end) rows.push({ date: c.election.next, cat: "pro", t: c.name + " election", sub: "", src: "countries" }); });
+    (((ctx.forecasts || {}).items) || []).forEach(function (f) { if (f.status === "open" && f.resolves > TD && f.resolves <= end) rows.push({ date: f.resolves, cat: "watch", t: "Forecast resolves: " + f.q, sub: Math.round(f.p * 100) + "%", src: "forecasts" }); });
+    var seen = {}; rows = rows.filter(function (e) { var k = e.date + e.t; if (seen[k]) return false; seen[k] = 1; return true; }).sort(function (a, b) { return a.date < b.date ? -1 : a.date > b.date ? 1 : 0; }).slice(0, 8);
+    return '<h3 id="watchnext">What to watch <span class="small">next seven days</span></h3>' + (rows.length ? '<ul class="clean wn">' + rows.map(function (e) { return '<li><span class="d">' + esc(DOW[pd(e.date).getDay()] + " " + fmtShort(e.date)) + '</span><span class="w"><span class="dot" style="background:' + catColor(e.cat) + '"></span>' + esc(e.t) + " " + icsLink(e.t, e.date, e.end, e.sub) + (e.sub ? '<span class="small">' + esc(e.sub) + "</span>" : "") + "</span></li>"; }).join("") + "</ul>" : quiet("Nothing dated in the next seven days."));
+  }
+  function unknownsBlock(BR, ctx, TD) {
+    var list = (BR.unknowns && BR.unknowns.length ? BR.unknowns.map(function (u) { return typeof u === "string" ? { q: u } : u; }) : (((ctx.questions || {}).items) || []).filter(function (q) { return q.status === "open"; })).slice(0, 5);
+    if (!list.length) return "";
+    return '<h3 id="unknowns">What we do not know <span class="small">open questions the Readbook is carrying</span></h3><ul class="clean unk">' + list.map(function (q) { var l = q.thread ? linkChips([q.thread]) : ""; return "<li>" + esc(q.q) + (q.opened ? ' <span class="small">since ' + esc(fmtShort(q.opened)) + "</span>" : "") + l + "</li>"; }).join("") + "</ul>";
+  }
+  var IND_COL = { green: "var(--up)", amber: "var(--warn)", red: "var(--crit)" };
+  function indicatorValue(x, ctx) {
+    try {
+      if (x.rule === "mean7" && x.series && ctx.worldSeries && ctx.worldSeries.series[x.series]) { var a = ctx.worldSeries.series[x.series].slice(-7); return a.length ? Math.round(a.reduce(function (t, p) { return t + p[1]; }, 0) / a.length) + " (7-day mean of " + a.length + ")" : ""; }
+      if (x.rule === "incidents7" && ctx.incidents) { var TD = ctx._TD; return ctx.incidents.filter(function (i) { return daysBetween(i.date, TD) >= 0 && daysBetween(i.date, TD) < 7; }).length + " in 7 days"; }
+      if (x.rule === "fx" && ctx.fx) { var last = ctx.fx.series[ctx.fx.series.length - 1]; return (1 / last[1]).toFixed(4) + " on " + fmtShort(last[0]); }
+    } catch (e) { return ""; }
+    return "";
+  }
+  function indicatorsMoved(ctx, TD) {
+    var items = ((ctx.indicators || {}).items) || [], y = addDays(TD, -1), moved = items.filter(function (x) { return (x.history || []).some(function (hh) { return hh.date === TD || hh.date === y; }); });
+    if (!items.length) return "";
+    return '<h3 id="indmoved">Indicators <span class="small">' + (moved.length ? moved.length + " changed in two days" : "none changed in two days") + ' · <a href="#indicators">board</a></span></h3><p class="indrow">' + items.map(function (x) { return '<a href="#ind-' + esc(x.id) + '" class="indchip" title="' + esc(x.name + ": " + x.status) + '"><i style="background:' + IND_COL[x.status] + '"></i>' + esc(x.name.length > 28 ? x.name.slice(0, 26) + "…" : x.name) + "</a>"; }).join("") + "</p>" + (moved.length ? '<ul class="clean small">' + moved.map(function (x) { var hh = x.history[x.history.length - 1]; return '<li><i class="dot" style="background:' + IND_COL[hh.status] + '"></i><b>' + esc(x.name) + "</b> → " + esc(hh.status) + ": " + esc(hh.t) + "</li>"; }).join("") + "</ul>" : "");
+  }
+  /* ---------- 7.0: indicators and warning board ---------- */
+  function indicatorsBlock(ctx, TD) {
+    var IW = ctx.indicators; if (!IW || !(IW.items || []).length) return "";
+    ctx._TD = TD;
+    var n = { green: 0, amber: 0, red: 0 }; IW.items.forEach(function (x) { n[x.status] = (n[x.status] || 0) + 1; });
+    var h = '<section id="indicators" class="watch"><h2>Indicators and warning <span class="num">' + n.red + " red · " + n.amber + " amber · " + n.green + " green</span></h2>";
+    h += '<p class="small">Named indicators with the threshold that changes their status and the source the run reads. A change is logged with the fact that moved it; the strip shows the last eight changes.</p>';
+    h += '<div class="indgrid">' + IW.items.map(function (x) {
+      var hist = (x.history || []).slice(-8), last = hist[hist.length - 1], val = indicatorValue(x, ctx), age = last ? daysBetween(last.date, TD) : null;
+      var links = [x.theatre ? "theatre:" + x.theatre : "", x.country ? "country:" + x.country : "", x.congress ? "congress:" + x.congress : ""].filter(Boolean);
+      return '<div class="ind ' + fu(age === 0 ? "NEW" : "") + '" id="ind-' + esc(x.id) + '"><div class="ind-h"><i class="st" style="background:' + IND_COL[x.status] + '"></i><b>' + esc(x.name) + "</b>" + badge(age === 0 ? "NEW" : age === 1 ? "UPDATED" : "") + '</div><div class="small">Threshold: ' + esc(x.threshold || "") + (x.src ? " · " + esc(x.src) : "") + "</div>" + (val ? '<div class="ind-v">Now <b>' + esc(val) + "</b></div>" : "") + (last ? '<p class="small">Last change ' + esc(fmtShort(last.date)) + ": " + esc(last.t) + "</p>" : "") + '<div class="ind-strip">' + hist.map(function (hh) { return '<i style="background:' + IND_COL[hh.status] + '" title="' + esc(fmtShort(hh.date) + " " + hh.status + ": " + hh.t) + '"></i>'; }).join("") + "</div>" + linkChips(links) + "</div>";
+    }).join("") + "</div>";
+    return h + "</section>";
+  }
+  /* ---------- 7.0: forecast ledger ---------- */
+  function forecastBlock(ctx, TD) {
+    var F = ctx.forecasts; if (!F || !(F.items || []).length) return "";
+    var items = F.items.slice(), open = items.filter(function (f) { return f.status === "open"; }).sort(function (a, b) { return a.resolves < b.resolves ? -1 : 1; }), done = items.filter(function (f) { return f.status === "yes" || f.status === "no"; }).sort(function (a, b) { return a.resolves < b.resolves ? 1 : -1; });
+    var brier = done.length ? done.reduce(function (t, f) { var o = f.status === "yes" ? 1 : 0; return t + Math.pow(f.p - o, 2); }, 0) / done.length : null;
+    var h = '<section id="forecasts" class="watch"><h2>Forecast ledger <span class="num">run only · ' + open.length + " open · " + done.length + " resolved</span></h2>";
+    h += '<p class="small">Dated, falsifiable calls with a probability. A call is never edited after it is made; it resolves on its date with the fact. Brier score: 0 is perfect, 0.25 is a coin flip.</p>';
+    h += '<div class="strip cds"><div class="tile cd"><div class="lbl">Brier score</div><div class="val">' + (brier == null ? "—" : brier.toFixed(3)) + "</div><p>" + (done.length ? "over " + done.length + " resolved" : "nothing resolved yet") + '</p></div><div class="tile cd"><div class="lbl">Open calls</div><div class="val">' + open.length + "</div><p>" + (open.length ? "next resolves " + esc(fmtShort(open[0].resolves)) : "none") + '</p></div><div class="tile cd"><div class="lbl">Calibration</div><div class="val">' + (done.length ? Math.round(100 * done.filter(function (f) { return (f.p >= 0.5) === (f.status === "yes"); }).length / done.length) + "%" : "—") + "</div><p>calls on the right side of 50%</p></div></div>";
+    if (open.length) h += '<h3>Open</h3><div class="fcl">' + open.map(function (f) { var pct = Math.round(f.p * 100), left = daysBetween(TD, f.resolves); return '<div class="fc" id="fc-' + esc(f.id) + '"><div class="fc-q">' + esc(f.q) + '</div><div class="fc-p"><div class="bar"><i style="width:' + pct + '%"></i><b style="left:50%"></b></div><span class="pv">' + pct + "%</span></div>" + '<div class="small">Made ' + esc(fmtShort(f.made)) + " · resolves " + esc(fmtShort(f.resolves)) + (left >= 0 ? " · " + (left === 0 ? "today" : left + " days") : " · overdue") + (f.domain ? " · " + esc(f.domain) : "") + "</div>" + (f.why ? '<p class="small">' + esc(f.why) + "</p>" : "") + linkChips([f.theatre ? "theatre:" + f.theatre : "", f.congress ? "congress:" + f.congress : "", f.country ? "country:" + f.country : ""].filter(Boolean)) + "</div>"; }).join("") + "</div>";
+    if (done.length) h += '<h3>Resolved</h3>' + table(["Call", "p", "Outcome", "Brier"], done.slice(0, 20).map(function (f) { var o = f.status === "yes" ? 1 : 0; return "<tr><td>" + esc(f.q) + (f.note ? '<div class="small">' + esc(f.note) + "</div>" : "") + '</td><td class="d">' + Math.round(f.p * 100) + '%</td><td class="d">' + (f.status === "yes" ? "Yes" : "No") + " · " + esc(fmtShort(f.resolvedDate || f.resolves)) + '</td><td class="d">' + Math.pow(f.p - o, 2).toFixed(2) + "</td></tr>"; }).join(""), "lbl1");
+    return h + "</section>";
+  }
+  /* ---------- 7.0: Ukraine panel ---------- */
+  var UA_CITIES = [["Kyiv", 50.45, 30.52], ["Kharkiv", 49.99, 36.23], ["Sumy", 50.91, 34.80], ["Dnipro", 48.46, 35.05], ["Zaporizhzhia", 47.84, 35.14], ["Kherson", 46.64, 32.61], ["Odesa", 46.48, 30.73], ["Kramatorsk", 48.72, 37.55], ["Pokrovsk", 48.28, 37.18], ["Donetsk", 48.00, 37.80], ["Mariupol", 47.10, 37.55], ["Sevastopol", 44.62, 33.53]];
+  function uaMap(F, W) {
+    W = Math.max(240, Math.round(W || 360)); var lon0 = 22, lon1 = 41, lat0 = 44.2, lat1 = 52.5, H = Math.round(W * (lat1 - lat0) / (lon1 - lon0) / 0.67);
+    function X(lon) { return (lon - lon0) / (lon1 - lon0) * W; }
+    function Y(lat) { return H - (lat - lat0) / (lat1 - lat0) * H; }
+    function path(rings) { var d = ""; (rings || []).forEach(function (r) { d += "M" + r.map(function (p) { return X(p[0]).toFixed(1) + "," + Y(p[1]).toFixed(1); }).join("L") + "Z"; }); return d; }
+    var s = '<svg viewBox="0 0 ' + W + " " + H + '" style="overflow:hidden" role="img" aria-label="Ukraine front line"><rect width="' + W + '" height="' + H + '" fill="var(--pc)" fill-opacity=".04"/>';
+    Object.keys(F.countries || {}).forEach(function (iso) { s += '<path d="' + path(F.countries[iso]) + '" fill="' + (iso === "UKR" ? "var(--surface)" : "var(--bg)") + '" stroke="var(--muted)" stroke-opacity=".5" stroke-width=".8" stroke-linejoin="round"/>'; });
+    s += '<path d="' + path(F.occupied2014) + '" fill="var(--crit)" fill-opacity=".22" stroke="var(--crit)" stroke-opacity=".5" stroke-width=".6"/>';
+    s += '<path d="' + path(F.occupied) + '" fill="var(--crit)" fill-opacity=".45" stroke="var(--crit)" stroke-width=".8"/>';
+    s += '<path d="' + path(F.unknown) + '" fill="var(--muted)" fill-opacity=".35" stroke="var(--muted)" stroke-width=".6"/>';
+    s += '<path d="' + path(F.liberated) + '" fill="var(--up)" fill-opacity=".35" stroke="var(--up)" stroke-width=".6"/>';
+    (F.arrows || []).forEach(function (a) { s += '<circle cx="' + X(a[1]).toFixed(1) + '" cy="' + Y(a[0]).toFixed(1) + '" r="2" fill="var(--crit)"/>'; });
+    UA_CITIES.forEach(function (c) { if (W < 420 && ["Sumy", "Dnipro", "Kramatorsk", "Mariupol", "Sevastopol"].indexOf(c[0]) >= 0) return; s += '<circle cx="' + X(c[2]).toFixed(1) + '" cy="' + Y(c[1]).toFixed(1) + '" r="1.8" fill="var(--ink)"/>' + svgText(X(c[2]) + 4, Y(c[1]) + 3, c[0], "start", W < 420 ? 8 : 9, true, "var(--ink)"); });
+    return s + "</svg>";
+  }
+  function ukraineBlock(ctx, E, TD) {
+    var F = ctx.uaFront, WS = (ctx.worldSeries || {}).series || {}, M = (ctx.worldSeries || {}).meta || {};
+    if (!F && !WS["ua-air"]) return "";
+    var h = '<section id="ukraine" class="watch"><h2>Ukraine <span class="num">front line, the nightly numbers, talks</span></h2>';
+    function last(k) { var a = WS[k] || []; return a.length ? a[a.length - 1] : null; }
+    function mean7(k) { var a = (WS[k] || []).slice(-7); return a.length ? Math.round(a.reduce(function (t, p) { return t + p[1]; }, 0) / a.length) : null; }
+    var tiles = [["ua-air", "Launched overnight"], ["ru-personnel-day", "Russian personnel, claimed per day"], ["ru-uav-day", "Russian UAVs claimed destroyed"], ["ua-drones-month", "Shahed-type launched, per month"]];
+    h += '<div class="strip cds">' + tiles.map(function (t) { var l = last(t[0]); if (!l) return ""; var m = mean7(t[0]); return '<div class="tile cd"><div class="lbl">' + esc(t[1]) + '</div><div class="val">' + l[1].toLocaleString("en-GB") + "</div><p>" + esc(fmtShort(l[0])) + (m != null && (WS[t[0]] || []).length >= 3 && t[0] !== "ua-drones-month" ? " · 7-day mean " + m.toLocaleString("en-GB") : "") + (M[t[0]] && M[t[0]].source ? " · " + esc(M[t[0]].source) : "") + "</p></div>"; }).join("") + "</div>";
+    if (F) h += '<div class="panel"><div class="lbl">Front line · DeepState, ' + esc(F.asofText || F.asof || "") + '</div><div class="chart" id="uamap" style="min-height:220px"></div><p class="small maplegend"><span><i class="solid" style="border-color:var(--crit);border-top-width:8px;opacity:.5"></i>occupied since 2022</span><span><i class="solid" style="border-color:var(--crit);border-top-width:8px;opacity:.25"></i>occupied since 2014</span><span><i class="solid" style="border-color:var(--muted);border-top-width:8px;opacity:.4"></i>status unknown</span><span><i class="solid" style="border-color:var(--up);border-top-width:8px;opacity:.4"></i>liberated</span><span><i class="ring" style="border-color:var(--crit);width:4px;height:4px"></i>axis of attack</span></p><p class="small">Source: <a href="' + esc(F.url || "https://deepstatemap.live/") + '" target="_blank" rel="noopener">DeepStateMAP</a>, simplified for this page; the run refreshes it weekly.</p></div>';
+    var keys = ["ua-air", "ru-personnel-day", "ru-uav-day"].filter(function (k) { return (WS[k] || []).length > 1; });
+    if (keys.length) { ctx._dts = ctx._dts || {}; h += '<div class="viz">' + keys.map(function (k) { ctx._dts[k] = (WS[k] || []).filter(function (p) { return p[0] <= TD; }); return '<div class="panel"><div class="lbl">' + esc((M[k] || {}).label || k) + "</div>" + chartBox("dts-" + k, 150) + "</div>"; }).join("") + "</div>"; }
+    var talks = (((ctx.indicators || {}).items) || []).filter(function (x) { return x.theatre === "ru-ua"; });
+    if (talks.length) h += '<p class="small">Indicators: ' + talks.map(function (x) { return '<a href="#ind-' + esc(x.id) + '"><i class="dot" style="background:' + IND_COL[x.status] + '"></i>' + esc(x.name) + "</a>"; }).join(" · ") + "</p>";
+    h += '<p class="small">The theatre log is on <a href="#th-ru-ua">the board</a>; Saturday\'s week in war is in <a href="#ttpsec">The reading</a>.</p>';
+    return h + "</section>";
+  }
   /* ---------- new uses of technology in war ---------- */
   function novelBlock(ctx, E, TD) {
     var NV = ctx.novel || {}, items = (NV.items || []).filter(function (x) { return x.date && x.date <= TD; }).sort(function (a, b) { return a.date < b.date ? 1 : a.date > b.date ? -1 : 0; }), DOM = NV.domains || {};
@@ -792,7 +884,7 @@
     var th = {}; (ctx.conflicts || []).forEach(function (t) { th[t.id] = t.short || t.name; });
     var byT = {}; recent.forEach(function (x) { var k = th[x.theatre] || x.theatre || "other"; byT[k] = (byT[k] || 0) + 1; });
     h += '<div class="viz"><div class="panel"><div class="lbl">By domain · last 90 days</div>' + hbars(Object.keys(byD).sort(function (a, b) { return byD[b] - byD[a]; }).map(function (d) { return [DOM[d] || d, byD[d]]; }), { inner: true, empty: "No entries in 90 days." }) + '</div><div class="panel"><div class="lbl">By theatre · last 90 days</div>' + hbars(Object.keys(byT).sort(function (a, b) { return byT[b] - byT[a]; }).map(function (k) { return [k, byT[k]]; }), { inner: true, empty: "No entries in 90 days." }) + "</div></div>";
-    h += '<div class="nvlist">' + items.slice(0, 30).map(function (x) {
+    h += '<div class="nvlist">' + items.slice(0, 10).map(function (x) {
       var age = daysBetween(x.date, TD), map = srcMap(x.src);
       var c = '<div class="nv ' + fu(age <= 1 ? "NEW" : "") + '" id="novel-' + esc(x.id) + '"><div class="nv-h"><span class="d">' + esc(fmtShort(x.date)) + (x.date.slice(0, 4) !== TD.slice(0, 4) ? " " + x.date.slice(0, 4) : "") + "</span>" + (x.theatre ? '<a class="chip st" href="#th-' + esc(x.theatre) + '">' + esc(th[x.theatre] || x.theatre) + "</a>" : "") + (x.actor ? '<span class="chip st">' + esc(x.actor) + "</span>" : "") + (x.domains || []).map(function (d) { return '<span class="chip st dom">' + esc(DOM[d] || d) + "</span>"; }).join("") + badge(age === 0 ? "NEW" : age === 1 ? "UPDATED" : "") + inToday("novel", x.id) + "</div>";
       c += "<h4>" + esc(x.t) + "</h4>";
@@ -801,7 +893,7 @@
       if (x.prev) c += '<p class="small">Develops <a href="#novel-' + esc(x.prev) + '">' + esc(((NV.items || []).filter(function (y) { return y.id === x.prev; })[0] || {}).t || x.prev) + "</a></p>";
       return c + "</div>";
     }).join("") + "</div>";
-    if (items.length > 30) h += '<p class="small">' + (items.length - 30) + " older entries stay in data/novel.json.</p>";
+    if (items.length > 10) h += '<p class="small">' + (items.length - 10) + " older entries stay in data/novel.json and the archive search.</p>";
     return h + "</section>";
   }
   /* ---------- state of the art: one card per domain, grouped, with lead held, score, challenger and sources ---------- */
@@ -959,6 +1051,7 @@
     function row(label, items, href) { if (items.length) rows.push('<li><a href="' + href + '"><b>' + esc(label) + "</b></a> " + items.map(esc).join(" · ") + "</li>"); }
     row("Board", (ctx.conflicts || []).filter(function (t) { return (t.log || []).some(function (e) { return e.date === TD || e.date === y; }); }).map(function (t) { return t.short || t.name; }), "#board");
     row("Threads", (ctx.threads || []).filter(function (t) { return (t.log || []).some(function (e) { return e.date === TD || e.date === y; }); }).map(function (t) { return t.name; }), "#threads");
+    row("Forecasts", (((ctx.forecasts || {}).items) || []).filter(function (f) { return f.resolvedDate === TD || f.made === TD; }).map(function (f) { return (f.made === TD ? "new: " : "resolved: ") + f.q; }), "#forecasts");
     row("New in war", (((ctx.novel || {}).items) || []).filter(function (x) { return x.date === TD || x.date === y; }).map(function (x) { return x.t; }), "#novel");
     row("Countries", (ctx.countries || []).filter(function (c) { return (c.log || []).some(function (e) { return e.date === TD || e.date === y; }); }).map(function (c) { return c.name; }), "#countries");
     row("Horizon", (ctx.horizon || []).filter(function (e) { return e.added === TD || e.updated === TD; }).map(function (e) { return e.t; }), "#horizon");
@@ -970,11 +1063,11 @@
     if (E.research) rows.push('<li><a href="#research"><b>Research</b></a> ' + esc(E.research.org + ": " + E.research.title) + "</li>");
     var inc = (ctx.incidents || []).filter(function (i) { return i.date === TD || i.date === y; }).length; if (inc) rows.push('<li><a href="#hybrid"><b>Incidents</b></a> ' + inc + " logged in the last two days</li>");
     var mv = (ctx.attrLog || []).filter(function (m) { return m.date === TD; }).length; if (mv) rows.push('<li><a href="#hybrid"><b>Attribution</b></a> ' + mv + " move" + (mv > 1 ? "s" : "") + "</li>");
-    return '<h3 id="since">Since yesterday <span class="small">what moved in the memory</span></h3>' + (rows.length ? '<ul class="since">' + rows.join("") + "</ul>" : quiet("Nothing in the standing files moved since yesterday."));
+    return '<h3 id="since">What changed <span class="small">in the memory since yesterday</span></h3>' + (rows.length ? '<ul class="since">' + rows.join("") + "</ul>" : quiet("Nothing in the standing files moved since yesterday."));
   }
   function contentsBlock() {
-    var tiers = [["news", "The news", TIERS.news], ["watch", "The watch", TIERS.watch], ["reading", "The reading", TIERS.reading], ["home", "Home and planning", TIERS.home]];
-    var SN = { world: "World", hybrid: "Hybrid", europe: "Europe", countries: "Priority countries", euregio: "Euregio", army: "Defence & Army", nato: "NATO & allies", deftech: "Defence tech", frontier: "Frontier", markets: "Markets", rates: "Rates", nl: "Netherlands", board: "The board", novel: "New in war", numbers: "Numbers", fx: "USD/EUR", threads: "Threads", horizon: "Horizon", "congress-sec": "Congress", "exercises-sec": "Exercises", releases: "Releases", sota: "State of the art", production: "Production", feature: "World feature", research: "Research", depth: "Army in depth", ttpsec: "Week in war", aperture: "Aperture", afnorth: "AFNORTH", offduty: "Out and about", dutch: "Taal", snow: "Snow", hockey: "Canes", week: "This week", weather: "Weather", countdown: "Countdowns", tv: "TV", calendar: "Calendar", year: "Year ahead", school: "School year", season: "Season" };
+    var tiers = PARTS.slice(1).map(function (p) { return [p[0], p[1], TIERS[p[0]]]; });
+    var SN = { world: "World", hybrid: "Hybrid", europe: "Europe", countries: "Priority countries", euregio: "Euregio", army: "Defence & Army", nato: "NATO & allies", deftech: "Defence tech", frontier: "Frontier", markets: "Markets", rates: "Rates", nl: "Netherlands", board: "The board", ukraine: "Ukraine", indicators: "Indicators", forecasts: "Forecasts", novel: "New in war", numbers: "Numbers", fx: "USD/EUR", threads: "Threads", horizon: "Horizon", "congress-sec": "Congress", "exercises-sec": "Exercises", releases: "Releases", sota: "State of the art", production: "Production", feature: "World feature", research: "Research", depth: "Army in depth", ttpsec: "Week in war", aperture: "Aperture", afnorth: "AFNORTH", offduty: "Out and about", dutch: "Taal", snow: "Snow", hockey: "Canes", week: "This week", weather: "Weather", countdown: "Countdowns", tv: "TV", calendar: "Calendar", year: "Year ahead", school: "School year", season: "Season" };
     return '<h3>In this edition</h3><ol class="toc">' + tiers.map(function (t, i) { return '<li data-tier="' + t[0] + '" class="' + t[0] + '"><a href="#p-' + t[0] + '"><b>' + (i + 1) + " · " + esc(t[1]) + '</b></a><span class="tm"></span><span class="secs">' + t[2].map(function (id) { return '<a href="#' + id + '">' + esc(SN[id] || id) + "</a>"; }).join(" · ") + "</span></li>"; }).join("") + "</ol>";
   }
   function yearAhead(ctx, E, TD, today) {
@@ -1002,7 +1095,7 @@
     if (!WR && !sun) return "";
     var from = addDays(TD, -7);
     function cnt(list, f) { return (list || []).filter(f).length; }
-    var tiles = [["Board entries", cnt([].concat.apply([], (ctx.conflicts || []).map(function (t) { return t.log || []; })), function (e) { return e.date > from && e.date <= TD; })], ["Thread entries", cnt([].concat.apply([], (ctx.threads || []).map(function (t) { return t.log || []; })), function (e) { return e.date > from && e.date <= TD; })], ["Congress moves", cnt(ctx.congress, function (c) { return (c.updated || c.added) > from; })], ["Releases", cnt((ctx.releases || {}).releases, function (r) { return r.date > from && r.date <= TD; })], ["Incidents", cnt(ctx.incidents, function (i) { return i.date > from && i.date <= TD; })], ["Idioms learned", cnt(ctx.idioms, function (i) { return i.date > from && i.date <= TD; })]];
+    var tiles = [["Board entries", cnt([].concat.apply([], (ctx.conflicts || []).map(function (t) { return t.log || []; })), function (e) { return e.date > from && e.date <= TD; })], ["Thread entries", cnt([].concat.apply([], (ctx.threads || []).map(function (t) { return t.log || []; })), function (e) { return e.date > from && e.date <= TD; })], ["Congress moves", cnt(ctx.congress, function (c) { return (c.updated || c.added) > from; })], ["Releases", cnt((ctx.releases || {}).releases, function (r) { return r.date > from && r.date <= TD; })], ["Incidents", cnt(ctx.incidents, function (i) { return i.date > from && i.date <= TD; })], ["Idioms learned", cnt(ctx.idioms, function (i) { return i.date > from && i.date <= TD; })], ["Forecasts resolved", cnt((ctx.forecasts || {}).items, function (f) { return f.resolvedDate > from && f.resolvedDate <= TD; })]];
     var h = '<section id="weekreview" class="home"><h2>The week <span class="num">' + esc(fmtShort(addDays(TD, -6)) + " – " + fmtShort(TD)) + "</span></h2>";
     h += '<div class="strip cds">' + tiles.map(function (t) { return '<div class="tile cd"><div class="lbl">' + esc(t[0]) + '</div><div class="val">' + t[1] + "</div><p>last 7 days</p></div>"; }).join("") + "</div>";
     if (WR) { h += '<h3>' + esc(WR.title || "The week ahead") + "</h3>" + (WR.body || []).map(function (p) { return "<p>" + rich(p) + "</p>"; }).join(""); var wrows = (WR.rows || []).filter(function (r) { return !r[0] || r[0] >= TD; }); if (wrows.length) h += table(["Date", "Scheduled"], wrows.map(function (r) { return '<tr><td class="d">' + (r[0] ? esc(fmtShort(r[0])) : "—") + "</td><td>" + rich(r[1]) + " " + icsLink(plain(r[1]), r[0]) + "</td></tr>"; }).join(""), "lbl1"); }
@@ -1021,7 +1114,8 @@
   /* ---------- main render ---------- */
   function render(E, ctx) {
     ctx._names = linkNames(ctx); ctx._linked = collectLinks(E);
-    var today = pd(E.date), TD = E.date, h = "";
+    var today = pd(E.date), TD = E.date, h = "", TIER_HTML = {}, weekend = today.getDay() === 0 || today.getDay() === 6;
+    setPartOrder(weekend);
     var T = E.today || {};
     var FX = ctx.fx && ctx.fx.series ? fxStats(ctx.fx.series, TD) : null;
     var threads = ctx.threads && ctx.threads.length ? threadView(ctx.threads, TD) : null;
@@ -1043,7 +1137,7 @@
     h += '<div class="date">' + esc(E.weekday + " " + today.getDate() + " " + MON[today.getMonth()] + " " + today.getFullYear()) + "</div>";
     h += '<div class="mast-meta"><span><b>Edition ' + esc(E.edition) + "</b></span><span>Look-back " + esc(E.lookback) + '</span><span id="readtime"></span></div>';
     h += '<div class="rule" aria-hidden="true">' + ["--ink","--p-news","--p-watch","--p-reading","--p-home"].map(function (c) { return '<i style="background:var(' + c + ')"></i>'; }).join("") + "</div>";
-    h += '<div class="status"><span></span><span class="theme" role="group" aria-label="Theme"><button type="button" data-theme="auto">Auto</button><button type="button" data-theme="light">Light</button><button type="button" data-theme="dark">Dark</button></span></div>';
+    h += '<div class="status"><span id="resumebox"></span><span class="dens" role="group" aria-label="Density"><button type="button" data-d="normal">Normal</button><button type="button" data-d="compact">Compact</button></span><span class="theme" role="group" aria-label="Theme"><button type="button" data-theme="auto">Auto</button><button type="button" data-theme="light">Light</button><button type="button" data-theme="dark">Dark</button></span></div>';
     if (E.note) h += '<p class="note">' + rich(E.note) + "</p>";
     h += "</header>";
 
@@ -1065,9 +1159,10 @@
     h += '<button type="button" class="tile newcount" id="newcount" title="Show only new and updated items"><div class="lbl">This edition</div><div class="val"><span id="nnew">…</span><small id="nupd"></small></div><p>Tap to show only what changed</p></button>';
     h += "</div>";
 
-    /* front: five things, pick, today and tomorrow */
-    h += '<section class="front"><h2>Five things</h2><ol class="five">';
-    (E.five || []).forEach(function (f) { h += '<li class="' + esc(f.part) + '">' + rich(f.t) + ' <a class="go" href="#' + esc(f.to) + '">Read →</a></li>'; });
+    /* the Brief: takeaways, pick, today and tomorrow, what changed, what to watch, unknowns, indicators that moved, contents */
+    var BR = E.brief || {}, TK = (BR.takeaways && BR.takeaways.length ? BR.takeaways : E.five) || [];
+    h += '<section class="front brief"><h2>' + (BR.takeaways && BR.takeaways.length ? "Takeaways" : "Five things") + ' <span class="num">' + (weekend ? "weekend edition · long reads first" : "the brief · seven minutes") + '</span></h2><ol class="five">';
+    TK.forEach(function (f) { h += '<li class="' + esc(f.part || "") + '">' + rich(f.t) + (f.to ? ' <a class="go" href="#' + esc(f.to) + '">Read →</a>' : "") + linkChips(f.links) + "</li>"; });
     h += "</ol>";
     if (E.pick) h += '<div class="pick">' + rich(E.pick.t) + (E.pick.to ? ' <a href="#' + esc(E.pick.to) + '">Go →</a>' : "") + "</div>";
     if (T.items && T.items.length) {
@@ -1076,12 +1171,16 @@
       h += "</div>";
     }
     h += sinceYesterday(E, ctx, TD);
+    h += watchNext(PEV, ctx, TD);
+    h += unknownsBlock(BR, ctx, TD);
+    h += indicatorsMoved(ctx, TD);
     h += contentsBlock();
     h += "</section>";
 
 
     /* ===== Part 1 · The news ===== */
-    h += part("news", "Part 1", "The news", "What happened: the world, security, defence, frontier technology, money and the Netherlands.", "p-news");
+    TIER_HTML.front = h; h = "";
+    h += part("news", pn("news"), "The news", "What happened: the world, security, defence, frontier technology, money and the Netherlands.", "p-news");
     h += '<section id="world" class="news"><h2>Developments <span class="num">beyond Europe</span></h2>';
     if (WO.items && WO.items.length) {
       var rc = {}; WO.items.forEach(function (x) { rc[x.region] = (rc[x.region] || 0) + 1; });
@@ -1190,7 +1289,8 @@
     h += "</section>";
 
     /* ===== Part 2 · The watch ===== */
-    h += part("watch", "Part 2", "The watch", "The memory: the board, the numbers, the trackers and the registers.", "p-watch");
+    TIER_HTML.news = h; h = "";
+    h += part("watch", pn("watch"), "The record", "The memory: the board, Ukraine, the indicators, the trackers, the registers and the forecast ledger. Each opens with its state; logs show the last ten entries.", "p-watch");
     h += '<section id="board" class="watch"><h2>The board <span class="num">events logged, not a measure of intensity</span></h2>';
     if (board) {
       h += '<div class="panel"><div class="lbl">' + (ctx.conflicts || []).length + ' theatres · filled marker = events logged in 7 days, sized by count</div><div class="chart" id="worldmap" style="min-height:150px"></div></div>';
@@ -1198,7 +1298,7 @@
         var hd = '<details class="thread brow ' + fu(b.badge) + '" id="th-' + esc(b.t.id) + '" open><summary><span class="tname">' + esc(b.t.name) + act4(b.weeks) + badge(b.badge) + inToday("theatre", b.t.id) + "</span>";
         hd += b.last ? '<span class="tlast"><span class="d">' + esc(fmtShort(b.last.date)) + "</span>" + rich(b.last.t, srcMap(b.last.src)) + "</span>" : '<span class="tlast small">No events logged yet.</span>';
         hd += "</summary>";
-        hd += '<div class="tlog">' + (b.log.length > 1 ? logList(b.log.slice(0, -1), "sub") : "") + '<div class="meta">' + b.log.length + (b.log.length === 1 ? " entry" : " entries") + (b.last ? " · last " + esc(fmtLong(b.last.date)) + (b.age > 1 ? " (" + b.age + " days ago)" : "") : "") + "</div></div></details>";
+        hd += '<div class="tlog">' + (b.log.length > 1 ? logList(b.log.slice(0, -1).slice(-9), "sub") : "") + '<div class="meta">' + b.log.length + (b.log.length === 1 ? " entry" : " entries") + (b.log.length > 10 ? ", last 10 shown; the rest stays in the file and the archive" : "") + (b.last ? " · last " + esc(fmtLong(b.last.date)) + (b.age > 1 ? " (" + b.age + " days ago)" : "") : "") + "</div></div></details>";
         return hd;
       }).join("") + "</div>";
     } else h += quiet("The board file is not loaded.");
@@ -1215,6 +1315,8 @@
       tiles.push('<div class="tile nt"><div class="lbl">' + esc(label) + '</div><div class="val">' + num(last[1], dec) + (unit ? ' <small>' + esc(unit) + "</small>" : "") + "</div><p>" + (prev ? '<span class="chg ' + dir(last[1] - prev[1]) + '">' + signed(last[1] - prev[1], dec) + "</span> vs " + esc(fmtShort(prev[0])) + " · " : "") + "as of " + esc(fmtShort(last[0])) + (meta.cadence ? " · " + esc(meta.cadence) : "") + "</p>" + (ser.length > 1 ? '<div class="spark" data-ws="' + esc(k) + '"></div>' : "") + (meta.note ? '<p class="small">' + esc(meta.note) + "</p>" : "") + (meta.source ? '<p class="small">' + (meta.url ? '<a href="' + esc(meta.url) + '" target="_blank" rel="noopener">' + esc(meta.source) + "</a>" : esc(meta.source)) + "</p>" : "") + "</div>");
       ctx._ws[k] = ser.slice(-30);
     });
+    h += ukraineBlock(ctx, E, TD);
+    h += indicatorsBlock(ctx, TD);
     h += novelBlock(ctx, E, TD);
     h += '<section id="numbers" class="watch"><h2>By the numbers</h2>' + (tiles.length ? '<div class="strip nums">' + tiles.join("") + "</div>" : quiet("No series published yet.")) + "</section>";
     if (FX) {
@@ -1318,7 +1420,9 @@
     h += "</section>";
 
     /* ===== Part 3 · The reading ===== */
-    h += part("reading", "Part 3", "The reading", "The long pieces: the feature, the Army in depth, the week in war and Aperture.", "p-reading");
+    h += forecastBlock(ctx, TD);
+    TIER_HTML.watch = h; h = "";
+    h += part("reading", pn("reading"), "The reading", "The long pieces: the feature, the Army in depth, the week in war and Aperture.", "p-reading");
     /* feature */
     var FE = WO.feature;
     var WROT = [["mon","Mon","Theatre in numbers"],["tue","Tue","Actor on the record"],["wed","Wed","Trend line"],["thu","Thu","Chronology"],["fri","Fri","Week on the board"],["sat","Sat","Geography"],["sun","Sun","The record"]];
@@ -1385,7 +1489,8 @@
 
 
     /* ===== Part 4 · Home and planning ===== */
-    h += part("home", "Part 4", "Home and planning", "Family, what is on nearby, the languages, the snow, the Canes, and the week and year ahead.", "p-home");
+    TIER_HTML.reading = h; h = "";
+    h += part("home", pn("home"), "Home and planning", "Family, what is on nearby, the languages, the snow, the Canes, and the week and year ahead.", "p-home");
     h += '<section id="afnorth" class="home"><h2>AFNORTH &amp; family</h2>';
     if (AF.intro) h += '<p class="small">' + rich(AF.intro) + "</p>";
     if (AF.rows && AF.rows.length) h += table(["Date", "Event", "Action"], AF.rows.map(function (r) { return '<tr class="' + (r[3] === "soon" ? "soon" : "") + '"><td class="d">' + esc(r[0]) + "</td><td>" + rich(r[1]) + "</td><td>" + rich(r[2]) + "</td></tr>"; }).join(""));
@@ -1502,6 +1607,8 @@
     h += "</section>";
     if (P.season) h += '<section id="season" class="home"><h2>' + esc(P.season.title) + "</h2>" + (P.season.intro ? '<p class="small">' + rich(P.season.intro) + "</p>" : "") + gantt(P.season, today) + (P.season.notes ? '<ul class="clean" style="margin-top:12px">' + P.season.notes.map(function (n) { return "<li>" + rich(n) + "</li>"; }).join("") + "</ul>" : "") + "</section>";
 
+    TIER_HTML.home = h;
+    h = TIER_HTML.front + PARTS.slice(1).map(function (p) { return TIER_HTML[p[0]] || ""; }).join("");
     /* ===== Footer ===== */
     h += '<a class="next" href="#sources">Sources ↓</a><section id="sources"><h2>Sources</h2><ol class="src">' + (E.sources || []).map(function (s) { return '<li id="s' + esc(s[0]) + '" value="' + esc(s[0]) + '"' + (s[4] ? ' class="t' + esc(s[4]) + '"' : "") + '><a href="' + esc(s[3]) + '" target="_blank" rel="noopener">' + esc(s[1]) + '</a><span class="o"> · ' + esc(s[2]) + "</span>" + (s[4] == 1 ? ' <span class="chip st tier">official</span>' : s[4] == 2 ? ' <span class="chip st tier">primary</span>' : "") + "</li>"; }).join("") + "</ol>" + ((E.sources || []).some(function (x) { return x[4]; }) ? '<p class="small">Tiers: official or primary document, wire or secondary document, reputable outlet, other.</p>' : "");
     if (E.flags) h += '<p class="small" style="margin-top:12px"><b>Sourcing flags:</b> ' + rich(E.flags) + "</p>";
@@ -1542,6 +1649,7 @@
       var fb = document.getElementById("fbars"); if (fb && E.world && E.world.feature && E.world.feature.bars) fb.innerHTML = vbars(E.world.feature.bars.rows, { W: fb.clientWidth, zero: true, label: E.world.feature.bars.label || "" });
       var fg = document.getElementById("fgeo"); if (fg && ctx._geo) fg.innerHTML = geoSchematic(ctx._geo, fg.clientWidth);
       var hk = document.getElementById("hkchart"); if (hk && ctx.canes) hk.innerHTML = hockeyChart(canesView(ctx.canes, TD).games, hk.clientWidth);
+      var um = document.getElementById("uamap"); if (um && ctx.uaFront) um.innerHTML = uaMap(ctx.uaFront, um.clientWidth);
       var cm = document.getElementById("ceumap"); if (cm) cm.innerHTML = ceuMap(ctx, cm.clientWidth);
       var sc = document.getElementById("spendchart"); if (sc) sc.innerHTML = spendChart(ctx.countries || [], sc.clientWidth);
       var tb = document.getElementById("tempband"); if (tb) tb.innerHTML = tempBand(((E.today || {}).weather || {}).week, tb.clientWidth);
@@ -1582,7 +1690,8 @@
 
     /* health */
     var words0 = 0, stop0 = false;
-    Array.prototype.forEach.call(app.children, function (el) { if (stop0 || el.id === "weekreview" || el.id === "week" || el.id === "sources") { stop0 = true; return; } if (el.id !== "slim") words0 += (el.textContent || "").split(/\s+/).length; });
+    var inRec0 = false;
+    Array.prototype.forEach.call(app.children, function (el) { if (stop0 || el.id === "weekreview" || el.id === "week" || el.id === "sources") { stop0 = true; return; } if (el.classList && el.classList.contains("part")) inRec0 = el.classList.contains("watch"); if (inRec0 || el.id === "slim") return; words0 += (el.textContent || "").split(/\s+/).length; });
     var HR = health(E, ctx, TD, words0), nAct = HR.filter(function (r) { return r[1] === "act"; }).length, nWatch = HR.filter(function (r) { return r[1] === "watch"; }).length;
     var HB = HR.filter(function (r) { return r[1] !== "ok"; }).sort(function (a, b) { return (a[1] === "act" ? 0 : 1) - (b[1] === "act" ? 0 : 1); }), HG = HR.filter(function (r) { return r[1] === "ok"; });
     document.getElementById("healthbody").innerHTML = '<p class="hsum"><span class="chip hs ' + (nAct ? "act" : nWatch ? "watch" : "ok") + '">' + (nAct ? nAct + " to act on" : nWatch ? "nothing to act on" : "all clear") + "</span> " + HR.length + " checks · " + nWatch + " to watch · " + HG.length + " ok</p>" + (HB.length ? '<ul class="hl">' + HB.map(function (r) { return '<li class="h-' + r[1] + '"><span class="chip hs ' + r[1] + '">' + r[1] + "</span><b>" + esc(r[0]) + "</b> " + esc(r[2]) + "</li>"; }).join("") + "</ul>" : "") + (HG.length ? '<p class="small hok"><b>OK:</b> ' + HG.map(function (r) { return '<span title="' + esc(r[2]) + '">' + esc(r[0]) + "</span>"; }).join(" · ") + "</p>" : "") + ingestLine(ctx, TD);
@@ -1593,9 +1702,10 @@
 
     /* read time: Front through Hockey */
     var words = 0, stop = false;
-    Array.prototype.forEach.call(app.children, function (el) { if (stop || el.id === "weekreview" || el.id === "week" || el.id === "sources") { stop = true; return; } if (el.id !== "slim") words += (el.textContent || "").split(/\s+/).length; });
+    var inRec = false;
+    Array.prototype.forEach.call(app.children, function (el) { if (stop || el.id === "weekreview" || el.id === "week" || el.id === "sources") { stop = true; return; } if (el.classList && el.classList.contains("part")) inRec = el.classList.contains("watch"); if (inRec || el.id === "slim") return; words += (el.textContent || "").split(/\s+/).length; });
     document.getElementById("readtime").textContent = "≈ " + Math.max(1, Math.round(words / 230)) + " min read";
-    var aw = document.getElementById("aboutwords"); if (aw) aw.textContent = "about " + Math.round(words / 50) * 50 + " words through the reading tier";
+    var aw = document.getElementById("aboutwords"); if (aw) aw.textContent = "about " + Math.round(words / 50) * 50 + " words in the Brief, the news and the reading; the record is read on need";
     /* read time per tier for the contents block */
     var tierWords = {}, curTier = "front";
     Array.prototype.forEach.call(app.children, function (el) { if (el.classList && el.classList.contains("part")) { curTier = PART_CLASSES.filter(function (c) { return el.classList.contains(c); })[0] || curTier; return; } if (el.id === "slim" || el.id === "sources" || el.id === "health") return; tierWords[curTier] = (tierWords[curTier] || 0) + (el.textContent || "").split(/\s+/).length; });
@@ -1606,6 +1716,30 @@
     function applyTheme(t) { if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t); else document.documentElement.removeAttribute("data-theme"); themeBtns.forEach(function (b) { b.setAttribute("aria-pressed", String(b.getAttribute("data-theme") === t)); }); store("rb:theme", t); }
     themeBtns.forEach(function (b) { b.addEventListener("click", function () { applyTheme(b.getAttribute("data-theme")); }); });
     applyTheme(store("rb:theme") || "auto");
+    /* density */
+    var densBtns = app.querySelectorAll(".dens button");
+    function applyDens(d) { document.documentElement.classList.toggle("compact", d === "compact"); densBtns.forEach(function (b) { b.setAttribute("aria-pressed", String(b.getAttribute("data-d") === (d === "compact" ? "compact" : "normal"))); }); store("rb:dens", d === "compact" ? "compact" : "normal"); }
+    densBtns.forEach(function (b) { b.addEventListener("click", function () { applyDens(b.getAttribute("data-d")); }); });
+    applyDens(store("rb:dens") || "normal");
+    /* resume marker: offer a jump back to where the last read of this edition stopped */
+    var rbox = document.getElementById("resumebox"), posKey = "rb:pos:" + E.date, saved = null;
+    try { saved = JSON.parse(store(posKey) || "null"); } catch (e) { saved = null; }
+    if (rbox && saved && saved.y > 1200 && !location.hash) { rbox.innerHTML = '<a class="resume" href="#' + esc(saved.id || "") + '">Resume at ' + esc(saved.name || "where you stopped") + "</a>"; rbox.querySelector("a").addEventListener("click", function (ev) { ev.preventDefault(); window.scrollTo(0, saved.y); rbox.innerHTML = ""; }); }
+    var SECS = Array.prototype.slice.call(app.querySelectorAll("section[id]")), rrKey = "rb:rr:" + E.date, rr = {};
+    try { rr = JSON.parse(store(rrKey) || "{}") || {}; } catch (e) { rr = {}; }
+    function secName(sec) { var h2 = sec.querySelector("h2"); return h2 ? (h2.childNodes[0].textContent || "").trim().slice(0, 26) : sec.id; }
+    function tierOf(sec) { return PART_CLASSES.filter(function (c) { return sec.classList.contains(c); })[0] || "home"; }
+    function paintRR() { app.querySelectorAll(".toc li[data-tier]").forEach(function (li) { var t = li.getAttribute("data-tier"), el = li.querySelector(".rr"); if (!el) { el = document.createElement("span"); el.className = "rr"; li.appendChild(el); } el.textContent = rr[t] ? "read to " + rr[t] : ""; }); }
+    paintRR();
+    var rrTick = 0;
+    ctx._track = function () {
+      var now = Date.now(); if (now - rrTick < 1500) return; rrTick = now;
+      var y = window.scrollY, cur = null; for (var i = 0; i < SECS.length; i++) { if (SECS[i].getBoundingClientRect().top + y <= y + 120) cur = SECS[i]; else break; }
+      if (!cur) return;
+      store(posKey, JSON.stringify({ y: y, id: cur.id, name: secName(cur) }));
+      var t = tierOf(cur), idx = SECS.indexOf(cur), prev = rr[t] ? SECS.map(secName).indexOf(rr[t]) : -1;
+      if (idx > prev) { rr[t] = secName(cur); store(rrKey, JSON.stringify(rr)); paintRR(); }
+    };
     var st = document.getElementById("status");
     function status() { var t = ctx.fetchedAt ? new Date(ctx.fetchedAt) : null; st.textContent = (t ? "Loaded " + String(t.getHours()).padStart(2, "0") + ":" + String(t.getMinutes()).padStart(2, "0") : "") + (navigator.onLine === false ? " · offline, showing the last copy" : ""); st.classList.toggle("off", navigator.onLine === false); }
     bindWin("online", "online", status); bindWin("offline", "offline", status); status();
@@ -1723,6 +1857,7 @@
       }
       var max = document.documentElement.scrollHeight - window.innerHeight;
       prog.style.width = (max > 0 ? Math.min(100, window.scrollY / max * 100) : 0) + "%";
+      if (ctx._track) ctx._track();
     }
     totop.addEventListener("click", function () { window.scrollTo({ top: 0, behavior: "smooth" }); });
     bindWin("scroll", "scroll", onScroll, { passive: true });
@@ -1757,9 +1892,9 @@
     opt("data/incidents.json"), opt("data/bins.json"), opt("data/threads.json"), opt("data/horizon.json"),
     opt("data/fx.json"), opt("data/series.json"), opt("data/canes.json"),
     opt("data/conflicts.json"), opt("data/world-series.json"), opt("data/calendar.json"), opt("data/deadlines.json"),
-    opt("data/congress.json"), opt("data/exercises.json"), opt("data/releases.json"), opt("data/events.json"), opt("data/idioms.json"), opt("data/ski.json"), opt("data/search-index.json"), opt("data/land.json"), opt("data/week.json"), opt("data/corrections.json"), opt("data/research.json"), opt("data/teams.json"), opt("data/tv.json"), opt("data/countries.json"), opt("data/ceu.json"), opt("data/novel.json")
+    opt("data/congress.json"), opt("data/exercises.json"), opt("data/releases.json"), opt("data/events.json"), opt("data/idioms.json"), opt("data/ski.json"), opt("data/search-index.json"), opt("data/land.json"), opt("data/week.json"), opt("data/corrections.json"), opt("data/research.json"), opt("data/teams.json"), opt("data/tv.json"), opt("data/countries.json"), opt("data/ceu.json"), opt("data/novel.json"), opt("data/indicators.json"), opt("data/forecasts.json"), opt("data/questions.json"), opt("data/ua-front.json")
   ]).then(function (r) {
-    ctx.novel = r[27];
+    ctx.novel = r[27]; ctx.indicators = r[28]; ctx.forecasts = r[29]; ctx.questions = r[30]; ctx.uaFront = r[31];
     ctx.ceu = r[26] && r[26].countries; ctx.countriesMap = r[25] && r[25].map;
     ctx.week = r[20]; ctx.corrections = r[21]; ctx.research = r[22]; ctx.teams = r[23]; ctx.tv = r[24];
     ctx.countries = r[25] && r[25].countries; ctx.countriesBLR = r[25] && r[25].blr; ctx.countriesUpdated = r[25] && r[25].updated;

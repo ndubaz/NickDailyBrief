@@ -12,13 +12,14 @@ const appSrc = fs.readFileSync(path.join(root, "app.js"), "utf8"), ids = Array.f
 const judge = /\b(likely|probably|unlikely|suggests|signals that|we assess|means that|so what|could lead to|is expected to)\b/i;
 function walk(o, fn, p) { p = p || ""; if (typeof o === "string") fn(o, p); else if (Array.isArray(o)) o.forEach((v, i) => walk(v, fn, p + "[" + i + "]")); else if (o && typeof o === "object") Object.keys(o).forEach((k) => walk(o[k], fn, p + "." + k)); }
 if (E) {
-  if (["6.0", "6.1", "6.5"].indexOf(String(E.v)) < 0) warns.push("edition v is " + E.v + ", expected 6.5");
+  if (["6.0", "6.1", "6.5", "7.0"].indexOf(String(E.v)) < 0) warns.push("edition v is " + E.v + ", expected 7.0");
   (E.sources || []).forEach((x) => { if (x[4] != null && !(x[4] >= 1 && x[4] <= 4)) errors.push("source [" + x[0] + "] tier must be 1 to 4"); });
   if (!(E.sources || []).some((x) => x[4])) warns.push("no source tiers assigned");
   if (!/^\d{4}-\d{2}-\d{2}$/.test(E.date || "")) errors.push("edition date missing");
   if (index && index.latest !== E.date && !process.argv[2]) errors.push("index.latest " + index.latest + " differs from edition date " + E.date);
   if (edPath && !/examples/.test(edPath) && path.basename(edPath, ".json") !== E.date) errors.push("edition file " + path.basename(edPath) + " does not match its date field " + E.date);
   if (index && !process.argv[2] && !(index.editions || []).some((x) => x.date === E.date)) errors.push("index.editions does not list " + E.date);
+  if (E.brief) { if (E.brief.takeaways && !(E.brief.takeaways.length >= 3 && E.brief.takeaways.length <= 6)) errors.push("brief.takeaways must have 3 to 6 entries"); (E.brief.takeaways || []).forEach((t, i) => { if (!t.t) errors.push("brief.takeaways[" + i + "] has no t"); if (judge.test(t.t)) errors.push("brief.takeaways[" + i + "] uses assessment language"); }); }
   if (E.weekday) { const wd = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"][new Date(E.date + "T12:00:00").getDay()]; if (String(E.weekday).toLowerCase() !== wd.toLowerCase()) errors.push("weekday " + E.weekday + " does not match " + E.date + " (" + wd + ")"); }
   (E.five || []).forEach((f, i) => { if (f.part && ["world","sec","watch","pro","frontier","money","home","hockey"].indexOf(f.part) < 0) errors.push("five[" + i + "].part " + f.part + " is not a known part"); });
   (E.countries || []).forEach((i, k) => { if (["hu", "sk", "de"].indexOf(i.cc) < 0) errors.push("countries[" + k + "].cc must be hu, sk or de"); if (!i.h || !i.body) errors.push("countries[" + k + "] needs h and body"); });
@@ -49,13 +50,15 @@ if (E) {
   if (!seenLinks.size) warns.push("no item carries links to the trackers");
 }
 /* standing files */
-const files = { "novel.json": "items", "countries.json": "countries", "conflicts.json": "theatres", "threads.json": "threads", "horizon.json": "events", "incidents.json": "incidents", "exercises.json": "exercises", "events.json": "events", "idioms.json": "idioms", "congress.json": "items", "releases.json": "releases" };
+const files = { "indicators.json": "items", "forecasts.json": "items", "questions.json": "items", "novel.json": "items", "countries.json": "countries", "conflicts.json": "theatres", "threads.json": "threads", "horizon.json": "events", "incidents.json": "incidents", "exercises.json": "exercises", "events.json": "events", "idioms.json": "idioms", "congress.json": "items", "releases.json": "releases" };
 const TD = E ? E.date : null;
 Object.keys(files).forEach((f) => { const j = load(D(f)); if (!j) return; if (!Array.isArray(j[files[f]])) { errors.push(f + ": missing array " + files[f]); return; }
   const seen = new Set(); j[files[f]].forEach((x) => { if (x && x.id) { if (seen.has(x.id)) errors.push(f + " repeats id " + x.id); seen.add(x.id); } });
   if (TD && f === "horizon.json") j.events.forEach((x) => { if (x.date && x.date < TD && x.status !== "done") warns.push("horizon.json " + x.id + " is dated " + x.date + ", before the edition (prune or mark done)"); });
   if (TD && f === "events.json") j.events.forEach((x) => { if (x.to && x.to < TD) warns.push("events.json " + x.id + " ended " + x.to + " (prune)"); });
   if (TD && f === "incidents.json") j.incidents.forEach((x) => { if (x.date && (new Date(TD) - new Date(x.date)) / 864e5 > 400) warns.push("incidents.json " + x.id + " is older than 400 days"); });
+  if (f === "indicators.json") j.items.forEach((e) => { if (["green", "amber", "red"].indexOf(e.status) < 0) errors.push("indicators.json " + e.id + " status " + e.status); if (!e.threshold) errors.push("indicators.json " + e.id + " has no threshold"); const last = (e.history || [])[e.history.length - 1]; if (last && last.status !== e.status) errors.push("indicators.json " + e.id + " status differs from its last history entry"); });
+  if (f === "forecasts.json") j.items.forEach((e) => { if (!(e.p > 0 && e.p < 1)) errors.push("forecasts.json " + e.id + " p must be between 0 and 1 exclusive"); if (["open", "yes", "no", "void"].indexOf(e.status) < 0) errors.push("forecasts.json " + e.id + " status " + e.status); if (!e.made || !e.resolves || e.resolves < e.made) errors.push("forecasts.json " + e.id + " dates"); if (e.status !== "open" && !e.resolvedDate) warns.push("forecasts.json " + e.id + " resolved without resolvedDate"); if (TD && e.status === "open" && e.resolves < TD) warns.push("forecasts.json " + e.id + " is overdue to resolve"); });
   if (f === "novel.json") j.items.forEach((e) => { if (!e.t || !e.what || !(e.domains || []).length) errors.push("novel.json " + e.id + " needs t, what and domains"); (String(e.what || "").match(/\[(\d+(?:\s*,\s*\d+)*)\]/g) || []).forEach((m) => m.replace(/[\[\]]/g, "").split(/\s*,\s*/).forEach((n) => { if (!(e.src || []).some((s) => s[0] === +n)) errors.push("novel.json " + e.id + " cites [" + n + "] without a src row"); })); if (judge.test(e.new || "")) errors.push("novel.json " + e.id + " new line uses assessment language"); });
   if (f === "threads.json") j.threads.forEach((t) => (t.log || []).forEach((e) => { (String(e.t || "").match(/\[(\d+(?:\s*,\s*\d+)*)\]/g) || []).forEach((m) => m.replace(/[\[\]]/g, "").split(/\s*,\s*/).forEach((n) => { if (!(e.src || []).some((s) => s[0] === +n)) errors.push("threads.json " + t.id + " " + e.date + " cites [" + n + "] without a src row"); })); }));
 });

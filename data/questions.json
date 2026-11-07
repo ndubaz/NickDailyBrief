@@ -1,0 +1,27 @@
+{
+ "updated": "2026-11-07",
+ "note": "Open questions the Readbook is carrying: what we do not know. The run adds a question when an item turns on a fact nobody has published, and closes it with the answer and source when one appears. Never delete.",
+ "items": [
+  {
+   "id": "2026-11-07-shahed-qr-payload",
+   "q": "What did the QR code on the 4 Nov Shahed leaflets link to, and did any device report compromise?",
+   "thread": "novel:2026-11-04-shahed-qr-phishing-leaflets",
+   "opened": "2026-11-07",
+   "status": "open"
+  },
+  {
+   "id": "2026-11-07-hu-funds-conditions",
+   "q": "Which judicial and procurement milestones has the Commission set for releasing Hungary's frozen funds?",
+   "thread": "country:hu",
+   "opened": "2026-11-07",
+   "status": "open"
+  },
+  {
+   "id": "2026-11-07-arctic-exercise-name",
+   "q": "Was the October Barents NOTAM cluster a named Northern Fleet exercise, and which units took part?",
+   "thread": "theatre:arctic",
+   "opened": "2026-11-07",
+   "status": "open"
+  }
+ ]
+}

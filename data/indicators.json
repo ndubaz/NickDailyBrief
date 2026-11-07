@@ -1,0 +1,160 @@
+{
+ "updated": "2026-11-07",
+ "note": "Indicators and warning. Each indicator names what is watched, the threshold that changes its status, and the source. The run sets status (green, amber, red) each day it has the fact and appends to history only on a change, with the date, the new status and the fact that moved it. Numeric indicators name a world-series key and a rule so the page can show the latest value.",
+ "items": [
+  {
+   "id": "ua-launch-rate",
+   "name": "Drones and missiles launched at Ukraine, 7-day mean",
+   "theatre": "ru-ua",
+   "threshold": "amber above 200 a night, red above 300",
+   "series": "ua-air",
+   "rule": "mean7",
+   "status": "amber",
+   "src": "Ukrainian Air Force daily statement",
+   "history": [
+    {
+     "date": "2026-11-06",
+     "status": "amber",
+     "t": "227 launched overnight into 6 Nov; the seven-day mean sits above 200. [UAF]"
+    }
+   ]
+  },
+  {
+   "id": "ua-talks",
+   "name": "Russia–Ukraine talks: a trilateral round held with named delegations",
+   "theatre": "ru-ua",
+   "threshold": "amber when a round is scheduled, green when held, red when cancelled",
+   "status": "amber",
+   "src": "TASS, Ukrainian presidential office",
+   "history": [
+    {
+     "date": "2026-11-07",
+     "status": "amber",
+     "t": "Putin named 10 Nov in Abu Dhabi; Umerov leads Ukraine's delegation."
+    }
+   ]
+  },
+  {
+   "id": "druzhba-sk",
+   "name": "Druzhba crude flowing to Slovakia and Hungary",
+   "theatre": "ru-ua",
+   "country": "sk",
+   "threshold": "amber on any interruption, red beyond 48 hours",
+   "status": "green",
+   "src": "Transpetrol, MOL, Slovnaft statements",
+   "history": [
+    {
+     "date": "2026-11-07",
+     "status": "green",
+     "t": "No interruption reported this week."
+    }
+   ]
+  },
+  {
+   "id": "hu-eu-funds",
+   "name": "Hungary–EU agreement on frozen cohesion funds signed",
+   "country": "hu",
+   "threshold": "amber while negotiating, green when signed, red if talks break off",
+   "status": "amber",
+   "src": "Government of Hungary, European Commission",
+   "history": [
+    {
+     "date": "2026-11-07",
+     "status": "amber",
+     "t": "Negotiation on about $20bn continues; no text published."
+    }
+   ]
+  },
+  {
+   "id": "sk-snap",
+   "name": "Slovakia: snap election called",
+   "country": "sk",
+   "threshold": "amber when the prime minister threatens one, red when parliament votes to shorten its term",
+   "status": "amber",
+   "src": "National Council of the Slovak Republic, TASR",
+   "history": [
+    {
+     "date": "2026-09-27",
+     "status": "amber",
+     "t": "Fico threatened snap elections in a televised debate, suggesting January 2027."
+    }
+   ]
+  },
+  {
+   "id": "ndaa-fy27",
+   "name": "FY27 NDAA: conference report filed",
+   "threshold": "amber while the chambers' bills differ, green when the conference report is filed",
+   "congress": "ndaa-fy27",
+   "status": "amber",
+   "src": "congress.gov",
+   "history": [
+    {
+     "date": "2026-11-07",
+     "status": "amber",
+     "t": "House and Senate versions passed; conference not yet reported."
+    }
+   ]
+  },
+  {
+   "id": "hybrid-7d",
+   "name": "Hybrid incidents logged in Europe, 7 days",
+   "threshold": "amber above 5, red above 10",
+   "rule": "incidents7",
+   "status": "green",
+   "src": "incidents.json",
+   "history": [
+    {
+     "date": "2026-11-07",
+     "status": "green",
+     "t": "Below the amber line this week."
+    }
+   ]
+  },
+  {
+   "id": "arctic-notam",
+   "name": "Northern Fleet live-fire warning areas active in the Barents Sea",
+   "theatre": "arctic",
+   "threshold": "amber when NOTAMs are active, red when they overlap Norway's EEZ",
+   "status": "amber",
+   "src": "The Barents Observer, Norwegian NOTAM office",
+   "history": [
+    {
+     "date": "2026-10-18",
+     "status": "amber",
+     "t": "Overlapping NOTAMs near Franz Josef Land, Rybachy and Novaya Zemlya."
+    }
+   ]
+  },
+  {
+   "id": "taiwan-adiz",
+   "name": "PLA aircraft around Taiwan, 7-day mean",
+   "theatre": "taiwan",
+   "threshold": "amber above 30 a day, red above 60",
+   "status": "green",
+   "src": "Taiwan Ministry of National Defence daily report",
+   "history": [
+    {
+     "date": "2026-11-07",
+     "status": "green",
+     "t": "Seeded at green; the run sets the first measured status."
+    }
+   ]
+  },
+  {
+   "id": "usd-eur",
+   "name": "USD/EUR below 0.85 (a weaker dollar for a euro budget)",
+   "threshold": "amber below 0.87, red below 0.85",
+   "series": "fx",
+   "rule": "fx",
+   "status": "green",
+   "src": "ECB reference rate",
+   "history": [
+    {
+     "date": "2026-11-07",
+     "status": "green",
+     "t": "Seeded; the page reads the rate from fx.json."
+    }
+   ]
+  }
+ ]
+}
