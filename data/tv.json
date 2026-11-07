@@ -138,6 +138,110 @@
      "https://en.wikipedia.org/wiki/Death_Valley_(British_TV_series)"
     ]
    ]
+  },
+  {
+   "id": "ratw",
+   "tvmaze": 38356,
+   "title": "Race Across the World",
+   "where": "BBC One and iPlayer",
+   "status": "renewed",
+   "last": {
+    "s": 6,
+    "e": 9,
+    "date": "2026-05-21",
+    "name": "The Reunion"
+   },
+   "next": null,
+   "note": "Series 6 ran 2 Apr to 28 May 2026 with the reunion on 21 May. A seventh series is confirmed for 2027; no date yet.",
+   "src": [
+    [
+     "TVMaze: Race Across the World",
+     "https://www.tvmaze.com/shows/38356/race-across-the-world"
+    ],
+    [
+     "Hello Rayo: Race Across the World series 7 confirmed",
+     "https://www.hellorayo.co.uk/tay/entertainment/television/race-across-the-world"
+    ]
+   ]
+  },
+  {
+   "id": "celebratw",
+   "tvmaze": 70237,
+   "title": "Celebrity Race Across the World",
+   "where": "BBC One and iPlayer",
+   "status": "airing",
+   "last": {
+    "s": 4,
+    "e": 2,
+    "date": "2026-11-04",
+    "name": "Episode 2"
+   },
+   "next": {
+    "s": 4,
+    "e": 3,
+    "date": "2026-11-11",
+    "name": "Episode 3",
+    "time": "21:00 UK"
+   },
+   "note": "Series 4, Wednesdays on BBC One.",
+   "src": [
+    [
+     "TVMaze: Celebrity Race Across the World",
+     "https://www.tvmaze.com/shows/70237/celebrity-race-across-the-world"
+    ]
+   ]
+  },
+  {
+   "id": "amazingrace",
+   "tvmaze": 18,
+   "title": "The Amazing Race",
+   "where": "CBS, Paramount+",
+   "status": "airing",
+   "last": {
+    "s": 39,
+    "e": 7,
+    "date": "2026-11-04",
+    "name": "The Amazing Nightmare"
+   },
+   "next": {
+    "s": 39,
+    "e": 8,
+    "date": "2026-11-11",
+    "name": "Million Dollar Moves",
+    "time": "Wednesdays, US"
+   },
+   "note": "Season 39 on CBS, Wednesdays.",
+   "src": [
+    [
+     "TVMaze: The Amazing Race",
+     "https://www.tvmaze.com/shows/18/the-amazing-race"
+    ]
+   ]
+  },
+  {
+   "id": "traitorsuk",
+   "tvmaze": 58174,
+   "title": "The Traitors (UK)",
+   "where": "BBC One and iPlayer",
+   "status": "between",
+   "last": {
+    "s": 4,
+    "e": 12,
+    "date": "2026-01-23",
+    "name": "The Final"
+   },
+   "next": null,
+   "note": "Series 4 ended 23 Jan 2026. Series 5 is confirmed and expected in early January 2027; the BBC has not published the date.",
+   "src": [
+    [
+     "TVMaze: The Traitors",
+     "https://www.tvmaze.com/shows/58174/the-traitors"
+    ],
+    [
+     "TV Guide: The Traitors series 5 confirmed",
+     "https://www.tvguide.co.uk/articles/the-traitors-series-5-confirmed-how-to-apply-for-bbc-show-what-casting-directors-are-looking-for"
+    ]
+   ]
   }
  ],
  "similar": [
@@ -200,6 +304,32 @@
     "gbbo"
    ],
    "why": "Five comedians, absurd tasks, Greg Davies judging; the other Channel 4 show a whole family watches together."
+  },
+  {
+   "title": "Hunted",
+   "where": "Channel 4",
+   "like": [
+    "ratw",
+    "traitorsuk"
+   ],
+   "why": "Ordinary pairs go on the run from a team of real surveillance professionals; the same map-reading tension as Race Across the World."
+  },
+  {
+   "title": "Destination X",
+   "where": "BBC One (UK), NBC (US)",
+   "like": [
+    "ratw",
+    "amazingrace"
+   ],
+   "why": "Contestants ride a blacked-out bus across Europe and must work out where they are; a puzzle version of the race format."
+  },
+  {
+   "title": "The Traitors (US)",
+   "where": "Peacock",
+   "like": [
+    "traitorsuk"
+   ],
+   "why": "Alan Cumming hosts the Scottish-castle format with American reality veterans; louder than the UK edition but the same game."
   }
  ]
 }
