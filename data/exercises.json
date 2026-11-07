@@ -1,6 +1,6 @@
 {
  "note": "NATO and allied exercise calendar. The run adds exercises with dates, lead, location and forces when announced, sets updated when dates change, and never deletes past ones (the page hides those older than 60 days). Feeds the Planner and the Horizon.",
- "updated": "2026-11-06",
+ "updated": "2026-11-07",
  "exercises": [
   {
    "id": "avenger-triad-26",
@@ -182,6 +182,47 @@
      "NATO exercises 2027",
      "Grosswald (aggregator)",
      "https://www.grosswald.org/nato-exercises-2027/"
+    ]
+   ]
+  },
+  {
+   "id": "freedom-shield-26-2",
+   "name": "Freedom Shield 26-II and Grand Eagle 26",
+   "from": "2026-11-06",
+   "to": "2026-12-03",
+   "lead": "Germany (10th Armoured Division)",
+   "where": "Rūdninkai and Gen. Silvestras Žukauskas training areas, Lithuania; convoys from Kalvarija (6–7 Nov) and Klaipėda (10–12 Nov)",
+   "forces": "More than 6,000: 45th Armoured Brigade “Lietuva”, 37th Mechanised Infantry Brigade, Multinational Brigade Lithuania contingents (NL, NO, CZ, HR, BE, LU) and a Lithuanian unit",
+   "status": "under way",
+   "added": "2026-11-07",
+   "src": [
+    [
+     56,
+     "More than 6,000 NATO troops to take part in German-led exercises in Lithuania",
+     "LRT (BNS)",
+     "https://www.lrt.lt/en/news-in-english/19/3106178/more-than-6-000-nato-troops-to-take-part-in-german-led-exercises-in-lithuania",
+     3
+    ]
+   ]
+  },
+  {
+   "id": "southern-vanguard-2027",
+   "name": "Southern Vanguard 2027",
+   "from": "2026-11-02",
+   "to": "2026-11-15",
+   "dateText": "2 Nov to mid-November",
+   "lead": "US Army Western Hemisphere Command with Colombia",
+   "where": "Tolemaida and Bogotá, Colombia",
+   "forces": "About 350 US and more than 400 Colombian personnel",
+   "status": "under way",
+   "added": "2026-11-07",
+   "src": [
+    [
+     128,
+     "US, Colombian troops kick off exercise amid the Pentagon's Western Hemisphere pivot",
+     "Military Times",
+     "https://www.militarytimes.com/news/your-military/2026/11/06/us-colombian-troops-kick-off-exercise-amid-the-pentagons-western-hemisphere-pivot/",
+     3
     ]
    ]
   }

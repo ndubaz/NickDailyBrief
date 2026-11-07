@@ -1,6 +1,6 @@
 {
  "note": "Out and about: curated events within about 90 minutes by car (Maastricht, Aachen, Liège, Köln, Düsseldorf, Bonn, Eindhoven, Antwerp, Brussels, the Eifel and Ardennes). The run adds events with a source, prunes those that have passed, and sets updated when details change. cat = music|markets|museums|sport|kids|food|outdoors|festival. kid = suitable for children. drive = minutes from Hoensbroek, approximate. prio = true marks the few major events (big festivals, Sinterklaas arrivals, the carnival opening) that also appear in the Planner's This week; Christmas markets come from calendar.json.",
- "updated": "2026-11-06",
+ "updated": "2026-11-07",
  "events": [
   {
    "id": "born-to-play-bonnefanten-2026",
@@ -931,6 +931,29 @@
      "Marres",
      "https://marres.org/program/celina-eceiza/",
      1
+    ]
+   ]
+  },
+  {
+   "id": "diy-designmarkt-koeln-2026",
+   "t": "DIY DesignMarkt Köln: handmade fabrics, clothing, bags and food",
+   "cat": "markets",
+   "from": "2026-11-08",
+   "to": "2026-11-08",
+   "town": "Köln",
+   "venue": "BALLONI hall, Köln-Ehrenfeld, 12:00–18:00",
+   "cc": "DE",
+   "drive": 75,
+   "cost": "Ticket at the door; 2026 price not published",
+   "kid": true,
+   "added": "2026-11-07",
+   "src": [
+    [
+     6,
+     "DIY DesignMarkt Köln",
+     "messen.de",
+     "https://www.messen.de/de/18142/koeln/diy-designmarkt-koeln/info",
+     4
     ]
    ]
   }

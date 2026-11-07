@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-06",
+ "updated": "2026-11-07",
  "note": "Nick's assigned priority countries as an analyst: Hungary and Slovakia (priority), Germany (secondary). The run appends dated facts to each country's log and keeps the profile current. Facts and summaries only; the item in the edition carries the So what. verified:false marks a fact to confirm against an official page.",
  "blr": [
   "Continuity of government and critical services",
@@ -21,7 +21,7 @@
     "party": "Tisza",
     "since": "2026-05-09",
     "majority": "Tisza alone holds a two-thirds majority after the April 2026 election",
-    "president": "Tamás Sulyok",
+    "president": "András Baka (elected by parliament 11 Aug 2026)",
     "fm": "Anita Orbán",
     "defmin": "Romulusz Ruszin-Szendi (since 12 May 2026)"
    },
@@ -90,6 +90,30 @@
        "https://www.lrt.lt/en/news-in-english/19/3105409/ukraine-s-eu-accession-by-2030-unrealistic-says-hungarian-fm-in-vilnius"
       ]
      ]
+    },
+    {
+     "date": "2026-11-06",
+     "t": "NATO ordered Hungarian Gripens to escort three airliners threatened with hoax bombs on 6 Nov, one Brussels–Sofia and two out of Prague; no device was found.",
+     "src": [
+      [
+       "Index: Bombafenyegetések miatt léptek készenlétbe a magyar Gripenek, a NATO is intézkedett",
+       "https://index.hu/belfold/2026/11/06/magyar-honvedseg-gripen-riasztas-bombafebyegetes-utasszallito-repulok"
+      ],
+      [
+       "444: Néhány órán belül háromszor riasztotta a NATO a magyar Gripeneket utasszállító repülőket érintő bombafenyegetés miatt",
+       "https://444.hu/2026/11/06/nehany-oran-belul-haromszor-riasztotta-a-nato-a-magyar-gripeneket-utasszallito-repuloket-erinto-bombafenyegetes-miatt"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-06",
+     "t": "Világgazdaság reported that Hungary withheld approval of the screening results for Ukraine's EU clusters 4 and 5 at the Council enlargement working group on 3 Nov, as on 20 and 27 Oct.",
+     "src": [
+      [
+       "Világgazdaság: Orbán Anita nem a levegőbe beszélt: Ukrajna uniós csatlakozása",
+       "https://vg.hu/vilaggazdasag-magyar-gazdasag/2026/11/orban-anita-ukrajna-unios-csatlakozas"
+      ]
+     ]
     }
    ],
    "src": [
@@ -116,6 +140,10 @@
     [
      "Embassy of Hungary, Abu Dhabi: Péter Magyar is the Prime Minister of Hungary, Anita Orbán is the new Foreign Minister",
      "https://abudhabi.mfa.gov.hu/en/articles/peter-magyar-is-the-prime-minister-of-hungary-anita-orban-is-the-new-foreign-minister"
+    ],
+    [
+     "Office of the President of Hungary: Sándor-palota: Baka András köztársasági elnök",
+     "https://www.sandorpalota.hu/"
     ]
    ],
    "verified": false,
@@ -280,6 +308,16 @@
        "https://en.interfax.com.ua/news/general/1231908.html"
       ]
      ]
+    },
+    {
+     "date": "2026-11-06",
+     "t": "The Commission's annual migration report, published 6 Nov, gave Slovakia no exemption from the 2027 solidarity pool; the Council decides by qualified majority.",
+     "src": [
+      [
+       "TASR (teraz.sk): KDH: Vláda nedokázala vyrokovať výnimku z migračného paktu",
+       "https://www.teraz.sk/slovensko/kdh-vlada-nedokazala-vyrokovat-vyni/1005767-clanok.html"
+      ]
+     ]
     }
    ],
    "src": [
@@ -430,6 +468,30 @@
       [
        "hartpunkt: Generalleutnant Christian Freuding wird neuer Generalinspekteur der Bundeswehr",
        "https://www.hartpunkt.de/generalleutnant-christian-freuding-wird-neuer-generalinspekteur-der-bundeswehr/"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-06",
+     "t": "Foreign Minister Wadephul pledged a further €200 million for Ukraine's energy, heating and humanitarian needs before travelling to Warsaw on 6 Nov.",
+     "src": [
+      [
+       "Auswärtiges Amt: Außenminister Wadephul vor seiner Abreise nach Warschau",
+       "https://www.auswaertiges-amt.de/de/newsroom/2809128-2809128"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-07",
+     "t": "Defence Minister Pistorius said about 190,000 soldiers serve, the most in 13 years, and that no conscription is needed if the trend holds.",
+     "src": [
+      [
+       "AFP via Yahoo Nachrichten: Pistorius: Bundeswehr kann Personalbedarf wohl ohne Wehrpflicht decken",
+       "https://de.nachrichten.yahoo.com/pistorius-bundeswehr-personalbedarf-wohl-ohne-001948648.html"
+      ],
+      [
+       "dpa via news.de: Pistorius nach Protesten: Brauchen starke Streitkräfte",
+       "https://www.news.de/politik/860167270/pistorius-nach-protesten-brauchen-starke-streitkraefte-boris-pistorius-news-der-dpa-aktuell-zu-verteidigung-wehrdienst-jugend-und-demonstrationen/1/"
       ]
      ]
     }

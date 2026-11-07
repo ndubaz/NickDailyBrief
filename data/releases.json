@@ -1,6 +1,6 @@
 {
  "note": "Frontier log: dated releases, published results and shipped capabilities in AI, chips, robotics and autonomy. One entry per release; the run appends and never edits. kind = model|chip|robot|autonomy|result|tool.",
- "updated": "2026-11-06",
+ "updated": "2026-11-07",
  "releases": [
   {
    "date": "2026-11-02",
@@ -234,6 +234,88 @@
      "Introducing Muse AI voice and expressive avatars",
      "Meta",
      "https://about.fb.com/news/2026/11/introducing-muse-ai-voice-expressive-avatars/",
+     1
+    ]
+   ]
+  },
+  {
+   "id": "2026-11-06-meta-muse-specialized-models",
+   "date": "2026-11-06",
+   "kind": "model",
+   "t": "Meta ships specialised Muse models with Active Memory",
+   "lab": "Meta",
+   "n": "Internal evals: Personal Superintelligence Index 47% (from 38%), Active Memory 90% (from 76%), 2.4x less forgetting. [69]",
+   "src": [
+    [
+     69,
+     "Bringing specialized models to Muse and Meta AI",
+     "Meta AI",
+     "https://research.meta.ai/blog/specialized-models-for-muse-and-metaai",
+     1
+    ]
+   ]
+  },
+  {
+   "id": "2026-11-05-thinking-machines-inkling-2-small",
+   "date": "2026-11-05",
+   "kind": "model",
+   "t": "Thinking Machines releases Inkling 2 Small",
+   "lab": "Thinking Machines Lab",
+   "n": "594B total, 17B active; SWE-Bench Pro v2 (Hard) 86.3%; $0.30/$1.00 per M tokens; weights under Apache 2.0 promised. [71, 72]",
+   "src": [
+    [
+     71,
+     "Inkling 2 Small",
+     "Thinking Machines Lab",
+     "https://thinkingmachines.ai/news/inkling-2-small/",
+     1
+    ],
+    [
+     72,
+     "Thinking Machines releases Inkling 2 Small",
+     "Artificial Analysis",
+     "https://artificialanalysis.ai/articles/thinking-machines-releases-inkling-2-small-highest-scoring-open-weights-model-outside-of-chinia-upon-weights-release-it",
+     3
+    ]
+   ]
+  },
+  {
+   "id": "2026-11-05-metr-anthropic-rd-acceleration",
+   "date": "2026-11-05",
+   "kind": "result",
+   "t": "METR assesses AI R&D acceleration at Anthropic",
+   "lab": "METR",
+   "n": "Internal progress about 1.9x faster than before Oct 2025 (95% interval 1.5–2.8); about 80% attributed to AI. [73]",
+   "src": [
+    [
+     73,
+     "AI R&D acceleration at Anthropic: an independent assessment",
+     "METR",
+     "https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/",
+     1
+    ]
+   ]
+  },
+  {
+   "id": "2026-11-05-baidu-ernie-5-5-flash-base",
+   "date": "2026-11-05",
+   "kind": "model",
+   "t": "Baidu opens ERNIE 5.5 Flash Base weights",
+   "lab": "Baidu",
+   "n": "280B total, 14B active; 33.5T tokens; MMLU-Pro 78.4. [129]",
+   "src": [
+    [
+     129,
+     "ERNIE 5.5 Flash Base release",
+     "Baidu",
+     "https://ernie.baidu.com/release/ernie-5-5-flash-base/",
+     1
+    ],
+    [
+     130,
+     "baidu/ERNIE-5.5-Flash-Base model card",
+     "Hugging Face",
+     "https://huggingface.co/baidu/ERNIE-5.5-Flash-Base",
      1
     ]
    ]

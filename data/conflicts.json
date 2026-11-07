@@ -1,6 +1,6 @@
 {
  "note": "The board: ten tracked theatres with a dated log of facts per theatre. The morning run appends one entry per theatre that had a reportable event (newest last) with the cited source rows copied into src, and never edits or deletes old entries. No status labels: the page derives activity from the dates. lat/lon place the marker on the schematic map. short = map label; lp = label position (above, below, left, right).",
- "updated": "2026-11-06",
+ "updated": "2026-11-07",
  "theatres": [
   {
    "id": "ru-ua",
@@ -130,6 +130,40 @@
        2
       ]
      ]
+    },
+    {
+     "date": "2026-11-07",
+     "t": "President Putin said on 6 Nov that trilateral talks will be held in the United Arab Emirates on Tue 10 Nov; Arakhamia said Rustem Umerov leads Ukraine's delegation. Russia launched 227 drones overnight into 6 Nov and the Air Force reported 196 downed; missiles hit Kyiv overnight into 7 Nov, wounding at least three. [9, 10, 124, 12]",
+     "src": [
+      [
+       9,
+       "Putin discusses November 10 talks in Abu Dhabi with Security Council",
+       "TASS",
+       "https://tass.com/politics/2214053",
+       3
+      ],
+      [
+       10,
+       "Umerov to lead Ukraine delegation in Abu Dhabi peace talks despite media confusion, top official confirms",
+       "Kyiv Independent",
+       "https://kyivindependent.com/umerov-to-lead-ukraine-delegation-in-abu-dhabi-peace-talks-despite-media-confusion-top-official-confirms/",
+       3
+      ],
+      [
+       124,
+       "ADF neutralizes 196 Russian drones used to attack Ukraine overnight",
+       "Ukrinform",
+       "https://www.ukrinform.net/rubric-ato/4181994-adf-neutralizes-196-russian-drones-used-to-attack-ukraine-overnight.html",
+       2
+      ],
+      [
+       12,
+       "Russian ballistic missiles slam Kyiv, injuring 3, including child, after Zelensky warns of mass attack",
+       "Kyiv Independent",
+       "https://kyivindependent.com/russian-ballistic-missiles-slam-kyiv-after-zelensky-warns-of-mass-attack/",
+       3
+      ]
+     ]
     }
    ],
    "short": "Ukraine",
@@ -256,6 +290,26 @@
        "Yahoo Finance",
        "https://finance.yahoo.com/markets/",
        2
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-07",
+     "t": "Iranian state media reported two explosions in the Suza area of Qeshm Island on 6 Nov after a US strike on an air-defence system; President Trump: “We do minor strikes.” The IRGC said two tankers hit mines; UKMTO reported an explosion on a tanker leaving the strait, crew safe. [14, 15]",
+     "src": [
+      [
+       14,
+       "US military carries out new targeted strike on Iran as Tehran's leaders weigh mediators' proposals",
+       "AP via WDIO",
+       "https://www.wdio.com/ap-top-news/us-military-carries-out-new-targeted-strike-on-iran-as-tehrans-leaders-weigh-mediators-proposals/",
+       2
+      ],
+      [
+       15,
+       "Iran war updates, 6 November",
+       "CBS News",
+       "https://www.cbsnews.com/live-updates/iran-war-trump-us-strait-hormuz-persian-gulf/",
+       3
       ]
      ]
     }
@@ -396,6 +450,19 @@
        4
       ]
      ]
+    },
+    {
+     "date": "2026-11-07",
+     "t": "At least 30 people were killed at the al-Hadara market in Taiz on 6 Nov; the Houthis blame Saudi airstrikes and government forces blame Houthi missiles. [16]",
+     "src": [
+      [
+       16,
+       "Yemeni government forces, Houthis trade blame for deadly strikes on Taiz market",
+       "Al Jazeera",
+       "https://www.aljazeera.com/news/2026/11/6/yemeni-govt-forces-houthis-trade-blame-for-deadly-strikes-on-taiz-market",
+       3
+      ]
+     ]
     }
    ],
    "short": "Red Sea",
@@ -479,6 +546,26 @@
        1
       ]
      ]
+    },
+    {
+     "date": "2026-11-07",
+     "t": "Taiwan's defence ministry counted 11 Chinese military aircraft sorties, nine across the median line, 10 navy ships and three official ships in the 24 hours to 06:00 on 7 Nov; on 6 Nov Taipei said it will close its representative office in Papua New Guinea. [17, 18]",
+     "src": [
+      [
+       17,
+       "PLA activities in the waters and airspace around Taiwan, 7 Nov 2026",
+       "Taiwan Ministry of National Defense",
+       "https://www.mnd.gov.tw/en/News/PLAAct/88166",
+       1
+      ],
+      [
+       18,
+       "Taiwan to close representative office in Papua New Guinea",
+       "Focus Taiwan (CNA)",
+       "https://focustaiwan.tw/politics/202611060024",
+       3
+      ]
+     ]
     }
    ],
    "short": "Taiwan",
@@ -549,6 +636,19 @@
        "Korea JoongAng Daily",
        "https://www.koreajoongangdaily.com/korea/north-korea-lashes-out-at-antilaundering-body-over-blacklist-decision/12959295",
        3
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-07",
+     "t": "KCNA reported a plenary meeting of the Supreme People's Assembly Standing Committee on 7 Nov. [19]",
+     "src": [
+      [
+       19,
+       "Plenary Meeting of DPRK SPA Standing Committee Held",
+       "KCNA via KCNA Watch",
+       "https://kcnawatch.org/newstream/1794024645-826823507/plenary-meeting-of-dprk-spa-standing-committee-held",
+       1
       ]
      ]
     }
@@ -628,6 +728,26 @@
        1
       ]
      ]
+    },
+    {
+     "date": "2026-11-07",
+     "t": "The army-allied Joint Force said it took four villages west and south of El Obeid on 5 Nov; RSF videos dispute it. UN agencies said on 6 Nov that 15.4 million Sudanese need shelter. [20, 21]",
+     "src": [
+      [
+       20,
+       "Rival forces dispute control of North Kordofan areas",
+       "Darfur24",
+       "https://darfur24.com/en/2026/11/06/rival-forces-dispute-control-of-north-kordofan-areas/",
+       3
+      ],
+      [
+       21,
+       "Sudan's suffering is plain to see, UN agencies say",
+       "UN News",
+       "https://news.un.org/en/story/2026/11/1168753",
+       1
+      ]
+     ]
     }
    ],
    "short": "Sudan",
@@ -648,6 +768,19 @@
        "Niger: Algerian military personnel have arrived in Agadez",
        "Africanews",
        "https://www.africanews.com/2026/11/02/niger-algerian-military-personnel-have-arrived-in-agadez-africanews-today/"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-07",
+     "t": "Niger's and Mali's leaders met in Niamey on 6 Nov and said they had reiterated their determination to eradicate terrorism in the confederation. [24]",
+     "src": [
+      [
+       24,
+       "Les présidents nigérien et malien promettent d'éradiquer le terrorisme dans l'espace AES",
+       "Anadolu",
+       "https://www.aa.com.tr/fr/afrique/les-présidents-nigérien-et-malien-promettent-d-éradiquer-le-terrorisme-dans-l-espace-aes/4113634",
+       3
       ]
      ]
     }
@@ -707,6 +840,26 @@
        "James Swan à Beni : « La protection des civils reste notre priorité »",
        "Radio Okapi",
        "https://www.radiookapi.net/2026/11/05/actualite/securite/james-swan-beni-la-protection-des-civils-reste-notre-priorite",
+       3
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-07",
+     "t": "Fighting between the FARDC and the FRN intensified on the Kashebere–Kibati axis in North Kivu on 6 Nov; a civil-society official said 24 civilians were killed near Beni overnight into 6 Nov. [22, 23]",
+     "src": [
+      [
+       22,
+       "Les combats s'intensifient entre les FARDC et le FRN sur l'axe Kashebere–Kibati",
+       "Radio Okapi",
+       "https://www.radiookapi.net/2026/11/06/actualite/securite/les-combats-sintensifient-entre-les-fardc-et-le-frn-sur-laxe-kashebere",
+       3
+      ],
+      [
+       23,
+       "RDC : au moins 24 civils tués lors d'une attaque attribuée aux rebelles dans l'est du pays",
+       "Anadolu",
+       "https://www.aa.com.tr/fr/afrique/rdc-au-moins-24-civils-tués-lors-d-une-attaque-attribuée-aux-rebelles-dans-l-est-du-pays/4114050",
        3
       ]
      ]

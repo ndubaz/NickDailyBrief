@@ -37,6 +37,51 @@
      1
     ]
    ]
+  },
+  {
+   "date": "2026-11-07",
+   "edition": 5,
+   "section": "Money",
+   "t": "The Dutch TTF gas card gave Thursday 5 Nov's front-month close as €89.64 (+1.77%); Yahoo Finance's final close for that day is €90.68 (+2.95%), and series.json now holds €90.68.",
+   "src": [
+    [
+     91,
+     "Daily closes: S&P 500, Dow, Nasdaq Composite, Russell 2000, AEX, Stoxx 600, DAX, Brent, TTF, gold, VIX",
+     "Yahoo Finance",
+     "https://finance.yahoo.com/markets/",
+     2
+    ]
+   ]
+  },
+  {
+   "date": "2026-11-07",
+   "edition": 5,
+   "section": "Priority countries",
+   "t": "The Hungary profile named Tamás Sulyok as president; parliament elected András Baka on 11 Aug 2026, and the Office of the President lists him. countries.json is corrected.",
+   "src": [
+    [
+     123,
+     "Sándor-palota: Baka András köztársasági elnök",
+     "Office of the President of Hungary",
+     "https://www.sandorpalota.hu/",
+     1
+    ]
+   ]
+  },
+  {
+   "date": "2026-11-07",
+   "edition": 5,
+   "section": "Euregio",
+   "t": "The headline gave the price of the province's 40% stake in Maastricht Aachen Airport as €4 million; L1's explainer of 6 Nov puts it at about €4.2 million.",
+   "src": [
+    [
+     51,
+     "Wat betekent de verkoop van MAA voor Limburg? Vier vragen en antwoorden",
+     "L1",
+     "https://www.l1nieuws.nl/nieuws/3267635/wat-betekent-de-verkoop-van-maa-voor-limburg-vier-vragen-en-antwoorden",
+     3
+    ]
+   ]
   }
  ]
 }

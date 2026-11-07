@@ -456,6 +456,93 @@
      3
     ]
    ]
+  },
+  {
+   "id": "2026-11-06-cz-air-bomb-hoaxes",
+   "date": "2026-11-06",
+   "code": "AIR",
+   "attr": "A0",
+   "local": false,
+   "country": "CZ",
+   "place": "Europe: at least 17 flights (CZ, FR, IT, PT, HU, BG, DK, NL); marker at Prague",
+   "lat": 50.08,
+   "lon": 14.44,
+   "summary": "Hoax bomb threats hit at least 17 flights by midday GMT, nine of them to or from Prague; four aircraft over France landed at Orly and Bordeaux, and a KLM flight from Prague was checked at Schiphol. No explosives were found.",
+   "edition": "2026-11-07",
+   "src": [
+    [
+     34,
+     "Hoax or bomb threats? What we know about flight disruptions across Europe",
+     "Al Jazeera",
+     "https://www.aljazeera.com/news/2026/11/6/hoax-or-bomb-threats-what-we-know-about-flight-disruptions-across-europe",
+     3
+    ],
+    [
+     35,
+     "European air traffic targeted by several new threats after a week of hoaxes",
+     "AP via ABC7",
+     "https://abc7ny.com/story/european-air-traffic-targeted-several-new-threats-week-hoaxes/20019912/",
+     2
+    ],
+    [
+     36,
+     "Bommeldingen over vluchten in Europa, pand Ierse omroep ontruimd om dreiging",
+     "NOS",
+     "https://nos.nl/artikel/2638285-bommeldingen-over-vluchten-in-europa-pand-ierse-omroep-ontruimd-om-dreiging",
+     3
+    ]
+   ]
+  },
+  {
+   "id": "2026-11-06-ie-coe-newsroom-threats",
+   "date": "2026-11-06",
+   "code": "COE",
+   "attr": "A0",
+   "local": false,
+   "country": "IE",
+   "place": "Dublin: RTÉ, Newstalk, Irish Independent; also Sky News (UK), Nova TV (BG); marker at Donnybrook",
+   "lat": 53.32,
+   "lon": -6.23,
+   "summary": "An email headed “MESSAGE TO THE WEST” threatened newsrooms in Ireland and the UK; RTÉ's Donnybrook campus, Newstalk and the Irish Independent were evacuated.",
+   "edition": "2026-11-07",
+   "src": [
+    [
+     37,
+     "Government 'will go after' those behind media outlet threats",
+     "RTÉ",
+     "https://www.rte.ie/news/ireland/2026/1106/1598266-rte-threat-politics/",
+     3
+    ],
+    [
+     38,
+     "A week of cyberattacks and bomb threats: what do we know?",
+     "RTÉ Prime Time",
+     "https://rte.ie/news/primetime/2026/1106/1598298-a-week-of-cyberattacks-and-bomb-threats-what-do-we-know",
+     3
+    ]
+   ]
+  },
+  {
+   "id": "2026-11-05-lt-prx-vsd-expulsions",
+   "date": "2026-11-05",
+   "code": "PRX",
+   "attr": "A1",
+   "local": false,
+   "country": "LT",
+   "place": "Lithuania: sites not named (marker at Vilnius)",
+   "lat": 54.69,
+   "lon": 25.28,
+   "summary": "Lithuania's State Security Department expelled three Ukrainians it says took paid tasks from hostile foreign services via Telegram, including filming sites; no criminal case was opened.",
+   "edition": "2026-11-07",
+   "src": [
+    [
+     39,
+     "Three Ukrainians expelled from Lithuania before doing any actual damage: VSD",
+     "LRT (BNS)",
+     "https://www.lrt.lt/en/news-in-english/19/3105180/three-ukrainians-expelled-from-lithuania-before-doing-any-actual-damage-vsd",
+     3
+    ]
+   ]
   }
  ],
  "attrLog": [
@@ -491,5 +578,6 @@
    ]
   }
  ],
- "attrLogNote": "One entry per attribution change: {id (incident id), date, from (A0..A5), to (A0..A5), t (what moved), src (optional [[n,title,outlet,url]])}. The page lists the last 7 days under Attribution moves."
+ "attrLogNote": "One entry per attribution change: {id (incident id), date, from (A0..A5), to (A0..A5), t (what moved), src (optional [[n,title,outlet,url]])}. The page lists the last 7 days under Attribution moves.",
+ "updated": "2026-11-07"
 }

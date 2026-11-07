@@ -64,9 +64,9 @@
    "date": "2026-11-06",
    "dateText": "6 Nov, 10:30",
    "t": "King Philippe sees De Wever on the government's resignation",
-   "n": "Resignation held in suspense since 2 Nov",
+   "n": "The King rejected the resignation and asked De Wever to resume budget talks at once. [44]",
    "h": false,
-   "status": "confirmed",
+   "status": "done",
    "added": "2026-11-05",
    "src": [
     [
@@ -74,32 +74,16 @@
      "L'Arizona au pied du mur : la démission de Bart De Wever en suspens, le Roi entame ses entrevues ce mardi",
      "RTBF",
      "https://www.rtbf.be/article/crise-dans-le-gouvernement-arizona-le-kern-se-quitte-sans-accord-bart-de-wever-se-rend-chez-le-roi-11809122"
-    ]
-   ]
-  },
-  {
-   "id": "posture-options-due",
-   "date": "2026-11-06",
-   "dateText": "6 Nov",
-   "t": "Posture option sets due to Hegseth",
-   "n": "US footprint in Europe",
-   "h": false,
-   "status": "reported",
-   "added": "2026-11-02",
-   "src": [
-    [
-     22,
-     "Pentagon Europe posture review terms of reference",
-     "Grosswald",
-     "https://www.grosswald.org/pentagon-europe-posture-review-terms-of-reference-four-option-sets-6-november/"
     ],
     [
-     23,
-     "Pentagon's NATO review preparing troop options by November 6",
-     "Defense News / Reuters",
-     "https://www.defensenews.com/pentagon/2026/08/27/pentagons-nato-review-preparing-troop-options-for-hegseth-by-november-6/"
+     44,
+     "Belgium's king rejects prime minister's resignation and orders budget talks to resume",
+     "AP via The Canadian Press",
+     "https://ca.finance.yahoo.com/news/belgiums-king-rejects-prime-ministers-114159633.html",
+     2
     ]
-   ]
+   ],
+   "updated": "2026-11-07"
   },
   {
    "id": "khartoum-jpsm",
@@ -187,11 +171,49 @@
    ]
   },
   {
+   "id": "anwb-strike",
+   "date": "2026-11-09",
+   "dateText": "Mon 9 Nov",
+   "t": "ANWB road-patrol strike",
+   "n": "Court allows it with 12.5% minimum staffing. [105]",
+   "h": false,
+   "status": "confirmed",
+   "added": "2026-11-07",
+   "src": [
+    [
+     105,
+     "Rechter: ANWB-staking mag, maar met genoeg wegenwachters op de weg",
+     "NOS",
+     "https://nos.nl/artikel/2638355-rechter-anwb-staking-mag-maar-met-genoeg-wegenwachters-op-de-weg",
+     3
+    ]
+   ]
+  },
+  {
+   "id": "g7-fm-paris",
+   "date": "2026-11-09",
+   "dateText": "9–10 Nov",
+   "t": "G7 foreign ministers meet in Paris",
+   "n": "Rubio expected. [15]",
+   "h": false,
+   "status": "reported",
+   "added": "2026-11-07",
+   "src": [
+    [
+     15,
+     "Iran war updates, 6 November",
+     "CBS News",
+     "https://www.cbsnews.com/live-updates/iran-war-trump-us-strait-hormuz-persian-gulf/",
+     3
+    ]
+   ]
+  },
+  {
    "id": "abu-dhabi-talks",
    "date": "2026-11-10",
-   "dateText": "10–11 Nov",
+   "dateText": "Tue 10 Nov",
    "t": "US–Russia–Ukraine talks, Abu Dhabi",
-   "n": "Working-level; post-war security, de-escalation, humanitarian steps",
+   "n": "Putin confirmed the talks for Tuesday; Medinsky leads Russia's delegation and Umerov Ukraine's. [9, 10]",
    "h": true,
    "status": "confirmed",
    "added": "2026-11-02",
@@ -213,9 +235,23 @@
      "WSJ: US pitches Russian gas through Ukraine's pipelines",
      "Euromaidan Press",
      "https://euromaidanpress.com/2026/11/02/wsj-us-pitches-russian-gas-through-ukraines-pipelines-as-moscows-incentive-for-an-energy-truce/"
+    ],
+    [
+     9,
+     "Putin discusses November 10 talks in Abu Dhabi with Security Council",
+     "TASS",
+     "https://tass.com/politics/2214053",
+     3
+    ],
+    [
+     10,
+     "Umerov to lead Ukraine delegation in Abu Dhabi peace talks despite media confusion, top official confirms",
+     "Kyiv Independent",
+     "https://kyivindependent.com/umerov-to-lead-ukraine-delegation-in-abu-dhabi-peace-talks-despite-media-confusion-top-official-confirms/",
+     3
     ]
    ],
-   "updated": "2026-11-03"
+   "updated": "2026-11-07"
   },
   {
    "id": "tk-tax-plan-debate-2",
@@ -311,10 +347,10 @@
   },
   {
    "id": "nl-bus-strikes",
-   "date": "2026-11-17",
-   "dateText": "from 17 Nov",
+   "date": "2026-11-16",
+   "dateText": "from the week of 16 Nov",
    "t": "Dutch regional bus strikes possible",
-   "n": "Members vote on the final offer the week of 9 Nov",
+   "n": "FNV votes 9–12 Nov with the result on 13 Nov, CNV to 16 Nov; actions only if both reject the final offer. [106]",
    "h": false,
    "status": "reported",
    "added": "2026-11-03",
@@ -324,6 +360,40 @@
      "Vakbonden verwachten nieuwe stakingen in streekvervoer",
      "RTV Noord",
      "https://rtvnoord.nl/verkeer/1449544/vakbonden-verwachten-nieuwe-stakingen-in-streekvervoer"
+    ],
+    [
+     106,
+     "Negatief stemadvies over het eindbod van werkgevers Openbaar Vervoer",
+     "FNV",
+     "https://fnv.nl/nieuwsbericht/sectornieuws/vervoer/2026/11/negatief-stemadvies-over-het-eindbod-van-werkgever",
+     1
+    ]
+   ],
+   "updated": "2026-11-07"
+  },
+  {
+   "id": "be-king-report",
+   "date": "2026-11-16",
+   "dateText": "16 Nov",
+   "t": "De Wever reports to the King on the budget talks",
+   "n": "After the King rejected his resignation on 6 Nov. [45, 44]",
+   "h": false,
+   "status": "confirmed",
+   "added": "2026-11-07",
+   "src": [
+    [
+     45,
+     "Liveblog: De Wever hervat maandag begrotingsoverleg, vicepremiers mogen één extra persoon meebrengen",
+     "VRT NWS",
+     "https://www.vrt.be/vrtnws/nl/liveblog/de-wever-hervat-maandag-begrotingsoverleg-vicepremiers-mogen-1-~1793247532380/",
+     3
+    ],
+    [
+     44,
+     "Belgium's king rejects prime minister's resignation and orders budget talks to resume",
+     "AP via The Canadian Press",
+     "https://ca.finance.yahoo.com/news/belgiums-king-rejects-prime-ministers-114159633.html",
+     2
     ]
    ]
   },
@@ -480,6 +550,44 @@
    ]
   },
   {
+   "id": "us-jobs-nov",
+   "date": "2026-12-04",
+   "dateText": "Fri 4 Dec",
+   "t": "US November jobs report",
+   "n": "October: +165,000, unemployment 4.1%. [94]",
+   "h": false,
+   "status": "confirmed",
+   "added": "2026-11-07",
+   "src": [
+    [
+     94,
+     "The Employment Situation, October 2026",
+     "Bureau of Labor Statistics",
+     "https://www.bls.gov/news.release/pdf/empsit.pdf",
+     1
+    ]
+   ]
+  },
+  {
+   "id": "fomc-dec-2026",
+   "date": "2026-12-08",
+   "dateText": "8–9 Dec",
+   "t": "Federal Reserve rate decision",
+   "n": "A 25 bp hike priced at about 78% after the October jobs report. [95]",
+   "h": false,
+   "status": "confirmed",
+   "added": "2026-11-07",
+   "src": [
+    [
+     95,
+     "Fed seen sticking to December rate hike after jobs data",
+     "Reuters via Yahoo Finance",
+     "https://finance.yahoo.com/economy/policy/articles/traders-raise-bets-fed-rate-134402668.html",
+     2
+    ]
+   ]
+  },
+  {
    "id": "us-cr-expires",
    "date": "2026-12-11",
    "dateText": "11 Dec",
@@ -494,6 +602,25 @@
      "NDAA FY2027 and Dec. 11 funding deadline",
      "Buffalo Chronicle (thin source)",
      "https://buffalochronicle.com/2026/10/24/ndaa-fy2027-lame-duck-dec-11-funding-deadline-niagara-falls/"
+    ]
+   ]
+  },
+  {
+   "id": "ecb-president-choice",
+   "date": "2026-12-15",
+   "dateText": "mid-December",
+   "t": "Euro countries choose Lagarde's successor",
+   "n": "Knot and Hernández de Cos are the remaining candidates. [103]",
+   "h": false,
+   "status": "reported",
+   "added": "2026-11-07",
+   "src": [
+    [
+     103,
+     "Knot en Hernández de Cos als enigen over in de race om presidentschap ECB",
+     "NOS",
+     "https://nos.nl/artikel/2638328-knot-en-hernandez-de-cos-als-enigen-over-in-de-race-om-presidentschap-ecb",
+     3
     ]
    ]
   },
@@ -647,5 +774,6 @@
    "added": "2026-11-02",
    "src": []
   }
- ]
+ ],
+ "updated": "2026-11-07"
 }
