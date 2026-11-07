@@ -1,5 +1,13 @@
 {
  "note": "Hand-maintained by Nick, never by the morning run. Personal deadlines: name, date, optional note and category (home, money, school, car, docs). No addresses or document numbers.",
- "updated": "2026-11-03",
- "items": []
+ "updated": "2026-11-07",
+ "items": [
+  {
+   "name": "NCHCC pre-course tasks",
+   "date": "2026-11-15",
+   "note": "ADL account, ADL 143 certificate, read the geo-strategic paper and the CIMIC planning guide.",
+   "cat": "work",
+   "updated": "2026-11-07"
+  }
+ ]
 }

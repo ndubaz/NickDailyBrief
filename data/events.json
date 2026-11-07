@@ -956,6 +956,29 @@
      4
     ]
    ]
+  },
+  {
+   "id": "afnorth-christmas-fayre-2026",
+   "t": "AFNorth Christmas Fayre",
+   "cat": "markets",
+   "from": "2026-11-21",
+   "to": "2026-11-21",
+   "town": "Brunssum",
+   "venue": "AFNORTH International School, 11:00–14:00",
+   "cc": "NL",
+   "drive": 15,
+   "cost": "Free entry",
+   "kid": true,
+   "prio": true,
+   "added": "2026-11-07",
+   "src": [
+    [
+     1,
+     "AFNORTH calendar, important dates September 2026 to February 2027",
+     "JFCBS MWA November newsletter",
+     "https://afnorth-is.com/"
+    ]
+   ]
   }
  ]
 }
