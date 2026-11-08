@@ -242,6 +242,81 @@
      "https://www.techadvisor.com/article/2816387/bbcs-destination-x-season-2-release-date-contestants-host.html"
     ]
    ]
+  },
+  {
+   "id": "hhb",
+   "tvmaze": 11657,
+   "title": "Heel Holland Bakt",
+   "where": "NPO 1 (Omroep MAX), NPO Start",
+   "status": "between",
+   "last": {
+    "s": 14,
+    "e": 10,
+    "date": "2026-04-24",
+    "name": "Finale"
+   },
+   "next": null,
+   "note": "Series 14 ended 24 Apr 2026. A new series usually starts in January on Sunday evenings at 20:25; Omroep MAX has not yet published the 2027 date. Dutch at an easy B1 level, with the bakers' Limburgs and Brabants accents a bonus.",
+   "src": [
+    [
+     "TVMaze: Heel Holland Bakt",
+     "https://www.tvmaze.com/shows/11657/heel-holland-bakt"
+    ],
+    [
+     "Omroep MAX: Heel Holland Bakt",
+     "http://heelhollandbakt.omroepmax.nl/home/"
+    ]
+   ]
+  },
+  {
+   "id": "bov",
+   "tvmaze": 23950,
+   "title": "Bake Off Vlaanderen",
+   "where": "Play4 and GoPlay (Belgium)",
+   "status": "awaiting",
+   "last": {
+    "s": 6,
+    "e": 6,
+    "date": "2022-12-21",
+    "name": "Aflevering 6"
+   },
+   "next": null,
+   "note": "Flemish Bake Off, autumn Wednesdays at 21:00 on Play4. TVMaze stops at series 6 (2022); later series ran on GoPlay, so the run should confirm the current series and dates from goplay.be.",
+   "src": [
+    [
+     "TVMaze: Bake Off Vlaanderen",
+     "https://www.tvmaze.com/shows/23950/bake-off-vlaanderen"
+    ],
+    [
+     "GoPlay: Bake Off Vlaanderen",
+     "https://goplay.be/bake-off-vlaanderen"
+    ]
+   ]
+  },
+  {
+   "id": "lmp",
+   "tvmaze": 59829,
+   "title": "Le Meilleur Pâtissier",
+   "where": "M6 and M6+ (France)",
+   "status": "awaiting",
+   "last": {
+    "s": 14,
+    "e": 14,
+    "date": "2025-12-11",
+    "name": "La grande finale"
+   },
+   "next": null,
+   "note": "French Bake Off under the tent, autumn on M6; series 14 ended 11 Dec 2025 and series 15 is expected in autumn 2026 (to confirm from M6). Good French listening practice at a steady pace.",
+   "src": [
+    [
+     "TVMaze: Le Meilleur Pâtissier",
+     "https://www.tvmaze.com/shows/59829/le-meilleur-patissier"
+    ],
+    [
+     "M6+: Le Meilleur Pâtissier",
+     "https://www.6play.fr/le-meilleur-patissier-p_1807/"
+    ]
+   ]
   }
  ],
  "similar": [
@@ -313,6 +388,23 @@
     "destx"
    ],
    "why": "Ordinary pairs go on the run from a team of real surveillance professionals; the same map-reading tension as Race Across the World."
+  },
+  {
+   "title": "Das große Backen",
+   "where": "Sat.1 and Joyn (Germany)",
+   "like": [
+    "gbbo",
+    "hhb"
+   ],
+   "why": "The German Bake Off, autumn Sundays; the same tent format in German, and Joyn streams it across the border."
+  },
+  {
+   "title": "Bake Off: The Professionals",
+   "where": "Channel 4",
+   "like": [
+    "gbbo"
+   ],
+   "why": "Pastry teams instead of amateurs; sharper, shorter, and on between Bake Off series."
   }
  ]
 }
