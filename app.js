@@ -151,6 +151,7 @@
     var W = Math.max(240, Math.round(o.W || 360)), H = o.H || 170, L = o.L || 48, R = 14, T = 14, B = 22, dec = o.dec == null ? 4 : o.dec;
     var vals = view.map(function (p) { return p[1]; }), lo = Math.min.apply(null, vals), hi = Math.max.apply(null, vals);
     if (o.avg != null) { lo = Math.min(lo, o.avg); hi = Math.max(hi, o.avg); }
+    var ex = o.extra ? o.extra.filter(function (p) { return p[0] >= view[0][0] && p[0] <= view[view.length - 1][0]; }) : null; if (ex && ex.length > 1) ex.forEach(function (p) { lo = Math.min(lo, p[1]); hi = Math.max(hi, p[1]); }); else ex = null;
     if (o.zero) lo = Math.min(lo, 0);
     var pad = (hi - lo) * 0.08 || Math.abs(hi) * 0.05 || 1; lo -= pad; hi += pad;
     function X(i) { return L + i / (view.length - 1) * (W - L - R); }
@@ -162,6 +163,7 @@
     var pts = view.map(function (p, i) { return X(i).toFixed(1) + "," + Y(p[1]).toFixed(1); });
     s += '<path d="M' + pts.join(" L") + " L" + X(view.length - 1).toFixed(1) + "," + (H - B) + " L" + L + "," + (H - B) + ' Z" fill="var(--pc)" fill-opacity=".15"/>';
     s += '<polyline points="' + pts.join(" ") + '" fill="none" stroke="var(--pc)" stroke-width="1.5" stroke-linejoin="round"/>';
+    if (ex) { var idx = {}; view.forEach(function (p, i) { idx[p[0]] = i; }); var ep = ex.filter(function (p) { return idx[p[0]] != null; }).map(function (p) { return X(idx[p[0]]).toFixed(1) + "," + Y(p[1]).toFixed(1); }); if (ep.length > 1) { var el = ex[ex.length - 1]; s += '<polyline points="' + ep.join(" ") + '" fill="none" stroke="var(--up)" stroke-width="1.5" stroke-linejoin="round"/>' + '<circle cx="' + X(idx[el[0]]).toFixed(1) + '" cy="' + Y(el[1]).toFixed(1) + '" r="2.8" fill="var(--up)"/>' + svgText(W - R, Y(el[1]) - 5, (o.extraLabel || "") + el[1].toFixed(dec), "end", 10, true, "var(--up)"); } }
     [[o.hi, o.hiLabel || "high", -6], [o.lo, o.loLabel || "low", 13]].forEach(function (m) {
       if (!m[0]) return;
       var i = -1; view.forEach(function (p, j) { if (p[0] === m[0][0]) i = j; });
@@ -384,7 +386,7 @@
     var rates = ((fx || {}).series || []).filter(function (p) { return typeof p[1] === "number" && p[1] > 0; });
     if (raw.length < 2 || !rates.length) return null;
     var j = 0, rate = null, rows = [];
-    raw.forEach(function (p) { while (j < rates.length && rates[j][0] <= p[0]) { rate = rates[j][1]; j++; } if (rate) rows.push([p[0], p[1], p[1] * rate * GAL]); });
+    raw.forEach(function (p) { while (j < rates.length && rates[j][0] <= p[0]) { rate = rates[j][1]; j++; } if (rate) { var n = taxFreePerLitre(fuel, "e95", p[1]); rows.push([p[0], p[1], p[1] * rate * GAL, n != null ? n : null, n != null ? n * rate * GAL : null]); } });
     if (rows.length < 2) return null;
     var last = rows[rows.length - 1];
     function at(daysBack) { var k = addDays(last[0], -daysBack), v = null; rows.forEach(function (p) { if (p[0] <= k) v = p; }); return v; }
@@ -392,7 +394,8 @@
     var usd = rows.map(function (p) { return [p[0], p[2]]; }), y90 = usd.filter(function (p) { return p[0] > addDays(last[0], -90); });
     var hi = y90.reduce(function (a, p) { return !a || p[1] > a[1] ? p : a; }, null), lo = y90.reduce(function (a, p) { return !a || p[1] < a[1] ? p : a; }, null);
     var yhi = year.reduce(function (a, p) { return !a || p[2] > a[2] ? p : a; }, null), ylo = year.reduce(function (a, p) { return !a || p[2] < a[2] ? p : a; }, null);
-    return { rows: rows, usd: usd, last: last, week: at(7), month: at(30), year: at(365), avg: avg, hi: hi, lo: lo, yhi: yhi, ylo: ylo, src: fuel.source, url: fuel.url };
+    var nato = rows[rows.length - 1][4] != null ? rows.filter(function (p) { return p[4] != null; }).map(function (p) { return [p[0], p[4]]; }) : null;
+    return { rows: rows, usd: usd, nato: nato, last: last, week: at(7), month: at(30), year: at(365), avg: avg, hi: hi, lo: lo, yhi: yhi, ylo: ylo, src: fuel.source, url: fuel.url };
   }
   function threadView(list, today) {
     var out = [];
@@ -1437,13 +1440,15 @@
     var FU = fuelStats(ctx.fuel, ctx.fx, TD);
     if (FU) {
       var frange = store("rb:fuel:range") === "90d" ? 90 : 365, L1 = FU.last, usd = function (v) { return "$" + v.toFixed(2); }, chgCell = function (lbl, ref) { if (!ref) return ""; var d = L1[2] - ref[2]; return '<div><div class="lbl">' + esc(lbl) + '</div><div class="v chg ' + (d > 0.005 ? "down" : d < -0.005 ? "up" : "flat") + '">' + signed(d, 2) + '</div><div class="p">' + signed(d / ref[2] * 100, 1, "%") + " · €" + ref[1].toFixed(3) + "/l</div></div>"; };
-      h += '<h3 id="fuel">Pump price · Euro 95 (E10) <span class="small">Netherlands average, in US dollars</span></h3><div class="fx">';
-      h += '<div class="fx-top"><span class="big tab">' + usd(L1[2]) + '</span><span class="asof">per US gallon · €' + L1[1].toFixed(3) + " a litre · " + esc(fmtLong(L1[0])) + "</span></div>";
+      var hasN = L1[4] != null, natoC = function (ref) { return hasN && ref && ref[4] != null ? '<div class="p nato">NATO ' + signed(L1[4] - ref[4], 2) + " · €" + ref[3].toFixed(3) + "/l</div>" : ""; };
+      chgCell = function (lbl, ref) { if (!ref) return ""; var d = L1[2] - ref[2]; return '<div><div class="lbl">' + esc(lbl) + '</div><div class="v chg ' + (d > 0.005 ? "down" : d < -0.005 ? "up" : "flat") + '">' + signed(d, 2) + '</div><div class="p">' + signed(d / ref[2] * 100, 1, "%") + " · €" + ref[1].toFixed(3) + "/l</div>" + natoC(ref) + "</div>"; };
+      h += '<h3 id="fuel">Pump price · Euro 95 (E10) <span class="small">Netherlands average in US dollars per gallon: what everyone pays, and the NATO tax-exempt rate</span></h3><div class="fx">';
+      h += '<div class="fx-top dual"><div><span class="big tab">' + usd(L1[2]) + '</span><span class="asof">at the pump · €' + L1[1].toFixed(3) + " a litre</span></div>" + (hasN ? '<div><span class="big tab nato">' + usd(L1[4]) + '</span><span class="asof">NATO tax-exempt · €' + L1[3].toFixed(3) + " a litre</span></div>" : "") + '<span class="asof">per US gallon · ' + esc(fmtLong(L1[0])) + "</span></div>";
       h += '<div class="fx-ch">' + chgCell("Week", FU.week) + chgCell("Month", FU.month) + chgCell("Year", FU.year) + "</div>";
       h += '<div class="fuel-tools fx-tools"><button type="button" data-range="90" aria-pressed="' + (frange === 90) + '">90 days</button><button type="button" data-range="365" aria-pressed="' + (frange === 365) + '">1 year</button></div>';
       h += '<div class="chart" id="fuelchart" style="min-height:150px" data-range="' + frange + '"></div>';
-      h += '<p class="pay"><b class="l">Tank</b>50 litres cost €' + (50 * L1[1]).toFixed(2) + ", " + usd(50 * L1[2] / GAL) + " at that day's rate" + (FU.year ? "; a year ago €" + (50 * FU.year[1]).toFixed(2) + ", " + usd(50 * FU.year[2] / GAL) : "") + ". 12-month high " + usd(FU.yhi[2]) + " (" + esc(fmtShort(FU.yhi[0])) + "), low " + usd(FU.ylo[2]) + " (" + esc(fmtShort(FU.ylo[0])) + "). Rises show in red.</p>";
-      h += '<p class="small" style="margin:8px 0 0"><a href="' + esc(FU.url || "https://opendata.cbs.nl/statline/#/CBS/nl/dataset/80416ned/table") + '" target="_blank" rel="noopener">' + esc(FU.src || "CBS, Pompprijzen motorbrandstoffen") + "</a>: the weighted national average pump price including VAT and excise, published weekly. Each day converts at that day's ECB rate (the last one before it at weekends); 1 US gallon is 3.785 litres.</p></div>";
+      h += '<p class="pay"><b class="l">Tank</b>50 litres cost €' + (50 * L1[1]).toFixed(2) + ", " + usd(50 * L1[2] / GAL) + " at the pump" + (hasN ? " and €" + (50 * L1[3]).toFixed(2) + ", " + usd(50 * L1[4] / GAL) + " at the NATO rate" : "") + ", at that day\'s dollar rate" + (FU.year ? "; a year ago €" + (50 * FU.year[1]).toFixed(2) + ", " + usd(50 * FU.year[2] / GAL) + (hasN && FU.year[4] != null ? " (NATO €" + (50 * FU.year[3]).toFixed(2) + ", " + usd(50 * FU.year[4] / GAL) + ")" : "") : "") + ". 12-month high " + usd(FU.yhi[2]) + (hasN && FU.yhi[4] != null ? " pump, " + usd(FU.yhi[4]) + " NATO" : "") + " (" + esc(fmtShort(FU.yhi[0])) + "), low " + usd(FU.ylo[2]) + (hasN && FU.ylo[4] != null ? " pump, " + usd(FU.ylo[4]) + " NATO" : "") + " (" + esc(fmtShort(FU.ylo[0])) + "). Rises show in red.</p>";
+      h += '<p class="small" style="margin:8px 0 0"><a href="' + esc(FU.url || "https://opendata.cbs.nl/statline/#/CBS/nl/dataset/80416ned/table") + '" target="_blank" rel="noopener">' + esc(FU.src || "CBS, Pompprijzen motorbrandstoffen") + "</a>: the weighted national average pump price including VAT and excise, published weekly. Each day converts at that day's ECB rate (the last one before it at weekends); 1 US gallon is 3.785 litres." + (hasN ? " The NATO rate is the pump price without 21% VAT and without excise (€" + (((ctx.fuel || {}).taxFree || {}).excise || {}).e95.toFixed(3) + " a litre), what a tax-exempt card pays at a Dutch station." : "") + "</p></div>";
     }
     h += tankBlock(ctx, TD);
     h += "</section>";
@@ -1777,7 +1782,7 @@
     if (!ctx.incidents) log = (E.hybrid && E.hybrid.incidents) || [];
     var FX = ctx.fx ? fxStats(ctx.fx.series, TD) : null, fxc = document.getElementById("fxchart");
     var FU = fuelStats(ctx.fuel, ctx.fx, TD);
-    function fuelChart(days, W) { return lineChart(FU.usd, { W: W, days: days, avg: days >= 365 ? FU.avg : null, avgLabel: "1y avg $", hi: FU.hi, lo: FU.lo, hiLabel: "90d high", loLabel: "90d low", dec: 2, label: "Euro 95 (E10) in the Netherlands, US dollars per gallon" }); }
+    function fuelChart(days, W) { return lineChart(FU.usd, { W: W, H: FU.nato ? 210 : 170, days: days, avg: days >= 365 ? FU.avg : null, avgLabel: "1y avg $", hi: FU.hi, lo: FU.lo, hiLabel: "90d high", loLabel: "90d low", dec: 2, extra: FU.nato, extraLabel: "NATO $", label: "Euro 95 (E10) in the Netherlands, US dollars per gallon, at the pump and at the NATO tax-exempt rate" }); }
     var board = ctx.conflicts && ctx.conflicts.length ? boardView(ctx.conflicts, TD) : null;
     function drawCharts() {
       var mapEl = document.getElementById("map"), trEl = document.getElementById("trend"), bc = document.getElementById("bycountry");
