@@ -15,7 +15,7 @@
   var PARTS = ["front","news","reading","watch","home"].map(function (k) { return PART_DEF[k]; });
   function setPartOrder(weekend) { PARTS = (weekend ? ["front","reading","news","watch","home"] : ["front","news","reading","watch","home"]).map(function (k) { return PART_DEF[k]; }); }
   function pn(cls) { var i = PARTS.map(function (p) { return p[0]; }).indexOf(cls); return "Part " + i; }
-  var TIERS = { news: ["world","hybrid","europe","countries","euregio","army","nato","deftech","frontier","markets","rates","nl"], watch: ["board","numbers","horizon","threads","novel","congress-sec","releases","sota","fx","forecasts"], reading: ["feature","research","philosophy","depth","ttpsec","aperture"], home: ["afnorth","offduty","dutch","snow","hockey","week","coming","weather","countdown","tv","calendar","year"] };
+  var TIERS = { news: ["world","hybrid","europe","countries","euregio","army","nato","deftech","frontier","markets","fx","fuel","rates","nl"], watch: ["board","numbers","horizon","threads","novel","congress-sec","releases","sota","forecasts"], reading: ["feature","research","philosophy","depth","ttpsec","aperture"], home: ["afnorth","offduty","dutch","snow","hockey","week","coming","weather","countdown","tv","calendar","year"] };
   var EVCAT = { music:"Music", markets:"Markets", museums:"Museums", sport:"Sport", kids:"Kids", food:"Food", outdoors:"Outdoors", festival:"Festivals" };
   var SERIES_BY_LABEL = [["s&p 500","spx"],["nasdaq","ndx"],["aex","aex"],["brent","brent"],["dutch ttf","ttf"],["ttf","ttf"]];
   var HOME = { lat: 50.89, lon: 5.98, name: "Heerlen" };
@@ -377,6 +377,23 @@
     var pay = Object.keys(months).sort().slice(-12).map(function (k) { var a = months[k], avgm = a.reduce(function (x, y) { return x + y; }, 0) / a.length; return [MON[parseInt(k.slice(5), 10) - 1], Math.round(1000 * avgm), k]; });
     return { series: s, last: last, prev: prev, month: m, d1: last[1] - prev[1], d30: m ? last[1] - m[1] : null, avg: avg, hi30: hi30, lo30: lo30, best: best, worst: worst, pay: pay };
   }
+  var GAL = 3.785411784; /* litres per US gallon */
+  function fuelStats(fuel, fx, asOf) {
+    /* fuel.json holds the CBS daily average pump price in euros per litre; fx.json the ECB rate in dollars per euro. Each day converts at that day's ECB rate, or the last one before it at weekends and holidays. */
+    var raw = (((fuel || {}).series || {})["nl-e95"] || []).filter(function (p) { return p[0] <= asOf && typeof p[1] === "number" && p[1] > 0; });
+    var rates = ((fx || {}).series || []).filter(function (p) { return typeof p[1] === "number" && p[1] > 0; });
+    if (raw.length < 2 || !rates.length) return null;
+    var j = 0, rate = null, rows = [];
+    raw.forEach(function (p) { while (j < rates.length && rates[j][0] <= p[0]) { rate = rates[j][1]; j++; } if (rate) rows.push([p[0], p[1], p[1] * rate * GAL]); });
+    if (rows.length < 2) return null;
+    var last = rows[rows.length - 1];
+    function at(daysBack) { var k = addDays(last[0], -daysBack), v = null; rows.forEach(function (p) { if (p[0] <= k) v = p; }); return v; }
+    var year = rows.filter(function (p) { return p[0] > addDays(last[0], -365); }), avg = year.reduce(function (a, p) { return a + p[2]; }, 0) / year.length;
+    var usd = rows.map(function (p) { return [p[0], p[2]]; }), y90 = usd.filter(function (p) { return p[0] > addDays(last[0], -90); });
+    var hi = y90.reduce(function (a, p) { return !a || p[1] > a[1] ? p : a; }, null), lo = y90.reduce(function (a, p) { return !a || p[1] < a[1] ? p : a; }, null);
+    var yhi = year.reduce(function (a, p) { return !a || p[2] > a[2] ? p : a; }, null), ylo = year.reduce(function (a, p) { return !a || p[2] < a[2] ? p : a; }, null);
+    return { rows: rows, usd: usd, last: last, week: at(7), month: at(30), year: at(365), avg: avg, hi: hi, lo: lo, yhi: yhi, ylo: ylo, src: fuel.source, url: fuel.url };
+  }
   function threadView(list, today) {
     var out = [];
     (list || []).forEach(function (t) {
@@ -730,6 +747,7 @@
     var hz = (ctx.horizon || []).filter(function (e) { return e.date >= TD && daysBetween(TD, e.date) <= 14; }).length; add("Horizon, next 14 days", hz ? "ok" : "watch", hz + " dated event" + (hz === 1 ? "" : "s"));
     fresh("Incident log", lastDate(ctx.incidents, function (i) { return i.date; }), 7, 14, "last incident");
     fresh("USD/EUR series", ctx.fx && ctx.fx.series.length ? ctx.fx.series[ctx.fx.series.length - 1][0] : "", 4, 7, "last ECB day");
+    var fuS = ctx.fuel && ctx.fuel.series && ctx.fuel.series["nl-e95"]; fresh("Pump prices", fuS && fuS.length ? fuS[fuS.length - 1][0] : "", 11, 18, "last CBS day");
     var serOld = Object.keys(ctx.series || {}).filter(function (k) { return k[0] !== "_" && (ctx.series[k] || []).length && daysBetween(ctx.series[k][ctx.series[k].length - 1][0], TD) > 5; });
     add("Market series", serOld.length ? "act" : "ok", serOld.length ? "stale: " + serOld.join(", ") : "all five within 5 days");
     var WS = ctx.worldSeries || { meta: {}, series: {} }, wsRows = Object.keys(WS.series || {}).map(function (k) { var sr = WS.series[k] || [], m = (WS.meta || {})[k] || {}, last = sr.length ? sr[sr.length - 1][0] : null, lim = m.cadence === "weekly" ? 10 : 3; return [k, last, last ? daysBetween(last, TD) > lim : true]; });
@@ -1104,7 +1122,7 @@
   }
   function contentsBlock() {
     var tiers = PARTS.slice(1).map(function (p) { return [p[0], p[1], TIERS[p[0]]]; });
-    var SN = { world: "World", hybrid: "Hybrid", europe: "Europe", countries: "Priority countries", euregio: "Euregio", army: "Defence & Army", nato: "NATO & allies", deftech: "Defence tech", frontier: "Frontier", markets: "Markets", rates: "Rates", nl: "Netherlands", board: "The board", forecasts: "Forecasts", novel: "New in war", numbers: "Numbers and indicators", fx: "USD/EUR", threads: "Threads", horizon: "Horizon", "congress-sec": "Congress", releases: "Releases", sota: "State of the art", feature: "World feature", research: "Research", philosophy: "Philosophy", depth: "Army in depth", ttpsec: "Week in war", aperture: "Aperture", afnorth: "AFNORTH", offduty: "Out and about", dutch: "Taal", snow: "Snow", hockey: "Canes", week: "This week", coming: "Coming up", weather: "Weather", countdown: "Countdowns", tv: "TV", calendar: "Calendar", year: "Year ahead", school: "School year", season: "Season" };
+    var SN = { world: "World", hybrid: "Hybrid", europe: "Europe", countries: "Priority countries", euregio: "Euregio", army: "Defence & Army", nato: "NATO & allies", deftech: "Defence tech", frontier: "Frontier", markets: "Markets", rates: "Rates", nl: "Netherlands", board: "The board", forecasts: "Forecasts", novel: "New in war", numbers: "Numbers and indicators", fx: "USD/EUR", fuel: "Pump price", threads: "Threads", horizon: "Horizon", "congress-sec": "Congress", releases: "Releases", sota: "State of the art", feature: "World feature", research: "Research", philosophy: "Philosophy", depth: "Army in depth", ttpsec: "Week in war", aperture: "Aperture", afnorth: "AFNORTH", offduty: "Out and about", dutch: "Taal", snow: "Snow", hockey: "Canes", week: "This week", coming: "Coming up", weather: "Weather", countdown: "Countdowns", tv: "TV", calendar: "Calendar", year: "Year ahead", school: "School year", season: "Season" };
     return '<h3>In this edition</h3><ol class="toc">' + tiers.map(function (t, i) { return '<li data-tier="' + t[0] + '" class="' + t[0] + '"><a href="#p-' + t[0] + '"><b>' + (i + 1) + " · " + esc(t[1]) + '</b></a><span class="tm"></span><span class="secs">' + t[2].map(function (id) { return '<a href="#' + id + '">' + esc(SN[id] || id) + "</a>"; }).join(" · ") + "</span></li>"; }).join("") + "</ol>";
   }
   function yearAhead(ctx, E, TD, today) {
@@ -1193,7 +1211,9 @@
     var nxg = CV ? nextGameLine(CV.upcoming, TD) : "";
     if (T.canes) h += '<div class="tile hockey"><div class="lbl">Hurricanes</div><div class="val">' + esc(T.canes.line) + "</div><p>" + esc(T.canes.sub) + cite(T.canes.src) + "</p>" + nxg + "</div>";
     else if (CV) { var lg = CV.games[CV.games.length - 1]; h += '<div class="tile hockey"><div class="lbl">Hurricanes</div><div class="val">' + esc(lg.res + " " + lg.gf + "–" + lg.ga + (lg.home ? " vs " : " at ") + lg.opp) + "</div><p>" + esc(CV.record + " · " + CV.points + " pts") + "</p>" + nxg + "</div>"; }
-    if (T.markets) h += '<div class="tile"><div class="lbl">Markets</div><div class="mini-mk">' + T.markets.map(function (m) { var g = fxGuard(m[0], m[1], null, m[2]); return "<span>" + esc(g.label) + '</span><span class="chg ' + esc(g.dir) + '">' + esc(g.value) + "</span>"; }).join("") + "</div></div>";
+    var mkRows = (T.markets || []).slice(), br = (SER.brent || []).filter(function (p) { return p[0] <= TD; });
+    if (br.length >= 2 && !mkRows.some(function (m) { return /brent/i.test(m[0]); })) { var b1 = br[br.length - 1], b0 = br[br.length - 2], bp = (b1[1] - b0[1]) / b0[1] * 100; mkRows.push(["Brent", "$" + b1[1].toFixed(2), Math.abs(bp) < 0.1 ? "flat" : bp > 0 ? "up" : "down", signed(bp, 2, "%") + " on " + fmtShort(b1[0])]); }
+    if (mkRows.length) h += '<div class="tile"><div class="lbl">Markets</div><div class="mini-mk">' + mkRows.map(function (m) { var g = fxGuard(m[0], m[1], null, m[2]); return "<span>" + esc(g.label) + '</span><span class="chg ' + esc(g.dir) + '"' + (m[3] ? ' title="' + esc(m[3]) + '"' : "") + ">" + esc(g.value) + "</span>"; }).join("") + "</div></div>";
     if (FX) h += '<div class="tile money"><div class="lbl">USD/EUR · ECB</div><div class="val">' + FX.last[1].toFixed(4) + '</div><p><span class="chg ' + dir(FX.d1) + '">' + signed(FX.d1, 4) + " (" + signed(FX.d1 / FX.prev[1] * 100, 2, "%") + ")</span> vs " + esc(fmtShort(FX.prev[0])) + "</p></div>";
     h += '<div class="tile" id="bins"><div class="lbl">Bin day</div><div class="val">…</div><p></p></div>';
     h += '<button type="button" class="tile newcount" id="newcount" title="Show only new and updated items"><div class="lbl">This edition</div><div class="val"><span id="nnew">…</span><small id="nupd"></small></div><p>Tap to show only what changed</p></button>';
@@ -1300,7 +1320,7 @@
     var M = E.money || {};
     h += '<section id="markets" class="news"><h2>Markets &amp; economy <span class="num">' + esc(M.asof || "") + "</span></h2>";
     var sparks = []; ctx._sparks = sparks;
-    if (M.cards) h += '<div class="cards">' + M.cards.map(function (c) {
+    if (M.cards) h += '<div class="cards">' + M.cards.filter(function (c) { return !(FX && /(USD|EUR)\s*\/\s*(EUR|USD)/i.test(c[0])); }).map(function (c) {
       var src = null, sk = null;
       [c[5], c[6]].forEach(function (v) { if (typeof v === "number") src = v; else if (typeof v === "string" && v) sk = v; });
       if (!sk) { var lab = String(c[0]).toLowerCase(); SERIES_BY_LABEL.forEach(function (m) { if (!sk && lab.indexOf(m[0]) === 0) sk = m[1]; }); }
@@ -1310,13 +1330,39 @@
     }).join("") + "</div>";
     if (M.driver) h += "<p>" + rich(M.driver) + "</p>";
     if (M.ytd) h += "<h3>Year to date</h3>" + hbars(M.ytd, { fmt: function (v) { return (v >= 0 ? "+" : "") + v.toFixed(1) + "%"; }, foot: "Change since 1 January at the last close." + cite(M.ytdSrc) });
+    if (FX) {
+      var range = store("rb:fx:range") === "1y" ? 365 : 90;
+      h += '<h3 id="fx">USD/EUR <span class="small">euros per dollar · ECB</span></h3><div class="fx">';
+      h += '<div class="fx-top"><span class="big tab">' + FX.last[1].toFixed(4) + '</span><span class="asof">' + esc(fmtLong(FX.last[0])) + " · € per $</span></div>";
+      h += '<div class="fx-ch"><div><div class="lbl">Since ' + esc(fmtShort(FX.prev[0])) + '</div><div class="v chg ' + dir(FX.d1) + '">' + signed(FX.d1, 4) + '</div><div class="p chg ' + dir(FX.d1) + '">' + signed(FX.d1 / FX.prev[1] * 100, 2, "%") + "</div></div>";
+      if (FX.month) h += '<div><div class="lbl">Since ' + esc(fmtShort(FX.month[0])) + '</div><div class="v chg ' + dir(FX.d30) + '">' + signed(FX.d30, 4) + '</div><div class="p chg ' + dir(FX.d30) + '">' + signed(FX.d30 / FX.month[1] * 100, 2, "%") + "</div></div>";
+      h += '<div><div class="lbl">30-day range</div><div class="v">' + FX.lo30[1].toFixed(4) + '</div><div class="p">to ' + FX.hi30[1].toFixed(4) + "</div></div></div>";
+      h += '<div class="fx-tools"><button type="button" data-range="90" aria-pressed="' + (range === 90) + '">90 days</button><button type="button" data-range="365" aria-pressed="' + (range === 365) + '">1 year</button></div>';
+      h += '<div class="chart" id="fxchart" style="min-height:150px" data-range="' + range + '"></div>';
+      var eu = function (r) { return "€" + num(1000 * r, 0); };
+      h += '<p class="pay"><b class="l">Pay</b>$1,000 is ' + eu(FX.last[1]) + " today" + (FX.month ? ", " + eu(FX.month[1]) + " a month ago" : "") + "; 12-month best " + eu(FX.best[1]) + " (" + esc(fmtShort(FX.best[0])) + "), worst " + eu(FX.worst[1]) + " (" + esc(fmtShort(FX.worst[0])) + "). Up means the dollar buys more euros.</p>";
+      h += '<div class="lbl" style="margin-top:12px">$1,000 in euros, monthly average</div><div class="chart" id="paybars" style="min-height:110px"></div>';
+      h += '<p class="small" style="margin:8px 0 0"><a href="' + esc(ctx.fx.url || "https://www.ecb.europa.eu/stats/eurofxref/") + '" target="_blank" rel="noopener">' + esc(ctx.fx.source || "ECB") + "</a>, one value per ECB business day, inverted from the ECB's dollars-per-euro quote.</p></div>";
+    }
+    var FU = fuelStats(ctx.fuel, ctx.fx, TD);
+    if (FU) {
+      var frange = store("rb:fuel:range") === "90d" ? 90 : 365, L1 = FU.last, usd = function (v) { return "$" + v.toFixed(2); }, chgCell = function (lbl, ref) { if (!ref) return ""; var d = L1[2] - ref[2]; return '<div><div class="lbl">' + esc(lbl) + '</div><div class="v chg ' + (d > 0.005 ? "down" : d < -0.005 ? "up" : "flat") + '">' + signed(d, 2) + '</div><div class="p">' + signed(d / ref[2] * 100, 1, "%") + " · €" + ref[1].toFixed(3) + "/l</div></div>"; };
+      h += '<h3 id="fuel">Pump price · Euro 95 (E10) <span class="small">Netherlands average, in US dollars</span></h3><div class="fx">';
+      h += '<div class="fx-top"><span class="big tab">' + usd(L1[2]) + '</span><span class="asof">per US gallon · €' + L1[1].toFixed(3) + " a litre · " + esc(fmtLong(L1[0])) + "</span></div>";
+      h += '<div class="fx-ch">' + chgCell("Week", FU.week) + chgCell("Month", FU.month) + chgCell("Year", FU.year) + "</div>";
+      h += '<div class="fuel-tools fx-tools"><button type="button" data-range="90" aria-pressed="' + (frange === 90) + '">90 days</button><button type="button" data-range="365" aria-pressed="' + (frange === 365) + '">1 year</button></div>';
+      h += '<div class="chart" id="fuelchart" style="min-height:150px" data-range="' + frange + '"></div>';
+      h += '<p class="pay"><b class="l">Tank</b>50 litres cost €' + (50 * L1[1]).toFixed(2) + ", " + usd(50 * L1[2] / GAL) + " at that day's rate" + (FU.year ? "; a year ago €" + (50 * FU.year[1]).toFixed(2) + ", " + usd(50 * FU.year[2] / GAL) : "") + ". 12-month high " + usd(FU.yhi[2]) + " (" + esc(fmtShort(FU.yhi[0])) + "), low " + usd(FU.ylo[2]) + " (" + esc(fmtShort(FU.ylo[0])) + "). Rises show in red.</p>";
+      h += '<p class="small" style="margin:8px 0 0"><a href="' + esc(FU.url || "https://opendata.cbs.nl/statline/#/CBS/nl/dataset/80416ned/table") + '" target="_blank" rel="noopener">' + esc(FU.src || "CBS, Pompprijzen motorbrandstoffen") + "</a>: the weighted national average pump price including VAT and excise, published weekly. Each day converts at that day's ECB rate (the last one before it at weekends); 1 US gallon is 3.785 litres.</p></div>";
+    }
     h += "</section>";
     h += '<section id="rates" class="news">';
     if (M.rates) h += "<h2>Rates and prices</h2>" + table(["Measure", "Latest", "Note"], M.rates.map(function (r) { var g = fxGuard(r[0], r[1], null, null); return "<tr><td>" + esc(g.label) + '</td><td class="d">' + esc(g.value) + "</td><td>" + rich(r[2]) + "</td></tr>"; }).join(""), "lbl1");
     if (M.fuel) {
       var F = M.fuel, minP = Math.min.apply(null, F.rows.map(function (r) { return r[1]; })), minD = Math.min.apply(null, F.rows.map(function (r) { return r[2]; }));
       h += '<h3>Fuel across the borders <span class="small">' + esc(F.asof) + "</span></h3>";
-      h += table(["Country", "Euro 95 €/l", "Diesel €/l"], F.rows.map(function (r) { return "<tr><td>" + esc(r[0]) + '</td><td class="d"' + (r[1] === minP ? ' style="color:var(--up);font-weight:700"' : "") + ">" + r[1].toFixed(3) + '</td><td class="d"' + (r[2] === minD ? ' style="color:var(--up);font-weight:700"' : "") + ">" + r[2].toFixed(3) + "</td></tr>"; }).join(""), "lbl1");
+      var fxUsd = ctx.fx && ctx.fx.series.length ? ctx.fx.series[ctx.fx.series.length - 1][1] : null;
+      h += table(["Country", "Euro 95 €/l"].concat(fxUsd ? ["Euro 95 $/gal"] : []).concat(["Diesel €/l"]), F.rows.map(function (r) { return "<tr><td>" + esc(r[0]) + '</td><td class="d"' + (r[1] === minP ? ' style="color:var(--up);font-weight:700"' : "") + ">" + r[1].toFixed(3) + "</td>" + (fxUsd ? '<td class="d">$' + (r[1] * fxUsd * GAL).toFixed(2) + "</td>" : "") + '<td class="d"' + (r[2] === minD ? ' style="color:var(--up);font-weight:700"' : "") + ">" + r[2].toFixed(3) + "</td></tr>"; }).join(""), "lbl1");
       h += '<p class="small" style="margin-top:6px">' + rich(F.note) + cite(F.src) + (F.weekly ? " Updated " + esc(F.weekly) + "." : "") + "</p>";
     }
     if (M.week) h += '<h3>Week ahead</h3><ul class="clean">' + M.week.map(function (x) { return "<li>" + rich(x) + "</li>"; }).join("") + "</ul>";
@@ -1423,20 +1469,6 @@
     h += sotaBlock(SO, TD);
 
     /* ===== Part 3 · The reading ===== */
-    if (FX) {
-      var range = store("rb:fx:range") === "1y" ? 365 : 90;
-      h += '<section id="fx" class="watch"><h2>USD/EUR <span class="num">euros per dollar · ECB</span></h2><div class="fx">';
-      h += '<div class="fx-top"><span class="big tab">' + FX.last[1].toFixed(4) + '</span><span class="asof">' + esc(fmtLong(FX.last[0])) + " · € per $</span></div>";
-      h += '<div class="fx-ch"><div><div class="lbl">Since ' + esc(fmtShort(FX.prev[0])) + '</div><div class="v chg ' + dir(FX.d1) + '">' + signed(FX.d1, 4) + '</div><div class="p chg ' + dir(FX.d1) + '">' + signed(FX.d1 / FX.prev[1] * 100, 2, "%") + "</div></div>";
-      if (FX.month) h += '<div><div class="lbl">Since ' + esc(fmtShort(FX.month[0])) + '</div><div class="v chg ' + dir(FX.d30) + '">' + signed(FX.d30, 4) + '</div><div class="p chg ' + dir(FX.d30) + '">' + signed(FX.d30 / FX.month[1] * 100, 2, "%") + "</div></div>";
-      h += '<div><div class="lbl">30-day range</div><div class="v">' + FX.lo30[1].toFixed(4) + '</div><div class="p">to ' + FX.hi30[1].toFixed(4) + "</div></div></div>";
-      h += '<div class="fx-tools"><button type="button" data-range="90" aria-pressed="' + (range === 90) + '">90 days</button><button type="button" data-range="365" aria-pressed="' + (range === 365) + '">1 year</button></div>';
-      h += '<div class="chart" id="fxchart" style="min-height:150px" data-range="' + range + '"></div>';
-      var eu = function (r) { return "€" + num(1000 * r, 0); };
-      h += '<p class="pay"><b class="l">Pay</b>$1,000 is ' + eu(FX.last[1]) + " today" + (FX.month ? ", " + eu(FX.month[1]) + " a month ago" : "") + "; 12-month best " + eu(FX.best[1]) + " (" + esc(fmtShort(FX.best[0])) + "), worst " + eu(FX.worst[1]) + " (" + esc(fmtShort(FX.worst[0])) + "). Up means the dollar buys more euros.</p>";
-      h += '<div class="lbl" style="margin-top:12px">$1,000 in euros, monthly average</div><div class="chart" id="paybars" style="min-height:110px"></div>';
-      h += '<p class="small" style="margin:8px 0 0"><a href="' + esc(ctx.fx.url || "https://www.ecb.europa.eu/stats/eurofxref/") + '" target="_blank" rel="noopener">' + esc(ctx.fx.source || "ECB") + "</a>, one value per ECB business day, inverted from the ECB's dollars-per-euro quote.</p></div></section>";
-    }
     var P = E.planner || {};
     h += forecastBlock(ctx, TD);
     TIER_HTML.watch = h; h = "";
@@ -1658,6 +1690,8 @@
     var log = (ctx.incidents || []).filter(function (x) { var d = pd(x.date); return (today - d) / DAY <= 29 && d <= today; });
     if (!ctx.incidents) log = (E.hybrid && E.hybrid.incidents) || [];
     var FX = ctx.fx ? fxStats(ctx.fx.series, TD) : null, fxc = document.getElementById("fxchart");
+    var FU = fuelStats(ctx.fuel, ctx.fx, TD);
+    function fuelChart(days, W) { return lineChart(FU.usd, { W: W, days: days, avg: days >= 365 ? FU.avg : null, avgLabel: "1y avg $", hi: FU.hi, lo: FU.lo, hiLabel: "90d high", loLabel: "90d low", dec: 2, label: "Euro 95 (E10) in the Netherlands, US dollars per gallon" }); }
     var board = ctx.conflicts && ctx.conflicts.length ? boardView(ctx.conflicts, TD) : null;
     function drawCharts() {
       var mapEl = document.getElementById("map"), trEl = document.getElementById("trend"), bc = document.getElementById("bycountry");
@@ -1668,6 +1702,7 @@
       app.querySelectorAll(".spark[data-s]").forEach(function (el) { el.innerHTML = sparkline(ctx._sparks[+el.getAttribute("data-s")], el.clientWidth); });
       app.querySelectorAll(".spark[data-ws]").forEach(function (el) { el.innerHTML = sparkline(ctx._ws[el.getAttribute("data-ws")], el.clientWidth); });
       if (fxc && FX) fxc.innerHTML = lineChart(FX.series, { W: fxc.clientWidth, days: +fxc.getAttribute("data-range"), avg: FX.avg, avgLabel: "1y avg ", hi: FX.hi30, lo: FX.lo30, hiLabel: "30d high", loLabel: "30d low", dec: 4, label: "USD/EUR, euros per dollar" });
+      var fuc = document.getElementById("fuelchart"); if (fuc && FU) fuc.innerHTML = fuelChart(+fuc.getAttribute("data-range"), fuc.clientWidth);
       var pb = document.getElementById("paybars"); if (pb && FX) pb.innerHTML = vbars(FX.pay.map(function (p) { return [p[0], p[1], p[2], p[2] === FX.last[0].slice(0, 7)]; }), { W: pb.clientWidth, H: 130, fmt: function (v) { return "€" + v; }, label: "$1,000 in euros by month" });
       var wm = document.getElementById("worldmap"); if (wm && board) { var counts = {}; board.forEach(function (b) { counts[b.t.id] = b.n7; }); wm.innerHTML = worldMap(ctx.conflicts, counts, wm.clientWidth, ctx.land); }
       var fc = document.getElementById("fchart"); if (fc && ctx._fser) { var fm = ctx._fmeta || {}; fc.innerHTML = lineChart(ctx._fser, { W: fc.clientWidth, days: 400, dec: fm.decimals != null ? fm.decimals : 0, zero: true, label: fm.label || "" }); }
@@ -1792,13 +1827,26 @@
 
     /* USD/EUR range toggle */
     if (fxc && FX) {
-      app.querySelectorAll(".fx-tools button").forEach(function (b) {
+      app.querySelectorAll(".fx-tools:not(.fuel-tools) button").forEach(function (b) {
         b.addEventListener("click", function () {
           var r = parseInt(b.getAttribute("data-range"), 10);
           store("rb:fx:range", r === 365 ? "1y" : "90d");
-          app.querySelectorAll(".fx-tools button").forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
+          app.querySelectorAll(".fx-tools:not(.fuel-tools) button").forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
           fxc.setAttribute("data-range", r);
           fxc.innerHTML = lineChart(FX.series, { W: fxc.clientWidth, days: r, avg: FX.avg, avgLabel: "1y avg ", hi: FX.hi30, lo: FX.lo30, hiLabel: "30d high", loLabel: "30d low", dec: 4, label: "USD/EUR, euros per dollar" });
+        });
+      });
+    }
+
+    /* pump-price range toggle */
+    var fuc2 = document.getElementById("fuelchart");
+    if (fuc2 && FU) {
+      app.querySelectorAll(".fuel-tools button").forEach(function (b) {
+        b.addEventListener("click", function () {
+          var r = parseInt(b.getAttribute("data-range"), 10);
+          store("rb:fuel:range", r === 365 ? "1y" : "90d");
+          app.querySelectorAll(".fuel-tools button").forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
+          fuc2.setAttribute("data-range", r); fuc2.innerHTML = fuelChart(r, fuc2.clientWidth);
         });
       });
     }
@@ -1918,8 +1966,9 @@
     opt("data/incidents.json"), opt("data/bins.json"), opt("data/threads.json"), opt("data/horizon.json"),
     opt("data/fx.json"), opt("data/series.json"), opt("data/canes.json"),
     opt("data/conflicts.json"), opt("data/world-series.json"), opt("data/calendar.json"), opt("data/deadlines.json"),
-    opt("data/congress.json"), opt("data/exercises.json"), opt("data/releases.json"), opt("data/events.json"), opt("data/idioms.json"), opt("data/ski.json"), opt("data/search-index.json"), opt("data/land.json"), opt("data/week.json"), opt("data/corrections.json"), opt("data/research.json"), opt("data/teams.json"), opt("data/tv.json"), opt("data/countries.json"), opt("data/ceu.json"), opt("data/novel.json"), opt("data/indicators.json"), opt("data/forecasts.json"), opt("data/questions.json"), opt("data/ua-front.json"), opt("data/philosophy.json"), opt("data/inbox.json")
+    opt("data/congress.json"), opt("data/exercises.json"), opt("data/releases.json"), opt("data/events.json"), opt("data/idioms.json"), opt("data/ski.json"), opt("data/search-index.json"), opt("data/land.json"), opt("data/week.json"), opt("data/corrections.json"), opt("data/research.json"), opt("data/teams.json"), opt("data/tv.json"), opt("data/countries.json"), opt("data/ceu.json"), opt("data/novel.json"), opt("data/indicators.json"), opt("data/forecasts.json"), opt("data/questions.json"), opt("data/ua-front.json"), opt("data/philosophy.json"), opt("data/inbox.json"), opt("data/fuel.json")
   ]).then(function (r) {
+    ctx.fuel = r[34] && r[34].series ? r[34] : null;
     ctx.novel = r[27]; ctx.indicators = r[28]; ctx.forecasts = r[29]; ctx.questions = r[30]; ctx.uaFront = r[31]; ctx.philosophy = r[32]; ctx.inbox = r[33];
     ctx.ceu = r[26] && r[26].countries; ctx.countriesMap = r[25] && r[25].map;
     ctx.week = r[20]; ctx.corrections = r[21]; ctx.research = r[22]; ctx.teams = r[23]; ctx.tv = r[24];

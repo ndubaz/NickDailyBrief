@@ -15,6 +15,7 @@ The site is static. `index.html` + `app.js` + `styles.css` never change day to d
 | `data/horizon.json` | Add new dated events (`added` = today); set `updated` = today on an event you changed; remove events whose date has passed. |
 | `data/fx.json` | Append the ECB EUR reference rate for each business day not yet listed (the ECB publishes about 16:00 CET, so a morning run appends yesterday). Stored exactly as the ECB quotes it, US dollars per euro; the page inverts to euros per dollar. |
 | `data/series.json` | Append the last close for each series key; keep the last 30 trading days per key. |
+| `data/fuel.json` | Run `node tools/fuel.js` every day: it downloads CBS table 80416ned (daily average pump prices in the Netherlands, published weekly) and rewrites the file with about 400 days of Euro 95 and diesel. Do not edit by hand. If it fails, leave the file and say so in `flags`. |
 | `data/canes.json` | Append each completed Carolina game; refresh `upcoming` (next 15 scheduled games with UTC start); update `record`, `points`, `metro`. |
 | `data/congress.json` | Three lanes: key defence bills, the budget cycle, confirmations. Add a row when a bill is introduced, a budget deadline is set, a post falls vacant or a nominee is named; move `stage`, add the date to `dates`, set `updated`, copy cited source rows into `src`. Never delete rows. |
 | `data/exercises.json` | Add announced NATO and allied exercises; set `updated` when dates change; never delete (the page hides those older than 60 days). |
@@ -143,6 +144,12 @@ Defence items carry priority-topic tags in `tag` (several separated by ` · `): 
 
 The World feature rota: Monday "Theatre in numbers" (table), Tuesday "Actor on the record" (dated quotes, table of capabilities), Wednesday "Trend line" (`series`), Thursday "Chronology" (`timeline`, 30 days), Friday "Week on the board" (table of what moved per theatre), Saturday "Geography" (`geo` schematic), Sunday "The record" (`timeline` over 12 months plus `series`). A worked example is in `data/examples/edition-4.0-sample.json`.
 
+### Page changes on 8 Nov (format stays 7.3)
+
+- The USD/EUR tracker moves from The watch into Markets & economy in The news, after the year-to-date bars; its jump id stays `fx`. The edition's USD/EUR card in `money.cards` is still written but hidden on the page while the tracker shows, since the tracker carries the same figure. The watch has nine sections.
+- New block `fuel` (jump id `fuel`) under the tracker: the Euro 95 (E10) pump price in the Netherlands in US dollars per gallon, from `data/fuel.json` and `data/fx.json`.
+- The Today strip's Markets tile adds a Brent row from `series.json` (last close, change in the tooltip) when the edition's `today.markets` has no Brent row; `today.markets` stays four rows.
+
 ### Page changes on 3 Nov (format stays 5.0)
 
 - This week lists only holidays, AFNORTH days, bins, deadlines, career dates, Christmas markets opening, events with `prio`, planner rows with the priority flag, exercise start and end dates, and Canes games that start between 07:00 and 22:59 CET. Spans show on their first and last day only.
@@ -187,6 +194,10 @@ The same file carries `tiers` and `watch`: the register of posts the confirmatio
 ### `data/releases.json`
 
 `{ "releases": [ {"id","date","kind":"model|chip|robot|autonomy|result|tool","t","lab","n","src"} ], "sota": {"asof","rows":[{"domain","group":"Models|Media|Physical|Compute","system","lab","cc","open":bool,"metric","score","unit","since","runner":{"system","lab","score"},"changed":bool,"note","src":[[n,title,outlet,url]]}]} }`. The release log shows the last 45 days; `sota` is rewritten on Fridays. The page shows a summary strip (leads by country, leads changed this week, open-weights leaders, longest-held lead), a bar chart of days each lead has been held, then one card per domain grouped by `group` with the lab, country and open-weights chips, the metric and score, the challenger and gap on the same metric, the lead date and the note. The older array form `[domain, system, lab, since, src]` still renders.
+
+### `data/fuel.json`
+
+Written by `tools/fuel.js`: `{ "updated", "source", "url", "note", "unit": "EUR per litre", "series": { "nl-e95": [["YYYY-MM-DD", 2.284], ...], "nl-diesel": [...] } }`, ascending, about 400 days, CBS weighted national averages including VAT and excise (Euro 95 is sold as E10). The page converts Euro 95 to US dollars per gallon with the ECB rate of the same day from `fx.json` (the last one before it at weekends; 1 US gallon = 3.785411784 litres) and shows it in Markets & economy under the USD/EUR tracker: the latest price in dollars per gallon and euros per litre, the change over a week, a month and a year, a 90-day or one-year chart, and the cost of a 50-litre tank. The Friday `money.fuel` table gains a Euro 95 dollars-per-gallon column computed the same way. The validator checks order and range and warns when the last CBS day is more than 12 days old.
 
 ### `data/inbox.json`
 
