@@ -153,7 +153,7 @@ The World feature rota: Monday "Theatre in numbers" (table), Tuesday "Actor on t
 
 - The page is organised in five tiers (Today, The news, The watch, The reading, Home and planning); every edition object stays where it was, so no field moved. Jump ids added: `research`, `congress-sec`, `exercises-sec`, `production`, `depth`, `ttpsec`, `since`, `year`, `weekreview`, `tv` (6.1). Decisions due was removed in 6.1.
 - `sources` rows gain the tier field; items gain optional `links`; `weekreview` added for Sundays.
-- `"v": "7.0"` (6.0 to 6.5 still validate). 7.0 reorders the page: the Brief (takeaways, what changed, what to watch, what we do not know, indicators), then The news, The reading and The watch (each tracker showing its last ten log entries), then Home and planning. On Saturdays and Sundays The reading comes before The news. New watch sections: Ukraine, Indicators and warning, Forecast ledger.
+- `"v": "7.0"` (6.0 to 6.5 still validate). 7.0 reorders the page: the Brief (takeaways, what changed, what to watch, what we do not know, indicators), then The news, The reading and The watch (each tracker showing its last ten log entries), then Home and planning. On Saturdays and Sundays The reading comes before The news. New watch sections: Ukraine in detail (inside the board), Indicators and warning (inside Numbers and indicators), Forecast ledger; 7.2 merged the exercise calendar into Horizon, Decisions due and From your mail into Coming up, and the School year and season gantts into The year ahead.
 
 ### Changes from v4.0
 
