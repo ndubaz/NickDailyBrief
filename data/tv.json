@@ -367,6 +367,31 @@
      "https://www.raiplay.it/programmi/blanca"
     ]
    ]
+  },
+  {
+   "id": "imma",
+   "tvmaze": 50231,
+   "title": "Imma Tataranni",
+   "where": "Rai 1 and RaiPlay (Italy)",
+   "status": "between",
+   "last": {
+    "s": 5,
+    "e": 4,
+    "date": "2026-03-29",
+    "name": "Nessuno si salva da solo"
+   },
+   "next": null,
+   "note": "Series 5 ended 29 Mar 2026; Vanessa Scalera as the Matera deputy prosecutor. Rai has not announced series 6 (to confirm). Lucanian dialect on top of the Italian, Matera's Sassi as the set.",
+   "src": [
+    [
+     "TVMaze: Imma Tataranni - Sostituto procuratore",
+     "https://www.tvmaze.com/shows/50231/imma-tataranni-sostituto-procuratore"
+    ],
+    [
+     "RaiPlay: Imma Tataranni",
+     "https://www.raiplay.it/programmi/immatataranni-sostitutoprocuratore"
+    ]
+   ]
   }
  ],
  "similar": [
@@ -457,20 +482,12 @@
    "why": "Pastry teams instead of amateurs; sharper, shorter, and on between Bake Off series."
   },
   {
-   "title": "Imma Tataranni, sostituto procuratore",
-   "where": "Rai 1 and RaiPlay",
-   "like": [
-    "blanca",
-    "donmatteo"
-   ],
-   "why": "A Matera prosecutor with the same mix of case-of-the-week and family life; the dialect is the lesson."
-  },
-  {
    "title": "Il Commissario Montalbano",
    "where": "Rai 1 and RaiPlay, MHz Choice",
    "like": [
     "donmatteo",
-    "blanca"
+    "blanca",
+    "imma"
    ],
    "why": "The Sicilian benchmark; feature-length episodes, slow and sunlit, Camilleri's Italian with Sicilian colour."
   }
