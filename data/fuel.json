@@ -799,5 +799,31 @@
    ["2026-11-01", 2.46],
    ["2026-11-02", 2.468]
   ]
+ },
+ "cars": [
+  {
+   "id": "fit",
+   "name": "2019 Honda Fit",
+   "litres": 40,
+   "fuel": "e95",
+   "note": "US-spec tank 10.6 US gallons, about 40 litres"
+  },
+  {
+   "id": "tiguan",
+   "name": "2014 VW Tiguan",
+   "litres": 64,
+   "fuel": "e95",
+   "note": "Tank 64 litres"
+  }
+ ],
+ "taxFree": {
+  "vat": 0.21,
+  "excise": {
+   "e95": 0.78991,
+   "diesel": 0.51633
+  },
+  "price": null,
+  "asof": "2026",
+  "note": "Dutch excise per litre at the reduced 2025 rate, which the cabinet extended into 2026 (to confirm against the Belastingdienst accijnstarieven table each January); set price per litre here if your card charges a posted monthly price instead"
  }
 }

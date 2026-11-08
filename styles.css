@@ -89,7 +89,7 @@ h1{font-family:var(--f-display);font-weight:700;font-size:clamp(40px,10vw,62px);
 .tile p{font-size:12.5px;margin:0;color:var(--muted)}
 .mini-mk{display:grid;grid-template-columns:1fr auto;gap:2px var(--s2);font-size:13px;margin-top:var(--s1)}
 .mini-mk span:nth-child(even){font-family:var(--f-mono);font-size:12px;text-align:right;font-variant-numeric:tabular-nums}
-.tile.newcount{appearance:none;-webkit-appearance:none;display:block;width:100%;text-align:left;cursor:pointer;transition:background-color var(--t)}
+.tile.newcount{appearance:none;-webkit-appearance:none;display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;width:100%;text-align:left;cursor:pointer;transition:background-color var(--t)}
 .tile.newcount:hover,.tile.newcount:active{background:var(--accent-soft)}
 .tile.newcount .val{display:flex;gap:var(--s2);align-items:baseline}
 .tile.newcount .val small{font-family:var(--f-mono);font-size:12px;font-weight:500;color:var(--muted)}
@@ -814,3 +814,10 @@ html.compact .panel,.compact .card{padding:var(--s2)}
 .lq{margin:4px 0 0;padding-left:10px;border-left:3px solid var(--line);font-size:14.5px}
 .lq .o{font-style:italic}
 .lq .small{display:block;margin-top:1px}
+/* 7.3 front strip: sun and moon, next up */
+.tile.sun .val{display:flex;align-items:center;gap:6px;font-size:20px}
+.tile.sun .val .wxi{margin:0;flex:none;color:var(--warn)}
+.tile.sun .moonl{display:flex;align-items:center;gap:6px;margin-top:4px;color:var(--ink)}
+.tile.sun .moon{flex:none;color:var(--muted)}
+.tile.nextup .nul{list-style:none;margin:2px 0 0;padding:0;font-size:12.5px;color:var(--muted);display:grid;gap:2px}
+.tile.nextup .nul b{color:var(--ink);font-weight:600;font-family:var(--f-mono);font-size:11.5px;margin-right:2px}

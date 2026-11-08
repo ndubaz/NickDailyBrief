@@ -1,0 +1,705 @@
+{
+ "updated": "2026-11-08",
+ "asof": "2026-09",
+ "vat": "included",
+ "src": [
+  [
+   "CBS StatLine 85592NED: Gemiddelde energietarieven voor consumenten (incl. btw)",
+   "https://opendata.cbs.nl/statline/#/CBS/nl/dataset/85592NED/table"
+  ]
+ ],
+ "api": "https://opendata.cbs.nl/ODataApi/odata/85592NED/TypedDataSet",
+ "region": "Netherlands average; the grid operator for Parkstad Limburg is Enexis, whose network tariff is set once a year",
+ "typical": {
+  "kwh": 2500,
+  "m3": 1200,
+  "note": "ACM reference household: 2,500 kWh and 1,200 m³ a year"
+ },
+ "note": "Weighted average monthly consumer prices for new variable contracts, including VAT. var = supply price per kWh or m³; tax = energy tax per unit (ODE merged into it from 2023); dyn = average dynamic-contract supply price; net = network (transport) charge per year; fixed = supplier standing charge per year; rebate = energy-tax reduction per connection per year. The last month is provisional until CBS publishes the next.",
+ "months": [
+  {
+   "m": "2023-10",
+   "elec": {
+    "var": 0.1922,
+    "tax": 0.15245,
+    "ode": null,
+    "dyn": null,
+    "net": 342.16,
+    "fixed": 78.02
+   },
+   "gas": {
+    "var": 0.6609,
+    "tax": 0.59266,
+    "ode": null,
+    "net": 217.69,
+    "fixed": 75.13
+   },
+   "rebate": -596.86
+  },
+  {
+   "m": "2023-11",
+   "elec": {
+    "var": 0.1972,
+    "tax": 0.15245,
+    "ode": null,
+    "dyn": null,
+    "net": 342.16,
+    "fixed": 81.62
+   },
+   "gas": {
+    "var": 0.6834,
+    "tax": 0.59266,
+    "ode": null,
+    "net": 217.69,
+    "fixed": 74.21
+   },
+   "rebate": -596.86
+  },
+  {
+   "m": "2023-12",
+   "elec": {
+    "var": 0.1994,
+    "tax": 0.15245,
+    "ode": null,
+    "dyn": null,
+    "net": 342.16,
+    "fixed": 81.95
+   },
+   "gas": {
+    "var": 0.6927,
+    "tax": 0.59266,
+    "ode": null,
+    "net": 217.69,
+    "fixed": 74.62
+   },
+   "rebate": -596.86
+  },
+  {
+   "m": "2024-01",
+   "elec": {
+    "var": 0.1998,
+    "tax": 0.13165,
+    "ode": null,
+    "dyn": null,
+    "net": 415.67,
+    "fixed": 89.2
+   },
+   "gas": {
+    "var": 0.698,
+    "tax": 0.70544,
+    "ode": null,
+    "net": 232.39,
+    "fixed": 73.85
+   },
+   "rebate": -631.35
+  },
+  {
+   "m": "2024-02",
+   "elec": {
+    "var": 0.1988,
+    "tax": 0.13165,
+    "ode": null,
+    "dyn": null,
+    "net": 415.67,
+    "fixed": 89.7
+   },
+   "gas": {
+    "var": 0.6896,
+    "tax": 0.70544,
+    "ode": null,
+    "net": 232.39,
+    "fixed": 74.42
+   },
+   "rebate": -631.35
+  },
+  {
+   "m": "2024-03",
+   "elec": {
+    "var": 0.1936,
+    "tax": 0.13165,
+    "ode": null,
+    "dyn": null,
+    "net": 415.67,
+    "fixed": 90.96
+   },
+   "gas": {
+    "var": 0.6769,
+    "tax": 0.70544,
+    "ode": null,
+    "net": 232.39,
+    "fixed": 75.23
+   },
+   "rebate": -631.35
+  },
+  {
+   "m": "2024-04",
+   "elec": {
+    "var": 0.1823,
+    "tax": 0.13165,
+    "ode": null,
+    "dyn": null,
+    "net": 415.67,
+    "fixed": 92.28
+   },
+   "gas": {
+    "var": 0.6381,
+    "tax": 0.70544,
+    "ode": null,
+    "net": 232.39,
+    "fixed": 75.85
+   },
+   "rebate": -631.35
+  },
+  {
+   "m": "2024-05",
+   "elec": {
+    "var": 0.1729,
+    "tax": 0.13165,
+    "ode": null,
+    "dyn": null,
+    "net": 415.67,
+    "fixed": 95.86
+   },
+   "gas": {
+    "var": 0.5904,
+    "tax": 0.70544,
+    "ode": null,
+    "net": 232.39,
+    "fixed": 77.83
+   },
+   "rebate": -631.35
+  },
+  {
+   "m": "2024-06",
+   "elec": {
+    "var": 0.1703,
+    "tax": 0.13165,
+    "ode": null,
+    "dyn": null,
+    "net": 415.67,
+    "fixed": 97.35
+   },
+   "gas": {
+    "var": 0.5859,
+    "tax": 0.70544,
+    "ode": null,
+    "net": 232.39,
+    "fixed": 78.49
+   },
+   "rebate": -631.35
+  },
+  {
+   "m": "2024-07",
+   "elec": {
+    "var": 0.157,
+    "tax": 0.13165,
+    "ode": null,
+    "dyn": null,
+    "net": 415.67,
+    "fixed": 98.24
+   },
+   "gas": {
+    "var": 0.5752,
+    "tax": 0.70544,
+    "ode": null,
+    "net": 232.39,
+    "fixed": 79.63
+   },
+   "rebate": -631.35
+  },
+  {
+   "m": "2024-08",
+   "elec": {
+    "var": 0.1515,
+    "tax": 0.13165,
+    "ode": null,
+    "dyn": null,
+    "net": 415.67,
+    "fixed": 97.71
+   },
+   "gas": {
+    "var": 0.587,
+    "tax": 0.70544,
+    "ode": null,
+    "net": 232.39,
+    "fixed": 81.13
+   },
+   "rebate": -631.35
+  },
+  {
+   "m": "2024-09",
+   "elec": {
+    "var": 0.1512,
+    "tax": 0.13165,
+    "ode": null,
+    "dyn": null,
+    "net": 415.67,
+    "fixed": 98.65
+   },
+   "gas": {
+    "var": 0.588,
+    "tax": 0.70544,
+    "ode": null,
+    "net": 232.39,
+    "fixed": 81.49
+   },
+   "rebate": -631.35
+  },
+  {
+   "m": "2024-10",
+   "elec": {
+    "var": 0.1572,
+    "tax": 0.13165,
+    "ode": null,
+    "dyn": null,
+    "net": 415.67,
+    "fixed": 99.57
+   },
+   "gas": {
+    "var": 0.6097,
+    "tax": 0.70544,
+    "ode": null,
+    "net": 232.39,
+    "fixed": 81.86
+   },
+   "rebate": -631.35
+  },
+  {
+   "m": "2024-11",
+   "elec": {
+    "var": 0.1595,
+    "tax": 0.13165,
+    "ode": null,
+    "dyn": null,
+    "net": 415.67,
+    "fixed": 100.28
+   },
+   "gas": {
+    "var": 0.6224,
+    "tax": 0.70544,
+    "ode": null,
+    "net": 232.39,
+    "fixed": 82.27
+   },
+   "rebate": -631.35
+  },
+  {
+   "m": "2024-12",
+   "elec": {
+    "var": 0.1584,
+    "tax": 0.13165,
+    "ode": null,
+    "dyn": null,
+    "net": 415.67,
+    "fixed": 101.06
+   },
+   "gas": {
+    "var": 0.6222,
+    "tax": 0.70544,
+    "ode": null,
+    "net": 232.39,
+    "fixed": 82.68
+   },
+   "rebate": -631.35
+  },
+  {
+   "m": "2025-01",
+   "elec": {
+    "var": 0.1589,
+    "tax": 0.12286,
+    "ode": null,
+    "dyn": 0.1773,
+    "net": 467.17,
+    "fixed": 104.76
+   },
+   "gas": {
+    "var": 0.6332,
+    "tax": 0.69957,
+    "ode": null,
+    "net": 247.55,
+    "fixed": 84.79
+   },
+   "rebate": -635.19
+  },
+  {
+   "m": "2025-02",
+   "elec": {
+    "var": 0.1584,
+    "tax": 0.12286,
+    "ode": null,
+    "dyn": 0.1885,
+    "net": 467.17,
+    "fixed": 106.31
+   },
+   "gas": {
+    "var": 0.6454,
+    "tax": 0.69957,
+    "ode": null,
+    "net": 247.55,
+    "fixed": 87.56
+   },
+   "rebate": -635.19
+  },
+  {
+   "m": "2025-03",
+   "elec": {
+    "var": 0.156,
+    "tax": 0.12286,
+    "ode": null,
+    "dyn": 0.1472,
+    "net": 467.17,
+    "fixed": 106.6
+   },
+   "gas": {
+    "var": 0.6494,
+    "tax": 0.69957,
+    "ode": null,
+    "net": 247.55,
+    "fixed": 87.8
+   },
+   "rebate": -635.19
+  },
+  {
+   "m": "2025-04",
+   "elec": {
+    "var": 0.152,
+    "tax": 0.12286,
+    "ode": null,
+    "dyn": 0.1267,
+    "net": 467.17,
+    "fixed": 107.76
+   },
+   "gas": {
+    "var": 0.6596,
+    "tax": 0.69957,
+    "ode": null,
+    "net": 247.55,
+    "fixed": 89.45
+   },
+   "rebate": -635.19
+  },
+  {
+   "m": "2025-05",
+   "elec": {
+    "var": 0.1481,
+    "tax": 0.12286,
+    "ode": null,
+    "dyn": 0.1139,
+    "net": 467.17,
+    "fixed": 108.59
+   },
+   "gas": {
+    "var": 0.6595,
+    "tax": 0.69957,
+    "ode": null,
+    "net": 247.55,
+    "fixed": 90.34
+   },
+   "rebate": -635.19
+  },
+  {
+   "m": "2025-06",
+   "elec": {
+    "var": 0.147,
+    "tax": 0.12286,
+    "ode": null,
+    "dyn": 0.1181,
+    "net": 467.17,
+    "fixed": 108.59
+   },
+   "gas": {
+    "var": 0.6563,
+    "tax": 0.69957,
+    "ode": null,
+    "net": 247.55,
+    "fixed": 90.48
+   },
+   "rebate": -635.19
+  },
+  {
+   "m": "2025-07",
+   "elec": {
+    "var": 0.1479,
+    "tax": 0.12286,
+    "ode": null,
+    "dyn": 0.1422,
+    "net": 467.17,
+    "fixed": 108.19
+   },
+   "gas": {
+    "var": 0.6447,
+    "tax": 0.69957,
+    "ode": null,
+    "net": 247.55,
+    "fixed": 90.86
+   },
+   "rebate": -635.19
+  },
+  {
+   "m": "2025-08",
+   "elec": {
+    "var": 0.148,
+    "tax": 0.12286,
+    "ode": null,
+    "dyn": 0.1265,
+    "net": 467.17,
+    "fixed": 108.42
+   },
+   "gas": {
+    "var": 0.6286,
+    "tax": 0.69957,
+    "ode": null,
+    "net": 247.55,
+    "fixed": 91.01
+   },
+   "rebate": -635.19
+  },
+  {
+   "m": "2025-09",
+   "elec": {
+    "var": 0.1485,
+    "tax": 0.12286,
+    "ode": null,
+    "dyn": 0.1301,
+    "net": 467.17,
+    "fixed": 108.68
+   },
+   "gas": {
+    "var": 0.6269,
+    "tax": 0.69957,
+    "ode": null,
+    "net": 247.55,
+    "fixed": 91.16
+   },
+   "rebate": -635.19
+  },
+  {
+   "m": "2025-10",
+   "elec": {
+    "var": 0.1514,
+    "tax": 0.12286,
+    "ode": null,
+    "dyn": 0.1358,
+    "net": 467.17,
+    "fixed": 109.03
+   },
+   "gas": {
+    "var": 0.6126,
+    "tax": 0.69957,
+    "ode": null,
+    "net": 247.55,
+    "fixed": 91.36
+   },
+   "rebate": -635.19
+  },
+  {
+   "m": "2025-11",
+   "elec": {
+    "var": 0.1518,
+    "tax": 0.12286,
+    "ode": null,
+    "dyn": 0.1335,
+    "net": 467.17,
+    "fixed": 109.35
+   },
+   "gas": {
+    "var": 0.6058,
+    "tax": 0.69957,
+    "ode": null,
+    "net": 247.55,
+    "fixed": 91.5
+   },
+   "rebate": -635.19
+  },
+  {
+   "m": "2025-12",
+   "elec": {
+    "var": 0.152,
+    "tax": 0.12286,
+    "ode": null,
+    "dyn": 0.1262,
+    "net": 467.17,
+    "fixed": 109.59
+   },
+   "gas": {
+    "var": 0.601,
+    "tax": 0.69957,
+    "ode": null,
+    "net": 247.55,
+    "fixed": 91.57
+   },
+   "rebate": -635.19
+  },
+  {
+   "m": "2026-01",
+   "elec": {
+    "var": 0.1497,
+    "tax": 0.11085,
+    "ode": null,
+    "dyn": 0.1499,
+    "net": 476.87,
+    "fixed": 110.64
+   },
+   "gas": {
+    "var": 0.5868,
+    "tax": 0.7268,
+    "ode": null,
+    "net": 268.37,
+    "fixed": 92.32
+   },
+   "rebate": -628.96
+  },
+  {
+   "m": "2026-02",
+   "elec": {
+    "var": 0.1474,
+    "tax": 0.11085,
+    "ode": null,
+    "dyn": 0.1316,
+    "net": 476.87,
+    "fixed": 111.07
+   },
+   "gas": {
+    "var": 0.5767,
+    "tax": 0.7268,
+    "ode": null,
+    "net": 268.37,
+    "fixed": 92.36
+   },
+   "rebate": -628.96
+  },
+  {
+   "m": "2026-03",
+   "elec": {
+    "var": 0.1457,
+    "tax": 0.11085,
+    "ode": null,
+    "dyn": 0.1389,
+    "net": 476.87,
+    "fixed": 111.68
+   },
+   "gas": {
+    "var": 0.5737,
+    "tax": 0.7268,
+    "ode": null,
+    "net": 268.37,
+    "fixed": 92.43
+   },
+   "rebate": -628.96
+  },
+  {
+   "m": "2026-04",
+   "elec": {
+    "var": 0.1383,
+    "tax": 0.11085,
+    "ode": null,
+    "dyn": 0.1215,
+    "net": 476.87,
+    "fixed": 112.41
+   },
+   "gas": {
+    "var": 0.5641,
+    "tax": 0.7268,
+    "ode": null,
+    "net": 268.37,
+    "fixed": 92.55
+   },
+   "rebate": -628.96
+  },
+  {
+   "m": "2026-05",
+   "elec": {
+    "var": 0.1387,
+    "tax": 0.11085,
+    "ode": null,
+    "dyn": 0.1353,
+    "net": 476.87,
+    "fixed": 112.95
+   },
+   "gas": {
+    "var": 0.5783,
+    "tax": 0.7268,
+    "ode": null,
+    "net": 268.37,
+    "fixed": 92.61
+   },
+   "rebate": -628.96
+  },
+  {
+   "m": "2026-06",
+   "elec": {
+    "var": 0.1397,
+    "tax": 0.11085,
+    "ode": null,
+    "dyn": 0.1534,
+    "net": 476.87,
+    "fixed": 113.1
+   },
+   "gas": {
+    "var": 0.5852,
+    "tax": 0.7268,
+    "ode": null,
+    "net": 268.37,
+    "fixed": 92.66
+   },
+   "rebate": -628.96
+  },
+  {
+   "m": "2026-07",
+   "elec": {
+    "var": 0.1447,
+    "tax": 0.11085,
+    "ode": null,
+    "dyn": 0.1481,
+    "net": 476.87,
+    "fixed": 114.14
+   },
+   "gas": {
+    "var": 0.6277,
+    "tax": 0.7268,
+    "ode": null,
+    "net": 268.37,
+    "fixed": 92.87
+   },
+   "rebate": -628.96
+  },
+  {
+   "m": "2026-08",
+   "elec": {
+    "var": 0.1469,
+    "tax": 0.11085,
+    "ode": null,
+    "dyn": 0.1716,
+    "net": 476.87,
+    "fixed": 114.63
+   },
+   "gas": {
+    "var": 0.6526,
+    "tax": 0.7268,
+    "ode": null,
+    "net": 268.37,
+    "fixed": 92.95
+   },
+   "rebate": -628.96
+  },
+  {
+   "m": "2026-09",
+   "elec": {
+    "var": 0.1487,
+    "tax": 0.11085,
+    "ode": null,
+    "dyn": 0.2057,
+    "net": 476.87,
+    "fixed": 115.23
+   },
+   "gas": {
+    "var": 0.6618,
+    "tax": 0.7268,
+    "ode": null,
+    "net": 268.37,
+    "fixed": 93.05
+   },
+   "rebate": -628.96
+  }
+ ]
+}

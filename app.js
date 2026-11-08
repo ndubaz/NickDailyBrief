@@ -677,6 +677,11 @@
     return h;
   }
   function dayHours(lat, k) { var d = pd(k), doy = Math.round((d - new Date(d.getFullYear(), 0, 1)) / DAY) + 1, decl = 23.44 * Math.PI / 180 * Math.sin(2 * Math.PI * (284 + doy) / 365), x = Math.max(-1, Math.min(1, -Math.tan(lat * Math.PI / 180) * Math.tan(decl))); return 24 / Math.PI * Math.acos(x); }
+  function moonPhase(k) { var age = ((pd(k).getTime() / DAY + 0.5 - 10962.76) % 29.530588853 + 29.530588853) % 29.530588853, p = 2 * Math.PI * age / 29.530588853, c = Math.cos(p), r = 9, rx = (r * Math.abs(c)).toFixed(2), wax = age < 14.765;
+    var name = age < 1.85 || age > 27.68 ? "new moon" : age < 5.53 ? "waxing crescent" : age < 9.22 ? "first quarter" : age < 12.91 ? "waxing gibbous" : age < 16.61 ? "full moon" : age < 20.30 ? "waning gibbous" : age < 23.99 ? "last quarter" : "waning crescent";
+    var lit = wax ? "M0,-" + r + " A" + r + "," + r + " 0 0 1 0," + r + " A" + rx + "," + r + " 0 0 " + (c > 0 ? 0 : 1) + " 0,-" + r + "Z" : "M0,-" + r + " A" + r + "," + r + " 0 0 0 0," + r + " A" + rx + "," + r + " 0 0 " + (c > 0 ? 1 : 0) + " 0,-" + r + "Z";
+    return { age: age, name: name, svg: '<svg class="moon" viewBox="-11 -11 22 22" width="22" height="22" role="img" aria-label="' + name + '"><circle r="' + r + '" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="' + lit + '" fill="currentColor"/></svg>' };
+  }
   function hm(hrs) { var a = Math.abs(hrs), hh = Math.floor(a), mm = Math.round((a - hh) * 60); if (mm === 60) { hh++; mm = 0; } return hh + " h " + String(mm).padStart(2, "0") + " min"; }
   function weatherBlock(E, TD) {
     var w = (E.today || {}).weather || {}, wk = w.week || [], h = "";
@@ -1063,6 +1068,77 @@
     return '<svg class="actv" viewBox="0 0 ' + W + " " + H + '" width="' + W + '" height="' + H + '" role="img" aria-label="Log entries per week, last 12 weeks"><title>Log entries per week, last 12 weeks</title>' + weeks.map(function (v, i) { var h = v ? Math.max(3, v / mx * (H - 2)) : 1.5; return '<rect x="' + (i * 10) + '" y="' + (H - h).toFixed(1) + '" width="7" height="' + h.toFixed(1) + '" rx="1" fill="' + (v ? CTRY_COL[c.id] : "var(--line)") + '"/>'; }).join("") + "</svg>";
   }
   /* priority countries: standing profile per country, then today's items for it */
+  /* household electricity and gas: CBS average consumer tariffs, standing file data/energy.json */
+  function energyBlock(ctx, sparks, TD) {
+    var EN = ctx.energy, M = EN && EN.months ? EN.months.filter(function (x) { return x.elec && x.gas; }) : [];
+    if (M.length < 2) return "";
+    var L = M[M.length - 1], P = M[M.length - 2], Y = M.filter(function (x) { return x.m === String(+L.m.slice(0, 4) - 1) + L.m.slice(4); })[0];
+    function allin(x, k) { return (x[k].var || 0) + (x[k].tax || 0) + (x[k].ode || 0); }
+    function mon(m) { return MON[+m.slice(5, 7) - 1] + " " + m.slice(0, 4); }
+    function pct(a, b) { return b ? signed((a - b) / b * 100, 1, "%") : ""; }
+    function card(lbl, k, unit, dec) {
+      var v = allin(L, k), pv = allin(P, k), yv = Y ? allin(Y, k) : null, ser = M.slice(-24).map(function (x) { return [x.m + "-01", allin(x, k)]; });
+      return '<div class="card"><div class="lbl">' + lbl + '</div><div class="val">€' + v.toFixed(dec) + ' <small>' + unit + '</small></div><p><span class="chg ' + dir(v - pv) + '">' + pct(v, pv) + "</span> vs " + mon(P.m) + (yv != null ? ' · <span class="chg ' + dir(v - yv) + '">' + pct(v, yv) + "</span> vs a year ago" : "") + "</p><p>supply €" + (L[k].var || 0).toFixed(dec) + " + tax €" + ((L[k].tax || 0) + (L[k].ode || 0)).toFixed(dec) + (k === "elec" && L.elec.dyn ? " · dynamic supply €" + L.elec.dyn.toFixed(dec) : "") + '</p><div class="spark" data-s="' + (sparks.push(ser) - 1) + '" title="' + esc(mon(ser[0][0].slice(0, 7)) + " – " + mon(L.m)) + '"></div></div>';
+    }
+    var T = EN.typical || { kwh: 2500, m3: 1200 }, fixed = (L.elec.net || 0) + (L.elec.fixed || 0) + (L.gas.net || 0) + (L.gas.fixed || 0) + (L.rebate || 0), yr = T.kwh * allin(L, "elec") + T.m3 * allin(L, "gas") + fixed;
+    var yrP = Y ? T.kwh * allin(Y, "elec") + T.m3 * allin(Y, "gas") + (Y.elec.net || 0) + (Y.elec.fixed || 0) + (Y.gas.net || 0) + (Y.gas.fixed || 0) + (Y.rebate || 0) : null;
+    var h = '<h3 id="energy">Household energy <span class="small">new variable contracts, VAT included · CBS, ' + esc(mon(L.m)) + "</span></h3>";
+    h += '<div class="cards">' + card("Electricity, all-in", "elec", "per kWh", 3) + card("Gas, all-in", "gas", "per m³", 3);
+    h += '<div class="card"><div class="lbl">Typical home, a year</div><div class="val">€' + Math.round(yr).toLocaleString("en-GB") + "</div><p>" + T.kwh.toLocaleString("en-GB") + " kWh and " + T.m3.toLocaleString("en-GB") + " m³ at this month\'s prices" + (yrP != null ? ' · <span class="chg ' + dir(yr - yrP) + '">' + pct(yr, yrP) + "</span> vs a year ago" : "") + "</p><p>energy €" + Math.round(T.kwh * allin(L, "elec") + T.m3 * allin(L, "gas")).toLocaleString("en-GB") + " · fixed charges €" + Math.round(fixed).toLocaleString("en-GB") + " after the tax rebate</p></div>";
+    h += '<div class="card"><div class="lbl">Fixed charges, a year</div><div class="val">€' + Math.round((L.elec.net || 0) + (L.gas.net || 0)).toLocaleString("en-GB") + ' <small>network</small></div><p>electricity €' + Math.round(L.elec.net || 0) + " · gas €" + Math.round(L.gas.net || 0) + "</p><p>standing charges €" + Math.round((L.elec.fixed || 0) + (L.gas.fixed || 0)) + " · tax rebate €" + Math.round(L.rebate || 0) + "</p></div></div>";
+    h += '<p class="small">' + esc(EN.region || "") + ". " + (EN.src && EN.src[0] ? '<a href="' + esc(EN.src[0][1]) + '" target="_blank" rel="noopener">' + esc(EN.src[0][0]) + "</a>. " : "") + "The last month is provisional until CBS publishes the next.</p>";
+    return h;
+  }
+  /* a tank for each car: CBS daily pump price (fuel.json series) × tank size, at the pump and tax-exempt, in euros and in dollars at that day's ECB rate */
+  function taxFreePerLitre(F, fuel, pump) { var t = (F && F.taxFree) || {}; if (t.price && typeof t.price[fuel] === "number") return t.price[fuel]; var vat = typeof t.vat === "number" ? t.vat : 0.21, ex = (t.excise || {})[fuel]; return typeof ex === "number" ? pump / (1 + vat) - ex : null; }
+  function tankBlock(ctx, TD) {
+    var F = ctx.fuel, S = (F && F.series) || {}, cars = (F && F.cars) || [];
+    if (!cars.length || !ctx.fx || !ctx.fx.series) return "";
+    var fx = ctx.fx.series.filter(function (p) { return p[0] <= TD && p[1] > 0; });
+    function rateAt(k) { var v = null; for (var i = 0; i < fx.length && fx[i][0] <= k; i++) v = fx[i][1]; return v; }
+    function ser(fuel) { return (S[fuel === "diesel" ? "nl-diesel" : "nl-e95"] || []).filter(function (r) { return r[0] <= TD && typeof r[1] === "number"; }); }
+    var base = ser(cars[0].fuel || "e95"); if (base.length < 30) return "";
+    var last = base[base.length - 1], from = addDays(last[0], -365), tf = F.taxFree || {}, anyTF = cars.some(function (c) { return taxFreePerLitre(F, c.fuel || "e95", last[1]) != null; });
+    var h = '<h3 id="tank">A tank for each car' + (anyTF ? ", tax-exempt" : "") + ' <span class="small">' + (anyTF ? "pump price without VAT and excise, the NATO rate · " : "") + "CBS, " + esc(fmtShort(last[0])) + "</span></h3>";
+    h += '<div class="cards">' + cars.map(function (c) {
+      var fuel = c.fuel || "e95", D = ser(fuel); if (D.length < 2) return "";
+      var L1 = D[D.length - 1], ago = null; D.forEach(function (r) { if (r[0] <= from) ago = r; }); ago = ago || D[0];
+      var r0 = rateAt(L1[0]), rA = rateAt(ago[0]), net = taxFreePerLitre(F, fuel, L1[1]), netA = taxFreePerLitre(F, fuel, ago[1]), pay = net != null ? net : L1[1], payA = netA != null ? netA : ago[1];
+      var eur = pay * c.litres, usd = r0 ? eur * r0 : null, eurA = payA * c.litres, usdA = rA ? eurA * rA : null, pump = L1[1] * c.litres, pumpU = r0 ? pump * r0 : null;
+      var hi = null, lo = null; D.filter(function (r) { return r[0] >= from; }).forEach(function (r) { var rr = rateAt(r[0]), n = taxFreePerLitre(F, fuel, r[1]); if (!rr) return; var u = (n != null ? n : r[1]) * c.litres * rr; if (!hi || u > hi[1]) hi = [r[0], u]; if (!lo || u < lo[1]) lo = [r[0], u]; });
+      var o = '<div class="card tank"><div class="lbl">' + esc(c.name) + " · " + c.litres + " L" + (fuel === "diesel" ? " diesel" : "") + '</div><div class="val">€' + eur.toFixed(2) + (usd ? ' <small>$' + usd.toFixed(2) + (net != null ? " tax-exempt" : "") + "</small>" : "") + "</div>";
+      if (net != null) o += "<p>at the pump €" + pump.toFixed(2) + (pumpU ? ", $" + pumpU.toFixed(2) : "") + " · the exemption saves €" + (pump - eur).toFixed(2) + " a tank</p>";
+      o += "<p>" + (usdA ? '<span class="chg ' + (eur > eurA + 0.005 ? "down" : eur < eurA - 0.005 ? "up" : "flat") + '">' + signed((eur - eurA) / eurA * 100, 1, "%") + "</span> on a year ago: €" + eurA.toFixed(2) + ", $" + usdA.toFixed(2) + " on " + esc(fmtShort(ago[0])) : "") + "</p>";
+      if (hi && lo) o += "<p>12-month high $" + hi[1].toFixed(2) + " (" + esc(fmtShort(hi[0])) + "), low $" + lo[1].toFixed(2) + " (" + esc(fmtShort(lo[0])) + ")</p>";
+      return o + "</div>";
+    }).join("") + "</div>";
+    var petrol = cars.filter(function (c) { return (c.fuel || "e95") === "e95"; });
+    if (petrol.length) {
+      ctx._tank = { year: base.filter(function (r) { return r[0] >= from; }).map(function (r) { var n = taxFreePerLitre(F, "e95", r[1]); return [r[0], n != null ? n : r[1], rateAt(r[0])]; }).filter(function (r) { return r[2]; }), cars: petrol };
+      h += '<div class="panel"><div class="lbl">A ' + (anyTF ? "tax-exempt " : "") + "tank in dollars, last 12 months · rises red, falls green · left axis " + esc(petrol[0].name.replace(/^\d{4} /, "")) + (petrol[1] ? ", right axis " + esc(petrol[1].name.replace(/^\d{4} /, "")) : "") + '</div><div class="chart" id="tankchart" style="min-height:170px"></div></div>';
+    }
+    h += '<p class="small">' + (anyTF ? (tf.price ? "Tax-exempt price as set in data/fuel.json. " : "Tax-exempt price = pump price ÷ " + (1 + (typeof tf.vat === "number" ? tf.vat : 0.21)).toFixed(2) + " (VAT) minus excise of €" + ((tf.excise || {}).e95 || 0).toFixed(3) + " a litre for petrol" + ((tf.excise || {}).diesel ? " and €" + tf.excise.diesel.toFixed(3) + " for diesel" : "") + (tf.note ? "; " + esc(tf.note) : "") + ". ") : "") + "Dollar figures use that day\'s ECB rate. Tank sizes, fuel and the exemption rates are in data/fuel.json.</p>";
+    return h;
+  }
+  function tankChart(T, W) {
+    if (!T || !T.year || T.year.length < 2 || !T.cars.length) return "";
+    var lA = T.cars[0].litres, lB = T.cars[1] ? T.cars[1].litres : null, pts = T.year.map(function (r) { return [r[0], r[1] * r[2]]; });
+    W = Math.max(240, Math.round(W || 360)); var H = 170, L = 40, R = lB ? 44 : 12, Tp = 10, B = 22, lo = Infinity, hi = -Infinity;
+    pts.forEach(function (p) { lo = Math.min(lo, p[1]); hi = Math.max(hi, p[1]); }); var pad = (hi - lo) * 0.08 || 0.1; lo -= pad; hi += pad;
+    var t0 = pd(pts[0][0]).getTime(), t1 = pd(pts[pts.length - 1][0]).getTime();
+    function X(k) { return L + (pd(k).getTime() - t0) / (t1 - t0 || 1) * (W - L - R); }
+    function Y(v) { return Tp + (1 - (v - lo) / (hi - lo)) * (H - Tp - B); }
+    var s = '<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="Cost of a tank in dollars over twelve months">';
+    var step = (hi - lo) * lA > 40 ? 10 : 5, vA0 = Math.ceil(lo * lA / step) * step;
+    for (var v = vA0; v <= hi * lA; v += step) { var y = Y(v / lA); s += '<line x1="' + L + '" y1="' + y.toFixed(1) + '" x2="' + (W - R) + '" y2="' + y.toFixed(1) + '" stroke="var(--line)"/>' + svgText(L - 4, y + 3.5, "$" + v, "end", 9.5); if (lB) s += svgText(W - R + 4, y + 3.5, "$" + Math.round(v / lA * lB), "start", 9.5); }
+    var months = {}; pts.forEach(function (p) { var m = p[0].slice(0, 7); if (!months[m]) months[m] = p[0]; });
+    var every = W < 420 ? 2 : 1; Object.keys(months).forEach(function (m, i) { if (i === 0 || i % every) return; var x = X(months[m]); s += svgText(x, H - 6, MON[+m.slice(5, 7) - 1], "middle", 9); });
+    for (var i = 1; i < pts.length; i++) { var a = pts[i - 1], b = pts[i]; if (a[1] === b[1]) continue; s += '<line x1="' + X(a[0]).toFixed(1) + '" y1="' + Y(a[1] * 1).toFixed(1) + '" x2="' + X(b[0]).toFixed(1) + '" y2="' + Y(b[1]).toFixed(1) + '" stroke="' + (b[1] > a[1] ? "var(--crit)" : "var(--up)") + '" stroke-width="1.8" stroke-linecap="round"/>'; }
+    var mx = pts[0], mn = pts[0]; pts.forEach(function (p) { if (p[1] > mx[1]) mx = p; if (p[1] < mn[1]) mn = p; });
+    [[mx, "high", -6], [mn, "low", 12]].forEach(function (q) { var p = q[0]; s += '<circle cx="' + X(p[0]).toFixed(1) + '" cy="' + Y(p[1]).toFixed(1) + '" r="3" fill="' + (q[1] === "high" ? "var(--crit)" : "var(--up)") + '"/>' + svgText(Math.min(W - R - 30, Math.max(L + 30, X(p[0]))), Y(p[1]) + q[2], "$" + (p[1] * lA).toFixed(0) + " " + fmtShort(p[0]), "middle", 9.5, true, "var(--ink)"); });
+    var e = pts[pts.length - 1]; s += '<circle cx="' + X(e[0]).toFixed(1) + '" cy="' + Y(e[1]).toFixed(1) + '" r="3.5" fill="var(--ink)"/>';
+    return s + "</svg>";
+  }
   function countriesBlock(E, ctx, TD) {
     var list = ctx.countries || [], its = E.countries || [], BLR = (ctx.countriesBLR || []);
     if (!list.length && !its.length) return "";
@@ -1207,15 +1283,20 @@
 
     /* today strip */
     h += '<div class="strip" id="front" data-part="Front">';
-    if (T.weather) { var w = T.weather, w0 = (w.week || []).filter(function (r) { return r[0] === TD; })[0] || (w.week || [])[0], w1 = (w.week || []).filter(function (r) { return r[0] === addDays(TD, 1); })[0]; h += '<div class="tile wxt"><div class="lbl">Weather · ' + esc(E.town || "Hoensbroek") + '</div><div class="wxtop">' + wxIcon(wxKind(w0, w.now), 36) + '<div class="val">' + esc(w.hi) + "° / " + esc(w.lo) + "°</div></div>" + (w0 ? '<div class="wxmeta">' + rainGlyph(w0[3]) + " " + windGlyph(w0[4]) + "</div>" : "") + "<p>" + esc(w.now) + ". " + (w1 ? '<span class="wxtm">' + wxIcon(wxKind(w1, w.tomorrow), 16) + "</span>" : "") + esc(w.tomorrow) + ". Sun " + esc(w.sunrise) + "–" + esc(w.sunset) + "." + cite(w.src) + "</p></div>"; }
+    if (T.weather) { var w = T.weather, w0 = (w.week || []).filter(function (r) { return r[0] === TD; })[0] || (w.week || [])[0], w1 = (w.week || []).filter(function (r) { return r[0] === addDays(TD, 1); })[0]; h += '<div class="tile wxt"><div class="lbl">Weather · ' + esc(E.town || "Hoensbroek") + '</div><div class="wxtop">' + wxIcon(wxKind(w0, w.now), 36) + '<div class="val">' + esc(w.hi) + "° / " + esc(w.lo) + "°</div></div>" + (w0 ? '<div class="wxmeta">' + rainGlyph(w0[3]) + " " + windGlyph(w0[4]) + "</div>" : "") + "<p>" + esc(w.now) + ". " + (w1 ? '<span class="wxtm">' + wxIcon(wxKind(w1, w.tomorrow), 16) + "</span>" : "") + esc(w.tomorrow) + "." + cite(w.src) + "</p></div>";
+      var dl = dayHours(HOME.lat, TD), dl7 = (dl - dayHours(HOME.lat, addDays(TD, -7))) * 60, sr = /^(\d{1,2}):(\d{2})$/.exec(w.sunrise || ""), ss = /^(\d{1,2}):(\d{2})$/.exec(w.sunset || ""), mp = moonPhase(TD);
+      if (sr && ss) dl = (ss[1] * 60 + +ss[2] - sr[1] * 60 - +sr[2]) / 60;
+      h += '<div class="tile sun"><div class="lbl">Sun and moon</div><div class="val">' + wxIcon("sun", 22) + " " + esc(w.sunrise || "–") + "–" + esc(w.sunset || "–") + '</div><p>' + hm(dl) + " of daylight, " + Math.abs(Math.round(dl7)) + " min " + (dl7 < 0 ? "less" : "more") + ' than a week ago</p><p class="moonl">' + mp.svg + " " + esc(mp.name.charAt(0).toUpperCase() + mp.name.slice(1)) + ", day " + Math.round(mp.age) + "</p></div>"; }
     var nxg = CV ? nextGameLine(CV.upcoming, TD) : "";
-    if (T.canes) h += '<div class="tile hockey"><div class="lbl">Hurricanes</div><div class="val">' + esc(T.canes.line) + "</div><p>" + esc(T.canes.sub) + cite(T.canes.src) + "</p>" + nxg + "</div>";
+    if (T.canes) h += '<div class="tile hockey"><div class="lbl">Hurricanes</div><div class="val">' + esc(T.canes.line) + "</div><p>" + esc(nxg ? String(T.canes.sub || "").replace(/;?\s*next:.*$/i, "") : T.canes.sub) + cite(T.canes.src) + "</p>" + nxg + "</div>";
     else if (CV) { var lg = CV.games[CV.games.length - 1]; h += '<div class="tile hockey"><div class="lbl">Hurricanes</div><div class="val">' + esc(lg.res + " " + lg.gf + "–" + lg.ga + (lg.home ? " vs " : " at ") + lg.opp) + "</div><p>" + esc(CV.record + " · " + CV.points + " pts") + "</p>" + nxg + "</div>"; }
     var mkRows = (T.markets || []).slice(), br = (SER.brent || []).filter(function (p) { return p[0] <= TD; });
     if (br.length >= 2 && !mkRows.some(function (m) { return /brent/i.test(m[0]); })) { var b1 = br[br.length - 1], b0 = br[br.length - 2], bp = (b1[1] - b0[1]) / b0[1] * 100; mkRows.push(["Brent", "$" + b1[1].toFixed(2), Math.abs(bp) < 0.1 ? "flat" : bp > 0 ? "up" : "down", signed(bp, 2, "%") + " on " + fmtShort(b1[0])]); }
     if (mkRows.length) h += '<div class="tile"><div class="lbl">Markets</div><div class="mini-mk">' + mkRows.map(function (m) { var g = fxGuard(m[0], m[1], null, m[2]); return "<span>" + esc(g.label) + '</span><span class="chg ' + esc(g.dir) + '"' + (m[3] ? ' title="' + esc(m[3]) + '"' : "") + ">" + esc(g.value) + "</span>"; }).join("") + "</div></div>";
     if (FX) h += '<div class="tile money"><div class="lbl">USD/EUR · ECB</div><div class="val">' + FX.last[1].toFixed(4) + '</div><p><span class="chg ' + dir(FX.d1) + '">' + signed(FX.d1, 4) + " (" + signed(FX.d1 / FX.prev[1] * 100, 2, "%") + ")</span> vs " + esc(fmtShort(FX.prev[0])) + "</p></div>";
     h += '<div class="tile" id="bins"><div class="lbl">Bin day</div><div class="val">…</div><p></p></div>';
+    var NU = PEV.filter(function (e) { return (e.end || e.date) >= TD && (e.src === "week" || e.src === "inbox" || e.src === "deadlines" || e.src === "career") && daysBetween(TD, e.date) <= 30; }).slice(0, 3);
+    if (NU.length) { var n0 = daysBetween(TD, NU[0].date); h += '<div class="tile nextup"><div class="lbl">Next up · yours</div><div class="val">' + (n0 <= 0 ? "Today" : n0 === 1 ? "Tomorrow" : "In " + n0 + " days") + '</div><ul class="nul">' + NU.map(function (e) { return "<li><b>" + esc(fmt(pd(e.date))) + "</b> " + esc(e.t.replace(/^AFNORTH: /, "")) + "</li>"; }).join("") + "</ul></div>"; }
     h += '<button type="button" class="tile newcount" id="newcount" title="Show only new and updated items"><div class="lbl">This edition</div><div class="val"><span id="nnew">…</span><small id="nupd"></small></div><p>Tap to show only what changed</p></button>';
     h += "</div>";
 
@@ -1337,6 +1418,7 @@
       return '<div class="card"><div class="lbl">' + esc(g.label) + '</div><div class="val">' + esc(g.value) + '</div><p><span class="chg ' + esc(g.dir) + '">' + (g.change ? arrow + esc(g.change) : "") + "</span> " + esc(g.fixed ? "euros per dollar" : c[4]) + cite(src) + "</p>" + (ser ? '<div class="spark" data-s="' + (sparks.push(ser) - 1) + '" title="' + esc(fmtShort(ser[0][0]) + " – " + fmtShort(ser[ser.length - 1][0])) + '"></div>' : "") + "</div>";
     }).join("") + "</div>";
     if (M.driver) h += "<p>" + rich(M.driver) + "</p>";
+    h += energyBlock(ctx, sparks, TD);
     if (M.ytd) h += "<h3>Year to date</h3>" + hbars(M.ytd, { fmt: function (v) { return (v >= 0 ? "+" : "") + v.toFixed(1) + "%"; }, foot: "Change since 1 January at the last close." + cite(M.ytdSrc) });
     if (FX) {
       var range = store("rb:fx:range") === "1y" ? 365 : 90;
@@ -1363,6 +1445,7 @@
       h += '<p class="pay"><b class="l">Tank</b>50 litres cost €' + (50 * L1[1]).toFixed(2) + ", " + usd(50 * L1[2] / GAL) + " at that day's rate" + (FU.year ? "; a year ago €" + (50 * FU.year[1]).toFixed(2) + ", " + usd(50 * FU.year[2] / GAL) : "") + ". 12-month high " + usd(FU.yhi[2]) + " (" + esc(fmtShort(FU.yhi[0])) + "), low " + usd(FU.ylo[2]) + " (" + esc(fmtShort(FU.ylo[0])) + "). Rises show in red.</p>";
       h += '<p class="small" style="margin:8px 0 0"><a href="' + esc(FU.url || "https://opendata.cbs.nl/statline/#/CBS/nl/dataset/80416ned/table") + '" target="_blank" rel="noopener">' + esc(FU.src || "CBS, Pompprijzen motorbrandstoffen") + "</a>: the weighted national average pump price including VAT and excise, published weekly. Each day converts at that day's ECB rate (the last one before it at weekends); 1 US gallon is 3.785 litres.</p></div>";
     }
+    h += tankBlock(ctx, TD);
     h += "</section>";
     h += '<section id="rates" class="money">';
     if (M.rates) h += "<h2>Rates and prices</h2>" + table(["Measure", "Latest", "Note"], M.rates.map(function (r) { var g = fxGuard(r[0], r[1], null, null); return "<tr><td>" + esc(g.label) + '</td><td class="d">' + esc(g.value) + "</td><td>" + rich(r[2]) + "</td></tr>"; }).join(""), "lbl1");
@@ -1715,6 +1798,7 @@
       var um = document.getElementById("uamap"); if (um && ctx.uaFront) um.innerHTML = uaMap(ctx.uaFront, um.clientWidth);
       var cm = document.getElementById("ceumap"); if (cm) cm.innerHTML = ceuMap(ctx, cm.clientWidth);
       var sc = document.getElementById("spendchart"); if (sc) sc.innerHTML = spendChart(ctx.countries || [], sc.clientWidth);
+      var tk = document.getElementById("tankchart"); if (tk) tk.innerHTML = tankChart(ctx._tank, tk.clientWidth);
       var tb = document.getElementById("tempband"); if (tb) tb.innerHTML = tempBand(((E.today || {}).weather || {}).week, tb.clientWidth);
       var dlc = document.getElementById("daylight"); if (dlc) dlc.innerHTML = daylight(HOME.lat, TD, dlc.clientWidth, parseFloat(dlc.getAttribute("data-h")));
       var ab = document.getElementById("armybars"); if (ab && E.army && E.army.depth && E.army.depth.bars) ab.innerHTML = vbars(E.army.depth.bars.rows, { W: ab.clientWidth, zero: true, label: E.army.depth.bars.label || "" });
@@ -1969,9 +2053,9 @@
     opt("data/incidents.json"), opt("data/bins.json"), opt("data/threads.json"), opt("data/horizon.json"),
     opt("data/fx.json"), opt("data/series.json"), opt("data/canes.json"),
     opt("data/conflicts.json"), opt("data/world-series.json"), opt("data/calendar.json"), opt("data/deadlines.json"),
-    opt("data/congress.json"), opt("data/exercises.json"), opt("data/releases.json"), opt("data/events.json"), opt("data/idioms.json"), opt("data/ski.json"), opt("data/search-index.json"), opt("data/land.json"), opt("data/week.json"), opt("data/corrections.json"), opt("data/research.json"), opt("data/teams.json"), opt("data/tv.json"), opt("data/countries.json"), opt("data/ceu.json"), opt("data/novel.json"), opt("data/indicators.json"), opt("data/forecasts.json"), opt("data/questions.json"), opt("data/ua-front.json"), opt("data/philosophy.json"), opt("data/inbox.json"), opt("data/fuel.json")
+    opt("data/congress.json"), opt("data/exercises.json"), opt("data/releases.json"), opt("data/events.json"), opt("data/idioms.json"), opt("data/ski.json"), opt("data/search-index.json"), opt("data/land.json"), opt("data/week.json"), opt("data/corrections.json"), opt("data/research.json"), opt("data/teams.json"), opt("data/tv.json"), opt("data/countries.json"), opt("data/ceu.json"), opt("data/novel.json"), opt("data/indicators.json"), opt("data/forecasts.json"), opt("data/questions.json"), opt("data/ua-front.json"), opt("data/philosophy.json"), opt("data/inbox.json"), opt("data/fuel.json"), opt("data/energy.json")
   ]).then(function (r) {
-    ctx.fuel = r[34] && r[34].series ? r[34] : null;
+    ctx.fuel = r[34] && r[34].series ? r[34] : null; ctx.energy = r[35];
     ctx.novel = r[27]; ctx.indicators = r[28]; ctx.forecasts = r[29]; ctx.questions = r[30]; ctx.uaFront = r[31]; ctx.philosophy = r[32]; ctx.inbox = r[33];
     ctx.ceu = r[26] && r[26].countries; ctx.countriesMap = r[25] && r[25].map;
     ctx.week = r[20]; ctx.corrections = r[21]; ctx.research = r[22]; ctx.teams = r[23]; ctx.tv = r[24];
