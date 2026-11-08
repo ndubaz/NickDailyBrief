@@ -317,6 +317,56 @@
      "https://www.6play.fr/le-meilleur-patissier-p_1807/"
     ]
    ]
+  },
+  {
+   "id": "donmatteo",
+   "tvmaze": 5349,
+   "title": "Don Matteo",
+   "where": "Rai 1 and RaiPlay (Italy)",
+   "status": "between",
+   "last": {
+    "s": 15,
+    "e": 10,
+    "date": "2026-03-19",
+    "name": "Sognando il cielo"
+   },
+   "next": null,
+   "note": "Series 15 ended 19 Mar 2026 with Raoul Bova as Don Massimo. Rai runs the Spoleto-set series on Thursday evenings; a 16th series is expected in 2027 (to confirm from Rai). Gentle Italian with clear Umbrian diction, good for keeping C1 warm.",
+   "src": [
+    [
+     "TVMaze: Don Matteo",
+     "https://www.tvmaze.com/shows/5349/don-matteo"
+    ],
+    [
+     "RaiPlay: Don Matteo",
+     "https://www.raiplay.it/programmi/donmatteo"
+    ]
+   ]
+  },
+  {
+   "id": "blanca",
+   "tvmaze": 64972,
+   "title": "Blanca",
+   "where": "Rai 1 and RaiPlay (Italy)",
+   "status": "between",
+   "last": {
+    "s": 3,
+    "e": 6,
+    "date": "2025-11-03",
+    "name": "Il bambino"
+   },
+   "next": null,
+   "note": "Series 3 ended 3 Nov 2025; Maria Chiara Giannetta as the blind police consultant in Genoa. Rai has not announced series 4 (to confirm). Faster Genoese Italian than Don Matteo, with the Liguria coast as a bonus.",
+   "src": [
+    [
+     "TVMaze: Blanca",
+     "https://www.tvmaze.com/shows/64972/blanca"
+    ],
+    [
+     "RaiPlay: Blanca",
+     "https://www.raiplay.it/programmi/blanca"
+    ]
+   ]
   }
  ],
  "similar": [
@@ -405,6 +455,24 @@
     "gbbo"
    ],
    "why": "Pastry teams instead of amateurs; sharper, shorter, and on between Bake Off series."
+  },
+  {
+   "title": "Imma Tataranni, sostituto procuratore",
+   "where": "Rai 1 and RaiPlay",
+   "like": [
+    "blanca",
+    "donmatteo"
+   ],
+   "why": "A Matera prosecutor with the same mix of case-of-the-week and family life; the dialect is the lesson."
+  },
+  {
+   "title": "Il Commissario Montalbano",
+   "where": "Rai 1 and RaiPlay, MHz Choice",
+   "like": [
+    "donmatteo",
+    "blanca"
+   ],
+   "why": "The Sicilian benchmark; feature-length episodes, slow and sunlit, Camilleri's Italian with Sicilian colour."
   }
  ]
 }
