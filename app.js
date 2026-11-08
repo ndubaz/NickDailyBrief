@@ -10,14 +10,14 @@
   var CAT = { nl:["Netherlands","--c-nl"], be:["Belgium","--c-be"], de:["Germany","--c-de"], us:["US / AFNORTH","--c-us"], mkt:["Markets & events","--c-mkt"], pro:["Work & world","--c-pro"],
               hockey:["Hurricanes","--p-hockey"], home:["Bins & home","--p-home"], school:["School breaks","--p-pro"], watch:["Horizon","--p-watch"], deadline:["Deadlines","--crit"], info:["Clocks","--muted"], out:["Out and about","--c-mkt"], ex:["Exercises","--p-pro"], me:["Yours","--ink"], nfl:["Saints & Cardinals","--p-sec"], tv:["TV","--p-reading"], mail:["From your mail","--c-us"] };
   var CODE_COLORS = { CYB:"--c-us", SAB:"--crit", UAS:"--c-mkt", UWI:"--c-pro", GNSS:"--c-be", INF:"--c-nl", ELX:"--c-nl", MIG:"--c-de", PRX:"--warn", AIR:"--c-de", SEA:"--c-pro", COE:"--c-be", KIN:"--crit" };
-  var PART_CLASSES = ["front","news","watch","reading","home"];
-  var PART_DEF = { front: ["front","Today","#front"], news: ["news","The news","#p-news"], watch: ["watch","The watch","#p-watch"], reading: ["reading","The reading","#p-reading"], home: ["home","Home and planning","#p-home"] };
-  var PARTS = ["front","news","reading","watch","home"].map(function (k) { return PART_DEF[k]; });
-  function setPartOrder(weekend) { PARTS = (weekend ? ["front","reading","news","watch","home"] : ["front","news","reading","watch","home"]).map(function (k) { return PART_DEF[k]; }); }
+  var PART_CLASSES = ["front","news","money","watch","reading","home"];
+  var PART_DEF = { front: ["front","Today","#front"], news: ["news","The news","#p-news"], money: ["money","Markets & economy","#p-money"], watch: ["watch","The watch","#p-watch"], reading: ["reading","The reading","#p-reading"], home: ["home","Home and planning","#p-home"] };
+  var PARTS = ["front","news","money","reading","watch","home"].map(function (k) { return PART_DEF[k]; });
+  function setPartOrder(weekend) { PARTS = (weekend ? ["front","reading","news","money","watch","home"] : ["front","news","money","reading","watch","home"]).map(function (k) { return PART_DEF[k]; }); }
   function pn(cls) { var i = PARTS.map(function (p) { return p[0]; }).indexOf(cls); return "Part " + i; }
-  var TIERS = { news: ["world","hybrid","europe","countries","euregio","army","nato","deftech","frontier","markets","fx","fuel","rates","nl"], watch: ["board","numbers","horizon","threads","novel","congress-sec","releases","sota","forecasts"], reading: ["feature","research","philosophy","depth","ttpsec","aperture"], home: ["afnorth","offduty","dutch","snow","hockey","week","coming","weather","countdown","tv","calendar","year"] };
+  var TIERS = { news: ["world","hybrid","europe","countries","euregio","army","nato","deftech","frontier","nl"], money: ["markets","fx","fuel","rates"], watch: ["board","numbers","horizon","threads","novel","congress-sec","releases","sota","forecasts"], reading: ["feature","research","philosophy","depth","ttpsec","aperture"], home: ["afnorth","offduty","dutch","snow","hockey","week","coming","weather","countdown","tv","calendar","year"] };
   var EVCAT = { music:"Music", markets:"Markets", museums:"Museums", sport:"Sport", kids:"Kids", food:"Food", outdoors:"Outdoors", festival:"Festivals" };
-  var SERIES_BY_LABEL = [["s&p 500","spx"],["nasdaq","ndx"],["aex","aex"],["brent","brent"],["dutch ttf","ttf"],["ttf","ttf"]];
+  var SERIES_BY_LABEL = [["s&p 500","spx"],["dow","dji"],["nasdaq","ndx"],["russell","rut"],["aex","aex"],["stoxx","stoxx"],["dax","dax"],["brent","brent"],["dutch ttf","ttf"],["ttf","ttf"],["gold","gold"],["us 10-year","us10y"],["vix","vix"]];
   var HOME = { lat: 50.89, lon: 5.98, name: "Heerlen" };
   var app = document.getElementById("app");
   var DAY = 864e5;
@@ -749,7 +749,7 @@
     fresh("USD/EUR series", ctx.fx && ctx.fx.series.length ? ctx.fx.series[ctx.fx.series.length - 1][0] : "", 4, 7, "last ECB day");
     var fuS = ctx.fuel && ctx.fuel.series && ctx.fuel.series["nl-e95"]; fresh("Pump prices", fuS && fuS.length ? fuS[fuS.length - 1][0] : "", 11, 18, "last CBS day");
     var serOld = Object.keys(ctx.series || {}).filter(function (k) { return k[0] !== "_" && (ctx.series[k] || []).length && daysBetween(ctx.series[k][ctx.series[k].length - 1][0], TD) > 5; });
-    add("Market series", serOld.length ? "act" : "ok", serOld.length ? "stale: " + serOld.join(", ") : "all five within 5 days");
+    add("Market series", serOld.length ? "act" : "ok", serOld.length ? "stale: " + serOld.join(", ") : "all " + Object.keys(ctx.series || {}).filter(function (k) { return k[0] !== "_" && Array.isArray(ctx.series[k]); }).length + " within 5 days");
     var WS = ctx.worldSeries || { meta: {}, series: {} }, wsRows = Object.keys(WS.series || {}).map(function (k) { var sr = WS.series[k] || [], m = (WS.meta || {})[k] || {}, last = sr.length ? sr[sr.length - 1][0] : null, lim = m.cadence === "weekly" ? 10 : 3; return [k, last, last ? daysBetween(last, TD) > lim : true]; });
     var wsBad = wsRows.filter(function (r) { return r[2]; }).map(function (r) { return r[0] + (r[1] ? " (" + fmtShort(r[1]) + ")" : " (empty)"); });
     add("World series", wsBad.length >= wsRows.length ? "act" : wsBad.length ? "watch" : "ok", wsBad.length ? "not kept up: " + wsBad.join(", ") : wsRows.length + " series current");
@@ -1194,14 +1194,14 @@
     h += '<header class="mast"><div class="eyebrow">' + esc(E.place || "Hoensbroek · Parkstad Limburg") + "</div><h1>Nick's Daily Readbook</h1>";
     h += '<div class="date">' + esc(E.weekday + " " + today.getDate() + " " + MON[today.getMonth()] + " " + today.getFullYear()) + "</div>";
     h += '<div class="mast-meta"><span><b>Edition ' + esc(E.edition) + "</b></span><span>Look-back " + esc(E.lookback) + '</span><span id="readtime"></span></div>';
-    h += '<div class="rule" aria-hidden="true">' + ["--ink","--p-news","--p-watch","--p-reading","--p-home"].map(function (c) { return '<i style="background:var(' + c + ')"></i>'; }).join("") + "</div>";
+    h += '<div class="rule" aria-hidden="true">' + ["--ink","--p-news","--p-money","--p-watch","--p-reading","--p-home"].map(function (c) { return '<i style="background:var(' + c + ')"></i>'; }).join("") + "</div>";
     h += '<div class="status"><span id="resumebox"></span><span class="dens" role="group" aria-label="Density"><button type="button" data-d="normal">Normal</button><button type="button" data-d="compact">Compact</button></span><span class="theme" role="group" aria-label="Theme"><button type="button" data-theme="auto">Auto</button><button type="button" data-theme="light">Light</button><button type="button" data-theme="dark">Dark</button></span></div>';
     if (E.note) h += '<p class="note">' + rich(E.note) + "</p>";
     h += "</header>";
 
     /* slim header */
     h += '<div class="slim" id="slim"><div class="slim-row"><span class="cur" id="cur">Front</span>' +
-      PARTS.map(function (p) { return '<a class="' + p[0] + '" data-p="' + p[0] + '" href="' + p[2] + '">' + esc(p[0] === "home" ? "Home" : p[0] === "front" ? "Today" : p[1].replace("The ", "")) + "</a>"; }).join("") + '<a href="#sources">Sources</a>' +
+      PARTS.map(function (p) { return '<a class="' + p[0] + '" data-p="' + p[0] + '" href="' + p[2] + '">' + esc(p[0] === "home" ? "Home" : p[0] === "front" ? "Today" : p[0] === "money" ? "Markets" : p[1].replace("The ", "")) + "</a>"; }).join("") + '<a href="#sources">Sources</a>' +
       '<button type="button" class="tg" id="newonly" aria-pressed="false" title="Show only items with a NEW or UPDATED badge">New only</button>' +
       '</div><div class="prog"><i id="prog"></i></div></div>';
 
@@ -1240,7 +1240,7 @@
 
     /* ===== Part 1 · The news ===== */
     TIER_HTML.front = h; h = "";
-    h += part("news", pn("news"), "The news", "What happened: the world, security, defence, frontier technology, money and the Netherlands.", "p-news");
+    h += part("news", pn("news"), "The news", "What happened: the world, security, defence, frontier technology and the Netherlands.", "p-news");
     h += '<section id="world" class="news"><h2>Developments <span class="num">beyond Europe</span></h2>';
     if (WO.items && WO.items.length) {
       var rc = {}; WO.items.forEach(function (x) { rc[x.region] = (rc[x.region] || 0) + 1; });
@@ -1317,8 +1317,16 @@
     h += "</section>";
     var FR = E.frontier || {}, REL = ctx.releases || {};
     h += '<section id="frontier" class="news"><h2>Newest</h2>' + items(FR.items, null, "No new release or published result in the window.") + "</section>";
+    var NL = E.nl || {}, AF = E.afnorth || {}, OD = E.offduty || {};
+    h += '<section id="nl" class="news"><h2>Netherlands</h2>' + items(NL.items);
+    if (NL.temp) h += '<p class="small" style="margin-top:12px"><b>Political temperature:</b> ' + rich(NL.temp) + "</p>";
+    h += "</section>";
+
+    /* ===== Markets & economy: its own part ===== */
+    TIER_HTML.news = h; h = "";
+    h += part("money", pn("money"), "Markets & economy", "The markets, the dollar in euros, the pump price in dollars, rates and the week ahead.", "p-money");
     var M = E.money || {};
-    h += '<section id="markets" class="news"><h2>Markets &amp; economy <span class="num">' + esc(M.asof || "") + "</span></h2>";
+    h += '<section id="markets" class="money"><h2>Markets &amp; economy <span class="num">' + esc(M.asof || "") + "</span></h2>";
     var sparks = []; ctx._sparks = sparks;
     if (M.cards) h += '<div class="cards">' + M.cards.filter(function (c) { return !(FX && /(USD|EUR)\s*\/\s*(EUR|USD)/i.test(c[0])); }).map(function (c) {
       var src = null, sk = null;
@@ -1356,7 +1364,7 @@
       h += '<p class="small" style="margin:8px 0 0"><a href="' + esc(FU.url || "https://opendata.cbs.nl/statline/#/CBS/nl/dataset/80416ned/table") + '" target="_blank" rel="noopener">' + esc(FU.src || "CBS, Pompprijzen motorbrandstoffen") + "</a>: the weighted national average pump price including VAT and excise, published weekly. Each day converts at that day's ECB rate (the last one before it at weekends); 1 US gallon is 3.785 litres.</p></div>";
     }
     h += "</section>";
-    h += '<section id="rates" class="news">';
+    h += '<section id="rates" class="money">';
     if (M.rates) h += "<h2>Rates and prices</h2>" + table(["Measure", "Latest", "Note"], M.rates.map(function (r) { var g = fxGuard(r[0], r[1], null, null); return "<tr><td>" + esc(g.label) + '</td><td class="d">' + esc(g.value) + "</td><td>" + rich(r[2]) + "</td></tr>"; }).join(""), "lbl1");
     if (M.fuel) {
       var F = M.fuel, minP = Math.min.apply(null, F.rows.map(function (r) { return r[1]; })), minD = Math.min.apply(null, F.rows.map(function (r) { return r[2]; }));
@@ -1369,14 +1377,9 @@
     if (M.fy) h += '<p class="sw-line" style="margin-top:12px"><b class="l">For you</b>' + rich(M.fy) + "</p>";
     h += "</section>";
 
-    var NL = E.nl || {}, AF = E.afnorth || {}, OD = E.offduty || {};
-    h += '<section id="nl" class="news"><h2>Netherlands</h2>' + items(NL.items);
-    if (NL.temp) h += '<p class="small" style="margin-top:12px"><b>Political temperature:</b> ' + rich(NL.temp) + "</p>";
-    h += "</section>";
-
     /* ===== Part 2 · The watch ===== */
-    TIER_HTML.news = h; h = "";
-    h += part("watch", pn("watch"), "The watch", "The memory: the board with Ukraine in detail, the numbers and indicators, one Horizon, the threads, New in war, Congress, the frontier record, the dollar, and the forecast ledger.", "p-watch");
+    TIER_HTML.money = h; h = "";
+    h += part("watch", pn("watch"), "The watch", "The memory: the board with Ukraine in detail, the numbers and indicators, one Horizon, the threads, New in war, Congress, the frontier record and the forecast ledger.", "p-watch");
     h += '<section id="board" class="watch"><h2>The board <span class="num">events logged, not a measure of intensity</span></h2>';
     if (board) {
       h += '<div class="panel"><div class="lbl">' + (ctx.conflicts || []).length + ' theatres · filled marker = events logged in 7 days, sized by count</div><div class="chart" id="worldmap" style="min-height:150px"></div></div>';

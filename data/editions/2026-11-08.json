@@ -1280,7 +1280,8 @@
     "−0.46%",
     "down",
     "Fri close",
-    124
+    124,
+    "dji"
    ],
    [
     "Nasdaq",
@@ -1297,7 +1298,8 @@
     "+0.89%",
     "up",
     "Fri close",
-    124
+    124,
+    "rut"
    ],
    [
     "AEX",
@@ -1313,8 +1315,27 @@
     "648.33",
     "−1.00%",
     "down",
-    "Fri close; DAX −1.9%",
-    126
+    "Fri close",
+    126,
+    "stoxx"
+   ],
+   [
+    "DAX",
+    "25,820.36",
+    "−1.92%",
+    "down",
+    "Fri close",
+    127,
+    "dax"
+   ],
+   [
+    "VIX",
+    "25.64",
+    "−9.01%",
+    "down",
+    "Fri close",
+    127,
+    "vix"
    ],
    [
     "Brent",
@@ -1340,15 +1361,8 @@
     "−0.83%",
     "down",
     "December futures, Fri",
-    127
-   ],
-   [
-    "USD/EUR",
-    "0.8957",
-    "+0.53%",
-    "up",
-    "euros per dollar",
-    128
+    127,
+    "gold"
    ],
    [
     "US 10-year",
@@ -1356,15 +1370,8 @@
     "+2 bp",
     "up",
     "Treasury par curve, Fri; 2-year 4.51%",
-    129
-   ],
-   [
-    "VIX",
-    "25.64",
-    "−9.01%",
-    "down",
-    "Fri close",
-    127
+    128,
+    "us10y"
    ]
   ],
   "ytd": [
@@ -1394,32 +1401,32 @@
    ]
   ],
   "ytdSrc": 127,
-  "driver": "No market traded over the weekend; Friday's final TTF settle was €85.59, down 5.6%. [127] ECB President Christine Lagarde told Yomiuri on 7 Nov: “We know that inflation numbers will remain high in the quarters to come,” and “I cannot tell you today that we will for sure do this in December.” [130] Euro finance ministers review the two candidates to succeed her, Klaas Knot and Pablo Hernández de Cos, on Mon 9 Nov. [131] US October consumer prices come out on Tue 10 Nov at 14:30 CET without a year-on-year rate, because October 2025 prices were not collected in the shutdown. [132]",
+  "driver": "No market traded over the weekend; Friday's final TTF settle was €85.59, down 5.6%. [127] ECB President Christine Lagarde told Yomiuri on 7 Nov: “We know that inflation numbers will remain high in the quarters to come,” and “I cannot tell you today that we will for sure do this in December.” [129] Euro finance ministers review the two candidates to succeed her, Klaas Knot and Pablo Hernández de Cos, on Mon 9 Nov. [130] US October consumer prices come out on Tue 10 Nov at 14:30 CET without a year-on-year rate, because October 2025 prices were not collected in the shutdown. [131]",
   "rates": [
    [
     "Fed funds",
     "3.75–4.00%",
-    "Held 28 Oct; futures priced a December hike at about 78% after Friday's jobs data. [133, 134]"
+    "Held 28 Oct; futures priced a December hike at about 78% after Friday's jobs data. [132, 133]"
    ],
    [
     "ECB deposit rate",
     "2.50%",
-    "Held 29 Oct; next decision 17 Dec. Lagarde on 7 Nov: “it would take significant changes for the direction of travel to be different from what I expect.” [135, 130]"
+    "Held 29 Oct; next decision 17 Dec. Lagarde on 7 Nov: “it would take significant changes for the direction of travel to be different from what I expect.” [134, 129]"
    ],
    [
     "US unemployment",
     "4.1%",
-    "October, from 4.2%. [136]"
+    "October, from 4.2%. [135]"
    ],
    [
     "US 2-year",
     "4.51%",
-    "Fri, +5 bp on the jobs data. [129]"
+    "Fri, +5 bp on the jobs data. [128]"
    ],
    [
     "USD/EUR",
     "0.8957",
-    "ECB fix of Fri 6 Nov, 1.1165 dollars per euro; the next fix is Mon 9 Nov. [128]"
+    "ECB fix of Fri 6 Nov, 1.1165 dollars per euro; the next fix is Mon 9 Nov. [136]"
    ],
    [
     "EU gas storage",
@@ -1429,14 +1436,14 @@
   ],
   "week": [
    "**Fri 6:** S&P 500 +0.3%, Nasdaq +1.1%, AEX −0.8%, Stoxx 600 −1.0%. [124, 125, 126]",
-   "**Mon 9:** Eurogroup reviews the two ECB candidates; Fed Governor Bowman speaks. [131, 138]",
-   "**Tue 10:** Dutch October inflation (CBS, 06:30); Governor Waller in London at 10:00 CET; US October CPI at 14:30 CET; ECB chief economist Lane in London. [139, 138, 132, 140]",
+   "**Mon 9:** Eurogroup reviews the two ECB candidates; Fed Governor Bowman speaks. [130, 138]",
+   "**Tue 10:** Dutch October inflation (CBS, 06:30); Governor Waller in London at 10:00 CET; US October CPI at 14:30 CET; ECB chief economist Lane in London. [139, 138, 131, 140]",
    "**Wed 11:** Lagarde at the Paris Peace Forum; Veterans Day in the US. [140]",
    "**Thu 12:** Tweede Kamer votes on the 2027 tax plan; Lagarde speaks again in the evening. [140]",
-   "**Fri 13:** US producer prices. [132]",
+   "**Fri 13:** US producer prices. [131]",
    "**Sun 29 Nov:** OPEC+ meets; Iraq said on 7 Nov it wants a 2027 ceiling above its current 4.431 million barrels a day. [141]"
   ],
-  "fy": "USD/EUR stays at Friday's ECB fix of 0.8957 until Monday's fix: $1,000 of pay buys €895.66. [128] Tuesday is the week's dollar event: US CPI at 14:30 CET and Dutch inflation at 06:30 the same day; if you convert monthly, there is no reason to move before Tuesday's print.",
+  "fy": "USD/EUR stays at Friday's ECB fix of 0.8957 until Monday's fix: $1,000 of pay buys €895.66. [136] Tuesday is the week's dollar event: US CPI at 14:30 CET and Dutch inflation at 06:30 the same day; if you convert monthly, there is no reason to move before Tuesday's print.",
   "fuel": null
  },
  "nl": {
@@ -2930,65 +2937,65 @@
   ],
   [
    128,
-   "Euro foreign exchange reference rates (history ZIP)",
-   "European Central Bank",
-   "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist.zip",
-   1
-  ],
-  [
-   129,
    "Daily Treasury par yield curve rates, November 2026",
    "US Treasury",
    "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=202611",
    1
   ],
   [
-   130,
+   129,
    "ECB's Lagarde says inflation to stay high, sees little reason to alter rate course",
    "Investing.com via Yahoo Finance",
    "https://ca.finance.yahoo.com/news/ecb-lagarde-says-inflation-stay-164342748.html",
    3
   ],
   [
-   131,
+   130,
    "Spain, Netherlands nominate candidates to succeed Lagarde as ECB chief",
    "Anadolu Agency",
    "https://aa.com.tr/en/europe/spain-netherlands-nominate-candidates-to-succeed-lagarde-as-ecb-chief/4114720",
    3
   ],
   [
-   132,
+   131,
    "Release calendar, November 2026",
    "Bureau of Labor Statistics",
    "https://www.bls.gov/schedule/2026/11_sched.htm",
    1
   ],
   [
-   133,
+   132,
    "Federal Reserve issues FOMC statement, 28 October 2026",
    "Federal Reserve",
    "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
    1
   ],
   [
-   134,
+   133,
    "Fed seen sticking to December rate hike after jobs data",
    "Reuters via Yahoo Finance",
    "https://finance.yahoo.com/economy/policy/articles/traders-raise-bets-fed-rate-134402668.html",
    2
   ],
   [
-   135,
+   134,
    "Monetary policy decisions, 29 October 2026",
    "European Central Bank",
    "https://www.ecb.europa.eu/press/pr/date/2026/html/ecb.mp261029~9a493adf17.en.html",
    1
   ],
   [
-   136,
+   135,
    "The Employment Situation, October 2026",
    "Bureau of Labor Statistics",
    "https://www.bls.gov/news.release/pdf/empsit.pdf",
+   1
+  ],
+  [
+   136,
+   "Euro foreign exchange reference rates (history ZIP)",
+   "European Central Bank",
+   "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist.zip",
    1
   ],
   [

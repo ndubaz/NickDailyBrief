@@ -640,7 +640,7 @@ ol.src li.t1 a,ol.src li.t2 a{font-weight:600}
 .wkwx{font-family:var(--f-mono);font-size:12px}
 .wkwx b{color:var(--ink);font-weight:500}
 /* slim chips for the tiers */
-.slim a.news{--pc:var(--p-news)} .slim a.reading{--pc:var(--p-reading)}
+.slim a.news{--pc:var(--p-news)} .slim a.reading{--pc:var(--p-reading)} .slim a.money{--pc:var(--p-money)}
 /* weather glyphs */
 .wxi{display:block;margin:2px auto 0;color:var(--muted)}
 .wxd .wxi{margin:3px auto 1px}

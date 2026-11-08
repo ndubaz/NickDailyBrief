@@ -14,7 +14,7 @@ The site is static. `index.html` + `app.js` + `styles.css` never change day to d
 | `data/threads.json` | Append a dated log entry to each thread that moved; open new threads; set `status`. Never delete entries. |
 | `data/horizon.json` | Add new dated events (`added` = today); set `updated` = today on an event you changed; remove events whose date has passed. |
 | `data/fx.json` | Append the ECB EUR reference rate for each business day not yet listed (the ECB publishes about 16:00 CET, so a morning run appends yesterday). Stored exactly as the ECB quotes it, US dollars per euro; the page inverts to euros per dollar. |
-| `data/series.json` | Append the last close for each series key; keep the last 30 trading days per key. |
+| `data/series.json` | Append the last close for each of the twelve series keys (spx, dji, ndx, rut, aex, stoxx, dax, brent, ttf, gold, us10y, vix); keep the last 30 trading days per key. |
 | `data/fuel.json` | Run `node tools/fuel.js` every day: it downloads CBS table 80416ned (daily average pump prices in the Netherlands, published weekly) and rewrites the file with about 400 days of Euro 95 and diesel. Do not edit by hand. If it fails, leave the file and say so in `flags`. |
 | `data/canes.json` | Append each completed Carolina game; refresh `upcoming` (next 15 scheduled games with UTC start); update `record`, `points`, `metro`. |
 | `data/congress.json` | Three lanes: key defence bills, the budget cycle, confirmations. Add a row when a bill is introduced, a budget deadline is set, a post falls vacant or a nominee is named; move `stage`, add the date to `dates`, set `updated`, copy cited source rows into `src`. Never delete rows. |
@@ -146,7 +146,9 @@ The World feature rota: Monday "Theatre in numbers" (table), Tuesday "Actor on t
 
 ### Page changes on 8 Nov (format stays 7.3)
 
-- The USD/EUR tracker moves from The watch into Markets & economy in The news, after the year-to-date bars; its jump id stays `fx`. The edition's USD/EUR card in `money.cards` is still written but hidden on the page while the tracker shows, since the tracker carries the same figure. The watch has nine sections.
+- Markets & economy is its own tier, `money`, with a Markets tab in the sticky header, between The news and The reading (at weekends after The news, as The reading leads). It holds the `markets` section (cards, driver, year to date, the USD/EUR tracker, the pump price) and `rates`; `nl` closes The news. `five[].part` "money" points there.
+- `money.cards` is twelve cards, each with a series key in its seventh field so every card draws a sparkline: S&P 500 `spx`, Dow `dji`, Nasdaq `ndx`, Russell 2000 `rut`, AEX `aex`, Stoxx 600 `stoxx`, DAX `dax`, VIX `vix`, Brent `brent`, Dutch TTF gas `ttf`, gold `gold`, US 10-year `us10y`, in that order (six rows of two on phones, three rows of four on wide screens). No USD/EUR card: the tracker carries it.
+- The USD/EUR tracker moves from The watch into Markets & economy, after the year-to-date bars; its jump id stays `fx`. The edition's USD/EUR card in `money.cards` is still written but hidden on the page while the tracker shows, since the tracker carries the same figure. The watch has nine sections.
 - New block `fuel` (jump id `fuel`) under the tracker: the Euro 95 (E10) pump price in the Netherlands in US dollars per gallon, from `data/fuel.json` and `data/fx.json`.
 - The Today strip's Markets tile adds a Brent row from `series.json` (last close, change in the tooltip) when the edition's `today.markets` has no Brent row; `today.markets` stays four rows.
 
@@ -323,7 +325,7 @@ The page converts `utc` to CET for the schedule strip, the calendar and the coun
 `{ "source", "url", "pair": "EUR/USD", "updated", "series": [["YYYY-MM-DD", usd_per_euro], ...] }`. Two years kept. The page shows euros per dollar.
 
 #### series.json
-`{ "spx": [...], "ndx": [...], "aex": [...], "brent": [...], "ttf": [...] }`, 30 trading days each, last close only. `ndx` is the Nasdaq Composite, `brent` the ICE front month in $/bbl, `ttf` the TTF front month in €/MWh.
+`{ "spx", "dji", "ndx", "rut", "aex", "stoxx", "dax", "brent", "ttf", "gold", "us10y", "vix" }`, 30 trading days each, last close only, every key a list of `["YYYY-MM-DD", close]`. Yahoo Finance chart API tickers: ^GSPC, ^DJI, ^IXIC, ^RUT, ^AEX, ^STOXX, ^GDAXI, BZ=F, TTF=F, GC=F, ^VIX; `us10y` is the 10-year par yield from the US Treasury daily yield curve. Each key feeds the sparkline of the money card that names it in its seventh field; the page also matches cards by label. `ndx` is the Nasdaq Composite, `brent` the ICE front month in $/bbl, `ttf` the TTF front month in €/MWh.
 
 #### incidents.json
 As before, plus `attrLog`: `[{"id","date","from","to","t","src"}]`.
