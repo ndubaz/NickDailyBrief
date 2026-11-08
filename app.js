@@ -93,7 +93,8 @@
   function table(head, rows, cls) {
     var i = 0;
     rows = rows.replace(/<tr([^>]*)>|<td([^>]*)>/g, function (m, tr, td) { if (tr !== undefined) { i = 0; return m; } var th = head[i] || ""; i++; return "<td" + (td || "") + ' data-th="' + esc(th) + '">'; });
-    return '<div class="tw' + (head.length >= 3 ? " stack" : "") + '"><table' + (cls ? ' class="' + cls + '"' : "") + "><thead><tr>" + head.map(function (c) { return "<th>" + esc(c) + "</th>"; }).join("") + "</tr></thead><tbody>" + rows + "</tbody></table></div>";
+    var cells = (rows.match(/<td/g) || []).length, txt = rows.replace(/<[^>]+>/g, ""), avg = cells ? txt.length / cells : 0;
+    return '<div class="tw' + (head.length >= 5 || (head.length >= 3 && avg > 22) ? " stack" : "") + '"><table' + (cls ? ' class="' + cls + '"' : "") + "><thead><tr>" + head.map(function (c) { return "<th>" + esc(c) + "</th>"; }).join("") + "</tr></thead><tbody>" + rows + "</tbody></table></div>";
   }
   function nextLink(cls) { var i = -1; PARTS.forEach(function (p, j) { if (p[0] === cls) i = j; }); var n = PARTS[i + 1]; return n ? '<a class="next ' + n[0] + '" href="' + n[2] + '">Next · ' + esc(n[1]) + ' →</a>' : ""; }
   function chartBox(id, h, cls) { return '<div class="chart' + (cls ? " " + cls : "") + '" id="' + id + '" style="min-height:' + h + 'px"></div>'; }
@@ -388,7 +389,7 @@
     out.sort(function (a, b) { return a.last.date < b.last.date ? 1 : a.last.date > b.last.date ? -1 : 0; });
     return out;
   }
-  function logList(log, cls) { return '<div class="' + (cls || "tlog") + '">' + log.slice().reverse().map(function (e) { return '<div class="e"><span class="d">' + esc(fmtLong(e.date)) + "</span><p>" + rich(e.t, srcMap(e.src)) + "</p></div>"; }).join("") + "</div>"; }
+  function logList(log, cls) { var yr = (ctx._TD || "").slice(0, 4); return '<div class="' + (cls || "tlog") + '">' + log.slice().reverse().map(function (e) { return '<div class="e"><span class="d">' + esc(fmtShort(e.date) + (e.date.slice(0, 4) !== yr ? " " + e.date.slice(0, 4) : "")) + "</span><p>" + rich(e.t, srcMap(e.src)) + "</p></div>"; }).join("") + "</div>"; }
   function renderThreads(view) {
     if (!view.length) return quiet("No threads are open.");
     return '<div class="fug">' + nq() + view.map(function (v) {
@@ -410,13 +411,13 @@
     if (!rows.length) return quiet("Nothing dated on the horizon.");
     var groups = [["Next 14 days", []], ["15 to 90 days", []], ["Beyond 90 days", []]];
     rows.forEach(function (e) { var n = daysBetween(TD, e.date); groups[n <= 14 ? 0 : n <= 90 ? 1 : 2][1].push(e); });
-    var h = '<p class="small">Horizon entries from the run, exercises, Congress deadlines, open forecasts and elections, in one order. Filled marker = hybrid-relevant.</p><div class="fug">' + nq();
+    var h = '<p class="small">Run entries, exercises, Congress deadlines, forecasts resolving and elections in one order. Filled marker = hybrid-relevant.</p><div class="fug">' + nq();
     groups.forEach(function (g) {
       if (!g[1].length) return;
       var shown = g[0] === "Beyond 90 days" ? g[1].slice(0, 12) : g[1], more = g[1].length - shown.length;
       h += '<div class="tl-group">' + esc(g[0]) + (more > 0 ? ' <span class="small">· first 12 of ' + g[1].length + ", the rest on the calendar</span>" : "") + '</div><div class="tl">' + shown.map(function (e) {
         var n = daysBetween(TD, e.date);
-        return '<div class="tl-i ' + fu(e.badge) + (e.kind === "Hybrid" ? " h" : "") + '" id="' + esc(e.id) + '"><div class="d"><span>' + esc(e.dateText || fmtShort(e.date)) + '</span><span class="rel">' + relDay(n) + "</span>" + (e.kind && e.kind !== "Hybrid" ? '<span class="chip st">' + esc(e.kind) + "</span>" : "") + (e.status === "reported" ? '<span class="chip rep">reported</span>' : "") + "</div><h4>" + esc(e.t) + "</h4>" + badge(e.badge) + (e.n ? "<p>" + rich(e.n, srcMap(e.src)) + "</p>" : "") + '<p class="small">' + icsLink(e.t, e.date, e.end) + "</p></div>";
+        return '<div class="tl-i ' + fu(e.badge) + (e.kind === "Hybrid" ? " h" : "") + '" id="' + esc(e.id) + '"><div class="d"><span>' + esc(e.dateText || fmtShort(e.date)) + '</span><span class="rel">' + relDay(n) + "</span>" + (e.kind && e.kind !== "Hybrid" ? '<span class="chip st">' + esc(e.kind) + "</span>" : "") + (e.status === "reported" ? '<span class="chip rep">reported</span>' : "") + icsLink(e.t, e.date, e.end) + "</div><h4>" + esc(e.t) + "</h4>" + badge(e.badge) + (e.n ? "<p>" + rich(e.n, srcMap(e.src)) + "</p>" : "") + "</div>";
       }).join("") + "</div>";
     });
     return h + "</div>";
@@ -519,7 +520,7 @@
       list.forEach(function (e) {
         var dd = pd(e.date), wk = key(new Date(dd.getFullYear(), dd.getMonth(), dd.getDate() - ((dd.getDay() + 6) % 7)));
         if (wk !== lastW) { lastW = wk; var we = addDays(wk, 6); body += '<tr class="wk"><td colspan="2">Week of ' + esc(fmtShort(wk)) + " – " + esc(fmtShort(we)) + "</td></tr>"; }
-        body += '<tr class="' + (e.date === TD ? "soon" : e.date < TD ? "past" : "") + '"><td class="d"><span class="dot" style="background:' + catColor(e.cat) + '"></span>' + DOW[dd.getDay()] + " " + dd.getDate() + "</td><td><b>" + esc(e.t) + "</b>" + (e.sub ? '<div class="small">' + esc(e.sub) + "</div>" : "") + "</td></tr>";
+        body += '<tr class="' + (e.date === TD ? "soon" : e.date < TD ? "past" : "") + '"><td class="d"><span class="dot" style="background:' + catColor(e.cat) + '"></span>' + DOW[dd.getDay()] + " " + dd.getDate() + "</td><td><b>" + esc(e.t) + "</b>" + (e.sub ? ' <span class="small">' + esc(e.sub) + "</span>" : "") + "</td></tr>";
       });
       return table(["Date", "What"], body);
     }
@@ -643,8 +644,7 @@
     var shows = TV.shows.slice().sort(function (a, b) { var ad = a.next && a.next.date ? a.next.date : "9", bd = b.next && b.next.date ? b.next.date : "9"; return ad < bd ? -1 : ad > bd ? 1 : 0; });
     var h = '<div class="shows">' + shows.map(function (x) {
       var n = x.next, l = x.last, nd = n && n.date ? daysBetween(TD, n.date) : null, past = n && n.date && n.date < TD;
-      var c = '<div class="show"><div class="sh"><b>' + esc(x.title) + '</b><span class="chip st tier' + (x.status === "airing" || x.status === "scheduled" ? " on" : "") + '">' + esc(TVST[x.status] || x.status || "") + "</span></div>";
-      c += '<div class="small">' + esc(x.where || "") + "</div>";
+      var c = '<div class="show"><div class="sh"><b>' + esc(x.title) + '</b><span><span class="small">' + esc(x.where || "") + '</span> <span class="chip st tier' + (x.status === "airing" || x.status === "scheduled" ? " on" : "") + '">' + esc(TVST[x.status] || x.status || "") + "</span></span></div>";
       if (n && n.date && !past) c += '<p class="nextg">' + (nd === 0 ? "Tonight" : nd === 1 ? "Tomorrow" : "In " + nd + " days") + " · <b>" + esc(DOW[pd(n.date).getDay()] + " " + fmtShort(n.date)) + "</b> · " + esc(epCode(n) + (n.name ? " " + n.name : "")) + (n.time ? " · " + esc(n.time) : "") + " " + icsLink(x.title + " " + epCode(n), n.date, null, n.name || "") + "</p>";
       else c += '<p class="nextg muted">No date for the next episode</p>';
       if (l && l.date) c += '<p class="small">Last: ' + esc(epCode(l) + (l.name ? " " + l.name : "") + ", " + fmtShort(l.date) + (l.date.slice(0, 4) !== TD.slice(0, 4) ? " " + l.date.slice(0, 4) : "")) + "</p>";
@@ -700,7 +700,7 @@
   }
 
   /* ---------- health checks: when to remodel ---------- */
-  var PAGE_V = "7.1";
+  var PAGE_V = "7.3";
   function health(E, ctx, TD, words) {
     var rows = [], realToday = key(new Date());
     function add(name, level, detail) { rows.push([name, level, detail]); }
@@ -856,7 +856,7 @@
     ctx._TD = TD;
     var n = { green: 0, amber: 0, red: 0 }; IW.items.forEach(function (x) { n[x.status] = (n[x.status] || 0) + 1; });
     var h = '<h3 id="indicators">Indicators and warning <span class="small">' + n.red + " red · " + n.amber + " amber · " + n.green + " green</span></h3>";
-    h += '<p class="small">Named indicators with the threshold that changes their status and the source the run reads. A change is logged with the fact that moved it; the strip shows the last eight changes.</p>';
+    h += '<p class="small">Each card: the threshold that moves the status, the source, the last change and a strip of the last eight.</p>';
     h += '<div class="indgrid">' + IW.items.map(function (x) {
       var hist = (x.history || []).slice(-8), last = hist[hist.length - 1], val = indicatorValue(x, ctx), age = last ? daysBetween(last.date, TD) : null;
       var links = [x.theatre ? "theatre:" + x.theatre : "", x.country ? "country:" + x.country : "", x.congress ? "congress:" + x.congress : ""].filter(Boolean);
@@ -1048,7 +1048,7 @@
     var list = ctx.countries || [], its = E.countries || [], BLR = (ctx.countriesBLR || []);
     if (!list.length && !its.length) return "";
     var h = '<section id="countries" class="news"><h2>Priority countries <span class="num">Hungary · Slovakia · Germany</span></h2>';
-    h += '<p class="small">Hungary and Slovakia are Nick\'s assigned priority countries as an analyst, Germany his secondary. Profiles come from data/countries.json and change only when the facts do; the items are today\'s news. Numbers refer to NATO\'s seven baseline requirements for resilience.</p>';
+    h += '<p class="small">Hungary and Slovakia are the assigned priority countries, Germany the secondary. Profiles change only when the facts do; items are today\'s news; numbered rows are NATO\'s seven baseline requirements.</p>';
     if (ctx.ceu) h += '<div class="panel"><div class="lbl">NATO sites and energy corridors</div><div class="chart" id="ceumap" style="min-height:200px"></div><p class="small maplegend"><span><i class="sq"></i>NATO headquarters</span><span><i class="tri"></i>NATO force</span><span><i class="ring"></i>nuclear plant</span><span><i class="dash"></i>TurkStream gas</span><span><i class="solid"></i>Druzhba oil</span></p></div>';
     if (list.some(function (c) { return c.spend; })) h += '<div class="panel"><div class="lbl">Defence spending, share of GDP · NATO estimates' + (list.some(function (c) { return c.spend && c.spend.verified === false; }) ? " · to confirm" : "") + '</div><div class="chart" id="spendchart" style="min-height:180px"></div></div>';
     list.forEach(function (c) {
@@ -1147,12 +1147,12 @@
   function aboutBlock(E, TD) {
     var src = E.sources || [], tiers = [0, 0, 0, 0, 0]; src.forEach(function (x) { var t = +x[4]; tiers[t >= 1 && t <= 4 ? t : 0]++; });
     var tiered = tiers[1] + tiers[2] + tiers[3] + tiers[4], share = tiered ? Math.round(100 * (tiers[1] + tiers[2]) / tiered) : null;
-    return '<h3 id="about">About this edition</h3><p class="small">Format ' + esc(E.v || "?") + " · " + src.length + " sources" + (tiered ? " · " + tiers[1] + " official or primary, " + tiers[2] + " wire or document, " + tiers[3] + " outlet, " + tiers[4] + " other (" + share + "% tier one or two)" : " · source tiers not yet assigned") + ' · <span id="aboutwords"></span>. Open sources only; the morning run writes the data files and the page draws them. Checks run by <code>tools/validate.js</code> before every commit.</p>';
+    return '<h3 id="about">About this edition</h3><p class="small">Format ' + esc(E.v || "?") + (tiered ? " · " + tiers[1] + " official or primary, " + tiers[2] + " wire or document, " + tiers[3] + " outlet, " + tiers[4] + " other (" + share + "% tier one or two)" : " · source tiers not yet assigned") + ' · <span id="aboutwords"></span>. Open sources only; the morning run writes the data files and the page draws them. Checks run by <code>tools/validate.js</code> before every commit.</p>';
   }
 
   /* ---------- main render ---------- */
   function render(E, ctx) {
-    ctx._names = linkNames(ctx); ctx._linked = collectLinks(E);
+    ctx._names = linkNames(ctx); ctx._linked = collectLinks(E); ctx._TD = E.date;
     var today = pd(E.date), TD = E.date, h = "", TIER_HTML = {}, weekend = today.getDay() === 0 || today.getDay() === 6;
     setPartOrder(weekend);
     var T = E.today || {};
@@ -1338,7 +1338,7 @@
         var hd = '<details class="thread brow ' + fu(b.badge) + '" id="th-' + esc(b.t.id) + '" open><summary><span class="tname">' + esc(b.t.name) + act4(b.weeks) + badge(b.badge) + inToday("theatre", b.t.id) + "</span>";
         hd += b.last ? '<span class="tlast"><span class="d">' + esc(fmtShort(b.last.date)) + "</span>" + rich(b.last.t, srcMap(b.last.src)) + "</span>" : '<span class="tlast small">No events logged yet.</span>';
         hd += "</summary>";
-        hd += '<div class="tlog">' + (b.log.length > 1 ? logList(b.log.slice(0, -1).slice(-9), "sub") : "") + '<div class="meta">' + b.log.length + (b.log.length === 1 ? " entry" : " entries") + (b.log.length > 10 ? ", last 10 shown; the rest stays in the file and the archive" : "") + (b.last ? " · last " + esc(fmtLong(b.last.date)) + (b.age > 1 ? " (" + b.age + " days ago)" : "") : "") + "</div></div></details>";
+        hd += '<div class="tlog">' + (b.log.length > 1 ? logList(b.log.slice(0, -1).slice(-9), "sub") : "") + '<div class="meta">' + b.log.length + (b.log.length === 1 ? " entry" : " entries") + (b.log.length > 10 ? ", last 10 shown" : "") + (b.last ? " · last " + esc(fmtLong(b.last.date)) + (b.age > 1 ? " (" + b.age + " days ago)" : "") : "") + "</div></div></details>";
         return hd;
       }).join("") + "</div>";
     } else h += quiet("The board file is not loaded.");
@@ -1514,7 +1514,7 @@
     }
     if (AP.longread) h += '<div class="ap-c"><div class="lbl">Long read</div><p><a href="' + esc(AP.longread.url) + '" target="_blank" rel="noopener">' + esc(AP.longread.title) + "</a> · " + esc(AP.longread.outlet) + "</p><p>" + rich(AP.longread.why) + "</p></div>";
     var ROT = [["mon","Mon","Historical echo"],["tue","Tue","Outside-in"],["wed","Wed","Red lens"],["thu","Thu","Concept"],["fri","Fri","Ally spotlight + week in hybrid"],["sat","Sat","Week in war: TTPs (in Defence tech)"],["sun","Sun","Week in defence tech"]];
-    h += '<div class="ap-c"><div class="lbl">Deep cuts and special topics</div><div class="rota">' + ROT.map(function (r) { return '<div class="' + (r[0] === AP.rota ? "on " : "") + (r[0] === "sat" || r[0] === "sun" ? "sp" : "") + '"><b>' + r[1] + "</b>" + r[2] + "</div>"; }).join("") + "</div></div>";
+    h += '<p class="small rotal"><b>Rota</b> ' + ROT.map(function (r) { return '<span class="' + (r[0] === AP.rota ? "on" : "") + '">' + r[1] + " " + r[2] + "</span>"; }).join(" · ") + "</p>";
     h += "</div></section>";
 
 
@@ -1534,11 +1534,11 @@
     /* out and about */
     var EVS = (ctx.events || []).filter(function (e) { return e.to >= TD; }).sort(function (a, b) { return a.from < b.from ? -1 : a.from > b.from ? 1 : 0; });
     var dow = today.getDay(), fri = addDays(TD, dow === 0 ? -2 : dow === 6 ? -1 : 5 - dow), sun = addDays(fri, 2);
-    var WK = EVS.filter(function (e) { return e.from <= sun && e.to >= fri; }).sort(function (a, b) { return (a.drive == null ? 999 : a.drive) - (b.drive == null ? 999 : b.drive); }), N30 = EVS.filter(function (e) { return e.from <= addDays(TD, 30); });
+    var WK = EVS.filter(function (e) { return e.from <= sun && e.to >= fri; }).sort(function (a, b) { return (a.drive == null ? 999 : a.drive) - (b.drive == null ? 999 : b.drive); }), N30 = EVS.filter(function (e) { return e.from <= addDays(TD, 30) && WK.indexOf(e) < 0; });
     var WX = ((E.today || {}).weather || {}).week || [], wkWx = WX.filter(function (r) { return r[0] >= fri && r[0] <= sun; });
     function evRow(e) {
       var b = e.added === TD ? "NEW" : e.updated === TD ? "UPDATED" : "", when = e.from === e.to ? fmt(pd(e.from)) : fmtShort(e.from) + " – " + fmtShort(e.to);
-      return '<div class="evrow ' + fu(b) + '" data-cat="' + esc(e.cat) + '"><span class="d">' + esc(when) + '</span><div><span class="chip st" style="color:' + catColor("out") + '">' + esc(EVCAT[e.cat] || e.cat) + "</span>" + (e.kid ? '<span class="chip st quiet">kids</span>' : "") + " <b>" + esc(e.t) + "</b>" + badge(b) + '<div class="small">' + esc([e.town + (e.cc ? " (" + e.cc + ")" : ""), e.venue, e.drive != null ? "~" + e.drive + " min" : "", e.cost].filter(Boolean).join(" · ")) + (e.src && e.src.length ? '<sup class="r">' + e.src.map(function (z) { return citeLink(z[0], srcMap(e.src)); }).join("") + "</sup>" : "") + " " + icsLink(e.t, e.from, e.to, [e.venue, e.town, e.cost].filter(Boolean).join(", ")) + "</div></div></div>";
+      return '<div class="evrow ' + fu(b) + '" data-cat="' + esc(e.cat) + '"><span class="d">' + esc(when) + '</span><div><span class="chip st" style="color:' + catColor("out") + '">' + esc(EVCAT[e.cat] || e.cat) + "</span>" + (e.kid && e.cat !== "kids" ? '<span class="chip st quiet">kids</span>' : "") + " <b>" + esc(e.t) + "</b>" + badge(b) + '<div class="small">' + esc([e.town + (e.cc ? " (" + e.cc + ")" : ""), e.venue, e.drive != null ? "~" + e.drive + " min" : "", e.cost].filter(Boolean).join(" · ")) + (e.src && e.src.length ? (typeof e.src[0][0] === "number" || /^\d+$/.test(e.src[0][0]) ? '<sup class="r">' + e.src.map(function (z) { return citeLink(z[0], srcMap(e.src)); }).join("") + "</sup>" : ' · <a href="' + esc(e.src[0][1] || "#") + '" target="_blank" rel="noopener" class="srcl">source</a>') : "") + " " + icsLink(e.t, e.from, e.to, [e.venue, e.town, e.cost].filter(Boolean).join(", ")) + "</div></div></div>";
     }
     h += '<section id="offduty" class="home"><h2>Out and about <span class="num">within 90 minutes</span></h2>';
     h += '<h3>This weekend <span class="small">' + esc(fmtShort(fri) + " – " + fmtShort(sun)) + "</span></h3>";
@@ -1551,7 +1551,7 @@
       if (OD.weekend.gem) h += '<p class="sw-line" style="margin-top:10px"><b class="l">Hidden gem</b>' + rich(OD.weekend.gem) + "</p>";
       if (OD.weekend.family) h += '<p class="sw-line"><b class="l">Family pick</b>' + rich(OD.weekend.family) + "</p>";
     }
-    h += '<h3>Next 30 days</h3><div class="filt" id="evfilt" role="group" aria-label="Filter events"><button type="button" data-f="all" aria-pressed="true">All</button>' + Object.keys(EVCAT).map(function (k) { return '<button type="button" data-f="' + k + '" aria-pressed="false">' + EVCAT[k] + "</button>"; }).join("") + '<button type="button" data-f="kids" aria-pressed="false">With kids</button></div>';
+    h += '<h3>Next 30 days' + (WK.length ? ' <span class="small">after this weekend</span>' : "") + '</h3><div class="filt" id="evfilt" role="group" aria-label="Filter events"><button type="button" data-f="all" aria-pressed="true">All</button>' + Object.keys(EVCAT).map(function (k) { return '<button type="button" data-f="' + k + '" aria-pressed="false">' + EVCAT[k] + "</button>"; }).join("") + '<button type="button" data-f="kids" aria-pressed="false">With kids</button></div>';
     h += N30.length ? '<div class="evlist fug" id="evlist">' + nq() + N30.map(evRow).join("") + '<p class="quiet" id="evempty" style="display:none">Nothing in this category in the next 30 days.</p></div>' : quiet("Nothing listed for the next 30 days.");
     h += "</section>";
     /* taal */
@@ -1598,7 +1598,7 @@
         if (R.lines) h += '<ul class="clean">' + R.lines.map(function (l) { return "<li>" + rich(l) + "</li>"; }).join("") + "</ul>";
       } else if (C.noGame) h += "<p>" + rich(C.noGame) + "</p>";
       if (C.record && !CV) h += '<p class="small" style="margin:0"><b>Record:</b> ' + esc(C.record) + "</p>";
-      if (C.next && C.next.length) h += table(["Next", "Opponent", "Puck drop here"], C.next.map(function (n) { return '<tr><td class="d">' + esc(n[0]) + "</td><td>" + esc(n[1]) + '</td><td class="d">' + esc(n[3]) + '<div class="small">' + esc(n[2]) + "</div>" + (n[4] ? '<span class="badge live">WATCH LIVE</span>' : "") + "</td></tr>"; }).join("")) + '<p class="small" style="margin:0">Schedule' + cite(C.nextSrc) + "</p>";
+      if (C.next && C.next.length && !(CV && CV.upcoming.length)) h += table(["Next", "Opponent", "Puck drop here"], C.next.map(function (n) { return '<tr><td class="d">' + esc(n[0]) + "</td><td>" + esc(n[1]) + '</td><td class="d">' + esc(n[3]) + '<div class="small">' + esc(n[2]) + "</div>" + (n[4] ? '<span class="badge live">WATCH LIVE</span>' : "") + "</td></tr>"; }).join("")) + '<p class="small" style="margin:0">Schedule' + cite(C.nextSrc) + "</p>";
       h += "</div>";
     }
     if (CV && CV.games.length > 1) h += '<div class="panel" style="margin-top:12px"><div class="lbl">Season so far · points by game, goals for and against</div><div class="chart" id="hkchart" style="min-height:170px"></div></div>';
@@ -1632,13 +1632,15 @@
     TIER_HTML.home = h;
     h = TIER_HTML.front + PARTS.slice(1).map(function (p) { return TIER_HTML[p[0]] || ""; }).join("");
     /* ===== Footer ===== */
-    h += '<a class="next" href="#sources">Sources ↓</a><section id="sources"><h2>Sources</h2><ol class="src">' + (E.sources || []).map(function (s) { return '<li id="s' + esc(s[0]) + '" value="' + esc(s[0]) + '"' + (s[4] ? ' class="t' + esc(s[4]) + '"' : "") + '><a href="' + esc(s[3]) + '" target="_blank" rel="noopener">' + esc(s[1]) + '</a><span class="o"> · ' + esc(s[2]) + "</span>" + (s[4] == 1 ? ' <span class="chip st tier">official</span>' : s[4] == 2 ? ' <span class="chip st tier">primary</span>' : "") + "</li>"; }).join("") + "</ol>" + ((E.sources || []).some(function (x) { return x[4]; }) ? '<p class="small">Tiers: official or primary document, wire or secondary document, reputable outlet, other.</p>' : "");
+    var SRC = E.sources || [], outlets = {}, t12 = 0, tiered = 0; SRC.forEach(function (x) { outlets[x[2]] = 1; if (x[4]) { tiered++; if (x[4] == 1 || x[4] == 2) t12++; } });
+    h += '<a class="next" href="#sources">Sources ↓</a><section id="sources"><h2>Sources <span class="num">' + SRC.length + " from " + Object.keys(outlets).length + " outlets" + (tiered ? " · " + Math.round(100 * t12 / tiered) + "% official, primary or wire" : "") + "</span></h2>";
+    h += '<details class="srcfold" id="srcfold"><summary>Open the numbered list <span class="small">· bold = official, primary or wire · a citation number anywhere on the page opens it here</span></summary><ol class="src">' + SRC.map(function (s) { return '<li id="s' + esc(s[0]) + '" value="' + esc(s[0]) + '"' + (s[4] ? ' class="t' + esc(s[4]) + '"' : "") + '><a href="' + esc(s[3]) + '" target="_blank" rel="noopener">' + esc(s[1]) + '</a><span class="o"> · ' + esc(s[2]) + "</span></li>"; }).join("") + "</ol></details>";
     if (E.flags) h += '<p class="small" style="margin-top:12px"><b>Sourcing flags:</b> ' + rich(E.flags) + "</p>";
     h += correctionsBlock(ctx, E, TD);
     h += aboutBlock(E, TD);
     h += '<div class="foot"><div class="arch"><label class="small" for="arch">Past editions</label><select id="arch"></select></div>';
     h += '<div class="search"><form id="searchform" role="search"><label class="small" for="q">Archive search</label><input id="q" type="search" placeholder="Search headlines in every edition" autocomplete="off"><button type="submit">Search</button></form><div id="hits" class="small"></div></div>';
-    if (E.changelog) h += '<div><div class="small"><b>What changed in the Readbook</b></div><ul class="clean small" style="margin-top:6px">' + E.changelog.map(function (c) { return "<li>" + esc(c[0]) + ": " + rich(c[1]) + "</li>"; }).join("") + "</ul></div>";
+    if (E.changelog) h += '<details class="srcfold small"><summary><b>What changed in the Readbook</b> · ' + E.changelog.length + " entries</summary><ul class=\"clean small\" style=\"margin-top:6px\">" + E.changelog.map(function (c) { return "<li>" + esc(c[0]) + ": " + rich(c[1]) + "</li>"; }).join("") + "</ul></details>";
     h += '<p class="small">Open sources only. Personal reading; not an official product.</p></div></section>';
     h += '<section id="health" class="plan"><h2>Readbook health <span class="num">act = fix the data model or the prompt</span></h2><div id="healthbody"></div></section>';
     h += '<button type="button" class="totop" id="totop" aria-label="Back to top">Top</button>';
@@ -1892,7 +1894,7 @@
     /* prune contents links whose section is not in this edition */
     app.querySelectorAll(".toc .secs a").forEach(function (a) { if (!document.getElementById(a.getAttribute("href").slice(1))) { var nx = a.nextSibling; if (nx && nx.nodeType === 3) nx.parentNode.removeChild(nx); else if (a.previousSibling && a.previousSibling.nodeType === 3) a.parentNode.removeChild(a.previousSibling); a.parentNode.removeChild(a); } });
   }
-  function jumpTo(target) { if (!target) return false; var t = document.getElementById(target); if (!t) return false; var det = t.closest("details"); if (det && !det.open) det.open = true; t.scrollIntoView(); return true; }
+  function jumpTo(target) { if (!target) return false; var t = document.getElementById(target); if (!t) return false; var det = t.closest("details"); if (det && !det.open) det.open = true; try { t.scrollIntoView({ behavior: "instant", block: "start" }); } catch (err) { t.scrollIntoView(); } return true; }
 
   /* ---------- boot ---------- */
   var allEditions = null;
@@ -1930,6 +1932,7 @@
     var m = location.hash.match(/^#ed-(\d{4}-\d{2}-\d{2})/);
     return load(m ? m[1] : null);
   }).catch(fail);
+  window.addEventListener("hashchange", function () { var id = location.hash.slice(1); if (/^s\d+$/.test(id)) jumpTo(id); });
   window.addEventListener("hashchange", function () { var m = location.hash.match(/^#ed-(\d{4}-\d{2}-\d{2})(?:\/([\w-]+))?$/); if (!m || !ctx.index) return; if (m[1] === ctx._cur) { if (m[2]) jumpTo(m[2]); return; } load(m[1]).catch(fail); });
 
   if ("serviceWorker" in navigator) { window.addEventListener("load", function () { navigator.serviceWorker.register("sw.js").catch(function () {}); }); }

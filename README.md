@@ -11,7 +11,7 @@ A personal daily briefing, installed on the iPhone as a home-screen web app. Sta
 
 ## The page
 
-One scroll in five tiers, everything expanded, nothing folded:
+One scroll in five tiers, everything expanded. Only three things fold: the calendar agenda beyond two weeks, the numbered source list in the footer (a citation number opens it at the right line) and the changelog. Logs read as dated run-in lines, event and horizon rows are single lines where they can be, and tables stack into cards only when their cells are long:
 
 1. **The Brief.** Masthead with the last-run time, the Today strip, the takeaways (numbered, factual, written last by the run), the pick, Today and tomorrow, what changed in the memory since yesterday, what to watch in the next seven days, what we do not know, the indicator row, and a contents block with a read time and read receipt per tier.
 2. **The news.** World developments, Security (hybrid, Europe, Priority countries: Hungary, Slovakia, Germany, then Euregio), Defence & Army (DoD, Army, Congress, Career, leaders on the record), NATO & allies, Defence tech, Frontier, Markets, Rates, Netherlands. Same item anatomy everywhere; items link to the trackers they update.
@@ -19,7 +19,7 @@ One scroll in five tiers, everything expanded, nothing folded:
 4. **The reading.** The World feature, Research (three recent publications a day: one military or security, two from economics, political science, international relations, social movements, history, technology policy, climate, demography, psychology or the ethics of war), the Philosophy note (one passage a day from a major philosopher, Kant to Arendt, quoted exactly and glossed), the Army in depth piece, the Saturday week in war, Aperture.
 5. **Home and planning.** AFNORTH, Out and about (weekend first, nearest first, with the forecast), Taal, Snow in season, the Canes with the Saints and Cardinals beneath, then the Planner: the Sunday review, the week board, Coming up (yours, deadlines, mail and work for 30 days), weather, countdowns, TV, the calendar (the agenda starts today and folds after two weeks), and the year-ahead board with the all-systems-off row, leave windows and the season notes. School dates sit under AFNORTH.
 
-The sticky header carries one chip per tier and the "New only" toggle. Anything dated (events, deadlines, exercises, the next games, the next episodes) has a "+ cal" link that downloads a calendar file. The footer holds Sources with their tiers, Corrections, About this edition, the archive, the search and Readbook health.
+The sticky header carries one chip per tier and the "New only" toggle. Anything dated (events, deadlines, exercises, the next games, the next episodes) has a "+ cal" link that downloads a calendar file. The footer holds Sources (count, outlets and the share that is official, primary or wire; the numbered list folded beneath), Corrections, About this edition, the archive, the search and Readbook health.
 
 Wording rules for the run are in `STYLE.md`. The exchange rate is shown everywhere as USD/EUR, euros per dollar. The three typefaces are self-hosted in `fonts/` and declared at the top of `styles.css`.
 
