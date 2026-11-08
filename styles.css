@@ -789,3 +789,5 @@ html.compact .panel,.compact .card{padding:var(--s2)}
 .phil blockquote{margin:0 0 var(--s2);font-family:var(--f-display);font-weight:500;font-size:24px;line-height:1.25;letter-spacing:.005em}
 .phil .attr{margin:0 0 var(--s2);color:var(--muted);font-size:14px}
 .phil .attr b{color:var(--ink)}
+@media (max-width:480px){.g-axis .ticks .mo .yr{display:none}}
+.g-axis .ticks .mo .yr{font-style:normal}

@@ -15,7 +15,7 @@
   var PARTS = ["front","news","reading","watch","home"].map(function (k) { return PART_DEF[k]; });
   function setPartOrder(weekend) { PARTS = (weekend ? ["front","reading","news","watch","home"] : ["front","news","reading","watch","home"]).map(function (k) { return PART_DEF[k]; }); }
   function pn(cls) { var i = PARTS.map(function (p) { return p[0]; }).indexOf(cls); return "Part " + i; }
-  var TIERS = { news: ["world","hybrid","europe","countries","euregio","army","nato","deftech","frontier","markets","rates","nl"], watch: ["board","ukraine","indicators","novel","numbers","fx","threads","horizon","congress-sec","exercises-sec","releases","sota","production","forecasts"], reading: ["feature","research","philosophy","depth","ttpsec","aperture"], home: ["afnorth","offduty","dutch","snow","hockey","week","mail","weather","countdown","tv","calendar","year","school","season"] };
+  var TIERS = { news: ["world","hybrid","europe","countries","euregio","army","nato","deftech","frontier","markets","rates","nl"], watch: ["board","numbers","horizon","threads","novel","congress-sec","releases","sota","fx","forecasts"], reading: ["feature","research","philosophy","depth","ttpsec","aperture"], home: ["afnorth","offduty","dutch","snow","hockey","week","coming","weather","countdown","tv","calendar","year"] };
   var EVCAT = { music:"Music", markets:"Markets", museums:"Museums", sport:"Sport", kids:"Kids", food:"Food", outdoors:"Outdoors", festival:"Festivals" };
   var SERIES_BY_LABEL = [["s&p 500","spx"],["nasdaq","ndx"],["aex","aex"],["brent","brent"],["dutch ttf","ttf"],["ttf","ttf"]];
   var HOME = { lat: 50.89, lon: 5.98, name: "Heerlen" };
@@ -111,7 +111,7 @@
     if (opts.year) {
       var ms = [], cur = new Date(from.getFullYear(), from.getMonth(), 1);
       while (cur <= to) { var nx = new Date(cur.getFullYear(), cur.getMonth() + 1, 1), a = Math.max(+cur, +from), b = Math.min(+nx, +to + DAY), l = pct(new Date(a)), w = pct(new Date(b)) - l; if (w >= 3.5) ms.push({ l: l, w: w, d: cur, first: a === +cur }); cur = nx; }
-      ms.forEach(function (m, i) { h += '<span class="mo' + (i % 2 ? " alt" : "") + '" style="left:' + m.l.toFixed(2) + "%;width:" + m.w.toFixed(2) + '%">' + MON[m.d.getMonth()] + (m.d.getMonth() === 0 || (i === 0 && m.w >= 8) ? " ’" + String(m.d.getFullYear()).slice(2) : "") + "</span>"; if (m.first && m.l > 0.5) grid += '<i class="g-m" style="left:' + m.l.toFixed(2) + '%"></i>'; });
+      ms.forEach(function (m, i) { h += '<span class="mo' + (i % 2 ? " alt" : "") + '" style="left:' + m.l.toFixed(2) + "%;width:" + m.w.toFixed(2) + '%">' + MON[m.d.getMonth()] + '<i class="yr">' + (m.d.getMonth() === 0 || (i === 0 && m.w >= 8) ? " ’" + String(m.d.getFullYear()).slice(2) : "") + "</i></span>"; if (m.first && m.l > 0.5) grid += '<i class="g-m" style="left:' + m.l.toFixed(2) + '%"></i>'; });
     } else (g.ticks || []).forEach(function (t) { var d = pd(t); h += '<span style="left:' + pct(d) + '%">' + d.getDate() + " " + MON[d.getMonth()] + "</span>"; });
     h += "</div></div>";
     var xmas = new Date(from.getFullYear(), 11, 25);
@@ -396,6 +396,30 @@
       h += '<div class="tlog">' + (v.log.length > 1 ? logList(v.log.slice(0, -1).slice(-9), "sub") : "") + '<div class="meta">Opened ' + esc(v.t.opened ? fmtLong(v.t.opened) : "—") + " · " + v.log.length + (v.log.length === 1 ? " entry" : " entries") + (v.log.length > 10 ? ", last 10 shown" : "") + (v.status === "quiet" ? " · quiet: nothing logged for " + v.age + " days" : "") + "</div></div></details>";
       return h;
     }).join("") + "</div>";
+  }
+  /* one dated list for the watch: horizon.json, exercises, Congress deadlines, forecasts resolving, elections */
+  function horizonAll(ctx, P, TD) {
+    var rows = [];
+    (ctx.horizon || []).forEach(function (e) { if (e.date && e.date >= TD && e.status !== "done") rows.push({ date: e.date, kind: e.h ? "Hybrid" : "", t: e.t, n: e.n, src: e.src, dateText: e.dateText, status: e.status, badge: e.added === TD ? "NEW" : e.updated === TD ? "UPDATED" : "", id: "hz-" + e.id }); });
+    (ctx.exercises || []).forEach(function (x) { if (x.to >= TD) { var on = x.from <= TD; rows.push({ date: on ? TD : x.from, end: x.to, kind: "Exercise", t: x.name + (on ? " (under way)" : ""), n: [x.lead, x.where, x.forces].filter(Boolean).join(" · "), src: x.src, dateText: x.from === x.to ? "" : fmtShort(x.from) + " – " + fmtShort(x.to), badge: x.added === TD ? "NEW" : x.updated === TD ? "UPDATED" : "", id: "ex-" + x.id, link: "exercise:" + x.id }); } });
+    (ctx.congress || []).forEach(function (c) { if (c.deadline && c.deadline >= TD) rows.push({ date: c.deadline, kind: "Congress", t: (c.title || c.post) + ": deadline", n: plain(c.next || ""), badge: "", id: "cgd-" + c.id, link: "congress:" + c.id }); });
+    (((ctx.forecasts || {}).items) || []).forEach(function (f) { if (f.status === "open" && f.resolves >= TD) rows.push({ date: f.resolves, kind: "Forecast", t: "Resolves: " + f.q, n: Math.round(f.p * 100) + "% · made " + fmtShort(f.made), badge: f.made === TD ? "NEW" : "", id: "fcr-" + f.id }); });
+    (ctx.countries || []).forEach(function (c) { if (c.election && c.election.next && c.election.next >= TD) rows.push({ date: c.election.next, kind: "Election", t: c.name + " election", n: c.election.dateText || "", id: "el-" + c.id, link: "country:" + c.id }); });
+    if (!rows.length && P.horizon && P.horizon.length) return quiet("Horizon items are in the edition only; the standing file is empty.");
+    rows.sort(function (a, b) { return a.date < b.date ? -1 : a.date > b.date ? 1 : 0; });
+    if (!rows.length) return quiet("Nothing dated on the horizon.");
+    var groups = [["Next 14 days", []], ["15 to 90 days", []], ["Beyond 90 days", []]];
+    rows.forEach(function (e) { var n = daysBetween(TD, e.date); groups[n <= 14 ? 0 : n <= 90 ? 1 : 2][1].push(e); });
+    var h = '<p class="small">Horizon entries from the run, exercises, Congress deadlines, open forecasts and elections, in one order. Filled marker = hybrid-relevant.</p><div class="fug">' + nq();
+    groups.forEach(function (g) {
+      if (!g[1].length) return;
+      var shown = g[0] === "Beyond 90 days" ? g[1].slice(0, 12) : g[1], more = g[1].length - shown.length;
+      h += '<div class="tl-group">' + esc(g[0]) + (more > 0 ? ' <span class="small">· first 12 of ' + g[1].length + ", the rest on the calendar</span>" : "") + '</div><div class="tl">' + shown.map(function (e) {
+        var n = daysBetween(TD, e.date);
+        return '<div class="tl-i ' + fu(e.badge) + (e.kind === "Hybrid" ? " h" : "") + '" id="' + esc(e.id) + '"><div class="d"><span>' + esc(e.dateText || fmtShort(e.date)) + '</span><span class="rel">' + relDay(n) + "</span>" + (e.kind && e.kind !== "Hybrid" ? '<span class="chip st">' + esc(e.kind) + "</span>" : "") + (e.status === "reported" ? '<span class="chip rep">reported</span>' : "") + "</div><h4>" + esc(e.t) + "</h4>" + badge(e.badge) + (e.n ? "<p>" + rich(e.n, srcMap(e.src)) + "</p>" : "") + '<p class="small">' + icsLink(e.t, e.date, e.end) + "</p></div>";
+      }).join("") + "</div>";
+    });
+    return h + "</div>";
   }
   function relDay(n) { return n === 0 ? "today" : n === 1 ? "tomorrow" : "in " + n + " days"; }
   function renderHorizon(events, today) {
@@ -791,6 +815,14 @@
     return '<h3>Data ingest <span class="small">newest entry per standing file, as of this edition</span></h3>' + table(["File", "Newest", "Age", "Rows"], rows.map(function (r) { var n = daysBetween(r[1], TD); return '<tr class="' + (n >= 3 ? "soon" : "") + '"><td><b>' + esc(r[0]) + '</b></td><td class="d">' + esc(fmtShort(r[1])) + (r[1].slice(0, 4) !== TD.slice(0, 4) ? " " + r[1].slice(0, 4) : "") + '</td><td class="d">' + (n <= 0 ? "today" : n === 1 ? "1 day" : n + " days") + '</td><td class="d">' + (size[r[0]] != null ? size[r[0]].toLocaleString("en-GB") : "") + "</td></tr>"; }).join(""), "lbl1 ingest").replace('class="tw stack"', 'class="tw"');
   }
 
+  /* ---------- 7.2: Coming up, the one personal list in the planner ---------- */
+  function comingUp(PEV, ctx, TD) {
+    var end = addDays(TD, 30), rows = (PEV || []).filter(function (e) { return (e.end || e.date) >= TD && e.date <= end && (e.src === "week" || e.src === "deadlines" || e.src === "career" || (e.src === "inbox" && !/^(AFNORTH|PTA|CYS) · /.test(e.sub))); });
+    var h = '<section id="coming" class="home"><h2>Coming up <span class="num">yours, deadlines, mail, work · next 30 days</span></h2>';
+    h += rows.length ? '<ul class="clean wn">' + rows.map(function (e) { var n = daysBetween(TD, e.date), span = e.end && e.end !== e.date; return '<li><span class="d">' + esc(DOW[pd(e.date).getDay()] + " " + fmtShort(e.date)) + (span ? " – " + esc(fmtShort(e.end)) : "") + '</span><span class="w"><span class="dot" style="background:' + catColor(e.cat) + '"></span><b>' + esc(e.t) + "</b> " + icsLink(e.t, e.date, e.end, e.sub) + '<span class="small">' + esc([e.sub, n <= 0 ? (span ? "under way" : "today") : n === 1 ? "tomorrow" : "in " + n + " days"].filter(Boolean).join(" · ")).replace(/Join: (https?:\/\/\S+)/, 'Join: <a href="$1" target="_blank" rel="noopener">$1</a>') + "</span></span></li>"; }).join("") + "</ul>" : quiet("Nothing of yours in the next 30 days. week.json, deadlines.json and the mail check feed this list.");
+    h += '<p class="small">School, PTA and CYS dates are under AFNORTH; events near home are under Out and about; the world is on the Horizon. ' + (ctx.inbox && ctx.inbox.updated ? "Mail last checked " + esc(fmtShort(ctx.inbox.updated)) + "." : "") + "</p>";
+    return h + "</section>";
+  }
   /* ---------- 7.0: the Brief helpers ---------- */
   function watchNext(PEV, ctx, TD) {
     var end = addDays(TD, 7), rows = (PEV || []).filter(function (e) { return e.date > TD && e.date <= end && (e.cat === "watch" || e.cat === "pro" || e.cat === "ex" || e.cat === "deadline" || e.cat === "me" || e.src === "congress"); });
@@ -823,14 +855,14 @@
     var IW = ctx.indicators; if (!IW || !(IW.items || []).length) return "";
     ctx._TD = TD;
     var n = { green: 0, amber: 0, red: 0 }; IW.items.forEach(function (x) { n[x.status] = (n[x.status] || 0) + 1; });
-    var h = '<section id="indicators" class="watch"><h2>Indicators and warning <span class="num">' + n.red + " red · " + n.amber + " amber · " + n.green + " green</span></h2>";
+    var h = '<h3 id="indicators">Indicators and warning <span class="small">' + n.red + " red · " + n.amber + " amber · " + n.green + " green</span></h3>";
     h += '<p class="small">Named indicators with the threshold that changes their status and the source the run reads. A change is logged with the fact that moved it; the strip shows the last eight changes.</p>';
     h += '<div class="indgrid">' + IW.items.map(function (x) {
       var hist = (x.history || []).slice(-8), last = hist[hist.length - 1], val = indicatorValue(x, ctx), age = last ? daysBetween(last.date, TD) : null;
       var links = [x.theatre ? "theatre:" + x.theatre : "", x.country ? "country:" + x.country : "", x.congress ? "congress:" + x.congress : ""].filter(Boolean);
       return '<div class="ind ' + fu(age === 0 ? "NEW" : "") + '" id="ind-' + esc(x.id) + '"><div class="ind-h"><i class="st" style="background:' + IND_COL[x.status] + '"></i><b>' + esc(x.name) + "</b>" + badge(age === 0 ? "NEW" : age === 1 ? "UPDATED" : "") + '</div><div class="small">Threshold: ' + esc(x.threshold || "") + (x.src ? " · " + esc(x.src) : "") + "</div>" + (val ? '<div class="ind-v">Now <b>' + esc(val) + "</b></div>" : "") + (last ? '<p class="small">Last change ' + esc(fmtShort(last.date)) + ": " + esc(last.t) + "</p>" : "") + '<div class="ind-strip">' + hist.map(function (hh) { return '<i style="background:' + IND_COL[hh.status] + '" title="' + esc(fmtShort(hh.date) + " " + hh.status + ": " + hh.t) + '"></i>'; }).join("") + "</div>" + linkChips(links) + "</div>";
     }).join("") + "</div>";
-    return h + "</section>";
+    return h;
   }
   /* ---------- 7.0: forecast ledger ---------- */
   function forecastBlock(ctx, TD) {
@@ -864,7 +896,7 @@
   function ukraineBlock(ctx, E, TD) {
     var F = ctx.uaFront, WS = (ctx.worldSeries || {}).series || {}, M = (ctx.worldSeries || {}).meta || {};
     if (!F && !WS["ua-air"]) return "";
-    var h = '<section id="ukraine" class="watch"><h2>Ukraine <span class="num">front line, the nightly numbers, talks</span></h2>';
+    var h = '<h3 id="ukraine">Ukraine in detail <span class="small">front line, the nightly numbers, talks</span></h3>';
     function last(k) { var a = WS[k] || []; return a.length ? a[a.length - 1] : null; }
     function mean7(k) { var a = (WS[k] || []).slice(-7); return a.length ? Math.round(a.reduce(function (t, p) { return t + p[1]; }, 0) / a.length) : null; }
     var tiles = [["ua-air", "Launched overnight"], ["ru-personnel-day", "Russian personnel, claimed per day"], ["ru-uav-day", "Russian UAVs claimed destroyed"], ["ua-drones-month", "Shahed-type launched, per month"]];
@@ -874,8 +906,8 @@
     if (keys.length) { ctx._dts = ctx._dts || {}; h += '<div class="viz">' + keys.map(function (k) { ctx._dts[k] = (WS[k] || []).filter(function (p) { return p[0] <= TD; }); return '<div class="panel"><div class="lbl">' + esc((M[k] || {}).label || k) + "</div>" + chartBox("dts-" + k, 150) + "</div>"; }).join("") + "</div>"; }
     var talks = (((ctx.indicators || {}).items) || []).filter(function (x) { return x.theatre === "ru-ua"; });
     if (talks.length) h += '<p class="small">Indicators: ' + talks.map(function (x) { return '<a href="#ind-' + esc(x.id) + '"><i class="dot" style="background:' + IND_COL[x.status] + '"></i>' + esc(x.name) + "</a>"; }).join(" · ") + "</p>";
-    h += '<p class="small">The theatre log is on <a href="#th-ru-ua">the board</a>; Saturday\'s week in war is in <a href="#ttpsec">The reading</a>.</p>';
-    return h + "</section>";
+    h += '<p class="small">The theatre log is in the Russia–Ukraine card below; Saturday\'s week in war is in <a href="#ttpsec">The reading</a>.</p>';
+    return h;
   }
   /* ---------- new uses of technology in war ---------- */
   function novelBlock(ctx, E, TD) {
@@ -1071,7 +1103,7 @@
   }
   function contentsBlock() {
     var tiers = PARTS.slice(1).map(function (p) { return [p[0], p[1], TIERS[p[0]]]; });
-    var SN = { world: "World", hybrid: "Hybrid", europe: "Europe", countries: "Priority countries", euregio: "Euregio", army: "Defence & Army", nato: "NATO & allies", deftech: "Defence tech", frontier: "Frontier", markets: "Markets", rates: "Rates", nl: "Netherlands", board: "The board", ukraine: "Ukraine", indicators: "Indicators", forecasts: "Forecasts", novel: "New in war", numbers: "Numbers", fx: "USD/EUR", threads: "Threads", horizon: "Horizon", "congress-sec": "Congress", "exercises-sec": "Exercises", releases: "Releases", sota: "State of the art", production: "Production", feature: "World feature", research: "Research", philosophy: "Philosophy", depth: "Army in depth", ttpsec: "Week in war", aperture: "Aperture", afnorth: "AFNORTH", offduty: "Out and about", dutch: "Taal", snow: "Snow", hockey: "Canes", week: "This week", mail: "From your mail", weather: "Weather", countdown: "Countdowns", tv: "TV", calendar: "Calendar", year: "Year ahead", school: "School year", season: "Season" };
+    var SN = { world: "World", hybrid: "Hybrid", europe: "Europe", countries: "Priority countries", euregio: "Euregio", army: "Defence & Army", nato: "NATO & allies", deftech: "Defence tech", frontier: "Frontier", markets: "Markets", rates: "Rates", nl: "Netherlands", board: "The board", forecasts: "Forecasts", novel: "New in war", numbers: "Numbers and indicators", fx: "USD/EUR", threads: "Threads", horizon: "Horizon", "congress-sec": "Congress", releases: "Releases", sota: "State of the art", feature: "World feature", research: "Research", philosophy: "Philosophy", depth: "Army in depth", ttpsec: "Week in war", aperture: "Aperture", afnorth: "AFNORTH", offduty: "Out and about", dutch: "Taal", snow: "Snow", hockey: "Canes", week: "This week", coming: "Coming up", weather: "Weather", countdown: "Countdowns", tv: "TV", calendar: "Calendar", year: "Year ahead", school: "School year", season: "Season" };
     return '<h3>In this edition</h3><ol class="toc">' + tiers.map(function (t, i) { return '<li data-tier="' + t[0] + '" class="' + t[0] + '"><a href="#p-' + t[0] + '"><b>' + (i + 1) + " · " + esc(t[1]) + '</b></a><span class="tm"></span><span class="secs">' + t[2].map(function (id) { return '<a href="#' + id + '">' + esc(SN[id] || id) + "</a>"; }).join(" · ") + "</span></li>"; }).join("") + "</ol>";
   }
   function yearAhead(ctx, E, TD, today) {
@@ -1085,6 +1117,7 @@
     var mk = seg((cal.markets || []).map(function (m) { return [m[2], m[3], m[0]]; })), y0 = today.getMonth() >= 11 ? today.getFullYear() : today.getFullYear() - 1, sk = ctx.ski && ctx.ski.season ? seg([[y0 + "-" + ctx.ski.season[0], (y0 + 1) + "-" + ctx.ski.season[1], "Ski season"], [(y0 + 1) + "-" + ctx.ski.season[0], (y0 + 2) + "-" + ctx.ski.season[1], "Ski season"]]) : [];
     if (mk.length || sk.length) rows.push({ name: "Seasons", sub: "markets, snow", color: "mkt", segs: mk.concat(sk) });
     var me = seg(((ctx.week && ctx.week.items) || []).map(function (w) { return [w.date, w.end || w.date, w.t]; })); if (me.length) rows.push({ name: "Yours", sub: "week.json", color: "me", segs: me });
+    var OVR = cal.school ? overlapRows(cal, TD) : null; if (OVR && OVR.all.length) rows.push({ name: "All systems off", sub: "family and neighbours", color: "us", all: true, segs: OVR.all });
     var ticks = []; for (var m = 0; m < 13; m++) { var t = new Date(today.getFullYear(), today.getMonth() + m + 1, 1); if (key(t) <= to) ticks.push(key(t)); }
     /* leave windows: every school system off and no exercise under way */
     var sets = Object.keys(cal.school || {}).map(function (k) { return cal.school[k].segs || []; }), win = [], cur = null, d = pd(from), end = pd(to);
@@ -1092,6 +1125,8 @@
     if (cur) win.push(cur);
     var h = gantt({ from: from, to: to, ticks: ticks, rows: rows }, today, { year: true, noXmas: true });
     h += '<p class="small" style="margin-top:8px"><b>Leave windows</b> (every school system off, no exercise under way): ' + (win.length ? win.map(function (w) { return fmtShort(w[0]) + " – " + fmtShort(w[1]) + " " + w[1].slice(0, 4); }).join("; ") : "none in the next twelve months with the calendars loaded so far") + ".</p>";
+    if (cal.school) h += '<p class="small">School calendars: ' + Object.keys(cal.school).map(function (k) { return '<span title="' + esc(cal.school[k].source || "") + '">' + esc(cal.school[k].name) + "</span>"; }).join(" · ") + " (tap a name for the source).</p>";
+    var PS = (E.planner || {}).season; if (PS && (PS.notes || PS.intro)) h += '<h3>' + esc(PS.title || "Season notes") + "</h3>" + (PS.intro ? '<p class="small">' + rich(PS.intro) + "</p>" : "") + (PS.notes ? '<ul class="clean">' + PS.notes.map(function (n) { return "<li>" + rich(n) + "</li>"; }).join("") + "</ul>" : "");
     return h;
   }
   function weekReview(E, ctx, TD, today) {
@@ -1294,11 +1329,12 @@
 
     /* ===== Part 2 · The watch ===== */
     TIER_HTML.news = h; h = "";
-    h += part("watch", pn("watch"), "The watch", "The memory: the board, Ukraine, the indicators, the trackers, the registers and the forecast ledger. Logs show the last ten entries.", "p-watch");
+    h += part("watch", pn("watch"), "The watch", "The memory: the board with Ukraine in detail, the numbers and indicators, one Horizon, the threads, New in war, Congress, the frontier record, the dollar, and the forecast ledger.", "p-watch");
     h += '<section id="board" class="watch"><h2>The board <span class="num">events logged, not a measure of intensity</span></h2>';
     if (board) {
       h += '<div class="panel"><div class="lbl">' + (ctx.conflicts || []).length + ' theatres · filled marker = events logged in 7 days, sized by count</div><div class="chart" id="worldmap" style="min-height:150px"></div></div>';
-      h += '<div class="fug board">' + nq() + board.map(function (b) {
+      h += ukraineBlock(ctx, E, TD);
+      h += '<h3>Theatre logs <span class="small">last ten entries each, newest first</span></h3><div class="fug board">' + nq() + board.map(function (b) {
         var hd = '<details class="thread brow ' + fu(b.badge) + '" id="th-' + esc(b.t.id) + '" open><summary><span class="tname">' + esc(b.t.name) + act4(b.weeks) + badge(b.badge) + inToday("theatre", b.t.id) + "</span>";
         hd += b.last ? '<span class="tlast"><span class="d">' + esc(fmtShort(b.last.date)) + "</span>" + rich(b.last.t, srcMap(b.last.src)) + "</span>" : '<span class="tlast small">No events logged yet.</span>';
         hd += "</summary>";
@@ -1319,43 +1355,19 @@
       tiles.push('<div class="tile nt"><div class="lbl">' + esc(label) + '</div><div class="val">' + num(last[1], dec) + (unit ? ' <small>' + esc(unit) + "</small>" : "") + "</div><p>" + (prev ? '<span class="chg ' + dir(last[1] - prev[1]) + '">' + signed(last[1] - prev[1], dec) + "</span> vs " + esc(fmtShort(prev[0])) + " · " : "") + "as of " + esc(fmtShort(last[0])) + (meta.cadence ? " · " + esc(meta.cadence) : "") + "</p>" + (ser.length > 1 ? '<div class="spark" data-ws="' + esc(k) + '"></div>' : "") + (meta.note ? '<p class="small">' + esc(meta.note) + "</p>" : "") + (meta.source ? '<p class="small">' + (meta.url ? '<a href="' + esc(meta.url) + '" target="_blank" rel="noopener">' + esc(meta.source) + "</a>" : esc(meta.source)) + "</p>" : "") + "</div>");
       ctx._ws[k] = ser.slice(-30);
     });
-    h += ukraineBlock(ctx, E, TD);
+    var DTS = (DT.series || []).filter(function (k) { return ((WS.series || {})[k] || []).length > 1; });
+    h += '<section id="numbers" class="watch"><h2>Numbers and indicators <span class="num">what the run counts and what would change our mind</span></h2>';
     h += indicatorsBlock(ctx, TD);
-    h += novelBlock(ctx, E, TD);
-    h += '<section id="numbers" class="watch"><h2>By the numbers</h2>' + (tiles.length ? '<div class="strip nums">' + tiles.join("") + "</div>" : quiet("No series published yet.")) + "</section>";
-    if (FX) {
-      var range = store("rb:fx:range") === "1y" ? 365 : 90;
-      h += '<section id="fx" class="watch"><h2>USD/EUR <span class="num">euros per dollar · ECB</span></h2><div class="fx">';
-      h += '<div class="fx-top"><span class="big tab">' + FX.last[1].toFixed(4) + '</span><span class="asof">' + esc(fmtLong(FX.last[0])) + " · € per $</span></div>";
-      h += '<div class="fx-ch"><div><div class="lbl">Since ' + esc(fmtShort(FX.prev[0])) + '</div><div class="v chg ' + dir(FX.d1) + '">' + signed(FX.d1, 4) + '</div><div class="p chg ' + dir(FX.d1) + '">' + signed(FX.d1 / FX.prev[1] * 100, 2, "%") + "</div></div>";
-      if (FX.month) h += '<div><div class="lbl">Since ' + esc(fmtShort(FX.month[0])) + '</div><div class="v chg ' + dir(FX.d30) + '">' + signed(FX.d30, 4) + '</div><div class="p chg ' + dir(FX.d30) + '">' + signed(FX.d30 / FX.month[1] * 100, 2, "%") + "</div></div>";
-      h += '<div><div class="lbl">30-day range</div><div class="v">' + FX.lo30[1].toFixed(4) + '</div><div class="p">to ' + FX.hi30[1].toFixed(4) + "</div></div></div>";
-      h += '<div class="fx-tools"><button type="button" data-range="90" aria-pressed="' + (range === 90) + '">90 days</button><button type="button" data-range="365" aria-pressed="' + (range === 365) + '">1 year</button></div>';
-      h += '<div class="chart" id="fxchart" style="min-height:150px" data-range="' + range + '"></div>';
-      var eu = function (r) { return "€" + num(1000 * r, 0); };
-      h += '<p class="pay"><b class="l">Pay</b>$1,000 is ' + eu(FX.last[1]) + " today" + (FX.month ? ", " + eu(FX.month[1]) + " a month ago" : "") + "; 12-month best " + eu(FX.best[1]) + " (" + esc(fmtShort(FX.best[0])) + "), worst " + eu(FX.worst[1]) + " (" + esc(fmtShort(FX.worst[0])) + "). Up means the dollar buys more euros.</p>";
-      h += '<div class="lbl" style="margin-top:12px">$1,000 in euros, monthly average</div><div class="chart" id="paybars" style="min-height:110px"></div>';
-      h += '<p class="small" style="margin:8px 0 0"><a href="' + esc(ctx.fx.url || "https://www.ecb.europa.eu/stats/eurofxref/") + '" target="_blank" rel="noopener">' + esc(ctx.fx.source || "ECB") + "</a>, one value per ECB business day, inverted from the ECB's dollars-per-euro quote.</p></div></section>";
-    }
-    var P = E.planner || {};
+    h += '<h3>By the numbers <span class="small">latest value and 30-day sparkline</span></h3>' + (tiles.length ? '<div class="strip nums">' + tiles.join("") + "</div>" : quiet("No series published yet."));
+    if (DTS.length) h += '<h3 id="production">Production and capacity <span class="small">series the run keeps up</span></h3><div class="viz">' + DTS.map(function (k) { var m = (WS.meta || {})[k] || {}; ctx._dts = ctx._dts || {}; ctx._dts[k] = (WS.series[k] || []).filter(function (p) { return p[0] <= TD; }); return '<div class="panel"><div class="lbl">' + esc(m.label || k) + (m.unit ? " · " + esc(m.unit) : "") + "</div>" + chartBox("dts-" + k, 170) + (m.source ? '<p class="small">' + esc(m.source) + "</p>" : "") + "</div>"; }).join("") + "</div>";
+    h += "</section>";
     h += '<section id="threads" class="watch"><h2>Tracked threads</h2>';
     if (threads) h += renderThreads(threads);
     else if (P.threads && P.threads.length) h += '<div class="fug">' + nq() + table(["Thread", "What moved"], P.threads.map(function (t) { return '<tr class="' + fu(t[2]) + '"><td>' + esc(t[0]) + badge(t[2]) + "</td><td>" + rich(t[1]) + "</td></tr>"; }).join(""), "lbl1") + "</div>";
     else h += quiet("No threads are open.");
     h += "</section>";
-    h += '<section id="horizon" class="watch"><h2>Horizon</h2><p class="small">Filled marker = hybrid-relevant. Dashed label = reported, not confirmed.</p>';
-    if (horizonEvents) h += renderHorizon(horizonEvents, TD);
-    else if (P.horizon && P.horizon.length) {
-      var lastG = null; h += '<div class="fug">' + nq();
-      P.horizon.forEach(function (x) {
-        if (x.g !== lastG) { if (lastG !== null) h += "</div>"; h += '<div class="tl-group">' + esc(x.g) + '</div><div class="tl">'; lastG = x.g; }
-        h += '<div class="tl-i ' + fu(x.badge) + (x.h ? " h" : "") + '"><div class="d">' + esc(x.d) + "</div><h4>" + esc(x.t) + "</h4>" + badge(x.badge) + "<p>" + rich(x.n) + "</p></div>";
-      });
-      if (lastG !== null) h += "</div>";
-      h += "</div>";
-    } else h += quiet("Nothing dated on the horizon.");
-    h += "</section>";
-
+    h += '<section id="horizon" class="watch"><h2>Horizon <span class="num">everything dated in the watch, one list</span></h2><span id="exercises-sec"></span><span id="exercises"></span>' + horizonAll(ctx, P, TD) + "</section>";
+    h += novelBlock(ctx, E, TD);
     h += '<section id="congress-sec" class="watch"><h2>Congress and commands <span class="num">bills, budget, confirmations, watched posts</span></h2>';
     var LANES = { bill: ["introduced","committee","house","senate","conference","enacted"], budget: ["request","house","senate","cr","enacted"], nomination: ["vacant","announced","nominated","hearing","committee","floor","confirmed"] };
     var STGL = { introduced: "Introduced", committee: "Committee", house: "House", senate: "Senate", conference: "Conference", enacted: "Enacted", request: "Request", cr: "CR", vacant: "Vacant", announced: "Announced", nominated: "Nominated", hearing: "Hearing", floor: "Floor", confirmed: "Confirmed", withdrawn: "Withdrawn", stalled: "Stalled", vetoed: "Vetoed" };
@@ -1402,14 +1414,6 @@
       h += "</div>" + (EXC.length ? '<ul class="wexc">' + EXC.map(function (w) { var k = wst(w); return '<li class="w-' + k + '"><b>' + esc(w.post) + "</b> " + (w.holder ? esc(w.holder) + (w.acting ? " (acting)" : "") : '<span class="small">no holder</span>') + (openBy[w.id] ? ' <em>' + esc(STGL[openBy[w.id]] || openBy[w.id]) + "</em>" : "") + (w.src && w.src.length ? '<sup class="r">' + w.src.map(function (z) { return citeLink(z[0], srcMap(w.src)); }).join("") + "</sup>" : "") + "</li>"; }).join("") + "</ul>" : "") + '<p class="small">Each chip is a watched post, coloured by its state; tap for the holder. Listed below the chips: anything vacant, acting, in the pipeline or newly confirmed.</p>';
     }
     h += "</section>";
-    h += '<section id="exercises-sec" class="watch"><h2>Exercise calendar</h2>';
-    var EXL = (ctx.exercises || []).filter(function (x) { return x.to >= addDays(TD, -7); }).sort(function (a, b) { return a.from < b.from ? -1 : 1; });
-    h += '<p class="small" id="exercises">Under way and announced; the run adds exercises as allies announce them.</p>';
-    h += EXL.length ? '<ul class="exl fug">' + nq() + EXL.map(function (x) {
-      var b = x.added === TD ? "NEW" : x.updated === TD ? "UPDATED" : "", on = x.from <= TD && x.to >= TD, done = x.to < TD, when = x.dateText && /[a-z]/i.test(x.dateText) && !/under way/i.test(x.dateText) ? x.dateText : fmtShort(x.from) + (x.to !== x.from ? " – " + fmtShort(x.to) : "");
-      return '<li class="' + fu(b) + (on ? " on" : done ? " done" : "") + '" title="' + esc([x.lead, x.forces].filter(Boolean).join(" · ")) + '"><span class="d">' + esc(when) + '</span><span><b>' + esc(x.name) + "</b>" + (x.where ? ' <span class="small">· ' + esc(x.where) + "</span>" : "") + (on ? ' <em>under way</em>' : done ? ' <em>ended</em>' : "") + badge(b) + (x.src && x.src.length ? '<sup class="r">' + x.src.map(function (z) { return citeLink(z[0], srcMap(x.src)); }).join("") + "</sup>" : "") + (done ? "" : " " + icsLink(x.name, x.from, x.to, [x.lead, x.where].filter(Boolean).join(", "))) + "</span></li>";
-    }).join("") + "</ul>" : quiet("No exercises announced.");
-    h += "</section>";
     var RL = (REL.releases || []).filter(function (r) { return r.date <= TD && r.date >= addDays(TD, -45); }).sort(function (a, b) { return a.date < b.date ? 1 : -1; });
     h += '<section id="releases" class="watch"><h2>Release log <span class="num">last 45 days</span></h2>';
     h += RL.length ? '<div class="fug">' + nq() + '<div class="tl">' + RL.map(function (r) { var b = r.date === TD ? "NEW" : r.date === addDays(TD, -1) ? "UPDATED" : ""; return '<div class="tl-i ' + fu(b) + '"><div class="d"><span>' + esc(fmtLong(r.date)) + '</span><span class="chip rep">' + esc(r.kind || "release") + "</span></div><h4>" + esc(r.t) + "</h4>" + badge(b) + '<p class="ink">' + esc(r.lab || "") + (r.lab && r.n ? " · " : "") + rich(r.n || "", srcMap(r.src)) + "</p></div>"; }).join("") + "</div></div>" : quiet("No releases logged yet.");
@@ -1417,13 +1421,22 @@
     var SO = REL.sota || {};
     h += sotaBlock(SO, TD);
 
-    h += '<section id="production" class="watch"><h2>Production and capacity <span class="num">series the run keeps up</span></h2>';
-    var DTS = (DT.series || []).filter(function (k) { return ((WS.series || {})[k] || []).length > 1; });
-    if (DTS.length) h += '<div class="viz">' + DTS.map(function (k) { var m = (WS.meta || {})[k] || {}; ctx._dts = ctx._dts || {}; ctx._dts[k] = (WS.series[k] || []).filter(function (p) { return p[0] <= TD; }); return '<div class="panel"><div class="lbl">' + esc(m.label || k) + (m.unit ? " · " + esc(m.unit) : "") + "</div>" + chartBox("dts-" + k, 170) + (m.source ? '<p class="small">' + esc(m.source) + "</p>" : "") + "</div>"; }).join("") + "</div>";
-    if (!DTS.length) h += quiet("No production series charted yet.");
-    h += "</section>";
-
     /* ===== Part 3 · The reading ===== */
+    if (FX) {
+      var range = store("rb:fx:range") === "1y" ? 365 : 90;
+      h += '<section id="fx" class="watch"><h2>USD/EUR <span class="num">euros per dollar · ECB</span></h2><div class="fx">';
+      h += '<div class="fx-top"><span class="big tab">' + FX.last[1].toFixed(4) + '</span><span class="asof">' + esc(fmtLong(FX.last[0])) + " · € per $</span></div>";
+      h += '<div class="fx-ch"><div><div class="lbl">Since ' + esc(fmtShort(FX.prev[0])) + '</div><div class="v chg ' + dir(FX.d1) + '">' + signed(FX.d1, 4) + '</div><div class="p chg ' + dir(FX.d1) + '">' + signed(FX.d1 / FX.prev[1] * 100, 2, "%") + "</div></div>";
+      if (FX.month) h += '<div><div class="lbl">Since ' + esc(fmtShort(FX.month[0])) + '</div><div class="v chg ' + dir(FX.d30) + '">' + signed(FX.d30, 4) + '</div><div class="p chg ' + dir(FX.d30) + '">' + signed(FX.d30 / FX.month[1] * 100, 2, "%") + "</div></div>";
+      h += '<div><div class="lbl">30-day range</div><div class="v">' + FX.lo30[1].toFixed(4) + '</div><div class="p">to ' + FX.hi30[1].toFixed(4) + "</div></div></div>";
+      h += '<div class="fx-tools"><button type="button" data-range="90" aria-pressed="' + (range === 90) + '">90 days</button><button type="button" data-range="365" aria-pressed="' + (range === 365) + '">1 year</button></div>';
+      h += '<div class="chart" id="fxchart" style="min-height:150px" data-range="' + range + '"></div>';
+      var eu = function (r) { return "€" + num(1000 * r, 0); };
+      h += '<p class="pay"><b class="l">Pay</b>$1,000 is ' + eu(FX.last[1]) + " today" + (FX.month ? ", " + eu(FX.month[1]) + " a month ago" : "") + "; 12-month best " + eu(FX.best[1]) + " (" + esc(fmtShort(FX.best[0])) + "), worst " + eu(FX.worst[1]) + " (" + esc(fmtShort(FX.worst[0])) + "). Up means the dollar buys more euros.</p>";
+      h += '<div class="lbl" style="margin-top:12px">$1,000 in euros, monthly average</div><div class="chart" id="paybars" style="min-height:110px"></div>';
+      h += '<p class="small" style="margin:8px 0 0"><a href="' + esc(ctx.fx.url || "https://www.ecb.europa.eu/stats/eurofxref/") + '" target="_blank" rel="noopener">' + esc(ctx.fx.source || "ECB") + "</a>, one value per ECB business day, inverted from the ECB's dollars-per-euro quote.</p></div></section>";
+    }
+    var P = E.planner || {};
     h += forecastBlock(ctx, TD);
     TIER_HTML.watch = h; h = "";
     h += part("reading", pn("reading"), "The reading", "The long pieces: the feature, the Army in depth, the week in war and Aperture.", "p-reading");
@@ -1511,7 +1524,11 @@
     h += '<section id="afnorth" class="home"><h2>AFNORTH &amp; family</h2>';
     if (AF.intro) h += '<p class="small">' + rich(AF.intro) + "</p>";
     if (AF.rows && AF.rows.length) h += table(["Date", "Event", "Action"], AF.rows.map(function (r) { return '<tr class="' + (r[3] === "soon" ? "soon" : "") + '"><td class="d">' + esc(r[0]) + "</td><td>" + rich(r[1]) + "</td><td>" + rich(r[2]) + "</td></tr>"; }).join(""));
-    else h += quiet("Nothing new in the next 14 days.");
+    var afDates = {}; (AF.rows || []).forEach(function (r) { var m = /^(\d{1,2})[–-]?\d{0,2}\s+([A-Z][a-z]{2})/.exec(String(r[0])); if (m) afDates[m[1] + " " + m[2]] = 1; });
+    var hasRows = !!(AF.rows && AF.rows.length);
+    var SCH = (PEV || []).filter(function (e) { return (e.end || e.date) >= TD && daysBetween(TD, e.date) <= 60 && (hasRows ? (e.src === "inbox" && /^(AFNORTH|PTA|CYS) · /.test(e.sub) && !afDates[fmtShort(e.date)]) : ((e.cat === "school" && e.sys === "afnorth") || (e.src === "inbox" && /^(AFNORTH|PTA|CYS) · /.test(e.sub)))); });
+    if (SCH.length) h += '<h3>' + (hasRows ? "Also from the mail" : "School dates") + ' <span class="small">next 60 days' + (hasRows ? "" : " · the academic calendar and the mail check") + '</span></h3><ul class="clean wn">' + SCH.map(function (e) { var n = daysBetween(TD, e.date), span = e.end && e.end !== e.date; return '<li><span class="d">' + esc(DOW[pd(e.date).getDay()] + " " + fmtShort(e.date)) + (span ? " – " + esc(fmtShort(e.end)) : "") + '</span><span class="w"><span class="dot" style="background:' + catColor(e.cat) + '"></span>' + esc(e.t.replace(/^AFNORTH: /, "")) + " " + icsLink(e.t, e.date, e.end, e.sub) + (e.sub && e.cat !== "school" ? '<span class="small">' + esc(e.sub) + "</span>" : "") + "</span></li>"; }).join("") + "</ul>";
+    else if (!(AF.rows && AF.rows.length)) h += quiet("Nothing on the school calendar in the next 60 days.");
     if (AF.note) h += '<p class="small" style="margin-top:8px">' + rich(AF.note) + "</p>";
     h += "</section>";
     /* out and about */
@@ -1598,11 +1615,7 @@
 
     h += weekReview(E, ctx, TD, today);
     h += '<section id="week" class="home"><h2>This week <span class="num">holidays, school, bins, deadlines, major events</span></h2>' + weekStrip(PEV, E, TD) + "</section>";
-    var IB = ((ctx.inbox || {}).items || []).filter(function (m) { return m.date && (m.end || m.date) >= TD && daysBetween(TD, m.date) <= 45; }).sort(function (a, b) { return a.date < b.date ? -1 : 1; });
-    h += '<section id="mail" class="home"><h2>From your mail <span class="num">school, PTA, MWA, CYS, travel and tickets · next 45 days</span></h2>';
-    h += IB.length ? '<ul class="clean wn">' + IB.map(function (m) { var n = daysBetween(TD, m.date); return '<li><span class="d">' + esc(DOW[pd(m.date).getDay()] + " " + fmtShort(m.date)) + (m.end && m.end !== m.date ? " – " + esc(fmtShort(m.end)) : "") + '</span><span class="w"><span class="dot" style="background:' + catColor("mail") + '"></span><b>' + esc(m.t) + "</b>" + (m.time ? " · " + esc(m.time) : "") + " " + icsLink(m.t, m.date, m.end, m.note) + '<span class="small">' + esc([m.src, m.note, n === 0 ? "today" : n === 1 ? "tomorrow" : "in " + n + " days"].filter(Boolean).join(" · ")) + "</span></span></li>"; }).join("") + "</ul>" : quiet("Nothing dated in the last school, PTA, MWA, CYS or travel mail.");
-    if (ctx.inbox && ctx.inbox.updated) h += '<p class="small">Pulled by the morning run from the school office, the PTA, MWA, CYS and travel and ticket mail; last check ' + esc(fmtShort(ctx.inbox.updated)) + ". Dates and titles only.</p>";
-    h += "</section>";
+    h += comingUp(PEV, ctx, TD);
     h += '<section id="weather" class="home"><h2>Weather and daylight <span class="num">' + esc(HOME.name) + " · 7 days</span></h2>" + weatherBlock(E, TD) + "</section>";
     h += '<section id="countdown" class="home"><h2>Countdowns</h2>' + countdowns(PEV, ctx, TD) + "</section>";
     h += '<section id="tv" class="home"><h2>TV <span class="num">what you follow, what comes next</span></h2>' + tvBlock(ctx, TD) + "</section>";
@@ -1613,22 +1626,9 @@
     h += '<div class="filt" id="calfilt" role="group" aria-label="Filter the calendar">' + FILT.map(function (f) { return '<button type="button" data-f="' + f[0] + '" aria-pressed="' + (f[0] === "all") + '">' + f[1] + "</button>"; }).join("") + "</div>";
     h += '<div class="legend">' + Object.keys(CAT).map(function (k) { return '<span><i style="background:' + catColor(k) + '"></i>' + esc(CAT[k][0]) + "</span>"; }).join("") + "</div>";
     h += '<div id="calbody"></div>';
-    var dl = ((ctx.deadlines && ctx.deadlines.items) || []).filter(function (d) { return d.date >= TD && daysBetween(TD, d.date) <= 90; }).sort(function (a, b) { return a.date < b.date ? -1 : 1; });
-    h += '<h3>Deadlines <span class="small">next 90 days · data/deadlines.json, hand-maintained</span></h3>' + (dl.length ? table(["In", "Date", "What"], dl.map(function (d) { var n = daysBetween(TD, d.date), b = d.updated === TD ? "UPDATED" : ""; return '<tr class="' + (n <= 7 ? "soon" : "") + '"><td class="d">' + (n === 0 ? "today" : n + " d") + '</td><td class="d">' + esc(fmtShort(d.date)) + "</td><td><b>" + esc(d.name) + "</b>" + badge(b) + " " + icsLink(d.name, d.date, null, d.note) + (d.note ? '<div class="small">' + esc(d.note) + "</div>" : "") + "</td></tr>"; }).join("")) : quiet("No deadlines listed. Add items to data/deadlines.json."));
     if (P.culture) h += "<h3>" + esc(P.culture.title) + "</h3><p>" + rich(P.culture.body) + "</p>";
     h += "</section>";
     h += '<section id="year" class="home"><h2>The year ahead <span class="num">family, work, world, seasons</span></h2>' + yearAhead(ctx, E, TD, today) + "</section>";
-    h += '<section id="school" class="home"><h2>School year</h2>';
-    if (ctx.calendar && ctx.calendar.school) {
-      var OV = overlapRows(ctx.calendar, TD);
-      h += '<p class="small">Twelve months from today. The bottom row marks the days when every system is off at once.</p>' + gantt(OV, today, { year: true, noXmas: true });
-      if (OV.all.length) h += '<p class="small" style="margin-top:8px"><b>Everyone off:</b> ' + OV.all.map(function (s) { return fmtShort(s[0]) + " – " + fmtShort(s[1]); }).join("; ") + ".</p>";
-      h += '<p class="small">Sources: ' + Object.keys(ctx.calendar.school).map(function (k) { return esc(ctx.calendar.school[k].name) + " (" + esc(ctx.calendar.school[k].source) + ")"; }).join("; ") + ".</p>";
-    } else if (P.school) h += gantt(P.school, today) + (P.school.note ? '<p class="small" style="margin-top:6px">' + rich(P.school.note) + "</p>" : "");
-    else h += quiet("No school calendar loaded.");
-    h += "</section>";
-    if (P.season) h += '<section id="season" class="home"><h2>' + esc(P.season.title) + "</h2>" + (P.season.intro ? '<p class="small">' + rich(P.season.intro) + "</p>" : "") + gantt(P.season, today) + (P.season.notes ? '<ul class="clean" style="margin-top:12px">' + P.season.notes.map(function (n) { return "<li>" + rich(n) + "</li>"; }).join("") + "</ul>" : "") + "</section>";
-
     TIER_HTML.home = h;
     h = TIER_HTML.front + PARTS.slice(1).map(function (p) { return TIER_HTML[p[0]] || ""; }).join("");
     /* ===== Footer ===== */
