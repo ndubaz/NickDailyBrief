@@ -154,6 +154,26 @@
        1
       ]
      ]
+    },
+    {
+     "date": "2026-11-08",
+     "t": "Germany's BfV said the refrigeration attacks are under intelligence investigation and the joint centre against hybrid threats is involved; a pharmaceutical distributor's cooling was also hit. [73, 75]",
+     "src": [
+      [
+       73,
+       "Deutsche Nachrichtendienste schalten sich offenbar bei Cyberangriffen auf Supermärkte ein",
+       "Der Spiegel",
+       "https://www.spiegel.de/netzwelt/deutschland-nachrichtendienste-schalten-sich-offenbar-bei-cyberangriffen-auf-supermaerkte-ein-a-1f86ee1a-be83-497a-bc91-91da57d27fb7",
+       3
+      ],
+      [
+       75,
+       "Steckt Russland hinter Kühlanlagen-Hacks? Kreml empört über haltlose Vorwürfe",
+       "Hamburger Abendblatt",
+       "https://www.abendblatt.de/politik/article413599869/steckt-russland-hinter-kuehlanlagen-hacks-kreml-empoert-ueber-haltlose-vorwuerfe.html",
+       3
+      ]
+     ]
     }
    ]
   },
@@ -341,6 +361,19 @@
        3
       ]
      ]
+    },
+    {
+     "date": "2026-11-08",
+     "t": "No delivery of the option sets due on 6 Nov was reported by 8 Nov; RAND's report of 28 Oct finds a sudden drawdown would push allies away from US arms. [114]",
+     "src": [
+      [
+       114,
+       "Anticipating Allies' Responses to U.S. Retrenchment from Europe (RR-A5006-1)",
+       "RAND Corporation",
+       "https://www.rand.org/pubs/research_reports/RRA5006-1.html",
+       1
+      ]
+     ]
     }
    ]
   },
@@ -487,6 +520,26 @@
        3
       ]
      ]
+    },
+    {
+     "date": "2026-11-08",
+     "t": "Kyiv Independent, citing Reuters, reported Medinsky will lead Russia's delegation with Ryabkov, Galuzin and GRU chief Kostyukov for talks on 10–11 Nov; Zakharova said the Koalicja exercise shows Europeans have no place at the table. [19, 178]",
+     "src": [
+      [
+       19,
+       "Russia to send senior diplomats, military officials to upcoming peace talks in Abu Dhabi",
+       "Kyiv Independent",
+       "https://kyivindependent.com/russia-to-send-senior-diplomats-military-officials-to-upcoming-peace-talks-in-abu-dhabi/",
+       3
+      ],
+      [
+       178,
+       "Coalition of the Willing drills before Abu Dhabi talks show Europeans have no place at table: Zakharova",
+       "TASS",
+       "https://tass.com/politics/2214255",
+       2
+      ]
+     ]
     }
    ]
   },
@@ -532,6 +585,19 @@
      "date": "2026-11-02",
      "t": "Under way; the court refused to end it on 27 Oct.",
      "src": []
+    },
+    {
+     "date": "2026-11-08",
+     "t": "A fabricated Merz quote calling the Hamburg trial senseless circulated online; the government called it disinformation. [68]",
+     "src": [
+      [
+       68,
+       "Augsburg checkt's: Merz-Kommentar zu Nord-Stream-Prozess ist frei erfunden",
+       "Augsburger Allgemeine",
+       "https://www.augsburger-allgemeine.de/special/augsburg-checkts/faktencheck-augsburg-checkt-s-merz-kommentar-zu-nord-stream-prozess-ist-frei-erfunden-115601211",
+       3
+      ]
+     ]
     }
    ]
   },
@@ -640,6 +706,26 @@
        2
       ]
      ]
+    },
+    {
+     "date": "2026-11-08",
+     "t": "CENTCOM formed Task Force Iron Gate for Iran's land borders and the Caspian on 7 Nov and a US aircraft fired on the M/V Huda; the IRGC said two tankers hit mines. [15, 24]",
+     "src": [
+      [
+       15,
+       "CENTCOM strikes commercial cargo vessel",
+       "Stars and Stripes",
+       "https://www.stripes.com/theaters/middle_east/2026-11-07/centcom-strikes-commercial-cargo-vessel-23394462.html",
+       3
+      ],
+      [
+       24,
+       "Iran's Revolutionary Guards say 2 oil tankers hit mines, caught fire near Strait of Hormuz",
+       "Anadolu Agency",
+       "https://www.aa.com.tr/en/middle-east/iran-s-revolutionary-guards-say-2-oil-tankers-hit-mines-caught-fire-near-strait-of-hormuz/4115596",
+       3
+      ]
+     ]
     }
    ]
   },
@@ -729,6 +815,19 @@
        1
       ]
      ]
+    },
+    {
+     "date": "2026-11-08",
+     "t": "CDA leader Bontenbal told his party congress on 7 Nov he will do everything to find a majority before the 12 Nov vote; Pro and Volt want €1.5 billion shifted to wealth taxes. [140]",
+     "src": [
+      [
+       140,
+       "CDA-leider Bontenbal: cruciaal moment voor minderheidscoalitie",
+       "NOS",
+       "https://nos.nl/l/2638424",
+       3
+      ]
+     ]
     }
    ]
   },
@@ -753,6 +852,19 @@
        "Russian citizen detained in Poland on suspicion of spying after photographing trains and rail infrastructure",
        "The Insider",
        "https://theins.press/en/news/298979"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-08",
+     "t": "Saxony's prosecutors closed the Leipzig–Döbeln signal case of March: the two suspects are children under 14. [179]",
+     "src": [
+      [
+       179,
+       "Kinder sabotierten Bahnstrecke Leipzig-Döbeln",
+       "MDR",
+       "https://www.mdr.de/nachrichten/sachsen/leipzig/leipzig-leipzig-land/news-eisenbahn-polizei,sabotage-bahnstrecke-ermittlungen-100.html",
+       3
       ]
      ]
     }
@@ -818,6 +930,19 @@
        "Liveblog: De Wever hervat maandag begrotingsoverleg, vicepremiers mogen één extra persoon meebrengen",
        "VRT NWS",
        "https://www.vrt.be/vrtnws/nl/liveblog/de-wever-hervat-maandag-begrotingsoverleg-vicepremiers-mogen-1-~1793247532380/",
+       3
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-08",
+     "t": "Coalition parties pledged on 7 Nov to restart budget talks; De Wever holds bilateral meetings from 9 Nov and reports to the King on 16 Nov. [78]",
+     "src": [
+      [
+       78,
+       "Bart De Wever prolongé : la majorité veut \"reprendre le travail dès que possible\", l'opposition réclame un changement de cap",
+       "RTBF",
+       "https://www.rtbf.be/article/bart-de-wever-prolonge-la-majorite-veut-reprendre-le-travail-des-que-possible-l-opposition-reclame-un-changement-de-cap-11811785",
        3
       ]
      ]
@@ -890,6 +1015,19 @@
        3
       ]
      ]
+    },
+    {
+     "date": "2026-11-08",
+     "t": "Paris prosecutors opened an investigation on 7 Nov into the hoax emails and any links to foreign powers; no new flight threat was reported on 7 Nov. [13]",
+     "src": [
+      [
+       13,
+       "France probes if bomb threats against airlines linked to 'foreign powers'",
+       "AFP via The Straits Times",
+       "https://www.straitstimes.com/world/europe/france-probes-if-bomb-threats-against-airlines-linked-to-foreign-powers",
+       2
+      ]
+     ]
     }
    ]
   },
@@ -954,7 +1092,35 @@
      ]
     }
    ]
+  },
+  {
+   "id": "hegseth-impeachment",
+   "name": "Hegseth impeachment push",
+   "status": "moving",
+   "opened": "2026-11-08",
+   "log": [
+    {
+     "date": "2026-11-08",
+     "t": "Rep. Massie said he will introduce eight impeachment articles against Secretary Hegseth on 9 or 10 Nov; Hegseth told troops on 7 Nov to “ignore the noise”, and President Trump said he intends to keep him. [16, 17]",
+     "src": [
+      [
+       16,
+       "Trump says he has 'every intention' to keep Hegseth",
+       "ABC News",
+       "https://abcnews.com/Politics/trump-intention-hegseth/story?id=137874670",
+       3
+      ],
+      [
+       17,
+       "Trump signals he's ready to battle Democratic majority (live updates, 7 Nov)",
+       "CNN",
+       "https://edition.cnn.com/2026/11/07/politics/live-news/midterm-election-congress",
+       3
+      ]
+     ]
+    }
+   ]
   }
  ],
- "updated": "2026-11-07"
+ "updated": "2026-11-08"
 }

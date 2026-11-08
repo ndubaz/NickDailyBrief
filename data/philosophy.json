@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-07",
+ "updated": "2026-11-08",
  "note": "Philosophy note of the day: serious philosophy, read closely. One passage a day from a major philosopher, quoted exactly from a named edition or translation, with a gloss that states the argument, its place in the work and the strongest objection. No aphorism collections, no self-help, no quotation sites. The run appends {date, thinker, work, tradition} here so no thinker repeats within 30 days and no work within 90; `canon` is the pool to draw from and may grow with thinkers of the same weight.",
  "traditions": [
   "Ancient (Plato, Aristotle, the Stoics)",
@@ -13,7 +13,14 @@
   "Philosophy of war and violence (Clausewitz, Walzer, Weil, Arendt on violence)",
   "Non-Western (Confucius, Zhuangzi, Nagarjuna, al-Farabi, Ibn Khaldun)"
  ],
- "covered": [],
+ "covered": [
+  {
+   "date": "2026-11-08",
+   "thinker": "Carl von Clausewitz",
+   "work": "On War (Vom Kriege)",
+   "tradition": "Philosophy of war and violence"
+  }
+ ],
  "canon": [
   "Plato",
   "Aristotle",

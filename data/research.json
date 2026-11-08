@@ -1,6 +1,6 @@
 {
  "note": "Research rotation. Three pieces a day: one military or security piece (field \"military\") and two from the wider fields. `rotation` maps each field to institutions and journals the run draws from; `queue` holds publications picked for coming days with their field; `covered` is the append-only log. No institution twice within 10 days within a field.",
- "updated": "2026-11-07",
+ "updated": "2026-11-08",
  "rotation": {
   "military": [
    "Africa Center for Strategic Studies",
@@ -83,7 +83,8 @@
    "Nature (policy)",
    "Science (policy forum)",
    "Brookings TechTank",
-   "Epoch AI"
+   "Epoch AI",
+   "Bertelsmann Stiftung (eupinions)"
   ],
   "climate": [
    "IEA",
@@ -119,16 +120,6 @@
  },
  "queue": [
   {
-   "org": "RAND",
-   "title": "Anticipating Allies' Responses to U.S. Retrenchment from Europe: How France, Germany, Poland, and the United Kingdom Might Adapt to Alternative U.S. Approaches",
-   "authors": "Priebe, Pezard, Dowd, Black, van Hooft et al.",
-   "date": "",
-   "url": "https://www.rand.org/pubs/research_reports/RRA5006-1.html",
-   "for": "",
-   "note": "Date reported as 28 Oct 2026 in a search summary, not verified; rand.org refused the request on 7 Nov.",
-   "field": "military"
-  },
-  {
    "org": "Egmont",
    "title": "Memoranda of Understanding? Minilateral Defence Frameworks and Avoiding the Fragmentation of European Defence (Security Policy Brief No. 418)",
    "authors": "Noam Peisih",
@@ -136,6 +127,46 @@
    "url": "https://egmontinstitute.be/memoranda-of-understanding-minilateral-defence-frameworks-and-avoiding-the-fragmentation-of-european-defence/",
    "for": "",
    "note": "Counts more than 160 defence arrangements among EU states, the UK and Ukraine since 2014.",
+   "field": "military"
+  },
+  {
+   "org": "RAND Europe",
+   "title": "Towards a new framework for nuclear deterrence in Europe: European perceptions of Russian nuclear policy and the role of the UK and France in NATO's nuclear posture",
+   "authors": "Artur Honich, Thomas Kenchington, Ondrej Palicka",
+   "date": "2026-10-22",
+   "url": "https://www.rand.org/pubs/research_reports/RRA3964-1.html",
+   "for": "",
+   "note": "Sponsored by the UK MoD Nuclear Deterrence Fund.",
+   "field": "military"
+  },
+  {
+   "org": "Bertelsmann Stiftung (eupinions)",
+   "title": "Unequal Trust, Shared Interests",
+   "authors": "Bertelsmann Stiftung and Bertelsmann Foundation North America",
+   "date": "2026-10-26",
+   "url": "https://www.bertelsmann-stiftung.de/en/publications/publication/did/unequal-trust-shared-interests",
+   "for": "",
+   "note": "Transatlantic trust survey; Europeans half as likely to trust the US as Americans are to trust Europe.",
+   "field": "polsci"
+  },
+  {
+   "org": "Epoch AI",
+   "title": "Introducing the AI Chip Imports explorer",
+   "authors": "Lucio Melito and Isabel Juniewicz",
+   "date": "2026-10-27",
+   "url": "https://epoch.ai/latest/introducing-the-ai-chip-imports-explorer",
+   "for": "",
+   "note": "Customs-records dataset; only the listing was read.",
+   "field": "tech"
+  },
+  {
+   "org": "CSET Georgetown",
+   "title": "Coalition Operations: The Untapped Role of AI in Military Decision-Making",
+   "authors": "Emelia Probasco, Sophie Mayo, Lauren Kahn",
+   "date": "",
+   "url": "https://cset.georgetown.edu/publication/coalition-operations/",
+   "for": "",
+   "note": "Dated only September 2026; confirm it is on or after 9 Sep before use. NATO Maven accreditation timelines.",
    "field": "military"
   }
  ],
@@ -155,6 +186,30 @@
    "authors": "Pieter-Jan Vandoren and Davis Ellison, with Nico Tak and Tim Sweijs",
    "url": "https://hcss.nl/report/how-europe-can-act-when-nato-cannot-from-nato-3-0-to-a-european-plan-b/",
    "field": "military"
+  },
+  {
+   "date": "2026-11-08",
+   "field": "military",
+   "org": "RAND Corporation",
+   "title": "Anticipating Allies' Responses to U.S. Retrenchment from Europe: How France, Germany, Poland, and the United Kingdom Might Adapt to Alternative U.S. Approaches",
+   "authors": "Miranda Priebe, Stephanie Pezard, Anna M. Dowd, James Black, Paul van Hooft, Clara de Lataillade, Zachary Burdette, Daniel Cebul, Nathaniel Edenfield and Scott Behmer",
+   "url": "https://www.rand.org/pubs/research_reports/RRA5006-1.html"
+  },
+  {
+   "date": "2026-11-08",
+   "field": "polsci",
+   "org": "Pew Research Center",
+   "title": "Across the Globe, People Increasingly Say Social Media Is Harming Democracy",
+   "authors": "Richard Wike, Maria Smerkovich and Moira Fagan",
+   "url": "https://www.pewresearch.org/global/2026/10/01/across-the-globe-people-increasingly-say-social-media-is-harming-democracy/"
+  },
+  {
+   "date": "2026-11-08",
+   "field": "tech",
+   "org": "Bertelsmann Stiftung",
+   "title": "CTRL + ALT + Europe? Most Europeans support homegrown digital alternatives. The European digital sovereignty debate hasn't yet fully matched that ambition.",
+   "authors": "Martin Hullin and Daniela Schmidt",
+   "url": "https://www.bertelsmann-stiftung.de/en/publications/publication/did/ctrl-alt-europe"
   }
  ],
  "fields": {

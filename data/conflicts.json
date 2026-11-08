@@ -164,6 +164,54 @@
        3
       ]
      ]
+    },
+    {
+     "date": "2026-11-08",
+     "t": "Russia launched 172 drones and Iskander-M, Zircon, KN-23 and S-400 missiles overnight into 7 Nov, mainly at Kyiv region; the Air Force reported 4 missiles and 149 drones downed and President Zelensky gave 36 ballistic missiles. Substations linking the Rivne and Khmelnytskyi nuclear plants were hit and six people were injured in Kyiv. Ukraine's General Staff said Neptune missiles hit the Proton-Electrotex plant in Oryol. Medinsky leads Russia's delegation to Abu Dhabi for 10–11 Nov. [10, 11, 12, 20, 170, 19]",
+     "src": [
+      [
+       10,
+       "Air defense downs four missiles, 149 drones used by Russia to attack Ukraine overnight",
+       "Ukrinform",
+       "https://www.ukrinform.net/rubric-ato/4182349-air-defense-downs-four-missiles-149-drones-used-by-russia-to-attack-ukraine-overnight.html",
+       2
+      ],
+      [
+       11,
+       "Russia may have used North Korean KN-23 missiles to strike Ukrainian energy facility: Zelensky",
+       "Ukrinform",
+       "https://www.ukrinform.net/rubric-ato/4182444-russia-may-have-used-north-korean-kn23-missiles-to-strike-ukrainian-energy-facility-zelensky.html",
+       2
+      ],
+      [
+       12,
+       "Zelensky: In addition to Kyiv, 12 regions of Ukraine come under attack overnight",
+       "Ukrinform",
+       "https://www.ukrinform.net/rubric-ato/4182380-zelensky-in-addition-to-kyiv-12-regions-of-ukraine-come-under-attack-overnight.html",
+       2
+      ],
+      [
+       20,
+       "Injury toll after Russian attack on Kyiv rises to six, including one child",
+       "Ukrinform",
+       "https://www.ukrinform.net/rubric-ato/4182377-injury-toll-after-russian-attack-on-kyiv-rises-to-six-including-one-child.html",
+       2
+      ],
+      [
+       170,
+       "Ukrainian forces strike Proton plant in Oryol with Neptune missiles: General Staff",
+       "Ukrinform",
+       "https://www.ukrinform.net/rubric-ato/4182374-ukrainian-forces-strike-proton-plant-in-oryol-with-neptune-missiles-general-staff.html",
+       2
+      ],
+      [
+       19,
+       "Russia to send senior diplomats, military officials to upcoming peace talks in Abu Dhabi",
+       "Kyiv Independent",
+       "https://kyivindependent.com/russia-to-send-senior-diplomats-military-officials-to-upcoming-peace-talks-in-abu-dhabi/",
+       3
+      ]
+     ]
     }
    ],
    "short": "Ukraine",
@@ -312,6 +360,40 @@
        3
       ]
      ]
+    },
+    {
+     "date": "2026-11-08",
+     "t": "The IRGC navy said two tankers hit mines and burned on 7 Nov, one inside the strait; Iranian agencies reported explosions on Qeshm and at Jask, Sirik and Bandar Abbas. CENTCOM formed Task Force Iron Gate for Iran's land borders and the Caspian, and a US aircraft fired on the M/V Huda in the Gulf of Oman. IRGC spokesman Mohebbi said Iran's missile-range limit has been lifted. [24, 25, 15, 26]",
+     "src": [
+      [
+       24,
+       "Iran's Revolutionary Guards say 2 oil tankers hit mines, caught fire near Strait of Hormuz",
+       "Anadolu Agency",
+       "https://www.aa.com.tr/en/middle-east/iran-s-revolutionary-guards-say-2-oil-tankers-hit-mines-caught-fire-near-strait-of-hormuz/4115596",
+       3
+      ],
+      [
+       25,
+       "Explosions heard in southern Iran's Qeshm, Jask: report",
+       "Anadolu Agency",
+       "https://www.aa.com.tr/en/middle-east/explosions-heard-in-southern-iran-s-qeshm-jask-report/4115535",
+       3
+      ],
+      [
+       15,
+       "CENTCOM strikes commercial cargo vessel",
+       "Stars and Stripes",
+       "https://www.stripes.com/theaters/middle_east/2026-11-07/centcom-strikes-commercial-cargo-vessel-23394462.html",
+       3
+      ],
+      [
+       26,
+       "Iran's IRGC says building underground sites for weapons production, storage",
+       "Al Jazeera",
+       "https://www.aljazeera.com/news/2026/11/7/irans-irgc-says-building-underground-sites-for-weapons-production-storage",
+       3
+      ]
+     ]
     }
    ],
    "short": "Iran",
@@ -369,6 +451,40 @@
        "Four people, including a child, killed in Israeli attacks on Gaza",
        "Al Jazeera",
        "https://www.aljazeera.com/news/2026/11/5/four-people-including-a-child-killed-in-israeli-attacks-on-gaza",
+       3
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-08",
+     "t": "Gaza's health ministry reported 1,610 killed since the October 2025 ceasefire on 7 Nov; the first winter storm flooded about 70,000 tents. Israeli forces demolished buildings in Bani Hayyan and shelled areas south of Tyre; President Herzog gave Gadi Eisenkot the first mandate to form a government. [28, 29, 173, 174]",
+     "src": [
+      [
+       28,
+       "Daily statistical report, 7 Nov 2026",
+       "Ministry of Health, Gaza",
+       "https://t.me/s/MOHMediaGaza",
+       1
+      ],
+      [
+       29,
+       "Rains flood 70,000 displaced families' tents in Gaza",
+       "Al Jazeera",
+       "https://www.aljazeera.com/news/2026/11/7/rains-flood-thousands-of-tents-in-gaza",
+       3
+      ],
+      [
+       173,
+       "Israeli army continues strikes in southern Lebanon despite framework deal",
+       "Anadolu Agency",
+       "https://www.aa.com.tr/en/middle-east/israeli-army-continues-strikes-in-southern-lebanon-despite-framework-deal/4115101",
+       3
+      ],
+      [
+       174,
+       "Israel's president taps opposition candidate Eisenkot to form a government",
+       "CBS News (AP)",
+       "https://www.cbsnews.com/news/israel-election-government-gadi-eisenkot-benjamin-netanyahu/",
        3
       ]
      ]
@@ -460,6 +576,33 @@
        "Yemeni government forces, Houthis trade blame for deadly strikes on Taiz market",
        "Al Jazeera",
        "https://www.aljazeera.com/news/2026/11/6/yemeni-govt-forces-houthis-trade-blame-for-deadly-strikes-on-taiz-market",
+       3
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-08",
+     "t": "The Houthi health ministry said a strike it attributes to Saudi Arabia killed 33 at al-Shariya near Sanaa on 7 Nov; Saudi air defences intercepted a missile over Riyadh on 7 Nov and one toward the Eastern Province early on 8 Nov. No attack on shipping was reported. [30, 31, 32]",
+     "src": [
+      [
+       30,
+       "Houthis say at least 33 killed in Saudi air strike",
+       "BBC News",
+       "https://www.bbc.co.uk/news/articles/c65yn1v99ypmo",
+       3
+      ],
+      [
+       31,
+       "Yemeni gov't forces report advances as Houthis say deadly strikes hit Sanaa",
+       "Al Jazeera",
+       "https://www.aljazeera.com/news/2026/11/7/yemeni-govt-forces-report-advances-as-houthis-say-deadly-strikes-hit-sanaa",
+       3
+      ],
+      [
+       32,
+       "Saudi Arabia says it intercepted ballistic missile fired toward eastern region",
+       "Anadolu Agency",
+       "https://www.aa.com.tr/en/middle-east/saudi-arabia-says-it-intercepted-ballistic-missile-fired-toward-eastern-region/4115625",
        3
       ]
      ]
@@ -566,6 +709,26 @@
        3
       ]
      ]
+    },
+    {
+     "date": "2026-11-08",
+     "t": "Taiwan's defence ministry counted four PLA aircraft sorties, six navy ships and two official ships in the 24 hours to 06:00 on 8 Nov; three more F-16Vs were due at Taitung on 8 Nov. [40, 42]",
+     "src": [
+      [
+       40,
+       "PLA activities in the waters and airspace around Taiwan, 8 Nov 2026",
+       "ROC Ministry of National Defense",
+       "https://www.mnd.gov.tw/en/News/PLAAct/88168",
+       1
+      ],
+      [
+       42,
+       "Second flight of F-16V jets from US expected today",
+       "Taipei Times",
+       "https://www.taipeitimes.com/News/taiwan/archives/2026/11/08/2003867363",
+       3
+      ]
+     ]
     }
    ],
    "short": "Taiwan",
@@ -649,6 +812,33 @@
        "KCNA via KCNA Watch",
        "https://kcnawatch.org/newstream/1794024645-826823507/plenary-meeting-of-dprk-spa-standing-committee-held",
        1
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-08",
+     "t": "The Supreme People's Assembly Standing Committee plenary was held on 5 Nov and reported by KCNA on 6 Nov; it recalled a vice chairman and amended two laws. Kim Song-nam met Cai Qi in Beijing on 6 Nov. The US State Department called for joint action after the Binance hack, which the FBI attributes to North Korea. [175, 44, 176]",
+     "src": [
+      [
+       175,
+       "N. Korea removes assembly vice chairman, amends construction, precious metal laws",
+       "Yonhap",
+       "https://en.yna.co.kr/view/AEN20261106003200315",
+       3
+      ],
+      [
+       44,
+       "N. Korean envoy holds 3rd high-level meeting in China",
+       "Yonhap",
+       "https://en.yna.co.kr/view/AEN20261107001800315",
+       3
+      ],
+      [
+       176,
+       "U.S. calls for coordinated action against N. Korean cyber threats following Binance hack",
+       "Yonhap",
+       "https://en.yna.co.kr/view/AEN20261108000200315",
+       3
       ]
      ]
     }
@@ -746,6 +936,26 @@
        "UN News",
        "https://news.un.org/en/story/2026/11/1168753",
        1
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-08",
+     "t": "Sudan's army said it shot down an FH-95 drone over Ayyal Bakhit in West Kordofan on 7 Nov; the IPC projects 825,000 children under five with severe acute malnutrition in 2026. [47, 48]",
+     "src": [
+      [
+       47,
+       "Sudanese army says it shot down 'hostile' drone in West Kordofan",
+       "Anadolu Agency",
+       "https://www.aa.com.tr/en/middle-east/sudanese-army-says-it-shot-down-hostile-drone-in-west-kordofan/4115265",
+       3
+      ],
+      [
+       48,
+       "Sudan war and climate change see parents struggle to feed their children",
+       "Al Jazeera",
+       "https://www.aljazeera.com/features/2026/11/7/sudan-war-and-climate-change-sees-parents-struggle-to-feed-their-children",
+       3
       ]
      ]
     }
@@ -863,6 +1073,26 @@
        3
       ]
      ]
+    },
+    {
+     "date": "2026-11-08",
+     "t": "Authorities raised the toll of the 5–6 Nov ADF attack in Beni to 33; Actualite.cd reported FRN rebels in Kalonge and Bitale in Kalehe on 7 Nov. [45, 46]",
+     "src": [
+      [
+       45,
+       "Death toll from ADF attack in DR Congo rises to 33",
+       "Anadolu Agency",
+       "https://www.aa.com.tr/en/africa/death-toll-from-adf-attack-in-dr-congo-rises-to-33/4114820",
+       3
+      ],
+      [
+       46,
+       "Sud-Kivu : Kalonge et Bitale passent sous contrôle des rebelles du FRN",
+       "Actualite.cd",
+       "https://actualite.cd/2026/11/07/sud-kivu-kalonge-et-bitale-passent-sous-controle-des-rebelles-du-frn",
+       4
+      ]
+     ]
     }
    ],
    "short": "DRC",
@@ -896,6 +1126,19 @@
        "US Treasury, OFAC",
        "https://ofac.treasury.gov/recent-actions/20261105",
        1
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-08",
+     "t": "China's commerce ministry on 7 Nov urged the US “to correct its wrongdoings as soon as possible” after the State Department sanctioned CEIEC and Beijing H&C Technologies over supplies to Cuba's armed forces. [177]",
+     "src": [
+      [
+       177,
+       "Beijing urges US to correct its 'wrongdoings' swiftly after Washington sanctions Chinese companies over Cuba",
+       "Anadolu Agency",
+       "https://www.aa.com.tr/en/asia-pacific/beijing-urges-us-to-correct-its-wrongdoings-swiftly-after-washington-sanctions-chinese-companies-over-cuba/4115021",
+       3
       ]
      ]
     }
@@ -994,6 +1237,54 @@
        "NATO rebuffs Russia's claims Arctic mission is direct threat",
        "Newsweek",
        "https://www.newsweek.com/nato-rebuffs-russian-claims-arctic-mission-direct-threat-12386316",
+       3
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-08",
+     "t": "Norway detained the sanctioned, falsely flagged Chinese heavy-lift ship Ya Qing Hai Yang in the Andfjord near Andøya after a Northern Sea Route voyage. Greenland's parliament ratified the US–Denmark–Greenland defence agreement on 3 Nov; the Folketing votes on 19 Nov. Norway is deploying NASAMS sensors at Kirkenes against stray drones, and the sanctioned tanker Padre loitered on the Norway–Russia sea border from 19 Oct. HMS Prince of Wales operated in the Norwegian Sea under JFC Norfolk for Arctic Sentry. [35, 36, 37, 38, 171, 172]",
+     "src": [
+      [
+       35,
+       "After crossing Arctic route from China, two heavy lift carriers get stuck near Norwegian air base",
+       "The Barents Observer",
+       "https://www.thebarentsobserver.com/news/after-crossing-arctic-route-from-china-two-heavy-lift-carriers-get-stuck-near-norwegian-air-base/461490",
+       3
+      ],
+      [
+       36,
+       "Norway detains sanctioned Chinese ship sailing under false flag, inspects second vessel",
+       "High North News",
+       "https://en.highnorthnews.com/politics/norway-detains-sanctioned-chinese-ship-sailing-under-false-flag-inspects-second-vessel/1123696",
+       3
+      ],
+      [
+       37,
+       "Greenland parliament ratifies security deal reached with Trump",
+       "Reuters via Arctic Today",
+       "https://www.arctictoday.com/greenland-parliament-ratifies-security-deal-reached-with-trump/",
+       2
+      ],
+      [
+       38,
+       "NASAMS sensors to be deployed along Norway's border with Russia",
+       "The Barents Observer",
+       "https://www.thebarentsobserver.com/security/nasams-sensors-to-be-deployed-along-norways-border-with-russia/461203",
+       3
+      ],
+      [
+       171,
+       "30-year-old tanker linked with Iran drifting along Norway's Arctic coast",
+       "The Barents Observer",
+       "https://www.thebarentsobserver.com/news/30yearold-tanker-linked-with-iran-drifting-along-norways-arctic-coast/461333",
+       3
+      ],
+      [
+       172,
+       "UK and allied show of strength in the North",
+       "High North News",
+       "https://en.highnorthnews.com/politics/uk-and-allied-show-of-strength-in-the-north/1124312",
        3
       ]
      ]

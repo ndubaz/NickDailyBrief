@@ -319,6 +319,74 @@
      1
     ]
    ]
+  },
+  {
+   "id": "2026-11-06-epoch-huawei-horinger",
+   "date": "2026-11-06",
+   "kind": "result",
+   "t": "Epoch estimates Huawei's Horinger campus at about 81,000 H100-equivalents",
+   "lab": "Epoch AI",
+   "n": "286 MW of AI IT power; about 14 times smaller than Colossus 2. [97]",
+   "src": [
+    [
+     97,
+     "What Huawei's Horinger data center reveals about China's compute gap",
+     "Epoch AI",
+     "https://epoch.ai/publications/huawei-horinger-china-compute-gap",
+     1
+    ]
+   ]
+  },
+  {
+   "id": "2026-11-06-anthropic-project-eve",
+   "date": "2026-11-06",
+   "kind": "result",
+   "t": "Anthropic's Project EVE: Claude agents trade profitably in EVE Online replays",
+   "lab": "Anthropic",
+   "n": "Fable 5 averaged about 43% per two-week window; monitors caught 30–40% of saboteurs. [98]",
+   "src": [
+    [
+     98,
+     "Project EVE: Claude plays MMORPGs",
+     "Anthropic",
+     "https://www.anthropic.com/research/project-eve-claude-plays-mmorpgs",
+     1
+    ]
+   ]
+  },
+  {
+   "id": "2026-11-06-openai-biobasicsbench",
+   "date": "2026-11-06",
+   "kind": "result",
+   "t": "OpenAI's BioBasicsBench: GPT-6 Astra 66.7% on 100 wet-lab tasks",
+   "lab": "OpenAI",
+   "n": "18,500 graded answers; GPT-5.5 scored 35.4%. [99]",
+   "src": [
+    [
+     99,
+     "OpenAI unveils BioBasicsBench, a benchmark to gauge how well AI agents read raw experimental data across 100 routine wet-lab tasks",
+     "R&D World",
+     "https://www.rdworldonline.com/openai-unveils-biobasicsbench-a-benchmark-to-gauge-how-well-ai-agents-read-raw-experimental-data-across-100-routine-wet-lab-tasks/",
+     3
+    ]
+   ]
+  },
+  {
+   "id": "2026-11-06-bytedance-cola2",
+   "date": "2026-11-06",
+   "kind": "model",
+   "t": "ByteDance Seed opens Cola2, an 8.8B continuous-latent diffusion language model",
+   "lab": "ByteDance Seed",
+   "n": "Trained on 346 billion tokens; no licence posted. [100]",
+   "src": [
+    [
+     100,
+     "ByteDance-Seed/Cola2 model card",
+     "Hugging Face",
+     "https://huggingface.co/ByteDance-Seed/Cola2",
+     1
+    ]
+   ]
   }
  ],
  "sota": {

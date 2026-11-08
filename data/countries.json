@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-07",
+ "updated": "2026-11-08",
  "note": "Nick's assigned priority countries as an analyst: Hungary and Slovakia (priority), Germany (secondary). The run appends dated facts to each country's log and keeps the profile current. Facts and summaries only; the item in the edition carries the So what. verified:false marks a fact to confirm against an official page.",
  "blr": [
   "Continuity of government and critical services",
@@ -112,6 +112,40 @@
       [
        "Világgazdaság: Orbán Anita nem a levegőbe beszélt: Ukrajna uniós csatlakozása",
        "https://vg.hu/vilaggazdasag-magyar-gazdasag/2026/11/orban-anita-ukrajna-unios-csatlakozas"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-08",
+     "t": "Prime Minister Magyar meets Chancellor Merz in Berlin on 10 Nov with the foreign, economy and energy, defence and interior ministers.",
+     "src": [
+      [
+       "Index: Magyar Péter jövő héten Berlinben tárgyal Friedrich Merz német kancellárral",
+       "https://index.hu/belfold/2026/11/06/magyar-peter-nemetorszag-berlin-kormanyules/"
+      ],
+      [
+       "Ukrinform: Merz to discuss further support for Ukraine with Magyar",
+       "https://www.ukrinform.net/rubric-polytics/4182316-merz-to-discuss-further-support-for-ukraine-with-magyar.html"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-08",
+     "t": "Foreign Minister Anita Orbán said on 7 Nov that Hungarian Gripens will fly Baltic Air Policing again in 2028, the fifth rotation.",
+     "src": [
+      [
+       "Index: Orbán Anita bejelentette, 2028-ban ismét Magyarország védheti Európa keleti határait",
+       "https://index.hu/kulfold/2026/11/07/orban-anita-baltikum-litvania-legtervedelem-nato-magyar-legiero/"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-08",
+     "t": "Croatia's JANAF said the Adria crude pipeline, which also supplies MOL, was damaged during works on 6 Nov and the leak stopped.",
+     "src": [
+      [
+       "hvg.hu: Megsérült a Molt is ellátó kőolajvezeték Horvátországban",
+       "https://hvg.hu/gazdasag/20261107_horvatorszag-janaf-adria-koolajvezetek-szivargas"
       ]
      ]
     }
@@ -318,6 +352,30 @@
        "https://www.teraz.sk/slovensko/kdh-vlada-nedokazala-vyrokovat-vyni/1005767-clanok.html"
       ]
      ]
+    },
+    {
+     "date": "2026-11-08",
+     "t": "Fico said on 6 Nov that the referendum of 2003 on joining the EU was falsified; he ruled out early elections before the 10 Nov votes.",
+     "src": [
+      [
+       "Pravda.sk: Ficove slová o sfalšovanom referende vyvolali ostrú kritiku. Taraba varuje pred vážnymi dôsledkami",
+       "https://www.pravda.sk/spravy/domace/clanok/2074377-ficove-slova-o-sfalsovanom-referende-vyvolali-ostru-kritiku-taraba-varuje-pred-vaznymi-dosledkami/"
+      ],
+      [
+       "TN Live: Fico dal na svoje vyhlásenie uprostred schôdze prepraviť celý poslanecký klub",
+       "https://tnlive.sk/domace/clanok/1061199-fico-dal-na-svoje-vyhlasenie-uprostred-schodze-prepravit-cely-poslanecky-klub-prisli-vyletnym-autobusom"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-08",
+     "t": "A “Mier pre Slovensko” rally in Košice on 7 Nov drew Smer and Republika MEPs criticising EU policy on Russia.",
+     "src": [
+      [
+       "TASR via Naše Košice: Zhromaždenie Mier pre Slovensko. V Košiciach znela kritika vojenskej politiky EÚ",
+       "https://nasekosice.sk/clanky/64012-zhromazdenie-mier-pre-slovensko-v-kosiciach-znela-kritika-vojenskej-politiky-eu"
+      ]
+     ]
     }
    ],
    "src": [
@@ -492,6 +550,36 @@
       [
        "dpa via news.de: Pistorius nach Protesten: Brauchen starke Streitkräfte",
        "https://www.news.de/politik/860167270/pistorius-nach-protesten-brauchen-starke-streitkraefte-boris-pistorius-news-der-dpa-aktuell-zu-verteidigung-wehrdienst-jugend-und-demonstrationen/1/"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-08",
+     "t": "The BBK and the interior ministry ran the LÜKEX 2026 drought and heat exercise with 180 authorities, aid organisations and operators.",
+     "src": [
+      [
+       "tagesschau.de: Katastrophenübung: Was wäre, wenn eine Dürre Deutschland lahmlegt?",
+       "https://www.tagesschau.de/inland/gesellschaft/hitze-duerre-ausnahmezustand-krisenmanagement-100.html"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-08",
+     "t": "CDU and CSU leaders called for a return to conscription after Pistorius said it is not needed.",
+     "src": [
+      [
+       "tagesschau.de: Pistorius rechnet derzeit nicht mit Rückkehr zur Wehrpflicht",
+       "https://www.tagesschau.de/inland/innenpolitik/bundeswehr-diskussion-wehrpflicht-100.html"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-08",
+     "t": "The BfV said the refrigeration cyberattacks are under intelligence investigation; the interior ministry has no attribution.",
+     "src": [
+      [
+       "Der Spiegel: Deutsche Nachrichtendienste schalten sich offenbar bei Cyberangriffen auf Supermärkte ein",
+       "https://www.spiegel.de/netzwelt/deutschland-nachrichtendienste-schalten-sich-offenbar-bei-cyberangriffen-auf-supermaerkte-ein-a-1f86ee1a-be83-497a-bc91-91da57d27fb7"
       ]
      ]
     }

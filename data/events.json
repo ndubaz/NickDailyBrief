@@ -1,6 +1,6 @@
 {
  "note": "Out and about: curated events within about 90 minutes by car (Maastricht, Aachen, Liège, Köln, Düsseldorf, Bonn, Eindhoven, Antwerp, Brussels, the Eifel and Ardennes). The run adds events with a source, prunes those that have passed, and sets updated when details change. cat = music|markets|museums|sport|kids|food|outdoors|festival. kid = suitable for children. drive = minutes from Hoensbroek, approximate. prio = true marks the few major events (big festivals, Sinterklaas arrivals, the carnival opening) that also appear in the Planner's This week; Christmas markets come from calendar.json.",
- "updated": "2026-11-07",
+ "updated": "2026-11-08",
  "events": [
   {
    "id": "born-to-play-bonnefanten-2026",
@@ -112,28 +112,6 @@
     ]
    ],
    "prio": true
-  },
-  {
-   "id": "fortuna-sittard-telstar-2026",
-   "t": "Fortuna Sittard v Telstar (Eredivisie)",
-   "cat": "sport",
-   "from": "2026-11-07",
-   "to": "2026-11-07",
-   "town": "Sittard",
-   "venue": "Fortuna Sittard Stadion, 16:30 (kick-off may change)",
-   "cc": "NL",
-   "drive": 15,
-   "cost": "Tickets via the club",
-   "kid": true,
-   "added": "2026-11-03",
-   "src": [
-    [
-     192,
-     "Competitieprogramma VriendenLoterij Eredivisie seizoen 2026/'27",
-     "KNVB",
-     "https://www.knvb.nl/downloads/bestand/30062/definitiefcompetitieprogrammavriendenloterijeredivisie"
-    ]
-   ]
   },
   {
    "id": "glow-eindhoven-2026",
@@ -977,6 +955,73 @@
      "AFNORTH calendar, important dates September 2026 to February 2027",
      "JFCBS MWA November newsletter",
      "https://afnorth-is.com/"
+    ]
+   ]
+  },
+  {
+   "id": "stoffen-spektakel-leuven-2026",
+   "t": "Stoffen Spektakel Leuven: fabric and haberdashery fair, about 55 stands",
+   "cat": "markets",
+   "from": "2026-11-15",
+   "to": "2026-11-15",
+   "town": "Leuven",
+   "venue": "Brabanthal",
+   "cc": "BE",
+   "drive": 75,
+   "cost": "Free; online registration optional",
+   "kid": false,
+   "prio": false,
+   "added": "2026-11-08",
+   "src": [
+    [
+     "Stoffen Spektakel Leuven, 15 november 2026",
+     "https://stoffenspektakel.nl/stoffenbeurs-agenda/leuven/"
+    ]
+   ]
+  },
+  {
+   "id": "geek-village-hasselt-2026",
+   "t": "Geek Village: The Con, pop culture and cosplay",
+   "cat": "kids",
+   "from": "2026-11-14",
+   "to": "2026-11-15",
+   "town": "Hasselt",
+   "venue": "Trixxo Arena",
+   "cc": "BE",
+   "drive": 45,
+   "cost": "Ticket: €14 day (13+) until 12 Nov; under-13s free with an adult; one 18+ area",
+   "kid": true,
+   "prio": false,
+   "added": "2026-11-08",
+   "src": [
+    [
+     "Geek Village: The Con 2026",
+     "https://www.geekvillage.be/"
+    ],
+    [
+     "Tickets",
+     "https://www.geekvillage.be/tickets"
+    ]
+   ]
+  },
+  {
+   "id": "tischlein-deck-dich-aachen-2026",
+   "t": "Tischlein deck dich!, family play in German (6+)",
+   "cat": "kids",
+   "from": "2026-11-13",
+   "to": "2026-11-15",
+   "town": "Aachen",
+   "venue": "Theater Aachen",
+   "cc": "DE",
+   "drive": 25,
+   "cost": "Ticket: book via the theatre; prices not published",
+   "kid": true,
+   "prio": false,
+   "added": "2026-11-08",
+   "src": [
+    [
+     "Theater Aachen: Tischlein deck dich!",
+     "https://www.theateraachen.de/de/produktionen/tischlein-deck-dich.html"
     ]
    ]
   }

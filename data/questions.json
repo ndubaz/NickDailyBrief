@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-07",
+ "updated": "2026-11-08",
  "note": "Open questions the Readbook is carrying: what we do not know. The run adds a question when an item turns on a fact nobody has published, and closes it with the answer and source when one appears. Never delete.",
  "items": [
   {
@@ -21,6 +21,20 @@
    "q": "Was the October Barents NOTAM cluster a named Northern Fleet exercise, and which units took part?",
    "thread": "theatre:arctic",
    "opened": "2026-11-07",
+   "status": "open"
+  },
+  {
+   "id": "2026-11-08-posture-options",
+   "q": "Did the Europe posture-review option sets reach the Secretary on 6 Nov, and what do they contain?",
+   "thread": "thread:us-europe-posture",
+   "opened": "2026-11-08",
+   "status": "open"
+  },
+  {
+   "id": "2026-11-08-hoax-senders",
+   "q": "Who sent the hoax emails signed “fighters of the Male State” and “Mikhail Andropov”?",
+   "thread": "thread:aviation-hoaxes",
+   "opened": "2026-11-08",
    "status": "open"
   }
  ]

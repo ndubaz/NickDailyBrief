@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-07",
+ "updated": "2026-11-08",
  "note": "New uses of technology in war: first-seen or newly combined techniques observed in any theatre and any domain. Append-only. Each entry: id (YYYY-MM-DD-slug), date (when observed or first reported), theatre (board id), actor, t (headline), what (fact sentences with [n] citations), new (one or two sentences on what is new, in the reporters' and actors' terms, no prediction), domains (from the list below), src rows copied from the edition. The run checks ids and titles before appending so a technique is logged once; a later development of the same technique is a new entry that names the earlier id in prev.",
  "domains": {
   "uas": "Drones",
@@ -64,6 +64,30 @@
     ]
    ],
    "edition": 6
+  },
+  {
+   "id": "2026-11-06-rassvet-leo-drone-links",
+   "date": "2026-11-06",
+   "theatre": "ru-ua",
+   "actor": "Russia (Bureau 1440 Rassvet constellation)",
+   "t": "Russia links drones over Ukraine through its own low-orbit Rassvet satellites",
+   "what": "Ukraine's military intelligence said on 6 Nov that Russia has launched 32 Rassvet satellites in March and July and uses them over Ukraine for military communications, including links to drones; an analyst counted at least two windows a day of more than an hour each. [96]",
+   "new": "Reporters describe a two-way satellite data link from a Russian-owned low-orbit constellation, letting surveillance drones send live video and pilots re-route attack drones in flight instead of flying pre-set paths, outside the reach of ground-based jamming of line-of-sight links.",
+   "domains": [
+    "uas",
+    "space",
+    "ew"
+   ],
+   "src": [
+    [
+     96,
+     "Russia using own version of Starlink for military comms over Ukraine, Kyiv says",
+     "Defense News (Reuters)",
+     "https://www.defensenews.com/industry/techwatch/2026/11/06/russia-using-own-version-of-starlink-for-military-comms-over-ukraine-kyiv-says/",
+     3
+    ]
+   ],
+   "edition": 7
   }
  ]
 }

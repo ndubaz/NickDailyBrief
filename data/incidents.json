@@ -381,7 +381,7 @@
    "id": "2026-11-05-be-air-bomb-hoaxes",
    "date": "2026-11-05",
    "code": "AIR",
-   "attr": "A0",
+   "attr": "A1",
    "local": false,
    "country": "BE",
    "place": "Europe: at least 27 flights (BE, FR, RO, BG, ES, CZ, AT, IT, DK); marker at Brussels Airport, about 105 km from Heerlen",
@@ -461,7 +461,7 @@
    "id": "2026-11-06-cz-air-bomb-hoaxes",
    "date": "2026-11-06",
    "code": "AIR",
-   "attr": "A0",
+   "attr": "A1",
    "local": false,
    "country": "CZ",
    "place": "Europe: at least 17 flights (CZ, FR, IT, PT, HU, BG, DK, NL); marker at Prague",
@@ -543,6 +543,94 @@
      3
     ]
    ]
+  },
+  {
+   "id": "2026-11-07-it-cyb-tajani-doxxing",
+   "date": "2026-11-07",
+   "code": "CYB",
+   "attr": "A2",
+   "local": false,
+   "country": "IT",
+   "place": "Rome (online leak; marker at Rome)",
+   "lat": 41.9,
+   "lon": 12.48,
+   "summary": "Foreign Minister Antonio Tajani said hackers published personal data on him and his family on the darknet and offered to pay for more; Prime Minister Meloni's office expressed solidarity over “the activities of pro-Russian hackers”. [65]",
+   "edition": "2026-11-08",
+   "src": [
+    [
+     65,
+     "Italiens Außenminister prangert Hackerangriffe an",
+     "Der Spiegel",
+     "https://www.spiegel.de/ausland/italien-aussenminister-antonio-tajani-prangert-hacker-angriffe-an-a-cb655674-9ea2-4f6f-abf3-9d8fd660cd71",
+     3
+    ]
+   ]
+  },
+  {
+   "id": "2026-10-31-fr-uas-la-hague-flamanville",
+   "date": "2026-10-31",
+   "code": "UAS",
+   "attr": "A0",
+   "local": false,
+   "country": "FR",
+   "place": "Manche: Orano La Hague and EDF Flamanville (marker at La Hague)",
+   "lat": 49.68,
+   "lon": -1.88,
+   "summary": "Several drones flew over the La Hague reprocessing site and the Flamanville nuclear plant, putting services at the Cherbourg naval base on alert; the prefecture and both operators confirmed the flights. [66]",
+   "edition": "2026-11-08",
+   "src": [
+    [
+     66,
+     "Des sites ultra sensibles dans la Manche survolés par plusieurs drones : le mystère demeure",
+     "actu.fr",
+     "https://actu.fr/politique/exclusif-des-sites-nucleaires-francais-survoles-par-plusieurs-drones-quel-etait-le-but-de-ces-intrusions_65029116.html",
+     3
+    ]
+   ]
+  },
+  {
+   "id": "2026-10-15-ro-kin-wine-trader",
+   "date": "2026-10-15",
+   "code": "KIN",
+   "attr": "A0",
+   "local": false,
+   "country": "RO",
+   "place": "Black Sea, about 24 km south-east of Sulina in Romanian waters",
+   "lat": 45.01,
+   "lon": 29.86,
+   "summary": "Varna prosecutors said on 7 Nov that human remains were found on the drone-struck tanker Wine Trader in a Bulgarian repair yard; seven of its 12 crew had been missing, and AFP counts at least nine merchant ships hit by drones off Romania and Bulgaria since early October, with 34 dead or missing. [67]",
+   "edition": "2026-11-08",
+   "src": [
+    [
+     67,
+     "Human bodies found on ship struck by a drone in Black Sea",
+     "AFP via The Straits Times",
+     "https://www.straitstimes.com/world/europe/human-bodies-found-on-ship-struck-by-a-drone-in-black-sea",
+     2
+    ]
+   ]
+  },
+  {
+   "id": "2026-11-07-de-inf-merz-fake-quote",
+   "date": "2026-11-07",
+   "code": "INF",
+   "attr": "A0",
+   "local": false,
+   "country": "DE",
+   "place": "Online (marker at Berlin)",
+   "lat": 52.52,
+   "lon": 13.4,
+   "summary": "Posts claimed Chancellor Merz called the Hamburg Nord Stream trial senseless because “Das deutsche Volk hat der Ukraine verziehen”, the German people have forgiven Ukraine; no record exists and the government called it “Desinformation”. [68]",
+   "edition": "2026-11-08",
+   "src": [
+    [
+     68,
+     "Augsburg checkt's: Merz-Kommentar zu Nord-Stream-Prozess ist frei erfunden",
+     "Augsburger Allgemeine",
+     "https://www.augsburger-allgemeine.de/special/augsburg-checkts/faktencheck-augsburg-checkt-s-merz-kommentar-zu-nord-stream-prozess-ist-frei-erfunden-115601211",
+     3
+    ]
+   ]
   }
  ],
  "attrLog": [
@@ -576,8 +664,47 @@
      3
     ]
    ]
+  },
+  {
+   "id": "2026-11-05-be-air-bomb-hoaxes",
+   "date": "2026-11-08",
+   "from": "A0",
+   "to": "A1",
+   "t": "Paris prosecutors opened an investigation on 7 Nov into the hoax emails and “any potential links they may have to foreign powers”; European intelligence services point to pro-Kremlin activists or hacking groups, the FT reports. [13, 69]",
+   "src": [
+    [
+     13,
+     "France probes if bomb threats against airlines linked to 'foreign powers'",
+     "AFP via The Straits Times",
+     "https://www.straitstimes.com/world/europe/france-probes-if-bomb-threats-against-airlines-linked-to-foreign-powers",
+     2
+    ],
+    [
+     69,
+     "Russia likely behind bomb hoaxes that grounded flights, say European intelligence",
+     "The Independent",
+     "https://www.independent.co.uk/news/world/europe/russia-bomb-threats-europe-flights-b3080924.html",
+     3
+    ]
+   ]
+  },
+  {
+   "id": "2026-11-06-cz-air-bomb-hoaxes",
+   "date": "2026-11-08",
+   "from": "A0",
+   "to": "A1",
+   "t": "Paris prosecutors opened an investigation on 7 Nov into the hoax emails and “any potential links they may have to foreign powers”. [13]",
+   "src": [
+    [
+     13,
+     "France probes if bomb threats against airlines linked to 'foreign powers'",
+     "AFP via The Straits Times",
+     "https://www.straitstimes.com/world/europe/france-probes-if-bomb-threats-against-airlines-linked-to-foreign-powers",
+     2
+    ]
+   ]
   }
  ],
  "attrLogNote": "One entry per attribution change: {id (incident id), date, from (A0..A5), to (A0..A5), t (what moved), src (optional [[n,title,outlet,url]])}. The page lists the last 7 days under Attribution moves.",
- "updated": "2026-11-07"
+ "updated": "2026-11-08"
 }

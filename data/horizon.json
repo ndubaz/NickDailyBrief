@@ -109,7 +109,7 @@
    "date": "2026-11-09",
    "dateText": "9–22 Nov",
    "t": "Koalicja: first Multinational Force–Ukraine exercise, Poland",
-   "n": "About 2,800 troops from 10 countries near Nowa Dęba; not a NATO operation",
+   "n": "About 2,800 troops from 11 nations; not under NATO command; no US troops. [9, 18]",
    "h": true,
    "status": "confirmed",
    "added": "2026-11-03",
@@ -125,8 +125,23 @@
      "European force to hold first Ukraine support exercise in Poland",
      "France 24",
      "https://www.france24.com/en/europe/20261103-european-force-to-hold-first-ukraine-support-exercise-in-poland"
+    ],
+    [
+     9,
+     "UK to lead multinational military training exercise to prepare for peace in Ukraine",
+     "UK Ministry of Defence",
+     "https://www.gov.uk/government/news/uk-to-lead-multinational-military-training-exercise-to-prepare-for-peace-in-ukraine--2",
+     1
+    ],
+    [
+     18,
+     "European troops set to train in Poland for postwar Ukraine deployment",
+     "Defense News",
+     "https://www.defensenews.com/news/2026/11/07/european-troops-set-to-train-in-poland-for-postwar-ukraine-deployment/",
+     3
     ]
-   ]
+   ],
+   "updated": "2026-11-08"
   },
   {
    "id": "tricare-open-season",
@@ -209,11 +224,49 @@
    ]
   },
   {
+   "id": "eurogroup-ecb",
+   "date": "2026-11-09",
+   "dateText": "Mon 9 Nov",
+   "t": "Eurogroup reviews the two candidates to succeed Lagarde",
+   "n": "Klaas Knot and Pablo Hernández de Cos; appointment by reinforced qualified majority. [129]",
+   "h": false,
+   "status": "confirmed",
+   "added": "2026-11-08",
+   "src": [
+    [
+     129,
+     "Spain, Netherlands nominate candidates to succeed Lagarde as ECB chief",
+     "Anadolu Agency",
+     "https://aa.com.tr/en/europe/spain-netherlands-nominate-candidates-to-succeed-lagarde-as-ecb-chief/4114720",
+     3
+    ]
+   ]
+  },
+  {
+   "id": "hegseth-impeachment-vote",
+   "date": "2026-11-09",
+   "dateText": "9–10 Nov",
+   "t": "Rep. Massie's impeachment articles against Secretary Hegseth",
+   "n": "Massie said he will introduce them on Monday or Tuesday. [16]",
+   "h": false,
+   "status": "reported",
+   "added": "2026-11-08",
+   "src": [
+    [
+     16,
+     "Trump says he has 'every intention' to keep Hegseth",
+     "ABC News",
+     "https://abcnews.com/Politics/trump-intention-hegseth/story?id=137874670",
+     3
+    ]
+   ]
+  },
+  {
    "id": "abu-dhabi-talks",
    "date": "2026-11-10",
-   "dateText": "Tue 10 Nov",
+   "dateText": "10–11 Nov",
    "t": "US–Russia–Ukraine talks, Abu Dhabi",
-   "n": "Putin confirmed the talks for Tuesday; Medinsky leads Russia's delegation and Umerov Ukraine's. [9, 10]",
+   "n": "Talks on 10–11 Nov; Medinsky leads Russia's delegation with Ryabkov, Galuzin and Kostyukov. [19]",
    "h": true,
    "status": "confirmed",
    "added": "2026-11-02",
@@ -249,9 +302,16 @@
      "Kyiv Independent",
      "https://kyivindependent.com/umerov-to-lead-ukraine-delegation-in-abu-dhabi-peace-talks-despite-media-confusion-top-official-confirms/",
      3
+    ],
+    [
+     19,
+     "Russia to send senior diplomats, military officials to upcoming peace talks in Abu Dhabi",
+     "Kyiv Independent",
+     "https://kyivindependent.com/russia-to-send-senior-diplomats-military-officials-to-upcoming-peace-talks-in-abu-dhabi/",
+     3
     ]
    ],
-   "updated": "2026-11-07"
+   "updated": "2026-11-08"
   },
   {
    "id": "tk-tax-plan-debate-2",
@@ -291,6 +351,44 @@
    ]
   },
   {
+   "id": "magyar-merz-berlin",
+   "date": "2026-11-10",
+   "dateText": "Tue 10 Nov, 11:00",
+   "t": "Magyar meets Merz in Berlin with four ministers",
+   "n": "Defence, energy and Ukraine on the agenda; press conference 13:30. [81]",
+   "h": false,
+   "status": "confirmed",
+   "added": "2026-11-08",
+   "src": [
+    [
+     81,
+     "Merz to discuss further support for Ukraine with Magyar",
+     "Ukrinform",
+     "https://www.ukrinform.net/rubric-polytics/4182316-merz-to-discuss-further-support-for-ukraine-with-magyar.html",
+     2
+    ]
+   ]
+  },
+  {
+   "id": "us-cpi-oct",
+   "date": "2026-11-10",
+   "dateText": "Tue 10 Nov, 14:30 CET",
+   "t": "US October consumer prices",
+   "n": "Published without a year-on-year rate. [130]",
+   "h": false,
+   "status": "confirmed",
+   "added": "2026-11-08",
+   "src": [
+    [
+     130,
+     "Release calendar, November 2026",
+     "Bureau of Labor Statistics",
+     "https://www.bls.gov/schedule/2026/11_sched.htm",
+     1
+    ]
+   ]
+  },
+  {
    "id": "canes-helsinki",
    "date": "2026-11-12",
    "dateText": "12 and 14 Nov",
@@ -323,6 +421,25 @@
      "No sign of deal on budget ahead of crucial week",
      "DutchNews",
      "https://www.dutchnews.nl/2026/11/no-sign-of-deal-on-budget-ahead-of-crucial-week-in-parliament/"
+    ]
+   ]
+  },
+  {
+   "id": "epc-dublin",
+   "date": "2026-11-12",
+   "dateText": "12–13 Nov",
+   "t": "European Political Community summit and informal EU leaders' meeting, Dublin",
+   "n": "Ireland's largest security operation. [72]",
+   "h": true,
+   "status": "confirmed",
+   "added": "2026-11-08",
+   "src": [
+    [
+     72,
+     "Taoiseach confident of safety of Dublin summits despite hoax bomb threats",
+     "PA via Evening Standard",
+     "https://www.standard.co.uk/news/politics/dublin-children-russian-europe-late-late-show-b1303932.html",
+     2
     ]
    ]
   },
@@ -456,6 +573,25 @@
      "Merz announces November 19 meeting of Coalition of the Willing in Berlin",
      "Ukrinform",
      "https://www.ukrinform.net/rubric-ato/4181024-merz-announces-november-19-meeting-of-coalition-of-the-willing-in-berlin.html"
+    ]
+   ]
+  },
+  {
+   "id": "folketing-greenland",
+   "date": "2026-11-19",
+   "dateText": "19 Nov",
+   "t": "Folketing votes on the US–Denmark–Greenland defence agreement",
+   "n": "First reading on 11 Nov; Greenland ratified on 3 Nov. [37]",
+   "h": false,
+   "status": "confirmed",
+   "added": "2026-11-08",
+   "src": [
+    [
+     37,
+     "Greenland parliament ratifies security deal reached with Trump",
+     "Reuters via Arctic Today",
+     "https://www.arctictoday.com/greenland-parliament-ratifies-security-deal-reached-with-trump/",
+     2
     ]
    ]
   },
@@ -775,5 +911,5 @@
    "src": []
   }
  ],
- "updated": "2026-11-07"
+ "updated": "2026-11-08"
 }

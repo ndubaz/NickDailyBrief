@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-07",
+ "updated": "2026-11-08",
  "note": "Indicators and warning. Each indicator names what is watched, the threshold that changes its status, and the source. The run sets status (green, amber, red) each day it has the fact and appends to history only on a change, with the date, the new status and the fact that moved it. Numeric indicators name a world-series key and a rule so the page can show the latest value.",
  "items": [
   {
@@ -70,13 +70,18 @@
    "name": "Slovakia: snap election called",
    "country": "sk",
    "threshold": "amber when the prime minister threatens one, red when parliament votes to shorten its term",
-   "status": "amber",
+   "status": "green",
    "src": "National Council of the Slovak Republic, TASR",
    "history": [
     {
      "date": "2026-09-27",
      "status": "amber",
      "t": "Fico threatened snap elections in a televised debate, suggesting January 2027."
+    },
+    {
+     "date": "2026-11-08",
+     "status": "green",
+     "t": "Fico ruled out early elections after losing his majority. [87]"
     }
    ]
   },
@@ -100,13 +105,18 @@
    "name": "Hybrid incidents logged in Europe, 7 days",
    "threshold": "amber above 5, red above 10",
    "rule": "incidents7",
-   "status": "green",
+   "status": "red",
    "src": "incidents.json",
    "history": [
     {
      "date": "2026-11-07",
      "status": "green",
      "t": "Below the amber line this week."
+    },
+    {
+     "date": "2026-11-08",
+     "status": "red",
+     "t": "17 incidents logged 2–8 Nov, led by the cold-chain cyberattacks and the airliner hoaxes. [74, 13]"
     }
    ]
   },
@@ -153,6 +163,20 @@
      "date": "2026-11-07",
      "status": "green",
      "t": "Seeded; the page reads the rate from fx.json."
+    }
+   ]
+  },
+  {
+   "id": "aviation-hoax-day",
+   "name": "Hoax bomb threats against flights in Europe, per day",
+   "threshold": "amber on a day with 5 or more flights hit, red above 20",
+   "status": "green",
+   "src": "Prosecutors, airport police and airline statements via AFP",
+   "history": [
+    {
+     "date": "2026-11-08",
+     "status": "green",
+     "t": "No new flight hoax reported on 7 Nov after at least 17 flights on 6 Nov; Paris opened a probe. [13]"
     }
    ]
   }
