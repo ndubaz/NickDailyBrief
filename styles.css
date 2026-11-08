@@ -825,3 +825,8 @@ html.compact .panel,.compact .card{padding:var(--s2)}
 .fx-top.dual>div{display:flex;flex-direction:column;gap:2px}
 .fx-top .big.nato{color:var(--up)}
 .fx-ch .p.nato{color:var(--up)}
+/* 7.4 Parkstad today */
+.lki{font-variant-numeric:tabular-nums}.lki.l1,.lki.l2,.lki.l3{color:var(--up)}.lki.l4,.lki.l5,.lki.l6{color:var(--warn)}.lki.l7,.lki.l8,.lki.l9,.lki.l10,.lki.l11{color:var(--crit)}
+.pbar{display:flex;align-items:flex-end;gap:2px;height:30px;margin:6px 0 2px}.pbar i{flex:1;display:block;border-radius:1px;min-height:3px}
+.idiom.li{border-color:var(--c-nl)}.idiom.li .lbl{color:var(--c-nl)}
+.nwl li{line-height:1.35}

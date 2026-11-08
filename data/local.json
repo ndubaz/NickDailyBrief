@@ -1,0 +1,692 @@
+{
+ "air": {
+  "src": "Open-Meteo air-quality API (CAMS Europe), daily maxima for the town grid cell",
+  "days": [
+   {
+    "date": "2026-11-08",
+    "aqi": 45,
+    "pm10": 28,
+    "pm25": 24.4,
+    "uv": 0.9,
+    "pollen": {
+     "alder": 0,
+     "birch": 0,
+     "grass": 0,
+     "mugwort": 0,
+     "ragweed": 0,
+     "olive": 0
+    }
+   },
+   {
+    "date": "2026-11-09",
+    "aqi": 48,
+    "pm10": 31.9,
+    "pm25": 28.6,
+    "uv": 1.3,
+    "pollen": {
+     "alder": 0,
+     "birch": 0,
+     "grass": 0,
+     "mugwort": 0,
+     "ragweed": 0,
+     "olive": 0
+    }
+   }
+  ],
+  "lki": {
+   "station": "Heerlen-Looierstraat (NL10136)",
+   "value": 5,
+   "time": "2026-11-08T19:00:00+00:00",
+   "src": "Luchtmeetnet (RIVM) air-quality index LKI, 1 good to 11 very bad"
+  }
+ },
+ "power": {
+  "src": "EnergyZero day-ahead hourly prices, euro per kWh, VAT included, before energy tax and the supplier margin",
+  "note": "Add the energy tax per kWh from energy.json and your supplier's margin to get the dynamic-contract price.",
+  "days": [
+   {
+    "date": "2026-11-07",
+    "hours": [
+     [
+      23,
+      0.29
+     ]
+    ],
+    "avg": 0.29,
+    "cheapest3": null,
+    "dearest3": null
+   },
+   {
+    "date": "2026-11-08",
+    "hours": [
+     [
+      0,
+      0.29
+     ],
+     [
+      1,
+      0.28
+     ],
+     [
+      2,
+      0.25
+     ],
+     [
+      3,
+      0.27
+     ],
+     [
+      4,
+      0.25
+     ],
+     [
+      5,
+      0.25
+     ],
+     [
+      6,
+      0.27
+     ],
+     [
+      7,
+      0.27
+     ],
+     [
+      8,
+      0.27
+     ],
+     [
+      9,
+      0.27
+     ],
+     [
+      10,
+      0.25
+     ],
+     [
+      11,
+      0.25
+     ],
+     [
+      12,
+      0.25
+     ],
+     [
+      13,
+      0.25
+     ],
+     [
+      14,
+      0.27
+     ],
+     [
+      15,
+      0.3
+     ],
+     [
+      16,
+      0.35
+     ],
+     [
+      17,
+      0.39
+     ],
+     [
+      18,
+      0.39
+     ],
+     [
+      19,
+      0.39
+     ],
+     [
+      20,
+      0.36
+     ],
+     [
+      21,
+      0.33
+     ],
+     [
+      22,
+      0.3
+     ],
+     [
+      23,
+      0.27
+     ]
+    ],
+    "avg": 0.293,
+    "cheapest3": {
+     "from": 10,
+     "to": 13,
+     "avg": 0.25
+    },
+    "dearest3": {
+     "from": 17,
+     "to": 20,
+     "avg": 0.39
+    }
+   },
+   {
+    "date": "2026-11-09",
+    "hours": [
+     [
+      0,
+      0.28
+     ],
+     [
+      1,
+      0.28
+     ],
+     [
+      2,
+      0.28
+     ],
+     [
+      3,
+      0.27
+     ],
+     [
+      4,
+      0.27
+     ],
+     [
+      5,
+      0.28
+     ],
+     [
+      6,
+      0.35
+     ],
+     [
+      7,
+      0.45
+     ],
+     [
+      8,
+      0.48
+     ],
+     [
+      9,
+      0.45
+     ],
+     [
+      10,
+      0.42
+     ],
+     [
+      11,
+      0.39
+     ],
+     [
+      12,
+      0.36
+     ],
+     [
+      13,
+      0.39
+     ],
+     [
+      14,
+      0.41
+     ],
+     [
+      15,
+      0.48
+     ],
+     [
+      16,
+      0.61
+     ],
+     [
+      17,
+      0.74
+     ],
+     [
+      18,
+      0.68
+     ],
+     [
+      19,
+      0.58
+     ],
+     [
+      20,
+      0.45
+     ],
+     [
+      21,
+      0.39
+     ],
+     [
+      22,
+      0.36
+     ],
+     [
+      23,
+      0.3
+     ]
+    ],
+    "avg": 0.415,
+    "cheapest3": {
+     "from": 2,
+     "to": 5,
+     "avg": 0.273
+    },
+    "dearest3": {
+     "from": 16,
+     "to": 19,
+     "avg": 0.677
+    }
+   }
+  ]
+ },
+ "maas": {
+  "src": "Open-Meteo Flood API (GloFAS model), Maas grid cell north of Maastricht; a model estimate, not the Rijkswaterstaat gauge",
+  "unit": "m3/s",
+  "thresholds": {
+   "amber": 1000,
+   "red": 1500,
+   "note": "Rijkswaterstaat raises the Maas to heightened watch above about 1,000 m3/s at Sint Pieter and to high water above 1,500; July 2021 peaked near 3,300 (to confirm against the current RWS phases)"
+  },
+  "days": [
+   [
+    "2026-11-01",
+    59,
+    59
+   ],
+   [
+    "2026-11-02",
+    49.7,
+    49.8
+   ],
+   [
+    "2026-11-03",
+    43.8,
+    45.3
+   ],
+   [
+    "2026-11-04",
+    39.8,
+    40.1
+   ],
+   [
+    "2026-11-05",
+    37,
+    37
+   ],
+   [
+    "2026-11-06",
+    35.2,
+    35.2
+   ],
+   [
+    "2026-11-07",
+    33.8,
+    33.9
+   ],
+   [
+    "2026-11-08",
+    32.8,
+    33.1
+   ],
+   [
+    "2026-11-09",
+    32,
+    32.2
+   ],
+   [
+    "2026-11-10",
+    31.5,
+    31.8
+   ],
+   [
+    "2026-11-11",
+    31.1,
+    39.1
+   ],
+   [
+    "2026-11-12",
+    35.4,
+    57.5
+   ],
+   [
+    "2026-11-13",
+    41.4,
+    95.2
+   ],
+   [
+    "2026-11-14",
+    42.4,
+    152.1
+   ]
+  ]
+ },
+ "sky": {
+  "src": "NOAA SWPC planetary K-index forecast",
+  "now": {
+   "time": "2026-11-08T15:00:00",
+   "kp": 3.33
+  },
+  "max3d": {
+   "time": "2026-11-08T21:00:00",
+   "kp": 4.67,
+   "scale": "G1"
+  },
+  "note": "Kp 5 is a minor storm (aurora possible on the northern horizon from Limburg on a clear night), Kp 7 or more reached the Netherlands in May and October 2024"
+ },
+ "roads": {
+  "src": "NDW open data, actueel beeld (traffic measures and incidents in force), within 25 km of the town centre",
+  "asof": "2026-11-08T20:04:25.170Z",
+  "count": 20,
+  "highSeverity": 3,
+  "items": [
+   {
+    "km": 1.2,
+    "lat": 50.922,
+    "lon": 5.913,
+    "type": "RoadOrCarriagewayOrLaneManagement",
+    "cause": "roadMaintenance",
+    "mgmt": "carriagewayClosures",
+    "by": "Gemeente Heerlen",
+    "from": "2026-09-25",
+    "to": "2026-12-31",
+    "sev": "low"
+   },
+   {
+    "km": 2.7,
+    "lat": 50.944,
+    "lon": 5.919,
+    "type": "RoadOrCarriagewayOrLaneManagement",
+    "cause": "roadMaintenance",
+    "mgmt": "carriagewayClosures",
+    "by": "Gemeente Beekdaelen",
+    "from": "2026-11-06",
+    "to": "2026-12-18",
+    "sev": "medium"
+   },
+   {
+    "km": 2.8,
+    "lat": 50.935,
+    "lon": 5.962,
+    "type": "RoadOrCarriagewayOrLaneManagement",
+    "cause": "roadMaintenance",
+    "mgmt": "carriagewayClosures",
+    "by": "Gemeente Brunssum",
+    "from": "2026-10-30",
+    "to": "2026-12-31",
+    "sev": "low"
+   },
+   {
+    "km": 3.2,
+    "lat": 50.915,
+    "lon": 5.975,
+    "type": "GeneralObstruction",
+    "cause": "",
+    "mgmt": "",
+    "by": "NDW",
+    "from": "2026-11-08",
+    "to": "",
+    "sev": "unknown"
+   },
+   {
+    "km": 4,
+    "lat": 50.941,
+    "lon": 5.884,
+    "type": "RoadOrCarriagewayOrLaneManagement",
+    "cause": "constructionWork",
+    "mgmt": "carriagewayClosures",
+    "by": "Gemeente Beekdaelen",
+    "from": "2026-10-12",
+    "to": "2026-12-04",
+    "sev": "medium"
+   },
+   {
+    "km": 5.7,
+    "lat": 50.872,
+    "lon": 5.959,
+    "type": "RoadOrCarriagewayOrLaneManagement",
+    "cause": "roadMaintenance",
+    "mgmt": "laneClosures",
+    "by": "ZN-ZO [RWS Zuid-Nederland District Zuid-Oost]",
+    "from": "2025-09-05",
+    "to": "2027-03-30",
+    "sev": "medium"
+   },
+   {
+    "km": 9,
+    "lat": 50.962,
+    "lon": 5.821,
+    "type": "RoadOrCarriagewayOrLaneManagement",
+    "cause": "roadMaintenance",
+    "mgmt": "laneClosures",
+    "by": "ZN-ZO [RWS Zuid-Nederland District Zuid-Oost]",
+    "from": "2026-11-03",
+    "to": "2026-11-21",
+    "sev": "medium"
+   },
+   {
+    "km": 9.2,
+    "lat": 50.969,
+    "lon": 5.824,
+    "type": "RoadOrCarriagewayOrLaneManagement",
+    "cause": "roadMaintenance",
+    "mgmt": "carriagewayClosures",
+    "by": "Gemeente Sittard-Geleen",
+    "from": "2026-10-26",
+    "to": "2026-12-18",
+    "sev": "low"
+   },
+   {
+    "km": 9.2,
+    "lat": 50.964,
+    "lon": 5.818,
+    "type": "RoadOrCarriagewayOrLaneManagement",
+    "cause": "roadMaintenance",
+    "mgmt": "carriagewayClosures",
+    "by": "Gemeente Sittard-Geleen",
+    "from": "2026-09-28",
+    "to": "2026-11-13",
+    "sev": "low"
+   },
+   {
+    "km": 9.5,
+    "lat": 50.996,
+    "lon": 5.868,
+    "type": "RoadOrCarriagewayOrLaneManagement",
+    "cause": "roadMaintenance",
+    "mgmt": "carriagewayClosures",
+    "by": "Gemeente Sittard-Geleen",
+    "from": "2026-10-12",
+    "to": "2026-11-13",
+    "sev": "low"
+   },
+   {
+    "km": 10.7,
+    "lat": 51.006,
+    "lon": 5.861,
+    "type": "RoadOrCarriagewayOrLaneManagement",
+    "cause": "roadMaintenance",
+    "mgmt": "carriagewayClosures",
+    "by": "Gemeente Sittard-Geleen",
+    "from": "2026-09-24",
+    "to": "2027-04-16",
+    "sev": "low"
+   },
+   {
+    "km": 10.9,
+    "lat": 50.872,
+    "lon": 5.795,
+    "type": "RoadOrCarriagewayOrLaneManagement",
+    "cause": "roadMaintenance",
+    "mgmt": "carriagewayClosures",
+    "by": "Gemeente Valkenburg aan de Geul",
+    "from": "2026-09-24",
+    "to": "2026-11-15",
+    "sev": "medium"
+   }
+  ]
+ },
+ "rail": {
+  "src": "Rijden de Treinen, current disruptions (NS and regional operators)",
+  "total": 1,
+  "items": [],
+  "asof": "2026-11-08T20:04:25.966Z"
+ },
+ "notices": {
+  "src": "Officiële bekendmakingen (overheid.nl SRU), gemeente Heerlen notices that name Hoensbroek, last three weeks; street postcodes stripped",
+  "count": 0,
+  "items": []
+ },
+ "news": {
+  "src": "L1 Nieuws (L1 and 1Limburg), newest headlines",
+  "items": [
+   {
+    "id": "3269058",
+    "t": "Taxibusje rijdt zich vast in berm, hulpdiensten halen persoon in rolstoel uit voertuig",
+    "url": "https://www.l1nieuws.nl/nieuws/3269058/taxibusje-rijdt-zich-vast-in-berm-hulpdiensten-halen-persoon-in-rolstoel-uit-voertuig"
+   },
+   {
+    "id": "3269000",
+    "t": "Paarden en honden in Bemelen gaan gezegende toekomst tegemoet",
+    "url": "https://www.l1nieuws.nl/nieuws/3269000/paarden-en-honden-in-bemelen-gaan-gezegende-toekomst-tegemoet"
+   },
+   {
+    "id": "3268852",
+    "t": "Vijftig leden rijvereniging Ravensbosch zijn kei in parcoursbouwen",
+    "url": "https://www.l1nieuws.nl/nieuws/3268852/vijftig-leden-rijvereniging-ravensbosch-zijn-kei-in-parcoursbouwen"
+   },
+   {
+    "id": "3268974",
+    "t": "Hardleerse bestuurder aangehouden in Urmond: 'Hij was ons niet onbekend'",
+    "url": "https://www.l1nieuws.nl/nieuws/3268974/hardleerse-bestuurder-aangehouden-in-urmond-hij-was-ons-niet-onbekend"
+   },
+   {
+    "id": "3268947",
+    "t": "Marechaussee vindt nepwapen in koffer na aanhouding voor identiteitsfraude",
+    "url": "https://www.l1nieuws.nl/nieuws/3268947/marechaussee-vindt-nepwapen-in-koffer-na-aanhouding-voor-identiteitsfraude"
+   },
+   {
+    "id": "3268850",
+    "t": "Cargovliegtuig MAA moet rechtsomkeer maken na botsing met vogels",
+    "url": "https://www.l1nieuws.nl/nieuws/3268850/cargovliegtuig-maa-moet-rechtsomkeer-maken-na-botsing-met-vogels"
+   },
+   {
+    "id": "3268882",
+    "t": "Eindelijk duidelijkheid over onderzoek in Swolgen: politie treft lichaam aan",
+    "url": "https://www.l1nieuws.nl/nieuws/3268882/eindelijk-duidelijkheid-over-onderzoek-in-swolgen-politie-treft-lichaam-aan"
+   },
+   {
+    "id": "3268659",
+    "t": "Nieuwe opzet ponyrace Jumping Indoor Maastricht na zweepjesrel",
+    "url": "https://www.l1nieuws.nl/nieuws/3268659/nieuwe-opzet-ponyrace-jumping-indoor-maastricht-na-zweepjesrel"
+   },
+   {
+    "id": "3268845",
+    "t": "Renovatie Hoeg Brögk omvangrijker dan gedacht: brug in 2028 maanden dicht",
+    "url": "https://www.l1nieuws.nl/nieuws/3268845/renovatie-hoeg-brogk-omvangrijker-dan-gedacht-brug-in-2028-maanden-dicht"
+   },
+   {
+    "id": "3268826",
+    "t": "Herfstwandeling? Vergeet geen drinken mee te nemen, want de watertaps zijn weg",
+    "url": "https://www.l1nieuws.nl/nieuws/3268826/herfstwandeling-vergeet-geen-drinken-mee-te-nemen-want-de-watertaps-zijn-weg"
+   },
+   {
+    "id": "3268828",
+    "t": "Verstappen zint op inhaalrace in São Paulo",
+    "url": "https://www.l1nieuws.nl/nieuws/3268828/verstappen-zint-op-inhaalrace-in-sao-paulo"
+   },
+   {
+    "id": "3268629",
+    "t": "Pinkpop volgt proces rondom erfgoedstatus met grote interesse: 'Eer dat we worden aangedragen'",
+    "url": "https://www.l1nieuws.nl/nieuws/3268629/pinkpop-volgt-proces-rondom-erfgoedstatus-met-grote-interesse-eer-dat-we-worden-aangedragen"
+   }
+  ],
+  "asof": "2026-11-08T20:04:28.213Z"
+ },
+ "updated": "2026-11-08",
+ "asof": "2026-11-08T20:04:28.213Z",
+ "town": "Hoensbroek",
+ "errors": [],
+ "note": "Parkstad daily-life feeds. The tool rewrites air, power, maas, sky, roads, rail, notices and news; the run writes flu, noise, woord (Limburgs word of the day, appended), culture (dated local events, confirmed), admin (dated household admin), roda (next fixtures) and shops. Town-centre coordinates only; no address or postcode is stored.",
+ "flu": null,
+ "noise": null,
+ "roda": [],
+ "shops": {
+  "koopzondag": "to confirm from gemeente Heerlen",
+  "weekmarkt": "to confirm: market days in Hoensbroek and Heerlen"
+ },
+ "culture": [
+  {
+   "date": "2026-11-11",
+   "t": "Elfde van de Elfde: the Vastelaovend season opens at 11:11; Sint Maarten lantern walks after dark",
+   "prio": true,
+   "src": [
+    [
+     "Calendar: fixed date",
+     ""
+    ]
+   ],
+   "verified": true
+  },
+  {
+   "date": "2026-11-14",
+   "t": "Sinterklaas national arrival on television; local arrivals follow on 15 and 21 Nov (see Out and about)",
+   "prio": false,
+   "verified": false,
+   "note": "to confirm the 2026 intocht date"
+  },
+  {
+   "date": "2027-02-07",
+   "end": "2027-02-09",
+   "t": "Vastelaovend 2027, Sunday to Shrove Tuesday; the big parades in Heerlen and Hoensbroek on Sunday and Monday",
+   "prio": true,
+   "verified": true,
+   "note": "Easter 2027 is 28 March, so carnival Sunday is 7 February"
+  },
+  {
+   "date": "2027-06-18",
+   "end": "2027-06-20",
+   "t": "Pinkpop 2027, Landgraaf",
+   "prio": true,
+   "verified": true,
+   "src": [
+    [
+     "Pinkpop: 18, 19 and 20 juni 2027",
+     "https://www.pinkpop.nl/"
+    ]
+   ]
+  }
+ ],
+ "admin": [
+  {
+   "date": "2027-01-01",
+   "t": "Dutch excise, energy tax and network tariffs change; the run refreshes fuel.json and energy.json",
+   "verified": true
+  },
+  {
+   "date": "2027-02-26",
+   "t": "BsGW combined municipal and water-board tax bill for 2027 arrives (late February)",
+   "verified": false,
+   "note": "to confirm the 2027 date from bsgw.nl"
+  }
+ ],
+ "woord": [
+  {
+   "date": "2026-11-08",
+   "word": "sjoen",
+   "meaning_nl": "mooi",
+   "meaning_en": "beautiful, lovely",
+   "example": "Wat e sjoen weer, vandaag.",
+   "example_en": "What lovely weather today.",
+   "note": "Heerlens and Hoensbroeks; the Dutch mooi is rarely heard in dialect",
+   "src": [
+    [
+     "Limburgs woordenboek (e-WLD)",
+     "https://e-wld.nl/"
+    ]
+   ]
+  }
+ ]
+}

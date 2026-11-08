@@ -208,6 +208,35 @@
     }
    ],
    "url": "https://www.ecdc.europa.eu/en/public-health-events"
+  },
+  {
+   "id": "maas-glofas",
+   "name": "Maas discharge north of Maastricht, GloFAS model",
+   "threshold": "amber above 1,000 m³/s, red above 1,500 (Rijkswaterstaat heightened watch and high water, to confirm)",
+   "rule": "local-maas",
+   "status": "green",
+   "src": "Open-Meteo Flood API (GloFAS), local.json",
+   "history": [
+    {
+     "date": "2026-11-08",
+     "status": "green",
+     "t": "The model puts the Maas near 33 m³/s on 8 Nov with a seven-day maximum of about 152 m³/s after midweek rain. [GloFAS]"
+    }
+   ]
+  },
+  {
+   "id": "flu-nl",
+   "name": "Flu-like illness in the Netherlands, Nivel sentinel rate",
+   "threshold": "amber at or above 58 per 100,000 for one week (the Dutch epidemic line), red when RIVM declares an epidemic (two weeks above the line with virus confirmed)",
+   "status": "green",
+   "src": "RIVM griep actueel and Nivel Peilstations weekly",
+   "history": [
+    {
+     "date": "2026-11-08",
+     "status": "green",
+     "t": "Provisional: opened 8 Nov before the season; the run reads the weekly Nivel rate from RIVM's griep page and sets the status from it."
+    }
+   ]
   }
  ]
 }

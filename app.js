@@ -15,7 +15,7 @@
   var PARTS = ["front","news","money","reading","watch","home"].map(function (k) { return PART_DEF[k]; });
   function setPartOrder(weekend) { PARTS = (weekend ? ["front","reading","news","money","watch","home"] : ["front","news","money","reading","watch","home"]).map(function (k) { return PART_DEF[k]; }); }
   function pn(cls) { var i = PARTS.map(function (p) { return p[0]; }).indexOf(cls); return "Part " + i; }
-  var TIERS = { news: ["world","hybrid","europe","countries","euregio","army","nato","deftech","frontier","nl"], money: ["markets","fx","fuel","rates"], watch: ["board","numbers","horizon","threads","novel","congress-sec","releases","sota","forecasts"], reading: ["feature","research","philosophy","depth","ttpsec","aperture"], home: ["afnorth","offduty","dutch","snow","hockey","week","coming","weather","countdown","tv","calendar","year"] };
+  var TIERS = { news: ["world","hybrid","europe","countries","euregio","army","nato","deftech","frontier","nl"], money: ["markets","fx","fuel","rates"], watch: ["board","numbers","horizon","threads","novel","congress-sec","releases","sota","forecasts"], reading: ["feature","research","philosophy","depth","ttpsec","aperture"], home: ["local","afnorth","offduty","dutch","snow","hockey","week","coming","weather","countdown","tv","calendar","year"] };
   var EVCAT = { music:"Music", markets:"Markets", museums:"Museums", sport:"Sport", kids:"Kids", food:"Food", outdoors:"Outdoors", festival:"Festivals" };
   var SERIES_BY_LABEL = [["s&p 500","spx"],["dow","dji"],["nasdaq","ndx"],["russell","rut"],["aex","aex"],["stoxx","stoxx"],["dax","dax"],["brent","brent"],["dutch ttf","ttf"],["ttf","ttf"],["gold","gold"],["us 10-year","us10y"],["vix","vix"]];
   var HOME = { lat: 50.89, lon: 5.98, name: "Heerlen" };
@@ -518,6 +518,8 @@
     (ctx.congress || []).forEach(function (c) { if (c.deadline) ev.push({ date: c.deadline, cat: "pro", t: (c.title || c.post) + ": deadline", sub: c.next ? plain(c.next) : "Congress", src: "congress" }); });
     (ctx.exercises || []).forEach(function (x) { if (x.from) ev.push({ date: x.from, end: x.to !== x.from ? x.to : undefined, cat: "ex", t: x.name, sub: [x.lead, x.where].filter(Boolean).join(" · "), src: "exercises" }); });
     (((ctx.inbox || {}).items) || []).forEach(function (m) { if (m.date) ev.push({ date: m.date, end: m.end && m.end !== m.date ? m.end : undefined, cat: "mail", t: m.t + (m.time ? " · " + m.time : ""), sub: [m.src, m.note].filter(Boolean).join(" · "), src: "inbox", prio: true }); });
+    (((ctx.local || {}).culture) || []).forEach(function (e) { if (e.date) ev.push({ date: e.date, end: e.end && e.end !== e.date ? e.end : undefined, cat: "mkt", t: e.t.split(";")[0].split(":")[0], sub: e.t, src: "local", prio: e.prio === true }); });
+    (((ctx.local || {}).admin) || []).forEach(function (e) { if (e.date) ev.push({ date: e.date, cat: "deadline", t: e.t, sub: e.note || "Household admin", src: "local", prio: true }); });
     ((ctx.week && ctx.week.items) || []).forEach(function (w) { if (w.date) ev.push({ date: w.date, end: w.end && w.end !== w.date ? w.end : undefined, cat: "me", t: w.t + (w.time ? " · " + w.time : ""), sub: [w.note, w.url ? "Join: " + w.url : ""].filter(Boolean).join(" · "), src: "week", prio: true }); });
     var seen = {};
     return ev.filter(function (e) { if (!e.date || !/^\d{4}-\d{2}-\d{2}$/.test(e.date)) return false; var k = e.date + "|" + e.cat + "|" + e.t; if (seen[k]) return false; seen[k] = 1; return true; }).sort(function (a, b) { return a.date < b.date ? -1 : a.date > b.date ? 1 : 0; });
@@ -557,6 +559,7 @@
     if (e.src === "calendar") return e.cat !== "school" || e.sys === "afnorth";
     if (e.src === "canes" || e.src === "teams") return !!e.live || !!e.prio;
     if (e.src === "tv" || e.src === "inbox") return true;
+    if (e.src === "local") return !!e.prio;
     if (e.src === "events" || e.src === "edition") return !!e.prio;
     return false;
   }
@@ -726,7 +729,7 @@
   }
 
   /* ---------- health checks: when to remodel ---------- */
-  var PAGE_V = "7.3";
+  var PAGE_V = "7.4";
   function health(E, ctx, TD, words) {
     var rows = [], realToday = key(new Date());
     function add(name, level, detail) { rows.push([name, level, detail]); }
@@ -844,7 +847,7 @@
 
   /* ---------- 7.2: Coming up, the one personal list in the planner ---------- */
   function comingUp(PEV, ctx, TD) {
-    var end = addDays(TD, 30), rows = (PEV || []).filter(function (e) { return (e.end || e.date) >= TD && e.date <= end && (e.src === "week" || e.src === "deadlines" || e.src === "career" || (e.src === "inbox" && !/^(AFNORTH|PTA|CYS) · /.test(e.sub))); });
+    var end = addDays(TD, 30), rows = (PEV || []).filter(function (e) { return (e.end || e.date) >= TD && e.date <= end && (e.src === "week" || e.src === "deadlines" || e.src === "career" || (e.src === "inbox" && !/^(AFNORTH|PTA|CYS) · /.test(e.sub)) || (e.src === "local" && e.cat === "deadline")); });
     var h = '<section id="coming" class="home"><h2>Coming up <span class="num">yours, deadlines, mail, work · next 30 days</span></h2>';
     h += rows.length ? '<ul class="clean wn">' + rows.map(function (e) { var n = daysBetween(TD, e.date), span = e.end && e.end !== e.date; return '<li><span class="d">' + esc(DOW[pd(e.date).getDay()] + " " + fmtShort(e.date)) + (span ? " – " + esc(fmtShort(e.end)) : "") + '</span><span class="w"><span class="dot" style="background:' + catColor(e.cat) + '"></span><b>' + esc(e.t) + "</b> " + icsLink(e.t, e.date, e.end, e.sub) + '<span class="small">' + esc([e.sub, n <= 0 ? (span ? "under way" : "today") : n === 1 ? "tomorrow" : "in " + n + " days"].filter(Boolean).join(" · ")).replace(/Join: (https?:\/\/\S+)/, 'Join: <a href="$1" target="_blank" rel="noopener">$1</a>') + "</span></span></li>"; }).join("") + "</ul>" : quiet("Nothing of yours in the next 30 days. week.json, deadlines.json and the mail check feed this list.");
     h += '<p class="small">School, PTA and CYS dates are under AFNORTH; events near home are under Out and about; the world is on the Horizon. ' + (ctx.inbox && ctx.inbox.updated ? "Mail last checked " + esc(fmtShort(ctx.inbox.updated)) + "." : "") + "</p>";
@@ -868,6 +871,7 @@
     try {
       if (x.rule === "mean7" && x.series && ctx.worldSeries && ctx.worldSeries.series[x.series]) { var a = ctx.worldSeries.series[x.series].slice(-7); return a.length ? Math.round(a.reduce(function (t, p) { return t + p[1]; }, 0) / a.length) + " (7-day mean of " + a.length + ")" : ""; }
       if (x.rule === "incidents7" && ctx.incidents) { var TD = ctx._TD; return ctx.incidents.filter(function (i) { return daysBetween(i.date, TD) >= 0 && daysBetween(i.date, TD) < 7; }).length + " in 7 days"; }
+      if (x.rule === "local-maas" && ctx.local && ctx.local.maas) { var md = ctx.local.maas.days.filter(function (r) { return r[0] <= ctx._TD; }), mlast = md[md.length - 1], mmax = Math.max.apply(null, ctx.local.maas.days.map(function (r) { return r[2] || r[1]; })); return mlast ? Math.round(mlast[1]) + " m³/s, 7-day max " + Math.round(mmax) : ""; }
       if (x.rule === "fx" && ctx.fx) { var last = ctx.fx.series[ctx.fx.series.length - 1]; return (1 / last[1]).toFixed(4) + " on " + fmtShort(last[0]); }
     } catch (e) { return ""; }
     return "";
@@ -1071,6 +1075,62 @@
     return '<svg class="actv" viewBox="0 0 ' + W + " " + H + '" width="' + W + '" height="' + H + '" role="img" aria-label="Log entries per week, last 12 weeks"><title>Log entries per week, last 12 weeks</title>' + weeks.map(function (v, i) { var h = v ? Math.max(3, v / mx * (H - 2)) : 1.5; return '<rect x="' + (i * 10) + '" y="' + (H - h).toFixed(1) + '" width="7" height="' + h.toFixed(1) + '" rx="1" fill="' + (v ? CTRY_COL[c.id] : "var(--line)") + '"/>'; }).join("") + "</svg>";
   }
   /* priority countries: standing profile per country, then today's items for it */
+  /* Parkstad today: the local feeds in data/local.json (tools/local.js) plus what the run writes there */
+  var LKI_L = ["", "good", "good", "good", "moderate", "moderate", "moderate", "insufficient", "insufficient", "bad", "bad", "very bad"];
+  function localBlock(ctx, TD, PEV) {
+    var LO = ctx.local; if (!LO) return "";
+    var h = '<section id="local" class="home"><h2>Parkstad today <span class="num">air, power, roads, rails, the Maas, the sky, notices, news</span></h2>', tiles = [];
+    var A = LO.air, ad = A && A.days ? (A.days.filter(function (x) { return x.date === TD; })[0] || A.days[0]) : null, at = A && A.days ? A.days.filter(function (x) { return x.date > TD; })[0] : null;
+    if (ad) {
+      var lk = A.lki, pol = Object.keys(ad.pollen || {}).filter(function (k) { return ad.pollen[k] > 0; }).sort(function (a, b) { return ad.pollen[b] - ad.pollen[a]; });
+      tiles.push('<div class="tile"><div class="lbl">Air · ' + (lk ? "Heerlen" : "model") + '</div><div class="val">' + (lk ? '<span class="lki l' + Math.min(11, lk.value) + '">' + lk.value + "</span> <small>" + (LKI_L[Math.min(11, lk.value)] || "") + "</small>" : "AQI " + ad.aqi) + "</div><p>" + (lk ? "LKI at " + esc(fmtShort(lk.time.slice(0, 10))) + " " + esc(lk.time.slice(11, 16)) + " · " : "") + "PM2.5 " + ad.pm25 + " µg/m³ · UV max " + ad.uv + (pol.length ? " · pollen: " + pol.map(function (k) { return k + " " + ad.pollen[k]; }).join(", ") : " · no pollen") + "</p>" + (at ? "<p>Tomorrow AQI " + at.aqi + ", UV " + at.uv + (Object.keys(at.pollen || {}).some(function (k) { return at.pollen[k] > 0; }) ? ", pollen rising" : "") + "</p>" : "") + "</div>");
+    }
+    var P = LO.power, pday = P && P.days ? (P.days.filter(function (x) { return x.date > TD; })[0] || P.days.filter(function (x) { return x.date === TD; })[0] || P.days[P.days.length - 1]) : null;
+    if (pday && pday.hours && pday.hours.length) {
+      var mx = Math.max.apply(null, pday.hours.map(function (x) { return x[1]; })), mn = Math.min.apply(null, pday.hours.map(function (x) { return x[1]; }));
+      var bars = pday.hours.map(function (x) { var t = mx > mn ? (x[1] - mn) / (mx - mn) : 0; return '<i title="' + x[0] + ':00 €' + x[1].toFixed(3) + '" style="height:' + (4 + t * 24).toFixed(0) + 'px;background:' + (t < 0.33 ? "var(--up)" : t > 0.66 ? "var(--crit)" : "var(--muted)") + '"></i>'; }).join("");
+      tiles.push('<div class="tile"><div class="lbl">Power · day-ahead ' + (pday.date === TD ? "today" : pday.date === addDays(TD, 1) ? "tomorrow" : esc(fmtShort(pday.date))) + '</div><div class="val">€' + pday.avg.toFixed(3) + " <small>per kWh avg</small></div>" + (pday.cheapest3 ? "<p>cheapest " + pday.cheapest3.from + "–" + pday.cheapest3.to + ":00 at €" + pday.cheapest3.avg.toFixed(3) + (pday.dearest3 ? " · dearest " + pday.dearest3.from + "–" + pday.dearest3.to + ":00 at €" + pday.dearest3.avg.toFixed(3) : "") + "</p>" : "") + '<div class="pbar" role="img" aria-label="Hourly price, midnight to midnight">' + bars + '</div><p class="small">market price with VAT, before energy tax and margin</p></div>');
+    }
+    var Mz = LO.maas, mdays = Mz && Mz.days ? Mz.days : [];
+    if (mdays.length) {
+      var past = mdays.filter(function (r) { return r[0] <= TD; }), ml = past[past.length - 1] || mdays[0], fut = mdays.filter(function (r) { return r[0] > TD; }), fmax = fut.reduce(function (a, r) { return !a || (r[2] || r[1]) > (a[2] || a[1]) ? r : a; }, null), thr = Mz.thresholds || {};
+      var mst = ml[1] >= (thr.red || 1500) ? "crit" : ml[1] >= (thr.amber || 1000) ? "warn" : "up";
+      tiles.push('<div class="tile"><div class="lbl">Maas · model</div><div class="val"><span style="color:var(--' + mst + ')">' + Math.round(ml[1]) + '</span> <small>m³/s</small></div><p>' + (fmax ? "7-day peak " + Math.round(fmax[2] || fmax[1]) + " on " + esc(fmtShort(fmax[0])) + " · " : "") + "watch above " + (thr.amber || 1000).toLocaleString("en-GB") + ", high water above " + (thr.red || 1500).toLocaleString("en-GB") + '</p><p class="small">GloFAS estimate north of Maastricht, not the gauge</p></div>');
+    }
+    var S = LO.sky;
+    if (S && S.max3d) {
+      var kp = S.max3d.kp, kc = kp >= 7 ? "crit" : kp >= 5 ? "warn" : "muted";
+      tiles.push('<div class="tile"><div class="lbl">Sky · geomagnetic</div><div class="val"><span style="color:var(--' + kc + ')">Kp ' + kp.toFixed(1) + "</span>" + (S.max3d.scale ? ' <small>' + esc(S.max3d.scale) + "</small>" : "") + "</div><p>peak of the next three days, " + esc(nl2(S.max3d.time)) + (S.now ? " · now Kp " + S.now.kp.toFixed(1) : "") + "</p><p>" + (kp >= 5 ? "aurora possible low in the north on a clear night" : "no aurora chance; Kp 5 is the line") + "</p></div>");
+    }
+    var R = LO.roads;
+    if (R && R.items) {
+      var hs = R.items.filter(function (i) { return i.sev === "high"; }), n1 = R.items[0];
+      var MG = { carriagewayClosures: "closure", lanesDeviated: "lane shift", laneClosures: "lane closure", roadClosed: "road closed", contraflow: "contraflow" };
+      tiles.push('<div class="tile"><div class="lbl">Roads · 25 km</div><div class="val">' + R.count + " <small>measures in force</small></div><p>" + (n1 ? "nearest: " + (MG[n1.mgmt] || n1.mgmt || n1.cause || "work") + " by " + esc(n1.by || "unknown") + ", " + n1.km + " km, to " + esc(fmtShort(n1.to)) : "") + "</p>" + (hs.length ? "<p>" + hs.length + " high-severity: " + hs.slice(0, 2).map(function (i) { return esc(i.by) + " to " + esc(fmtShort(i.to)) + " (" + i.km + " km)"; }).join("; ") + "</p>" : "") + '<p class="small">NDW, incidents and works with coordinates; the feed carries no road numbers</p></div>');
+    }
+    var RL = LO.rail;
+    if (RL) tiles.push('<div class="tile"><div class="lbl">Rails · Limburg</div><div class="val">' + (RL.items && RL.items.length ? RL.items.length + " <small>disruption" + (RL.items.length > 1 ? "s" : "") + "</small>" : "Clear") + "</div>" + (RL.items && RL.items.length ? '<ul class="clean small">' + RL.items.slice(0, 3).map(function (x) { return '<li><a href="' + esc(x.url) + '" target="_blank" rel="noopener">' + esc(x.t) + "</a></li>"; }).join("") + "</ul>" : "<p>no disruption touching Limburg or the Aachen and Liège lines</p>") + "<p class=\"small\">" + RL.total + " nationwide · Rijden de Treinen, " + esc(nl2(RL.asof)) + "</p></div>");
+    if (LO.noise) tiles.push('<div class="tile"><div class="lbl">Noise · AWACS and Beek</div><div class="val">' + esc(LO.noise.h || "Flights") + "</div><p>" + rich(LO.noise.t || "") + "</p></div>");
+    h += '<div class="strip">' + tiles.join("") + "</div>";
+    var N = LO.notices;
+    if (N && N.items && N.items.length) h += '<h3>Notices for Hoensbroek <span class="small">gemeente Heerlen, last three weeks</span></h3><ul class="exl">' + N.items.slice(0, 8).map(function (x) { return '<li><span class="d">' + esc(fmtShort(x.date)) + '</span><span><a href="' + esc(x.url) + '" target="_blank" rel="noopener">' + esc(x.t) + "</a></span></li>"; }).join("") + "</ul>";
+    else if (N) h += '<p class="small">No gemeente notice named Hoensbroek in the last three weeks.</p>';
+    var NW = LO.news;
+    if (NW && NW.items && NW.items.length) h += '<h3>Limburg this morning <span class="small">L1, newest first</span></h3><ul class="clean small nwl">' + NW.items.slice(0, 6).map(function (x) { return '<li><a href="' + esc(x.url) + '" target="_blank" rel="noopener">' + esc(x.t) + "</a></li>"; }).join("") + "</ul>";
+    var CU = (LO.culture || []).filter(function (e) { return (e.end || e.date) >= TD; }).sort(function (a, b) { return a.date < b.date ? -1 : 1; }).slice(0, 5), AD = (LO.admin || []).filter(function (e) { return e.date >= TD; }).sort(function (a, b) { return a.date < b.date ? -1 : 1; }).slice(0, 3);
+    if (CU.length || AD.length || (LO.roda || []).length) {
+      h += '<h3>Local calendar <span class="small">Vastelaovend, Pinkpop, the Roda, the household admin</span></h3><ul class="wn">';
+      CU.forEach(function (e) { var n = daysBetween(TD, e.date); h += '<li><span class="d">' + esc(fmtShort(e.date) + (e.end ? " – " + fmtShort(e.end) : "")) + '</span><span class="w"><span class="dot" style="background:' + catColor("mkt") + '"></span>' + esc(e.t) + " " + icsLink(e.t.split(";")[0], e.date, e.end) + '<span class="small">' + (n <= 0 ? "today" : n === 1 ? "tomorrow" : "in " + n + " days") + (e.verified === false ? " · to confirm" : "") + "</span></span></li>"; });
+      (LO.roda || []).filter(function (g) { return g.date >= TD; }).slice(0, 3).forEach(function (g) { h += '<li><span class="d">' + esc(fmtShort(g.date)) + '</span><span class="w"><span class="dot" style="background:' + catColor("nfl") + '"></span>Roda JC ' + (g.home ? "vs " : "at ") + esc(g.opp) + (g.time ? " · " + esc(g.time) : "") + (g.home ? " · Parkstad Limburg Stadion" : "") + "</span></li>"; });
+      AD.forEach(function (e) { var n = daysBetween(TD, e.date); h += '<li><span class="d">' + esc(fmtShort(e.date)) + '</span><span class="w"><span class="dot" style="background:' + catColor("deadline") + '"></span>' + esc(e.t) + '<span class="small">in ' + n + " days" + (e.verified === false ? " · to confirm" : "") + "</span></span></li>"; });
+      h += "</ul>";
+    }
+    if (LO.shops && (LO.shops.koopzondag || LO.shops.weekmarkt)) h += '<p class="small"><b>Shops and markets:</b> ' + esc([LO.shops.koopzondag, LO.shops.weekmarkt].filter(Boolean).join(" · ")) + "</p>";
+    if (LO.flu) h += '<p class="small"><b>Flu:</b> ' + rich(LO.flu.t || "") + "</p>";
+    h += '<p class="small">Feeds refreshed ' + esc(nl2(LO.asof)) + " by tools/local.js" + (LO.errors && LO.errors.length ? " · failed: " + esc(LO.errors.map(function (e) { return e.split(":")[0]; }).join(", ")) : "") + ". Town-level only; no address is stored.</p>";
+    return h + "</section>";
+  }
+  function nl2(isoT) { try { var d = new Date(isoT); return DOW[d.getDay()] + " " + d.toLocaleTimeString("en-GB", { timeZone: "Europe/Amsterdam", hour: "2-digit", minute: "2-digit" }); } catch (e) { return ""; } }
   /* household electricity and gas: CBS average consumer tariffs, standing file data/energy.json */
   function energyBlock(ctx, sparks, TD) {
     var EN = ctx.energy, M = EN && EN.months ? EN.months.filter(function (x) { return x.elec && x.gas; }) : [];
@@ -1201,7 +1261,7 @@
   }
   function contentsBlock() {
     var tiers = PARTS.slice(1).map(function (p) { return [p[0], p[1], TIERS[p[0]]]; });
-    var SN = { world: "World", hybrid: "Hybrid", europe: "Europe", countries: "Priority countries", euregio: "Euregio", army: "Defence & Army", nato: "NATO & allies", deftech: "Defence tech", frontier: "Frontier", markets: "Markets", rates: "Rates", nl: "Netherlands", board: "The board", forecasts: "Forecasts", novel: "New in war", numbers: "Numbers and indicators", fx: "USD/EUR", fuel: "Pump price", threads: "Threads", horizon: "Horizon", "congress-sec": "Congress", releases: "Releases", sota: "State of the art", feature: "World feature", research: "Research", philosophy: "Philosophy", depth: "Army in depth", ttpsec: "Week in war", aperture: "Aperture", afnorth: "AFNORTH", offduty: "Out and about", dutch: "Taal", snow: "Snow", hockey: "Canes", week: "This week", coming: "Coming up", weather: "Weather", countdown: "Countdowns", tv: "TV", calendar: "Calendar", year: "Year ahead", school: "School year", season: "Season" };
+    var SN = { world: "World", hybrid: "Hybrid", europe: "Europe", countries: "Priority countries", euregio: "Euregio", army: "Defence & Army", nato: "NATO & allies", deftech: "Defence tech", frontier: "Frontier", markets: "Markets", rates: "Rates", nl: "Netherlands", board: "The board", forecasts: "Forecasts", novel: "New in war", numbers: "Numbers and indicators", fx: "USD/EUR", fuel: "Pump price", threads: "Threads", horizon: "Horizon", "congress-sec": "Congress", releases: "Releases", sota: "State of the art", feature: "World feature", research: "Research", philosophy: "Philosophy", depth: "Army in depth", ttpsec: "Week in war", aperture: "Aperture", local: "Parkstad", afnorth: "AFNORTH", offduty: "Out and about", dutch: "Taal", snow: "Snow", hockey: "Canes", week: "This week", coming: "Coming up", weather: "Weather", countdown: "Countdowns", tv: "TV", calendar: "Calendar", year: "Year ahead", school: "School year", season: "Season" };
     return '<h3>In this edition</h3><ol class="toc">' + tiers.map(function (t, i) { return '<li data-tier="' + t[0] + '" class="' + t[0] + '"><a href="#p-' + t[0] + '"><b>' + (i + 1) + " · " + esc(t[1]) + '</b></a><span class="tm"></span><span class="secs">' + t[2].map(function (id) { return '<a href="#' + id + '">' + esc(SN[id] || id) + "</a>"; }).join(" · ") + "</span></li>"; }).join("") + "</ol>";
   }
   function yearAhead(ctx, E, TD, today) {
@@ -1645,6 +1705,7 @@
     /* ===== Part 4 · Home and planning ===== */
     TIER_HTML.reading = h; h = "";
     h += part("home", pn("home"), "Home and planning", "Family, what is on nearby, the languages, the snow, the Canes, and the week and year ahead.", "p-home");
+    h += localBlock(ctx, TD, PEV);
     h += '<section id="afnorth" class="home"><h2>AFNORTH &amp; family</h2>';
     if (AF.intro) h += '<p class="small">' + rich(AF.intro) + "</p>";
     if (AF.rows && AF.rows.length) h += table(["Date", "Event", "Action"], AF.rows.map(function (r) { return '<tr class="' + (r[3] === "soon" ? "soon" : "") + '"><td class="d">' + esc(r[0]) + "</td><td>" + rich(r[1]) + "</td><td>" + rich(r[2]) + "</td></tr>"; }).join(""));
@@ -1681,7 +1742,9 @@
     /* taal */
     var ID = (ctx.idioms || []).filter(function (i) { return i.date <= TD; }).sort(function (a, b) { return a.date < b.date ? 1 : -1; });
     var LANG = { nl: "Dutch", fr: "French", it: "Italian" };
-    h += '<section id="dutch" class="home"><h2>Taal <span class="num">Dutch, French, Italian</span></h2>';
+    h += '<section id="dutch" class="home"><h2>Taal <span class="num">Dutch, French, Italian, Limburgs</span></h2>';
+    var WD = (((ctx.local || {}).woord) || []).filter(function (w) { return w.date <= TD; }).sort(function (a, b) { return a.date < b.date ? 1 : -1; })[0];
+    if (WD) h += '<div class="idiom li ' + fu(WD.date === TD ? "NEW" : "") + '"><div class="lbl">Limburgs word of the day</div><div class="w" lang="li">' + esc(WD.word) + "</div>" + badge(WD.date === TD ? "NEW" : "") + '<p class="lit">' + esc(WD.meaning_nl || "") + (WD.meaning_en ? " · " + esc(WD.meaning_en) : "") + "</p>" + (WD.example ? "<p><i>" + esc(WD.example) + "</i>" + (WD.example_en ? ' <span class="small">' + esc(WD.example_en) + "</span>" : "") + "</p>" : "") + (WD.note ? '<p class="small">' + esc(WD.note) + (WD.src && WD.src[0] && WD.src[0][1] ? ' · <a href="' + esc(WD.src[0][1]) + '" target="_blank" rel="noopener">source</a>' : "") + "</p>" : "") + "</div>";
     if (ID.length) {
       var cur = ID[0], b0 = cur.date === TD ? "NEW" : "";
       h += '<div class="idiom ' + fu(b0) + '"><div class="lbl">' + esc(LANG[cur.lang] || cur.lang) + " idiom of the day" + "</div><div class=\"w\" lang=\"" + esc(cur.lang) + '">' + esc(cur.phrase) + "</div>" + badge(b0) + '<p class="lit">“' + esc(cur.literal) + "”</p><p><b>" + esc(cur.meaning) + "</b></p>" + (cur.example ? '<blockquote lang="' + esc(cur.lang) + '">' + esc(cur.example) + "</blockquote>" : "") + '<p class="small">' + esc([cur.register, cur.note].filter(Boolean).join(" · ")) + "</p></div>";
@@ -2058,9 +2121,9 @@
     opt("data/incidents.json"), opt("data/bins.json"), opt("data/threads.json"), opt("data/horizon.json"),
     opt("data/fx.json"), opt("data/series.json"), opt("data/canes.json"),
     opt("data/conflicts.json"), opt("data/world-series.json"), opt("data/calendar.json"), opt("data/deadlines.json"),
-    opt("data/congress.json"), opt("data/exercises.json"), opt("data/releases.json"), opt("data/events.json"), opt("data/idioms.json"), opt("data/ski.json"), opt("data/search-index.json"), opt("data/land.json"), opt("data/week.json"), opt("data/corrections.json"), opt("data/research.json"), opt("data/teams.json"), opt("data/tv.json"), opt("data/countries.json"), opt("data/ceu.json"), opt("data/novel.json"), opt("data/indicators.json"), opt("data/forecasts.json"), opt("data/questions.json"), opt("data/ua-front.json"), opt("data/philosophy.json"), opt("data/inbox.json"), opt("data/fuel.json"), opt("data/energy.json")
+    opt("data/congress.json"), opt("data/exercises.json"), opt("data/releases.json"), opt("data/events.json"), opt("data/idioms.json"), opt("data/ski.json"), opt("data/search-index.json"), opt("data/land.json"), opt("data/week.json"), opt("data/corrections.json"), opt("data/research.json"), opt("data/teams.json"), opt("data/tv.json"), opt("data/countries.json"), opt("data/ceu.json"), opt("data/novel.json"), opt("data/indicators.json"), opt("data/forecasts.json"), opt("data/questions.json"), opt("data/ua-front.json"), opt("data/philosophy.json"), opt("data/inbox.json"), opt("data/fuel.json"), opt("data/energy.json"), opt("data/local.json")
   ]).then(function (r) {
-    ctx.fuel = r[34] && r[34].series ? r[34] : null; ctx.energy = r[35];
+    ctx.fuel = r[34] && r[34].series ? r[34] : null; ctx.energy = r[35]; ctx.local = r[36];
     ctx.novel = r[27]; ctx.indicators = r[28]; ctx.forecasts = r[29]; ctx.questions = r[30]; ctx.uaFront = r[31]; ctx.philosophy = r[32]; ctx.inbox = r[33];
     ctx.ceu = r[26] && r[26].countries; ctx.countriesMap = r[25] && r[25].map;
     ctx.week = r[20]; ctx.corrections = r[21]; ctx.research = r[22]; ctx.teams = r[23]; ctx.tv = r[24];
