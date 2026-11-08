@@ -441,7 +441,7 @@
      ],
      [
       2024,
-      2.0
+      2
      ],
      [
       2025,
@@ -582,6 +582,20 @@
        "https://www.spiegel.de/netzwelt/deutschland-nachrichtendienste-schalten-sich-offenbar-bei-cyberangriffen-auf-supermaerkte-ein-a-1f86ee1a-be83-497a-bc91-91da57d27fb7"
       ]
      ]
+    },
+    {
+     "date": "2026-11-08",
+     "t": "Pistorius told the Funke papers on 7 Nov that the ministry counts about 38,500 applications this year, 24% more than a year earlier, and that troop strength passed 190,000 in early October; Röwekamp and Söder called for a return to conscription.",
+     "src": [
+      [
+       "ZDFheute (AFP): Rückkehr zur Wehrpflicht: Pistorius sieht derzeit keinen Bedarf",
+       "https://www.zdfheute.de/politik/deutschland/pistorius-bundeswehr-wehrpflicht-freiwillige-anzahl-ausreichend-100.html"
+      ],
+      [
+       "t-online (dpa, AFP): Söder widerspricht Pistorius bei Wehrpflicht",
+       "https://www.t-online.de/nachrichten/deutschland/militaer-verteidigung/id_101518154/soeder-widerspricht-pistorius-bei-wehrpflicht.html"
+      ]
+     ]
     }
    ],
    "src": [
@@ -661,7 +675,7 @@
     "title": "President",
     "party": "United Russia holds the State Duma majority",
     "since": "2000-05-07",
-    "majority": "Fifth term began 7 May 2024, to 2030. State Duma election held 18 to 20 Sep 2026 (result to confirm from the CEC)",
+    "majority": "Fifth term began 7 May 2024, to 2030. United Russia won 349 of 450 State Duma seats in the 18–20 Sep 2026 election (140 list, 209 single-member), CEC chair Ella Pamfilova announced on 25 Sep; turnout 59.8%",
     "fm": "Sergei Lavrov",
     "defmin": "Andrei Belousov (since May 2024)",
     "president": "Prime Minister Mikhail Mishustin"
@@ -670,15 +684,15 @@
     "last": "2024-03-17",
     "due": "2030-03-31",
     "next": null,
-    "dateText": "Presidential election due March 2030; State Duma elected September 2026"
+    "dateText": "Presidential election due March 2030; State Duma elected 18–20 Sep 2026"
    },
    "nato": {
-    "spend": "SIPRI estimate 7.1% of GDP in 2024; federal budget 2025 allocated 13.5 trillion roubles to national defence, about 6.3% of GDP (to confirm against the 2026 budget law)",
+    "spend": "SIPRI estimate 7.5% of GDP in 2025, almost 16 trillion roubles; SIPRI puts planned 2026 military spending at 14.9 trillion roubles, 6.3% of GDP, after the 2026 budget law cut the national-defence line by more than 800 billion roubles from the 12.9 trillion draft. The 2027–29 draft budget went to the Duma on 30 Sep 2026",
     "posture": [
-     "Leningrad and Moscow military districts re-established 1 Mar 2024 facing Finland, the Baltics and Poland (to confirm current formations)",
+     "Leningrad and Moscow military districts re-established by Presidential Decree No. 141 of 26 Feb 2024, in force 1 Mar 2024, facing Finland, the Baltics and Poland",
      "Baltic Fleet and the 11th Army Corps in Kaliningrad",
      "Northern Fleet and the Bastion in the High North; see the Arctic theatre",
-     "Non-strategic nuclear weapons stationed in Belarus since 2023; Oreshnik deployment to Belarus announced (status to confirm)"
+     "Non-strategic nuclear weapons stationed in Belarus since 2023; the Belarusian defence ministry said an Oreshnik unit “began performing combat duty tasks” on 30 Dec 2025 (the state's own words)"
     ]
    },
    "spend": {
@@ -689,20 +703,24 @@
      ],
      [
       2022,
-      4.0
+      4.6
      ],
      [
       2023,
-      5.9
+      5.3
      ],
      [
       2024,
-      7.1
+      6.9
+     ],
+     [
+      2025,
+      7.5
      ]
     ],
-    "src": "SIPRI Military Expenditure Database, April 2025 release (to confirm)",
-    "note": "SIPRI estimate of military expenditure as a share of GDP; NATO publishes no figure for Russia.",
-    "verified": false
+    "src": "SIPRI Military Expenditure Database, April 2026 release",
+    "note": "SIPRI estimate of military expenditure as a share of GDP; SIPRI revises past years, and NATO publishes no figure for Russia.",
+    "verified": true
    },
    "stance": [
     {
@@ -711,7 +729,7 @@
     },
     {
      "k": "Arms control",
-     "t": "New START expired 5 Feb 2026 with no successor treaty in force (to confirm any interim understanding)."
+     "t": "New START expired on 5 Feb 2026 with no successor treaty in force; Foreign Minister Lavrov said on 11 Feb 2026 that Russia will keep to the central limits as long as the US does."
     },
     {
      "k": "NATO",
@@ -719,21 +737,50 @@
     },
     {
      "k": "Economy",
-     "t": "Key rate, budget deficit and oil-and-gas revenue to be filled from the Bank of Russia and the Finance Ministry by the run; no figure is carried until sourced."
+     "t": "Bank of Russia key rate 14.00%, held on 23 Oct 2026 for the second meeting running; next decision 18 Dec 2026."
     }
    ],
    "blr": [],
    "log": [],
    "src": [
     [
-     "SIPRI: Trends in World Military Expenditure 2024 (April 2025)",
-     "https://www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024"
+     "Interfax: CEC announces final State Duma results, 25 Sep 2026",
+     "https://interfax.com/newsroom/top-stories/119293/"
+    ],
+    [
+     "SIPRI: A Budget for a Fifth Year of War (March 2026)",
+     "https://www.sipri.org/node/7698"
+    ],
+    [
+     "SIPRI Military Expenditure Database, April 2026 release (1949–2025), share of GDP",
+     "https://www.sipri.org/sites/default/files/SIPRI-Milex-data-1949-2025.xlsx"
+    ],
+    [
+     "SIPRI fact sheet: Trends in World Military Expenditure 2025 (April 2026)",
+     "https://www.sipri.org/sites/default/files/2026-04/2604_milex_2025.pdf"
+    ],
+    [
+     "Interfax: decree on the military-administrative division, 26 Feb 2024",
+     "https://www.interfax.ru/russia/947750"
+    ],
+    [
+     "Izvestia: Oreshnik complex in Belarus goes on combat duty",
+     "https://iz.ru/en/2018139/elizaveta-gritcenko-iuliia-leonova/oreshnik-belarus-complex-went-combat-duty"
+    ],
+    [
+     "Russian MFA statement on the expiry of New START (reproduced by Nukewatch)",
+     "https://nukewatch.org/new-and-updated-item/statement-of-the-ministry-of-foreign-affairs-of-russia-concerning-the-expiration-of-the-russia-us-new-start-treaty/"
+    ],
+    [
+     "Bank of Russia: key rate decision, 23 Oct 2026",
+     "https://www.cbr.ru/eng/press/pr/?file=23102026_133000Key_e.htm"
     ],
     [
      "Kremlin: inauguration of the President, 7 May 2024",
      "http://en.kremlin.ru/events/president/news/73986"
     ]
-   ]
+   ],
+   "updated": "2026-11-08"
   },
   {
    "id": "by",
@@ -745,7 +792,7 @@
     "title": "President",
     "party": "No party; Belaya Rus is the loyalist party",
     "since": "1994-07-20",
-    "majority": "Seventh term after the 26 Jan 2025 election; Prime Minister Alexander Turchin since March 2025 (to confirm)",
+    "majority": "Seventh term after the 26 Jan 2025 election; Prime Minister Alexander Turchin since 10 Mar 2025",
     "fm": "Maxim Ryzhenkov",
     "defmin": "Viktor Khrenin"
    },
@@ -756,35 +803,39 @@
     "dateText": "Presidential election due by early 2030; House of Representatives elected Feb 2024, next due 2029"
    },
    "nato": {
-    "spend": "About 1.2% of GDP (SIPRI estimate, to confirm)",
+    "spend": "SIPRI estimate 2.4% of GDP in 2025, up from 1.4% in 2021",
     "posture": [
-     "Union State with Russia; Regional Grouping of Forces; Russian non-strategic nuclear weapons stationed since 2023",
+     "Union State with Russia; Regional Grouping of Forces; Russian non-strategic nuclear weapons stationed since 2023; both defence ministries said an Oreshnik unit took up combat duty in Belarus on 30 Dec 2025",
      "Zapad-2025 held 12 to 16 Sep 2025 with Russia",
-     "Borders with Poland, Lithuania and Latvia: migration pressure since 2021, Polish crossings closed during Zapad-2025, Lithuanian closures over smuggling balloons in Oct 2025 (current status to confirm)"
+     "Borders with Poland, Lithuania and Latvia: migration pressure since 2021; Lithuania closed the Medininkai and Šalčininkai crossings over smuggling balloons at the end of Oct 2025 and reopened them on 20 Nov 2025 (status in Nov 2026 to confirm)"
     ]
    },
    "spend": {
     "pct": [
      [
       2021,
-      1.3
+      1.4
      ],
      [
       2022,
-      1.2
+      1.6
      ],
      [
       2023,
-      1.3
+      1.9
      ],
      [
       2024,
-      1.2
+      2
+     ],
+     [
+      2025,
+      2.4
      ]
     ],
-    "src": "SIPRI Military Expenditure Database (to confirm)",
-    "note": "SIPRI estimate; small and stable, the relevance is basing and borders, not budget.",
-    "verified": false
+    "src": "SIPRI Military Expenditure Database, April 2026 release",
+    "note": "SIPRI estimate; it has risen every year since 2021, though basing and borders matter more than the budget.",
+    "verified": true
    },
    "stance": [
     {
@@ -800,10 +851,23 @@
    "log": [],
    "src": [
     [
-     "SIPRI Military Expenditure Database",
-     "https://www.sipri.org/databases/milex"
+     "SIPRI Military Expenditure Database, April 2026 release (1949–2025), share of GDP",
+     "https://www.sipri.org/sites/default/files/SIPRI-Milex-data-1949-2025.xlsx"
+    ],
+    [
+     "Interfax: Turchin appointed Prime Minister of Belarus, 10 Mar 2025",
+     "https://www.interfax.com/newsroom/top-stories/110254/"
+    ],
+    [
+     "The War Zone: Russia claims Oreshnik now on combat duty in Belarus",
+     "https://www.twz.com/land/russias-claims-oreshnik-ballistic-missile-now-on-combat-duty-in-belarus"
+    ],
+    [
+     "LRT: Lithuanian government reopens border with Belarus earlier than planned",
+     "https://www.lrt.lt/en/news-in-english/19/2750234/lithuanian-government-reopens-border-with-belarus-earlier-than-planned"
     ]
-   ]
+   ],
+   "updated": "2026-11-08"
   },
   {
    "id": "cn",
@@ -824,7 +888,7 @@
     "dateText": "No national election; the 21st Party Congress is due in autumn 2027"
    },
    "nato": {
-    "spend": "Official defence budget 1.78 trillion yuan for 2025, up 7.2%; 2026 budget to confirm from the March 2026 NPC report. SIPRI estimate 1.7% of GDP in 2024",
+    "spend": "Official defence budget 1.91 trillion yuan for 2026, up 7% (1.78 trillion, up 7.2%, in 2025); SIPRI estimate 1.7% of GDP in 2025",
     "posture": [
      "Named by NATO a decisive enabler of Russia's war against Ukraine (Washington summit declaration, July 2024)",
      "Joint naval and air patrols with Russia, including in the Arctic and the Baltic approaches; see the Arctic theatre",
@@ -843,25 +907,29 @@
      ],
      [
       2023,
-      1.7
+      1.6
      ],
      [
       2024,
       1.7
+     ],
+     [
+      2025,
+      1.7
      ]
     ],
-    "src": "SIPRI Military Expenditure Database (to confirm)",
+    "src": "SIPRI Military Expenditure Database, April 2026 release",
     "note": "SIPRI estimate; the official budget understates total spending.",
-    "verified": false
+    "verified": true
    },
    "stance": [
     {
      "k": "Hungary",
-     "t": "Largest Chinese investment destination in Central Europe: BYD plant at Szeged and CATL at Debrecen under construction or starting (status to confirm); Budapest to Belgrade railway financed by China."
+     "t": "Largest Chinese investment destination in Central Europe: BYD began trial production at Szeged in late Jan 2026 and announced series assembly for the fourth quarter; CATL began trial cell production at Debrecen on 22 Sep 2026 (34 GWh in phase 1, 100 GWh planned); the Budapest to Belgrade railway is China-financed."
     },
     {
      "k": "Slovakia",
-     "t": "Strategic partnership signed during Fico's Beijing visit, 1 Nov 2024."
+     "t": "Strategic partnership agreed by Xi Jinping and Robert Fico in Beijing on 1 Nov 2024."
     },
     {
      "k": "Germany",
@@ -869,7 +937,7 @@
     },
     {
      "k": "Europe",
-     "t": "Dual-use export controls on drone components and rare earths tightened in 2024 and 2025 (to confirm current list)."
+     "t": "Licensing for seven rare earths in force since April 2025; MOFCOM Announcement No. 70 suspends the October 2025 rare-earth and battery-materials package until 10 Nov 2026, and No. 72 the US-only gallium, germanium and antimony ban until 27 Nov 2026 (drone-component controls: current list to confirm)."
     }
    ],
    "blr": [],
@@ -880,10 +948,35 @@
      "https://www.nato.int/cps/en/natohq/official_texts_227678.htm"
     ],
     [
-     "SIPRI Military Expenditure Database",
-     "https://www.sipri.org/databases/milex"
+     "SIPRI Military Expenditure Database, April 2026 release (1949–2025), share of GDP",
+     "https://www.sipri.org/sites/default/files/SIPRI-Milex-data-1949-2025.xlsx"
+    ],
+    [
+     "SIPRI fact sheet: Trends in World Military Expenditure 2025 (April 2026)",
+     "https://www.sipri.org/sites/default/files/2026-04/2604_milex_2025.pdf"
+    ],
+    [
+     "China Daily: defence budget pegged at 1.91 trillion yuan, up 7%",
+     "https://govt.chinadaily.com.cn/s/202603/11/WS69b0f3c5498e36855033b310/defense-budget-pegged-at-1-91t-yuan-up-7.html"
+    ],
+    [
+     "CATL: Hungarian plant begins trial production (company release via Kyodo)",
+     "https://kyodonewsprwire.jp/release/202609226408"
+    ],
+    [
+     "electrive: BYD begins trial production of passenger cars in Hungary",
+     "https://www.electrive.com/2026/02/02/byd-begins-trial-production-of-passenger-cars-in-hungary/"
+    ],
+    [
+     "Chinese Foreign Ministry: Xi Jinping meets Slovak Prime Minister Fico, 1 Nov 2024",
+     "https://www.fmprc.gov.cn/eng/xw/zyxw/202411/t20241101_11520047.html"
+    ],
+    [
+     "Materials Dispatch: China's November 2026 export-control cliff",
+     "https://www.materialsdispatch.com/en/blog/china-november-2026-export-control-cliff"
     ]
-   ]
+   ],
+   "updated": "2026-11-08"
   }
  ],
  "map": {
@@ -954,7 +1047,7 @@
     "k": "gas",
     "pts": [
      [
-      45.0,
+      45,
       19.6
      ],
      [

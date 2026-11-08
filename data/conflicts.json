@@ -6,7 +6,7 @@
    "id": "ru-ua",
    "name": "Russia–Ukraine",
    "lat": 48.5,
-   "lon": 35.0,
+   "lon": 35,
    "log": [
     {
      "date": "2026-11-02",
@@ -212,6 +212,40 @@
        3
       ]
      ]
+    },
+    {
+     "date": "2026-11-08",
+     "t": "The Air Force counted 164 drones and three Kh-59/69 missiles overnight into 8 Nov, with 137 drones shot down or suppressed and hits at 23 locations. Rostov region's governor said a drone damaged a bridge over the Mius on the highway from Rostov-on-Don to occupied Ukraine on 8 Nov. ISW reported that Ukrainian forces struck the Saratov oil refinery on the night of 6 to 7 Nov. Kyiv Independent added Yury Zhigarlovsky of the General Staff to Russia's Abu Dhabi delegation. [14, 24, 171, 19]",
+     "src": [
+      [
+       14,
+       "ADF neutralises 137 of 164 Russian drones overnight",
+       "Ukrinform",
+       "https://www.ukrinform.net/rubric-ato/4182552-adf-neutralises-137-of-164-russian-drones-overnight.html",
+       2
+      ],
+      [
+       24,
+       "Russia reports damage to bridge on highway connecting Rostov-on-Don with temporarily occupied Ukrainian territories",
+       "Ukrinform",
+       "https://www.ukrinform.net/rubric-ato/4182576-russia-reports-damage-to-bridge-on-highway-connecting-rostovondon-with-temporarily-occupied-ukrainian-territories.html",
+       2
+      ],
+      [
+       171,
+       "Russian Offensive Campaign Assessment, November 7, 2026",
+       "ISW and CTP (Critical Threats)",
+       "https://www.criticalthreats.org/analysis/russian-offensive-campaign-assessment-november-7-2026-6aefc4cc503e5",
+       2
+      ],
+      [
+       19,
+       "Russia to send senior diplomats, military officials to upcoming peace talks in Abu Dhabi",
+       "Kyiv Independent",
+       "https://kyivindependent.com/russia-to-send-senior-diplomats-military-officials-to-upcoming-peace-talks-in-abu-dhabi/",
+       3
+      ]
+     ]
     }
    ],
    "short": "Ukraine",
@@ -221,7 +255,7 @@
    "id": "iran",
    "name": "Iran, US and Hormuz",
    "lat": 26.5,
-   "lon": 56.0,
+   "lon": 56,
    "log": [
     {
      "date": "2026-11-02",
@@ -394,6 +428,26 @@
        3
       ]
      ]
+    },
+    {
+     "date": "2026-11-08",
+     "t": "The UAE National Guard's coast guard evacuated all 22 crew from a burning, unnamed cargo ship in the Gulf of Oman on 8 Nov. No source had named either tanker the Revolutionary Guards said hit mines on 7 Nov. [29, 26]",
+     "src": [
+      [
+       29,
+       "UAE rescues 22 after fire breaks out on cargo ship in Gulf of Oman",
+       "The National (WAM)",
+       "https://www.thenationalnews.com/news/uae/2026/11/08/uae-rescues-22-after-fire-breaks-out-on-cargo-ship-in-gulf-of-oman/",
+       3
+      ],
+      [
+       26,
+       "Iran's Revolutionary Guards say 2 oil tankers hit mines, caught fire near Strait of Hormuz",
+       "Anadolu Agency",
+       "https://www.aa.com.tr/en/middle-east/iran-s-revolutionary-guards-say-2-oil-tankers-hit-mines-caught-fire-near-strait-of-hormuz/4115596",
+       3
+      ]
+     ]
     }
    ],
    "short": "Iran",
@@ -403,7 +457,7 @@
    "id": "gaza-lebanon",
    "name": "Gaza and Lebanon",
    "lat": 32.5,
-   "lon": 35.0,
+   "lon": 35,
    "log": [
     {
      "date": "2026-11-03",
@@ -496,8 +550,8 @@
   {
    "id": "red-sea",
    "name": "Red Sea and Yemen",
-   "lat": 14.0,
-   "lon": 43.0,
+   "lat": 14,
+   "lon": 43,
    "log": [
     {
      "date": "2026-11-03",
@@ -606,6 +660,19 @@
        3
       ]
      ]
+    },
+    {
+     "date": "2026-11-08",
+     "t": "Coalition spokesman Col. Turki al-Maliki said on 8 Nov that Saudi air defences intercepted three Houthi ballistic missiles, two cruise missiles and one drone, two of the ballistic missiles and both cruise missiles aimed at Riyadh. [34]",
+     "src": [
+      [
+       34,
+       "Iran live updates, 7–8 Nov 2026",
+       "ABC News",
+       "https://abcnews.com/International/live-updates/iran-live-updates-trump-good-call-netanyahu/?id=137762456",
+       3
+      ]
+     ]
     }
    ],
    "short": "Red Sea",
@@ -614,8 +681,8 @@
   {
    "id": "taiwan",
    "name": "Taiwan Strait",
-   "lat": 24.0,
-   "lon": 121.0,
+   "lat": 24,
+   "lon": 121,
    "log": [
     {
      "date": "2026-11-02",
@@ -729,6 +796,19 @@
        3
       ]
      ]
+    },
+    {
+     "date": "2026-11-08",
+     "t": "Three F-16V Block 70s landed at Chihhang Air Base in Taitung on 8 Nov, bringing deliveries to five of 66. [44]",
+     "src": [
+      [
+       44,
+       "Second batch of F-16V Block 70 fighter jets arrives in Taiwan",
+       "Focus Taiwan (CNA)",
+       "https://focustaiwan.tw/politics/202611080004",
+       2
+      ]
+     ]
     }
    ],
    "short": "Taiwan",
@@ -738,7 +818,7 @@
    "id": "korea",
    "name": "Korean peninsula",
    "lat": 38.5,
-   "lon": 127.0,
+   "lon": 127,
    "log": [
     {
      "date": "2026-11-03",
@@ -966,8 +1046,8 @@
   {
    "id": "sahel",
    "name": "Sahel",
-   "lat": 14.0,
-   "lon": 0.0,
+   "lat": 14,
+   "lon": 0,
    "log": [
     {
      "date": "2026-11-04",
@@ -1002,7 +1082,7 @@
    "id": "drc",
    "name": "Eastern DRC",
    "lat": -1.5,
-   "lon": 29.0,
+   "lon": 29,
    "log": [
     {
      "date": "2026-11-04",
@@ -1102,7 +1182,7 @@
    "id": "venezuela",
    "name": "Venezuela and the Caribbean",
    "lat": 10.5,
-   "lon": -66.0,
+   "lon": -66,
    "log": [
     {
      "date": "2026-11-04",
@@ -1152,7 +1232,7 @@
    "short": "Arctic",
    "lp": "right",
    "lat": 74.5,
-   "lon": 40.0,
+   "lon": 40,
    "scope": "Northern Fleet activity and the Bastion; NATO High North exercises and Arctic Sentry; Greenland and the US defence areas; Svalbard; the Northern Sea Route and Russian and Chinese Arctic shipping; seabed cables and energy infrastructure in the Barents and Norwegian Seas.",
    "log": [
     {
@@ -1300,7 +1380,28 @@
    "lon": 20.6,
    "added": "2026-11-08",
    "scope": "Kosovo and KFOR; Bosnia and Herzegovina, EUFOR Althea and Republika Srpska; Serbia's ties with Russia and its arms purchases; North Macedonia, Montenegro and Albania as allies; the Belgrade to Pristina dialogue; Russian and Chinese influence operations in the region. Check KFOR and NATO, EUFOR, the EU special representative, Balkan Insight, RFE/RL and the national defence ministries.",
-   "log": []
+   "log": [
+    {
+     "date": "2026-11-04",
+     "t": "The European Commission's 2026 enlargement package of 4 Nov said “Serbia did not make any substantive progress in accession negotiations” and that Kosovo's reforms stalled amid a prolonged institutional crisis. On 4 Nov Serbia's interior ministry detained members of an elite police unit suspected of abusing people held in the garage of the government compound in Belgrade on 14–15 Aug 2025; Reuters counted nine active officers and one former officer. [172, 173]",
+     "src": [
+      [
+       172,
+       "2026 Enlargement Package shows that reform commitment delivers progress towards EU membership",
+       "European Commission",
+       "https://enlargement.ec.europa.eu/news/2026-enlargement-package-shows-reform-commitment-delivers-progress-towards-eu-membership-2026-11-04_en",
+       1
+      ],
+      [
+       173,
+       "Serbia detains police officers over alleged use of force against protesters",
+       "Reuters via Cyprus Mail",
+       "https://cyprus-mail.com/2026/11/04/serbia-detains-police-officers-over-alleged-use-of-force-against-protesters",
+       2
+      ]
+     ]
+    }
+   ]
   },
   {
    "id": "blacksea",
@@ -1311,7 +1412,55 @@
    "lon": 31.5,
    "added": "2026-11-08",
    "scope": "Romanian and Bulgarian coasts and airspace, drone debris and intercepts; shipping, the grain corridor, mines and the tanker strikes; Snake Island; Moldova, Transnistria and Gagauzia; Turkey and the straits under Montreux; the NATO Black Sea mine-countermeasures task group. Check the Romanian and Bulgarian defence ministries, Moldova's government, the Turkish defence ministry, Naval News and the Kyiv Independent.",
-   "log": []
+   "log": [
+    {
+     "date": "2026-11-05",
+     "t": "President Putin decorated Transnistrian leader Vadim Krasnoselsky in the Kremlin on 4 Nov; Moldova's Bureau for Reintegration Policies said on 5 Nov he faces a five-year ban on leaving the country on his return and called the award a Russian provocation aimed at hindering Moldova's European integration. France extended the mission of an Atlantique 2 patrol aircraft at Mihail Kogălniceanu, deployed since 18 Oct; Reuters counts at least nine cargo ships hit near the Romanian and Bulgarian coasts in October, with about 34 sailors dead or missing. [48, 49, 17]",
+     "src": [
+      [
+       48,
+       "Кишинев запретит Красносельскому покидать Молдову в течение 5 лет",
+       "NewsMaker",
+       "https://newsmaker.md/ru/kishinev-zapretit-krasnoselskomu-pokidat-moldovu-v-techenie-5-let-eto-reakcziya-na-nagrajdenie-putinym-v-moskve",
+       3
+      ],
+      [
+       49,
+       "Moldova Hits Kremlin-Backed Transnistria Leader With 5-Year Travel Ban After Putin Award",
+       "The Moscow Times",
+       "https://www.themoscowtimes.com/2026/11/05/moldova-hits-kremlin-backed-transnistria-leader-with-5-year-travel-ban-after-putin-award-a94183",
+       3
+      ],
+      [
+       17,
+       "France extends maritime patrol plane's stay in Black Sea after cargo ship attacks",
+       "Reuters via Internazionale",
+       "https://www.internazionale.it/ultime-notizie-reuters/2026/11/05/france-extends-maritime-patrol-plane-s-stay-in-black-sea-after-cargo-ship-attacks",
+       2
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-07",
+     "t": "Bulgaria's prosecution service said on 7 Nov that “badly damaged human remains were discovered” during debris clearing on a San Marino-flagged ship hit by a drone off Romania in October and brought to a Varna yard; DNA tests were ordered and Romania is also investigating. AFP identifies the ship as the Wine Trader. [16, 47]",
+     "src": [
+      [
+       16,
+       "Varna Prosecutors Investigate Human Remains Found on Drone-Damaged Ship",
+       "BTA",
+       "https://www.bta.bg/en/news/bulgaria/1242116-varna-prosecutors-investigate-human-remains-found-on-drone-damaged-ship",
+       2
+      ],
+      [
+       47,
+       "Human bodies found on ship struck by a drone in Black Sea",
+       "AFP via The Straits Times",
+       "https://www.straitstimes.com/world/europe/human-bodies-found-on-ship-struck-by-a-drone-in-black-sea",
+       2
+      ]
+     ]
+    }
+   ]
   }
  ]
 }
