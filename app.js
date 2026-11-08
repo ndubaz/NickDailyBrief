@@ -80,6 +80,7 @@
     h += "<h4>" + rich(it.h) + badge(it.badge) + (nu ? '<span class="badge nu">NEW USE</span>' : "") + (opts.inlineTag && it.tag ? ' <span class="tag">' + esc(it.tag) + "</span>" : "") + "</h4>";
     if (!opts.inlineTag && (it.tag || it.conf)) h += "<div>" + (it.tag ? '<span class="tag">' + esc(it.tag) + "</span>" : "") + (it.conf ? '<span class="conf">confidence: ' + esc(it.conf) + "</span>" : "") + "</div>";
     if (it.body) h += "<p>" + rich(it.body) + "</p>";
+    if (it.q && it.q.t) h += '<p class="lq"><span class="o" lang="' + esc(it.q.lang || "") + '">' + rich(it.q.t) + "</span>" + (it.q.en ? ' <span class="small">' + rich(it.q.en) + "</span>" : "") + cite(it.q.src) + "</p>";
     h += linkChips(it.links);
     if (it.sw) h += '<p class="sw-line"><b class="l">So what</b>' + rich(it.sw) + "</p>";
     if (it.fy) h += '<p class="sw-line"><b class="l">For you</b>' + rich(it.fy) + "</p>";
@@ -978,7 +979,7 @@
     return h + '<p class="small">Leader per domain on the stated public benchmark or published figure; the lab\'s country, not the benchmark\'s. Challenger and gap are on the same metric.</p></section>';
   }
   /* ---------- priority countries: map, spending, election clock, resilience grid, activity ---------- */
-  var CTRY_COL = { hu: "var(--p-sec)", sk: "var(--accent)", de: "var(--c-de)" }, CTRY_ISO = { hu: "HUN", sk: "SVK", de: "DEU" };
+  var CTRY_COL = { hu: "var(--p-sec)", sk: "var(--accent)", de: "var(--c-de)", ru: "var(--crit)", by: "var(--warn)", cn: "var(--c-mkt)" }, CTRY_ISO = { hu: "HUN", sk: "SVK", de: "DEU" };
   function ceuMap(ctx, W) {
     var geo = ctx.ceu || {}, M = ctx.countriesMap || {}, list = ctx.countries || [];
     W = Math.max(240, Math.round(W || 360)); var ph = W < 420, lon0 = ph ? 4.5 : 3.5, lon1 = ph ? 24.5 : 25.5, lat0 = 45.3, lat1 = 55.3, H = Math.round(W * (lat1 - lat0) / (lon1 - lon0) * (ph ? 1.9 : 1.5));
@@ -1047,22 +1048,22 @@
   function countriesBlock(E, ctx, TD) {
     var list = ctx.countries || [], its = E.countries || [], BLR = (ctx.countriesBLR || []);
     if (!list.length && !its.length) return "";
-    var h = '<section id="countries" class="news"><h2>Priority countries <span class="num">Hungary · Slovakia · Germany</span></h2>';
-    h += '<p class="small">Hungary and Slovakia are the assigned priority countries, Germany the secondary. Profiles change only when the facts do; items are today\'s news; numbered rows are NATO\'s seven baseline requirements.</p>';
+    var h = '<section id="countries" class="news"><h2>Priority countries <span class="num">Hungary · Slovakia · Germany · context: Russia, Belarus, China</span></h2>';
+    h += '<p class="small">Hungary and Slovakia are the assigned priority countries, Germany the secondary. Russia, Belarus and China are profiled as context for what they do to the flank and to those three. Profiles change only when the facts do; items are today\'s news and each priority-country item quotes one source in the country\'s language; numbered rows are NATO\'s seven baseline requirements.</p>';
     if (ctx.ceu) h += '<div class="panel"><div class="lbl">NATO sites and energy corridors</div><div class="chart" id="ceumap" style="min-height:200px"></div><p class="small maplegend"><span><i class="sq"></i>NATO headquarters</span><span><i class="tri"></i>NATO force</span><span><i class="ring"></i>nuclear plant</span><span><i class="dash"></i>TurkStream gas</span><span><i class="solid"></i>Druzhba oil</span></p></div>';
-    if (list.some(function (c) { return c.spend; })) h += '<div class="panel"><div class="lbl">Defence spending, share of GDP · NATO estimates' + (list.some(function (c) { return c.spend && c.spend.verified === false; }) ? " · to confirm" : "") + '</div><div class="chart" id="spendchart" style="min-height:180px"></div></div>';
+    if (list.some(function (c) { return c.spend; })) h += '<div class="panel"><div class="lbl">Defence spending, share of GDP · NATO estimates for allies, SIPRI for context countries' + (list.some(function (c) { return c.spend && c.spend.verified === false; }) ? " · to confirm" : "") + '</div><div class="chart" id="spendchart" style="min-height:180px"></div></div>';
     list.forEach(function (c) {
       var g = c.gov || {}, el = c.election || {}, nato = c.nato || {}, mine = its.filter(function (i) { return i.cc === c.id; }), log = (c.log || []).slice().sort(function (a, b) { return a.date < b.date ? 1 : -1; }).slice(0, 4);
-      var age = log.length ? daysBetween(log[0].date, TD) : null;
+      var age = log.length ? daysBetween(log[0].date, TD) : null, isCtx = c.role === "context";
       h += '<div class="ctry ' + fu(age === 0 ? "NEW" : "") + '" id="ctry-' + esc(c.id) + '"><div class="ctry-h"><b>' + esc(c.name) + '</b><span class="chip st tier">' + esc(c.role || "") + "</span>" + (c.verified === false ? '<span class="chip st">profile to confirm</span>' : "") + inToday("country", c.id) + badge(age === 0 ? "NEW" : age === 1 ? "UPDATED" : "") + '<span class="actw" title="Log entries per week, last 12 weeks">' + activityBars(c, TD) + "</span></div>";
       h += '<dl class="kv">';
       if (g.head) h += "<dt>Government</dt><dd>" + esc(g.head) + (g.title ? ", " + esc(g.title) : "") + (g.party ? " (" + esc(g.party) + ")" : "") + (g.since ? ", since " + esc(fmtLong(g.since)) : "") + (g.majority ? ". " + esc(g.majority) + "." : "") + (g.defmin ? " Defence: " + esc(g.defmin) + "." : "") + (g.fm ? " Foreign: " + esc(g.fm) + "." : "") + "</dd>";
       if (el.dateText || el.next) h += "<dt>Election</dt><dd>" + esc(el.dateText || "") + (el.next ? " · <b>" + daysBetween(TD, el.next) + " days</b> " + icsLink(c.name + " election", el.next) : "") + electionClock(c, TD) + "</dd>";
-      if (nato.member || nato.spend) h += "<dt>NATO</dt><dd>" + (nato.member ? "Member since " + esc(nato.member) + ". " : "") + esc(nato.spend || "") + "</dd>";
-      if ((nato.posture || []).length) h += "<dt>Posture</dt><dd>" + nato.posture.map(esc).join(" · ") + "</dd>";
+      if (nato.member || nato.spend) h += "<dt>" + (isCtx ? "Defence" : "NATO") + "</dt><dd>" + (nato.member ? "Member since " + esc(nato.member) + ". " : "") + esc(nato.spend || "") + "</dd>";
+      if ((nato.posture || []).length) h += "<dt>" + (isCtx ? "Facing NATO" : "Posture") + "</dt><dd>" + nato.posture.map(esc).join(" · ") + "</dd>";
       (c.stance || []).forEach(function (st) { h += "<dt>" + esc(st.k) + "</dt><dd>" + esc(st.t) + "</dd>"; });
       h += "</dl>";
-      if (BLR.length) h += blrGrid(c, BLR);
+      if (BLR.length && !isCtx) h += blrGrid(c, BLR);
       if ((c.blr || []).length) h += '<div class="blr">' + c.blr.slice().sort(function (a, b) { return a.n - b.n; }).map(function (b) { return '<div class="blr-r"><span class="blr-n" title="' + esc(BLR[b.n - 1] || "") + '">' + esc(b.n) + "</span><span>" + (BLR[b.n - 1] ? "<b>" + esc(BLR[b.n - 1]) + ".</b> " : "") + esc(b.t) + (b.date ? ' <span class="small">(' + esc(fmtShort(b.date)) + ")</span>" : "") + "</span></div>"; }).join("") + "</div>";
       if (log.length) h += '<ul class="clean small ctry-log">' + log.map(function (e) { return "<li><b>" + esc(fmtShort(e.date)) + (e.date.slice(0, 4) !== TD.slice(0, 4) ? " " + e.date.slice(0, 4) : "") + "</b> · " + esc(e.t) + ((e.src || []).length ? ' <a href="' + esc(e.src[0][1]) + '" target="_blank" rel="noopener" class="srcl">source</a>' : "") + "</li>"; }).join("") + "</ul>";
       h += mine.length ? '<div class="fug">' + nq() + mine.map(function (i) { return item(i); }).join("") + "</div>" : quiet("Nothing new from " + c.name + " today.", "nq");

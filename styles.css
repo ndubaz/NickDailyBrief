@@ -810,3 +810,7 @@ html.compact .panel,.compact .card{padding:var(--s2)}
 @media (max-width:480px){.rsp:not(.lead) p,.rsp:not(.lead) li{font-size:15.5px}.rsp:not(.lead) .ft{font-size:19px}}
 .wn li{margin-bottom:6px;padding-bottom:4px}
 @media (min-width:640px){.evrow{grid-template-columns:88px 1fr}}
+/* 7.3: quoted sentence in the country's language */
+.lq{margin:4px 0 0;padding-left:10px;border-left:3px solid var(--line);font-size:14.5px}
+.lq .o{font-style:italic}
+.lq .small{display:block;margin-top:1px}

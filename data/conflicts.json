@@ -1,6 +1,6 @@
 {
  "note": "The board: ten tracked theatres with a dated log of facts per theatre. The morning run appends one entry per theatre that had a reportable event (newest last) with the cited source rows copied into src, and never edits or deletes old entries. No status labels: the page derives activity from the dates. lat/lon place the marker on the schematic map. short = map label; lp = label position (above, below, left, right).",
- "updated": "2026-11-07",
+ "updated": "2026-11-08",
  "theatres": [
   {
    "id": "ru-ua",
@@ -1290,6 +1290,28 @@
      ]
     }
    ]
+  },
+  {
+   "id": "balkans",
+   "name": "Western Balkans",
+   "short": "Balkans",
+   "lp": "below",
+   "lat": 43.3,
+   "lon": 20.6,
+   "added": "2026-11-08",
+   "scope": "Kosovo and KFOR; Bosnia and Herzegovina, EUFOR Althea and Republika Srpska; Serbia's ties with Russia and its arms purchases; North Macedonia, Montenegro and Albania as allies; the Belgrade to Pristina dialogue; Russian and Chinese influence operations in the region. Check KFOR and NATO, EUFOR, the EU special representative, Balkan Insight, RFE/RL and the national defence ministries.",
+   "log": []
+  },
+  {
+   "id": "blacksea",
+   "name": "Black Sea and Moldova",
+   "short": "Black Sea",
+   "lp": "below",
+   "lat": 44.6,
+   "lon": 31.5,
+   "added": "2026-11-08",
+   "scope": "Romanian and Bulgarian coasts and airspace, drone debris and intercepts; shipping, the grain corridor, mines and the tanker strikes; Snake Island; Moldova, Transnistria and Gagauzia; Turkey and the straits under Montreux; the NATO Black Sea mine-countermeasures task group. Check the Romanian and Bulgarian defence ministries, Moldova's government, the Turkish defence ministry, Naval News and the Kyiv Independent.",
+   "log": []
   }
  ]
 }

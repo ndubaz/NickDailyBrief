@@ -1,6 +1,6 @@
 {
  "updated": "2026-11-08",
- "note": "Nick's assigned priority countries as an analyst: Hungary and Slovakia (priority), Germany (secondary). The run appends dated facts to each country's log and keeps the profile current. Facts and summaries only; the item in the edition carries the So what. verified:false marks a fact to confirm against an official page.",
+ "note": "Nick's assigned priority countries as an analyst: Hungary and Slovakia (priority), Germany (secondary). Russia, Belarus and China are context countries (7.3): profiled for what they do to the eastern flank and to the three countries above, logged the same way, no baseline-requirement grid. The run appends dated facts to each country's log and keeps the profile current. Facts and summaries only; the item in the edition carries the So what. verified:false marks a fact to confirm against an official page.",
  "blr": [
   "Continuity of government and critical services",
   "Resilient energy supplies",
@@ -650,6 +650,240 @@
     "note": "NATO estimates, share of GDP; 2014 to 2024 from the annual press releases, 2025 from the March 2026 report via press coverage; to confirm against the NATO table",
     "verified": false
    }
+  },
+  {
+   "id": "ru",
+   "name": "Russia",
+   "role": "context",
+   "verified": false,
+   "gov": {
+    "head": "Vladimir Putin",
+    "title": "President",
+    "party": "United Russia holds the State Duma majority",
+    "since": "2000-05-07",
+    "majority": "Fifth term began 7 May 2024, to 2030. State Duma election held 18 to 20 Sep 2026 (result to confirm from the CEC)",
+    "fm": "Sergei Lavrov",
+    "defmin": "Andrei Belousov (since May 2024)",
+    "president": "Prime Minister Mikhail Mishustin"
+   },
+   "election": {
+    "last": "2024-03-17",
+    "due": "2030-03-31",
+    "next": null,
+    "dateText": "Presidential election due March 2030; State Duma elected September 2026"
+   },
+   "nato": {
+    "spend": "SIPRI estimate 7.1% of GDP in 2024; federal budget 2025 allocated 13.5 trillion roubles to national defence, about 6.3% of GDP (to confirm against the 2026 budget law)",
+    "posture": [
+     "Leningrad and Moscow military districts re-established 1 Mar 2024 facing Finland, the Baltics and Poland (to confirm current formations)",
+     "Baltic Fleet and the 11th Army Corps in Kaliningrad",
+     "Northern Fleet and the Bastion in the High North; see the Arctic theatre",
+     "Non-strategic nuclear weapons stationed in Belarus since 2023; Oreshnik deployment to Belarus announced (status to confirm)"
+    ]
+   },
+   "spend": {
+    "pct": [
+     [
+      2021,
+      3.6
+     ],
+     [
+      2022,
+      4.0
+     ],
+     [
+      2023,
+      5.9
+     ],
+     [
+      2024,
+      7.1
+     ]
+    ],
+    "src": "SIPRI Military Expenditure Database, April 2025 release (to confirm)",
+    "note": "SIPRI estimate of military expenditure as a share of GDP; NATO publishes no figure for Russia.",
+    "verified": false
+   },
+   "stance": [
+    {
+     "k": "Ukraine",
+     "t": "Full-scale war since 24 Feb 2022; US-mediated talks in Abu Dhabi on 10 and 11 Nov 2026 with Medinsky leading the delegation (see the board)."
+    },
+    {
+     "k": "Arms control",
+     "t": "New START expired 5 Feb 2026 with no successor treaty in force (to confirm any interim understanding)."
+    },
+    {
+     "k": "NATO",
+     "t": "Nuclear doctrine revised Nov 2024 to cover attacks by a non-nuclear state supported by a nuclear power; the Alliance named Russia the most significant and direct threat at the 2022 Madrid summit and has repeated it since."
+    },
+    {
+     "k": "Economy",
+     "t": "Key rate, budget deficit and oil-and-gas revenue to be filled from the Bank of Russia and the Finance Ministry by the run; no figure is carried until sourced."
+    }
+   ],
+   "blr": [],
+   "log": [],
+   "src": [
+    [
+     "SIPRI: Trends in World Military Expenditure 2024 (April 2025)",
+     "https://www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024"
+    ],
+    [
+     "Kremlin: inauguration of the President, 7 May 2024",
+     "http://en.kremlin.ru/events/president/news/73986"
+    ]
+   ]
+  },
+  {
+   "id": "by",
+   "name": "Belarus",
+   "role": "context",
+   "verified": false,
+   "gov": {
+    "head": "Aleksandr Lukashenko",
+    "title": "President",
+    "party": "No party; Belaya Rus is the loyalist party",
+    "since": "1994-07-20",
+    "majority": "Seventh term after the 26 Jan 2025 election; Prime Minister Alexander Turchin since March 2025 (to confirm)",
+    "fm": "Maxim Ryzhenkov",
+    "defmin": "Viktor Khrenin"
+   },
+   "election": {
+    "last": "2025-01-26",
+    "due": "2030-01-31",
+    "next": null,
+    "dateText": "Presidential election due by early 2030; House of Representatives elected Feb 2024, next due 2029"
+   },
+   "nato": {
+    "spend": "About 1.2% of GDP (SIPRI estimate, to confirm)",
+    "posture": [
+     "Union State with Russia; Regional Grouping of Forces; Russian non-strategic nuclear weapons stationed since 2023",
+     "Zapad-2025 held 12 to 16 Sep 2025 with Russia",
+     "Borders with Poland, Lithuania and Latvia: migration pressure since 2021, Polish crossings closed during Zapad-2025, Lithuanian closures over smuggling balloons in Oct 2025 (current status to confirm)"
+    ]
+   },
+   "spend": {
+    "pct": [
+     [
+      2021,
+      1.3
+     ],
+     [
+      2022,
+      1.2
+     ],
+     [
+      2023,
+      1.3
+     ],
+     [
+      2024,
+      1.2
+     ]
+    ],
+    "src": "SIPRI Military Expenditure Database (to confirm)",
+    "note": "SIPRI estimate; small and stable, the relevance is basing and borders, not budget.",
+    "verified": false
+   },
+   "stance": [
+    {
+     "k": "Ukraine",
+     "t": "Staging ground for the Feb 2022 invasion from the north; no Belarusian units committed (to confirm)."
+    },
+    {
+     "k": "Kaliningrad and the Suwałki corridor",
+     "t": "See the Kaliningrad line thread: the land link between Belarus and Kaliningrad crosses Lithuania and Poland."
+    }
+   ],
+   "blr": [],
+   "log": [],
+   "src": [
+    [
+     "SIPRI Military Expenditure Database",
+     "https://www.sipri.org/databases/milex"
+    ]
+   ]
+  },
+  {
+   "id": "cn",
+   "name": "China",
+   "role": "context",
+   "verified": false,
+   "gov": {
+    "head": "Xi Jinping",
+    "title": "General Secretary and President",
+    "party": "Communist Party of China",
+    "since": "2012-11-15",
+    "majority": "Third term as General Secretary since Oct 2022; 21st Party Congress due autumn 2027",
+    "fm": "Wang Yi",
+    "defmin": "Dong Jun",
+    "president": "Premier Li Qiang"
+   },
+   "election": {
+    "dateText": "No national election; the 21st Party Congress is due in autumn 2027"
+   },
+   "nato": {
+    "spend": "Official defence budget 1.78 trillion yuan for 2025, up 7.2%; 2026 budget to confirm from the March 2026 NPC report. SIPRI estimate 1.7% of GDP in 2024",
+    "posture": [
+     "Named by NATO a decisive enabler of Russia's war against Ukraine (Washington summit declaration, July 2024)",
+     "Joint naval and air patrols with Russia, including in the Arctic and the Baltic approaches; see the Arctic theatre",
+     "Taiwan Strait and ADIZ activity: see the Taiwan theatre and the ADIZ indicator"
+    ]
+   },
+   "spend": {
+    "pct": [
+     [
+      2021,
+      1.6
+     ],
+     [
+      2022,
+      1.6
+     ],
+     [
+      2023,
+      1.7
+     ],
+     [
+      2024,
+      1.7
+     ]
+    ],
+    "src": "SIPRI Military Expenditure Database (to confirm)",
+    "note": "SIPRI estimate; the official budget understates total spending.",
+    "verified": false
+   },
+   "stance": [
+    {
+     "k": "Hungary",
+     "t": "Largest Chinese investment destination in Central Europe: BYD plant at Szeged and CATL at Debrecen under construction or starting (status to confirm); Budapest to Belgrade railway financed by China."
+    },
+    {
+     "k": "Slovakia",
+     "t": "Strategic partnership signed during Fico's Beijing visit, 1 Nov 2024."
+    },
+    {
+     "k": "Germany",
+     "t": "Germany's China strategy (July 2023) calls China partner, competitor and systemic rival; the Hamburg port terminal stake (COSCO 24.99%) stands."
+    },
+    {
+     "k": "Europe",
+     "t": "Dual-use export controls on drone components and rare earths tightened in 2024 and 2025 (to confirm current list)."
+    }
+   ],
+   "blr": [],
+   "log": [],
+   "src": [
+    [
+     "NATO Washington Summit Declaration, 10 July 2024",
+     "https://www.nato.int/cps/en/natohq/official_texts_227678.htm"
+    ],
+    [
+     "SIPRI Military Expenditure Database",
+     "https://www.sipri.org/databases/milex"
+    ]
+   ]
   }
  ],
  "map": {

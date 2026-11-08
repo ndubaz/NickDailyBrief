@@ -179,6 +179,34 @@
      "t": "No new flight hoax reported on 7 Nov after at least 17 flights on 6 Nov; Paris opened a probe. [13]"
     }
    ]
+  },
+  {
+   "id": "cyber-kev-7d",
+   "name": "Exploited vulnerabilities added to the CISA catalog, 7 days",
+   "threshold": "amber above 8, red above 15, or red on any one exploited in European critical infrastructure",
+   "status": "green",
+   "src": "CISA Known Exploited Vulnerabilities catalog (JSON feed)",
+   "history": [
+    {
+     "date": "2026-11-08",
+     "status": "green",
+     "t": "Three entries added 2 to 8 Nov (catalog 2026.11.06, 1,769 entries); the October weekly peak was six on 20 Oct. [CISA KEV]"
+    }
+   ]
+  },
+  {
+   "id": "ecdc-threats",
+   "name": "New EU/EEA communicable-disease threat in the ECDC weekly report",
+   "threshold": "amber when the report opens a new EU/EEA event with local transmission, red when WHO declares a public-health emergency or an EU country reports community transmission of a novel pathogen",
+   "status": "green",
+   "src": "ECDC Communicable Disease Threats Report, weekly",
+   "history": [
+    {
+     "date": "2026-11-08",
+     "status": "green",
+     "t": "Provisional: opened 8 Nov; the latest report listed by ECDC on 8 Nov is week 42 (10 to 16 Oct). The run reads each new report and sets the status from it. [ECDC CDTR]"
+    }
+   ]
   }
  ]
 }

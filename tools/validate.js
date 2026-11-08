@@ -12,7 +12,7 @@ const appSrc = fs.readFileSync(path.join(root, "app.js"), "utf8"), ids = Array.f
 const judge = /\b(likely|probably|unlikely|suggests|signals that|we assess|means that|so what|could lead to|is expected to)\b/i;
 function walk(o, fn, p) { p = p || ""; if (typeof o === "string") fn(o, p); else if (Array.isArray(o)) o.forEach((v, i) => walk(v, fn, p + "[" + i + "]")); else if (o && typeof o === "object") Object.keys(o).forEach((k) => walk(o[k], fn, p + "." + k)); }
 if (E) {
-  if (["6.0", "6.1", "6.5", "7.0", "7.1"].indexOf(String(E.v)) < 0) warns.push("edition v is " + E.v + ", expected 7.1");
+  if (["6.0", "6.1", "6.5", "7.0", "7.1", "7.2", "7.3"].indexOf(String(E.v)) < 0) warns.push("edition v is " + E.v + ", expected 7.3");
   (E.sources || []).forEach((x) => { if (x[4] != null && !(x[4] >= 1 && x[4] <= 4)) errors.push("source [" + x[0] + "] tier must be 1 to 4"); });
   if (!(E.sources || []).some((x) => x[4])) warns.push("no source tiers assigned");
   if (!/^\d{4}-\d{2}-\d{2}$/.test(E.date || "")) errors.push("edition date missing");
@@ -22,7 +22,16 @@ if (E) {
   if (E.brief) { if (E.brief.takeaways && !(E.brief.takeaways.length >= 3 && E.brief.takeaways.length <= 6)) errors.push("brief.takeaways must have 3 to 6 entries"); (E.brief.takeaways || []).forEach((t, i) => { if (!t.t) errors.push("brief.takeaways[" + i + "] has no t"); if (judge.test(t.t)) errors.push("brief.takeaways[" + i + "] uses assessment language"); }); }
   if (E.weekday) { const wd = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"][new Date(E.date + "T12:00:00").getDay()]; if (String(E.weekday).toLowerCase() !== wd.toLowerCase()) errors.push("weekday " + E.weekday + " does not match " + E.date + " (" + wd + ")"); }
   (E.five || []).forEach((f, i) => { if (f.part && ["world","sec","watch","pro","frontier","money","home","hockey"].indexOf(f.part) < 0) errors.push("five[" + i + "].part " + f.part + " is not a known part"); });
-  (E.countries || []).forEach((i, k) => { if (["hu", "sk", "de"].indexOf(i.cc) < 0) errors.push("countries[" + k + "].cc must be hu, sk or de"); if (!i.h || !i.body) errors.push("countries[" + k + "] needs h and body"); });
+  const LTLD = { hu: ["hu"], sk: ["sk"], de: ["de", "at", "ch"] }, SRCBY = {}; (E.sources || []).forEach((s) => { SRCBY[s[0]] = s; });
+  (E.countries || []).forEach((i, k) => {
+    if (["hu", "sk", "de", "ru", "by", "cn"].indexOf(i.cc) < 0) errors.push("countries[" + k + "].cc must be hu, sk, de, ru, by or cn");
+    if (!i.h || !i.body) errors.push("countries[" + k + "] needs h and body");
+    if (LTLD[i.cc] && String(E.v) >= "7.3") {
+      const q = i.q || {};
+      if (!q.t || !q.en || !q.src) errors.push("countries[" + k + "] (" + i.cc + ") needs q {lang, t, en, src}: one sentence quoted in the country's language, translated, with its source number");
+      else { const s = SRCBY[q.src]; let host = ""; try { host = new URL(s ? s[3] : "").hostname; } catch (e) {} if (!s) errors.push("countries[" + k + "].q.src " + q.src + " is not in sources"); else if (!LTLD[i.cc].some((t) => host.endsWith("." + t))) warns.push("countries[" + k + "].q.src " + q.src + " (" + host + ") is not a ." + LTLD[i.cc].join("/.") + " domain; quote a source in the country's language"); }
+    }
+  });
   const wk0 = E.today && E.today.weather && E.today.weather.week && E.today.weather.week[0]; if (wk0 && wk0[0] !== E.date) warns.push("today.weather.week starts " + wk0[0] + ", not " + E.date);
   (E.hybrid && E.hybrid.incidents || []).forEach((i) => { if (i.badge) { if (["NEW","UPDATED"].indexOf(i.badge) < 0) errors.push("incident badge " + i.badge); } });
   const src = new Set((E.sources || []).map((s) => s[0])), used = new Set();
