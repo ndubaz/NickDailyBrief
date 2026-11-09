@@ -12,7 +12,7 @@ const appSrc = fs.readFileSync(path.join(root, "app.js"), "utf8"), ids = Array.f
 const judge = /\b(likely|probably|unlikely|suggests|signals that|we assess|means that|so what|could lead to|is expected to)\b/i;
 function walk(o, fn, p) { p = p || ""; if (typeof o === "string") fn(o, p); else if (Array.isArray(o)) o.forEach((v, i) => walk(v, fn, p + "[" + i + "]")); else if (o && typeof o === "object") Object.keys(o).forEach((k) => walk(o[k], fn, p + "." + k)); }
 if (E) {
-  if (["6.0", "6.1", "6.5", "7.0", "7.1", "7.2", "7.3", "7.4"].indexOf(String(E.v)) < 0) warns.push("edition v is " + E.v + ", expected 7.4");
+  if (["6.0", "6.1", "6.5", "7.0", "7.1", "7.2", "7.3", "7.4", "7.5"].indexOf(String(E.v)) < 0) warns.push("edition v is " + E.v + ", expected 7.5");
   (E.sources || []).forEach((x) => { if (x[4] != null && !(x[4] >= 1 && x[4] <= 4)) errors.push("source [" + x[0] + "] tier must be 1 to 4"); });
   if (!(E.sources || []).some((x) => x[4])) warns.push("no source tiers assigned");
   if (!/^\d{4}-\d{2}-\d{2}$/.test(E.date || "")) errors.push("edition date missing");
@@ -59,7 +59,7 @@ if (E) {
   if (!seenLinks.size) warns.push("no item carries links to the trackers");
 }
 /* standing files */
-const files = { "local.json": "culture", "energy.json": "months", "inbox.json": "items", "indicators.json": "items", "forecasts.json": "items", "questions.json": "items", "novel.json": "items", "countries.json": "countries", "conflicts.json": "theatres", "threads.json": "threads", "horizon.json": "events", "incidents.json": "incidents", "exercises.json": "exercises", "events.json": "events", "idioms.json": "idioms", "congress.json": "items", "releases.json": "releases" };
+const files = { "feeds.json": "feeds", "local.json": "culture", "energy.json": "months", "inbox.json": "items", "indicators.json": "items", "forecasts.json": "items", "questions.json": "items", "novel.json": "items", "countries.json": "countries", "conflicts.json": "theatres", "threads.json": "threads", "horizon.json": "events", "incidents.json": "incidents", "exercises.json": "exercises", "events.json": "events", "idioms.json": "idioms", "congress.json": "items", "releases.json": "releases" };
 const TD = E ? E.date : null;
 Object.keys(files).forEach((f) => { const j = load(D(f)); if (!j) return; if (!Array.isArray(j[files[f]])) { errors.push(f + ": missing array " + files[f]); return; }
   const seen = new Set(); j[files[f]].forEach((x) => { if (x && x.id) { if (seen.has(x.id)) errors.push(f + " repeats id " + x.id); seen.add(x.id); } });

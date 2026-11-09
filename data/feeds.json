@@ -1,0 +1,571 @@
+{
+ "updated": "2026-11-09",
+ "note": "Fetch-first register (7.5). Every morning the run reads these before it searches: an RSS feed or a listing page costs a fetch, not a search. `for` names the section or theatre the feed serves; `tier` is the source tier the page shows. `blocked` lists hosts that refuse scripted clients so no fetch or search is wasted on them. Verified from the build environment on 9 Nov 2026; the run adds a feed when it finds one that works and moves a host to `blocked` after two failed mornings.",
+ "feeds": [
+  {
+   "id": "444",
+   "for": "countries:hu",
+   "title": "444.hu",
+   "url": "https://444.hu/feed",
+   "kind": "rss",
+   "lang": "hu",
+   "tier": 3
+  },
+  {
+   "id": "hvg",
+   "for": "countries:hu",
+   "title": "HVG",
+   "url": "https://hvg.hu/rss",
+   "kind": "rss",
+   "lang": "hu",
+   "tier": 3
+  },
+  {
+   "id": "index-hu",
+   "for": "countries:hu",
+   "title": "Index",
+   "url": "https://index.hu/24ora/rss/",
+   "kind": "rss",
+   "lang": "hu",
+   "tier": 3
+  },
+  {
+   "id": "portfolio",
+   "for": "countries:hu",
+   "title": "Portfolio",
+   "url": "https://www.portfolio.hu/rss/all.xml",
+   "kind": "rss",
+   "lang": "hu",
+   "tier": 3
+  },
+  {
+   "id": "telex",
+   "for": "countries:hu",
+   "title": "Telex",
+   "url": "https://telex.hu/rss",
+   "kind": "rss",
+   "lang": "hu",
+   "tier": 3
+  },
+  {
+   "id": "honvedelem",
+   "for": "countries:hu",
+   "title": "Hungarian MoD news",
+   "url": "https://honvedelem.hu/rss",
+   "kind": "rss",
+   "lang": "hu",
+   "tier": 1
+  },
+  {
+   "id": "dennikn",
+   "for": "countries:sk",
+   "title": "Denník N",
+   "url": "https://dennikn.sk/feed",
+   "kind": "rss",
+   "lang": "sk",
+   "tier": 3
+  },
+  {
+   "id": "aktuality",
+   "for": "countries:sk",
+   "title": "Aktuality",
+   "url": "https://www.aktuality.sk/rss/",
+   "kind": "rss",
+   "lang": "sk",
+   "tier": 3
+  },
+  {
+   "id": "mosr",
+   "for": "countries:sk",
+   "title": "Slovak MoD news",
+   "url": "https://www.mosr.sk/rss/",
+   "kind": "rss",
+   "lang": "sk",
+   "tier": 1
+  },
+  {
+   "id": "tagesschau",
+   "for": "countries:de",
+   "title": "tagesschau",
+   "url": "https://www.tagesschau.de/xml/rss2/",
+   "kind": "rss",
+   "lang": "de",
+   "tier": 3
+  },
+  {
+   "id": "spiegel",
+   "for": "countries:de",
+   "title": "Spiegel",
+   "url": "https://www.spiegel.de/schlagzeilen/index.rss",
+   "kind": "rss",
+   "lang": "de",
+   "tier": 3
+  },
+  {
+   "id": "faz-politik",
+   "for": "countries:de",
+   "title": "FAZ Politik",
+   "url": "https://www.faz.net/rss/aktuell/politik/",
+   "kind": "rss",
+   "lang": "de",
+   "tier": 3
+  },
+  {
+   "id": "sz-politik",
+   "for": "countries:de",
+   "title": "Süddeutsche Politik",
+   "url": "https://rss.sueddeutsche.de/rss/Politik",
+   "kind": "rss",
+   "lang": "de",
+   "tier": 3
+  },
+  {
+   "id": "zeit-politik",
+   "for": "countries:de",
+   "title": "Zeit Politik",
+   "url": "https://newsfeed.zeit.de/politik/index",
+   "kind": "rss",
+   "lang": "de",
+   "tier": 3
+  },
+  {
+   "id": "ukrinform",
+   "for": "board:ru-ua",
+   "title": "Ukrinform latest",
+   "url": "https://www.ukrinform.net/rss/block-lastnews",
+   "kind": "rss",
+   "lang": "en",
+   "tier": 2
+  },
+  {
+   "id": "ukrinform-ato",
+   "for": "board:ru-ua",
+   "title": "Ukrinform war rubric",
+   "url": "https://www.ukrinform.net/rubric-ato",
+   "kind": "page",
+   "lang": "en",
+   "tier": 2
+  },
+  {
+   "id": "navalnews",
+   "for": "board:blacksea",
+   "title": "Naval News",
+   "url": "https://www.navalnews.com/feed/",
+   "kind": "rss",
+   "lang": "en",
+   "tier": 3
+  },
+  {
+   "id": "balkaninsight",
+   "for": "board:balkans",
+   "title": "Balkan Insight",
+   "url": "https://balkaninsight.com/feed/",
+   "kind": "rss",
+   "lang": "en",
+   "tier": 3
+  },
+  {
+   "id": "eufor",
+   "for": "board:balkans",
+   "title": "EUFOR Althea",
+   "url": "https://www.euforbih.org/",
+   "kind": "page",
+   "lang": "en",
+   "tier": 1
+  },
+  {
+   "id": "minfin",
+   "for": "board:ru-ua",
+   "title": "Russian losses, index.minfin.com.ua",
+   "url": "https://index.minfin.com.ua/en/russian-invading/casualties/",
+   "kind": "page",
+   "lang": "en",
+   "tier": 2
+  },
+  {
+   "id": "defgov",
+   "for": "army:dod",
+   "title": "Defense.gov releases",
+   "url": "https://www.defense.gov/DesktopModules/ArticleCS/RSS.ashx?ContentType=1&Site=945&max=10",
+   "kind": "rss",
+   "lang": "en",
+   "tier": 1
+  },
+  {
+   "id": "armymil",
+   "for": "army:news",
+   "title": "Army.mil news",
+   "url": "https://www.army.mil/rss/static/85.xml",
+   "kind": "rss",
+   "lang": "en",
+   "tier": 1
+  },
+  {
+   "id": "usareur",
+   "for": "army:news",
+   "title": "US Army Europe and Africa",
+   "url": "https://www.europeafrica.army.mil/DesktopModules/ArticleCS/RSS.ashx?ContentType=1&Site=1037&max=10",
+   "kind": "rss",
+   "lang": "en",
+   "tier": 1
+  },
+  {
+   "id": "defnews",
+   "for": "deftech",
+   "title": "Defense News",
+   "url": "https://www.defensenews.com/arc/outboundfeeds/rss/?outputType=xml",
+   "kind": "rss",
+   "lang": "en",
+   "tier": 3
+  },
+  {
+   "id": "bdef",
+   "for": "deftech",
+   "title": "Breaking Defense",
+   "url": "https://breakingdefense.com/feed/",
+   "kind": "rss",
+   "lang": "en",
+   "tier": 3
+  },
+  {
+   "id": "nato-news",
+   "for": "nato",
+   "title": "NATO news page",
+   "url": "https://www.nato.int/cps/en/natohq/news.htm",
+   "kind": "page",
+   "lang": "en",
+   "tier": 1
+  },
+  {
+   "id": "hasc",
+   "for": "congress",
+   "title": "House Armed Services calendar",
+   "url": "https://armedservices.house.gov/calendar",
+   "kind": "page",
+   "lang": "en",
+   "tier": 1
+  },
+  {
+   "id": "congress-rss",
+   "for": "congress",
+   "title": "Congress.gov most-viewed bills",
+   "url": "https://www.congress.gov/rss/most-viewed-bills.xml",
+   "kind": "rss",
+   "lang": "en",
+   "tier": 1
+  },
+  {
+   "id": "nber",
+   "for": "research:economics",
+   "title": "NBER new working papers",
+   "url": "https://www.nber.org/rss/new.xml",
+   "kind": "rss",
+   "lang": "en",
+   "tier": 1
+  },
+  {
+   "id": "bruegel",
+   "for": "research:economics",
+   "title": "Bruegel",
+   "url": "https://www.bruegel.org/rss.xml",
+   "kind": "rss",
+   "lang": "en",
+   "tier": 2
+  },
+  {
+   "id": "arxiv-csai",
+   "for": "research:tech",
+   "title": "arXiv cs.AI",
+   "url": "https://rss.arxiv.org/rss/cs.AI",
+   "kind": "rss",
+   "lang": "en",
+   "tier": 1
+  },
+  {
+   "id": "nos",
+   "for": "nl",
+   "title": "NOS algemeen",
+   "url": "https://feeds.nos.nl/nosnieuwsalgemeen",
+   "kind": "rss",
+   "lang": "nl",
+   "tier": 3
+  },
+  {
+   "id": "nos-politiek",
+   "for": "nl",
+   "title": "NOS politiek",
+   "url": "https://feeds.nos.nl/nosnieuwspolitiek",
+   "kind": "rss",
+   "lang": "nl",
+   "tier": 3
+  },
+  {
+   "id": "nu",
+   "for": "nl",
+   "title": "nu.nl",
+   "url": "https://www.nu.nl/rss/Algemeen",
+   "kind": "rss",
+   "lang": "nl",
+   "tier": 3
+  },
+  {
+   "id": "limburger",
+   "for": "euregio",
+   "title": "De Limburger",
+   "url": "https://www.limburger.nl/rss",
+   "kind": "rss",
+   "lang": "nl",
+   "tier": 3
+  },
+  {
+   "id": "hbvl",
+   "for": "euregio",
+   "title": "Het Belang van Limburg",
+   "url": "https://www.hbvl.be/rss",
+   "kind": "rss",
+   "lang": "nl",
+   "tier": 3
+  },
+  {
+   "id": "vrt",
+   "for": "euregio",
+   "title": "VRT NWS",
+   "url": "https://www.vrt.be/vrtnws/nl.rss.articles.xml",
+   "kind": "rss",
+   "lang": "nl",
+   "tier": 3
+  },
+  {
+   "id": "rtbf",
+   "for": "euregio",
+   "title": "RTBF Info",
+   "url": "https://rss.rtbf.be/article/rss/highlight_rtbf_info.xml",
+   "kind": "rss",
+   "lang": "fr",
+   "tier": 3
+  },
+  {
+   "id": "wdr-rheinland",
+   "for": "euregio",
+   "title": "WDR Rheinland",
+   "url": "https://www1.wdr.de/nachrichten/rheinland/uebersicht-rheinland-100.feed",
+   "kind": "rss",
+   "lang": "de",
+   "tier": 3
+  },
+  {
+   "id": "ncsc-nl",
+   "for": "hybrid",
+   "title": "NCSC-NL advisories",
+   "url": "https://advisories.ncsc.nl/rss/advisories",
+   "kind": "rss",
+   "lang": "nl",
+   "tier": 1
+  },
+  {
+   "id": "cisa-kev",
+   "for": "indicators",
+   "title": "CISA KEV catalog",
+   "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+   "kind": "api",
+   "lang": "en",
+   "tier": 1
+  },
+  {
+   "id": "ecdc-events",
+   "for": "indicators",
+   "title": "ECDC public health events",
+   "url": "https://www.ecdc.europa.eu/en/public-health-events",
+   "kind": "page",
+   "lang": "en",
+   "tier": 1
+  },
+  {
+   "id": "rivm-griep",
+   "for": "local:flu",
+   "title": "RIVM griep actueel",
+   "url": "https://www.rivm.nl/griep-griepprik/actueel",
+   "kind": "page",
+   "lang": "nl",
+   "tier": 1
+  },
+  {
+   "id": "cepr",
+   "for": "research:economics",
+   "title": "CEPR / VoxEU",
+   "url": "https://cepr.org/rss.xml",
+   "kind": "rss",
+   "lang": "en",
+   "tier": 2
+  },
+  {
+   "id": "pew",
+   "for": "research:polsci",
+   "title": "Pew Research Center",
+   "url": "https://www.pewresearch.org/feed/",
+   "kind": "rss",
+   "lang": "en",
+   "tier": 2
+  },
+  {
+   "id": "warontherocks",
+   "for": "research:military",
+   "title": "War on the Rocks",
+   "url": "https://warontherocks.com/feed/",
+   "kind": "rss",
+   "lang": "en",
+   "tier": 3
+  },
+  {
+   "id": "mwi",
+   "for": "research:military",
+   "title": "Modern War Institute",
+   "url": "https://mwi.westpoint.edu/feed/",
+   "kind": "rss",
+   "lang": "en",
+   "tier": 2
+  },
+  {
+   "id": "aljazeera",
+   "for": "world",
+   "title": "Al Jazeera all",
+   "url": "https://www.aljazeera.com/xml/rss/all.xml",
+   "kind": "rss",
+   "lang": "en",
+   "tier": 3
+  },
+  {
+   "id": "bbc-world",
+   "for": "world",
+   "title": "BBC World",
+   "url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+   "kind": "rss",
+   "lang": "en",
+   "tier": 3
+  },
+  {
+   "id": "anadolu",
+   "for": "world",
+   "title": "Anadolu Agency world",
+   "url": "https://www.aa.com.tr/en/rss/default?cat=world",
+   "kind": "rss",
+   "lang": "en",
+   "tier": 3
+  },
+  {
+   "id": "xinhua-world",
+   "for": "countries:cn",
+   "title": "Xinhua world (state media, quote as the state's words)",
+   "url": "https://english.news.cn/rss/worldrss.xml",
+   "kind": "rss",
+   "lang": "en",
+   "tier": 4
+  },
+  {
+   "id": "ria",
+   "for": "countries:ru",
+   "title": "RIA Novosti (state media, quote as the state's words)",
+   "url": "https://ria.ru/export/rss2/archive/index.xml",
+   "kind": "rss",
+   "lang": "ru",
+   "tier": 4
+  },
+  {
+   "id": "vlada-sk",
+   "for": "countries:sk",
+   "title": "Slovak government news",
+   "url": "https://www.vlada.gov.sk/rss/",
+   "kind": "rss",
+   "lang": "sk",
+   "tier": 1
+  },
+  {
+   "id": "kormany",
+   "for": "countries:hu",
+   "title": "Hungarian government news page",
+   "url": "https://kormany.hu/hirek",
+   "kind": "page",
+   "lang": "hu",
+   "tier": 1
+  },
+  {
+   "id": "defone",
+   "for": "deftech",
+   "title": "Defense One",
+   "url": "https://www.defenseone.com/rss/all/",
+   "kind": "rss",
+   "lang": "en",
+   "tier": 3
+  },
+  {
+   "id": "twz",
+   "for": "deftech",
+   "title": "The War Zone",
+   "url": "https://www.twz.com/feed",
+   "kind": "rss",
+   "lang": "en",
+   "tier": 3
+  },
+  {
+   "id": "militarnyi",
+   "for": "deftech",
+   "title": "Militarnyi (single-source items stay low confidence)",
+   "url": "https://militarnyi.com/en/feed/",
+   "kind": "rss",
+   "lang": "en",
+   "tier": 4
+  },
+  {
+   "id": "dvids",
+   "for": "army:news",
+   "title": "DVIDS news",
+   "url": "https://www.dvidshub.net/rss/news",
+   "kind": "rss",
+   "lang": "en",
+   "tier": 1
+  },
+  {
+   "id": "euobserver",
+   "for": "europe",
+   "title": "EUobserver",
+   "url": "https://euobserver.com/rss",
+   "kind": "rss",
+   "lang": "en",
+   "tier": 3
+  }
+ ],
+ "blocked": [
+  {
+   "host": "sme.sk",
+   "note": "403 to scripted clients; use Denník N and Aktuality, search SME only for a specific quote"
+  },
+  {
+   "host": "understandingwar.org",
+   "note": "403; cite ISW through Ukrinform or the Kyiv Independent when needed"
+  },
+  {
+   "host": "rand.org, iiss.org, rusi.org, csis.org, cnas.org, sipri.org, clingendael.org, hcss.nl, swp-berlin.org",
+   "note": "no reachable feed; one search per institute per week at most, in the research tier"
+  },
+  {
+   "host": "shape.nato.int, jfcbs.nato.int, jfcnaples.nato.int (KFOR), mc.nato.int, awacs.nato.int",
+   "note": "NATO web application firewall returns 403; use nato.int/news and the national ministries"
+  },
+  {
+   "host": "war.gov, stripes.com",
+   "note": "403 or no feed; use defense.gov releases and army.mil"
+  },
+  {
+   "host": "cisa.gov advisories feed",
+   "note": "403; the KEV JSON works"
+  },
+  {
+   "host": "reuters.com, apnews.com, bloomberg.com",
+   "note": "paywalled or blocked; cite through the wire pick-ups in Ukrinform, NOS, tagesschau, Al Jazeera"
+  },
+  {
+   "host": "tass.com, mid.ru, eucom.mil, politico.eu, kyivindependent.com feed, thebarentsobserver.com feed",
+   "note": "blocked or no feed; Barents Observer and the Kyiv Independent are reachable as pages, one fetch each"
+  }
+ ]
+}

@@ -53,6 +53,7 @@ The edition is a daily snapshot. The standing files under `data/` are the Readbo
 | `data/congress.json` | Key defence bills, the budget cycle, confirmations, and the register of 38 watched posts (Army leadership, Joint Staff, combatant commands, Army four-star commands, Europe-based general officers) | Congress tracker in Profession, deadlines on the Planner |
 | `data/exercises.json` | NATO and allied exercises with dates | Exercise calendar, Planner |
 | `data/releases.json` | Dated AI and tech releases, plus the Friday state-of-the-art table | Frontier |
+| `data/feeds.json` | The fetch-first register: 59 RSS feeds, listing pages and APIs by section, and the hosts that block scripts; the run reads these before spending a web search | Not drawn; steers the run |
 | `data/local.json` | Parkstad daily life: air and pollen, day-ahead power, the Maas model, the Kp forecast, road works within 25 km, Limburg rail disruptions, gemeente notices for Hoensbroek, L1 headlines (tools/local.js), plus the Limburgs word, the local calendar, household admin, Roda fixtures, flu and flight noise written by the run | Parkstad today, Taal, the planner |
 | `data/energy.json` | CBS average consumer tariffs for electricity and gas, 36 months, VAT included | Markets: Household energy (all-in prices, typical home, fixed charges) |
 | `data/inbox.json` | Dated items the run pulls from the school, PTA and MWA mail: dates, titles, times and places only | From your mail, week board, calendar, What to watch |
