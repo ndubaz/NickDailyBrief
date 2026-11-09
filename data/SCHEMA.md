@@ -236,6 +236,8 @@ Written by `tools/uafront.js`: `{ "asof", "asofText", "countries": {ISO: rings},
 
 ### `data/novel.json`
 
+The page shows the last ten entries in full and folds the rest into a one-line index by month (7.5); nothing is deleted from the file.
+
 `{ "updated", "domains": {code: label}, "items": [ {"id":"YYYY-MM-DD-slug","date","theatre","actor","t","what","new","domains":[codes],"src":[[n,title,outlet,url,tier]],"edition","prev"} ] }`. Append-only. `what` carries the facts with citations into `src`; `new` is one or two sentences on the mechanism in the reporters' and actors' terms, with no assessment language (the validator rejects it). The page shows the section "New in war" in The watch after the board, with 90-day domain and theatre bars and one card per entry, newest first; a news item whose `links` include `novel:<id>` is marked NEW USE.
 
 ### `data/countries.json`

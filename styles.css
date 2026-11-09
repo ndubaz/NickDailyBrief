@@ -842,3 +842,4 @@ html.compact .panel,.compact .card{padding:var(--s2)}
 .redteam .premise{border-left:3px solid var(--crit);padding-left:10px}
 .redteam .premise b.l{font-family:var(--f-display);text-transform:uppercase;letter-spacing:.05em;font-size:13px;color:var(--crit);margin-right:var(--s1)}
 .redteam p{max-width:68ch}
+.nvold{margin-top:var(--s2)}.nvold .exl li{border-bottom:0;padding:2px 0}.nvold .chip{font-size:9px}

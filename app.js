@@ -971,7 +971,14 @@
       if (x.prev) c += '<p class="small">Develops <a href="#novel-' + esc(x.prev) + '">' + esc(((NV.items || []).filter(function (y) { return y.id === x.prev; })[0] || {}).t || x.prev) + "</a></p>";
       return c + "</div>";
     }).join("") + "</div>";
-    if (items.length > 10) h += '<p class="small">' + (items.length - 10) + " older entries stay in data/novel.json and the archive search.</p>";
+    /* the file is append-only; the page shows the last ten in full and keeps the rest as a folded one-line index, so cross-links to old entries still resolve */
+    var older = items.slice(10);
+    if (older.length) {
+      var byM = {}; older.forEach(function (x) { var m = x.date.slice(0, 7); (byM[m] = byM[m] || []).push(x); });
+      h += '<details class="srcfold nvold"><summary>' + older.length + " earlier " + (older.length === 1 ? "entry" : "entries") + ' <span class="small">· one line each, by month; the full text stays in data/novel.json and the archive search</span></summary>';
+      Object.keys(byM).sort().reverse().forEach(function (m) { h += '<div class="tl-group">' + MON[+m.slice(5, 7) - 1] + " " + m.slice(0, 4) + '</div><ul class="exl">' + byM[m].map(function (x) { return '<li id="novel-' + esc(x.id) + '"><span class="d">' + esc(fmtShort(x.date)) + '</span><span>' + (x.theatre ? '<span class="chip st">' + esc(th[x.theatre] || x.theatre) + "</span> " : "") + "<b>" + esc(x.t) + "</b>" + (x.domains && x.domains.length ? ' <span class="small">· ' + esc(x.domains.map(function (d) { return DOM[d] || d; }).join(", ")) + "</span>" : "") + "</span></li>"; }).join("") + "</ul>"; });
+      h += "</details>";
+    }
     return h + "</section>";
   }
   /* ---------- state of the art: one card per domain, grouped, with lead held, score, challenger and sources ---------- */
