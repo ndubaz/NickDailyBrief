@@ -71,6 +71,16 @@ The edition is a daily snapshot. The standing files under `data/` are the Readbo
 
 Editions in the 2.5, 3.0 and 4.0 formats still render: an edition whose `world` is an array shows under Developments, and the page falls back to the edition's own threads, horizon and school rows when a standing file is missing.
 
+## If the morning edition does not appear
+
+The scheduled run writes its commit and must push it to `main`; Vercel deploys nothing else. When a session is given a `claude/...` branch name it can end up pushing there instead. Check `git ls-remote --heads origin` for a branch whose last commit is today's edition, then fast-forward main to it and push:
+
+```bash
+git fetch origin && git merge --ff-only origin/<branch> && node tools/validate.js && git push origin main
+```
+
+The prompt (section 8) tells the run to push to main and to say "NOT ON MAIN" first when it could not.
+
 ## Keeping your own files current
 
 - **week.json:** add `{"date": "2026-11-20", "end": "2026-11-21", "t": "TDY Brussels", "time": "16:00–17:00", "note": "…", "url": "https://…"}` to `items`; `time` and `url` are optional and show on the board and the calendar. `act` is kept for compatibility and no longer changes the page.
