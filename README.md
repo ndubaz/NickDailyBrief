@@ -24,7 +24,7 @@ The sticky header carries one chip per tier and the "New only" toggle. Anything 
 
 Wording rules for the run are in `STYLE.md`. The exchange rate is shown everywhere as USD/EUR, euros per dollar. The three typefaces are self-hosted in `fonts/` and declared at the top of `styles.css`.
 
-`node tools/local.js` refreshes the Parkstad feeds; `node tools/uafront.js` refreshes the Ukraine front line from DeepState; `node tools/fuel.js` refreshes the Dutch pump prices from CBS. `node tools/validate.js` checks the latest edition and every standing file (citations, jump ids, source tiers, cross-link ids, the USD/EUR rule, the no-assessment rule for the World part, record and series lengths). The morning run executes it before committing.
+`node tools/local.js` refreshes the Parkstad feeds (each feed retries once, times out after 30 s and keeps its last good copy on failure); `node tools/uafront.js` refreshes the Ukraine front line from DeepState; `node tools/fuel.js` refreshes the Dutch pump prices from CBS. `node tools/validate.js` checks the latest edition and every standing file (citations, jump ids, source tiers, cross-link ids, the USD/EUR rule, the no-assessment rule for the World part, record and series lengths). The morning run executes it before committing.
 
 ## The memory model
 

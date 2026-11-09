@@ -830,3 +830,4 @@ html.compact .panel,.compact .card{padding:var(--s2)}
 .pbar{display:flex;align-items:flex-end;gap:2px;height:30px;margin:6px 0 2px}.pbar i{flex:1;display:block;border-radius:1px;min-height:3px}
 .idiom.li{border-color:var(--c-nl)}.idiom.li .lbl{color:var(--c-nl)}
 .nwl li{line-height:1.35}
+.xl.dead,.wpc.dead{opacity:.6;text-decoration:none;cursor:default}

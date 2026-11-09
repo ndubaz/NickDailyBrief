@@ -10,7 +10,8 @@ if ((process.env.HTTPS_PROXY || process.env.https_proxy) && !process.env.NODE_US
   process.exit(r.status == null ? 1 : r.status);
 }
 const out = path.join(__dirname, "..", "data", "fuel.json");
-function get(url) { return new Promise((res, rej) => { https.get(url, { headers: { "User-Agent": "readbook-run", Accept: "*/*" } }, (r) => { if (r.statusCode !== 200) return rej(new Error("HTTP " + r.statusCode)); let b = ""; r.setEncoding("utf8"); r.on("data", (d) => (b += d)); r.on("end", () => res(b)); }).on("error", rej); }); }
+function once(url) { return new Promise((res, rej) => { const q = https.get(url, { headers: { "User-Agent": "readbook-run", Accept: "*/*" }, timeout: 30000 }, (r) => { if (r.statusCode !== 200) { r.resume(); return rej(new Error("HTTP " + r.statusCode)); } let b = ""; r.setEncoding("utf8"); r.on("data", (d) => (b += d)); r.on("end", () => res(b)); r.on("error", rej); }); q.on("timeout", () => q.destroy(new Error("timeout after 30 s"))); q.on("error", rej); }); }
+function get(url) { return once(url).catch((e) => new Promise((r) => setTimeout(r, 3000)).then(() => once(url))); }
 const iso = (d) => d.toISOString().slice(0, 10);
 (async () => {
   const from = iso(new Date(Date.now() - 400 * 864e5)).replace(/-/g, "");

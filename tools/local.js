@@ -12,15 +12,16 @@ if ((process.env.HTTPS_PROXY || process.env.https_proxy) && !process.env.NODE_US
 }
 const out = path.join(__dirname, "..", "data", "local.json");
 const TOWN = { name: "Hoensbroek", lat: 50.92, lon: 5.93 }; /* town centre, public */
-function get(url, opts, hops) {
+function get(url, opts, hops) { return once(url, opts, hops).catch((e) => { if (/HTTP 4/.test(e.message)) throw e; return new Promise((r) => setTimeout(r, 3000)).then(() => once(url, opts, hops)); }); }
+function once(url, opts, hops) {
   opts = opts || {}; hops = hops || 0;
   return new Promise((res, rej) => {
-    https.get(url, { headers: { "User-Agent": "readbook-run", Accept: opts.accept || "*/*" } }, (r) => {
+    const q = https.get(url, { headers: { "User-Agent": "readbook-run", Accept: opts.accept || "*/*" }, timeout: 30000 }, (r) => {
       if ([301, 302, 303, 307, 308].includes(r.statusCode) && r.headers.location && hops < 4) { r.resume(); return res(get(new URL(r.headers.location, url).href, opts, hops + 1)); }
       if (r.statusCode !== 200) { r.resume(); return rej(new Error("HTTP " + r.statusCode + " " + url.slice(0, 80))); }
       const chunks = []; r.on("data", (d) => chunks.push(d)); r.on("error", rej);
       r.on("end", () => { let b = Buffer.concat(chunks); if (opts.gzip) { try { b = zlib.gunzipSync(b); } catch (e) { return rej(e); } } res(b.toString("utf8")); });
-    }).on("error", rej);
+    }); q.on("timeout", () => q.destroy(new Error("timeout after 30 s"))); q.on("error", rej);
   });
 }
 const iso = (d) => d.toISOString().slice(0, 10), today = iso(new Date()), round = (v, n) => v == null ? null : Math.round(v * Math.pow(10, n)) / Math.pow(10, n);
@@ -80,9 +81,9 @@ async function rail() {
 }
 async function notices() {
   const since = iso(new Date(Date.now() - 21 * 864e5));
-  const q = "https://repository.overheid.nl/sru?operation=searchRetrieve&version=2.0&maximumRecords=100&query=" + encodeURIComponent('dt.creator=="Heerlen" and dt.modified>=' + since);
-  const x = await get(q, { accept: "application/xml" }), recs = x.match(/<record>[\s\S]*?<\/record>/g) || [], items = [];
-  recs.forEach((r) => { const t = (/<dcterms:title>([^<]*)/.exec(r) || [])[1] || "", id = (/<dcterms:identifier>([^<]*)/.exec(r) || [])[1] || "", d = (/<dcterms:modified>([^<]*)/.exec(r) || [])[1] || ""; if (!t || !/Hoensbroek/i.test(t)) return; items.push({ id: id, date: d, t: t.replace(/\s+/g, " ").replace(/,?\s*\d{4}\s?[A-Z]{2}\s/, ", "), url: /^gmb-/.test(id) ? "https://zoek.officielebekendmakingen.nl/" + id + ".html" : "https://zoek.officielebekendmakingen.nl/zoeken/resultaat/?zkt=Uitgebreid&pst=Gemeenteblad&vrt=" + encodeURIComponent(t.slice(0, 40)) }); });
+  const q = "https://repository.overheid.nl/sru?operation=searchRetrieve&version=2.0&maximumRecords=50&query=" + encodeURIComponent('dt.title any "Hoensbroek" and dt.modified>=' + since);
+  const x = await get(q, { accept: "application/xml" }), recs = x.match(/<(?:\w+:)?record>[\s\S]*?<\/(?:\w+:)?record>/g) || [], items = [];
+  recs.forEach((r) => { const t = (/<dcterms:title>([^<]*)/.exec(r) || [])[1] || "", id = (/<dcterms:identifier>([^<]*)/.exec(r) || [])[1] || "", d = (/<dcterms:modified>([^<]*)/.exec(r) || [])[1] || ""; if (!t || !/Hoensbroek/i.test(t)) return; items.push({ id: id, date: d, t: t.replace(/\s+/g, " ").replace(/\b\d{4}\s?[A-Z]{2}\b/g, "").replace(/\s+,/g, ",").replace(/,\s*,/g, ",").replace(/\s{2,}/g, " ").trim(), url: /^gmb-/.test(id) ? "https://zoek.officielebekendmakingen.nl/" + id + ".html" : "https://zoek.officielebekendmakingen.nl/zoeken/resultaat/?zkt=Uitgebreid&pst=Gemeenteblad&vrt=" + encodeURIComponent(t.slice(0, 40)) }); });
   items.sort((a, b) => (a.date < b.date ? 1 : -1));
   return { src: "Officiële bekendmakingen (overheid.nl SRU), gemeente Heerlen notices that name Hoensbroek, last three weeks; street postcodes stripped", count: items.length, items: items.slice(0, 15) };
 }
@@ -94,7 +95,7 @@ async function news() {
 (async () => {
   const prev = fs.existsSync(out) ? JSON.parse(fs.readFileSync(out, "utf8")) : {}, data = Object.assign({}, prev), errors = [];
   for (const [k, fn] of [["air", air], ["power", power], ["maas", maas], ["sky", sky], ["roads", roads], ["rail", rail], ["notices", notices], ["news", news]]) {
-    try { data[k] = await fn(); } catch (e) { errors.push(k + ": " + e.message); }
+    try { data[k] = await fn(); data[k].fetched = new Date().toISOString(); } catch (e) { errors.push(k + ": " + e.message); if (data[k]) data[k].stale = true; }
   }
   data.updated = today; data.asof = new Date().toISOString(); data.town = TOWN.name; data.errors = errors;
   data.note = prev.note || "Parkstad daily-life feeds. The tool rewrites air, power, maas, sky, roads, rail, notices and news; the run writes flu, noise, woord (Limburgs word of the day, appended), culture (dated local events, confirmed), admin (dated household admin), roda (next fixtures) and shops. Town-centre coordinates only; no address or postcode is stored.";
