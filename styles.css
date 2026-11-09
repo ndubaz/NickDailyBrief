@@ -831,3 +831,5 @@ html.compact .panel,.compact .card{padding:var(--s2)}
 .idiom.li{border-color:var(--c-nl)}.idiom.li .lbl{color:var(--c-nl)}
 .nwl li{line-height:1.35}
 .xl.dead,.wpc.dead{opacity:.6;text-decoration:none;cursor:default}
+/* chips never widen the page */
+.nv-h .chip,.cf-top .chip,.ctry-h .chip,.inc-top .chip{white-space:normal;max-width:100%;overflow-wrap:anywhere;line-height:1.25}
