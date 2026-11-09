@@ -1696,12 +1696,8 @@
     if (DT.ttp) h += '<article class="feature" id="ttp"><h3 class="ft">' + esc(DT.ttp.title) + "</h3>" + (DT.ttp.body || []).map(function (p) { return "<p>" + rich(p) + "</p>"; }).join("") + "</article>";
     if (!DT.ttp) h += quiet("Written on Saturdays.");
     h += "</section>";
-    h += '<section id="aperture" class="reading"><h2>Aperture</h2><div class="ap">';
-    if (AP.contrarian) h += '<div class="ap-c"><div class="lbl">Contrarian read</div><p>' + rich(AP.contrarian) + "</p></div>";
-    if (AP.weak) h += '<div class="ap-c"><div class="lbl">Weak signal</div><p>' + rich(AP.weak) + "</p></div>";
-    if (AP.number) h += '<div class="ap-c numday"><div class="big">' + esc(AP.number.n) + '</div><div><div class="lbl">Number of the day</div><p style="margin:0">' + rich(AP.number.t) + "</p></div></div>";
-    if (AP.inject) h += '<div class="ap-c"><div class="lbl">Exercise inject</div><p>' + rich(AP.inject) + "</p></div>";
-    if (AP.question) h += '<div class="ap-c"><div class="lbl">Question for the staff</div><p>' + rich(AP.question) + "</p></div>";
+    /* 7.5: the contrarian read, weak signal, number, exercise inject and staff question were dropped at Nick's request; the deep cut and the long read remain */
+    h += '<section id="aperture" class="reading"><h2>Aperture <span class="num">the deep cut and a long read</span></h2><div class="ap">';
     if (AP.deep) {
       var D = AP.deep;
       h += '<details class="deep" open><summary><div class="eyebrow" style="color:var(--pc)">' + esc(D.kind) + "</div><h4>" + esc(D.title) + '</h4></summary><div class="deep-body">' + (D.body || []).map(function (p) { return "<p>" + rich(p) + "</p>"; }).join("");
