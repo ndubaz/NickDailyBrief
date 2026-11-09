@@ -90,7 +90,10 @@ async function notices() {
 async function news() {
   const h = await get("https://www.l1nieuws.nl/nieuws", { accept: "text/html" }), re = /<a[^>]*href="(\/nieuws\/(\d+)\/[^"]*)"[^>]*>([\s\S]*?)<\/a>/g, seen = {}, items = []; let m;
   while ((m = re.exec(h))) { const t = m[3].replace(/<[^>]+>/g, " ").replace(/&amp;/g, "&").replace(/&#39;|&rsquo;/g, "'").replace(/&quot;/g, '"').replace(/\s+/g, " ").trim(); if (t.length < 16 || seen[m[2]]) continue; seen[m[2]] = 1; items.push({ id: m[2], t: t.slice(0, 140), url: "https://www.l1nieuws.nl" + m[1] }); }
-  return { src: "L1 Nieuws (L1 and 1Limburg), newest headlines", items: items.slice(0, 12), asof: new Date().toISOString() };
+  /* English lines are written by the morning run; keep them for headlines that are still on the list */
+  const prevEn = {}; try { ((JSON.parse(fs.readFileSync(out, "utf8")).news || {}).items || []).forEach((x) => { if (x.en) prevEn[x.id] = x.en; }); } catch (e) {}
+  items.forEach((x) => { if (prevEn[x.id]) x.en = prevEn[x.id]; });
+  return { src: "L1 Nieuws (L1 and 1Limburg), newest headlines, English by the morning run", items: items.slice(0, 12), asof: new Date().toISOString() };
 }
 (async () => {
   const prev = fs.existsSync(out) ? JSON.parse(fs.readFileSync(out, "utf8")) : {}, data = Object.assign({}, prev), errors = [];
