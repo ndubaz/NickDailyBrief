@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-08",
+ "updated": "2026-11-09",
  "note": "Open questions the Readbook is carrying: what we do not know. The run adds a question when an item turns on a fact nobody has published, and closes it with the answer and source when one appears. Never delete.",
  "items": [
   {
@@ -42,6 +42,20 @@
    "q": "Which two tankers did the Revolutionary Guards say hit mines on 7 Nov, and under which flags?",
    "thread": "theatre:iran",
    "opened": "2026-11-08",
+   "status": "open"
+  },
+  {
+   "id": "2026-11-09-abu-dhabi-delegations",
+   "q": "Who leads Ukraine's delegation and who represents France at the Abu Dhabi talks on 10–11 Nov?",
+   "thread": "thread:russia-ukraine-talks",
+   "opened": "2026-11-09",
+   "status": "open"
+  },
+  {
+   "id": "2026-11-09-koeln-signal-boxes",
+   "q": "What damaged the signal boxes near Cologne on 8 Nov, and was it deliberate?",
+   "thread": "thread:rail-sabotage",
+   "opened": "2026-11-09",
    "status": "open"
   }
  ]

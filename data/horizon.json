@@ -109,7 +109,7 @@
    "date": "2026-11-09",
    "dateText": "9–22 Nov",
    "t": "Koalicja: first Multinational Force–Ukraine exercise, Poland",
-   "n": "About 2,800 troops from 11 nations; not under NATO command; no US troops. [9, 18]",
+   "n": "Opens 9 Nov at Nowa Dęba; the Bundeswehr sends a number in the low double digits. [184]",
    "h": true,
    "status": "confirmed",
    "added": "2026-11-03",
@@ -139,9 +139,16 @@
      "Defense News",
      "https://www.defensenews.com/news/2026/11/07/european-troops-set-to-train-in-poland-for-postwar-ukraine-deployment/",
      3
+    ],
+    [
+     184,
+     "Multinationale Ukraine-Truppe: Erste Übung mit 2.800 Soldaten startet heute",
+     "Deutschlandfunk",
+     "https://www.deutschlandfunk.de/multinationale-ukraine-truppe-erste-uebung-mit-2-800-soldaten-startet-heute-100.html",
+     3
     ]
    ],
-   "updated": "2026-11-08"
+   "updated": "2026-11-09"
   },
   {
    "id": "tricare-open-season",
@@ -209,9 +216,9 @@
    "date": "2026-11-09",
    "dateText": "9–10 Nov",
    "t": "G7 foreign ministers meet in Paris",
-   "n": "Rubio expected. [15]",
+   "n": "At the Quai d'Orsay, the last ministerial of the French presidency, with sessions on Ukraine and the Middle East; Rubio attends. [9]",
    "h": false,
-   "status": "reported",
+   "status": "confirmed",
    "added": "2026-11-07",
    "src": [
     [
@@ -220,8 +227,16 @@
      "CBS News",
      "https://www.cbsnews.com/live-updates/iran-war-trump-us-strait-hormuz-persian-gulf/",
      3
+    ],
+    [
+     9,
+     "Conférence de presse du porte-parole du 5 novembre 2026",
+     "French Ministry for Europe and Foreign Affairs",
+     "https://www.diplomatie.gouv.fr/fr/presse-et-ressources/decouvrir-et-informer/actualites/conference-de-presse-du-porte-parole-du-5-novembre-2026",
+     1
     ]
-   ]
+   ],
+   "updated": "2026-11-09"
   },
   {
    "id": "eurogroup-ecb",
@@ -247,7 +262,7 @@
    "date": "2026-11-09",
    "dateText": "9–10 Nov",
    "t": "Rep. Massie's impeachment articles against Secretary Hegseth",
-   "n": "Massie said he will introduce them on Monday or Tuesday. [16]",
+   "n": "Privileged: a vote within two legislative days of the resolution being offered; Jeffries a “hard yes”. [18]",
    "h": false,
    "status": "reported",
    "added": "2026-11-08",
@@ -258,15 +273,61 @@
      "ABC News",
      "https://abcnews.com/Politics/trump-intention-hegseth/story?id=137874670",
      3
+    ],
+    [
+     18,
+     "'I'm a hard yes': Hakeem Jeffries announces support for Hegseth impeachment",
+     "ABC News",
+     "https://abcnews.com/Politics/im-hard-hakeem-jeffries-announces-support-hegseth-impeachment/story?id=137952235",
+     3
     ]
-   ]
+   ],
+   "updated": "2026-11-09"
+  },
+  {
+   "id": "qatar-pm-white-house",
+   "date": "2026-11-09",
+   "dateText": "Mon 9 Nov",
+   "t": "Trump hosts Qatar's prime minister on Iran mediation",
+   "n": "Tehran is reviewing Qatari proposals, AP reports. [34]",
+   "h": false,
+   "status": "reported",
+   "src": [
+    [
+     34,
+     "Rubio says war on Iran unpopular but 'necessary' to stop nuclear threat",
+     "Al Jazeera (AP)",
+     "https://www.aljazeera.com/news/2026/11/9/rubio-says-war-on-iran-unpopular-but-necessary-to-stop-nuclear-threat",
+     3
+    ]
+   ],
+   "added": "2026-11-09"
+  },
+  {
+   "id": "hegseth-nwc",
+   "date": "2026-11-09",
+   "dateText": "9 Nov, 17:00 CET",
+   "t": "Hegseth addresses Naval War College students in Newport",
+   "n": "Topic not announced; livestreamed. [8]",
+   "h": false,
+   "status": "confirmed",
+   "src": [
+    [
+     8,
+     "Hegseth Speaks to Naval War College Students (webcast, 9 Nov)",
+     "DVIDS",
+     "https://www.dvidshub.net/webcast/38658",
+     1
+    ]
+   ],
+   "added": "2026-11-09"
   },
   {
    "id": "abu-dhabi-talks",
    "date": "2026-11-10",
    "dateText": "10–11 Nov",
    "t": "US–Russia–Ukraine talks, Abu Dhabi",
-   "n": "Talks on 10–11 Nov; Medinsky leads Russia's delegation with Ryabkov, Galuzin and Kostyukov. [19]",
+   "n": "France will take part, Barrot said on 8 Nov. [12]",
    "h": true,
    "status": "confirmed",
    "added": "2026-11-02",
@@ -309,9 +370,16 @@
      "Kyiv Independent",
      "https://kyivindependent.com/russia-to-send-senior-diplomats-military-officials-to-upcoming-peace-talks-in-abu-dhabi/",
      3
+    ],
+    [
+     12,
+     "Barrot announces France's participation in trilateral talks in Abu Dhabi",
+     "Ukrinform",
+     "https://www.ukrinform.net/rubric-polytics/4182691-barrot-announces-frances-participation-in-trilateral-talks-in-abu-dhabi.html",
+     2
     ]
    ],
-   "updated": "2026-11-08"
+   "updated": "2026-11-09"
   },
   {
    "id": "tk-tax-plan-debate-2",
@@ -389,6 +457,51 @@
    ]
   },
   {
+   "id": "knesset-sworn-in",
+   "date": "2026-11-10",
+   "dateText": "Tue 10 Nov",
+   "t": "Israel's new Knesset is sworn in",
+   "n": "Eisenkot holds the mandate to form a government, 28 days. [40, 35]",
+   "h": false,
+   "status": "confirmed",
+   "src": [
+    [
+     40,
+     "Israel fears Capitol-style breach ahead of Knesset swearing-in: Report",
+     "Anadolu Agency",
+     "https://www.aa.com.tr/en/middle-east/israel-fears-capitol-style-breach-ahead-of-knesset-swearing-in-report/4116265",
+     2
+    ],
+    [
+     35,
+     "Israeli president tasks Eisenkot with forming new government",
+     "Anadolu Agency",
+     "https://www.aa.com.tr/en/middle-east/israeli-president-tasks-eisenkot-with-forming-new-government/4116158",
+     2
+    ]
+   ],
+   "added": "2026-11-09"
+  },
+  {
+   "id": "aod-op-nuj",
+   "date": "2026-11-10",
+   "dateText": "Tue 10 Nov, from 18:30",
+   "t": "Aod òp Nuj opens carnival in Heerlen",
+   "n": "Free, Burgemeester van Grunsvenplein. [11]",
+   "h": false,
+   "status": "confirmed",
+   "src": [
+    [
+     11,
+     "Aod òp Nuj 2026",
+     "Aod òp Nuj (organiser)",
+     "https://aodopnuj.nl/",
+     1
+    ]
+   ],
+   "added": "2026-11-09"
+  },
+  {
    "id": "canes-helsinki",
    "date": "2026-11-12",
    "dateText": "12 and 14 Nov",
@@ -442,6 +555,25 @@
      2
     ]
    ]
+  },
+  {
+   "id": "de-budget-bereinigung",
+   "date": "2026-11-12",
+   "dateText": "12–13 Nov",
+   "t": "Bundestag budget committee's final session on the 2027 budget",
+   "n": "Plenary vote planned 23–27 Nov. [79]",
+   "h": false,
+   "status": "confirmed",
+   "src": [
+    [
+     79,
+     "Haushaltsausschuss legt letzte Hand an Etat für 2027 (hib 906/2026)",
+     "Deutscher Bundestag",
+     "https://www.bundestag.de/presse/hib/kurzmeldungen-1231740",
+     1
+    ]
+   ],
+   "added": "2026-11-09"
   },
   {
    "id": "ms-senate-certify",
@@ -513,6 +645,25 @@
      2
     ]
    ]
+  },
+  {
+   "id": "serbia-parliament",
+   "date": "2026-11-17",
+   "dateText": "17 Nov",
+   "t": "Serbia's new parliament holds its first session",
+   "n": "Student List 140 of 250 seats; a government within 90 days. [180]",
+   "h": false,
+   "status": "confirmed",
+   "src": [
+    [
+     180,
+     "Serbia's new parliament to hold its first session on November 17",
+     "Ukrinform (AP)",
+     "https://www.ukrinform.net/rubric-polytics/4182711-serbias-new-parliament-to-hold-its-first-session-on-november-17.html",
+     2
+    ]
+   ],
+   "added": "2026-11-09"
   },
   {
    "id": "alaska-rcv",
@@ -911,5 +1062,5 @@
    "src": []
   }
  ],
- "updated": "2026-11-08"
+ "updated": "2026-11-09"
 }

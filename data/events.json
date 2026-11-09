@@ -1,6 +1,6 @@
 {
  "note": "Out and about: curated events within about 90 minutes by car (Maastricht, Aachen, Liège, Köln, Düsseldorf, Bonn, Eindhoven, Antwerp, Brussels, the Eifel and Ardennes). The run adds events with a source, prunes those that have passed, and sets updated when details change. cat = music|markets|museums|sport|kids|food|outdoors|festival. kid = suitable for children. drive = minutes from Hoensbroek, approximate. prio = true marks the few major events (big festivals, Sinterklaas arrivals, the carnival opening) that also appear in the Planner's This week; Christmas markets come from calendar.json.",
- "updated": "2026-11-08",
+ "updated": "2026-11-09",
  "events": [
   {
    "id": "born-to-play-bonnefanten-2026",
@@ -135,28 +135,6 @@
     ]
    ],
    "prio": true
-  },
-  {
-   "id": "kasteel-hoensbroek-kids-2026",
-   "t": "Het Kasteel in rep en roer!, children's show",
-   "cat": "kids",
-   "from": "2026-11-08",
-   "to": "2026-11-08",
-   "town": "Hoensbroek",
-   "venue": "Kasteel Hoensbroek",
-   "cc": "NL",
-   "drive": 5,
-   "cost": "Included in admission; sign up at the desk",
-   "kid": true,
-   "added": "2026-11-03",
-   "src": [
-    [
-     116,
-     "Kindervoorstelling: Het Kasteel in rep en roer!",
-     "Kasteel Hoensbroek",
-     "https://www.kasteelhoensbroek.nl/wat-is-er-te-doen/kindervoorstelling-het-kasteel-in-rep-en-roer/"
-    ]
-   ]
   },
   {
    "id": "cooking-from-the-fridge-bonnefanten-2026",
@@ -913,29 +891,6 @@
    ]
   },
   {
-   "id": "diy-designmarkt-koeln-2026",
-   "t": "DIY DesignMarkt Köln: handmade fabrics, clothing, bags and food",
-   "cat": "markets",
-   "from": "2026-11-08",
-   "to": "2026-11-08",
-   "town": "Köln",
-   "venue": "BALLONI hall, Köln-Ehrenfeld, 12:00–18:00",
-   "cc": "DE",
-   "drive": 75,
-   "cost": "Ticket at the door; 2026 price not published",
-   "kid": true,
-   "added": "2026-11-07",
-   "src": [
-    [
-     6,
-     "DIY DesignMarkt Köln",
-     "messen.de",
-     "https://www.messen.de/de/18142/koeln/diy-designmarkt-koeln/info",
-     4
-    ]
-   ]
-  },
-  {
    "id": "afnorth-christmas-fayre-2026",
    "t": "AFNorth Christmas Fayre",
    "cat": "markets",
@@ -1024,6 +979,132 @@
      "https://www.theateraachen.de/de/produktionen/tischlein-deck-dich.html"
     ]
    ]
+  },
+  {
+   "id": "aod-op-nuj-heerlen-2026",
+   "t": "Aod òp Nuj: Heerlen's carnival opening, 25+ acts and a kids' area",
+   "cat": "festival",
+   "from": "2026-11-10",
+   "to": "2026-11-10",
+   "town": "Heerlen",
+   "venue": "Burgemeester van Grunsvenplein",
+   "cc": "NL",
+   "drive": 10,
+   "cost": "Free",
+   "kid": true,
+   "prio": true,
+   "src": [
+    [
+     "Aod òp Nuj 2026",
+     "https://aodopnuj.nl/"
+    ]
+   ],
+   "added": "2026-11-09"
+  },
+  {
+   "id": "stoffencircus-genk-2026",
+   "t": "Stoffencircus fabric and haberdashery market",
+   "cat": "markets",
+   "from": "2026-11-22",
+   "to": "2026-11-22",
+   "town": "Genk",
+   "venue": "Expo grounds",
+   "cc": "BE",
+   "drive": 40,
+   "cost": "Entry terms not stated",
+   "kid": false,
+   "prio": false,
+   "src": [
+    [
+     "Termine",
+     "https://www.stoffencircus.nl/de/agenda"
+    ]
+   ],
+   "added": "2026-11-09"
+  },
+  {
+   "id": "textilmuseum-sehnsucht-wald-2026",
+   "t": "Sehnsucht Wald: forest-themed textiles, some under UV light",
+   "cat": "museums",
+   "from": "2026-11-09",
+   "to": "2026-12-27",
+   "town": "Krefeld",
+   "venue": "Deutsches Textilmuseum, Krefeld-Linn",
+   "cc": "DE",
+   "drive": 70,
+   "cost": "Ticket at the door",
+   "kid": true,
+   "prio": false,
+   "src": [
+    [
+     "Deutsches Textilmuseum Krefeld: Sehnsucht Wald",
+     "https://www.deutschestextilmuseum.de/"
+    ]
+   ],
+   "added": "2026-11-09"
+  },
+  {
+   "id": "wintertijd-heerlen-2026",
+   "t": "Wintertijd Heerlen: ice rink, ice slide, curling and a free winter parade",
+   "cat": "outdoors",
+   "from": "2026-12-10",
+   "to": "2027-01-03",
+   "town": "Heerlen",
+   "venue": "Pancratiusplein and Bongerd",
+   "cc": "NL",
+   "drive": 10,
+   "cost": "Ticket at the box office",
+   "kid": true,
+   "prio": false,
+   "src": [
+    [
+     "Wintertijd Heerlen: 10 december 2026 - 3 januari 2027",
+     "https://www.wintertijdheerlen.nl/"
+    ]
+   ],
+   "added": "2026-11-09"
+  },
+  {
+   "id": "domchor-kroenungssaal-2026",
+   "t": "Christmas concert of the Aachen Cathedral Choir in the Krönungssaal",
+   "cat": "music",
+   "from": "2026-12-13",
+   "to": "2026-12-13",
+   "town": "Aachen",
+   "venue": "Rathaus, Krönungssaal",
+   "cc": "DE",
+   "drive": 30,
+   "cost": "Ticket",
+   "kid": true,
+   "prio": false,
+   "src": [
+    [
+     "Dommusik Aachen: Termine",
+     "https://dommusik-aachen.de/termine/"
+    ]
+   ],
+   "added": "2026-11-09"
+  },
+  {
+   "id": "jauchzet-frohlocket-koeln-2026",
+   "t": "»Jauchzet, frohlocket!«: Bach's Christmas Oratorio for families, in German (6–10)",
+   "cat": "music",
+   "from": "2026-11-29",
+   "to": "2026-11-29",
+   "town": "Köln",
+   "venue": "Kölner Philharmonie",
+   "cc": "DE",
+   "drive": 80,
+   "cost": "Ticket, €18 adults, €9 under 17",
+   "kid": true,
+   "prio": false,
+   "src": [
+    [
+     "Kölner Philharmonie: Jauchzet, frohlocket!",
+     "https://www.koelner-philharmonie.de/en/events/jauchzet-frohlocket/9206"
+    ]
+   ],
+   "added": "2026-11-09"
   }
  ]
 }

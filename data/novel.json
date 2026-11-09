@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-08",
+ "updated": "2026-11-09",
  "note": "New uses of technology in war: first-seen or newly combined techniques observed in any theatre and any domain. Append-only. Each entry: id (YYYY-MM-DD-slug), date (when observed or first reported), theatre (board id), actor, t (headline), what (fact sentences with [n] citations), new (one or two sentences on what is new, in the reporters' and actors' terms, no prediction), domains (from the list below), src rows copied from the edition. The run checks ids and titles before appending so a technique is logged once; a later development of the same technique is a new entry that names the earlier id in prev.",
  "domains": {
   "uas": "Drones",
@@ -88,6 +88,58 @@
     ]
    ],
    "edition": 7
+  },
+  {
+   "id": "2026-11-08-rosstat-death-records",
+   "date": "2026-11-08",
+   "theatre": "ru-ua",
+   "actor": "Belarusian Cyber Partisans and Silent Crow (hackers); analysis reported by Bloomberg",
+   "t": "Hacked Russian civil death records turned into a count of war dead",
+   "what": "NOS, citing Bloomberg, reported on 9 Nov that hackers who breached Rosstat supplied more than 11 million death certificates, of which 392,700 from February 2022 to August 2026 name the war in the cause of death; Rosstat confirmed targeted cyberattacks but denied that confidential data were stolen. [28] Euronews gave the Cyber Partisans' figure as 393,881 to 27 Aug. [29]",
+   "new": "Reporters describe a cyber intrusion into a state statistics registry followed by filtering of individual death certificates by age, residence and cause-of-death wording, which yields a casualty count independent of both governments' announcements.",
+   "domains": [
+    "cyber",
+    "info"
+   ],
+   "src": [
+    [
+     28,
+     "Bijna 400.000 Russische doden in oorlog met Oekraïne, blijkt uit gehackte data",
+     "NOS",
+     "https://nos.nl/artikel/2638660-bijna-400-000-russische-doden-in-oorlog-met-oekraine-blijkt-uit-gehackte-data",
+     3
+    ],
+    [
+     29,
+     "Rosstat hack: data obtained suggests over 390,000 Russian deaths in Ukraine war",
+     "Euronews",
+     "https://www.euronews.com/2026/11/08/rosstat-hack-data-obtained-suggests-over-390000-russian-deaths-in-ukraine-war",
+     3
+    ]
+   ],
+   "edition": 8
+  },
+  {
+   "id": "2026-11-08-ru-firms-mg-turrets",
+   "date": "2026-11-08",
+   "theatre": "ru-ua",
+   "actor": "Russian airports, ports and power companies",
+   "t": "Russian airports and ports buy remote-operated machine-gun turrets against drones",
+   "what": "Militarnyi, citing Siberia.Realities, reported on 8 Nov that Surgut Airport tendered for “a turret system with two paired machine guns, a thermal imaging sight, a remote-operation monitor, and an external uninterruptible power supply”, the Port of Ust-Luga for three turrets, and Kolymaenergo bought one for fire teams at the Kolyma hydro plant. [97]",
+   "new": "Civilian operators of airports, ports and power plants, not the armed forces, are buying remote-operated, thermal-sighted machine-gun mounts to shoot at drones over their own sites.",
+   "domains": [
+    "cuas"
+   ],
+   "src": [
+    [
+     97,
+     "Russian Companies Begin Buying Machine Gun Turrets to Defend Against Drones (citing Siberia.Realities)",
+     "Militarnyi",
+     "https://militarnyi.com/en/news/russian-companies-begin-buying-machine-gun-turrets-to-defend-against-drones/",
+     4
+    ]
+   ],
+   "edition": 8
   }
  ]
 }

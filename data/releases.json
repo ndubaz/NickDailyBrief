@@ -387,6 +387,81 @@
      1
     ]
    ]
+  },
+  {
+   "id": "2026-11-06-deepmind-rsa-1024",
+   "date": "2026-11-06",
+   "kind": "result",
+   "t": "DeepMind agents find two weaknesses in legacy 1024-bit RSA",
+   "lab": "Google DeepMind",
+   "n": "Signature forgery re-run with 3.5x less CPU time; a new method estimated at about 1,600x better for short digests; batch factoring about 30x cheaper per key; 2048-bit keys unaffected. [98, 99]",
+   "src": [
+    [
+     98,
+     "Advancing the frontier of cryptanalysis (Pushmeet Kohli, Google DeepMind), X article",
+     "Google DeepMind",
+     "https://x.com/pushmeet/status/2118752095859794390",
+     1
+    ],
+    [
+     99,
+     "Google DeepMind on legacy 1024-bit RSA, X post",
+     "Google DeepMind",
+     "https://x.com/GoogleDeepMind/status/2118755418675765656",
+     1
+    ]
+   ]
+  },
+  {
+   "id": "2026-11-06-psi-aaronson-ambainis",
+   "date": "2026-11-06",
+   "kind": "result",
+   "t": "PSI's AI system proves the Aaronson–Ambainis conjecture, checked in Lean",
+   "lab": "Physical Superintelligence",
+   "n": "Proof complete on day 3 of the run using a non-public Anthropic model; self-published, under review by the Stanford group. [100]",
+   "src": [
+    [
+     100,
+     "A proof of the Aaronson-Ambainis conjecture",
+     "Physical Superintelligence (PSI)",
+     "https://psi.inc/research/aaronson-ambainis/",
+     1
+    ]
+   ]
+  },
+  {
+   "id": "2026-11-06-aa-vials",
+   "date": "2026-11-06",
+   "kind": "result",
+   "t": "Artificial Analysis publishes VIALS-AA, a scientific-image benchmark",
+   "lab": "Artificial Analysis",
+   "n": "161 tasks, pass^3: Gemini 4 Carbon 64%, GPT-6 Astra 63%, Claude Opus 5.5 61%. [101]",
+   "src": [
+    [
+     101,
+     "VIALS-AA: different paths to scientific image reasoning",
+     "Artificial Analysis",
+     "https://artificialanalysis.ai/articles/vials-aa",
+     1
+    ]
+   ]
+  },
+  {
+   "id": "2026-11-08-aa-decision-index-v2",
+   "date": "2026-11-08",
+   "kind": "result",
+   "t": "Artificial Analysis Decision Index v2",
+   "lab": "Artificial Analysis",
+   "n": "Claude Haiku 5.5 77, GPT-6 Luna 76, Drex Max and GLiDE 73; Drex Max at $102 per million tasks. [102]",
+   "src": [
+    [
+     102,
+     "Introducing the Artificial Analysis Decision Index v2",
+     "Artificial Analysis",
+     "https://artificialanalysis.ai/articles/decision-index-v2",
+     1
+    ]
+   ]
   }
  ],
  "sota": {

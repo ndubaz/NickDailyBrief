@@ -246,6 +246,74 @@
        3
       ]
      ]
+    },
+    {
+     "date": "2026-11-09",
+     "t": "Leningrad region's governor said 113 Ukrainian drones were shot down overnight into 9 Nov and debris hit a flat in Kirishi; the Kyiv Independent reported the Kirishi refinery was struck. Odesa region's head reported a massive attack on energy infrastructure on the evening of 8 Nov. The IAEA said the Zaporizhzhia nuclear plant lost off-site power for about 10 hours on 8 Nov, the 27th such event. The General Staff counted 127 engagements on 8 Nov, 11 in the Pokrovsk direction; ISW reported a Russian advance south of Dobropillya. [15, 23, 24, 16, 168, 169]",
+     "src": [
+      [
+       15,
+       "Ukrainian forces reportedly strike Russia's second-largest oil refinery in overnight drone attack",
+       "Kyiv Independent",
+       "https://kyivindependent.com/ukrainian-forces-reportedly-strike-russias-second-largest-oil-refinery-in-overnight-drone-attack/",
+       3
+      ],
+      [
+       23,
+       "Drone debris hitting apartment outside St. Petersburg cause no injuries — governor",
+       "TASS",
+       "https://tass.com/politics/2214571",
+       2
+      ],
+      [
+       24,
+       "Russian forces launch massive attack on Odesa region's energy infrastructure",
+       "Ukrinform",
+       "https://www.ukrinform.net/rubric-ato/4182739-russian-forces-launch-massive-attack-on-odesa-regions-energy-infrastructure.html",
+       2
+      ],
+      [
+       16,
+       "Power to Zaporizhzhia nuclear power plant cut, restored, IAEA says",
+       "Kyiv Independent",
+       "https://kyivindependent.com/power-to-zaporizhzhia-nuclear-power-plant-cut-restored-iaea-says/",
+       3
+      ],
+      [
+       168,
+       "War update: 127 clashes on front line, Pokrovsk sector remains hottest",
+       "Ukrinform",
+       "https://www.ukrinform.net/rubric-ato/4182752-war-update-127-clashes-on-front-line-pokrovsk-sector-remains-hottest.html",
+       2
+      ],
+      [
+       169,
+       "Russian Offensive Campaign Assessment, November 8, 2026",
+       "ISW and CTP (Critical Threats)",
+       "https://www.criticalthreats.org/analysis/russian-offensive-campaign-assessment-november-8-2026",
+       2
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-09",
+     "t": "French Foreign Minister Barrot said on 8 Nov that France will take part in the Abu Dhabi talks on 10–11 Nov. NOS, citing Bloomberg, reported on 9 Nov that hacked Rosstat death records show 392,700 war-related deaths from February 2022 to August 2026; Rosstat denied that confidential data were taken. [12, 28]",
+     "src": [
+      [
+       12,
+       "Barrot announces France's participation in trilateral talks in Abu Dhabi",
+       "Ukrinform",
+       "https://www.ukrinform.net/rubric-polytics/4182691-barrot-announces-frances-participation-in-trilateral-talks-in-abu-dhabi.html",
+       2
+      ],
+      [
+       28,
+       "Bijna 400.000 Russische doden in oorlog met Oekraïne, blijkt uit gehackte data",
+       "NOS",
+       "https://nos.nl/artikel/2638660-bijna-400-000-russische-doden-in-oorlog-met-oekraine-blijkt-uit-gehackte-data",
+       3
+      ]
+     ]
     }
    ],
    "short": "Ukraine",
@@ -448,6 +516,40 @@
        3
       ]
      ]
+    },
+    {
+     "date": "2026-11-09",
+     "t": "The IRGC said on 8 Nov that three tankers caught fire in an “illegal channel” in the Strait of Hormuz, without names or flags. Fars reported explosions at Bandar Abbas and Qeshm on the evening of 8 Nov. Iraq's foreign minister said the US asked Iraq to close all but two border crossings with Iran. A drone hit Iraq's Khor Mor gas field on the night of 8 Nov. [19, 30, 20, 33]",
+     "src": [
+      [
+       19,
+       "Iran says 3 tankers caught fire in Hormuz (AFP)",
+       "AFP via Free Malaysia Today",
+       "https://www.freemalaysiatoday.com/category/world/2026/11/08/iran-says-3-tankers-caught-fire-in-hormuz",
+       2
+      ],
+      [
+       30,
+       "Explosions heard in southern Iran's Bandar Abbas, Qeshm: Report",
+       "Anadolu Agency",
+       "https://www.aa.com.tr/en/middle-east/explosions-heard-in-southern-iran-s-bandar-abbas-qeshm-report/4116324",
+       2
+      ],
+      [
+       20,
+       "US asks Iraq to close all but 2 border crossings with Iran: Iraqi foreign minister",
+       "Anadolu Agency",
+       "https://www.aa.com.tr/en/americas/us-asks-iraq-to-close-all-but-2-border-crossings-with-iran-iraqi-foreign-minister/4116349",
+       2
+      ],
+      [
+       33,
+       "Drone attack suspends production at Iraq's Khor Mor gasfield",
+       "Al Jazeera",
+       "https://www.aljazeera.com/news/2026/11/9/drone-attack-suspends-production-at-iraqs-khor-mor-gasfield",
+       3
+      ]
+     ]
     }
    ],
    "short": "Iran",
@@ -540,6 +642,33 @@
        "CBS News (AP)",
        "https://www.cbsnews.com/news/israel-election-government-gadi-eisenkot-benjamin-netanyahu/",
        3
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-09",
+     "t": "President Herzog gave Gadi Eisenkot the mandate to form a government on 8 Nov. A collapse of sand onto tents in Deir al-Balah killed a woman and four children late on 8 Nov; the health ministry's director-general said 350,000 displaced people were sleeping in the open. [35, 36, 37]",
+     "src": [
+      [
+       35,
+       "Israeli president tasks Eisenkot with forming new government",
+       "Anadolu Agency",
+       "https://www.aa.com.tr/en/middle-east/israeli-president-tasks-eisenkot-with-forming-new-government/4116158",
+       2
+      ],
+      [
+       36,
+       "Landslide kills woman and 4 children sheltering in tents in central Gaza",
+       "Anadolu Agency",
+       "https://www.aa.com.tr/en/middle-east/landslide-kills-woman-and-4-children-sheltering-in-tents-in-central-gaza/4116380",
+       2
+      ],
+      [
+       37,
+       "Gaza floods leave 350,000 displaced Palestinians without shelter: Health Ministry",
+       "Anadolu Agency",
+       "https://www.aa.com.tr/en/middle-east/gaza-floods-leave-350-000-displaced-palestinians-without-shelter-health-ministry/4116383",
+       2
       ]
      ]
     }
@@ -671,6 +800,33 @@
        "ABC News",
        "https://abcnews.com/International/live-updates/iran-live-updates-trump-good-call-netanyahu/?id=137762456",
        3
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-09",
+     "t": "Saudi Arabia's energy ministry said falling shrapnel damaged an Aramco office building in Riyadh's financial district on 8 Nov; the coalition said it destroyed three ballistic-missile launchers in Sanaa and Saada. Yemen's army said on 9 Nov it killed about 267 Houthi fighters and lost nine officers. [38, 39, 170]",
+     "src": [
+      [
+       38,
+       "Saudi Arabia intercepts Houthi missiles targeting Riyadh, Eastern Province",
+       "Al Jazeera",
+       "https://www.aljazeera.com/news/2026/11/8/saudi-arabia-intercepts-houthi-missiles-targeting-riyadh-eastern-province",
+       3
+      ],
+      [
+       39,
+       "Saudi-led coalition says it intercepted drone, 4 missiles over Riyadh, southern regions",
+       "Anadolu Agency",
+       "https://www.aa.com.tr/en/world/saudi-led-coalition-says-it-intercepted-drone-4-missiles-over-riyadh-southern-regions/4115656",
+       2
+      ],
+      [
+       170,
+       "Yemeni army says it 'neutralized' 267 Houthis, lost 9 officers",
+       "Anadolu Agency",
+       "https://www.aa.com.tr/en/middle-east/yemeni-army-says-it-neutralized-267-houthis-lost-9-officers/4116401",
+       2
       ]
      ]
     }
@@ -809,6 +965,26 @@
        2
       ]
      ]
+    },
+    {
+     "date": "2026-11-09",
+     "t": "Taiwan's defence ministry counted one PLA aircraft sortie, seven navy ships and one official ship in the 24 hours to 06:00 on 9 Nov. The State Department said Papua New Guinea's order to close Taiwan's office was part of “Beijing's intimidation campaign”. [47, 48]",
+     "src": [
+      [
+       47,
+       "PLA activities in the waters and airspace around Taiwan, 9 Nov",
+       "Taiwan Ministry of National Defense",
+       "https://www.mnd.gov.tw/en/News/PLAAct/88171",
+       1
+      ],
+      [
+       48,
+       "U.S. expresses concern over forced closure of Taiwan's PNG office",
+       "Focus Taiwan (CNA)",
+       "https://focustaiwan.tw/politics/202611080003",
+       3
+      ]
+     ]
     }
    ],
    "short": "Taiwan",
@@ -919,6 +1095,26 @@
        "Yonhap",
        "https://en.yna.co.kr/view/AEN20261108000200315",
        3
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-09",
+     "t": "KCNA reported on 9 Nov that Kim Song-nam held talks with the head of the CPC International Liaison Department and visited the Central Party School in Beijing. [49, 50]",
+     "src": [
+      [
+       49,
+       "Talks Held between Secretary of C.C., WPK and Head of International Liaison Department of C.C., CPC",
+       "KCNA via KCNA Watch",
+       "https://kcnawatch.org/newstream/1794195625-54195291/talks-held-between-secretary-of-c-c-wpk-and-head-of-international-liaison-department-of-c-c-cpc",
+       1
+      ],
+      [
+       50,
+       "N. Korean envoy holds 3rd high-level meeting in China (Yonhap)",
+       "Korea Times",
+       "https://www.koreatimes.co.kr/foreignaffairs/northkorea/20261107/n-korean-envoy-holds-3rd-high-level-meeting-in-china",
+       2
       ]
      ]
     }
@@ -1038,6 +1234,40 @@
        3
       ]
      ]
+    },
+    {
+     "date": "2026-11-09",
+     "t": "Sudan's army said on 8 Nov it shot down a fourth drone in West Kordofan within a week and took Ayal Bakhit and Umm Marahik. Radio Tamazuj reported that military intelligence detained Ahmed Haroun in Khartoum. The IOM said 2,510 people fled five villages in North Darfur. [171, 172, 173, 174]",
+     "src": [
+      [
+       171,
+       "Sudanese army reports gains in West Kordofan offensive",
+       "Radio Tamazuj",
+       "https://www.radiotamazuj.org/en/news/article/sudanese-army-reports-gains-in-west-kordofan-offensive",
+       3
+      ],
+      [
+       172,
+       "Sudanese army downs 4th drone in week as troops advance against RSF in West Kordofan",
+       "Anadolu Agency",
+       "https://www.aa.com.tr/en/middle-east/sudanese-army-downs-4th-drone-in-week-as-troops-advance-against-rsf-in-west-kordofan/4116366",
+       2
+      ],
+      [
+       173,
+       "Sudan army detains ex-ruling party leader Ahmed Haroun",
+       "Radio Tamazuj",
+       "https://www.radiotamazuj.org/en/news/article/sudan-army-detains-former-ruling-party-leader-ahmed-haroun",
+       3
+      ],
+      [
+       174,
+       "Over 2,500 flee villages in Sudan's North Darfur state as insecurity worsens: IOM",
+       "Anadolu Agency",
+       "https://www.aa.com.tr/en/middle-east/over-2-500-flee-villages-in-sudan-s-north-darfur-state-as-insecurity-worsens-iom/4116397",
+       2
+      ]
+     ]
     }
    ],
    "short": "Sudan",
@@ -1071,6 +1301,19 @@
        "Anadolu",
        "https://www.aa.com.tr/fr/afrique/les-présidents-nigérien-et-malien-promettent-d-éradiquer-le-terrorisme-dans-l-espace-aes/4113634",
        3
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-09",
+     "t": "Mali's crisis centre counted about 100,000 people expelled from Guinea in Bamako and nearly 60,000 at Kouremalé, with six deaths at Kouremalé, in a communiqué of 7 Nov. [175]",
+     "src": [
+      [
+       175,
+       "Mali : près de 100 000 personnes refoulées de Guinée recensées à Bamako, six morts à la frontière",
+       "Anadolu Agency",
+       "https://www.aa.com.tr/fr/afrique/mali-près-de-100-000-personnes-refoulées-de-guinée-recensées-à-bamako-six-morts-à-la-frontière/4115752",
+       2
       ]
      ]
     }
@@ -1171,6 +1414,26 @@
        "Actualite.cd",
        "https://actualite.cd/2026/11/07/sud-kivu-kalonge-et-bitale-passent-sous-controle-des-rebelles-du-frn",
        4
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-09",
+     "t": "Actualite.cd reported that FRN rebels took Bulambika in Kalehe territory on 8 Nov, 24 hours after Bitale. The Goma garrison military court sentenced 66 soldiers to death for mutiny and cowardice. [176, 177]",
+     "src": [
+      [
+       176,
+       "Kalehe : les rebelles du FRN prennent le contrôle de Bulambika",
+       "Actualite.cd",
+       "https://actualite.cd/index.php/2026/11/08/kalehe-les-rebelles-du-frn-prennent-le-controle-de-bulambika",
+       3
+      ],
+      [
+       177,
+       "Tribunal militaire de garnison de Goma : 66 militaires condamnés à mort",
+       "Radio Okapi",
+       "https://www.radiookapi.net/2026/11/08/actualite/justice/tribunal-militaire-de-garnison-de-goma-66-militaires-condamnes-mort",
+       1
       ]
      ]
     }
@@ -1368,6 +1631,26 @@
        3
       ]
      ]
+    },
+    {
+     "date": "2026-11-09",
+     "t": "The Barents Observer reported on 6 Nov that a second Chinese heavy-lift ship, the Jian Yang Cheng He, is sheltering off Andøya and is not detained. The UK carrier HMS Prince of Wales, operating in the Norwegian Sea under JFC Norfolk, calls at Oslo for a sea-power conference on 10 Nov. [178, 179]",
+     "src": [
+      [
+       178,
+       "After crossing Arctic route from China, two heavy lift carriers get stuck near Norwegian air base",
+       "The Barents Observer",
+       "https://thebarentsobserver.com/news/after-crossing-arctic-route-from-china-two-heavy-lift-carriers-get-stuck-near-norwegian-air-base/461490",
+       3
+      ],
+      [
+       179,
+       "UK and Allied Show of Strength in the North",
+       "High North News",
+       "https://en.highnorthnews.com/politics/uk-and-allied-show-of-strength-in-the-north/1124312",
+       3
+      ]
+     ]
     }
    ]
   },
@@ -1398,6 +1681,33 @@
        "Reuters via Cyprus Mail",
        "https://cyprus-mail.com/2026/11/04/serbia-detains-police-officers-over-alleged-use-of-force-against-protesters",
        2
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-09",
+     "t": "Serbia's new parliament holds its first session on 17 Nov after the 25 Oct election gave the Student List 140 of 250 seats. Student List representatives visited Gračanica, Visoki Dečani and Orthodox sites in Prizren in Kosovo on 8 Nov. EUFOR said the Security Council renewed its mandate for a year, unanimously, on 30 Oct. [180, 181, 182]",
+     "src": [
+      [
+       180,
+       "Serbia's new parliament to hold its first session on November 17",
+       "Ukrinform (AP)",
+       "https://www.ukrinform.net/rubric-polytics/4182711-serbias-new-parliament-to-hold-its-first-session-on-november-17.html",
+       2
+      ],
+      [
+       181,
+       "Predstavnici Studentske liste posetili manastire Gračanicu i Visoke Dečane, kao i pravoslavne svetinje u Prizrenu",
+       "N1",
+       "https://n1info.rs/vesti/predstavnici-studentske-liste-posetili-manastire-gracanicu-i-visoke-decane-kao-i-pravoslavne-svetinje-u-prizrenu/",
+       3
+      ],
+      [
+       182,
+       "UN Security Council Extends EUFOR Mandate for Another Year",
+       "EUFOR Althea",
+       "https://www.euforbih.org/index.php/en/latest-news/5629-un-security-council-extends-eufor-mandate-for-another-year",
+       1
       ]
      ]
     }
@@ -1456,6 +1766,40 @@
        "Human bodies found on ship struck by a drone in Black Sea",
        "AFP via The Straits Times",
        "https://www.straitstimes.com/world/europe/human-bodies-found-on-ship-struck-by-a-drone-in-black-sea",
+       2
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-09",
+     "t": "Russia's defence ministry said it hit three cargo ships at or near Odesa and Chornomorsk overnight into 8 Nov; Reuters could not verify it. Moldova's defence ministry said two aerostat-type objects crossed its airspace in Drochia and Soroca districts on 8 Nov; it counts 69 violations in 2026. President Sandu warned of new Russian attempts at destabilisation. [41, 42, 43, 44]",
+     "src": [
+      [
+       41,
+       "Russia Says Hit Power Substations in Ukraine and 3 Ships in Black Sea (Reuters)",
+       "The Moscow Times",
+       "https://www.themoscowtimes.com/2026/11/08/russia-says-hit-power-substations-in-ukraine-and-3-ships-in-black-sea-a94203",
+       2
+      ],
+      [
+       42,
+       "Two aerostat-type objects illegally entered national airspace",
+       "Moldpres (citing Moldova's defence ministry)",
+       "https://www.moldpres.md/eng/society/two-aerostat-type-objects-illegally-traversed-national-airspace",
+       2
+      ],
+      [
+       43,
+       "Moldova records 69 airspace violations since early 2026",
+       "Moldpres",
+       "https://www.moldpres.md/eng/society/moldova-records-69-airspace-violations-since-early-2026",
+       2
+      ],
+      [
+       44,
+       "Sandu warns of new Russian attempts to destabilize Moldova",
+       "Ukrinform",
+       "https://www.ukrinform.net/rubric-polytics/4182646-sandu-warns-of-new-russian-attempts-to-destabilize-moldova.html",
        2
       ]
      ]

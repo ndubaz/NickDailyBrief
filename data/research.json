@@ -1,6 +1,6 @@
 {
  "note": "Research rotation. Three pieces a day: one military or security piece (field \"military\") and two from the wider fields. `rotation` maps each field to institutions and journals the run draws from; `queue` holds publications picked for coming days with their field; `covered` is the append-only log. No institution twice within 10 days within a field.",
- "updated": "2026-11-08",
+ "updated": "2026-11-09",
  "rotation": {
   "military": [
    "Africa Center for Strategic Studies",
@@ -101,7 +101,8 @@
    "UN DESA Population Division",
    "Migration Policy Institute",
    "CBS Netherlands",
-   "Eurostat"
+   "Eurostat",
+   "Demographic Research"
   ],
   "psychology": [
    "Psychological Science",
@@ -210,6 +211,30 @@
    "title": "CTRL + ALT + Europe? Most Europeans support homegrown digital alternatives. The European digital sovereignty debate hasn't yet fully matched that ambition.",
    "authors": "Martin Hullin and Daniela Schmidt",
    "url": "https://www.bertelsmann-stiftung.de/en/publications/publication/did/ctrl-alt-europe"
+  },
+  {
+   "date": "2026-11-09",
+   "field": "military",
+   "org": "Center for a New American Security (CNAS)",
+   "title": "Munitions Procurement and the Fiscal Year 2027 Defense Budget: Three Conditions for Munitions Acceleration",
+   "authors": "Carlton Haelig",
+   "url": "https://www.cnas.org/publications/reports/munitions-procurement-and-the-fiscal-year-2027-defense-budget"
+  },
+  {
+   "date": "2026-11-09",
+   "field": "ir",
+   "org": "Stockholm International Peace Research Institute (SIPRI)",
+   "title": "Rising Military Spending in the Context of Falling Development Assistance",
+   "authors": "Xiao Liang and Nan Tian",
+   "url": "https://www.sipri.org/publications/2026/sipri-insights-peace-and-security/rising-military-spending-context-falling-development-assistance"
+  },
+  {
+   "date": "2026-11-09",
+   "field": "demography",
+   "org": "Demographic Research (Max Planck Institute for Demographic Research)",
+   "title": "The impact of increased child benefits on tempo and quantum of fertility in Estonia",
+   "authors": "Tanel Paas, Allan Puur and Mark Gortfelder",
+   "url": "https://www.demographic-research.org/articles/volume/55/25"
   }
  ],
  "fields": {

@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-08",
+ "updated": "2026-11-09",
  "note": "Nick's assigned priority countries as an analyst: Hungary and Slovakia (priority), Germany (secondary). Russia, Belarus and China are context countries (7.3): profiled for what they do to the eastern flank and to the three countries above, logged the same way, no baseline-requirement grid. The run appends dated facts to each country's log and keeps the profile current. Facts and summaries only; the item in the edition carries the So what. verified:false marks a fact to confirm against an official page.",
  "blr": [
   "Continuity of government and critical services",
@@ -36,7 +36,7 @@
     "spend": "2.07% of GDP in 2025, down from 2.21% in 2024 (NATO estimates, March 2026)",
     "posture": [
      "Croft training area used in the Spanish-led Strong Lineage 26 exercise, May to June 2026",
-     "Headquarters Multinational Division Centre at Székesfehérvár (to confirm current status)"
+     "Headquarters Multinational Division Centre at Székesfehérvár, activated on 3 May 2022 in the NATO Force Structure; it hosted the first conference of NATO's five MND commanders on 10 Sep 2025"
     ]
    },
    "stance": [
@@ -148,6 +148,30 @@
        "https://hvg.hu/gazdasag/20261107_horvatorszag-janaf-adria-koolajvezetek-szivargas"
       ]
      ]
+    },
+    {
+     "date": "2026-11-09",
+     "t": "Defence Minister Ruszin-Szendi wrote on 8 Nov that the airliner bomb threats point to possible coordinated action; Hungary had three alerts in one day, each met by a Gripen scramble.",
+     "src": [
+      [
+       "Miért jó, ha a JAS-39 Gripenek felszállnak?",
+       "https://honvedelem.hu/hirek/miert-jo-ha-a-jas-39-gripenek-felszallnak.html"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-09",
+     "t": "Minister Kapitány said on 8 Nov that Poland and Czechia joined an expanded Central and Southern European energy coalition with Italy at a meeting in Zagreb; next round in Bucharest in about two weeks. JANAF said about 500 m³ of crude spilled from the Adria line near Prvča, with clean-up taking ten days.",
+     "src": [
+      [
+       "Energetikai megállapodást írt alá Kapitány István, kibővül az együttműködés a V4-ekkel",
+       "https://www.portfolio.hu/gazdasag/20261108/energetikai-megallapodast-irt-ala-kapitany-istvan-kibovul-az-egyuttmukodes-a-v4-ekkel-874978"
+      ],
+      [
+       "Súlyos következményei lehetnek a horvátországi olajszivárgásnak",
+       "https://index.hu/kulfold/2026/11/08/janaf-koolajvezetek-szivargas-olajszennyezes-horvatorszag"
+      ]
+     ]
     }
    ],
    "src": [
@@ -178,6 +202,10 @@
     [
      "Office of the President of Hungary: Sándor-palota: Baka András köztársasági elnök",
      "https://www.sandorpalota.hu/"
+    ],
+    [
+     "HQ MND-C tag page",
+     "https://honvedelem.hu/cimke/hq-mnd-c.html"
     ]
    ],
    "verified": false,
@@ -235,7 +263,8 @@
     "src": "https://www.nato.int/cps/en/natohq/topics_49198.htm",
     "note": "NATO estimates, share of GDP; 2014 to 2024 from the annual press releases, 2025 from the March 2026 report via press coverage; to confirm against the NATO table",
     "verified": false
-   }
+   },
+   "updated": "2026-11-09"
   },
   {
    "id": "sk",
@@ -376,6 +405,34 @@
        "https://nasekosice.sk/clanky/64012-zhromazdenie-mier-pre-slovensko-v-kosiciach-znela-kritika-vojenskej-politiky-eu"
       ]
      ]
+    },
+    {
+     "date": "2026-11-09",
+     "t": "Prime Minister Fico said on 8 Nov he returns the environment ministry mandate to President Pellegrini on 9 Nov; Taraba said he and two MPs will not back the cooperating-witness amendment. Parliament resumes on 10 Nov.",
+     "src": [
+      [
+       "Premiér vráti v pondelok prezidentovi poverenie na riadenie MŽP",
+       "https://www.teraz.sk/slovensko/premier-vrati-v-pondelok-prezidentovi/1006084-clanok.html"
+      ],
+      [
+       "Predseda poslaneckého klubu Hnutia Slovensko Michal Šipoš vyzval ostatné opozičné strany (TASR)",
+       "https://www.postoj.sk/202927/predseda-poslaneckeho-klubu-hnutia-slovensko-michal-sipos-vyzval-ostatne-opozicne-strany"
+      ],
+      [
+       "NR SR od utorka pokračuje v schôdzi",
+       "https://www.teraz.sk/slovensko/nrsr-od-utorka-pokracuje-v-schodzi-na/1005965-clanok.html"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-09",
+     "t": "President Pellegrini attends the Paris Peace Forum on 10 Nov and meets President Macron on 11 Nov.",
+     "src": [
+      [
+       "Prezident odcestuje na Parížske mierové fórum, stretne sa s Macronom",
+       "https://www.teraz.sk/slovensko/prezident-odcestuje-na-parizske-mierov/1006055-clanok.html"
+      ]
+     ]
     }
    ],
    "src": [
@@ -451,7 +508,8 @@
     "src": "https://www.nato.int/cps/en/natohq/topics_49198.htm",
     "note": "NATO estimates, share of GDP; 2014 to 2024 from the annual press releases, 2025 from the March 2026 report via press coverage; to confirm against the NATO table",
     "verified": false
-   }
+   },
+   "updated": "2026-11-09"
   },
   {
    "id": "de",
@@ -475,7 +533,7 @@
    },
    "nato": {
     "member": 1955,
-    "spend": "Government plans 3.5% of GDP on core defence by 2029 (to confirm against the 2027 budget)",
+    "spend": "The defence ministry plans about €152 billion by 2029, to reach NATO's 3.5% core target that year, six years before the Alliance deadline (bmvg.de, 9 Sep 2026)",
     "posture": [
      "Operationsplan Deutschland: the Bundeswehr's plan linking national and alliance defence with civil support, covering peacetime, hybrid threat, crisis and war",
      "Host nation support: up to 800,000 allied troops and 200,000 vehicles must be able to move through Germany within six months (Bundeswehr)",
@@ -596,6 +654,30 @@
        "https://www.t-online.de/nachrichten/deutschland/militaer-verteidigung/id_101518154/soeder-widerspricht-pistorius-bei-wehrpflicht.html"
       ]
      ]
+    },
+    {
+     "date": "2026-11-09",
+     "t": "The Bundesnetzagentur put German gas storage at 60.2% (149 TWh) on 6–8 Nov, well below past years, and rates the supply risk as low.",
+     "src": [
+      [
+       "Aktuelle Lage Gasversorgung",
+       "https://www.bundesnetzagentur.de/DE/Gasversorgung/aktuelle_gasversorgung/start.html"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-09",
+     "t": "The Bundestag budget committee holds its final 2027 session on 12–13 Nov; the plenary vote is planned for 23–27 Nov. The defence ministry's draft gives about €110 billion plus about €30 billion from the special fund.",
+     "src": [
+      [
+       "Haushaltsausschuss legt letzte Hand an Etat für 2027 (hib 906/2026)",
+       "https://www.bundestag.de/presse/hib/kurzmeldungen-1231740"
+      ],
+      [
+       "Rekordetat Verteidigung: Haushaltsdebatte",
+       "https://www.bmvg.de/de/aktuelles/rekordetat-verteidigung-haushaltsdebatte-6149920"
+      ]
+     ]
     }
    ],
    "src": [
@@ -606,6 +688,10 @@
     [
      "Bundeswehr: Operational Plan for Germany",
      "https://www.bundeswehr.de/en/organization/bundeswehr-joint-force-command/missions/operational-plan-for-germany"
+    ],
+    [
+     "Rekordetat Verteidigung: Haushaltsdebatte",
+     "https://www.bmvg.de/de/aktuelles/rekordetat-verteidigung-haushaltsdebatte-6149920"
     ]
    ],
    "verified": false,
@@ -663,7 +749,8 @@
     "src": "https://www.nato.int/cps/en/natohq/topics_49198.htm",
     "note": "NATO estimates, share of GDP; 2014 to 2024 from the annual press releases, 2025 from the March 2026 report via press coverage; to confirm against the NATO table",
     "verified": false
-   }
+   },
+   "updated": "2026-11-09"
   },
   {
    "id": "ru",
@@ -741,7 +828,18 @@
     }
    ],
    "blr": [],
-   "log": [],
+   "log": [
+    {
+     "date": "2026-11-09",
+     "t": "Kremlin spokesman Peskov said on 8 Nov that Russia has had no contacts with Europeans on a security agreement (TASS rendering of the state's words).",
+     "src": [
+      [
+       "Kremlin says Russia has had no contacts with Europeans on security agreement",
+       "https://tass.com/politics/2214439"
+      ]
+     ]
+    }
+   ],
    "src": [
     [
      "Interfax: CEC announces final State Duma results, 25 Sep 2026",
@@ -778,9 +876,13 @@
     [
      "Kremlin: inauguration of the President, 7 May 2024",
      "http://en.kremlin.ru/events/president/news/73986"
+    ],
+    [
+     "Members of the Government",
+     "http://government.ru/gov/persons/"
     ]
    ],
-   "updated": "2026-11-08"
+   "updated": "2026-11-09"
   },
   {
    "id": "by",
@@ -848,7 +950,22 @@
     }
    ],
    "blr": [],
-   "log": [],
+   "log": [
+    {
+     "date": "2026-11-09",
+     "t": "Lukashenko sent condolences to the Polish people over the Kraków attack on 8 Nov; Lithuania's border guard turned back seven migrants at the Belarusian border in 24 hours.",
+     "src": [
+      [
+       "Лукашенко выразил соболезнования народу Польши в связи с терактом в Кракове",
+       "https://www.belta.by/president/view/lukashenko-vyrazil-soboleznovanija-narodu-polshi-v-svjazi-s-teraktom-v-krakove-809916-2026/"
+      ],
+      [
+       "Pasienyje su Baltarusija apgręžti septyni neteisėti migrantai",
+       "https://www.lrt.lt/naujienos/lietuvoje/2/3108020/pasienyje-su-baltarusija-apgrezti-septyni-neteiseti-migrantai"
+      ]
+     ]
+    }
+   ],
    "src": [
     [
      "SIPRI Military Expenditure Database, April 2026 release (1949–2025), share of GDP",
@@ -865,9 +982,13 @@
     [
      "LRT: Lithuanian government reopens border with Belarus earlier than planned",
      "https://www.lrt.lt/en/news-in-english/19/2750234/lithuanian-government-reopens-border-with-belarus-earlier-than-planned"
+    ],
+    [
+     "Ministry of Foreign Affairs of Belarus, homepage (6 Nov item on the Venezuelan ambassador)",
+     "https://mfa.gov.by/"
     ]
    ],
-   "updated": "2026-11-08"
+   "updated": "2026-11-09"
   },
   {
    "id": "cn",
@@ -941,7 +1062,22 @@
     }
    ],
    "blr": [],
-   "log": [],
+   "log": [
+    {
+     "date": "2026-11-09",
+     "t": "As of 9 Nov no MOFCOM notice extended Announcement No. 70, which suspends the October 2025 rare-earth controls until 10 Nov; on 6 Nov MOFCOM opened an anti-dumping case into EU para-aramid filament.",
+     "src": [
+      [
+       "Ministry of Commerce homepage and announcements (checked 9 Nov, about 12:30 Beijing time)",
+       "https://www.mofcom.gov.cn/"
+      ],
+      [
+       "MOFCOM Announcement 2026 No. 57: anti-dumping investigation into para-aramid filament from the EU",
+       "https://www.mofcom.gov.cn/zwgk/zcfb/art/2026/art_e6c3b466b3c24b698a9fc6a649e2db94.html"
+      ]
+     ]
+    }
+   ],
    "src": [
     [
      "NATO Washington Summit Declaration, 10 July 2024",
@@ -974,9 +1110,17 @@
     [
      "Materials Dispatch: China's November 2026 export-control cliff",
      "https://www.materialsdispatch.com/en/blog/china-november-2026-export-control-cliff"
+    ],
+    [
+     "Wang Yi meets Vietnam's foreign minister (4 Nov 2026)",
+     "https://www.fmprc.gov.cn/wjbzhd/202611/t20261104_12053271.shtml"
+    ],
+    [
+     "Defence Minister Dong Jun visits South Africa (June 2026)",
+     "http://www.mod.gov.cn/gfbw/jswj/cf/16464960.html"
     ]
    ],
-   "updated": "2026-11-08"
+   "updated": "2026-11-09"
   }
  ],
  "map": {

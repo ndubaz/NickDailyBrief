@@ -631,6 +631,57 @@
      3
     ]
    ]
+  },
+  {
+   "id": "2026-11-08-de-sab-koeln-rail",
+   "date": "2026-11-08",
+   "code": "SAB",
+   "attr": "A0",
+   "local": true,
+   "country": "DE",
+   "place": "Cologne area, rail network (exact site not given; marker at Cologne)",
+   "lat": 50.94,
+   "lon": 6.96,
+   "summary": "WDR reported on the evening of 8 Nov that after vandalism and signal-box damage in the Cologne area rail traffic was slowly resuming: “Der Staatsschutz ermittelt”, the state-security police are investigating. About 75 km from Heerlen. [57]",
+   "edition": "2026-11-09",
+   "src": [
+    [
+     57,
+     "Vandalismus sorgte für Bahnstörungen im Raum Köln (feed teaser)",
+     "WDR",
+     "https://www1.wdr.de/nrw/koeln/bahn-stellwerkschaden-ersatzverkehr-100.html",
+     3
+    ]
+   ]
+  },
+  {
+   "id": "2026-11-08-md-air-aerostats",
+   "date": "2026-11-08",
+   "code": "AIR",
+   "attr": "A0",
+   "local": false,
+   "country": "MD",
+   "place": "Drochia and Soroca districts, northern Moldova (marker at Drochia)",
+   "lat": 48.03,
+   "lon": 27.81,
+   "summary": "Moldova's defence ministry said two aerostat-type objects crossed its airspace illegally, one entering near Moșeni and leaving near Elizavetovca, the other coming from the direction of Vinnytsia toward Trifăuți; it counts 69 violations in 2026. [42, 43]",
+   "edition": "2026-11-09",
+   "src": [
+    [
+     42,
+     "Two aerostat-type objects illegally entered national airspace",
+     "Moldpres (citing Moldova's defence ministry)",
+     "https://www.moldpres.md/eng/society/two-aerostat-type-objects-illegally-traversed-national-airspace",
+     2
+    ],
+    [
+     43,
+     "Moldova records 69 airspace violations since early 2026",
+     "Moldpres",
+     "https://www.moldpres.md/eng/society/moldova-records-69-airspace-violations-since-early-2026",
+     2
+    ]
+   ]
   }
  ],
  "attrLog": [
@@ -706,5 +757,5 @@
   }
  ],
  "attrLogNote": "One entry per attribution change: {id (incident id), date, from (A0..A5), to (A0..A5), t (what moved), src (optional [[n,title,outlet,url]])}. The page lists the last 7 days under Attribution moves.",
- "updated": "2026-11-08"
+ "updated": "2026-11-09"
 }

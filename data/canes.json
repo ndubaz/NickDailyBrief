@@ -1,7 +1,7 @@
 {
  "season": "2026-27",
  "team": "CAR",
- "source": "NHL API (api-web.nhle.com club-schedule-season and standings), 8 Nov 2026",
+ "source": "NHL API (api-web.nhle.com club-schedule-season and standings), 9 Nov 2026",
  "games": [
   {
    "date": "2026-09-29",
@@ -159,7 +159,7 @@
  "record": "14-3-2",
  "points": 30,
  "metro": 1,
- "updated": "2026-11-08",
+ "updated": "2026-11-09",
  "upcoming": [
   {
    "date": "2026-11-12",

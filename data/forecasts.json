@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-07",
+ "updated": "2026-11-09",
  "note": "Forecast ledger, run only. Dated, falsifiable calls with a probability and a resolution date. The run adds one to three a week, never edits a call after it is made, resolves each on its date (yes, no, or void when the question stopped being meaningful) with the fact and source, and the page keeps a Brier score. Seed entries dated 7 Nov 2026 were made at the 7.0 build.",
  "items": [
   {
@@ -33,6 +33,26 @@
    "congress": "ndaa-fy27",
    "status": "open",
    "why": "Both chambers have passed bills; the last three years' reports were filed between 6 and 14 Dec."
+  },
+  {
+   "id": "2026-11-09-hegseth-floor-vote",
+   "q": "The House holds a recorded floor vote on Rep. Massie's impeachment resolution against Secretary Hegseth (to adopt, table or refer it) by 20 Nov",
+   "p": 0.75,
+   "made": "2026-11-09",
+   "resolves": "2026-11-20",
+   "domain": "Congress",
+   "status": "open",
+   "why": "The resolution is privileged and must be scheduled within two legislative days of being offered, and the House minority leader backs it."
+  },
+  {
+   "id": "2026-11-09-tk-tax-plan",
+   "q": "The Tweede Kamer passes the 2027 tax plan on 12 Nov",
+   "p": 0.7,
+   "made": "2026-11-09",
+   "resolves": "2026-11-13",
+   "domain": "Netherlands",
+   "status": "open",
+   "why": "The coalition's 66 seats plus ChristenUnie, 50PLUS and the Markuszower group make a majority, per DutchNews on 5 Nov."
   }
  ]
 }

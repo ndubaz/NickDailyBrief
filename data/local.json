@@ -36,10 +36,10 @@
   "lki": {
    "station": "Heerlen-Looierstraat (NL10136)",
    "value": 2,
-   "time": "2026-11-09T01:00:00+00:00",
+   "time": "2026-11-09T03:00:00+00:00",
    "src": "Luchtmeetnet (RIVM) air-quality index LKI, 1 good to 11 very bad"
   },
-  "fetched": "2026-11-09T02:02:12.360Z"
+  "fetched": "2026-11-09T04:16:52.348Z"
  },
  "power": {
   "src": "EnergyZero day-ahead hourly prices, euro per kWh, VAT included, before energy tax and the supplier margin",
@@ -170,7 +170,7 @@
     }
    }
   ],
-  "fetched": "2026-11-09T02:02:12.979Z"
+  "fetched": "2026-11-09T04:16:53.005Z"
  },
  "maas": {
   "src": "Open-Meteo Flood API (GloFAS model), Maas grid cell north of Maastricht; a model estimate, not the Rijkswaterstaat gauge",
@@ -252,13 +252,13 @@
     208.9
    ]
   ],
-  "fetched": "2026-11-09T02:02:13.665Z"
+  "fetched": "2026-11-09T04:16:53.705Z"
  },
  "sky": {
   "src": "NOAA SWPC planetary K-index forecast",
   "now": {
-   "time": "2026-11-08T21:00:00",
-   "kp": 2.67
+   "time": "2026-11-09T00:00:00",
+   "kp": 3
   },
   "max3d": {
    "time": "2026-11-09T03:00:00",
@@ -266,13 +266,13 @@
    "scale": "G1"
   },
   "note": "Kp 5 is a minor storm (aurora possible on the northern horizon from Limburg on a clear night), Kp 7 or more reached the Netherlands in May and October 2024",
-  "fetched": "2026-11-09T02:02:14.045Z"
+  "fetched": "2026-11-09T04:16:54.111Z"
  },
  "roads": {
   "src": "NDW open data, actueel beeld (traffic measures and incidents in force), within 25 km of the town centre",
-  "asof": "2026-11-09T02:02:15.416Z",
-  "count": 19,
-  "highSeverity": 3,
+  "asof": "2026-11-09T04:16:55.302Z",
+  "count": 22,
+  "highSeverity": 4,
   "items": [
    {
     "km": 1.2,
@@ -335,18 +335,6 @@
     "sev": "medium"
    },
    {
-    "km": 8.8,
-    "lat": 50.953,
-    "lon": 5.817,
-    "type": "VehicleObstruction",
-    "cause": "",
-    "mgmt": "",
-    "by": "NDW",
-    "from": "2026-11-09",
-    "to": "",
-    "sev": "unknown"
-   },
-   {
     "km": 9,
     "lat": 50.962,
     "lon": 5.821,
@@ -378,7 +366,7 @@
     "cause": "roadMaintenance",
     "mgmt": "carriagewayClosures",
     "by": "Gemeente Sittard-Geleen",
-    "from": "2026-09-28",
+    "from": "2026-11-09",
     "to": "2026-11-13",
     "sev": "low"
    },
@@ -417,16 +405,28 @@
     "from": "2026-09-24",
     "to": "2026-11-15",
     "sev": "medium"
+   },
+   {
+    "km": 10.9,
+    "lat": 50.955,
+    "lon": 5.786,
+    "type": "RoadOrCarriagewayOrLaneManagement",
+    "cause": "roadMaintenance",
+    "mgmt": "carriagewayClosures",
+    "by": "Gemeente Stein",
+    "from": "2026-11-09",
+    "to": "2026-12-18",
+    "sev": "high"
    }
   ],
-  "fetched": "2026-11-09T02:02:15.416Z"
+  "fetched": "2026-11-09T04:16:55.302Z"
  },
  "rail": {
   "src": "Rijden de Treinen, current disruptions (NS and regional operators)",
-  "total": 0,
+  "total": 1,
   "items": [],
-  "asof": "2026-11-09T02:02:16.063Z",
-  "fetched": "2026-11-09T02:02:16.063Z"
+  "asof": "2026-11-09T04:16:56.186Z",
+  "fetched": "2026-11-09T04:16:56.186Z"
  },
  "notices": {
   "src": "Officiële bekendmakingen (overheid.nl SRU), gemeente Heerlen notices that name Hoensbroek, last three weeks; street postcodes stripped",
@@ -523,7 +523,7 @@
     "url": "https://zoek.officielebekendmakingen.nl/gmb-2026-501280.html"
    }
   ],
-  "fetched": "2026-11-09T02:02:17.668Z"
+  "fetched": "2026-11-09T04:16:57.628Z"
  },
  "news": {
   "src": "L1 Nieuws (L1 and 1Limburg), newest headlines",
@@ -589,22 +589,89 @@
     "url": "https://www.l1nieuws.nl/nieuws/3268828/verstappen-zint-op-inhaalrace-in-sao-paulo"
    }
   ],
-  "asof": "2026-11-09T02:02:18.475Z",
-  "fetched": "2026-11-09T02:02:18.475Z"
+  "asof": "2026-11-09T04:16:58.849Z",
+  "fetched": "2026-11-09T04:16:58.849Z"
  },
  "updated": "2026-11-09",
- "asof": "2026-11-09T02:02:18.475Z",
+ "asof": "2026-11-09T04:16:58.849Z",
  "town": "Hoensbroek",
  "errors": [],
  "note": "Parkstad daily-life feeds. The tool rewrites air, power, maas, sky, roads, rail, notices and news; the run writes flu, noise, woord (Limburgs word of the day, appended), culture (dated local events, confirmed), admin (dated household admin), roda (next fixtures) and shops. Town-centre coordinates only; no address or postcode is stored.",
- "flu": null,
+ "flu": {
+  "t": "Week 44 (26 Oct – 1 Nov): 136 per 100,000 people saw a GP with a respiratory infection, a low level; RIVM on 4 Nov: few people with flu, no epidemic. Since September RIVM and Nivel report all acute respiratory infections, and the 2026–27 thresholds are not yet set, so the old 58 per 100,000 flu line no longer applies. Next update Wed 11 Nov.",
+  "src": [
+   [
+    "Actualiteiten over luchtweginfecties",
+    "https://www.rivm.nl/luchtweginfecties/actueel"
+   ],
+   [
+    "Actualiteiten over griep",
+    "https://www.rivm.nl/griep-griepprik/actueel"
+   ]
+  ]
+ },
  "noise": null,
- "roda": [],
+ "roda": [
+  {
+   "date": "2026-11-14",
+   "opp": "FC Volendam",
+   "home": true,
+   "time": "20:00",
+   "src": "https://www.rodajckerkrade.nl/wedstrijden/programma/"
+  },
+  {
+   "date": "2026-11-20",
+   "opp": "TOP Oss",
+   "home": false,
+   "time": "20:00",
+   "src": "https://www.rodajckerkrade.nl/wedstrijden/programma/"
+  },
+  {
+   "date": "2026-11-29",
+   "opp": "De Graafschap",
+   "home": true,
+   "time": "16:45",
+   "src": "https://www.rodajckerkrade.nl/wedstrijden/programma/"
+  },
+  {
+   "date": "2026-12-03",
+   "opp": "RKAV Volendam (KNVB Beker)",
+   "home": true,
+   "time": "20:00",
+   "src": "https://www.rodajckerkrade.nl/wedstrijden/programma/"
+  },
+  {
+   "date": "2026-12-06",
+   "opp": "FC Eindhoven",
+   "home": false,
+   "time": "12:15",
+   "src": "https://www.rodajckerkrade.nl/wedstrijden/programma/"
+  }
+ ],
  "shops": {
-  "koopzondag": "to confirm from gemeente Heerlen",
-  "weekmarkt": "to confirm: market days in Hoensbroek and Heerlen"
+  "koopzondag": "Heerlen lets all shops open every Sunday; each shop decides. Late shopping every Thursday to 21:00; shops close at 19:00 on 24 Dec.",
+  "weekmarkt": "Heerlen centre (Bongerd and Promenade): Tuesday 08:30–15:00, Saturday 09:00–17:00. Hoensbroek (Markt): Friday 08:00–12:30. Heerlerheide: Friday 13:00–17:00.",
+  "src": [
+   [
+    "Winkelen in Heerlen",
+    "https://en.heerlen.nl/winkelen-in-heerlen"
+   ]
+  ],
+  "verified": true
  },
  "culture": [
+  {
+   "date": "2026-11-10",
+   "t": "Aod òp Nuj: Heerlen opens the carnival season on the Burgemeester van Grunsvenplein from 18:30, free",
+   "prio": true,
+   "verified": true,
+   "src": [
+    [
+     "Aod òp Nuj 2026",
+     "https://aodopnuj.nl/"
+    ]
+   ]
+  },
   {
    "date": "2026-11-11",
    "t": "Elfde van de Elfde: the Vastelaovend season opens at 11:11; Sint Maarten lantern walks after dark",
@@ -618,11 +685,44 @@
    "verified": true
   },
   {
-   "date": "2026-11-14",
-   "t": "Sinterklaas national arrival on television; local arrivals follow on 15 and 21 Nov (see Out and about)",
+   "date": "2026-11-11",
+   "t": "Leedjeskonkoer, the carnival song contest, at Kasteel Hoensbroek (time not published)",
    "prio": false,
-   "verified": false,
-   "note": "to confirm the 2026 intocht date"
+   "verified": true,
+   "src": [
+    [
+     "Evenementenkalender gemeente Heerlen 2026 (Gemeenteblad 2025, 515528)",
+     "https://zoek.officielebekendmakingen.nl/gmb-2025-515528.html"
+    ]
+   ]
+  },
+  {
+   "date": "2026-11-14",
+   "t": "Sinterklaas national arrival in Grave, on NPO television; local arrivals in Maastricht on 14 Nov, Heerlen on 15 Nov and Hoensbroek on 21 Nov",
+   "prio": false,
+   "verified": true,
+   "src": [
+    [
+     "Definitief: landelijke Sinterklaasintocht dit jaar in Grave",
+     "https://www.omroepbrabant.nl/nieuws/6003942/definitief-landelijke-sinterklaasintocht-dit-jaar-in-grave"
+    ],
+    [
+     "Sinterklaas komt naar Parkstad: intochten op meerdere plekken",
+     "https://zo-nws.nl/sinterklaas-komt-naar-parkstad-intochten-op-meerdere-plekken"
+    ]
+   ]
+  },
+  {
+   "date": "2026-11-21",
+   "t": "Sinterklaas arrives in Hoensbroek, Gebrookerplein (time to be announced)",
+   "prio": true,
+   "verified": true,
+   "src": [
+    [
+     "Sinterklaas komt naar Parkstad: intochten op meerdere plekken",
+     "https://zo-nws.nl/sinterklaas-komt-naar-parkstad-intochten-op-meerdere-plekken"
+    ]
+   ]
   },
   {
    "date": "2027-02-07",
@@ -672,6 +772,21 @@
     [
      "Limburgs woordenboek (e-WLD)",
      "https://e-wld.nl/"
+    ]
+   ]
+  },
+  {
+   "date": "2026-11-09",
+   "word": "Vasteloavend",
+   "meaning_nl": "vastenavond, carnaval",
+   "meaning_en": "carnival, the Shrovetide season that opens on 11-11",
+   "example": "Elf-elf: d'r Vasteloavend is weer begonne!",
+   "example_en": "Eleven-eleven: carnival season has started again!",
+   "note": "Heerlen spelling, as e-WLD records it for Heerlen and the gemeente uses it; Sittard and Maastricht write Vastelaovend. The example sentence is ours, since the dictionary gives forms, not sentences.",
+   "src": [
+    [
+     "e-WLD, lemma vastenavond (Heerlen: Vasteloavend)",
+     "https://www.e-wld.nl/lemma/search/?search=vastenavond"
     ]
    ]
   }

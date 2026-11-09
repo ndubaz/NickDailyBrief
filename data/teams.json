@@ -1,12 +1,12 @@
 {
- "updated": "2026-11-08",
+ "updated": "2026-11-09",
  "note": "Secondary teams. Less detail than the Canes: record, last result, next game. The run refreshes this from the ESPN and MLB feeds named in SCHEMA.md.",
  "saints": {
   "name": "New Orleans Saints",
   "abbr": "NO",
   "league": "NFL",
   "season": 2026,
-  "record": "2-5",
+  "record": "3-5",
   "standing": "NFC South",
   "src": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/no/schedule",
   "games": [
@@ -72,16 +72,18 @@
     "pa": 16,
     "res": "L",
     "week": 7
-   }
-  ],
-  "upcoming": [
+   },
    {
     "date": "2026-11-08",
     "opp": "CLE",
     "home": true,
-    "utc": "2026-11-08T18:00:00Z",
+    "pf": 23,
+    "pa": 22,
+    "res": "W",
     "week": 9
-   },
+   }
+  ],
+  "upcoming": [
    {
     "date": "2026-11-15",
     "opp": "CAR",
