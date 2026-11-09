@@ -111,7 +111,7 @@ The standing files are the Readbook's memory. The page reads them; it never writ
    "congress": [item] (NDAA, appropriations, hearings, nominations, policy with a bill or directive behind it),
    "career": {"items": [item] (boards, assignments, education, pay and benefits, as they touch a field-grade officer in Europe),
               "dates": [["YYYY-MM-DD", "milestone"]] (optional; also shown on the calendar), "note": "optional line"}},
- "aperture": {(7.5: contrarian, weak, number, inject and question are no longer written or drawn)
+ "aperture": {"rota","deep":{"kind","title","body":[...],"table"},"longread":{"title","url","outlet","why"},"redteam" (Saturdays, carried on Sundays with "carried": true): {"title","actor","premise","body":["..."],"moves":[["their move","first observable"]],"assumptions":["..."],"links":[...],"src"} (7.5: contrarian, weak, number, inject and question are no longer written or drawn)
    "deep": {"kind","title","body":["para",...],"table": {"head":[...],"rows":[[...]]} | null},
    "longread": {"title","outlet","url","why"} | null, "rota": "mon|tue|wed|thu|fri|sat|sun"},
  "money": {"asof","cards":[[label,value,change,dir,note,src,series]],"ytd":[[name,pct]],"ytdSrc","driver",

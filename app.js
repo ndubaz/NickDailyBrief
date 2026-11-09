@@ -1704,8 +1704,17 @@
       if (D.table) h += table(D.table.head, D.table.rows.map(function (r) { return "<tr>" + r.map(function (c) { return "<td>" + rich(c) + "</td>"; }).join("") + "</tr>"; }).join(""), "lbl1");
       h += "</div></details>";
     }
+    var RT = AP.redteam;
+    if (RT && RT.title) {
+      h += '<article class="redteam ' + fu(RT.carried ? "" : "NEW") + '"><div class="lbl">Red team · ' + esc(RT.actor || "the other side") + (RT.carried ? " · from Saturday" : "") + "</div><h4>" + esc(RT.title) + "</h4>" + badge(RT.carried ? "" : "NEW");
+      if (RT.premise) h += '<p class="premise"><b class="l">Assumption under test</b>' + rich(RT.premise) + "</p>";
+      h += (RT.body || []).map(function (p) { return "<p>" + rich(p) + "</p>"; }).join("");
+      if (RT.moves && RT.moves.length) h += '<h5>What they would do, and what we would see first</h5>' + table(["Their move", "First observable"], RT.moves.map(function (m) { return "<tr><td>" + rich(m[0]) + "</td><td>" + rich(m[1]) + "</td></tr>"; }).join(""));
+      if (RT.assumptions && RT.assumptions.length) h += '<p class="small"><b>Allied assumptions attacked:</b> ' + RT.assumptions.map(esc).join(" · ") + "</p>";
+      h += linkChips(RT.links) + '<p class="small">Assessment written from the adversary\'s seat; it argues a case, it does not report one. Facts cited; the rest is the exercise.' + cite(RT.src) + "</p></article>";
+    }
     if (AP.longread) h += '<div class="ap-c"><div class="lbl">Long read</div><p><a href="' + esc(AP.longread.url) + '" target="_blank" rel="noopener">' + esc(AP.longread.title) + "</a> · " + esc(AP.longread.outlet) + "</p><p>" + rich(AP.longread.why) + "</p></div>";
-    var ROT = [["mon","Mon","Historical echo"],["tue","Tue","Outside-in"],["wed","Wed","Red lens"],["thu","Thu","Concept"],["fri","Fri","Ally spotlight + week in hybrid"],["sat","Sat","Week in war: TTPs (in Defence tech)"],["sun","Sun","Week in defence tech"]];
+    var ROT = [["mon","Mon","Historical echo"],["tue","Tue","Outside-in"],["wed","Wed","Red lens"],["thu","Thu","Concept"],["fri","Fri","Ally spotlight + week in hybrid"],["sat","Sat","Red team (and the TTP piece in Defence tech)"],["sun","Sun","Red team carried; week in defence tech"]];
     h += '<p class="small rotal"><b>Rota</b> ' + ROT.map(function (r) { return '<span class="' + (r[0] === AP.rota ? "on" : "") + '">' + r[1] + " " + r[2] + "</span>"; }).join(" · ") + "</p>";
     h += "</div></section>";
 

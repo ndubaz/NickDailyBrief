@@ -834,3 +834,11 @@ html.compact .panel,.compact .card{padding:var(--s2)}
 /* chips never widen the page */
 .nv-h .chip,.cf-top .chip,.ctry-h .chip,.inc-top .chip{white-space:normal;max-width:100%;overflow-wrap:anywhere;line-height:1.25}
 .nwl .en{display:block;color:var(--ink);font-size:13px;margin-top:1px}.nwl .en.muted{color:var(--muted);font-style:italic}
+/* 7.5 red team */
+.redteam{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--crit);border-radius:var(--r-card);padding:var(--s3) var(--s4)}
+.redteam .lbl{font-family:var(--f-display);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:13px;color:var(--crit);margin-bottom:var(--s1)}
+.redteam h4{font-family:var(--f-display);font-size:22px;font-weight:700;line-height:1.15;margin:0 0 var(--s2)}
+.redteam h5{font-family:var(--f-display);font-size:14px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin:var(--s3) 0 var(--s1)}
+.redteam .premise{border-left:3px solid var(--crit);padding-left:10px}
+.redteam .premise b.l{font-family:var(--f-display);text-transform:uppercase;letter-spacing:.05em;font-size:13px;color:var(--crit);margin-right:var(--s1)}
+.redteam p{max-width:68ch}
