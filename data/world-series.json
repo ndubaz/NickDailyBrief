@@ -61,6 +61,24 @@
    "url": "https://portwatch.imf.org/",
    "decimals": 0,
    "note": "Rows dated the first of the month. Monthly sums of PortWatch's daily modelled transit estimates (cargo plus tanker), retrieved 8 Nov 2026 from the PortWatch ArcGIS layer; PortWatch can revise daily values. October 2023, before the Houthi campaign, had 2,438 transits."
+  },
+  "ua-occupied-km2": {
+   "label": "Ukrainian territory occupied since 2022, km²",
+   "unit": "km²",
+   "cadence": "weekly",
+   "source": "DeepState map layer, area of the polygons marked occupied inside Ukraine, excluding Crimea and the 2014 Donbas; computed by tools/uafront.js",
+   "url": "https://deepstatemap.live/",
+   "decimals": 0,
+   "note": "Planimetric estimate from the published layer, rounded to 10 km²; DeepState's own monthly figures may differ by a few percent. The change between rows is the net movement of the line."
+  },
+  "ua-downed-pct": {
+   "label": "Share of drones and missiles downed, Ukrainian Air Force",
+   "unit": "%",
+   "cadence": "daily",
+   "source": "Ukrainian Air Force daily statement, as reported by Ukrinform or the Kyiv Independent; downed or suppressed divided by launched, drones and missiles together",
+   "url": "https://www.ukrinform.net/",
+   "decimals": 0,
+   "note": "Seeded from the statements in the 6 and 8 Nov editions (105 of 130 on 5 Nov; 153 of 208 on 7 Nov). Ballistic missiles are counted with the rest, so a heavy ballistic night pulls the share down."
   }
  },
  "series": {
@@ -275,6 +293,22 @@
    [
     "2026-10-01",
     864
+   ]
+  ],
+  "ua-occupied-km2": [
+   [
+    "2026-11-09",
+    73080
+   ]
+  ],
+  "ua-downed-pct": [
+   [
+    "2026-11-05",
+    81
+   ],
+   [
+    "2026-11-07",
+    74
    ]
   ]
  }

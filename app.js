@@ -1554,7 +1554,10 @@
     } else h += quiet("The board file is not loaded.");
     h += "</section>";
     /* by the numbers */
-    var keys = WO.numbers && WO.numbers.length ? WO.numbers : Object.keys(WS.series || {}).filter(function (k) { return (WS.series[k] || []).length; }).concat(["brent"]);
+    /* By the numbers: the edition's keys plus the standing war series, never brent or ttf (Markets has them) */
+    var keys = (WO.numbers && WO.numbers.length ? WO.numbers : Object.keys(WS.series || {}).filter(function (k) { return (WS.series[k] || []).length; })).slice();
+    ["ua-occupied-km2", "ua-downed-pct", "ua-drones-month"].forEach(function (k) { if (keys.indexOf(k) < 0 && ((WS.series || {})[k] || []).length) keys.push(k); });
+    keys = keys.filter(function (k, i) { return k !== "brent" && k !== "ttf" && keys.indexOf(k) === i; });
     var tiles = [];
     keys.forEach(function (k) {
       var meta = (WS.meta || {})[k] || {}, ser = (WS.series || {})[k] || SER[k] || [];

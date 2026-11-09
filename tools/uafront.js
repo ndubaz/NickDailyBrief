@@ -28,5 +28,15 @@ function rdp(pts, eps) {
   const today = new Date().toISOString().slice(0, 10);
   const data = Object.assign({}, prev, L, { asof: today, asofText: ds.datetime || "" });
   fs.writeFileSync(out, JSON.stringify(data));
+  /* occupied area since 2022 inside Ukraine's bounding box, km², from the full-resolution polygons; Crimea and the 2014 Donbas areas excluded */
+  const areaKm2 = (ring) => { const lat0 = ring.reduce((s, p) => s + p[1], 0) / ring.length, k = Math.cos(lat0 * Math.PI / 180), R = 6371; const pts = ring.map((p) => [p[0] * Math.PI / 180 * k * R, p[1] * Math.PI / 180 * R]); let s = 0; for (let i = 0; i < pts.length; i++) { const [x1, y1] = pts[i], [x2, y2] = pts[(i + 1) % pts.length]; s += x1 * y2 - x2 * y1; } return Math.abs(s) / 2; };
+  let occ = 0;
+  for (const f of ds.map.features) { const n = String(f.properties.name || ""), g = f.geometry; if (g.type !== "Polygon" || !/Occupied|Tuzla/.test(n) || /Crimea|CADR/.test(n)) continue; const r0 = g.coordinates[0]; const inUA = r0.every((p) => p[0] > 22 && p[0] < 41 && p[1] > 44 && p[1] < 53); if (!inUA) continue; occ += areaKm2(r0) - g.coordinates.slice(1).reduce((s, h) => s + areaKm2(h), 0); }
+  const wsPath = path.join(__dirname, "..", "data", "world-series.json"), ws = JSON.parse(fs.readFileSync(wsPath, "utf8"));
+  ws.series = ws.series || {}; ws.meta = ws.meta || {};
+  const key = "ua-occupied-km2", rows = (ws.series[key] || []).filter((r) => r[0] !== today); rows.push([today, Math.round(occ / 10) * 10]); rows.sort((a, b) => (a[0] < b[0] ? -1 : 1)); ws.series[key] = rows;
+  ws.meta[key] = ws.meta[key] || { label: "Ukrainian territory occupied since 2022, km²", unit: "km²", cadence: "weekly", source: "DeepState map layer, area of the polygons marked occupied inside Ukraine, excluding Crimea and the 2014 Donbas; computed by tools/uafront.js", url: "https://deepstatemap.live/", decimals: 0, note: "Planimetric estimate from the published layer, rounded to 10 km²; DeepState's own monthly figures may differ by a few percent. The change between rows is the net movement of the line." };
+  fs.writeFileSync(wsPath, JSON.stringify(ws, null, 1));
+  console.log("world-series ua-occupied-km2: " + Math.round(occ) + " km² on " + today);
   console.log("ua-front.json refreshed: " + L.occupied.length + " occupied, " + L.liberated.length + " liberated, " + L.unknown.length + " unknown polygons, " + L.arrows.length + " axes; DeepState " + ds.datetime);
 })().catch((e) => { console.error("uafront: " + e.message + " (file left unchanged)"); process.exit(1); });
