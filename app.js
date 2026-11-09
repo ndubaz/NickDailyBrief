@@ -413,11 +413,15 @@
   function logList(log, cls) { var yr = (ctx._TD || "").slice(0, 4); return '<div class="' + (cls || "tlog") + '">' + log.slice().reverse().map(function (e) { return '<div class="e"><span class="d">' + esc(fmtShort(e.date) + (e.date.slice(0, 4) !== yr ? " " + e.date.slice(0, 4) : "")) + "</span><p>" + rich(e.t, srcMap(e.src)) + "</p></div>"; }).join("") + "</div>"; }
   function renderThreads(view) {
     if (!view.length) return quiet("No threads are open.");
-    return '<div class="fug">' + nq() + view.map(function (v) {
-      var h = '<details class="thread ' + fu(v.badge) + '" id="thread-' + esc(v.t.id) + '" open><summary><span class="tname">' + esc(v.t.name) + '<span class="chip st ' + esc(v.status) + '">' + esc(v.status) + "</span>" + badge(v.badge) + inToday("thread", v.t.id) + '</span><span class="tlast"><span class="d">' + esc(fmtShort(v.last.date)) + "</span>" + rich(v.last.t, srcMap(v.last.src)) + "</span></summary>";
+    /* moved in 14 days: open card; 15 to 30 days: card closed to its summary; quiet beyond 30: one folded index line each. Nothing leaves the file. */
+    var live = view.filter(function (v) { return v.age <= 30; }), quietL = view.filter(function (v) { return v.age > 30; });
+    var h0 = '<div class="fug">' + nq() + live.map(function (v) {
+      var h = '<details class="thread ' + fu(v.badge) + '" id="thread-' + esc(v.t.id) + '"' + (v.age <= 14 ? " open" : "") + '><summary><span class="tname">' + esc(v.t.name) + '<span class="chip st ' + esc(v.status) + '">' + esc(v.status) + "</span>" + badge(v.badge) + inToday("thread", v.t.id) + '</span><span class="tlast"><span class="d">' + esc(fmtShort(v.last.date)) + "</span>" + rich(v.last.t, srcMap(v.last.src)) + "</span></summary>";
       h += '<div class="tlog">' + (v.log.length > 1 ? logList(v.log.slice(0, -1).slice(-9), "sub") : "") + '<div class="meta">Opened ' + esc(v.t.opened ? fmtLong(v.t.opened) : "—") + " · " + v.log.length + (v.log.length === 1 ? " entry" : " entries") + (v.log.length > 10 ? ", last 10 shown" : "") + (v.status === "quiet" ? " · quiet: nothing logged for " + v.age + " days" : "") + "</div></div></details>";
       return h;
     }).join("") + "</div>";
+    if (quietL.length) h0 += '<details class="srcfold nvold"><summary>' + quietL.length + " quiet " + (quietL.length === 1 ? "thread" : "threads") + ' <span class="small">· nothing logged for more than 30 days; the full log stays in data/threads.json</span></summary><ul class="exl">' + quietL.map(function (v) { return '<li id="thread-' + esc(v.t.id) + '"><span class="d">' + esc(fmtShort(v.last.date)) + '</span><span><b>' + esc(v.t.name) + "</b> · " + v.log.length + (v.log.length === 1 ? " entry" : " entries") + ' <span class="small">· last: ' + esc(plain(v.last.t)).slice(0, 140) + "</span></span></li>"; }).join("") + "</ul></details>";
+    return h0;
   }
   /* one dated list for the watch: horizon.json, exercises, Congress deadlines, forecasts resolving, elections */
   /* "8–10 Nov" or "28 Nov – 2 Dec" in dateText: the event runs to the second day */
@@ -674,7 +678,7 @@
   function epCode(x) { return x ? "S" + x.s + "E" + x.e : ""; }
   function tvBlock(ctx, TD) {
     var TV = ctx.tv; if (!TV || !(TV.shows || []).length) return quiet("No shows tracked. Add them to data/tv.json.");
-    var shows = TV.shows.slice().sort(function (a, b) { var ad = a.next && a.next.date ? a.next.date : "9", bd = b.next && b.next.date ? b.next.date : "9"; return ad < bd ? -1 : ad > bd ? 1 : 0; });
+    var shows = TV.shows.filter(function (x) { return x.status !== "ended"; }).sort(function (a, b) { var ad = a.next && a.next.date ? a.next.date : "9", bd = b.next && b.next.date ? b.next.date : "9"; return ad < bd ? -1 : ad > bd ? 1 : 0; }), ended = TV.shows.filter(function (x) { return x.status === "ended"; });
     var h = '<div class="shows">' + shows.map(function (x) {
       var n = x.next, l = x.last, nd = n && n.date ? daysBetween(TD, n.date) : null, past = n && n.date && n.date < TD;
       var c = '<div class="show"><div class="sh"><b>' + esc(x.title) + '</b><span><span class="small">' + esc(x.where || "") + '</span> <span class="chip st tier' + (x.status === "airing" || x.status === "scheduled" ? " on" : "") + '">' + esc(TVST[x.status] || x.status || "") + "</span></span></div>";
@@ -684,6 +688,7 @@
       if (x.note) c += '<p class="small note">' + esc(x.note) + (x.src && x.src.length ? ' <a href="' + esc(x.src[0][1]) + '" target="_blank" rel="noopener" class="srcl">source</a>' : "") + "</p>";
       return c + "</div>";
     }).join("") + "</div>";
+    if (ended.length) h += '<p class="small"><b>Ended:</b> ' + ended.map(function (x) { return esc(x.title) + (x.last && x.last.date ? " (" + esc(fmtShort(x.last.date)) + " " + x.last.date.slice(0, 4) + ")" : ""); }).join(" · ") + "</p>";
     if ((TV.similar || []).length) {
       var byId = {}; TV.shows.forEach(function (x) { byId[x.id] = x.title; });
       h += '<h3>If you like these</h3><ul class="clean rec">' + TV.similar.map(function (r) { return "<li><b>" + esc(r.title) + "</b>" + (r.where ? ' <span class="small">' + esc(r.where) + "</span>" : "") + (r.like && r.like.length ? ' <span class="small like">· like ' + esc(r.like.map(function (k) { return byId[k] || k; }).join(" and ")) + "</span>" : "") + (r.why ? '<div class="small">' + esc(r.why) + "</div>" : "") + "</li>"; }).join("") + "</ul>";
@@ -899,11 +904,13 @@
     var n = { green: 0, amber: 0, red: 0 }; IW.items.forEach(function (x) { n[x.status] = (n[x.status] || 0) + 1; });
     var h = '<h3 id="indicators">Indicators and warning <span class="small">' + n.red + " red · " + n.amber + " amber · " + n.green + " green</span></h3>";
     h += '<p class="small">Each card: the threshold that moves the status, the source, the last change and a strip of the last eight.</p>';
-    h += '<div class="indgrid">' + IW.items.map(function (x) {
+    var hot = IW.items.filter(function (x) { return x.status !== "green"; }), cool = IW.items.filter(function (x) { return x.status === "green"; });
+    h += '<div class="indgrid">' + hot.map(function (x) {
       var hist = (x.history || []).slice(-8), last = hist[hist.length - 1], val = indicatorValue(x, ctx), age = last ? daysBetween(last.date, TD) : null;
       var links = [x.theatre ? "theatre:" + x.theatre : "", x.country ? "country:" + x.country : "", x.congress ? "congress:" + x.congress : ""].filter(Boolean);
       return '<div class="ind ' + fu(age === 0 ? "NEW" : "") + '" id="ind-' + esc(x.id) + '"><div class="ind-h"><i class="st" style="background:' + IND_COL[x.status] + '"></i><b>' + esc(x.name) + "</b>" + badge(age === 0 ? "NEW" : age === 1 ? "UPDATED" : "") + '</div><div class="small">Threshold: ' + esc(x.threshold || "") + (x.src ? " · " + esc(x.src) : "") + "</div>" + (val ? '<div class="ind-v">Now <b>' + esc(val) + "</b></div>" : "") + (last ? '<p class="small">Last change ' + esc(fmtShort(last.date)) + ": " + esc(last.t) + "</p>" : "") + '<div class="ind-strip">' + hist.map(function (hh) { return '<i style="background:' + IND_COL[hh.status] + '" title="' + esc(fmtShort(hh.date) + " " + hh.status + ": " + hh.t) + '"></i>'; }).join("") + "</div>" + linkChips(links) + "</div>";
     }).join("") + "</div>";
+    if (cool.length) h += '<div class="panel indcool"><div class="lbl">Green · ' + cool.length + '</div><ul class="exl">' + cool.map(function (x) { var hist = (x.history || []), last = hist[hist.length - 1], val = indicatorValue(x, ctx); return '<li id="ind-' + esc(x.id) + '"><span class="d">' + (last ? esc(fmtShort(last.date)) : "") + '</span><span><i class="dot" style="background:' + IND_COL.green + '"></i><b>' + esc(x.name) + "</b>" + (val ? " · " + esc(val) : "") + '<span class="small"> · ' + esc(x.threshold || "") + "</span></span></li>"; }).join("") + "</ul></div>";
     return h;
   }
   /* ---------- 7.0: forecast ledger ---------- */
@@ -1677,7 +1684,7 @@
         h += linkChips(RS.links) + "</article>";
       });
     } else h += quiet("No research piece in this edition.");
-    var RC = (RJ.covered || []).filter(function (c) { return c.date <= TD; }).sort(function (a, b) { return a.date < b.date ? 1 : -1; }).slice(0, 15), RQ = (RJ.queue || []).filter(function (q) { return !q.for || q.for >= TD; });
+    var RC = (RJ.covered || []).filter(function (c) { return c.date <= TD; }).sort(function (a, b) { return a.date < b.date ? 1 : -1; }).slice(0, 15), RQ = (RJ.queue || []).filter(function (q) { return !q.for || q.for >= TD; }).slice(0, 8);
     if (RC.length) h += '<h3>Covered recently</h3><ul class="exl">' + RC.map(function (c) { return '<li><span class="d">' + esc(fmtShort(c.date)) + '</span><span>' + (c.field ? '<span class="chip st fld">' + esc(RF[c.field] || c.field) + "</span> " : "") + "<b>" + esc(c.org) + "</b> · " + (c.url ? '<a href="' + esc(c.url) + '" target="_blank" rel="noopener">' + esc(c.title) + "</a>" : esc(c.title)) + "</span></li>"; }).join("") + "</ul>";
     if (RQ.length) h += '<h3>In the queue</h3><ul class="exl">' + RQ.map(function (q) { return '<li><span class="d">' + esc(q.for ? fmtShort(q.for) : "soon") + '</span><span><b>' + esc(q.org) + "</b> · " + (q.url ? '<a href="' + esc(q.url) + '" target="_blank" rel="noopener">' + esc(q.title) + "</a>" : esc(q.title)) + (q.note ? ' <span class="small">· ' + esc(q.note) + "</span>" : "") + "</span></li>"; }).join("") + "</ul>";
     h += "</section>";
