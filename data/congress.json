@@ -1,6 +1,6 @@
 {
  "note": "Congress tracker for the Profession part, three lanes in one list. kind = bill (stages introduced, committee, house, senate, conference, enacted; status 'stalled' or 'vetoed' greys the pipeline), budget (stages request, house, senate, cr, enacted, plus a deadline date), nomination (stages vacant, announced, nominated, hearing, committee, floor, confirmed, or withdrawn). dates holds the date each stage was reached. The run adds rows for key defence bills, the appropriations cycle and defence posts (service secretaries and chiefs, Joint Staff, combatant and NATO commanders, OSD, ambassadors to NATO and the host nations), moves stage and dates as Congress acts, sets updated, copies cited source rows into src, and never deletes rows (the page hides enacted, confirmed and withdrawn rows after 30 days). Deadlines feed the Planner. watch = the register of posts the tracker follows (tiers: army, joint, cocom, army4, europe; senate = requires Senate confirmation). The run fills holder, since, acting and src when it can source them, sets updated on a change, and opens a nomination row (with postId) when a post falls vacant or a name is announced. Never delete posts.",
- "updated": "2026-11-05",
+ "updated": "2026-11-10",
  "items": [
   {
    "id": "ndaa-fy27",
@@ -424,10 +424,14 @@
    "post": "Secretary of the Army",
    "tier": "army",
    "senate": true,
-   "holder": "Adam Telle",
+   "holder": "Adam R. Telle",
    "since": "2026-09-01",
    "acting": true,
    "src": [
+    [
+     "U.S. Army Senior Leaders",
+     "https://www.army.mil/leaders/"
+    ],
     [
      48,
      "In first public speech as acting Army secretary, Telle highlights acquisition",
@@ -435,7 +439,9 @@
      "https://www.stripes.com/branches/army/2026-10-12/acting-army-secretary-telle-ausa-conference-23134806.html"
     ]
    ],
-   "updated": "2026-11-02"
+   "updated": "2026-11-10",
+   "verified": true,
+   "note": "army.mil lists him as Acting Secretary of the Army."
   },
   {
    "id": "usa",
@@ -461,10 +467,14 @@
    "post": "Chief of Staff of the Army",
    "tier": "army",
    "senate": true,
-   "holder": "Gen. LaNeve",
+   "holder": "Gen. Christopher C. LaNeve",
    "since": "2026-04-01",
    "acting": true,
    "src": [
+    [
+     "U.S. Army Senior Leaders",
+     "https://www.army.mil/leaders/"
+    ],
     [
      48,
      "In first public speech as acting Army secretary, Telle highlights acquisition",
@@ -472,17 +482,23 @@
      "https://www.stripes.com/branches/army/2026-10-12/acting-army-secretary-telle-ausa-conference-23134806.html"
     ]
    ],
-   "updated": "2026-11-02"
+   "updated": "2026-11-10",
+   "verified": true,
+   "note": "army.mil shows the Chief of Staff post empty and LaNeve as Vice Chief; he has performed the duties of Chief of Staff since 2 Apr 2026."
   },
   {
    "id": "vcsa",
    "post": "Vice Chief of Staff of the Army",
    "tier": "army",
    "senate": true,
-   "holder": null,
+   "holder": "Gen. Christopher C. LaNeve",
    "since": null,
    "acting": false,
    "src": [
+    [
+     "U.S. Army Senior Leaders",
+     "https://www.army.mil/leaders/"
+    ],
     [
      156,
      "Senate confirms LaNeve to be next Army vice chief",
@@ -490,9 +506,9 @@
      "https://breakingdefense.com/2026/01/senate-confirms-laneve-to-be-next-army-vice-chief"
     ]
    ],
-   "updated": "2026-11-03",
-   "verified": false,
-   "note": "LaNeve moved up to acting Chief of Staff on 2 Apr 2026; who covers the vice chief post is not reported."
+   "updated": "2026-11-10",
+   "verified": true,
+   "note": "army.mil lists LaNeve as Vice Chief of Staff while he also performs the duties of Chief of Staff."
   },
   {
    "id": "sma",
@@ -801,9 +817,10 @@
      "https://defensescoop.com/2026/09/30/hegseth-announces-autonomous-warfare-command/"
     ]
    ],
-   "updated": "2026-11-03",
-   "note": "Announced by Hegseth on 30 Sep 2026 as a DoD four-star command; target 1 Oct 2027; no commander named. Distinct from SOUTHCOM's theatre unit of the same name.",
-   "verified": false
+   "updated": "2026-11-10",
+   "note": "Announced by Hegseth on 30 Sep 2026 as a DoD four-star command; target 1 Oct 2027; no commander named. Distinct from SOUTHCOM's theatre unit of the same name. Not yet stood up: the command's target date is 1 Oct 2027, so the post is empty by design until a commander is named.",
+   "verified": false,
+   "vacant": true
   },
   {
    "id": "t2com",
@@ -1062,9 +1079,10 @@
      "https://lc.nato.int/about-us/biographies/commander"
     ]
    ],
-   "updated": "2026-11-03",
+   "updated": "2026-11-10",
    "verified": true,
-   "note": "Dual-hatted with the USAREUR-AF commander; empty since Donahue left on 2 Jul 2026, pending Lt. Gen. Admiral's confirmation."
+   "note": "Dual-hatted with the USAREUR-AF commander; empty since Donahue left on 2 Jul 2026, pending Lt. Gen. Admiral's confirmation.",
+   "vacant": true
   },
   {
    "id": "jfcbs",

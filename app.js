@@ -784,9 +784,10 @@
     var fuS = ctx.fuel && ctx.fuel.series && ctx.fuel.series["nl-e95"]; fresh("Pump prices", fuS && fuS.length ? fuS[fuS.length - 1][0] : "", 11, 18, "last CBS day");
     var serOld = Object.keys(ctx.series || {}).filter(function (k) { return k[0] !== "_" && (ctx.series[k] || []).length && daysBetween(ctx.series[k][ctx.series[k].length - 1][0], TD) > 5; });
     add("Market series", serOld.length ? "act" : "ok", serOld.length ? "stale: " + serOld.join(", ") : "all " + Object.keys(ctx.series || {}).filter(function (k) { return k[0] !== "_" && Array.isArray(ctx.series[k]); }).length + " within 5 days");
-    var WS = ctx.worldSeries || { meta: {}, series: {} }, wsRows = Object.keys(WS.series || {}).map(function (k) { var sr = WS.series[k] || [], m = (WS.meta || {})[k] || {}, last = sr.length ? sr[sr.length - 1][0] : null, lim = m.cadence === "weekly" ? 10 : 3; return [k, last, last ? daysBetween(last, TD) > lim : true]; });
-    var wsBad = wsRows.filter(function (r) { return r[2]; }).map(function (r) { return r[0] + (r[1] ? " (" + fmtShort(r[1]) + ")" : " (empty)"); });
-    add("World series", wsBad.length >= wsRows.length ? "act" : wsBad.length ? "watch" : "ok", wsBad.length ? "not kept up: " + wsBad.join(", ") : wsRows.length + " series current");
+    var WS = ctx.worldSeries || { meta: {}, series: {} }, wsRows = Object.keys(WS.series || {}).map(function (k) { var sr = WS.series[k] || [], m = (WS.meta || {})[k] || {}, last = sr.length ? sr[sr.length - 1][0] : null, lim = m.cadence === "monthly" ? 55 : m.cadence === "weekly" ? 24 : 3; return [k, last, last ? daysBetween(last, TD) > lim : true, m.cadence || "daily"]; });
+    /* a series is late only when its source should have published again: daily after 3 days, weekly after 24 (the briefs lag two to three weeks), monthly after 55 */
+    var wsBad = wsRows.filter(function (r) { return r[2]; }).map(function (r) { return r[0] + (r[1] ? " (" + fmtShort(r[1]) + ", " + r[3] + ")" : " (empty: fill it or remove it)"); });
+    add("World series", wsBad.length >= wsRows.length ? "act" : wsBad.length ? "watch" : "ok", wsBad.length ? "behind their source: " + wsBad.join(", ") : wsRows.length + " series current for their cadence");
     if (ctx.inbox) fresh("Mail check", ctx.inbox.updated, 3, 7, "last pull");
     if (ctx.local) { fresh("Parkstad feeds", ctx.local.updated, 2, 4, "tools/local.js ran"); if ((ctx.local.errors || []).length) add("Parkstad feeds", "watch", "failed last run: " + ctx.local.errors.map(function (e) { return String(e).split(":")[0]; }).join(", ")); }
     if (ctx.energy && ctx.energy.asof) fresh("Household energy", ctx.energy.asof + "-01", 75, 110, "CBS month");
@@ -799,7 +800,7 @@
     if (ctx.tv) fresh("TV shows", ctx.tv.updated, 8, 21, "last refresh");
     if (ctx.canes) fresh("Canes results", ctx.canes.updated || lastDate(ctx.canes.games, function (g) { return g.date; }), 4, 8, "last game logged");
     var cgA = (ctx.congress || []).filter(function (c) { return !/^(enacted|confirmed|withdrawn|vetoed)$/.test(c.stage); }), cgStale = cgA.filter(function (c) { var d = c.dates || {}, last = [c.updated || "", c.added || ""].concat(Object.keys(d).map(function (k) { return d[k]; })).sort().pop(); return !last || daysBetween(last, TD) > 45; }).length, cgDl = cgA.filter(function (c) { return c.deadline && daysBetween(TD, c.deadline) >= 0 && daysBetween(TD, c.deadline) <= 14; }).length;
-    var cwUnk = (ctx.congressWatch || []).filter(function (w) { return !w.holder; }).length;
+    var cwUnk = (ctx.congressWatch || []).filter(function (w) { return !w.holder && !w.vacant; }).length;
     add("Congress tracker", !(ctx.congress || []).length ? "watch" : cgStale > 2 || cwUnk > 20 ? "act" : cgStale || cwUnk ? "watch" : "ok", cgA.length + " open" + (cwUnk ? ", " + cwUnk + " watched posts without a sourced holder" : "") + (cgDl ? ", " + cgDl + " deadline" + (cgDl > 1 ? "s" : "") + " within 14 days" : "") + (cgStale ? ", " + cgStale + " untouched for 45 days" : ""));
     var exUp = (ctx.exercises || []).filter(function (x) { return x.to >= TD; }).length; add("Exercise calendar", exUp ? "ok" : "watch", exUp + " announced");
     var rel = ((ctx.releases || {}).releases || []).filter(function (r) { return daysBetween(r.date, TD) <= 45 && r.date <= TD; }).length, sota = (ctx.releases || {}).sota || {};
@@ -1638,7 +1639,7 @@
     var CW = ctx.congressWatch || [], CT = ctx.congressTiers || [];
     if (CW.length) {
       var openBy = {}, openId = {}, conf30 = {}; CG.forEach(function (x) { var c = x.c; if (c.kind !== "nomination" || !c.postId) return; if (!DONE[c.stage]) { openBy[c.postId] = c.stage; openId[c.postId] = c.id; } else if (c.stage === "confirmed" && x.last && daysBetween(x.last, TD) <= 30) conf30[c.postId] = 1; });
-      function wst(w) { var st = openBy[w.id]; if (st === "vacant") return "vac"; if (st) return "prog"; if (!w.holder) return "unk"; if (w.acting) return "acting"; if (conf30[w.id]) return "done"; return "ok"; }
+      function wst(w) { var st = openBy[w.id]; if (st === "vacant") return "vac"; if (st) return "prog"; if (!w.holder) return w.vacant ? "vac" : "unk"; if (w.acting) return "acting"; if (conf30[w.id]) return "done"; return "ok"; }
       var cnt = {}; CW.forEach(function (w) { var k = wst(w); cnt[k] = (cnt[k] || 0) + 1; });
       var WL = [["vac", "vacant"], ["prog", "nomination in progress"], ["acting", "acting holder"], ["done", "confirmed in 30 days"], ["ok", "filled"], ["unk", "not yet sourced"]];
       h += '<div class="lbl cg-lane">Watched posts</div><div class="cg-key small">' + WL.filter(function (l) { return cnt[l[0]]; }).map(function (l) { return '<span class="k w-' + l[0] + '"></span>' + cnt[l[0]] + " " + l[1]; }).join(" ") + '</div><div class="wposts">';
