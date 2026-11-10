@@ -24,7 +24,7 @@ The sticky header carries one chip per tier and the "New only" toggle. Anything 
 
 Wording rules for the run are in `STYLE.md`. The exchange rate is shown everywhere as USD/EUR, euros per dollar. The three typefaces are self-hosted in `fonts/` and declared at the top of `styles.css`.
 
-`node tools/local.js` refreshes the Parkstad feeds (each feed retries once, times out after 30 s and keeps its last good copy on failure); `node tools/uafront.js` refreshes the Ukraine front line from DeepState; `node tools/fuel.js` refreshes the Dutch pump prices from CBS. `node tools/validate.js` checks the latest edition and every standing file (citations, jump ids, source tiers, cross-link ids, the USD/EUR rule, the no-assessment rule for the World part, record and series lengths). The morning run executes it before committing.
+`node tools/hockey.js` refreshes the NHL standings, leaders and the McDavid watch; `node tools/local.js` refreshes the Parkstad feeds (each feed retries once, times out after 30 s and keeps its last good copy on failure); `node tools/uafront.js` refreshes the Ukraine front line from DeepState; `node tools/fuel.js` refreshes the Dutch pump prices from CBS. `node tools/validate.js` checks the latest edition and every standing file (citations, jump ids, source tiers, cross-link ids, the USD/EUR rule, the no-assessment rule for the World part, record and series lengths). The morning run executes it before committing.
 
 ## The memory model
 
@@ -55,6 +55,7 @@ The edition is a daily snapshot. The standing files under `data/` are the Readbo
 | `data/releases.json` | Dated AI and tech releases, plus the Friday state-of-the-art table | Frontier |
 | `data/feeds.json` | The fetch-first register: 59 RSS feeds, listing pages and APIs by section, and the hosts that block scripts; the run reads these before spending a web search | Not drawn; steers the run |
 | `data/local.json` | Parkstad daily life: air and pollen, day-ahead power, the Maas model, the Kp forecast, road works within 25 km, Limburg rail disruptions, gemeente notices for Hoensbroek, L1 headlines (tools/local.js), plus the Limburgs word, the local calendar, household admin, Roda fixtures, flu and flight noise written by the run | Parkstad today, Taal, the planner |
+| `data/hockey.json` | NHL API: Metropolitan standings, league leaders, Hurricanes club stats and the McDavid watch (tools/hockey.js) | Hurricanes section |
 | `data/energy.json` | CBS average consumer tariffs for electricity and gas, 36 months, VAT included | Markets: Household energy (all-in prices, typical home, fixed charges) |
 | `data/inbox.json` | Dated items the run pulls from the school, PTA and MWA mail: dates, titles, times and places only | From your mail, week board, calendar, What to watch |
 | `data/indicators.json` | Named indicators with thresholds, status and a change history | Indicator row in the Brief; Indicators and warning board |

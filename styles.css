@@ -855,3 +855,13 @@ html.compact .panel,.compact .card{padding:var(--s2)}
 .idiom .say{margin:var(--s1) 0;font-size:14.5px}.idiom .say b.l{font-family:var(--f-display);text-transform:uppercase;letter-spacing:.05em;font-size:12.5px;color:var(--c-nl);margin-right:var(--s2)}.idiom .say .resp{font-family:var(--f-mono);font-weight:500;letter-spacing:.02em}.idiom .say .ipa{font-family:"Charis SIL","Doulos SIL","Gentium Plus","Noto Sans",serif;color:var(--muted)}
 .rec .chip.lang{color:var(--c-nl);border-color:var(--c-nl);font-size:9px;margin-right:2px;vertical-align:1px}
 .ctxfold{border:1px solid var(--line);border-radius:var(--r-card);padding:var(--s2) var(--s3);margin-bottom:var(--s2)}.ctxfold>summary{cursor:pointer;font-family:var(--f-display);font-weight:600;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}.ctxfold[open]>summary{margin-bottom:var(--s2)}
+/* 7.5 hockey stats */
+table.metro td,table.metro th{padding:5px 7px;font-size:13.5px;white-space:nowrap}
+table.metro tr.car td{background:color-mix(in srgb,var(--pc,var(--accent)) 12%,transparent);font-weight:600}
+table.metro tr.wc td{background:color-mix(in srgb,var(--line) 40%,transparent)}
+table.metro tr.in td:first-child{color:var(--up)}
+.ldrs{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.tile.ldr ol{margin:4px 0 0;padding:0;list-style:none;display:grid;gap:3px}
+.tile.ldr li{display:flex;justify-content:space-between;gap:6px;font-size:13px;line-height:1.3}
+.tile.ldr li .n{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.tile.ldr li small{color:var(--muted);font-family:var(--f-mono);font-size:10.5px}
+.tile.ldr li b{font-family:var(--f-mono);font-weight:500;font-variant-numeric:tabular-nums}

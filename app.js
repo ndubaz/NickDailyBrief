@@ -648,6 +648,51 @@
     var dk = g.utc ? cetDate(g.utc) : g.date, tm = g.utc ? cet(g.utc).replace(/^\w+,? /, "") : "", n = daysBetween(TD, dk);
     return '<p class="nextg">Next game <b>' + (n === 0 ? "tonight" : n === 1 ? "tomorrow" : DOW[pd(dk).getDay()] + " " + fmtShort(dk)) + "</b>" + (tm ? " " + esc(tm) + " CET" : "") + (g.home ? " vs " : " at ") + esc(g.opp) + "</p>";
   }
+  /* standings, leaders and the McDavid watch from data/hockey.json (tools/hockey.js) */
+  function hockeyStatsBlock(ctx, TD) {
+    var HS = ctx.hockeyStats; if (!HS) return "";
+    var h = "";
+    if (HS.metro && HS.metro.length) {
+      h += '<h3 id="metro">Metropolitan Division <span class="small">' + (HS.asof ? "after games of " + esc(fmtShort(HS.asof)) : "") + "</span></h3>";
+      h += '<div class="tw"><table class="metro"><thead><tr><th>#</th><th>Team</th><th>GP</th><th>W-L-OT</th><th>PTS</th><th>P%</th><th>GD</th><th>L10</th><th>Strk</th></tr></thead><tbody>' + HS.metro.map(function (t) { return '<tr class="' + (t.team === "CAR" ? "car" : "") + (t.div <= 3 ? " in" : t.wc && t.wc <= 2 ? " wc" : "") + '"><td class="d">' + t.div + '</td><td><b>' + esc(t.team) + '</b> <span class="small">' + esc(t.name || "") + '</span></td><td class="d">' + t.gp + '</td><td class="d">' + t.w + "-" + t.l + "-" + t.otl + '</td><td class="d"><b>' + t.pts + '</b></td><td class="d">' + (t.pct != null ? ("." + String(Math.round(t.pct * 1000)).padStart(3, "0")) : "") + '</td><td class="d">' + (t.gd > 0 ? "+" : "") + t.gd + '</td><td class="d">' + esc(t.l10 || "") + '</td><td class="d">' + esc(t.streak || "") + "</td></tr>"; }).join("") + "</tbody></table></div>";
+      h += '<p class="small">Top three in the division qualify; a shaded row below that holds a wild-card spot. GD goals for minus against; L10 last ten games.</p>';
+    }
+    var L = HS.leaders;
+    if (L) {
+      function lb(title, arr, fmt) { return '<div class="tile ldr"><div class="lbl">' + title + '</div><ol>' + (arr || []).slice(0, 5).map(function (p) { return '<li><span class="n">' + esc(p.name) + ' <small>' + esc(p.team) + '</small></span><b>' + (fmt ? fmt(p.v) : p.v) + "</b></li>"; }).join("") + "</ol></div>"; }
+      h += '<h3>League leaders <span class="small">top five</span></h3><div class="strip ldrs">' + lb("Points", L.points) + lb("Goals", L.goals) + lb("Assists", L.assists) + lb("Save %", L.savePctg, function (v) { return "." + String(Math.round(v * 1000)).padStart(3, "0"); }) + lb("Wins", L.wins) + lb("GAA", L.gaa, function (v) { return v.toFixed(2); }) + "</div>";
+    }
+    var C = HS.canes;
+    if (C && C.skaters && C.skaters.length) {
+      h += '<h3>Canes leaders <span class="small">club stats</span></h3><div class="tw"><table class="metro"><thead><tr><th>Skater</th><th>GP</th><th>G</th><th>A</th><th>P</th><th>+/-</th><th>PPG</th><th>S</th></tr></thead><tbody>' + C.skaters.slice(0, 8).map(function (x) { return "<tr><td><b>" + esc(x.name) + '</b> <span class="small">' + esc(x.pos) + '</span></td><td class="d">' + x.gp + '</td><td class="d">' + x.g + '</td><td class="d">' + x.a + '</td><td class="d"><b>' + x.p + '</b></td><td class="d">' + (x.pm > 0 ? "+" : "") + x.pm + '</td><td class="d">' + x.ppg + '</td><td class="d">' + x.shots + "</td></tr>"; }).join("") + "</tbody></table></div>";
+      if (C.goalies && C.goalies.length) h += '<p class="small">Goalies: ' + C.goalies.map(function (g) { return "<b>" + esc(g.name) + "</b> " + g.w + "-" + g.l + "-" + g.otl + ", ." + String(Math.round(g.svp * 1000)).padStart(3, "0") + " sv%, " + g.gaa.toFixed(2) + " GAA" + (g.so ? ", " + g.so + " SO" : ""); }).join(" · ") + "</p>";
+    }
+    var M = HS.mcdavid;
+    if (M && M.gp) {
+      ctx._mcd = M;
+      h += '<h3 id="mcdavid">McDavid watch <span class="small">' + esc(M.team) + " #" + esc(M.number) + " · " + M.gp + " games</span></h3>";
+      h += '<div class="strip cds"><div class="tile cd"><div class="lbl">Points per game</div><div class="val">' + M.ppg.toFixed(2) + "</div><p>" + M.p + " points, " + M.g + " G + " + M.a + " A" + (M.l10 && M.l10.gp ? " · last " + M.l10.gp + ": " + M.l10.ppg.toFixed(2) + " a game" : "") + '</p></div><div class="tile cd"><div class="lbl">Projected goals</div><div class="val">' + M.pace82.g + "</div><p>82-game pace · " + M.gpg.toFixed(2) + ' a game</p></div><div class="tile cd"><div class="lbl">Projected assists</div><div class="val">' + M.pace82.a + "</div><p>82-game pace · " + M.apg.toFixed(2) + ' a game</p></div><div class="tile cd"><div class="lbl">Projected points</div><div class="val">' + M.pace82.p + "</div><p>" + (M.remaining && M.remaining.p !== M.pace82.p ? M.remaining.p + " on the Oilers\' remaining games · " : "") + "his best " + M.marks.own.p + " (" + esc(M.marks.own.season) + "), Gretzky " + M.marks.gretzky.p + "</p></div></div>";
+      h += '<div class="panel"><div class="lbl">Points by game, with the trend to game 82</div><div class="chart" id="mcdchart" style="min-height:190px"></div></div>';
+      h += '<p class="small">Cumulative points per game played; the dashed line extends his season rate to 82 games, the grey lines mark 100 points, his 153 of 2022–23 and Gretzky\'s 215 of 1985–86. Projections assume he plays every remaining game. ' + (M.src && M.src[0] ? '<a href="' + esc(M.src[0][1]) + '" target="_blank" rel="noopener">' + esc(M.src[0][0]) + "</a>." : "") + "</p>";
+    }
+    return h;
+  }
+  function mcdChart(M, W) {
+    if (!M || !M.history || M.history.length < 2) return "";
+    var H = M.history, W0 = Math.max(260, Math.round(W || 360)), Hh = 190, L = 34, R = 14, T = 12, B = 22, maxG = 82;
+    var pace = M.gp ? M.p / M.gp : 0, proj = pace * 82, top = Math.max(proj, M.marks.gretzky.p, M.p) * 1.06;
+    function X(g) { return L + (g / maxG) * (W0 - L - R); } function Y(v) { return T + (1 - v / top) * (Hh - T - B); }
+    var s = '<svg viewBox="0 0 ' + W0 + " " + Hh + '" role="img" aria-label="McDavid cumulative points by game with trend to 82 games">';
+    [50, 100, 150, 200].forEach(function (v) { if (v < top) s += '<line x1="' + L + '" y1="' + Y(v).toFixed(1) + '" x2="' + (W0 - R) + '" y2="' + Y(v).toFixed(1) + '" stroke="var(--line)"/>' + svgText(L - 4, Y(v) + 3.5, String(v), "end", 9.5); });
+    [[M.marks.own.p, "153 · his best"], [M.marks.gretzky.p, "215 · Gretzky"], [100, "100"]].forEach(function (m) { if (m[0] < top) s += '<line x1="' + L + '" y1="' + Y(m[0]).toFixed(1) + '" x2="' + (W0 - R) + '" y2="' + Y(m[0]).toFixed(1) + '" stroke="var(--muted)" stroke-dasharray="2 4" stroke-opacity=".7"/>' + svgText(W0 - R, Y(m[0]) - 3, m[1], "end", 9, true); });
+    [10, 20, 30, 40, 50, 60, 70, 82].forEach(function (g) { s += svgText(X(g), Hh - 6, String(g), "middle", 9); });
+    s += '<line x1="' + X(0).toFixed(1) + '" y1="' + Y(0).toFixed(1) + '" x2="' + X(82).toFixed(1) + '" y2="' + Y(proj).toFixed(1) + '" stroke="var(--pc)" stroke-dasharray="4 4" stroke-opacity=".8"/>';
+    var pts = [[0, 0]].concat(H.map(function (r) { return [r[1], r[4]]; }));
+    s += '<polyline points="' + pts.map(function (p) { return X(p[0]).toFixed(1) + "," + Y(p[1]).toFixed(1); }).join(" ") + '" fill="none" stroke="var(--pc)" stroke-width="2" stroke-linejoin="round"/>';
+    var e = pts[pts.length - 1]; s += '<circle cx="' + X(e[0]).toFixed(1) + '" cy="' + Y(e[1]).toFixed(1) + '" r="3.5" fill="var(--pc)"/>' + svgText(Math.min(X(e[0]) + 6, W0 - R - 40), Y(e[1]) + 3.5, e[1] + " pts, game " + e[0], "start", 10, true, "var(--ink)");
+    s += svgText(X(82), Y(proj) - 6, "→ " + Math.round(proj), "end", 10.5, true, "var(--pc)");
+    return s + "</svg>";
+  }
   function teamsBlock(TM, TD) {
     if (!TM) return "";
     var h = '<h3>Also following</h3><div class="teams">', S = TM.saints, C = TM.cardinals;
@@ -1847,6 +1892,7 @@
       h += "</div>";
     }
     if (CV && CV.games.length > 1) h += '<div class="panel" style="margin-top:12px"><div class="lbl">Season so far · points by game, goals for and against</div><div class="chart" id="hkchart" style="min-height:170px"></div></div>';
+    h += hockeyStatsBlock(ctx, TD);
     h += teamsBlock(ctx.teams, TD);
     h += '<h3>Scores <span class="small">' + esc(HK.scoresDate || "") + "</span></h3>";
     if (HK.scores && HK.scores.length) {
@@ -1927,6 +1973,7 @@
       var cm = document.getElementById("ceumap"); if (cm) cm.innerHTML = ceuMap(ctx, cm.clientWidth);
       var sc = document.getElementById("spendchart"); if (sc) sc.innerHTML = spendChart(ctx.countries || [], sc.clientWidth);
       var tk = document.getElementById("tankchart"); if (tk) tk.innerHTML = tankChart(ctx._tank, tk.clientWidth);
+      var mc = document.getElementById("mcdchart"); if (mc) mc.innerHTML = mcdChart(ctx._mcd, mc.clientWidth);
       var tb = document.getElementById("tempband"); if (tb) tb.innerHTML = tempBand(((E.today || {}).weather || {}).week, tb.clientWidth);
       var dlc = document.getElementById("daylight"); if (dlc) dlc.innerHTML = daylight(HOME.lat, TD, dlc.clientWidth, parseFloat(dlc.getAttribute("data-h")));
       var ab = document.getElementById("armybars"); if (ab && E.army && E.army.depth && E.army.depth.bars) ab.innerHTML = vbars(E.army.depth.bars.rows, { W: ab.clientWidth, zero: true, label: E.army.depth.bars.label || "" });
@@ -2183,9 +2230,9 @@
     opt("data/incidents.json"), opt("data/bins.json"), opt("data/threads.json"), opt("data/horizon.json"),
     opt("data/fx.json"), opt("data/series.json"), opt("data/canes.json"),
     opt("data/conflicts.json"), opt("data/world-series.json"), opt("data/calendar.json"), opt("data/deadlines.json"),
-    opt("data/congress.json"), opt("data/exercises.json"), opt("data/releases.json"), opt("data/events.json"), opt("data/idioms.json"), opt("data/ski.json"), opt("data/search-index.json"), opt("data/land.json"), opt("data/week.json"), opt("data/corrections.json"), opt("data/research.json"), opt("data/teams.json"), opt("data/tv.json"), opt("data/countries.json"), opt("data/ceu.json"), opt("data/novel.json"), opt("data/indicators.json"), opt("data/forecasts.json"), opt("data/questions.json"), opt("data/ua-front.json"), opt("data/philosophy.json"), opt("data/inbox.json"), opt("data/fuel.json"), opt("data/energy.json"), opt("data/local.json")
+    opt("data/congress.json"), opt("data/exercises.json"), opt("data/releases.json"), opt("data/events.json"), opt("data/idioms.json"), opt("data/ski.json"), opt("data/search-index.json"), opt("data/land.json"), opt("data/week.json"), opt("data/corrections.json"), opt("data/research.json"), opt("data/teams.json"), opt("data/tv.json"), opt("data/countries.json"), opt("data/ceu.json"), opt("data/novel.json"), opt("data/indicators.json"), opt("data/forecasts.json"), opt("data/questions.json"), opt("data/ua-front.json"), opt("data/philosophy.json"), opt("data/inbox.json"), opt("data/fuel.json"), opt("data/energy.json"), opt("data/local.json"), opt("data/hockey.json")
   ]).then(function (r) {
-    ctx.fuel = r[34] && r[34].series ? r[34] : null; ctx.energy = r[35]; ctx.local = r[36];
+    ctx.fuel = r[34] && r[34].series ? r[34] : null; ctx.energy = r[35]; ctx.local = r[36]; ctx.hockeyStats = r[37];
     ctx.novel = r[27]; ctx.indicators = r[28]; ctx.forecasts = r[29]; ctx.questions = r[30]; ctx.uaFront = r[31]; ctx.philosophy = r[32]; ctx.inbox = r[33];
     ctx.ceu = r[26] && r[26].countries; ctx.countriesMap = r[25] && r[25].map;
     ctx.week = r[20]; ctx.corrections = r[21]; ctx.research = r[22]; ctx.teams = r[23]; ctx.tv = r[24];
