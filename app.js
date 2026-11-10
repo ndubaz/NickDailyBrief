@@ -847,7 +847,7 @@
   }
 
   /* ---------- health checks: when to remodel ---------- */
-  var PAGE_V = "7.5", PROMPT_REV = "7.5.1";
+  var PAGE_V = "7.5", PROMPT_REV = "7.5.2";
   function health(E, ctx, TD, words) {
     var rows = [], realToday = key(new Date());
     function add(name, level, detail) { rows.push([name, level, detail]); }
