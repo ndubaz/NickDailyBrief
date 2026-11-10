@@ -684,7 +684,7 @@
     function X(g) { return L + (g / maxG) * (W0 - L - R); } function Y(v) { return T + (1 - v / top) * (Hh - T - B); }
     var s = '<svg viewBox="0 0 ' + W0 + " " + Hh + '" role="img" aria-label="McDavid cumulative points by game with trend to 82 games">';
     [50, 100, 150, 200].forEach(function (v) { if (v < top) s += '<line x1="' + L + '" y1="' + Y(v).toFixed(1) + '" x2="' + (W0 - R) + '" y2="' + Y(v).toFixed(1) + '" stroke="var(--line)"/>' + svgText(L - 4, Y(v) + 3.5, String(v), "end", 9.5); });
-    [[M.marks.own.p, "153 · his best"], [M.marks.gretzky.p, "215 · Gretzky"], [100, "100"]].forEach(function (m) { if (m[0] < top) s += '<line x1="' + L + '" y1="' + Y(m[0]).toFixed(1) + '" x2="' + (W0 - R) + '" y2="' + Y(m[0]).toFixed(1) + '" stroke="var(--muted)" stroke-dasharray="2 4" stroke-opacity=".7"/>' + svgText(W0 - R, Y(m[0]) - 3, m[1], "end", 9, true); });
+    [[M.marks.own.p, "153 · his best"], [M.marks.gretzky.p, "215 · Gretzky"], [100, "100"]].forEach(function (m) { if (m[0] < top) s += '<line x1="' + L + '" y1="' + Y(m[0]).toFixed(1) + '" x2="' + (W0 - R) + '" y2="' + Y(m[0]).toFixed(1) + '" stroke="var(--muted)" stroke-dasharray="2 4" stroke-opacity=".7"/>' + svgText(L + 4, Y(m[0]) - 3, m[1], "start", 9, true); });
     [10, 20, 30, 40, 50, 60, 70, 82].forEach(function (g) { s += svgText(X(g), Hh - 6, String(g), "middle", 9); });
     s += '<line x1="' + X(0).toFixed(1) + '" y1="' + Y(0).toFixed(1) + '" x2="' + X(82).toFixed(1) + '" y2="' + Y(proj).toFixed(1) + '" stroke="var(--pc)" stroke-dasharray="4 4" stroke-opacity=".8"/>';
     var pts = [[0, 0]].concat(H.map(function (r) { return [r[1], r[4]]; }));
