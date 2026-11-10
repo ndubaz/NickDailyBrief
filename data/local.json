@@ -608,7 +608,7 @@
  "asof": "2026-11-10T04:18:57.496Z",
  "town": "Hoensbroek",
  "errors": [],
- "note": "Parkstad daily-life feeds. The tool rewrites air, power, maas, sky, roads, rail, notices and news; the run writes flu, noise, woord (Limburgs word of the day, appended), culture (dated local events, confirmed), admin (dated household admin), roda (next fixtures) and shops. Town-centre coordinates only; no address or postcode is stored.",
+ "note": "Parkstad daily-life feeds. The tool rewrites air, power, maas, sky, roads, rail, notices and news; the run writes flu, noise, woord (Limburgs word of the day, appended), culture (dated local events, confirmed), admin (dated household admin), roda (next fixtures) and shops. Town-centre coordinates only; no address or postcode is stored. strikes: announced or threatened strikes and action days that touch daily life in Parkstad, the Netherlands, Belgium, Germany or French rail links, written by the run; the page shows the next ones and feeds them to the planner.",
  "flu": {
   "t": "Week 44 (26 Oct – 1 Nov): 136 per 100,000 people saw a GP with a respiratory infection, a low level; RIVM on 4 Nov: few people with flu, no epidemic. Since September RIVM and Nivel report all acute respiratory infections, and the 2026–27 thresholds are not yet set, so the old 58 per 100,000 flu line no longer applies. Next update Wed 11 Nov.",
   "src": [
@@ -853,6 +853,70 @@
     "say": "ZOW-wuh-luh",
     "tip": "au as in English now; the -ele ending is two light schwa syllables and the stress stays on the first"
    }
+  }
+ ],
+ "strikes": [
+  {
+   "id": "nl-bus-2026-11-16",
+   "date": "2026-11-16",
+   "end": "2026-11-22",
+   "t": "Regional bus strikes possible across the Netherlands (Arriva and other regional operators, not NS)",
+   "who": "FNV and CNV drivers",
+   "where": "Regional buses including Arriva Limburg",
+   "impact": "Parkstad and Heuvelland bus routes; trains run",
+   "status": "threatened",
+   "note": "FNV members vote 9 to 12 Nov with the result on 13 Nov, CNV to 16 Nov; action only if both reject the final offer",
+   "src": [
+    [
+     "Vakbonden verwachten nieuwe stakingen in streekvervoer",
+     "https://rtvnoord.nl/verkeer/1449544/vakbonden-verwachten-nieuwe-stakingen-in-streekvervoer"
+    ]
+   ]
+  },
+  {
+   "id": "fr-national-2026-11-17",
+   "date": "2026-11-17",
+   "t": "French national strike and protest day (CGT)",
+   "who": "CGT and other unions",
+   "where": "France: rail, schools, public services",
+   "impact": "TGV and Thalys services to and through France; no effect on Dutch or Belgian local transport",
+   "status": "announced",
+   "src": [
+    [
+     "Frankreich erhöht Mindestlohn um 1,6 Prozent",
+     "https://www.tagesschau.de/ausland/europa/frankreich-erhoehung-mindestlohn-100.html"
+    ]
+   ]
+  },
+  {
+   "id": "be-national-2026-11-23",
+   "date": "2026-11-23",
+   "t": "Belgian national union demonstration in Brussels",
+   "who": "ACV/CSC, ABVV/FGTB and Synova",
+   "where": "Brussels, with knock-on to SNCB/NMBS and De Lijn",
+   "impact": "Travel into Brussels and some Belgian rail; Liège and Hasselt services may thin",
+   "status": "announced",
+   "src": [
+    [
+     "Brussel op maandag 23 november andermaal decor van nationale betoging",
+     "https://www.bruzz.be/actua/politiek/brussel-op-maandag-23-november-andermaal-decor-van-nationale-betoging-2026-10-21"
+    ]
+   ]
+  },
+  {
+   "id": "tec-namur-2026-12-04",
+   "date": "2026-12-04",
+   "t": "Walloon private bus drivers' protest at the parliament in Namur",
+   "who": "CSC drivers of TEC subcontractors",
+   "where": "Wallonia, TEC subcontracted lines incl. East Belgium",
+   "impact": "TEC lines around Eupen and Verviers ran short on 9 Nov; expect the same",
+   "status": "announced",
+   "src": [
+    [
+     "\"Wie Ryanair\": Streik bei Subunternehmen bremst Busverkehr der TEC",
+     "https://brf.be/regional/2124389/"
+    ]
+   ]
   }
  ]
 }

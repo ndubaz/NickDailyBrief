@@ -532,6 +532,7 @@
     (ctx.exercises || []).forEach(function (x) { if (x.from) ev.push({ date: x.from, end: x.to !== x.from ? x.to : undefined, cat: "ex", t: x.name, sub: [x.lead, x.where].filter(Boolean).join(" · "), src: "exercises" }); });
     (((ctx.inbox || {}).items) || []).forEach(function (m) { if (m.date) ev.push({ date: m.date, end: m.end && m.end !== m.date ? m.end : undefined, cat: "mail", t: m.t + (m.time ? " · " + m.time : ""), sub: [m.src, m.note].filter(Boolean).join(" · "), src: "inbox", prio: true }); });
     (((ctx.local || {}).culture) || []).forEach(function (e) { if (e.date) ev.push({ date: e.date, end: e.end && e.end !== e.date ? e.end : undefined, cat: "mkt", t: e.t.split(";")[0].split(":")[0], sub: e.t, src: "local", prio: e.prio === true }); });
+    (((ctx.local || {}).strikes) || []).forEach(function (e) { if (e.date && e.status !== "cancelled") ev.push({ date: e.date, end: e.end && e.end !== e.date ? e.end : undefined, cat: /Belgi|Brussels|Wallon|TEC|SNCB|De Lijn/i.test(e.t + " " + (e.where || "")) ? "be" : /German|Deutsche|Verdi|GDL|NRW/i.test(e.t + " " + (e.where || "")) ? "de" : /French|France|SNCF/i.test(e.t + " " + (e.where || "")) ? "info" : "nl", t: "Strike: " + e.t, sub: [e.status, e.impact].filter(Boolean).join(" · "), src: "local", prio: true }); });
     (((ctx.local || {}).admin) || []).forEach(function (e) { if (e.date) ev.push({ date: e.date, cat: "deadline", t: e.t, sub: e.note || "Household admin", src: "local", prio: true }); });
     ((ctx.week && ctx.week.items) || []).forEach(function (w) { if (w.date) ev.push({ date: w.date, end: w.end && w.end !== w.date ? w.end : undefined, cat: "me", t: w.t + (w.time ? " · " + w.time : ""), sub: [w.note, w.url ? "Join: " + w.url : ""].filter(Boolean).join(" · "), src: "week", prio: true }); });
     var seen = {};
@@ -847,7 +848,7 @@
   }
 
   /* ---------- health checks: when to remodel ---------- */
-  var PAGE_V = "7.5", PROMPT_REV = "7.5.2";
+  var PAGE_V = "7.5", PROMPT_REV = "7.5.3";
   function health(E, ctx, TD, words) {
     var rows = [], realToday = key(new Date());
     function add(name, level, detail) { rows.push([name, level, detail]); }
@@ -1241,11 +1242,14 @@
     }
     var RL = LO.rail;
     if (RL) tiles.push('<div class="tile"><div class="lbl">Rails · Limburg</div><div class="val">' + (RL.items && RL.items.length ? RL.items.length + " <small>disruption" + (RL.items.length > 1 ? "s" : "") + "</small>" : "Clear") + "</div>" + (RL.items && RL.items.length ? '<ul class="clean small">' + RL.items.slice(0, 3).map(function (x) { return '<li><a href="' + esc(x.url) + '" target="_blank" rel="noopener">' + esc(x.t) + "</a></li>"; }).join("") + "</ul>" : "<p>no disruption touching Limburg or the Aachen and Liège lines</p>") + "<p class=\"small\">" + RL.total + " nationwide · Rijden de Treinen, " + esc(nl2(RL.asof)) + "</p></div>");
+    var STK = (LO.strikes || []).filter(function (x) { return (x.end || x.date) >= TD && x.status !== "cancelled"; }).sort(function (a, b) { return a.date < b.date ? -1 : 1; });
+    if (LO.strikes) { var s0 = STK[0]; tiles.push('<div class="tile"><div class="lbl">Strikes · 30 days</div><div class="val">' + (s0 ? (daysBetween(TD, s0.date) <= 0 ? "Today" : daysBetween(TD, s0.date) === 1 ? "Tomorrow" : esc(fmtShort(s0.date))) + ' <small>' + esc(s0.status) + "</small>" : "None known") + "</div>" + (s0 ? "<p>" + esc(s0.t) + "</p><p>" + esc(s0.impact || s0.where || "") + "</p>" : "<p>no strike or action day announced that touches Parkstad, the Netherlands, Belgium or the German border</p>") + (STK.length > 1 ? '<p class="small">' + (STK.length - 1) + " more below</p>" : "") + "</div>"); }
     if (LO.noise) tiles.push('<div class="tile"><div class="lbl">Noise · AWACS and Beek</div><div class="val">' + esc(LO.noise.h || "Flights") + "</div><p>" + rich(LO.noise.t || "") + "</p></div>");
     h += '<div class="strip">' + tiles.join("") + "</div>";
     var N = LO.notices;
     if (N && N.items && N.items.length) h += '<h3>Notices for Hoensbroek <span class="small">gemeente Heerlen, last three weeks</span></h3><ul class="exl">' + N.items.slice(0, 8).map(function (x) { return '<li><span class="d">' + esc(fmtShort(x.date)) + '</span><span><a href="' + esc(x.url) + '" target="_blank" rel="noopener">' + esc(x.t) + "</a></span></li>"; }).join("") + "</ul>";
     else if (N) h += '<p class="small">No gemeente notice named Hoensbroek in the last three weeks.</p>';
+    if (STK.length) h += '<h3>Strikes and action days <span class="small">announced or threatened, next 30 days</span></h3><ul class="wn">' + STK.filter(function (x) { return daysBetween(TD, x.date) <= 30; }).map(function (x) { var n = daysBetween(TD, x.date); return '<li><span class="d">' + esc(fmtShort(x.date) + (x.end ? " – " + fmtShort(x.end) : "")) + '</span><span class="w"><span class="dot" style="background:var(--' + (x.status === "threatened" ? "warn" : "crit") + ')"></span><b>' + esc(x.t) + "</b> " + icsLink(x.t, x.date, x.end, x.impact || "") + '<span class="small">' + esc([x.status, x.who, x.impact].filter(Boolean).join(" · ")) + (x.note ? " · " + esc(x.note) : "") + (x.src && x.src[0] && x.src[0][1] ? ' · <a href="' + esc(x.src[0][1]) + '" target="_blank" rel="noopener">source</a>' : "") + " · " + (n <= 0 ? "under way" : n === 1 ? "tomorrow" : "in " + n + " days") + "</span></span></li>"; }).join("") + "</ul>";
     var NW = LO.news;
     if (NW && NW.items && NW.items.length) h += '<h3>Limburg this morning <span class="small">L1, newest first · Dutch with English beneath</span></h3><ul class="clean small nwl">' + NW.items.slice(0, 6).map(function (x) { return '<li><a href="' + esc(x.url) + '" target="_blank" rel="noopener" lang="nl">' + esc(x.t) + "</a>" + (x.en ? '<span class="en">' + esc(x.en) + "</span>" : '<span class="en muted">English follows with the next run</span>') + "</li>"; }).join("") + "</ul>";
     var CU = (LO.culture || []).filter(function (e) { return (e.end || e.date) >= TD; }).sort(function (a, b) { return a.date < b.date ? -1 : 1; }).slice(0, 5), AD = (LO.admin || []).filter(function (e) { return e.date >= TD; }).sort(function (a, b) { return a.date < b.date ? -1 : 1; }).slice(0, 3);
