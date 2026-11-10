@@ -12,7 +12,7 @@
     "house": "2026-07-22"
    },
    "status": "House passed H.R. 8800 216–212 (22 Jul); Senate S. 4784 failed cloture on the motion to proceed 50–46 (14 Jul)",
-   "next": "Lame-duck session from 9 Nov; conference once the Senate passes a text.",
+   "next": "Lame duck: the committee chairs and ranking members are negotiating a compromise text, with right to repair (House sec. 861, SASC sec. 804) among the contested items; no conference report filed. [179]",
    "committee": "HASC / SASC",
    "added": "2026-11-02",
    "src": [
@@ -39,9 +39,23 @@
      "NDAA narrowly clears House: what's next for the must-pass defense bill",
      "MOAA",
      "https://www.moaa.org/content/publications-and-media/news-articles/2026-news-articles/reads/ndaa-narrowly-clears-house-–-whats-next-for-the-must-pass-defense-bill/"
+    ],
+    [
+     179,
+     "Defense industry takes aim at ‘right to repair’ as NDAA decision looms",
+     "Breaking Defense",
+     "https://breakingdefense.com/2026/11/defense-industry-takes-aim-at-right-to-repair-as-ndaa-decision-looms/",
+     3
+    ],
+    [
+     180,
+     "Calendar",
+     "House Armed Services Committee",
+     "https://armedservices.house.gov/calendar",
+     1
     ]
    ],
-   "updated": "2026-11-03"
+   "updated": "2026-11-10"
   },
   {
    "id": "approps-fy27",
@@ -179,11 +193,19 @@
      "PN1188: Lt. Gen. Kevin D. Admiral, Commanding General, US Army Europe and Africa, and Commander, Allied Land Command",
      "congress.gov",
      "https://www.congress.gov/nomination/119th-congress/1188"
+    ],
+    [
+     95,
+     "Executive Calendar, Tuesday, November 10, 2026 (Issue No. 344)",
+     "U.S. Senate",
+     "https://www.senate.gov/legislative/LIS/executive_calendar/xcalv.pdf",
+     1
     ]
    ],
    "number": "PN1188",
-   "status": "Reported by SASC; on the Senate Executive Calendar (No. 924) since 23 Sep.",
-   "updated": "2026-11-03"
+   "status": "Reported by SASC on 23 Sep; still Calendar No. 924 on the Senate Executive Calendar of 10 Nov, no floor action.",
+   "updated": "2026-11-10",
+   "verified": true
   },
   {
    "id": "t2com-2026",
@@ -263,11 +285,18 @@
      "PN1413: Lt. Gen. David N. Miller Jr., Commander, US Space Command",
      "congress.gov",
      "https://www.congress.gov/nomination/119th-congress/1413"
+    ],
+    [
+     95,
+     "Executive Calendar, Tuesday, November 10, 2026 (Issue No. 344)",
+     "U.S. Senate",
+     "https://www.senate.gov/legislative/LIS/executive_calendar/xcalv.pdf",
+     1
     ]
    ],
    "number": "PN1413",
-   "status": "Referred to SASC on 29 Sep; no hearing recorded.",
-   "updated": "2026-11-03"
+   "status": "Referred to SASC 29 Sep; not on the Senate Executive Calendar of 10 Nov, so not yet reported.",
+   "updated": "2026-11-10"
   },
   {
    "id": "autowarcom-2026",
@@ -320,6 +349,51 @@
     ]
    ],
    "status": null
+  },
+  {
+   "id": "hres-hegseth-impeach-2026",
+   "kind": "bill",
+   "title": "Impeaching Peter Brian Hegseth, Secretary of Defense (Rep. Massie)",
+   "number": "H.Res. (number not yet assigned)",
+   "stage": "introduced",
+   "dates": {
+    "introduced": "2026-11-09"
+   },
+   "status": "Offered by Rep. Massie on 9 Nov; listed on the House floor schedule as an item that may be considered; 34 pages, Article I on section 2(c) of the War Powers Resolution over Iran.",
+   "next": "Privileged: the House must act within two legislative days; NOS and tagesschau say a vote could come by Wed 11 Nov. [17, 97, 92, 18]",
+   "committee": "House floor (privileged); Judiciary on referral",
+   "added": "2026-11-10",
+   "src": [
+    [
+     17,
+     "Bills This Week: Week of Nov. 9, 2026",
+     "U.S. House of Representatives (Majority Leader and Rules Committee)",
+     "https://docs.house.gov/floor/Default.aspx?date=2026-11-09",
+     1
+    ],
+    [
+     97,
+     "H. Res. __: Impeaching Peter Brian Hegseth, Secretary of Defense, for high crimes and misdemeanors (resolution text)",
+     "U.S. House of Representatives",
+     "http://docs.house.gov/billsthisweek/20261109/FILE_1380%20(1).pdf",
+     1
+    ],
+    [
+     92,
+     "Republikaner will Hegseth des Amtes entheben",
+     "tagesschau",
+     "https://www.tagesschau.de/ausland/amerika/usa-amtsenthebungsverfahren-hegseth-100.html",
+     3
+    ],
+    [
+     18,
+     "Republikein dient voorstel in voor afzetten Amerikaanse defensieminister Hegseth",
+     "NOS",
+     "https://nos.nl/l/2638802",
+     3
+    ]
+   ],
+   "updated": "2026-11-10"
   }
  ],
  "tiers": [

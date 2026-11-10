@@ -174,6 +174,26 @@
        3
       ]
      ]
+    },
+    {
+     "date": "2026-11-10",
+     "t": "France attributed the 11–12 Oct attack on about 700 retail sites to the IRGC's Shahid Kaveh unit on 9 Nov and opened a judicial case against its commanders; ANSSI says nothing yet ties the blood-service attack to the same attacker, and the November wave elsewhere is unattributed. [13, 12]",
+     "src": [
+      [
+       13,
+       "France blames Iran for fridge cyberattacks, says some caused fires",
+       "The Record (Recorded Future News)",
+       "https://therecord.media/france-blames-iran-for-fridge-cyberattacks",
+       3
+      ],
+      [
+       12,
+       "La France accuse l'Iran de la cyberattaque contre des frigos de supermarchés, une unité des Gardiens de la Révolution visée par une enquête",
+       "franceinfo",
+       "https://www.franceinfo.fr/internet/securite-sur-internet/cyberattaques/cyberattaque-contre-des-frigos-de-supermarches-le-parquet-de-paris-ouvre-une-enquete-visant-une-unite-des-gardiens-de-la-revolution-iraniens_8274806.html",
+       3
+      ]
+     ]
     }
    ]
   },
@@ -387,6 +407,26 @@
        4
       ]
      ]
+    },
+    {
+     "date": "2026-11-10",
+     "t": "RIA Novosti quoted Hegseth at the Naval War College on 9 Nov as saying, in Russian, that the era of subsidised defence for Europe is ending (no US transcript found); Ambassador Whitaker called NATO 3.0 “the factory reset of NATO”; no report confirms the option sets reached the Secretary. [112, 82]",
+     "src": [
+      [
+       112,
+       "Хегсет: США перестают субсидировать оборону Европы",
+       "RIA Novosti (state media)",
+       "https://ria.ru/20261110/ssha-2130453167.html",
+       4
+      ],
+      [
+       82,
+       "NATO 3.0. US Ambassador to NATO: “The factory reset of the Alliance”",
+       "Defence24",
+       "https://defence24.com/geopolitics/nato-30-us-ambassador-to-nato-the-factory-reset-of-the-alliance",
+       3
+      ]
+     ]
     }
    ]
   },
@@ -597,6 +637,40 @@
        "Kremlin says Russia has had no contacts with Europeans on security agreement",
        "TASS",
        "https://tass.com/politics/2214439",
+       2
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-10",
+     "t": "Delegations for the Abu Dhabi round on 10–11 Nov: Russia's includes Medinsky, Ryabkov, Galuzin, Kostyukov and Zhigarlovsky; Ukraine's is led by Umerov with Budanov and Arakhamia. Peskov said the format is trilateral; Umerov said Kyiv will hold separate meetings with E4, NATO and Commission representatives. Kushner listed four priorities: ending hostilities, post-war security guarantees, an economic plan for Ukraine and humanitarian measures. [14, 16, 159, 15]",
+     "src": [
+      [
+       14,
+       "Ukraine peace talks resume with 'some flexibility' by warring sides, US officials say",
+       "BBC News",
+       "https://www.bbc.co.uk/news/articles/cqpvgvrpjvv8o",
+       3
+      ],
+      [
+       16,
+       "Europe to attend Ukraine peace talks as Kyiv's delegation heads to Abu Dhabi",
+       "The Kyiv Independent",
+       "https://kyivindependent.com/europes-attendance-at-abu-dhabi-peace-talks-clarified/",
+       3
+      ],
+      [
+       159,
+       "Ukrainian delegation heads to Abu Dhabi for trilateral meeting",
+       "Ukrinform",
+       "https://www.ukrinform.net/rubric-polytics/4182962-ukrainian-delegation-heads-to-abu-dhabi-for-trilateral-meeting.html",
+       2
+      ],
+      [
+       15,
+       "Kushner and Witkoff to meet European representatives ahead of Abu Dhabi talks",
+       "Ukrinform",
+       "https://www.ukrinform.net/rubric-polytics/4183060-kushner-and-witkoff-to-meet-european-representatives-ahead-of-abu-dhabi-talks.html",
        2
       ]
      ]
@@ -820,6 +894,26 @@
        2
       ]
      ]
+    },
+    {
+     "date": "2026-11-10",
+     "t": "President Trump said on 9 Nov that the US is keeping “the status quo”, including the naval blockade, after meeting Qatar's prime minister; foreign ministry spokesman Baqaei said Iran's two-day proposal stands. [22, 34]",
+     "src": [
+      [
+       22,
+       "After meeting Qatar PM, Trump calls Iran war ‘effectively over’ militarily",
+       "Al Jazeera",
+       "https://www.aljazeera.com/news/2026/11/9/trump-calls-iran-war-effectively-over-after-talks-with-qatar-pm",
+       3
+      ],
+      [
+       34,
+       "Iran says 2-day proposal to US offers roadmap for restoring security in Strait of Hormuz",
+       "Anadolu Agency",
+       "https://www.aa.com.tr/en/middle-east/iran-says-2-day-proposal-to-us-offers-roadmap-for-restoring-security-in-strait-of-hormuz/4116631",
+       2
+      ]
+     ]
     }
    ]
   },
@@ -942,6 +1036,33 @@
        4
       ]
      ]
+    },
+    {
+     "date": "2026-11-10",
+     "t": "JA21 and SGP spoke favourably of the box 3 overhaul on 9 Nov, putting a majority in view; the Kamer resumes the tax package on 10 Nov and votes on 12 Nov, and Jetten dropped his COP31 trip to stay. [134, 133, 135]",
+     "src": [
+      [
+       134,
+       "Veel kritiek op nieuw voorstel box 3, maar meerderheid lonkt",
+       "NOS",
+       "https://nos.nl/l/2638774",
+       3
+      ],
+      [
+       133,
+       "Plenaire vergaderingen (agenda, dinsdag 10 november 2026)",
+       "Tweede Kamer",
+       "https://www.tweedekamer.nl/debat_en_vergadering/plenaire_vergaderingen",
+       1
+      ],
+      [
+       135,
+       "Dutch PM Jetten to skip climate summit in Türkiye to focus on getting tax plan support",
+       "NL Times (ANP)",
+       "https://nltimes.nl/2026/11/09/dutch-pm-jetten-skip-climate-summit-turkiye-focus-getting-tax-plan-support",
+       3
+      ]
+     ]
     }
    ]
   },
@@ -989,6 +1110,19 @@
       [
        57,
        "Vandalismus sorgte für Bahnstörungen im Raum Köln (feed teaser)",
+       "WDR",
+       "https://www1.wdr.de/nrw/koeln/bahn-stellwerkschaden-ersatzverkehr-100.html",
+       3
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-10",
+     "t": "Federal police say an unknown man cut signal cables at Köln Messe/Deutz early on 8 Nov; Cologne police call it sabotage, and a second cable fault that night is under investigation. [51]",
+     "src": [
+      [
+       51,
+       "Sabotage: Signalkabel an Kölner Bahnhof durchtrennt",
        "WDR",
        "https://www1.wdr.de/nrw/koeln/bahn-stellwerkschaden-ersatzverkehr-100.html",
        3
@@ -1083,6 +1217,26 @@
        "De Wever trekt begrotingsonderhandelingen straks opnieuw op gang, Zuhal Demir en Bill White in de clinch",
        "VRT NWS",
        "https://www.vrt.be/vrtnws/nl/liveblog/de-wever-trekt-begrotingsonderhandelingen-straks-opnieuw-op-gang~1793247532380/",
+       3
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-10",
+     "t": "De Wever held one-on-one budget talks on 9 Nov with Clarinval, joined by MR leader Bouchez, and with Vandenbroucke; Prévot follows on 10 Nov and the King hears a report on 16 Nov. The justice service suspended payments to contractors after exhausting its 2026 budget. [65, 66]",
+     "src": [
+      [
+       65,
+       "Crise gouvernementale au fédéral : Bouchez et Clarinval ensemble au 16 rue de la Loi",
+       "RTBF (Belga)",
+       "https://www.rtbf.be/article/crise-gouvernementale-au-federal-bouchez-et-clarinval-ensemble-au-16-rue-de-la-loi-11813129",
+       3
+      ],
+      [
+       66,
+       "Le budget du SPF Justice pour les prestataires externes est épuisé : \"Toute la chaîne judiciaire est touchée\"",
+       "RTBF (Belga)",
+       "https://www.rtbf.be/article/le-budget-du-spf-justice-pour-les-prestataires-externes-est-epuise-toute-la-chaine-judiciaire-est-touchee-11812955",
        3
       ]
      ]
@@ -1195,6 +1349,33 @@
        1
       ]
      ]
+    },
+    {
+     "date": "2026-11-10",
+     "t": "Dutch prosecutors dropped the case against a Czech man arrested at a Schiphol gate on 5 Nov over a bomb claim, for lack of evidence; Dublin's summit cordon began on 10 Nov. [181, 182, 59]",
+     "src": [
+      [
+       181,
+       "Tsjechische man niet vervolgd voor valse bommelding op Schiphol (feed summary)",
+       "NU.nl",
+       "https://www.nu.nl/algemeen/6416008/tsjechische-man-niet-vervolgd-voor-valse-bommelding-op-schiphol.html",
+       3
+      ],
+      [
+       182,
+       "Man aangehouden op Schiphol voor valse bommelding",
+       "Hart van Nederland",
+       "https://www.hartvannederland.nl/112/crime/artikelen/amsterdam-schiphol-aanhouding-valse-bommelding-vlucht-praag",
+       3
+      ],
+      [
+       59,
+       "Dublin traffic restrictions to begin ahead of EU meetings",
+       "RTÉ",
+       "https://www.rte.ie/news/ireland/2026/1110/1598614-traffic-dublin-ireland/",
+       3
+      ]
+     ]
     }
    ]
   },
@@ -1305,6 +1486,33 @@
        3
       ]
      ]
+    },
+    {
+     "date": "2026-11-10",
+     "t": "Rep. Massie offered his resolution on 9 Nov and the House floor schedule lists it as an item that may be considered; NOS says a vote could come on Wednesday, and Hegseth called a press conference for 10 Nov. [17, 92, 18]",
+     "src": [
+      [
+       17,
+       "Bills This Week: Week of Nov. 9, 2026",
+       "U.S. House of Representatives (Majority Leader and Rules Committee)",
+       "https://docs.house.gov/floor/Default.aspx?date=2026-11-09",
+       1
+      ],
+      [
+       92,
+       "Republikaner will Hegseth des Amtes entheben",
+       "tagesschau",
+       "https://www.tagesschau.de/ausland/amerika/usa-amtsenthebungsverfahren-hegseth-100.html",
+       3
+      ],
+      [
+       18,
+       "Republikein dient voorstel in voor afzetten Amerikaanse defensieminister Hegseth",
+       "NOS",
+       "https://nos.nl/l/2638802",
+       3
+      ]
+     ]
     }
    ]
   },
@@ -1335,7 +1543,42 @@
      ]
     }
    ]
+  },
+  {
+   "id": "krakow-attack",
+   "name": "Kraków market-square attack",
+   "status": "moving",
+   "opened": "2026-11-10",
+   "log": [
+    {
+     "date": "2026-11-10",
+     "t": "The gunman died on 9 Nov; prosecutors are checking a Russian lead and the justice minister has not excluded a hybrid scenario, while the digital ministry reported more than 2,000 accounts after a Russian-amplified disinformation surge. [56, 55, 50]",
+     "src": [
+      [
+       56,
+       "Krakauer Todesschütze hatte 500 Schuss Munition",
+       "tagesschau",
+       "https://www.tagesschau.de/ausland/europa/ermittlungen-krakau-102.html",
+       3
+      ],
+      [
+       55,
+       "Zamach w Krakowie. Badany będzie m.in. trop rosyjski",
+       "RMF24 (PAP)",
+       "https://www.rmf24.pl/regiony/krakow/news-zamach-w-krakowie-badany-bedzie-min-trop-rosyjski,nIdn,1025458",
+       3
+      ],
+      [
+       50,
+       "Fala dezinformacji po zamachu w Krakowie. Chaos informacyjny podsycali m.in. politycy",
+       "RMF24 (PAP)",
+       "https://www.rmf24.pl/fakty/polska/news-fala-dezinformacji-po-zamachu-w-krakowie-chaos-informacyjny-,nIdn,1025465",
+       3
+      ]
+     ]
+    }
+   ]
   }
  ],
- "updated": "2026-11-08"
+ "updated": "2026-11-10"
 }

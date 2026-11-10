@@ -1,6 +1,6 @@
 {
  "note": "Corrections log. The morning run appends an entry when an earlier item was wrong: {date, edition, section, t (what was wrong and what is right), src}. Never edit or delete entries. The page shows the last 30 days in the footer.",
- "updated": "2026-11-06",
+ "updated": "2026-11-10",
  "items": [
   {
    "date": "2026-11-05",
@@ -95,6 +95,21 @@
      "Yonhap",
      "https://en.yna.co.kr/view/AEN20261106003200315",
      3
+    ]
+   ]
+  },
+  {
+   "date": "2026-11-10",
+   "edition": 6,
+   "section": "Indicators: NDAA FY27",
+   "t": "The ndaa-fy27 indicator entry of 7 Nov said the House and Senate versions had passed; the House passed H.R. 8800 on 22 Jul, but the Senate bill S. 4784 failed cloture on the motion to proceed on 14 Jul, so there is no Senate-passed text to conference. [178]",
+   "src": [
+    [
+     178,
+     "FY2027 NDAA: Status of Legislative Activity (IN12704)",
+     "Congressional Research Service",
+     "https://www.everycrsreport.com/reports/IN12704.html",
+     2
     ]
    ]
   }

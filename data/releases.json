@@ -462,6 +462,71 @@
      1
     ]
    ]
+  },
+  {
+   "id": "2026-11-09-anthropic-fable-mythos-5-2",
+   "date": "2026-11-09",
+   "kind": "model",
+   "t": "Anthropic releases Claude Fable 5.2 and Claude Mythos 5.2",
+   "lab": "Anthropic",
+   "n": "Fable 5.2: FrontierCode 2.0 49.1% (Opus 5.5 45.5%, GPT-6 Astra 42.8%), RoboDojo Sim 64.9%, Humanity’s Last Exam with tools 74.2%; Fermat’s Last Theorem formalised in Lean by 1,000 agents in 30 hours; Mythos 5.2 CVE Rediscovery 89.6% on 1,829 CVEs; $8/$40 per million tokens. [87]",
+   "src": [
+    [
+     87,
+     "Introducing Claude Fable 5.2 and Claude Mythos 5.2",
+     "Anthropic",
+     "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+     1
+    ]
+   ]
+  },
+  {
+   "id": "2026-11-09-nvidia-gr00t-2",
+   "date": "2026-11-09",
+   "kind": "robot",
+   "t": "NVIDIA introduces GR00T 2 world action model and Isaac Lab 3.0 at CoRL",
+   "lab": "NVIDIA",
+   "n": "40% zero-shot on 50 unseen tasks, 95% with five demonstrations after a 30-minute fine-tune on one RTX 5090; pretrained on 402,730 h human video, 10,184 h handheld-gripper and 23,500 h robot data; Turbo 124 ms per prediction on Jetson Thor; Isaac Lab 3.0 up to 2.5x training throughput. [88, 89]",
+   "src": [
+    [
+     88,
+     "Practice Makes Precise: At CoRL, NVIDIA and Partners Reveal How Robots Rehearse Delicate Work in Simulation",
+     "NVIDIA Blog",
+     "https://blogs.nvidia.com/blog/robotics-simulation-advancements-corl/",
+     1
+    ],
+    [
+     89,
+     "GR00T 2: Scaling Robot Foundation Models for Generalization, Dexterity, and Adaptation",
+     "NVIDIA Research (GEAR lab)",
+     "https://research.nvidia.com/labs/gear/gr00t-2",
+     1
+    ]
+   ]
+  },
+  {
+   "id": "2026-11-09-meta-muse-ember",
+   "date": "2026-11-09",
+   "kind": "model",
+   "t": "Meta releases Muse Ember, an efficient-tier agent model",
+   "lab": "Meta Superintelligence Lab",
+   "n": "Artificial Analysis Intelligence Index 36 at $0.14 per task (Claude Haiku 5.5: 36 at $0.41); AutomationBench-AA 68.1%; hallucination rate 17.4% with 64% of knowledge questions declined; $0.10/$0.50 per million tokens. [91, 90]",
+   "src": [
+    [
+     91,
+     "Meta's Muse Ember is the cheapest model scoring 36 on the Intelligence Index",
+     "Artificial Analysis",
+     "https://artificialanalysis.ai/articles/meta-s-muse-ember-is-the-cheapest-model-scoring-36-on-the-intelligence-index",
+     1
+    ],
+    [
+     90,
+     "Meta releases Muse Ember, a new lightweight model for agent execution",
+     "TechCrunch",
+     "https://techcrunch.com/2026/11/09/meta-releases-muse-ember-a-new-lightweight-model-for-agent-execution/",
+     3
+    ]
+   ]
   }
  ],
  "sota": {

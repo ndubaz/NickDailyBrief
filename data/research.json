@@ -1,6 +1,6 @@
 {
  "note": "Research rotation. Three pieces a day: one military or security piece (field \"military\") and two from the wider fields. `rotation` maps each field to institutions and journals the run draws from; `queue` holds publications picked for coming days with their field; `covered` is the append-only log. No institution twice within 10 days within a field.",
- "updated": "2026-11-09",
+ "updated": "2026-11-10",
  "rotation": {
   "military": [
    "Africa Center for Strategic Studies",
@@ -22,7 +22,8 @@
    "ECFR",
    "Hoover",
    "Brookings",
-   "Egmont"
+   "Egmont",
+   "CSET Georgetown"
   ],
   "economics": [
    "NBER",
@@ -93,7 +94,8 @@
    "PBL Netherlands",
    "Ember",
    "Carbon Brief (analysis)",
-   "Nature Climate Change"
+   "Nature Climate Change",
+   "Global Carbon Project (Earth System Science Data)"
   ],
   "demography": [
    "Population and Development Review",
@@ -161,14 +163,34 @@
    "field": "tech"
   },
   {
-   "org": "CSET Georgetown",
-   "title": "Coalition Operations: The Untapped Role of AI in Military Decision-Making",
-   "authors": "Emelia Probasco, Sophie Mayo, Lauren Kahn",
-   "date": "",
-   "url": "https://cset.georgetown.edu/publication/coalition-operations/",
+   "field": "climate",
+   "org": "NBER",
+   "title": "The Impact of Climate Change on Fisheries (NBER Working Paper 35994)",
+   "authors": "Fabio Cevenini, Christopher Costello, Carlo Fezzi",
+   "date": "2026-11-09",
+   "url": "https://www.nber.org/papers/w35994",
    "for": "",
-   "note": "Dated only September 2026; confirm it is on or after 9 Sep before use. NATO Maven accreditation timelines.",
-   "field": "military"
+   "note": "2.5 million revenue observations from all European fishing vessels, 2013–2022; projected losses up to €560 million a year by 2100 in the warmest scenario. Only the abstract was read."
+  },
+  {
+   "field": "tech",
+   "org": "NBER",
+   "title": "AI as Shared Business Infrastructure: Firm Growth and the Distribution of Gains (NBER Working Paper 36003)",
+   "authors": "Panle Jia Barwick, Lu Fang, Jinhan Liu, Huilan Xu, Zhe Yuan",
+   "date": "2026-11-09",
+   "url": "https://www.nber.org/papers/w36003",
+   "for": "",
+   "note": "Matched difference-in-differences on a Chinese e-commerce platform: AI adoption raises small firms’ monthly sales 51.6%. Only the abstract was read."
+  },
+  {
+   "field": "economics",
+   "org": "ECB working papers",
+   "title": "The effects of geopolitical risk on sovereign debt holders in the euro area (ECB Working Paper 3303)",
+   "authors": "Othman Bouabdallah, Anisa Tiza Mimun, Aurelian Vlad",
+   "date": "2026-10-30",
+   "url": "https://www.ecb.europa.eu/pub/pdf/scpwps/ecb.wp3303~10146acd61.en.pdf",
+   "for": "",
+   "note": "Confidential Eurosystem holdings data and local projections for Belgium, Spain, France, Italy: domestic holders steady, foreign holders sell on geopolitical risk shocks. Results are impulse responses with 68% bands, few headline numbers."
   }
  ],
  "covered": [
@@ -235,6 +257,30 @@
    "title": "The impact of increased child benefits on tempo and quantum of fertility in Estonia",
    "authors": "Tanel Paas, Allan Puur and Mark Gortfelder",
    "url": "https://www.demographic-research.org/articles/volume/55/25"
+  },
+  {
+   "date": "2026-11-10",
+   "field": "military",
+   "org": "Center for Security and Emerging Technology (CSET), Georgetown University",
+   "title": "Coalition Operations: The Untapped Role of AI in Military Decision-Making",
+   "authors": "Emelia Probasco, Sophie Mayo, Lauren Kahn",
+   "url": "https://cset.georgetown.edu/publication/coalition-operations/"
+  },
+  {
+   "date": "2026-11-10",
+   "field": "economics",
+   "org": "Kiel Institute for the World Economy",
+   "title": "How much aid has Germany given to Ukraine? (Kiel Policy Brief No. 217)",
+   "authors": "Federico Mellace, Taro Nishikawa, Christoph Trebesch, Nathanael Frey, Ettore Goffi",
+   "url": "https://www.kielinstitut.de/publications/how-much-aid-has-germany-given-to-ukraine-20290/"
+  },
+  {
+   "date": "2026-11-10",
+   "field": "climate",
+   "org": "Global Carbon Project (Earth System Science Data, Copernicus Publications)",
+   "title": "Global Carbon Budget 2026",
+   "authors": "Pierre Friedlingstein, Michael O’Sullivan, Robbie M. Andrew and 141 co-authors",
+   "url": "https://essd.copernicus.org/preprints/essd-2026-895"
   }
  ],
  "fields": {

@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-09",
+ "updated": "2026-11-10",
  "note": "Forecast ledger, run only. Dated, falsifiable calls with a probability and a resolution date. The run adds one to three a week, never edits a call after it is made, resolves each on its date (yes, no, or void when the question stopped being meaningful) with the fact and source, and the page keeps a Brier score. Seed entries dated 7 Nov 2026 were made at the 7.0 build.",
  "items": [
   {

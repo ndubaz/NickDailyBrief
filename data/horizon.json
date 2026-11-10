@@ -179,9 +179,9 @@
    "date": "2026-11-09",
    "dateText": "9 Nov",
    "t": "US Congress returns",
-   "n": "NDAA, appropriations",
+   "n": "Both chambers met on 9 Nov; Massie offered his impeachment resolution. [18, 98]",
    "h": false,
-   "status": "confirmed",
+   "status": "done",
    "added": "2026-11-02",
    "src": [
     [
@@ -189,17 +189,32 @@
      "NDAA FY2027 and Dec. 11 funding deadline",
      "Buffalo Chronicle (thin source)",
      "https://buffalochronicle.com/2026/10/24/ndaa-fy2027-lame-duck-dec-11-funding-deadline-niagara-falls/"
+    ],
+    [
+     18,
+     "Republikein dient voorstel in voor afzetten Amerikaanse defensieminister Hegseth",
+     "NOS",
+     "https://nos.nl/l/2638802",
+     3
+    ],
+    [
+     98,
+     "Floor Proceedings: previous meeting Monday, Nov 09, 2026",
+     "U.S. Senate",
+     "https://www.senate.gov/legislative/floor_activity_pail.htm",
+     1
     ]
-   ]
+   ],
+   "updated": "2026-11-10"
   },
   {
    "id": "anwb-strike",
    "date": "2026-11-09",
    "dateText": "Mon 9 Nov",
    "t": "ANWB road-patrol strike",
-   "n": "Court allows it with 12.5% minimum staffing. [105]",
+   "n": "The ANWB said the strike's impact on its service stayed “zeer beperkt”, very limited. [185]",
    "h": false,
-   "status": "confirmed",
+   "status": "done",
    "added": "2026-11-07",
    "src": [
     [
@@ -208,8 +223,16 @@
      "NOS",
      "https://nos.nl/artikel/2638355-rechter-anwb-staking-mag-maar-met-genoeg-wegenwachters-op-de-weg",
      3
+    ],
+    [
+     185,
+     "ANWB: impact staking op dienstverlening zeer beperkt",
+     "L1 Nieuws",
+     "https://www.l1nieuws.nl/nieuws/3269633/anwb-impact-staking-op-dienstverlening-zeer-beperkt",
+     3
     ]
-   ]
+   ],
+   "updated": "2026-11-10"
   },
   {
    "id": "g7-fm-paris",
@@ -243,9 +266,9 @@
    "date": "2026-11-09",
    "dateText": "Mon 9 Nov",
    "t": "Eurogroup reviews the two candidates to succeed Lagarde",
-   "n": "Klaas Knot and Pablo Hernández de Cos; appointment by reinforced qualified majority. [129]",
+   "n": "The Eurogroup met on 9 Nov; no decision on Lagarde's successor was published by 05:45 on 10 Nov. Nominations closed on 6 Nov with two candidates, Klaas Knot and Pablo Hernández de Cos. [119]",
    "h": false,
-   "status": "confirmed",
+   "status": "done",
    "added": "2026-11-08",
    "src": [
     [
@@ -254,15 +277,23 @@
      "Anadolu Agency",
      "https://aa.com.tr/en/europe/spain-netherlands-nominate-candidates-to-succeed-lagarde-as-ecb-chief/4114720",
      3
+    ],
+    [
+     119,
+     "Roundup: Two candidates emerge as nominations for ECB presidency close",
+     "Xinhua via The Star",
+     "https://www.thestar.com.my/news/world/2026/11/07/roundup-two-candidates-emerge-as-nominations-for-ecb-presidency-close",
+     3
     ]
-   ]
+   ],
+   "updated": "2026-11-10"
   },
   {
    "id": "hegseth-impeachment-vote",
    "date": "2026-11-09",
-   "dateText": "9–10 Nov",
+   "dateText": "10–12 Nov",
    "t": "Rep. Massie's impeachment articles against Secretary Hegseth",
-   "n": "Privileged: a vote within two legislative days of the resolution being offered; Jeffries a “hard yes”. [18]",
+   "n": "On the House floor schedule since 9 Nov; NOS and tagesschau say a vote could come by Wednesday; last votes Thursday by 15:00 EST. [p1, p3, p4, p5]",
    "h": false,
    "status": "reported",
    "added": "2026-11-08",
@@ -282,16 +313,16 @@
      3
     ]
    ],
-   "updated": "2026-11-09"
+   "updated": "2026-11-10"
   },
   {
    "id": "qatar-pm-white-house",
    "date": "2026-11-09",
    "dateText": "Mon 9 Nov",
    "t": "Trump hosts Qatar's prime minister on Iran mediation",
-   "n": "Tehran is reviewing Qatari proposals, AP reports. [34]",
+   "n": "Held on 9 Nov with Vice President Vance present; afterwards Trump said “Iran militarily is effectively over” and that the blockade stays. [22]",
    "h": false,
-   "status": "reported",
+   "status": "done",
    "src": [
     [
      34,
@@ -299,18 +330,26 @@
      "Al Jazeera (AP)",
      "https://www.aljazeera.com/news/2026/11/9/rubio-says-war-on-iran-unpopular-but-necessary-to-stop-nuclear-threat",
      3
+    ],
+    [
+     22,
+     "After meeting Qatar PM, Trump calls Iran war ‘effectively over’ militarily",
+     "Al Jazeera",
+     "https://www.aljazeera.com/news/2026/11/9/trump-calls-iran-war-effectively-over-after-talks-with-qatar-pm",
+     3
     ]
    ],
-   "added": "2026-11-09"
+   "added": "2026-11-09",
+   "updated": "2026-11-10"
   },
   {
    "id": "hegseth-nwc",
    "date": "2026-11-09",
    "dateText": "9 Nov, 17:00 CET",
    "t": "Hegseth addresses Naval War College students in Newport",
-   "n": "Topic not announced; livestreamed. [8]",
+   "n": "Spoke on 9 Nov and issued a memo with 33 requirements for the senior service colleges. [19]",
    "h": false,
-   "status": "confirmed",
+   "status": "done",
    "src": [
     [
      8,
@@ -318,9 +357,17 @@
      "DVIDS",
      "https://www.dvidshub.net/webcast/38658",
      1
+    ],
+    [
+     19,
+     "Secretary of War visits U.S. Naval War College, announces reforms to ensure senior service colleges are ‘teaching victory’",
+     "DVIDS (U.S. Naval War College)",
+     "https://www.dvidshub.net/news/579014/secretary-war-visits-us-naval-war-college-announces-reforms-ensure-senior-service-colleges-teaching-victory",
+     1
     ]
    ],
-   "added": "2026-11-09"
+   "added": "2026-11-09",
+   "updated": "2026-11-10"
   },
   {
    "id": "abu-dhabi-talks",
@@ -386,9 +433,9 @@
    "date": "2026-11-10",
    "dateText": "10 Nov",
    "t": "Tweede Kamer tax-plan debate, part two",
-   "n": "Cabinet answers the amendments; vote 12 Nov",
+   "n": "Runs today 16:15–23:00 as “Pakket Belastingplan 2027 (voortzetting)”; vote Thu 12 Nov. [133]",
    "h": false,
-   "status": "confirmed",
+   "status": "done",
    "added": "2026-11-05",
    "src": [
     [
@@ -396,8 +443,16 @@
      "Kamer debatteert over belastingplan, Pro wil 1,5 miljard minder belasting voor werkenden",
      "NOS",
      "https://nos.nl/liveblog/2638042-kamer-debatteert-over-belastingplan-pro-wil-1-5-miljard-minder-belasting-voor-werkenden"
+    ],
+    [
+     133,
+     "Plenaire vergaderingen (agenda, dinsdag 10 november 2026)",
+     "Tweede Kamer",
+     "https://www.tweedekamer.nl/debat_en_vergadering/plenaire_vergaderingen",
+     1
     ]
-   ]
+   ],
+   "updated": "2026-11-10"
   },
   {
    "id": "sk-parliament-votes",
@@ -502,6 +557,127 @@
    "added": "2026-11-09"
   },
   {
+   "id": "vdl-varna",
+   "date": "2026-11-10",
+   "dateText": "Tue 10 Nov",
+   "t": "Von der Leyen meets Bulgaria's Prime Minister Radev in Varna",
+   "n": "Visits the Naval Academy after announcing about €60 million for Black Sea security in Bucharest. [39]",
+   "h": false,
+   "status": "confirmed",
+   "added": "2026-11-10",
+   "src": [
+    [
+     39,
+     "EU Offers Black Sea Countries Support to Counter Security Threats",
+     "Balkan Insight",
+     "https://balkaninsight.com/2026/11/09/eu-offers-black-sea-countries-support-to-counter-security-threats/bi/",
+     3
+    ]
+   ]
+  },
+  {
+   "id": "sk-pellegrini-paris",
+   "date": "2026-11-10",
+   "dateText": "10–11 Nov",
+   "t": "Pellegrini at the Paris Peace Forum and in talks with Macron",
+   "n": "Élysée dinner on 10 Nov; Štefánik wreath-laying in Meudon on day two. [160]",
+   "h": false,
+   "status": "confirmed",
+   "added": "2026-11-10",
+   "src": [
+    [
+     160,
+     "Prezident odcestuje na Parížske mierové fórum, stretne sa s Macronom",
+     "TASR (teraz.sk)",
+     "https://www.teraz.sk/slovensko/prezident-odcestuje-na-parizske-mierov/1006055-clanok.html",
+     2
+    ]
+   ]
+  },
+  {
+   "id": "hegseth-presser-2026-11-10",
+   "date": "2026-11-10",
+   "dateText": "10 Nov",
+   "t": "Hegseth press conference on the impeachment push",
+   "n": "Announced as his first in more than half a year; time not given. [92, 18]",
+   "h": false,
+   "status": "reported",
+   "added": "2026-11-10",
+   "src": [
+    [
+     92,
+     "Republikaner will Hegseth des Amtes entheben",
+     "tagesschau",
+     "https://www.tagesschau.de/ausland/amerika/usa-amtsenthebungsverfahren-hegseth-100.html",
+     3
+    ],
+    [
+     18,
+     "Republikein dient voorstel in voor afzetten Amerikaanse defensieminister Hegseth",
+     "NOS",
+     "https://nos.nl/l/2638802",
+     3
+    ]
+   ]
+  },
+  {
+   "id": "rutte-oslo-hms-pow",
+   "date": "2026-11-11",
+   "dateText": "Wed 11 Nov, remarks 18:50 CET",
+   "t": "Rutte at the Atlantic Future Forum aboard HMS Prince of Wales, Oslo",
+   "n": "Tours the carrier with UK Defence Secretary Wes Streeting and Norway's foreign minister Espen Barth Eide. [49]",
+   "h": false,
+   "status": "confirmed",
+   "added": "2026-11-10",
+   "src": [
+    [
+     49,
+     "NATO Secretary General to visit Norway (media advisory, 9 Nov)",
+     "NATO",
+     "https://www.nato.int/en/news-and-events/events/media-advisories/2026/11/09/nato-secretary-general-to-visit-norway",
+     1
+    ]
+   ]
+  },
+  {
+   "id": "lt-china-diplomats",
+   "date": "2026-11-11",
+   "dateText": "11–12 Nov",
+   "t": "Chinese diplomats in Vilnius for talks on restoring ties",
+   "n": "Lithuania weighs renaming Taiwan's office. [67]",
+   "h": false,
+   "status": "reported",
+   "added": "2026-11-10",
+   "src": [
+    [
+     67,
+     "Lithuania asked Taiwan’s Vilnius office to change its name, report says",
+     "LRT",
+     "https://www.lrt.lt/en/news-in-english/19/3109087/lithuania-asked-taiwan-s-vilnius-office-to-change-its-name-report-says",
+     3
+    ]
+   ]
+  },
+  {
+   "id": "pl-independence-day",
+   "date": "2026-11-11",
+   "dateText": "Wed 11 Nov",
+   "t": "Polish Independence Day marches",
+   "n": "Marsz Niepodległości; a viral false narrative claimed the Kraków attack was staged to cancel it. [50]",
+   "h": false,
+   "status": "confirmed",
+   "added": "2026-11-10",
+   "src": [
+    [
+     50,
+     "Fala dezinformacji po zamachu w Krakowie. Chaos informacyjny podsycali m.in. politycy",
+     "RMF24 (PAP)",
+     "https://www.rmf24.pl/fakty/polska/news-fala-dezinformacji-po-zamachu-w-krakowie-chaos-informacyjny-,nIdn,1025465",
+     3
+    ]
+   ]
+  },
+  {
    "id": "canes-helsinki",
    "date": "2026-11-12",
    "dateText": "12 and 14 Nov",
@@ -595,6 +771,25 @@
    ]
   },
   {
+   "id": "gagauzia-elections",
+   "date": "2026-11-15",
+   "dateText": "Sun 15 Nov",
+   "t": "Gagauzia elects its governor (bashkan) and 35-seat People's Assembly",
+   "n": "Campaign ends 13 Nov; 83 foreign observers accredited. [43]",
+   "h": false,
+   "status": "confirmed",
+   "added": "2026-11-10",
+   "src": [
+    [
+     43,
+     "Moldovan Central Electoral Commission accredits 16 international observers to monitor regional elections in Gagauzia",
+     "Moldpres",
+     "https://www.moldpres.md/eng/politics/moldovan-central-electoral-commission-accredits-16-international-observers-to-monitor-regional-elections-in-gagauzia",
+     2
+    ]
+   ]
+  },
+  {
    "id": "nl-bus-strikes",
    "date": "2026-11-16",
    "dateText": "from the week of 16 Nov",
@@ -664,6 +859,25 @@
     ]
    ],
    "added": "2026-11-09"
+  },
+  {
+   "id": "fr-strike-17-nov",
+   "date": "2026-11-17",
+   "dateText": "Tue 17 Nov",
+   "t": "French national strike and protest day (CGT)",
+   "n": "After the minimum-wage rise was called crumbs. [183]",
+   "h": false,
+   "status": "confirmed",
+   "added": "2026-11-10",
+   "src": [
+    [
+     183,
+     "Frankreich erhöht Mindestlohn um 1,6 Prozent",
+     "tagesschau",
+     "https://www.tagesschau.de/ausland/europa/frankreich-erhoehung-mindestlohn-100.html",
+     3
+    ]
+   ]
   },
   {
    "id": "alaska-rcv",
@@ -765,6 +979,25 @@
    ]
   },
   {
+   "id": "de-knds-contract",
+   "date": "2026-11-30",
+   "dateText": "by end Nov",
+   "t": "Germany signs the KNDS stake purchase",
+   "n": "€6.6bn for the families' 50%, Spiegel reports; Berlin and Paris plan to sell 10% each later. [76]",
+   "h": false,
+   "status": "reported",
+   "added": "2026-11-10",
+   "src": [
+    [
+     76,
+     "Bund kauft Anteil an Panzerhersteller KNDS für 6,6 Milliarden Euro",
+     "Der Spiegel",
+     "https://www.spiegel.de/politik/deutschland/bund-kauft-anteil-an-panzerhersteller-knds-fuer-6-6-milliarden-euro-a-d5902cfc-42fc-4980-81f7-bbc078b8df29",
+     3
+    ]
+   ]
+  },
+  {
    "id": "eerste-kamer-tax-plan",
    "date": "2026-12-01",
    "dateText": "December",
@@ -852,6 +1085,44 @@
      "Bureau of Labor Statistics",
      "https://www.bls.gov/news.release/pdf/empsit.pdf",
      1
+    ]
+   ]
+  },
+  {
+   "id": "wal-bus-demo-namur",
+   "date": "2026-12-04",
+   "dateText": "4 Dec",
+   "t": "Walloon private bus drivers' protest at the parliament in Namur",
+   "n": "CSC; the 9 Nov strike hit more than 20 TEC lines through East Belgium. [184]",
+   "h": false,
+   "status": "confirmed",
+   "added": "2026-11-10",
+   "src": [
+    [
+     184,
+     "\"Wie Ryanair\": Streik bei Subunternehmen bremst Busverkehr der TEC",
+     "BRF Nachrichten",
+     "https://brf.be/regional/2124389/",
+     3
+    ]
+   ]
+  },
+  {
+   "id": "eisenkot-mandate-deadline",
+   "date": "2026-12-06",
+   "dateText": "about 6 Dec",
+   "t": "Eisenkot's 28-day mandate to form a government runs out",
+   "n": "Mandate given on 8 Nov; Herzog may extend it by 14 days. [37]",
+   "h": false,
+   "status": "reported",
+   "added": "2026-11-10",
+   "src": [
+    [
+     37,
+     "Eisenkot, Lieberman agree to negotiate with ultra-Orthodox parties to form next Israeli government",
+     "Anadolu Agency",
+     "https://www.aa.com.tr/en/middle-east/eisenkot-lieberman-agree-to-negotiate-with-ultra-orthodox-parties-to-form-next-israeli-government/4118085",
+     2
     ]
    ]
   },

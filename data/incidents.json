@@ -36,7 +36,7 @@
    "country": "SE",
    "place": "Sweden, Luxembourg, Ireland, Estonia, Finland",
    "lat": 57.7,
-   "lon": 12.0,
+   "lon": 12,
    "summary": "Same method. Six Coop stores and an Axfood distribution centre near Gothenburg (SE); 13 of 223 SuperValu stores (IE); a Selver freezer set to +50 °C (EE).",
    "edition": "2026-11-02"
   },
@@ -62,7 +62,7 @@
    "country": "PL",
    "place": "Poland: Podlasie, Warmia-Masuria",
    "lat": 53.9,
-   "lon": 21.0,
+   "lon": 21,
    "summary": "Sabotage threat. National police full readiness 2–8 Nov; counter-terrorism units deployed to the Kaliningrad border.",
    "edition": "2026-11-02"
   },
@@ -682,6 +682,64 @@
      2
     ]
    ]
+  },
+  {
+   "id": "2026-11-08-pl-inf-krakow-disinfo",
+   "date": "2026-11-08",
+   "code": "INF",
+   "attr": "A2",
+   "local": false,
+   "country": "PL",
+   "place": "Kraków (online campaign; marker at the Rynek Główny)",
+   "lat": 50.06,
+   "lon": 19.94,
+   "summary": "Digital Affairs Minister Krzysztof Gawkowski said on 9 Nov that false claims about the 8 Nov Kraków shooting spread within tens of minutes and were amplified by Russian bots and trolls; more than 2,000 accounts were reported for blocking or moderation in 24 hours, and NASK put the false claim that the gunman was a soldier at nearly 18 million reach. [50]",
+   "edition": "2026-11-10",
+   "src": [
+    [
+     50,
+     "Fala dezinformacji po zamachu w Krakowie. Chaos informacyjny podsycali m.in. politycy",
+     "RMF24 (PAP)",
+     "https://www.rmf24.pl/fakty/polska/news-fala-dezinformacji-po-zamachu-w-krakowie-chaos-informacyjny-,nIdn,1025465",
+     3
+    ]
+   ]
+  },
+  {
+   "id": "2026-10-11-fr-cyb-coldchain",
+   "date": "2026-10-11",
+   "code": "CYB",
+   "attr": "A3",
+   "local": false,
+   "country": "FR",
+   "place": "France: about 700 food-retail sites nationwide (marker at Paris)",
+   "lat": 48.86,
+   "lon": 2.35,
+   "summary": "In the night of 11–12 Oct attackers took over Danfoss, Dixell and Copeland refrigeration controllers at about 700 French retail sites, forcing endless defrost cycles with alarms disabled; food losses and between 15 and about 20 fires followed. On 9 Nov France attributed the attack to the IRGC's Shahid Kaveh unit, summoned Iran's ambassador and opened a judicial case against the unit's head and two deputies. [13, 12, 52]",
+   "edition": "2026-11-10",
+   "src": [
+    [
+     13,
+     "France blames Iran for fridge cyberattacks, says some caused fires",
+     "The Record (Recorded Future News)",
+     "https://therecord.media/france-blames-iran-for-fridge-cyberattacks",
+     3
+    ],
+    [
+     12,
+     "La France accuse l'Iran de la cyberattaque contre des frigos de supermarchés, une unité des Gardiens de la Révolution visée par une enquête",
+     "franceinfo",
+     "https://www.franceinfo.fr/internet/securite-sur-internet/cyberattaques/cyberattaque-contre-des-frigos-de-supermarches-le-parquet-de-paris-ouvre-une-enquete-visant-une-unite-des-gardiens-de-la-revolution-iraniens_8274806.html",
+     3
+    ],
+    [
+     52,
+     "Frankreich macht Iran für Cyberangriffe auf Supermarkt-Kühltruhen verantwortlich",
+     "tagesschau",
+     "https://www.tagesschau.de/ausland/europa/kuehlanlagen-cyberangriffe-100.html",
+     3
+    ]
+   ]
   }
  ],
  "attrLog": [
@@ -754,8 +812,31 @@
      2
     ]
    ]
+  },
+  {
+   "id": "2026-10-11-fr-cyb-coldchain",
+   "date": "2026-11-09",
+   "from": "A0",
+   "to": "A3",
+   "t": "France's Cyber Crisis Coordination Centre and Foreign Minister Barrot attributed the October fridge sabotage to the IRGC's Shahid Kaveh unit; the Paris prosecutor opened a judicial investigation and requested international arrest warrants. [13, 12]",
+   "src": [
+    [
+     13,
+     "France blames Iran for fridge cyberattacks, says some caused fires",
+     "The Record (Recorded Future News)",
+     "https://therecord.media/france-blames-iran-for-fridge-cyberattacks",
+     3
+    ],
+    [
+     12,
+     "La France accuse l'Iran de la cyberattaque contre des frigos de supermarchés, une unité des Gardiens de la Révolution visée par une enquête",
+     "franceinfo",
+     "https://www.franceinfo.fr/internet/securite-sur-internet/cyberattaques/cyberattaque-contre-des-frigos-de-supermarches-le-parquet-de-paris-ouvre-une-enquete-visant-une-unite-des-gardiens-de-la-revolution-iraniens_8274806.html",
+     3
+    ]
+   ]
   }
  ],
  "attrLogNote": "One entry per attribution change: {id (incident id), date, from (A0..A5), to (A0..A5), t (what moved), src (optional [[n,title,outlet,url]])}. The page lists the last 7 days under Attribution moves.",
- "updated": "2026-11-09"
+ "updated": "2026-11-10"
 }

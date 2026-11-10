@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-09",
+ "updated": "2026-11-10",
  "note": "Fetch-first register (7.5). Every morning the run reads these before it searches: an RSS feed or a listing page costs a fetch, not a search. `for` names the section or theatre the feed serves; `tier` is the source tier the page shows. `blocked` lists hosts that refuse scripted clients so no fetch or search is wasted on them. Verified from the build environment on 9 Nov 2026; the run adds a feed when it finds one that works and moves a host to `blocked` after two failed mornings.",
  "feeds": [
   {
@@ -455,7 +455,7 @@
   {
    "id": "xinhua-world",
    "for": "countries:cn",
-   "title": "Xinhua world (state media, quote as the state's words)",
+   "title": "Xinhua world (state media; on 10 Nov the feed served 2017–18 items, use news.cn pages)",
    "url": "https://english.news.cn/rss/worldrss.xml",
    "kind": "rss",
    "lang": "en",
@@ -532,6 +532,87 @@
    "kind": "rss",
    "lang": "en",
    "tier": 3
+  },
+  {
+   "id": "tasr-sk",
+   "for": "countries:sk",
+   "title": "TASR via teraz.sk, Slovakia",
+   "url": "https://www.teraz.sk/rss/slovensko.rss",
+   "kind": "rss",
+   "lang": "sk",
+   "tier": 2
+  },
+  {
+   "id": "pravda-sk",
+   "for": "countries:sk",
+   "title": "Pravda.sk news",
+   "url": "https://spravy.pravda.sk/rss/xml/",
+   "kind": "rss",
+   "lang": "sk",
+   "tier": 3
+  },
+  {
+   "id": "valasz",
+   "for": "countries:hu",
+   "title": "Válasz Online",
+   "url": "https://www.valaszonline.hu/feed/",
+   "kind": "rss",
+   "lang": "hu",
+   "tier": 3
+  },
+  {
+   "id": "dlf",
+   "for": "countries:de",
+   "title": "Deutschlandfunk Nachrichten",
+   "url": "https://www.deutschlandfunk.de/nachrichten-100.rss",
+   "kind": "rss",
+   "lang": "de",
+   "tier": 3
+  },
+  {
+   "id": "ntv-politik",
+   "for": "countries:de",
+   "title": "n-tv Politik",
+   "url": "https://www.n-tv.de/politik/rss",
+   "kind": "rss",
+   "lang": "de",
+   "tier": 3
+  },
+  {
+   "id": "handelsblatt-politik",
+   "for": "countries:de",
+   "title": "Handelsblatt Politik",
+   "url": "https://www.handelsblatt.com/contentexport/feed/politik",
+   "kind": "rss",
+   "lang": "de",
+   "tier": 3
+  },
+  {
+   "id": "interfax-ru",
+   "for": "countries:ru",
+   "title": "Interfax (Russian)",
+   "url": "https://www.interfax.ru/rss.asp",
+   "kind": "rss",
+   "lang": "ru",
+   "tier": 2
+  },
+  {
+   "id": "scrf",
+   "for": "countries:ru",
+   "title": "Russian Security Council news (state's own words)",
+   "url": "http://www.scrf.gov.ru/news/allnews/",
+   "kind": "page",
+   "lang": "ru",
+   "tier": 1
+  },
+  {
+   "id": "milby",
+   "for": "countries:by",
+   "title": "Belarus defence ministry news (HTTP only; HTTPS fails)",
+   "url": "http://www.mil.by/ru/news/",
+   "kind": "page",
+   "lang": "ru",
+   "tier": 1
   }
  ],
  "blocked": [

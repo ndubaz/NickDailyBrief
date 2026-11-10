@@ -1,12 +1,11 @@
 {
- "updated": "2026-11-09",
+ "updated": "2026-11-10",
  "source": "CBS StatLine 80416ned, Pompprijzen motorbrandstoffen per dag",
  "url": "https://opendata.cbs.nl/statline/#/CBS/nl/dataset/80416ned/table",
  "note": "Weighted national average pump prices in the Netherlands, including VAT and excise, in euros per litre, as CBS publishes them (weekly, a few days behind). Euro 95 is sold as E10. Rewritten by tools/fuel.js; the page converts Euro 95 to US dollars per gallon with the ECB rate of the same day from fx.json.",
  "unit": "EUR per litre",
  "series": {
   "nl-e95": [
-   ["2025-10-05", 1.928],
    ["2025-10-06", 1.936],
    ["2025-10-07", 1.937],
    ["2025-10-08", 1.937],
@@ -402,7 +401,6 @@
    ["2026-11-02", 2.284]
   ],
   "nl-diesel": [
-   ["2025-10-05", 1.691],
    ["2025-10-06", 1.704],
    ["2025-10-07", 1.703],
    ["2025-10-08", 1.7],

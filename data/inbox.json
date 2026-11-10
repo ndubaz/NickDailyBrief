@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-09",
+ "updated": "2026-11-10",
  "note": "Dated items the morning run pulls from Nick's mail: the AFNORTH school office, the AFNorth MS/HS PTA, JFCBS Morale and Welfare Activities, USAG Benelux-Brunssum Child and Youth Services, and travel and ticket confirmations. Dates, titles, times and places only. Never a pupil's, parent's or teacher's name, a grade or score, a confirmation code, booking reference, ticket, order or seat number, a price, a passenger name, a medical detail, or a link that carries a token. Append-only; id = YYYY-MM-DD-slug; dedupe by date and title. src is one of AFNORTH, PTA, MWA, CYS, TRAVEL, TICKETS.",
  "items": [
   {
@@ -71,6 +71,25 @@
    "note": "Tickets via EventBookings; first come, first served.",
    "src": "MWA",
    "added": "2026-11-07"
+  },
+  {
+   "id": "2026-12-18-flight-ams-jfk",
+   "date": "2026-12-18",
+   "time": "07:30",
+   "t": "Flight Amsterdam – New York JFK via Frankfurt",
+   "note": "Departs Amsterdam 07:30, arrives JFK 13:35 local; itinerary accepted on 9 Nov, e-tickets still to come from the travel office; US-bound passengers sign the CDC attestation on DRC travel at check-in.",
+   "src": "TRAVEL",
+   "added": "2026-11-10"
+  },
+  {
+   "id": "2027-01-01-flight-jfk-ams",
+   "date": "2027-01-01",
+   "end": "2027-01-02",
+   "time": "15:55",
+   "t": "Flight New York JFK – Amsterdam via Frankfurt",
+   "note": "Departs JFK 15:55, lands Frankfurt 05:15 on 2 Jan and Amsterdam 10:15; itinerary accepted on 9 Nov, e-tickets still to come.",
+   "src": "TRAVEL",
+   "added": "2026-11-10"
   },
   {
    "id": "2027-02-03-steam-night",

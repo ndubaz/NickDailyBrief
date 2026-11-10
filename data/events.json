@@ -1,6 +1,6 @@
 {
  "note": "Out and about: curated events within about 90 minutes by car (Maastricht, Aachen, Liège, Köln, Düsseldorf, Bonn, Eindhoven, Antwerp, Brussels, the Eifel and Ardennes). The run adds events with a source, prunes those that have passed, and sets updated when details change. cat = music|markets|museums|sport|kids|food|outdoors|festival. kid = suitable for children. drive = minutes from Hoensbroek, approximate. prio = true marks the few major events (big festivals, Sinterklaas arrivals, the carnival opening) that also appear in the Planner's This week; Christmas markets come from calendar.json.",
- "updated": "2026-11-09",
+ "updated": "2026-11-10",
  "events": [
   {
    "id": "born-to-play-bonnefanten-2026",
@@ -65,28 +65,6 @@
      "Meet Bèr - Mosasaurus Experience",
      "Visit Maastricht",
      "https://www.visitmaastricht.com/en/agenda/1541388440/meet-ber-mosasaurus-experience"
-    ]
-   ]
-  },
-  {
-   "id": "sint-hubertus-tongeren-2026",
-   "t": "Sint-Hubertus procession and festivities, Offelken",
-   "cat": "festival",
-   "from": "2026-11-05",
-   "to": "2026-11-12",
-   "town": "Tongeren",
-   "venue": "Offelken racecourse",
-   "cc": "BE",
-   "drive": 40,
-   "cost": "Free",
-   "kid": true,
-   "added": "2026-11-03",
-   "src": [
-    [
-     191,
-     "De Hubertusfeesten in Offelken",
-     "Immaterieel Erfgoed",
-     "https://immaterieelerfgoed.be/nl/erfgoederen/de-hubertusfeesten-in-offelken/pdf"
     ]
    ]
   },
@@ -298,10 +276,10 @@
    "from": "2026-11-14",
    "to": "2027-01-24",
    "town": "Brühl",
-   "venue": "Phantasialand, 11:00–20:00; closed 24–25 Dec and 1 Jan",
+   "venue": "Phantasialand, 11:00–20:00; closed 24–25 Dec and 1, 12 and 13 Jan",
    "cc": "DE",
    "drive": 75,
-   "cost": "Dynamic pricing from about €28",
+   "cost": "Ticket; opening offer from €30 on sale until 16 Nov, then up to €78",
    "kid": true,
    "added": "2026-11-04",
    "src": [
@@ -310,8 +288,13 @@
      "Phantasialand Wintertraum",
      "Festivals in Deutschland",
      "https://www.festivalsindeutschland.de/festival/phantasialand-wintertraum"
+    ],
+    [
+     "Wintertraum",
+     "https://www.phantasialand.de/de/themenpark/wintertraum/"
     ]
-   ]
+   ],
+   "updated": "2026-11-10"
   },
   {
    "id": "sinterklaas-venlo-blerick-2026",
@@ -332,50 +315,6 @@
      "Intocht Sinterklaas Venlo & Blerick 2026",
      "Kidsproof Eindhoven",
      "https://www.kidsproof.nl/eindhoven/?p=38614"
-    ]
-   ]
-  },
-  {
-   "id": "koeln-dom-markt-2026",
-   "t": "Weihnachtsmarkt am Kölner Dom",
-   "cat": "markets",
-   "from": "2026-11-16",
-   "to": "2026-12-23",
-   "town": "Köln",
-   "venue": "Roncalliplatz",
-   "cc": "DE",
-   "drive": 65,
-   "cost": "Free entry; closed Sun 22 Nov",
-   "kid": true,
-   "added": "2026-11-02",
-   "src": [
-    [
-     51,
-     "Weihnachtsmarkt am Kölner Dom",
-     "koeln.de",
-     "https://www.koeln.de/weihnachten/weihnachtsmaerkte-koeln/weihnachtsmarkt-am-koelner-dom/"
-    ]
-   ]
-  },
-  {
-   "id": "duesseldorf-weihnachtsmarkt-2026",
-   "t": "Düsseldorf Christmas markets (seven themed markets)",
-   "cat": "markets",
-   "from": "2026-11-19",
-   "to": "2026-12-30",
-   "town": "Düsseldorf",
-   "venue": "Altstadt and city centre (closed 22 Nov and 25 Dec)",
-   "cc": "DE",
-   "drive": 75,
-   "cost": "Free entry",
-   "kid": true,
-   "added": "2026-11-03",
-   "src": [
-    [
-     198,
-     "Düsseldorfer Weihnachtsmarkt",
-     "Visit Düsseldorf",
-     "https://www.visitduesseldorf.de/event/duesseldorfer-weihnachtsmarkt-c632015b44"
     ]
    ]
   },
@@ -471,50 +410,6 @@
    "updated": "2026-11-03"
   },
   {
-   "id": "brussels-winter-wonders-2026",
-   "t": "Winter Wonders Brussels (25th edition)",
-   "cat": "markets",
-   "from": "2026-11-27",
-   "to": "2027-01-03",
-   "town": "Brussels",
-   "venue": "City-centre trail from the Grand-Place to Place Sainte-Catherine; 238 chalets",
-   "cc": "BE",
-   "drive": 90,
-   "cost": "Free to walk; attractions paid",
-   "kid": true,
-   "added": "2026-11-03",
-   "src": [
-    [
-     201,
-     "Winter Wonders",
-     "Plaisirs d'Hiver / Winterpret",
-     "https://www.plaisirsdhiver.be/en"
-    ]
-   ]
-  },
-  {
-   "id": "koelner-weihnachtscircus-2026",
-   "t": "11th Kölner Weihnachtscircus",
-   "cat": "kids",
-   "from": "2026-11-27",
-   "to": "2027-01-03",
-   "town": "Köln",
-   "venue": "Circus tent, Köln-Mülheim",
-   "cc": "DE",
-   "drive": 70,
-   "cost": "From €24.90",
-   "kid": true,
-   "added": "2026-11-04",
-   "src": [
-    [
-     131,
-     "Kölner Weihnachtscircus",
-     "koeln.de",
-     "https://www.koeln.de/veranstaltungen/koelner-weihnachtscircus"
-    ]
-   ]
-  },
-  {
    "id": "liege-noel-2026",
    "t": "Village de Noël de Liège",
    "cat": "markets",
@@ -581,28 +476,6 @@
    ]
   },
   {
-   "id": "schlossweihnacht-dyck-2026",
-   "t": "Schlossweihnacht at Schloss Dyck (Advent weekends)",
-   "cat": "markets",
-   "from": "2026-11-28",
-   "to": "2026-12-20",
-   "town": "Jüchen",
-   "venue": "Schloss Dyck, Sat–Sun 10:00–20:00 on the four Advent weekends",
-   "cc": "DE",
-   "drive": 60,
-   "cost": "Adults €18.50 online",
-   "kid": true,
-   "added": "2026-11-04",
-   "src": [
-    [
-     132,
-     "Schlossweihnacht Schloss Dyck, Jüchen",
-     "Festivals in Deutschland",
-     "https://www.festivalsindeutschland.de/festival/schlossweihnacht-schloss-dyck-juechen"
-    ]
-   ]
-  },
-  {
    "id": "oliver-musical-kerkrade-2026",
    "t": "Oliver en het avontuur van de straatkinderen, youth musical (8+)",
    "cat": "kids",
@@ -643,50 +516,6 @@
      "Roda JC Kerkrade – wedstrijden",
      "Roda JC Kerkrade",
      "https://www.rodajckerkrade.nl/"
-    ]
-   ]
-  },
-  {
-   "id": "aladdin-musical-maastricht-2026",
-   "t": "Aladdin De Musical (4+), with meet and greet",
-   "cat": "kids",
-   "from": "2026-12-12",
-   "to": "2026-12-12",
-   "town": "Maastricht",
-   "venue": "Theater aan het Vrijthof, 13:30 and 16:00",
-   "cc": "NL",
-   "drive": 25,
-   "cost": "€32.50",
-   "kid": true,
-   "added": "2026-11-03",
-   "src": [
-    [
-     204,
-     "Aladdin De Musical 4+ (Van Hoorne Studios)",
-     "Theater aan het Vrijthof",
-     "https://www.theateraanhetvrijthof.nl/voorstellingen/familie-en-jeugd/aladdin-de-musical-4-van-hoorne-studios/12-12-2026-16-00"
-    ]
-   ]
-  },
-  {
-   "id": "herman-van-veen-maastricht-2026",
-   "t": "Herman van Veen: Vandaag, theatre concert",
-   "cat": "music",
-   "from": "2026-12-17",
-   "to": "2026-12-18",
-   "town": "Maastricht",
-   "venue": "Theater aan het Vrijthof, 20:00",
-   "cc": "NL",
-   "drive": 25,
-   "cost": "€44.50–€54.50",
-   "kid": false,
-   "added": "2026-11-03",
-   "src": [
-    [
-     205,
-     "Vandaag - Herman van Veen",
-     "Theater aan het Vrijthof",
-     "https://www.theateraanhetvrijthof.nl/voorstellingen/theaterconcert/vandaag-herman-van-veen/18-12-2026-20-00"
     ]
    ]
   },
@@ -757,50 +586,6 @@
    ]
   },
   {
-   "id": "superprestige-zolder-2026",
-   "t": "Telenet Superprestige cyclo-cross, Christmas Day",
-   "cat": "sport",
-   "from": "2026-12-25",
-   "to": "2026-12-25",
-   "town": "Heusden-Zolder",
-   "venue": "Zolder",
-   "cc": "BE",
-   "drive": 45,
-   "cost": "Paid entry",
-   "kid": true,
-   "added": "2026-11-03",
-   "src": [
-    [
-     208,
-     "Discover the calendar for the 2026-2027 Telenet Superprestige",
-     "Telenet Superprestige",
-     "https://www.superprestigecyclocross.be/en/news/discover-the-calendar-for-the-2026-2027-telenet-superprestige"
-    ]
-   ]
-  },
-  {
-   "id": "wereldbeker-zonhoven-2027",
-   "t": "UCI Cyclo-cross World Cup Zonhoven",
-   "cat": "sport",
-   "from": "2027-01-03",
-   "to": "2027-01-03",
-   "town": "Zonhoven",
-   "venue": "Zonhoven cross course",
-   "cc": "BE",
-   "drive": 40,
-   "cost": "Paid entry",
-   "kid": true,
-   "added": "2026-11-03",
-   "src": [
-    [
-     209,
-     "Wanneer is welke cross? Dit is de complete veldritkalender 2026-2027",
-     "Sporza",
-     "https://sporza.be/nl/2026/09/29/wanneer-is-welke-cross-en-welke-wedstrijden-zijn-live-bij-sporza-dit-is-de-complete-veldritkalender-2026-2027~1790685673220/"
-    ]
-   ]
-  },
-  {
    "id": "nieuwjaarsconcert-philzuid-2027",
    "t": "Philzuid New Year's Concert (Strauss, Lehár)",
    "cat": "music",
@@ -819,28 +604,6 @@
      "Nieuwjaarsconcert - Philzuid",
      "Theater aan het Vrijthof",
      "https://www.theateraanhetvrijthof.nl/voorstellingen/2027/01/nieuwjaarsconcert-philzuid"
-    ]
-   ]
-  },
-  {
-   "id": "bk-veldrijden-bilzen-2027",
-   "t": "Belgian national cyclo-cross championships",
-   "cat": "sport",
-   "from": "2027-01-09",
-   "to": "2027-01-10",
-   "town": "Bilzen",
-   "venue": "Course not yet announced",
-   "cc": "BE",
-   "drive": 30,
-   "cost": "Paid entry",
-   "kid": true,
-   "added": "2026-11-03",
-   "src": [
-    [
-     209,
-     "Wanneer is welke cross? Dit is de complete veldritkalender 2026-2027",
-     "Sporza",
-     "https://sporza.be/nl/2026/09/29/wanneer-is-welke-cross-en-welke-wedstrijden-zijn-live-bij-sporza-dit-is-de-complete-veldritkalender-2026-2027~1790685673220/"
     ]
    ]
   },
@@ -1105,6 +868,27 @@
     ]
    ],
    "added": "2026-11-09"
+  },
+  {
+   "id": "kommern-advent-2026",
+   "t": "Advent weekend at the LVR open-air museum: Christmas baking from the museum ovens, crafts, carols and lantern tours",
+   "cat": "museums",
+   "from": "2026-11-28",
+   "to": "2026-11-29",
+   "town": "Mechernich-Kommern",
+   "venue": "LVR-Freilichtmuseum Kommern, 10:00–18:00",
+   "cc": "DE",
+   "drive": 70,
+   "cost": "Adults €13",
+   "kid": true,
+   "prio": false,
+   "src": [
+    [
+     "Advent weekend at the LVR Open-Air Museum Kommern, Mechernich",
+     "https://www.nrw-tourism.com/christmas-market-mechernich-freilichtmuseum-kommern"
+    ]
+   ],
+   "added": "2026-11-10"
   }
  ]
 }

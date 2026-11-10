@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-09",
+ "updated": "2026-11-10",
  "note": "Open questions the Readbook is carrying: what we do not know. The run adds a question when an item turns on a fact nobody has published, and closes it with the answer and source when one appears. Never delete.",
  "items": [
   {
@@ -49,13 +49,84 @@
    "q": "Who leads Ukraine's delegation and who represents France at the Abu Dhabi talks on 10–11 Nov?",
    "thread": "thread:russia-ukraine-talks",
    "opened": "2026-11-09",
-   "status": "open"
+   "status": "closed",
+   "closed": "2026-11-10",
+   "answer": "Rustem Umerov, head of the Foreign Intelligence Service, leads Ukraine's delegation; Le Monde reported that Emmanuel Bonne, head of the Élysée diplomatic office, represents France. [16, 26]",
+   "src": [
+    [
+     16,
+     "Europe to attend Ukraine peace talks as Kyiv's delegation heads to Abu Dhabi",
+     "The Kyiv Independent",
+     "https://kyivindependent.com/europes-attendance-at-abu-dhabi-peace-talks-clarified/",
+     3
+    ],
+    [
+     26,
+     "Macron's diplomatic adviser to represent France at Abu Dhabi talks",
+     "Ukrinform (Le Monde)",
+     "https://www.ukrinform.net/rubric-polytics/4183042-macrons-diplomatic-adviser-to-represent-france-at-abu-dhabi-talks.html",
+     2
+    ]
+   ]
   },
   {
    "id": "2026-11-09-koeln-signal-boxes",
    "q": "What damaged the signal boxes near Cologne on 8 Nov, and was it deliberate?",
    "thread": "thread:rail-sabotage",
    "opened": "2026-11-09",
+   "status": "closed",
+   "closed": "2026-11-10",
+   "answer": "Federal police say an unknown man cut several signal cables at Köln Messe/Deutz early on 8 Nov; Cologne police call it a “Sabotagehandlung” and state-security police are investigating. A second cable fault in the night to 9 Nov is still being examined. [51]",
+   "src": [
+    [
+     51,
+     "Sabotage: Signalkabel an Kölner Bahnhof durchtrennt",
+     "WDR",
+     "https://www1.wdr.de/nrw/koeln/bahn-stellwerkschaden-ersatzverkehr-100.html",
+     3
+    ]
+   ]
+  },
+  {
+   "id": "2026-11-10-abu-dhabi-outcome",
+   "q": "Did the Abu Dhabi round on 10–11 Nov agree a prisoner exchange, a next date or a format that includes the Europeans?",
+   "thread": "thread:russia-ukraine-talks",
+   "opened": "2026-11-10",
+   "status": "open"
+  },
+  {
+   "id": "2026-11-10-black-sea-hub",
+   "q": "Where will the EU-funded Black Sea Security Hub sit, who leads it, and when does it start?",
+   "thread": "theatre:blacksea",
+   "opened": "2026-11-10",
+   "status": "open"
+  },
+  {
+   "id": "2026-11-10-hegseth-motion",
+   "q": "On which motion (adopt, table or refer) does the House take up Massie's resolution, and how many Republicans vote against tabling?",
+   "thread": "thread:hegseth-impeachment",
+   "opened": "2026-11-10",
+   "status": "open"
+  },
+  {
+   "id": "2026-11-10-coldchain-second-wave",
+   "q": "Did the IRGC's Shahid Kaveh unit also run the early-November refrigeration wave, including the Belgian, Dutch and German stores and the French blood-service cold stores?",
+   "thread": "thread:cold-chain",
+   "opened": "2026-11-10",
+   "status": "open"
+  },
+  {
+   "id": "2026-11-10-koeln-cable-cutter",
+   "q": "Who cut the signal cables at Köln Messe/Deutz on 8 Nov, and was the second cable fault that night deliberate?",
+   "thread": "thread:rail-sabotage",
+   "opened": "2026-11-10",
+   "status": "open"
+  },
+  {
+   "id": "2026-11-10-krakow-russian-lead",
+   "q": "What information keeps a Russian hybrid scenario open in the Kraków attack investigation?",
+   "thread": "thread:krakow-attack",
+   "opened": "2026-11-10",
    "status": "open"
   }
  ]

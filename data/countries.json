@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-09",
+ "updated": "2026-11-10",
  "note": "Nick's assigned priority countries as an analyst: Hungary and Slovakia (priority), Germany (secondary). Russia, Belarus and China are context countries (7.3): profiled for what they do to the eastern flank and to the three countries above, logged the same way, no baseline-requirement grid. The run appends dated facts to each country's log and keeps the profile current. Facts and summaries only; the item in the edition carries the So what. verified:false marks a fact to confirm against an official page.",
  "blr": [
   "Continuity of government and critical services",
@@ -50,7 +50,7 @@
     },
     {
      "k": "EU",
-     "t": "The government is negotiating the release of about $20bn in frozen EU funds."
+     "t": "Political agreement with the Commission on 29 May 2026 to release about €16.2–16.4bn (Recovery and Resilience Facility €10bn, rule-of-law cohesion funds €4.2bn, academic freedom €2.2bn); payouts follow the reforms, the first expected in the last quarter of 2026; Magyar said on 9 Nov the way to €16.4bn is open."
     }
    ],
    "blr": [
@@ -172,6 +172,54 @@
        "https://index.hu/kulfold/2026/11/08/janaf-koolajvezetek-szivargas-olajszennyezes-horvatorszag"
       ]
      ]
+    },
+    {
+     "date": "2026-11-09",
+     "t": "In a German-language speech at the Konrad Adenauer Foundation in Berlin, Magyar said Europe must build real defence capability with NATO and its allies and that the government seeks a legal solution with the Commission this year to end the €1 million daily fine without weakening the southern border. [71]",
+     "src": [
+      [
+       "Magyar Péter Berlinben: a második világháború óta nem volt ennyire bonyolult és veszélyes a nemzetközi helyzet (full speech text from Government Communications)",
+       "https://www.portfolio.hu/gazdasag/20261109/magyar-peter-berlinben-a-masodik-vilaghaboru-ota-nem-volt-ennyire-bonyolult-es-veszelyes-a-nemzetkozi-helyzet-875304"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-10",
+     "t": "Magyar meets Merz at the Chancellery at 11:00 (talks on Europe, defence, economic cooperation and Ukraine; press conference 13:30); Defence Minister Ruszin-Szendi discusses military, defence-industrial and space cooperation. [25, 69, 70]",
+     "src": [
+      [
+       "Bundeskanzler Merz empfängt den ungarischen Ministerpräsidenten Magyar (Pressemitteilung 199, 6 Nov)",
+       "https://www.bundesregierung.de/breg-de/aktuelles/bundeskanzler-merz-empfaengt-den-ungarischen-ministerpraesidenten-magyar-2460242"
+      ],
+      [
+       "Új alapokon a magyar-német védelmi és hadiipari kapcsolatok: egyeztetések kezdődnek Berlinben",
+       "https://honvedelem.hu/hirek/uj-alapokon-a-magyar-nemet-vedelmi-es-hadiipari-kapcsolatok-egyeztetesek-kezdodnek-berlinben.html"
+      ],
+      [
+       "Magyar Péter úton Berlinbe, Európa-beszédet tart a német fővárosban",
+       "https://index.hu/belfold/2026/11/09/magyar-peter-berlin-europa-beszed-nemetorszag-kancellar-miniszter-targyalas/"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-09",
+     "t": "444, citing a list obtained by Népszabadság, reported that about €3.45bn of the €5.4bn SAFE loan goes to equipment including a SAMP/T battery, and that the loan also funds the M49 road, the Záhony bridge, military rolling stock and the EDR radio network. [72]",
+     "src": [
+      [
+       "Kiderült, mely fejlesztéseket finanszírozza a kormány az EU védelmi hiteléből (via Népszabadság)",
+       "https://444.hu/2026/11/09/kiderult-mely-fejleszteseket-finanszirozza-a-kormany-az-eu-vedelmi-hitelebol"
+      ]
+     ]
+    },
+    {
+     "date": "2026-10-28",
+     "t": "The Commission approved Hungary's €5.4bn SAFE plan, cut from more than €16bn, and sent it to the Council. [73]",
+     "src": [
+      [
+       "Az Európai Bizottság hozzájárult, hogy Magyarország 5,4 milliárd euró hitelt vegyen fel védelmi beruházásokra",
+       "https://444.hu/2026/10/28/az-europai-bizottsag-hozzajarult-hogy-magyarorszag-54-milliard-euro-hitelt-vegyen-fel-vedelmi-beruhazasokra"
+      ]
+     ]
     }
    ],
    "src": [
@@ -206,6 +254,18 @@
     [
      "HQ MND-C tag page",
      "https://honvedelem.hu/cimke/hq-mnd-c.html"
+    ],
+    [
+     "Magyar: Több mint 16 milliárd eurónyi uniós forrás feloldásáról állapodtunk meg az Európai Bizottsággal",
+     "https://444.hu/2026/05/29/magyar-162-milliard-euronyi-unios-forras-feloldasarol-allapodtunk-meg-az-europai-bizottsaggal"
+    ],
+    [
+     "Az EU júliusig okézná le a magyar terveket, az utolsó negyedévben pedig már megindulhatnak a befagyasztott eurómilliárdok kifizetései",
+     "https://444.hu/2026/05/30/az-eu-juliusig-okezna-le-a-magyar-terveket-az-utolso-negyedevben-pedig-mar-megindulhatnak-a-befagyasztott-euromilliardok-kifizetesei"
+    ],
+    [
+     "Magyar Péter Berlinben: a második világháború óta nem volt ennyire bonyolult és veszélyes a nemzetközi helyzet (full speech text from Government Communications)",
+     "https://www.portfolio.hu/gazdasag/20261109/magyar-peter-berlinben-a-masodik-vilaghaboru-ota-nem-volt-ennyire-bonyolult-es-veszelyes-a-nemzetkozi-helyzet-875304"
     ]
    ],
    "verified": false,
@@ -264,7 +324,7 @@
     "note": "NATO estimates, share of GDP; 2014 to 2024 from the annual press releases, 2025 from the March 2026 report via press coverage; to confirm against the NATO table",
     "verified": false
    },
-   "updated": "2026-11-09"
+   "updated": "2026-11-10"
   },
   {
    "id": "sk",
@@ -303,7 +363,7 @@
     },
     {
      "k": "Ukraine",
-     "t": "No military aid from state stocks; commercial exports by Slovak manufacturers continue."
+     "t": "No military aid from state stocks; commercial exports by Slovak manufacturers continue; Slovakia has announced it will not take part in new EU financial aid for Ukraine (dpa, 10 Nov 2026)."
     },
     {
      "k": "Russia",
@@ -433,6 +493,40 @@
        "https://www.teraz.sk/slovensko/prezident-odcestuje-na-parizske-mierov/1006055-clanok.html"
       ]
      ]
+    },
+    {
+     "date": "2026-11-09",
+     "t": "The Armed Forces said they disconnected the defence ministry website on 21 Oct after the National Cyber Security Centre warned of two critical PHP vulnerabilities; the rebuilt site is in penetration testing. [74, 75]",
+     "src": [
+      [
+       "Web rezortu obrany odpojili v októbri pre kybernetické riziko",
+       "https://www.teraz.sk/slovensko/web-rezortu-obrany-odpojili-v-oktobri-p/1006343-clanok.html"
+      ],
+      [
+       "Z webu ministerstva obrany zmizli staršie zmluvy a faktúry. Armáda vysvetlila, čo sa stalo",
+       "https://www.pravda.sk/spravy/domace/clanok/2075459-z-webu-ministerstva-obrany-zmizli-starsie-zmluvy-a-faktury-armada-vysvetlila-co-sa"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-09",
+     "t": "President Pellegrini said the state must take all legal steps to strengthen its influence in strategic energy companies. [164]",
+     "src": [
+      [
+       "Prezident: Štát musí posilniť svoj vplyv v strategických podnikoch",
+       "https://www.teraz.sk/slovensko/prezident-stat-musi-posilnit-svoj-v/1006372-clanok.html"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-10",
+     "t": "dpa (via Deutschlandfunk): Slovakia and Bulgaria have announced they will not take part in new financial aid for Ukraine. [23]",
+     "src": [
+      [
+       "Ukraine-Hilfe: Bundeskanzler Merz fordert Beteiligung aller EU-Staaten",
+       "https://www.deutschlandfunk.de/bundeskanzler-merz-fordert-beteiligung-aller-eu-staaten-102.html"
+      ]
+     ]
     }
    ],
    "src": [
@@ -451,6 +545,10 @@
     [
      "STVR: Koalícia prichádza o väčšinu: Roman Malatinec odchádza od Huliakovcov a pridáva sa k Tarabovej strane",
      "https://spravy.stvr.sk/2026/11/roman-malatinec-odchadza-od-huliakovcov-a-pridava-sa-k-tarabovej-strane/"
+    ],
+    [
+     "Ukraine-Hilfe: Bundeskanzler Merz fordert Beteiligung aller EU-Staaten",
+     "https://www.deutschlandfunk.de/bundeskanzler-merz-fordert-beteiligung-aller-eu-staaten-102.html"
     ]
    ],
    "verified": false,
@@ -509,7 +607,7 @@
     "note": "NATO estimates, share of GDP; 2014 to 2024 from the annual press releases, 2025 from the March 2026 report via press coverage; to confirm against the NATO table",
     "verified": false
    },
-   "updated": "2026-11-09"
+   "updated": "2026-11-10"
   },
   {
    "id": "de",
@@ -678,6 +776,34 @@
        "https://www.bmvg.de/de/aktuelles/rekordetat-verteidigung-haushaltsdebatte-6149920"
       ]
      ]
+    },
+    {
+     "date": "2026-11-09",
+     "t": "Merz wrote to Costa that a fair contribution by all member states to Ukraine's funding gap is a precondition for other questions with financial effects, including the 2028–2034 EU budget; leaders meet in Dublin on 12–13 Nov. [23, 24]",
+     "src": [
+      [
+       "Ukraine-Hilfe: Bundeskanzler Merz fordert Beteiligung aller EU-Staaten",
+       "https://www.deutschlandfunk.de/bundeskanzler-merz-fordert-beteiligung-aller-eu-staaten-102.html"
+      ],
+      [
+       "Bericht: Merz knüpft Ja zu EU-Haushalt an neue Ukraine-Hilfen",
+       "https://www.n-tv.de/politik/Bericht-Merz-knuepft-Ja-zu-EU-Haushalt-an-neue-Ukraine-Hilfen-id31513856.html"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-10",
+     "t": "Spiegel: the federal government pays €6.6bn for the families' 50% of KNDS; contract due in November. [76, 165]",
+     "src": [
+      [
+       "Bund kauft Anteil an Panzerhersteller KNDS für 6,6 Milliarden Euro",
+       "https://www.spiegel.de/politik/deutschland/bund-kauft-anteil-an-panzerhersteller-knds-fuer-6-6-milliarden-euro-a-d5902cfc-42fc-4980-81f7-bbc078b8df29"
+      ],
+      [
+       "Rüstung: Bund zahlt offenbar 6,6 Milliarden Euro für KNDS-Einstieg",
+       "https://www.handelsblatt.com/politik/deutschland/ruestung-bund-zahlt-offenbar-66-milliarden-euro-fuer-knds-einstieg/100268563.html"
+      ]
+     ]
     }
    ],
    "src": [
@@ -750,7 +876,7 @@
     "note": "NATO estimates, share of GDP; 2014 to 2024 from the annual press releases, 2025 from the March 2026 report via press coverage; to confirm against the NATO table",
     "verified": false
    },
-   "updated": "2026-11-09"
+   "updated": "2026-11-10"
   },
   {
    "id": "ru",
@@ -774,7 +900,7 @@
     "dateText": "Presidential election due March 2030; State Duma elected 18–20 Sep 2026"
    },
    "nato": {
-    "spend": "SIPRI estimate 7.5% of GDP in 2025, almost 16 trillion roubles; SIPRI puts planned 2026 military spending at 14.9 trillion roubles, 6.3% of GDP, after the 2026 budget law cut the national-defence line by more than 800 billion roubles from the 12.9 trillion draft. The 2027–29 draft budget went to the Duma on 30 Sep 2026",
+    "spend": "SIPRI estimate 7.5% of GDP in 2025, almost 16 trillion roubles; SIPRI puts planned 2026 military spending at 14.9 trillion roubles, 6.3% of GDP, after the 2026 budget law cut the national-defence line by more than 800 billion roubles from the 12.9 trillion draft. The 2027–29 draft budget went to the Duma on 30 Sep 2026 and passed first reading on 29 Oct, with 2027 spending of 48.7 trillion roubles; the national-defence section total is not yet confirmed",
     "posture": [
      "Leningrad and Moscow military districts re-established by Presidential Decree No. 141 of 26 Feb 2024, in force 1 Mar 2024, facing Finland, the Baltics and Poland",
      "Baltic Fleet and the 11th Army Corps in Kaliningrad",
@@ -838,6 +964,30 @@
        "https://tass.com/politics/2214439"
       ]
      ]
+    },
+    {
+     "date": "2026-11-09",
+     "t": "Shoigu told CIS security council secretaries that exercises rehearse an offensive to the East and NATO infrastructure in Poland and the Baltics is expanding; DPA citing Interfax said he called Koalicja offensive in character. [166, 167]",
+     "src": [
+      [
+       "Выступление Секретаря Совета Безопасности Российской Федерации Сергея Шойгу на XIV встрече секретарей советов безопасности государств – участников СНГ, 9 ноября 2026 г.",
+       "http://www.scrf.gov.ru/news/allnews/4269/"
+      ],
+      [
+       "Západ sa pripravuje na vojnu s Ruskom, tvrdí Šojgu. Rozhnevali ho veľké manévre v Poľsku (DPA, Interfax)",
+       "https://www.pravda.sk/spravy/svet/clanok/2075381-zapad-sa-pripravuje-na-vojnu-s-ruskom-tvrdi-sojgu-rozhnevali-ho-velke-manevre-v-pol"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-09",
+     "t": "The Kremlin announced that Putin chairs the CSTO Collective Security Council in Moscow on 11 Nov. [168]",
+     "src": [
+      [
+       "11 ноября в Москве под председательством Президента России пройдёт сессия Совета коллективной безопасности ОДКБ",
+       "http://kremlin.ru/events/president/news/81200"
+      ]
+     ]
     }
    ],
    "src": [
@@ -880,9 +1030,17 @@
     [
      "Members of the Government",
      "http://government.ru/gov/persons/"
+    ],
+    [
+     "Банк России принял решение сохранить ключевую ставку на уровне 14,00% годовых (23 Oct)",
+     "https://www.cbr.ru/press/keypr/"
+    ],
+    [
+     "Госдума приняла проект федерального бюджета на 2027–2029 годы в первом чтении (citing TASS)",
+     "https://www.amic.ru/news/gosduma-prinyala-proekt-federalnogo-byudzheta-na-2027-2029-gody-v-pervom-chtenii-595733"
     ]
    ],
-   "updated": "2026-11-09"
+   "updated": "2026-11-10"
   },
   {
    "id": "by",
@@ -986,9 +1144,13 @@
     [
      "Ministry of Foreign Affairs of Belarus, homepage (6 Nov item on the Venezuelan ambassador)",
      "https://mfa.gov.by/"
+    ],
+    [
+     "Новости (news list, 9 Nov item on the Armed Forces delegation to Russia)",
+     "http://www.mil.by/ru/news/"
     ]
    ],
-   "updated": "2026-11-09"
+   "updated": "2026-11-10"
   },
   {
    "id": "cn",
@@ -1058,7 +1220,7 @@
     },
     {
      "k": "Europe",
-     "t": "Licensing for seven rare earths in force since April 2025; MOFCOM Announcement No. 70 suspends the October 2025 rare-earth and battery-materials package until 10 Nov 2026, and No. 72 the US-only gallium, germanium and antimony ban until 27 Nov 2026 (drone-component controls: current list to confirm)."
+     "t": "Licensing for seven rare earths in force since April 2025; MOFCOM and customs Announcement 2026 No. 58 (9 Nov) keeps the October 2025 rare-earth and battery-materials package (2025 Nos. 55–58, 61, 62) suspended from 11 Nov 2026 to 10 Jan 2027; No. 72 suspends the US-only gallium, germanium and antimony ban until 27 Nov 2026; revised drone-item controls (Announcement 2026 No. 49 of 19 Oct) take effect on 18 Nov 2026."
     }
    ],
    "blr": [],
@@ -1074,6 +1236,30 @@
       [
        "MOFCOM Announcement 2026 No. 57: anti-dumping investigation into para-aramid filament from the EU",
        "https://www.mofcom.gov.cn/zwgk/zcfb/art/2026/art_e6c3b466b3c24b698a9fc6a649e2db94.html"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-09",
+     "t": "MOFCOM and customs Announcement 2026 No. 58 keeps the October 2025 rare-earth and battery-materials controls (2025 Nos. 55–58, 61, 62) suspended from 11 Nov 2026 to 10 Jan 2027; the listing of 16 US entities stays suspended for two months from 10 Nov. [77, 169]",
+     "src": [
+      [
+       "商务部、海关总署公告2026年第58号 公布继续暂停实施商务部、海关总署公告2025年第55号、56号、57号、58号及商务部公告2025年第61号、62号的决定",
+       "https://www.mofcom.gov.cn/zwgk/zcfb/art/2026/art_91466027f465467985942a639a9485f4.html"
+      ],
+      [
+       "商务部新闻发言人就调整出口管制管控名单措施答记者问 (9 Nov)",
+       "https://www.mofcom.gov.cn/xwfb/xwfyrth/art/2026/art_5baeb69ccc0f44cb83dea8ac587dd327.html"
+      ]
+     ]
+    },
+    {
+     "date": "2026-10-19",
+     "t": "MOFCOM, customs and the CMC Equipment Development Department issued Announcement 2026 No. 49 revising export controls on drone-related items, in force from 18 Nov. [78]",
+     "src": [
+      [
+       "商务部新闻发言人就优化调整无人机相关物项出口管制措施答记者问 (19 Oct)",
+       "https://www.news.cn/fortune/20261019/06e8685081394fdd92f5530302c044a7/c.html"
       ]
      ]
     }
@@ -1118,9 +1304,17 @@
     [
      "Defence Minister Dong Jun visits South Africa (June 2026)",
      "http://www.mod.gov.cn/gfbw/jswj/cf/16464960.html"
+    ],
+    [
+     "商务部、海关总署公告2026年第58号 公布继续暂停实施商务部、海关总署公告2025年第55号、56号、57号、58号及商务部公告2025年第61号、62号的决定",
+     "https://www.mofcom.gov.cn/zwgk/zcfb/art/2026/art_91466027f465467985942a639a9485f4.html"
+    ],
+    [
+     "商务部新闻发言人就优化调整无人机相关物项出口管制措施答记者问 (19 Oct)",
+     "https://www.news.cn/fortune/20261019/06e8685081394fdd92f5530302c044a7/c.html"
     ]
    ],
-   "updated": "2026-11-09"
+   "updated": "2026-11-10"
   }
  ],
  "map": {

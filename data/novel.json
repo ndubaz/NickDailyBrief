@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-09",
+ "updated": "2026-11-10",
  "note": "New uses of technology in war: first-seen or newly combined techniques observed in any theatre and any domain. Append-only. Each entry: id (YYYY-MM-DD-slug), date (when observed or first reported), theatre (board id), actor, t (headline), what (fact sentences with [n] citations), new (one or two sentences on what is new, in the reporters' and actors' terms, no prediction), domains (from the list below), src rows copied from the edition. The run checks ids and titles before appending so a technique is logged once; a later development of the same technique is a new entry that names the earlier id in prev.",
  "domains": {
   "uas": "Drones",
@@ -140,6 +140,30 @@
     ]
    ],
    "edition": 8
+  },
+  {
+   "id": "2026-11-10-geran5-k5k-camera-correlation",
+   "date": "2026-11-10",
+   "theatre": "ru-ua",
+   "actor": "Russian forces",
+   "t": "A smaller jet Geran-5 navigates with a camera-based correlation unit on a Chinese single-board computer",
+   "what": "Ukrinform, citing Ukraine's defence intelligence (DIU), reported on 10 Nov that the Geran-5 K5-K, used against Ukrainian cities since early autumn, is 4 m long, cruises above 450 km/h at up to 6 km and carries a Susanin optical-electronic correlation unit that compares images from a dual-range camera with a stored reference image on a Coke Pi microcomputer; 52 of its 93 foreign electronic components are from US manufacturers. [31]",
+   "new": "The DIU found the Susanin correlation unit, previously identified in the Geran-4, running a dual-range camera instead of optical sensors in a jet Geran it classes as a small cruise missile.",
+   "domains": [
+    "uas",
+    "fires",
+    "ew"
+   ],
+   "src": [
+    [
+     31,
+     "DIU examines new Russian Geran-5 K5-K drone: Nearly 100 foreign components, most of them American",
+     "Ukrinform",
+     "https://www.ukrinform.net/rubric-ato/4182825-diu-examines-new-russian-geran5-k5k-drone-nearly-100-foreign-components-most-of-them-american.html",
+     2
+    ]
+   ],
+   "edition": 9
   }
  ]
 }

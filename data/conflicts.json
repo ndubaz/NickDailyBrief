@@ -1,6 +1,6 @@
 {
  "note": "The board: ten tracked theatres with a dated log of facts per theatre. The morning run appends one entry per theatre that had a reportable event (newest last) with the cited source rows copied into src, and never edits or deletes old entries. No status labels: the page derives activity from the dates. lat/lon place the marker on the schematic map. short = map label; lp = label position (above, below, left, right).",
- "updated": "2026-11-08",
+ "updated": "2026-11-10",
  "theatres": [
   {
    "id": "ru-ua",
@@ -314,6 +314,61 @@
        3
       ]
      ]
+    },
+    {
+     "date": "2026-11-10",
+     "t": "The Air Force said Russia launched 317 strike drones and Banderol missiles overnight into 9 Nov and 271 were downed or suppressed. [20] A strike on an Odesa infrastructure facility killed three on 9 Nov, and Centrenergo said the Trypillia power plant was hit again. [28, 29] The General Staff said Ukrainian forces damaged three workshops at the Morozov plant near St Petersburg overnight into 9 Nov and counted 148 engagements on 9 Nov, 12 of them on the Pokrovsk front; a monitoring channel reported explosions near the 123rd Aircraft Repair Plant in Staraya Russa overnight into 10 Nov. [21, 148, 30] Police said 55 bodies have been recovered at Komyshuvakha and 30 identified. [149]",
+     "src": [
+      [
+       20,
+       "Air defense neutralizes 271 of 317 Russian drones targeting Ukraine overnight",
+       "Ukrinform",
+       "https://www.ukrinform.net/rubric-ato/4182779-air-defense-neutralizes-271-of-317-russian-drones-targeting-ukraine-overnight.html",
+       2
+      ],
+      [
+       28,
+       "Russian attack on infrastructure facility in Odesa leaves three killed, one injured",
+       "Ukrinform",
+       "https://www.ukrinform.net/rubric-ato/4182896-russian-attack-on-infrastructure-facility-in-odesa-leaves-three-killed-one-injured.html",
+       2
+      ],
+      [
+       29,
+       "Russia strikes Trypillia TPP again",
+       "Ukrinform",
+       "https://www.ukrinform.net/rubric-economy/4183030-russia-strikes-trypillia-tpp-again.html",
+       2
+      ],
+      [
+       21,
+       "Defense Forces strike plant near St Petersburg that produces missile fuel for Iskander systems",
+       "Ukrinform",
+       "https://www.ukrinform.net/rubric-ato/4182905-defense-forces-strike-plant-near-st-petersburg-that-produces-missile-fuel-for-iskander-systems.html",
+       2
+      ],
+      [
+       148,
+       "War update: 148 clashes on front line since morning",
+       "Ukrinform",
+       "https://www.ukrinform.net/rubric-ato/4183122-war-update-148-clashes-on-front-line-since-morning.html",
+       2
+      ],
+      [
+       30,
+       "Explosions reported near Russian aircraft repair plant in Novgorod Oblast as drones target occupied Crimea",
+       "The Kyiv Independent",
+       "https://kyivindependent.com/explosions-reported-near-russian-aircraft-repair-plant-in-novgorod-oblast-as-drones-target-occupied-crimea/",
+       3
+      ],
+      [
+       149,
+       "Airstrike on Komyshuvakha: 30 victims identified, 19 more people may be trapped under rubble",
+       "Ukrinform",
+       "https://www.ukrinform.net/rubric-ato/4182906-airstrike-on-komyshuvakha-30-victims-identified-19-more-people-may-be-trapped-under-rubble.html",
+       2
+      ]
+     ]
     }
    ],
    "short": "Ukraine",
@@ -550,6 +605,33 @@
        3
       ]
      ]
+    },
+    {
+     "date": "2026-11-10",
+     "t": "President Trump said on 9 Nov, after meeting Qatar's prime minister, that “Iran militarily is effectively over” while the naval blockade stays; Supreme National Security Council secretary Mohsen Rezaei called talk of talks fake news. Foreign ministry spokesman Esmaeil Baqaei said Iran's two-day proposal stands and that ships in Hormuz must coordinate with Iranian authorities. France attributed the 11 Oct supermarket refrigeration cyberattack to the IRGC-linked Shahid Kaveh unit and summoned Iran's ambassador. [22, 34, 54]",
+     "src": [
+      [
+       22,
+       "After meeting Qatar PM, Trump calls Iran war ‘effectively over’ militarily",
+       "Al Jazeera",
+       "https://www.aljazeera.com/news/2026/11/9/trump-calls-iran-war-effectively-over-after-talks-with-qatar-pm",
+       3
+      ],
+      [
+       34,
+       "Iran says 2-day proposal to US offers roadmap for restoring security in Strait of Hormuz",
+       "Anadolu Agency",
+       "https://www.aa.com.tr/en/middle-east/iran-says-2-day-proposal-to-us-offers-roadmap-for-restoring-security-in-strait-of-hormuz/4116631",
+       2
+      ],
+      [
+       54,
+       "France accuses Iran of supermarket fridge hacking",
+       "BBC News",
+       "https://www.bbc.co.uk/news/articles/cmg474vk6dyqo",
+       3
+      ]
+     ]
     }
    ],
    "short": "Iran",
@@ -668,6 +750,33 @@
        "Gaza floods leave 350,000 displaced Palestinians without shelter: Health Ministry",
        "Anadolu Agency",
        "https://www.aa.com.tr/en/middle-east/gaza-floods-leave-350-000-displaced-palestinians-without-shelter-health-ministry/4116383",
+       2
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-10",
+     "t": "The UN said peacekeepers recorded six Israeli airstrikes and 360 artillery trajectories in southern Lebanon on 5–8 Nov and preparations for a sustained Israeli presence; UNIFIL ends operations on 31 Dec. Eisenkot and Lieberman agreed on 9 Nov to negotiate with the ultra-Orthodox parties; the new Knesset is sworn in on 10 Nov. [38, 37, 36]",
+     "src": [
+      [
+       38,
+       "UN peacekeepers report signs of sustained Israeli presence in south Lebanon",
+       "Anadolu Agency",
+       "https://www.aa.com.tr/en/middle-east/un-peacekeepers-report-signs-of-sustained-israeli-presence-in-south-lebanon/4118108",
+       2
+      ],
+      [
+       37,
+       "Eisenkot, Lieberman agree to negotiate with ultra-Orthodox parties to form next Israeli government",
+       "Anadolu Agency",
+       "https://www.aa.com.tr/en/middle-east/eisenkot-lieberman-agree-to-negotiate-with-ultra-orthodox-parties-to-form-next-israeli-government/4118085",
+       2
+      ],
+      [
+       36,
+       "Eisenkot's bloc seeks to oust Netanyahu ally as Israeli parliament speaker",
+       "Anadolu Agency",
+       "https://www.aa.com.tr/en/middle-east/eisenkot-s-bloc-seeks-to-oust-netanyahu-ally-as-israeli-parliament-speaker/4118104",
        2
       ]
      ]
@@ -829,6 +938,19 @@
        2
       ]
      ]
+    },
+    {
+     "date": "2026-11-10",
+     "t": "A Saudi energy ministry official said a strike on 9 Nov caused a “limited fire” on the East-West pipeline in Medina region and that operations were unaffected; the coalition said it intercepted a ballistic and a cruise missile over Riyadh and a second ballistic missile over the south on 10 Nov. [150]",
+     "src": [
+      [
+       150,
+       "Saudi Arabia downs missiles fired at Riyadh after Houthi attack on pipeline",
+       "Al Jazeera (AFP)",
+       "https://www.aljazeera.com/news/2026/11/10/saudi-arabia-downs-missiles-fired-at-riyadh-after-houthi-attack-on-pipeline",
+       3
+      ]
+     ]
     }
    ],
    "short": "Red Sea",
@@ -985,6 +1107,26 @@
        3
       ]
      ]
+    },
+    {
+     "date": "2026-11-10",
+     "t": "Taiwan's defence ministry counted four PLA aircraft sorties, eight navy ships and one official ship in the 24 hours to 06:00 on 10 Nov. [151] President Trump said he expects to meet Xi Jinping and Vladimir Putin at the APEC summit in Shenzhen on 18–19 Nov. [35]",
+     "src": [
+      [
+       151,
+       "PLA activities in the waters and airspace around Taiwan, 10 Nov",
+       "Taiwan Ministry of National Defense",
+       "https://www.mnd.gov.tw/en/News/PLAAct/88190",
+       1
+      ],
+      [
+       35,
+       "Trump hopes to meet Xi and Putin at APEC summit in China",
+       "Ukrinform (Reuters)",
+       "https://www.ukrinform.net/rubric-polytics/4182802-trump-hopes-to-meet-xi-and-putin-at-apec-summit-in-china.html",
+       2
+      ]
+     ]
     }
    ],
    "short": "Taiwan",
@@ -1115,6 +1257,19 @@
        "Korea Times",
        "https://www.koreatimes.co.kr/foreignaffairs/northkorea/20261107/n-korean-envoy-holds-3rd-high-level-meeting-in-china",
        2
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-10",
+     "t": "KCNA reported on 10 Nov that a new high-speed torpedo system was test-fired in the East Sea on 9 Nov, for deployment with the navy in early 2027, after “more than 180 rounds of different tests over the past five years”. [152]",
+     "src": [
+      [
+       152,
+       "(LEAD) N. Korea tests new torpedo, eyes early 2027 deployment",
+       "Yonhap",
+       "https://en.yna.co.kr/view/AEN20261110001251315",
+       3
       ]
      ]
     }
@@ -1268,6 +1423,26 @@
        2
       ]
      ]
+    },
+    {
+     "date": "2026-11-10",
+     "t": "Radio Tamazuj reported on 9 Nov that the Sudanese Forces of the Declaration of Principles, which include Abdalla Hamdok's coalition, warned Egypt's army after it announced a fourth campaign from 7 Nov against what it called looting and infiltration gangs in gold-mining areas. RFI reported that the army arrested Ahmed Haroun, wanted by the ICC since 2007, on 8 Nov. [153, 154]",
+     "src": [
+      [
+       153,
+       "Hamdok's group warns Egypt against attacking Sudanese gold miners",
+       "Radio Tamazuj",
+       "https://www.radiotamazuj.org/en/news/article/hamdoks-group-warns-egypt-against-attacking-sudanese-gold-miners",
+       3
+      ],
+      [
+       154,
+       "Soudan: arrestation d'Ahmed Haroun, cadre de l'ancien régime, recherché par la CPI depuis 2007",
+       "RFI",
+       "https://www.rfi.fr/fr/afrique/20261109-soudan-arrestation-d-ahmed-haroun-cadre-de-l-ancien-r%C3%A9gime-recherch%C3%A9-par-la-cpi-depuis-2007",
+       3
+      ]
+     ]
     }
    ],
    "short": "Sudan",
@@ -1314,6 +1489,19 @@
        "Anadolu Agency",
        "https://www.aa.com.tr/fr/afrique/mali-près-de-100-000-personnes-refoulées-de-guinée-recensées-à-bamako-six-morts-à-la-frontière/4115752",
        2
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-10",
+     "t": "RFI reported that Niger's prime minister received the EU chargé d'affaires in Niamey on 9 Nov over “déclarations condescendantes et inacceptables”, after an EU spokesman asked for clarification of Algeria's decision, made official on 26 Oct, to send military units to Niger. [155]",
+     "src": [
+      [
+       155,
+       "Niger: des propos de l'UE sur l'envoi de militaires algériens dans le pays suscitent la polémique",
+       "RFI",
+       "https://www.rfi.fr/fr/afrique/20261110-niger-alg%C3%A9rieutoreit",
+       3
       ]
      ]
     }
@@ -1434,6 +1622,26 @@
        "Radio Okapi",
        "https://www.radiookapi.net/2026/11/08/actualite/justice/tribunal-militaire-de-garnison-de-goma-66-militaires-condamnes-mort",
        1
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-10",
+     "t": "RFI reported that the FRN, led by former president Joseph Kabila, took Bitale and Bulambika along national road 3 and that more than 160,000 people have fled. The 34th military region's spokesman said on 9 Nov: “Nous avons fixé l'ennemi. Il est stoppé au niveau de Bulambika.” [156, 157]",
+     "src": [
+      [
+       156,
+       "RDC: offensive des combattants du FRN au Sud-Kivu, plusieurs localités tombent sous leur contrôle",
+       "RFI",
+       "https://www.rfi.fr/fr/afrique/20261110-rdc-offensive-des-combattants-du-frn-au-sud-kivu-plusieurs-localit%C3%A9s-tombent-sous-leur-contr%C3%B4le",
+       3
+      ],
+      [
+       157,
+       "Kalehe : l'armée annonce une contre-offensive pour reconquérir les zones de Bunyakiri passées sous contrôle du FRN",
+       "Actualite.cd",
+       "https://actualite.cd/2026/11/09/kalehe-larmee-annonce-une-contre-offensive-pour-reconquerir-les-zones-de-bunyakiri",
+       3
       ]
      ]
     }
@@ -1651,6 +1859,19 @@
        3
       ]
      ]
+    },
+    {
+     "date": "2026-11-10",
+     "t": "NATO announced on 9 Nov that Secretary General Mark Rutte will attend the Atlantic Future Forum aboard HMS Prince of Wales in Oslo on 11 Nov with UK Defence Secretary Wes Streeting and Norway's foreign minister Espen Barth Eide. [49]",
+     "src": [
+      [
+       49,
+       "NATO Secretary General to visit Norway (media advisory, 9 Nov)",
+       "NATO",
+       "https://www.nato.int/en/news-and-events/events/media-advisories/2026/11/09/nato-secretary-general-to-visit-norway",
+       1
+      ]
+     ]
     }
    ]
   },
@@ -1708,6 +1929,19 @@
        "EUFOR Althea",
        "https://www.euforbih.org/index.php/en/latest-news/5629-un-security-council-extends-eufor-mandate-for-another-year",
        1
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-10",
+     "t": "Montenegro's national team against violent extremism said on 9 Nov that 14 citizens have travelled to foreign conflict zones since 2022, recruited mainly through the internet. [158]",
+     "src": [
+      [
+       158,
+       "Montenegro Registers 14 Citizens Fighting in Foreign Wars Since 2022",
+       "Balkan Insight",
+       "https://balkaninsight.com/2026/11/09/montenegro-registers-14-citizens-fighting-in-foreign-wars-since-2022/bi/",
+       3
       ]
      ]
     }
@@ -1800,6 +2034,33 @@
        "Sandu warns of new Russian attempts to destabilize Moldova",
        "Ukrinform",
        "https://www.ukrinform.net/rubric-polytics/4182646-sandu-warns-of-new-russian-attempts-to-destabilize-moldova.html",
+       2
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-10",
+     "t": "Commission President von der Leyen announced about €60 million in Bucharest on 9 Nov: €10 million for maritime surveillance and search and rescue and €50 million for a planned Security Hub with Bulgaria, Romania and Türkiye. CMA CGM introduced a war-risk surcharge from 9 Nov for Constanța, Poti, Varna and Burgas. Moldova's electoral commission accredited observers for the Gagauzia elections on 15 Nov. [39, 40, 43]",
+     "src": [
+      [
+       39,
+       "EU Offers Black Sea Countries Support to Counter Security Threats",
+       "Balkan Insight",
+       "https://balkaninsight.com/2026/11/09/eu-offers-black-sea-countries-support-to-counter-security-threats/bi/",
+       3
+      ],
+      [
+       40,
+       "French shipping company imposes additional fee for Black Sea shipments",
+       "BTA",
+       "https://www.bta.bg/en/news/world/1243067-french-shipping-company-imposes-additional-fee-for-black-sea-shipments",
+       2
+      ],
+      [
+       43,
+       "Moldovan Central Electoral Commission accredits 16 international observers to monitor regional elections in Gagauzia",
+       "Moldpres",
+       "https://www.moldpres.md/eng/politics/moldovan-central-electoral-commission-accredits-16-international-observers-to-monitor-regional-elections-in-gagauzia",
        2
       ]
      ]
