@@ -849,7 +849,7 @@
   }
 
   /* ---------- health checks: when to remodel ---------- */
-  var PAGE_V = "7.5", PROMPT_REV = "7.5.4";
+  var PAGE_V = "7.5", PROMPT_REV = "7.5.6";
   function health(E, ctx, TD, words) {
     var rows = [], realToday = key(new Date());
     function add(name, level, detail) { rows.push([name, level, detail]); }
@@ -1250,7 +1250,18 @@
     if (LO.noise) tiles.push('<div class="tile"><div class="lbl">Noise · AWACS and Beek</div><div class="val">' + esc(LO.noise.h || "Flights") + "</div><p>" + rich(LO.noise.t || "") + "</p></div>");
     h += '<div class="strip">' + tiles.join("") + "</div>";
     var N = LO.notices;
-    if (N && N.items && N.items.length) h += '<h3>Notices for Hoensbroek <span class="small">gemeente Heerlen, last three weeks</span></h3><ul class="exl">' + N.items.slice(0, 8).map(function (x) { return '<li><span class="d">' + esc(fmtShort(x.date)) + '</span><span><a href="' + esc(x.url) + '" target="_blank" rel="noopener">' + esc(x.t) + "</a></span></li>"; }).join("") + "</ul>";
+    if (N && N.items && N.items.length) {
+      /* streets to flag: any notice on these goes first and carries a marker */
+      var WATCH_STREETS = /\bHeerlerweg\b/i;
+      var nit = N.items.slice(0, 8), flagged = N.items.filter(function (x) { return WATCH_STREETS.test(x.t || ""); });
+      flagged.forEach(function (x) { if (nit.indexOf(x) < 0) nit.push(x); });
+      nit.sort(function (a, b) { var fa = WATCH_STREETS.test(a.t || "") ? 0 : 1, fb = WATCH_STREETS.test(b.t || "") ? 0 : 1; return fa - fb || (b.date || "").localeCompare(a.date || ""); });
+      h += '<h3>Notices for Hoensbroek <span class="small">gemeente Heerlen, last three weeks · Dutch with English beneath' + (flagged.length ? ' · <b class="flagtxt">' + flagged.length + " on Heerlerweg</b>" : "") + '</span></h3><ul class="exl nwl">' + nit.map(function (x) {
+        var fl = WATCH_STREETS.test(x.t || ""), en = x.en || "", head = /^(.*?\b(?:Hoensbroek|Heerlen))\.\s+/.exec(x.t || "");
+        if (en && head && en.indexOf(head[0]) === 0) en = en.slice(head[0].length); /* the street is already on the Dutch line */
+        return '<li' + (fl ? ' class="flag"' : "") + '><span class="d">' + esc(fmtShort(x.date)) + '</span><span>' + (fl ? '<span class="flagtag">Heerlerweg</span> ' : "") + '<a href="' + esc(x.url) + '" target="_blank" rel="noopener" lang="nl">' + esc(x.t) + "</a>" + (en ? '<span class="en">' + esc(en) + "</span>" : '<span class="en muted">English follows with the next run</span>') + "</span></li>";
+      }).join("") + "</ul>";
+    }
     else if (N) h += '<p class="small">No gemeente notice named Hoensbroek in the last three weeks.</p>';
     if (STK.length) h += '<h3>Strikes and action days <span class="small">announced or threatened, next 30 days</span></h3><ul class="wn">' + STK.filter(function (x) { return daysBetween(TD, x.date) <= 30; }).map(function (x) { var n = daysBetween(TD, x.date); return '<li><span class="d">' + esc(fmtShort(x.date) + (x.end ? " – " + fmtShort(x.end) : "")) + '</span><span class="w"><span class="dot" style="background:var(--' + (x.status === "threatened" ? "warn" : "crit") + ')"></span><b>' + esc(x.t) + "</b> " + icsLink(x.t, x.date, x.end, x.impact || "") + '<span class="small">' + esc([x.status, x.who, x.impact].filter(Boolean).join(" · ")) + (x.note ? " · " + esc(x.note) : "") + (x.src && x.src[0] && x.src[0][1] ? ' · <a href="' + esc(x.src[0][1]) + '" target="_blank" rel="noopener">source</a>' : "") + " · " + (n <= 0 ? "under way" : n === 1 ? "tomorrow" : "in " + n + " days") + "</span></span></li>"; }).join("") + "</ul>";
     if (PRT.length) h += '<h3>Protests and demonstrations <span class="small">announced, next 30 days · Dutch, Belgian and NRW cities, Maastricht and Aachen first</span></h3><ul class="wn">' + PRT.filter(function (x) { return daysBetween(TD, x.date) <= 30; }).sort(function (a, b) { return (b.near ? 1 : 0) - (a.near ? 1 : 0) || (a.date < b.date ? -1 : 1); }).map(function (x) { var n = daysBetween(TD, x.date); return '<li><span class="d">' + esc(fmtShort(x.date) + (x.end ? " – " + fmtShort(x.end) : "")) + '</span><span class="w"><span class="dot" style="background:' + catColor(x.cc === "be" ? "be" : x.cc === "de" ? "de" : "nl") + '"></span><b>' + esc(x.city) + ": " + esc(x.t) + "</b> " + icsLink(x.city + ": " + x.t, x.date, x.end, x.impact || "") + '<span class="small">' + esc([x.time, x.where, x.who, x.size, x.status === "notified" ? "notified to the city" : x.status].filter(Boolean).join(" · ")) + (x.impact ? " · " + esc(x.impact) : "") + (x.src && x.src[0] && x.src[0][1] ? ' · <a href="' + esc(x.src[0][1]) + '" target="_blank" rel="noopener">source</a>' : "") + " · " + (n <= 0 ? "today" : n === 1 ? "tomorrow" : "in " + n + " days") + "</span></span></li>"; }).join("") + "</ul>";

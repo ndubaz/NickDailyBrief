@@ -870,3 +870,8 @@ table.metro tr.in td:first-child{color:var(--up)}
 table.metro tr.gap td{text-align:center;padding:1px;color:var(--muted)}
 table.clubs td{white-space:normal}
 .season.mini .g.T,.season.mini .g.OTL{background:var(--warn)}
+
+/* flagged notices (watch streets) */
+.nwl li.flag { background: color-mix(in srgb, var(--down, #b3261e) 9%, transparent); border-left: 3px solid var(--down, #b3261e); padding-left: .5rem; border-radius: 4px; }
+.flagtag { display: inline-block; font: 700 .68rem/1.2 ui-monospace, monospace; letter-spacing: .04em; text-transform: uppercase; color: #fff; background: var(--down, #b3261e); padding: .1rem .35rem; border-radius: 3px; vertical-align: middle; }
+.flagtxt { color: var(--down, #b3261e); font-weight: 700; }

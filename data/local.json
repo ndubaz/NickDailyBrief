@@ -4,10 +4,10 @@
   "days": [
    {
     "date": "2026-11-10",
-    "aqi": 47,
-    "pm10": 30.4,
-    "pm25": 26.4,
-    "uv": 1.3,
+    "aqi": 48,
+    "pm10": 31,
+    "pm25": 28.9,
+    "uv": 1.4,
     "pollen": {
      "alder": 0,
      "birch": 0,
@@ -20,9 +20,9 @@
    {
     "date": "2026-11-11",
     "aqi": 47,
-    "pm10": 19.4,
-    "pm25": 17.6,
-    "uv": 0.5,
+    "pm10": 19.3,
+    "pm25": 17.1,
+    "uv": 0.3,
     "pollen": {
      "alder": 0,
      "birch": 0,
@@ -36,10 +36,10 @@
   "lki": {
    "station": "Heerlen-Looierstraat (NL10136)",
    "value": 3,
-   "time": "2026-11-10T03:00:00+00:00",
+   "time": "2026-11-10T15:00:00+00:00",
    "src": "Luchtmeetnet (RIVM) air-quality index LKI, 1 good to 11 very bad"
   },
-  "fetched": "2026-11-10T04:18:51.165Z"
+  "fetched": "2026-11-10T15:57:18.738Z"
  },
  "power": {
   "src": "EnergyZero day-ahead hourly prices, euro per kWh, VAT included, before energy tax and the supplier margin",
@@ -168,9 +168,121 @@
      "to": 10,
      "avg": 0.547
     }
+   },
+   {
+    "date": "2026-11-11",
+    "hours": [
+     [
+      0,
+      0.25
+     ],
+     [
+      1,
+      0.25
+     ],
+     [
+      2,
+      0.24
+     ],
+     [
+      3,
+      0.24
+     ],
+     [
+      4,
+      0.24
+     ],
+     [
+      5,
+      0.25
+     ],
+     [
+      6,
+      0.29
+     ],
+     [
+      7,
+      0.35
+     ],
+     [
+      8,
+      0.41
+     ],
+     [
+      9,
+      0.44
+     ],
+     [
+      10,
+      0.44
+     ],
+     [
+      11,
+      0.44
+     ],
+     [
+      12,
+      0.44
+     ],
+     [
+      13,
+      0.45
+     ],
+     [
+      14,
+      0.45
+     ],
+     [
+      15,
+      0.46
+     ],
+     [
+      16,
+      0.48
+     ],
+     [
+      17,
+      0.53
+     ],
+     [
+      18,
+      0.52
+     ],
+     [
+      19,
+      0.47
+     ],
+     [
+      20,
+      0.42
+     ],
+     [
+      21,
+      0.35
+     ],
+     [
+      22,
+      0.3
+     ],
+     [
+      23,
+      0.27
+     ]
+    ],
+    "avg": 0.374,
+    "cheapest3": {
+     "from": 2,
+     "to": 5,
+     "avg": 0.24
+    },
+    "dearest3": {
+     "from": 16,
+     "to": 19,
+     "avg": 0.51
+    }
    }
   ],
-  "fetched": "2026-11-10T04:18:51.870Z"
+  "fetched": "2026-11-10T15:57:19.387Z"
  },
  "maas": {
   "src": "Open-Meteo Flood API (GloFAS model), Maas grid cell north of Maastricht; a model estimate, not the Rijkswaterstaat gauge",
@@ -223,56 +335,56 @@
    ],
    [
     "2026-11-11",
-    33.5,
-    40.1
+    33.8,
+    37
    ],
    [
     "2026-11-12",
-    49.6,
-    68.7
+    48.4,
+    65.1
    ],
    [
     "2026-11-13",
-    60.4,
-    100.4
+    56.8,
+    87.3
    ],
    [
     "2026-11-14",
-    62,
-    108.4
+    55.6,
+    88.3
    ],
    [
     "2026-11-15",
-    56.5,
-    115.7
+    50.3,
+    76.5
    ],
    [
     "2026-11-16",
-    51.6,
-    104.4
+    45,
+    64.2
    ]
   ],
-  "fetched": "2026-11-10T04:18:52.614Z"
+  "fetched": "2026-11-10T15:57:20.106Z"
  },
  "sky": {
   "src": "NOAA SWPC planetary K-index forecast",
   "now": {
-   "time": "2026-11-10T00:00:00",
-   "kp": 3
+   "time": "2026-11-10T12:00:00",
+   "kp": 1.33
   },
   "max3d": {
-   "time": "2026-11-10T03:00:00",
-   "kp": 3.67,
+   "time": "2026-11-11T00:00:00",
+   "kp": 3,
    "scale": null
   },
   "note": "Kp 5 is a minor storm (aurora possible on the northern horizon from Limburg on a clear night), Kp 7 or more reached the Netherlands in May and October 2024",
-  "fetched": "2026-11-10T04:18:53.025Z"
+  "fetched": "2026-11-10T15:57:20.447Z"
  },
  "roads": {
   "src": "NDW open data, actueel beeld (traffic measures and incidents in force), within 25 km of the town centre",
-  "asof": "2026-11-10T04:18:54.175Z",
-  "count": 26,
-  "highSeverity": 5,
+  "asof": "2026-11-10T15:57:21.486Z",
+  "count": 32,
+  "highSeverity": 4,
   "items": [
    {
     "km": 1.2,
@@ -335,6 +447,18 @@
     "sev": "low"
    },
    {
+    "km": 5.4,
+    "lat": 50.872,
+    "lon": 5.928,
+    "type": "GeneralObstruction",
+    "cause": "",
+    "mgmt": "",
+    "by": "NDW",
+    "from": "2026-11-10",
+    "to": "",
+    "sev": "unknown"
+   },
+   {
     "km": 5.7,
     "lat": 50.872,
     "lon": 5.959,
@@ -395,217 +519,209 @@
     "sev": "low"
    },
    {
-    "km": 10.3,
-    "lat": 50.875,
-    "lon": 6.059,
-    "type": "RoadOrCarriagewayOrLaneManagement",
-    "cause": "roadMaintenance",
-    "mgmt": "carriagewayClosures",
-    "by": "Gemeente Kerkrade",
+    "km": 10.1,
+    "lat": 50.961,
+    "lon": 5.802,
+    "type": "AbnormalTraffic",
+    "cause": "",
+    "mgmt": "",
+    "by": "NLRWS",
     "from": "2026-11-10",
-    "to": "2026-11-10",
-    "sev": "low"
-   },
-   {
-    "km": 10.7,
-    "lat": 51.006,
-    "lon": 5.861,
-    "type": "RoadOrCarriagewayOrLaneManagement",
-    "cause": "roadMaintenance",
-    "mgmt": "carriagewayClosures",
-    "by": "Gemeente Sittard-Geleen",
-    "from": "2026-09-24",
-    "to": "2027-04-16",
-    "sev": "low"
+    "to": "",
+    "sev": "lowest"
    }
   ],
-  "fetched": "2026-11-10T04:18:54.175Z"
+  "fetched": "2026-11-10T15:57:21.486Z"
  },
  "rail": {
   "src": "Rijden de Treinen, current disruptions (NS and regional operators)",
-  "total": 1,
+  "total": 7,
   "items": [],
-  "asof": "2026-11-10T04:18:55.035Z",
-  "fetched": "2026-11-10T04:18:55.035Z"
+  "asof": "2026-11-10T15:57:22.380Z",
+  "fetched": "2026-11-10T15:57:22.380Z"
  },
  "notices": {
   "src": "Officiële bekendmakingen (overheid.nl SRU), gemeente Heerlen notices that name Hoensbroek, last three weeks; street postcodes stripped",
-  "count": 26,
+  "count": 28,
   "items": [
+   {
+    "id": "gmb-2026-524524",
+    "date": "2026-11-10",
+    "t": "Hoofdstraat 125, Hoensbroek. Toestemming Verhuurdersvergunning: Verhuurdersvergunning",
+    "url": "https://zoek.officielebekendmakingen.nl/gmb-2026-524524.html",
+    "en": "Hoofdstraat 125, Hoensbroek. Landlord permit granted"
+   },
+   {
+    "id": "gmb-2026-523575",
+    "date": "2026-11-10",
+    "t": "Markgravenstraat e.o. Hoensbroek. Kennisgeving ingediende sloopmelding: het saneren van asbest",
+    "url": "https://zoek.officielebekendmakingen.nl/gmb-2026-523575.html",
+    "en": "Markgravenstraat e.o. Hoensbroek. Demolition notification received: asbestos removal"
+   },
    {
     "id": "gmb-2026-521039",
     "date": "2026-11-09",
     "t": "IJsvogelstraat 24, Hoensbroek. Kennisgeving ingediende sloopmelding: Het saneren van asbest",
-    "url": "https://zoek.officielebekendmakingen.nl/gmb-2026-521039.html"
+    "url": "https://zoek.officielebekendmakingen.nl/gmb-2026-521039.html",
+    "en": "IJsvogelstraat 24, Hoensbroek. Demolition notification received: asbestos removal"
    },
    {
     "id": "gmb-2026-521588",
     "date": "2026-11-09",
     "t": "Akerstraat-Noord 204, Hoensbroek. Besluit maatwerkvoorschriften op verzoek",
-    "url": "https://zoek.officielebekendmakingen.nl/gmb-2026-521588.html"
+    "url": "https://zoek.officielebekendmakingen.nl/gmb-2026-521588.html",
+    "en": "Akerstraat-Noord 204, Hoensbroek. Decision on tailored environmental conditions, on request"
    },
    {
     "id": "gmb-2026-518009",
     "date": "2026-11-06",
     "t": "De Koumen 146C, Hoensbroek. Kennisgeving melding Omgevingsbesluit",
-    "url": "https://zoek.officielebekendmakingen.nl/gmb-2026-518009.html"
+    "url": "https://zoek.officielebekendmakingen.nl/gmb-2026-518009.html",
+    "en": "De Koumen 146C, Hoensbroek. Notification under the Environment Decree"
    },
    {
     "id": "gmb-2026-519561",
     "date": "2026-11-06",
     "t": "Gravin van Schönbornlaan 4, Hoensbroek. Aanvraag evenementenvergunning: Disneymarkt hoensbroek 2027",
-    "url": "https://zoek.officielebekendmakingen.nl/gmb-2026-519561.html"
+    "url": "https://zoek.officielebekendmakingen.nl/gmb-2026-519561.html",
+    "en": "Gravin van Schönbornlaan 4, Hoensbroek. Event permit application: Disneymarkt hoensbroek 2027"
    },
    {
     "id": "gmb-2026-516136",
     "date": "2026-11-05",
     "t": "Maria-Gewandenstraat 119, Hoensbroek. Toestemming omgevingsvergunning: het aanpassen van het rookkanaal",
-    "url": "https://zoek.officielebekendmakingen.nl/gmb-2026-516136.html"
+    "url": "https://zoek.officielebekendmakingen.nl/gmb-2026-516136.html",
+    "en": "Maria-Gewandenstraat 119, Hoensbroek. Environmental permit granted: altering the flue"
    },
    {
     "id": "gmb-2026-516416",
     "date": "2026-11-05",
     "t": "Heerlerweg 156, Hoensbroek. Weigering omgevingsvergunning: het vestigen van een sportschool",
-    "url": "https://zoek.officielebekendmakingen.nl/gmb-2026-516416.html"
+    "url": "https://zoek.officielebekendmakingen.nl/gmb-2026-516416.html",
+    "en": "Heerlerweg 156, Hoensbroek. Environmental permit refused: opening a gym"
    },
    {
     "id": "prb-2026-18582",
     "date": "2026-11-03",
     "t": "Aanvraag Omgevingsvergunning opgraven afsluiter langs de provinciale weg N281 Nijswiller - Hoensbroek, van kilometrering 26.1 tot kilometrering 26.2, aan de linkerzijde van de weg, omgeving Henri Dunantstraat 5, Heerlen",
-    "url": "https://zoek.officielebekendmakingen.nl/zoeken/resultaat/?zkt=Uitgebreid&pst=Gemeenteblad&vrt=Aanvraag%20Omgevingsvergunning%20opgraven%20af"
+    "url": "https://zoek.officielebekendmakingen.nl/zoeken/resultaat/?zkt=Uitgebreid&pst=Gemeenteblad&vrt=Aanvraag%20Omgevingsvergunning%20opgraven%20af",
+    "en": "Environmental permit application: excavating a valve along the provincial road N281 Nijswiller - Hoensbroek, from km 26.1 to km 26.2, on the left side of the road, near Henri Dunantstraat 5, Heerlen"
    },
    {
     "id": "gmb-2026-510224",
     "date": "2026-11-02",
     "t": "Heerlerweg 156, Hoensbroek. Kennisgeving verlenging beslistermijn: het vestigen van een sportschool",
-    "url": "https://zoek.officielebekendmakingen.nl/gmb-2026-510224.html"
+    "url": "https://zoek.officielebekendmakingen.nl/gmb-2026-510224.html",
+    "en": "Heerlerweg 156, Hoensbroek. Decision period extended: opening a gym"
    },
    {
     "id": "gmb-2026-509668",
     "date": "2026-11-02",
     "t": "Grubbelaan 1, Hoensbroek. Toestemming omgevingsvergunning: het vervangen van de pui door garagepoort",
-    "url": "https://zoek.officielebekendmakingen.nl/gmb-2026-509668.html"
+    "url": "https://zoek.officielebekendmakingen.nl/gmb-2026-509668.html",
+    "en": "Grubbelaan 1, Hoensbroek. Environmental permit granted: replacing the frontage with a garage door"
    },
    {
     "id": "gmb-2026-509344",
     "date": "2026-11-02",
     "t": "Piet Stalmeierstraat 78, Hoensbroek. Kennisgeving ingediende sloopmelding: het saneren van asbest",
-    "url": "https://zoek.officielebekendmakingen.nl/gmb-2026-509344.html"
+    "url": "https://zoek.officielebekendmakingen.nl/gmb-2026-509344.html",
+    "en": "Piet Stalmeierstraat 78, Hoensbroek. Demolition notification received: asbestos removal"
    },
    {
     "id": "gmb-2026-510310",
     "date": "2026-11-02",
     "t": "Nieuwstraat te Hoensbroek - HL091701067. Kennisgeving ingediende melding Besluit activiteiten leefomgeving (Bal): Toepassing grond, mijnsteen of baggerspecie",
-    "url": "https://zoek.officielebekendmakingen.nl/gmb-2026-510310.html"
+    "url": "https://zoek.officielebekendmakingen.nl/gmb-2026-510310.html",
+    "en": "Notification under the Living Environment Activities Decree: use of soil, mine stone or dredged material"
    },
    {
     "id": "gmb-2026-509271",
     "date": "2026-11-02",
     "t": "Gemeente Heerlen - Voornemen tot grondverkoop reststrook gemeentegrond bij Hoofdstraat 244 – 254 te Hoensbroek",
-    "url": "https://zoek.officielebekendmakingen.nl/gmb-2026-509271.html"
+    "url": "https://zoek.officielebekendmakingen.nl/gmb-2026-509271.html",
+    "en": "Intended sale of a strip of municipal land: at Hoofdstraat 244–254, Hoensbroek"
    },
    {
     "id": "gmb-2026-507121",
     "date": "2026-10-30",
     "t": "St. Gerlachstraat 19, Hoensbroek. Toestemming vergunning tijdelijke ingebruikname gemeentegrond: Z2026-00007948",
-    "url": "https://zoek.officielebekendmakingen.nl/gmb-2026-507121.html"
-   },
-   {
-    "id": "gmb-2026-507345",
-    "date": "2026-10-30",
-    "t": "Piet Stalmeierstraat huisnummer 54 t/m 104 Hoensbroek. Besluit evenementenvergunning: Halloween",
-    "url": "https://zoek.officielebekendmakingen.nl/gmb-2026-507345.html"
-   },
-   {
-    "id": "gmb-2026-506001",
-    "date": "2026-10-29",
-    "t": "Piet Stalmeierstraat huisnummer 54 t/m 104 Hoensbroek. Aanvraag evenementenvergunning: Halloween",
-    "url": "https://zoek.officielebekendmakingen.nl/gmb-2026-506001.html"
+    "url": "https://zoek.officielebekendmakingen.nl/gmb-2026-507121.html",
+    "en": "St. Gerlachstraat 19, Hoensbroek. Permit granted for temporary use of municipal land: Z2026-00007948"
    }
   ],
-  "fetched": "2026-11-10T04:18:56.450Z"
+  "fetched": "2026-11-10T15:57:23.337Z"
  },
  "news": {
   "src": "L1 Nieuws (L1 and 1Limburg), newest headlines, English by the morning run",
   "items": [
    {
+    "id": "3270166",
+    "t": "Nepbericht in gaat rond in Gennep, maar D'n Aftrap gaat gewoon door",
+    "url": "https://www.l1nieuws.nl/nieuws/3270166/nepbericht-in-gaat-rond-in-gennep-maar-dn-aftrap-gaat-gewoon-door"
+   },
+   {
+    "id": "3269826",
+    "t": "Loslopende panters en opgesloten kinderen: bizarre verkoopvideo voor Nederweertse villa gaat viraal",
+    "url": "https://www.l1nieuws.nl/nieuws/3269826/loslopende-panters-en-opgesloten-kinderen-bizarre-verkoopvideo-voor-nederweertse-villa-gaat-viraal"
+   },
+   {
+    "id": "3269929",
+    "t": "Zeven bedrijven in Limburg failliet verklaard: zes mensen verliezen hun baan",
+    "url": "https://www.l1nieuws.nl/nieuws/3269929/zeven-bedrijven-in-limburg-failliet-verklaard-zes-mensen-verliezen-hun-baan"
+   },
+   {
+    "id": "3269812",
+    "t": "Koningin Máxima geeft startschot voor tentoonstelling Cooking from the Fridge in Maastricht",
+    "url": "https://www.l1nieuws.nl/nieuws/3269812/koningin-maxima-geeft-startschot-voor-tentoonstelling-cooking-from-the-fridge-in-maastricht"
+   },
+   {
+    "id": "3269904",
+    "t": "Komt er dan toch een einde aan Vynova? LVM Netherlands vraagt uitstel van betaling aan",
+    "url": "https://www.l1nieuws.nl/nieuws/3269904/komt-er-dan-toch-een-einde-aan-vynova-lvm-netherlands-vraagt-uitstel-van-betaling-aan"
+   },
+   {
+    "id": "3269885",
+    "t": "Politie kiest voor aangepaste boodschap tegen nepagenten om laaggeletterden beter te bereiken",
+    "url": "https://www.l1nieuws.nl/nieuws/3269885/politie-kiest-voor-aangepaste-boodschap-tegen-nepagenten-om-laaggeletterden-beter-te-bereiken"
+   },
+   {
+    "id": "3269715",
+    "t": "Krakers voormalige watertoren Maastricht willen blijven, eigenaar wil ze eruit",
+    "url": "https://www.l1nieuws.nl/nieuws/3269715/krakers-voormalige-watertoren-maastricht-willen-blijven-eigenaar-wil-ze-eruit"
+   },
+   {
+    "id": "3269758",
+    "t": "In Weert opgegroeide politicus haalt Time Top 100",
+    "url": "https://www.l1nieuws.nl/nieuws/3269758/in-weert-opgegroeide-politicus-haalt-time-top-100"
+   },
+   {
+    "id": "3269707",
+    "t": "Bever bedreigt bijzondere natuur in Tegelen, biologen slaan alarm",
+    "url": "https://www.l1nieuws.nl/nieuws/3269707/bever-bedreigt-bijzondere-natuur-in-tegelen-biologen-slaan-alarm"
+   },
+   {
+    "id": "3269319",
+    "t": "Thomas Schwarz werd in 2019 gemarteld en vermoord in huis: hoger beroep tegen drietal van start",
+    "url": "https://www.l1nieuws.nl/nieuws/3269319/thomas-schwarz-werd-in-2019-gemarteld-en-vermoord-in-huis-hoger-beroep-tegen-drietal-van-start"
+   },
+   {
+    "id": "3269629",
+    "t": "Hoog bezoek: Benelux-premiers en koningin Máxima naar Maastricht",
+    "url": "https://www.l1nieuws.nl/nieuws/3269629/hoog-bezoek-benelux-premiers-en-koningin-maxima-naar-maastricht"
+   },
+   {
     "id": "3269615",
     "t": "Politie deelt uitgebreide reconstructie van bankhelpdeskfraude Wellerlooi",
     "url": "https://www.l1nieuws.nl/nieuws/3269615/politie-deelt-uitgebreide-reconstructie-van-bankhelpdeskfraude-wellerlooi",
     "en": "Police share a detailed reconstruction of a bank-helpdesk fraud in Wellerlooi"
-   },
-   {
-    "id": "3269633",
-    "t": "ANWB: impact staking op dienstverlening zeer beperkt",
-    "url": "https://www.l1nieuws.nl/nieuws/3269633/anwb-impact-staking-op-dienstverlening-zeer-beperkt",
-    "en": "ANWB says the strike had very limited impact on its service"
-   },
-   {
-    "id": "3269493",
-    "t": "Delen meteoriet, maan en Mars onder de hamer: 'De kans om je vrouw een stuk van de maan te bezorgen'",
-    "url": "https://www.l1nieuws.nl/nieuws/3269493/delen-meteoriet-maan-en-mars-onder-de-hamer-de-kans-om-je-vrouw-een-stuk-van-de-maan-te-bezorgen",
-    "en": "Pieces of meteorite, Moon and Mars go under the hammer: 'the chance to give your wife a piece of the Moon'"
-   },
-   {
-    "id": "3269582",
-    "t": "Confetti of regendruppels? Roermond maakt zich op voor de11devande11de",
-    "url": "https://www.l1nieuws.nl/nieuws/3269582/confetti-of-regendruppels-roermond-maakt-zich-op-voor-de11devande11de",
-    "en": "Confetti or raindrops? Roermond gets ready for the 11th of the 11th"
-   },
-   {
-    "id": "3269589",
-    "t": "Storing naftakraker Chemelot, fakkelen in de wijde omgeving te zien",
-    "url": "https://www.l1nieuws.nl/nieuws/3269589/storing-naftakraker-chemelot-fakkelen-in-de-wijde-omgeving-te-zien",
-    "en": "Naphtha cracker fault at Chemelot; flaring visible far and wide"
-   },
-   {
-    "id": "3269444",
-    "t": "Dode Swolgen kwam uit Brabantse Oss, huiverige reacties in dorp",
-    "url": "https://www.l1nieuws.nl/nieuws/3269444/dode-swolgen-kwam-uit-brabantse-oss-huiverige-reacties-in-dorp",
-    "en": "The person found dead in Swolgen came from Oss in Brabant; uneasy reactions in the village"
-   },
-   {
-    "id": "3269375",
-    "t": "Jan Berden ontvangt onderscheiding Limburger van Verdienste",
-    "url": "https://www.l1nieuws.nl/nieuws/3269375/jan-berden-ontvangt-onderscheiding-limburger-van-verdienste",
-    "en": "Jan Berden receives the Limburger van Verdienste award"
-   },
-   {
-    "id": "3269259",
-    "t": "Regen gaat elfde van de elfde verpesten: grote temperatuurverschillen in de provincie",
-    "url": "https://www.l1nieuws.nl/nieuws/3269259/regen-gaat-elfde-van-de-elfde-verpesten-grote-temperatuurverschillen-in-de-provincie",
-    "en": "Rain will spoil the 11th of the 11th, with big temperature differences across the province"
-   },
-   {
-    "id": "3269185",
-    "t": "Geboortecentrum Zuyderland heeft weer tien verloskamers beschikbaar, twee minder dan eerst",
-    "url": "https://www.l1nieuws.nl/nieuws/3269185/geboortecentrum-zuyderland-heeft-weer-tien-verloskamers-beschikbaar-twee-minder-dan-eerst",
-    "en": "Zuyderland birth centre has ten delivery rooms available again, two fewer than before"
-   },
-   {
-    "id": "3269153",
-    "t": "Stroomstoring in Kerkrade: Enexis werkt aan een oplossing",
-    "url": "https://www.l1nieuws.nl/nieuws/3269153/stroomstoring-in-kerkrade-enexis-werkt-aan-een-oplossing",
-    "en": "Power cut in Kerkrade: Enexis works on a fix"
-   },
-   {
-    "id": "3268668",
-    "t": "Kan nieuw DNA-onderzoek deze gruwelijke moord oplossen? 'Grote portie geluk voor nodig'",
-    "url": "https://www.l1nieuws.nl/nieuws/3268668/kan-nieuw-dna-onderzoek-deze-gruwelijke-moord-oplossen-grote-portie-geluk-voor-nodig",
-    "en": "Can new DNA testing solve this gruesome murder? 'It will take a big helping of luck'"
-   },
-   {
-    "id": "3268653",
-    "t": "Redding voor vliegveld in Beek is een financiële ramp voor de provincie",
-    "url": "https://www.l1nieuws.nl/nieuws/3268653/redding-voor-vliegveld-in-beek-is-een-financiele-ramp-voor-de-provincie",
-    "en": "Rescuing the airport at Beek is a financial disaster for the province"
    }
   ],
-  "asof": "2026-11-10T04:18:57.496Z",
-  "fetched": "2026-11-10T04:18:57.496Z"
+  "asof": "2026-11-10T15:57:24.035Z",
+  "fetched": "2026-11-10T15:57:24.035Z"
  },
  "updated": "2026-11-10",
- "asof": "2026-11-10T04:18:57.496Z",
+ "asof": "2026-11-10T15:57:24.035Z",
  "town": "Hoensbroek",
  "errors": [],
  "note": "Parkstad daily-life feeds. The tool rewrites air, power, maas, sky, roads, rail, notices and news; the run writes flu, noise, woord (Limburgs word of the day, appended), culture (dated local events, confirmed), admin (dated household admin), roda (next fixtures) and shops. Town-centre coordinates only; no address or postcode is stored. strikes: announced or threatened strikes and action days that touch daily life in Parkstad, the Netherlands, Belgium, Germany or French rail links, written by the run; the page shows the next ones and feeds them to the planner. protests: demonstrations announced or notified in the major Dutch, Belgian and NRW cities and in Maastricht, Heerlen, Liège and Aachen, written by the run; nearest first on the page.",
