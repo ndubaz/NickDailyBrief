@@ -844,3 +844,11 @@ html.compact .panel,.compact .card{padding:var(--s2)}
 .redteam p{max-width:68ch}
 .nvold{margin-top:var(--s2)}.nvold .exl li{border-bottom:0;padding:2px 0}.nvold .chip{font-size:9px}
 .indcool{margin-top:var(--s2)}.indcool .exl li{border-bottom:0;padding:3px 0}.indcool .dot{width:9px;height:9px;margin-right:6px;vertical-align:-1px}
+/* 7.5 makkelijke taal */
+.mk{display:grid;gap:var(--s2)}
+.mkb{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--c-nl);border-radius:var(--r-card);padding:var(--s2) var(--s3)}
+.mkb h4{font-family:var(--f-display);font-size:19px;font-weight:700;line-height:1.15;margin:0 0 4px;display:flex;align-items:baseline;gap:var(--s2);flex-wrap:wrap}
+.mkb h4 .xl{font-size:11px}
+.mkb p{margin:0 0 4px;font-size:17px;line-height:1.5;max-width:60ch}
+.mkb p.en{font-size:13.5px;color:var(--muted);line-height:1.4}
+.mkb .wrd{margin:4px 0 0;color:var(--muted)}.mkb .wrd b{color:var(--c-nl);font-weight:600}

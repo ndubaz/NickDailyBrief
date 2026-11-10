@@ -15,7 +15,7 @@
   var PARTS = ["front","news","money","reading","watch","home"].map(function (k) { return PART_DEF[k]; });
   function setPartOrder(weekend) { PARTS = (weekend ? ["front","reading","news","money","watch","home"] : ["front","news","money","reading","watch","home"]).map(function (k) { return PART_DEF[k]; }); }
   function pn(cls) { var i = PARTS.map(function (p) { return p[0]; }).indexOf(cls); return "Part " + i; }
-  var TIERS = { news: ["world","hybrid","europe","countries","euregio","army","nato","deftech","frontier","nl"], money: ["markets","fx","fuel","rates"], watch: ["board","numbers","horizon","threads","novel","congress-sec","releases","sota","forecasts"], reading: ["feature","research","philosophy","depth","ttpsec","aperture"], home: ["local","afnorth","offduty","dutch","snow","hockey","week","coming","weather","countdown","tv","calendar","year"] };
+  var TIERS = { news: ["world","hybrid","europe","countries","euregio","army","nato","deftech","frontier","nl"], money: ["markets","fx","fuel","rates"], watch: ["board","numbers","horizon","threads","novel","congress-sec","releases","sota","forecasts"], reading: ["feature","research","philosophy","depth","ttpsec","aperture"], home: ["local","afnorth","offduty","makkelijk","dutch","snow","hockey","week","coming","weather","countdown","tv","calendar","year"] };
   var EVCAT = { music:"Music", markets:"Markets", museums:"Museums", sport:"Sport", kids:"Kids", food:"Food", outdoors:"Outdoors", festival:"Festivals" };
   var SERIES_BY_LABEL = [["s&p 500","spx"],["dow","dji"],["nasdaq","ndx"],["russell","rut"],["aex","aex"],["stoxx","stoxx"],["dax","dax"],["brent","brent"],["dutch ttf","ttf"],["ttf","ttf"],["gold","gold"],["us 10-year","us10y"],["vix","vix"]];
   var HOME = { lat: 50.89, lon: 5.98, name: "Heerlen" };
@@ -1287,7 +1287,7 @@
   }
   function contentsBlock() {
     var tiers = PARTS.slice(1).map(function (p) { return [p[0], p[1], TIERS[p[0]]]; });
-    var SN = { world: "World", hybrid: "Hybrid", europe: "Europe", countries: "Priority countries", euregio: "Euregio", army: "Defence & Army", nato: "NATO & allies", deftech: "Defence tech", frontier: "Frontier", markets: "Markets", rates: "Rates", nl: "Netherlands", board: "The board", forecasts: "Forecasts", novel: "New in war", numbers: "Numbers and indicators", fx: "USD/EUR", fuel: "Pump price", threads: "Threads", horizon: "Horizon", "congress-sec": "Congress", releases: "Releases", sota: "State of the art", feature: "World feature", research: "Research", philosophy: "Philosophy", depth: "Army in depth", ttpsec: "Week in war", aperture: "Aperture", local: "Parkstad", afnorth: "AFNORTH", offduty: "Out and about", dutch: "Taal", snow: "Snow", hockey: "Canes", week: "This week", coming: "Coming up", weather: "Weather", countdown: "Countdowns", tv: "TV", calendar: "Calendar", year: "Year ahead", school: "School year", season: "Season" };
+    var SN = { world: "World", hybrid: "Hybrid", europe: "Europe", countries: "Priority countries", euregio: "Euregio", army: "Defence & Army", nato: "NATO & allies", deftech: "Defence tech", frontier: "Frontier", markets: "Markets", rates: "Rates", nl: "Netherlands", board: "The board", forecasts: "Forecasts", novel: "New in war", numbers: "Numbers and indicators", fx: "USD/EUR", fuel: "Pump price", threads: "Threads", horizon: "Horizon", "congress-sec": "Congress", releases: "Releases", sota: "State of the art", feature: "World feature", research: "Research", philosophy: "Philosophy", depth: "Army in depth", ttpsec: "Week in war", aperture: "Aperture", local: "Parkstad", afnorth: "AFNORTH", offduty: "Out and about", makkelijk: "Makkelijke taal", dutch: "Taal", snow: "Snow", hockey: "Canes", week: "This week", coming: "Coming up", weather: "Weather", countdown: "Countdowns", tv: "TV", calendar: "Calendar", year: "Year ahead", school: "School year", season: "Season" };
     return '<h3>In this edition</h3><ol class="toc">' + tiers.map(function (t, i) { return '<li data-tier="' + t[0] + '" class="' + t[0] + '"><a href="#p-' + t[0] + '"><b>' + (i + 1) + " · " + esc(t[1]) + '</b></a><span class="tm"></span><span class="secs">' + t[2].map(function (id) { return '<a href="#' + id + '">' + esc(SN[id] || id) + "</a>"; }).join(" · ") + "</span></li>"; }).join("") + "</ol>";
   }
   function yearAhead(ctx, E, TD, today) {
@@ -1776,6 +1776,18 @@
     /* taal */
     var ID = (ctx.idioms || []).filter(function (i) { return i.date <= TD; }).sort(function (a, b) { return a.date < b.date ? 1 : -1; });
     var LANG = { nl: "Dutch", fr: "French", it: "Italian" };
+    /* Nieuws in makkelijke taal (7.5): the day's news retold by the run in B1 Dutch, English beneath, a few words glossed */
+    var MK = E.makkelijk;
+    if (MK && (MK.items || []).length) {
+      h += '<section id="makkelijk" class="home"><h2>Nieuws in makkelijke taal <span class="num">' + esc(MK.niveau || "B1") + " · " + MK.items.length + " berichten · het nieuws van vandaag in eenvoudig Nederlands</span></h2>";
+      h += '<div class="mk fug">' + nq() + MK.items.map(function (x, i) {
+        var o = '<article class="mkb ' + fu(x.badge || "NEW") + '" lang="nl">' + (x.kop ? "<h4>" + esc(x.kop) + (x.to ? ' <a class="xl" href="#' + esc(x.to) + '" title="Het volledige bericht">meer</a>' : "") + "</h4>" : "") + "<p>" + esc(x.nl || "") + cite(x.src) + "</p>";
+        if (x.en) o += '<p class="en" lang="en">' + esc(x.en) + "</p>";
+        if (x.woorden && x.woorden.length) o += '<p class="small wrd">' + x.woorden.map(function (w) { return "<b>" + esc(w[0]) + "</b> " + esc(w[1]); }).join(" · ") + "</p>";
+        return o + "</article>";
+      }).join("") + "</div>";
+      h += '<p class="small">Korte zinnen, gewone woorden, geen beeldspraak: de feiten van vandaag op B1-niveau, geschreven door de ochtendrun uit deze editie. Engels eronder; dikgedrukte woorden zijn B1 tot B2.</p></section>';
+    }
     h += '<section id="dutch" class="home"><h2>Taal <span class="num">Dutch, French, Italian, Limburgs</span></h2>';
     var WD = (((ctx.local || {}).woord) || []).filter(function (w) { return w.date <= TD; }).sort(function (a, b) { return a.date < b.date ? 1 : -1; })[0];
     if (WD) h += '<div class="idiom li ' + fu(WD.date === TD ? "NEW" : "") + '"><div class="lbl">Limburgs word of the day</div><div class="w" lang="li">' + esc(WD.word) + "</div>" + badge(WD.date === TD ? "NEW" : "") + '<p class="lit">' + esc(WD.meaning_nl || "") + (WD.meaning_en ? " · " + esc(WD.meaning_en) : "") + "</p>" + (WD.example ? "<p><i>" + esc(WD.example) + "</i>" + (WD.example_en ? ' <span class="small">' + esc(WD.example_en) + "</span>" : "") + "</p>" : "") + (WD.note ? '<p class="small">' + esc(WD.note) + (WD.src && WD.src[0] && WD.src[0][1] ? ' · <a href="' + esc(WD.src[0][1]) + '" target="_blank" rel="noopener">source</a>' : "") + "</p>" : "") + "</div>";

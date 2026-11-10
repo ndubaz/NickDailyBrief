@@ -3132,5 +3132,142 @@
    "https://www.l1nieuws.nl/nieuws/3269633/anwb-impact-staking-op-dienstverlening-zeer-beperkt",
    3
   ]
- ]
+ ],
+ "makkelijk": {
+  "niveau": "B1",
+  "items": [
+   {
+    "kop": "Gesprekken over Oekraïne in Abu Dhabi",
+    "nl": "Vandaag en morgen praten Rusland en Oekraïne met elkaar in Abu Dhabi. Twee Amerikaanse gezanten, Jared Kushner en Steve Witkoff, leiden de gesprekken. Het is de eerste keer sinds februari dat de drie landen samen aan tafel zitten. Adviseurs uit Europa en van de NAVO zijn er ook bij.",
+    "en": "Today and tomorrow Russia and Ukraine talk to each other in Abu Dhabi. Two American envoys, Jared Kushner and Steve Witkoff, lead the talks. It is the first time since February that the three countries sit at one table. Advisers from Europe and NATO are there too.",
+    "woorden": [
+     [
+      "de gezant",
+      "the envoy"
+     ],
+     [
+      "de gesprekken leiden",
+      "to lead the talks"
+     ],
+     [
+      "aan tafel zitten",
+      "to take part in the talks"
+     ]
+    ],
+    "src": 14,
+    "to": "world",
+    "badge": "NEW"
+   },
+   {
+    "kop": "Zware nacht van drones boven Oekraïne",
+    "nl": "Rusland viel Oekraïne in de nacht van zaterdag op zondag aan met 317 drones en raketten. Oekraïne zegt dat het er 271 heeft neergehaald of gestoord. Oekraïne viel zelf een fabriek bij Sint-Petersburg aan. Die fabriek maakt brandstof voor Iskander-raketten.",
+    "en": "Russia attacked Ukraine in the night from Saturday to Sunday with 317 drones and missiles. Ukraine says it shot down or jammed 271 of them. Ukraine itself attacked a factory near St Petersburg. That factory makes propellant for Iskander missiles.",
+    "woorden": [
+     [
+      "neerhalen",
+      "to shoot down"
+     ],
+     [
+      "storen",
+      "to jam, to disrupt"
+     ],
+     [
+      "de fabriek",
+      "the factory"
+     ]
+    ],
+    "src": 20,
+    "to": "board",
+    "badge": "NEW"
+   },
+   {
+    "kop": "Frankrijk wijst naar Iran na sabotage in winkels",
+    "nl": "In oktober gingen in ongeveer 700 Franse winkels de koelingen kapot door een cyberaanval. De Franse minister van Buitenlandse Zaken zegt nu dat de Iraanse Revolutionaire Garde dit heeft gedaan. Een rapport van de regering noemt de eenheid Shahid Kaveh. De officier van justitie in Parijs vraagt om internationale arrestatiebevelen.",
+    "en": "In October the refrigeration in about 700 French shops broke down because of a cyberattack. The French foreign minister now says Iran's Revolutionary Guards did this. A government report names the Shahid Kaveh unit. The Paris prosecutor is asking for international arrest warrants.",
+    "woorden": [
+     [
+      "de koeling",
+      "the refrigeration"
+     ],
+     [
+      "de officier van justitie",
+      "the public prosecutor"
+     ],
+     [
+      "het arrestatiebevel",
+      "the arrest warrant"
+     ]
+    ],
+    "src": 12,
+    "to": "hybrid",
+    "badge": "NEW"
+   },
+   {
+    "kop": "Merz koppelt de EU-begroting aan steun voor Oekraïne",
+    "nl": "Duitsland wil de nieuwe EU-begroting voor 2028 tot 2034 alleen goedkeuren als alle landen meebetalen aan Oekraïne. Dat melden persbureau dpa en de Financial Times. Vandaag om 11.00 uur ontvangt bondskanselier Merz de Hongaarse premier Magyar in Berlijn. Magyar neemt vier ministers mee.",
+    "en": "Germany will only approve the new EU budget for 2028 to 2034 if all countries help pay for Ukraine. The news agency dpa and the Financial Times report this. Today at 11:00 Chancellor Merz receives the Hungarian prime minister Magyar in Berlin. Magyar brings four ministers.",
+    "woorden": [
+     [
+      "de begroting",
+      "the budget"
+     ],
+     [
+      "goedkeuren",
+      "to approve"
+     ],
+     [
+      "meebetalen",
+      "to pay a share"
+     ]
+    ],
+    "src": 23,
+    "to": "countries",
+    "badge": "NEW"
+   },
+   {
+    "kop": "Tweede Kamer praat verder over het belastingplan",
+    "nl": "De Tweede Kamer bespreekt vandaag van 16.15 tot 23.00 uur het Belastingplan 2027. Donderdag stemt de Kamer. Er lijkt een meerderheid te komen voor een nieuwe manier van belasting op sparen en beleggen. Ook de waterschapsbelasting gaat omhoog: ongeveer 35 euro meer voor een gezin met een koophuis.",
+    "en": "The House of Representatives discusses the 2027 tax plan today from 16:15 to 23:00. On Thursday the House votes. A majority seems to be forming for a new way of taxing savings and investments. The water-board tax also goes up: about 35 euros more for a family in an owner-occupied home.",
+    "woorden": [
+     [
+      "het belastingplan",
+      "the tax plan"
+     ],
+     [
+      "de meerderheid",
+      "the majority"
+     ],
+     [
+      "het waterschap",
+      "the water board"
+     ]
+    ],
+    "src": 133,
+    "to": "nl",
+    "badge": "NEW"
+   },
+   {
+    "kop": "Korte stroomstoring tussen Heerlen en Vaals",
+    "nl": "Zondagochtend om 6.21 uur viel de stroom uit tussen Heerlen, Nuth, Valkenburg en Vaals. Meer dan 10.000 adressen zaten negen minuten zonder stroom. De oorzaak is nog niet bekend. Zondagavond viel bij Chemelot in Geleen de grootste fabriek uit. Daardoor was een grote vlam te zien, tot in België.",
+    "en": "On Sunday morning at 06:21 the power failed between Heerlen, Nuth, Valkenburg and Vaals. More than 10,000 addresses were without power for nine minutes. The cause is not yet known. On Sunday evening the largest plant at Chemelot in Geleen tripped. That produced a large flame, visible as far as Belgium.",
+    "woorden": [
+     [
+      "de stroomstoring",
+      "the power cut"
+     ],
+     [
+      "de oorzaak",
+      "the cause"
+     ],
+     [
+      "uitvallen",
+      "to fail, to go down"
+     ]
+    ],
+    "src": 64,
+    "to": "euregio",
+    "badge": "NEW"
+   }
+  ]
+ }
 }
