@@ -13,7 +13,7 @@
   var PART_CLASSES = ["front","news","money","watch","reading","home"];
   var PART_DEF = { front: ["front","Today","#front"], news: ["news","The news","#p-news"], money: ["money","Markets & economy","#p-money"], watch: ["watch","The watch","#p-watch"], reading: ["reading","The reading","#p-reading"], home: ["home","Home and planning","#p-home"], sports: ["sports","Sports","#p-sports"] };
   var PARTS = ["front","news","money","reading","watch","home"].map(function (k) { return PART_DEF[k]; });
-  function setPartOrder(weekend) { PARTS = (weekend ? ["front","reading","news","money","watch","home","sports"] : ["front","news","money","reading","watch","home","sports"]).map(function (k) { return PART_DEF[k]; }); }
+  function setPartOrder(weekend) { PARTS = (weekend ? ["front","reading","news","money","watch","sports","home"] : ["front","news","money","reading","watch","sports","home"]).map(function (k) { return PART_DEF[k]; }); }
   function pn(cls) { var i = PARTS.map(function (p) { return p[0]; }).indexOf(cls); return "Part " + i; }
   var TIERS = { news: ["world","hybrid","europe","countries","euregio","army","nato","deftech","frontier","nl"], money: ["markets","fx","fuel","rates"], watch: ["board","numbers","horizon","threads","novel","congress-sec","releases","sota","forecasts"], reading: ["feature","research","philosophy","depth","ttpsec","aperture"], sports: ["hockey","nfl","mlb","football"], home: ["local","afnorth","offduty","makkelijk","dutch","snow","week","coming","weather","countdown","tv","calendar","year"] };
   var EVCAT = { music:"Music", markets:"Markets", museums:"Museums", sport:"Sport", kids:"Kids", food:"Food", outdoors:"Outdoors", festival:"Festivals" };
