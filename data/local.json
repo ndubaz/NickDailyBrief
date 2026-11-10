@@ -608,7 +608,7 @@
  "asof": "2026-11-10T04:18:57.496Z",
  "town": "Hoensbroek",
  "errors": [],
- "note": "Parkstad daily-life feeds. The tool rewrites air, power, maas, sky, roads, rail, notices and news; the run writes flu, noise, woord (Limburgs word of the day, appended), culture (dated local events, confirmed), admin (dated household admin), roda (next fixtures) and shops. Town-centre coordinates only; no address or postcode is stored. strikes: announced or threatened strikes and action days that touch daily life in Parkstad, the Netherlands, Belgium, Germany or French rail links, written by the run; the page shows the next ones and feeds them to the planner.",
+ "note": "Parkstad daily-life feeds. The tool rewrites air, power, maas, sky, roads, rail, notices and news; the run writes flu, noise, woord (Limburgs word of the day, appended), culture (dated local events, confirmed), admin (dated household admin), roda (next fixtures) and shops. Town-centre coordinates only; no address or postcode is stored. strikes: announced or threatened strikes and action days that touch daily life in Parkstad, the Netherlands, Belgium, Germany or French rail links, written by the run; the page shows the next ones and feeds them to the planner. protests: demonstrations announced or notified in the major Dutch, Belgian and NRW cities and in Maastricht, Heerlen, Liège and Aachen, written by the run; nearest first on the page.",
  "flu": {
   "t": "Week 44 (26 Oct – 1 Nov): 136 per 100,000 people saw a GP with a respiratory infection, a low level; RIVM on 4 Nov: few people with flu, no epidemic. Since September RIVM and Nivel report all acute respiratory infections, and the 2026–27 thresholds are not yet set, so the old 58 per 100,000 flu line no longer applies. Next update Wed 11 Nov.",
   "src": [
@@ -910,6 +910,46 @@
    "who": "CSC drivers of TEC subcontractors",
    "where": "Wallonia, TEC subcontracted lines incl. East Belgium",
    "impact": "TEC lines around Eupen and Verviers ran short on 9 Nov; expect the same",
+   "status": "announced",
+   "src": [
+    [
+     "\"Wie Ryanair\": Streik bei Subunternehmen bremst Busverkehr der TEC",
+     "https://brf.be/regional/2124389/"
+    ]
+   ]
+  }
+ ],
+ "protests": [
+  {
+   "id": "be-brussels-national-2026-11-23",
+   "date": "2026-11-23",
+   "t": "National union demonstration on purchasing power and pensions",
+   "city": "Brussels",
+   "cc": "be",
+   "where": "From Brussels-North station through the centre",
+   "who": "ACV/CSC, ABVV/FGTB and Synova",
+   "size": "tens of thousands expected, as at the previous national demonstrations",
+   "impact": "City-centre closures; Belgian rail and De Lijn services thinned by union members taking part",
+   "near": false,
+   "status": "announced",
+   "src": [
+    [
+     "Brussel op maandag 23 november andermaal decor van nationale betoging",
+     "https://www.bruzz.be/actua/politiek/brussel-op-maandag-23-november-andermaal-decor-van-nationale-betoging-2026-10-21"
+    ]
+   ]
+  },
+  {
+   "id": "be-namur-tec-2026-12-04",
+   "date": "2026-12-04",
+   "t": "Protest by drivers of TEC subcontracted bus lines",
+   "city": "Namur",
+   "cc": "be",
+   "where": "Walloon parliament",
+   "who": "CSC",
+   "size": "",
+   "impact": "TEC subcontracted lines in Wallonia including around Eupen and Verviers",
+   "near": false,
    "status": "announced",
    "src": [
     [
