@@ -852,3 +852,4 @@ html.compact .panel,.compact .card{padding:var(--s2)}
 .mkb p{margin:0 0 4px;font-size:17px;line-height:1.5;max-width:60ch}
 .mkb p.en{font-size:13.5px;color:var(--muted);line-height:1.4}
 .mkb .wrd{margin:4px 0 0;color:var(--muted)}.mkb .wrd b{color:var(--c-nl);font-weight:600}
+.idiom .say{margin:var(--s1) 0;font-size:14.5px}.idiom .say b.l{font-family:var(--f-display);text-transform:uppercase;letter-spacing:.05em;font-size:12.5px;color:var(--c-nl);margin-right:var(--s2)}.idiom .say .resp{font-family:var(--f-mono);font-weight:500;letter-spacing:.02em}.idiom .say .ipa{font-family:"Charis SIL","Doulos SIL","Gentium Plus","Noto Sans",serif;color:var(--muted)}

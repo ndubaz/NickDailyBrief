@@ -807,7 +807,12 @@
      "Limburgs woordenboek (e-WLD)",
      "https://e-wld.nl/"
     ]
-   ]
+   ],
+   "uitspraak": {
+    "ipa": "[ʃuːn]",
+    "say": "SHOON",
+    "tip": "sj is English sh; oe is a long oo as in moon, longer than the Dutch oe in boek"
+   }
   },
   {
    "date": "2026-11-09",
@@ -822,7 +827,12 @@
      "e-WLD, lemma vastenavond (Heerlen: Vasteloavend)",
      "https://www.e-wld.nl/lemma/search/?search=vastenavond"
     ]
-   ]
+   ],
+   "uitspraak": {
+    "ipa": "[ˌvɑstəˈlɔːvənt]",
+    "say": "vas-tuh-LAW-vent",
+    "tip": "oa is the long open o of English law; stress falls on LOA, and the final d is said as t"
+   }
   },
   {
    "date": "2026-11-10",
@@ -837,7 +847,12 @@
      "e-WLD, begrip motregenen, licht regenen (Heerlen and Hoensbroek: zauwele)",
      "https://www.e-wld.nl/lemma/search/?search=motregen*"
     ]
-   ]
+   ],
+   "uitspraak": {
+    "ipa": "[ˈzɑu̯wələ]",
+    "say": "ZOW-wuh-luh",
+    "tip": "au as in English now; the -ele ending is two light schwa syllables and the stress stays on the first"
+   }
   }
  ]
 }
