@@ -1249,6 +1249,7 @@
       var g = c.gov || {}, el = c.election || {}, nato = c.nato || {}, mine = its.filter(function (i) { return i.cc === c.id; }), log = (c.log || []).slice().sort(function (a, b) { return a.date < b.date ? 1 : -1; }).slice(0, 4);
       var age = log.length ? daysBetween(log[0].date, TD) : null, isCtx = c.role === "context";
       h += '<div class="ctry ' + fu(age === 0 ? "NEW" : "") + '" id="ctry-' + esc(c.id) + '"><div class="ctry-h"><b>' + esc(c.name) + '</b><span class="chip st tier">' + esc(c.role || "") + "</span>" + (c.verified === false ? '<span class="chip st">profile to confirm</span>' : "") + inToday("country", c.id) + badge(age === 0 ? "NEW" : age === 1 ? "UPDATED" : "") + '<span class="actw" title="Log entries per week, last 12 weeks">' + activityBars(c, TD) + "</span></div>";
+      if (isCtx) h += '<details class="more ctxfold"><summary>Profile and log <span class="small">· context country, folded; ' + (log.length ? "last entry " + esc(fmtShort(log[0].date)) : "no log yet") + "</span></summary>";
       h += '<dl class="kv">';
       if (g.head) h += "<dt>Government</dt><dd>" + esc(g.head) + (g.title ? ", " + esc(g.title) : "") + (g.party ? " (" + esc(g.party) + ")" : "") + (g.since ? ", since " + esc(fmtLong(g.since)) : "") + (g.majority ? ". " + esc(g.majority) + "." : "") + (g.defmin ? " Defence: " + esc(g.defmin) + "." : "") + (g.fm ? " Foreign: " + esc(g.fm) + "." : "") + "</dd>";
       if (el.dateText || el.next) h += "<dt>Election</dt><dd>" + esc(el.dateText || "") + (el.next ? " · <b>" + daysBetween(TD, el.next) + " days</b> " + icsLink(c.name + " election", el.next) : "") + electionClock(c, TD) + "</dd>";
@@ -1259,6 +1260,7 @@
       if (BLR.length && !isCtx) h += blrGrid(c, BLR);
       if ((c.blr || []).length) h += '<div class="blr">' + c.blr.slice().sort(function (a, b) { return a.n - b.n; }).map(function (b) { return '<div class="blr-r"><span class="blr-n" title="' + esc(BLR[b.n - 1] || "") + '">' + esc(b.n) + "</span><span>" + (BLR[b.n - 1] ? "<b>" + esc(BLR[b.n - 1]) + ".</b> " : "") + esc(b.t) + (b.date ? ' <span class="small">(' + esc(fmtShort(b.date)) + ")</span>" : "") + "</span></div>"; }).join("") + "</div>";
       if (log.length) h += '<ul class="clean small ctry-log">' + log.map(function (e) { return "<li><b>" + esc(fmtShort(e.date)) + (e.date.slice(0, 4) !== TD.slice(0, 4) ? " " + e.date.slice(0, 4) : "") + "</b> · " + esc(e.t) + ((e.src || []).length ? ' <a href="' + esc(e.src[0][1]) + '" target="_blank" rel="noopener" class="srcl">source</a>' : "") + "</li>"; }).join("") + "</ul>";
+      if (isCtx) h += "</details>";
       h += mine.length ? '<div class="fug">' + nq() + mine.map(function (i) { return item(i); }).join("") + "</div>" : quiet("Nothing new from " + c.name + " today.", "nq");
       h += "</div>";
     });
