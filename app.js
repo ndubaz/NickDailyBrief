@@ -689,9 +689,18 @@
       return c + "</div>";
     }).join("") + "</div>";
     if (ended.length) h += '<p class="small"><b>Ended:</b> ' + ended.map(function (x) { return esc(x.title) + (x.last && x.last.date ? " (" + esc(fmtShort(x.last.date)) + " " + x.last.date.slice(0, 4) + ")" : ""); }).join(" · ") + "</p>";
-    if ((TV.similar || []).length) {
+    var pool = (TV.recs && TV.recs.pool) || TV.similar || [];
+    if (pool.length) {
       var byId = {}; TV.shows.forEach(function (x) { byId[x.id] = x.title; });
-      h += '<h3>If you like these</h3><ul class="clean rec">' + TV.similar.map(function (r) { return "<li><b>" + esc(r.title) + "</b>" + (r.where ? ' <span class="small">' + esc(r.where) + "</span>" : "") + (r.like && r.like.length ? ' <span class="small like">· like ' + esc(r.like.map(function (k) { return byId[k] || k; }).join(" and ")) + "</span>" : "") + (r.why ? '<div class="small">' + esc(r.why) + "</div>" : "") + "</li>"; }).join("") + "</ul>";
+      var LN = { nl: "Dutch", vls: "Flemish", it: "Italian", de: "German", en: "English", fr: "French" };
+      function recLi(r) { return '<li><span class="chip st lang">' + esc(LN[r.lang] || r.lang || "") + "</span> <b>" + esc(r.title) + "</b>" + (r.where ? ' <span class="small">' + esc(r.where) + "</span>" : "") + (r.like && r.like.length ? ' <span class="small like">· like ' + esc(r.like.map(function (k) { return byId[k] || k; }).join(" and ")) + "</span>" : "") + (r.why ? '<div class="small">' + esc(r.why) + "</div>" : "") + "</li>"; }
+      /* rotation by date: one Dutch or Flemish, one Italian, one other, each pool cycling at its own length */
+      var day = Math.round(pd(TD).getTime() / DAY), groups = [pool.filter(function (r) { return r.lang === "nl" || r.lang === "vls"; }), pool.filter(function (r) { return r.lang === "it"; }), pool.filter(function (r) { return r.lang !== "nl" && r.lang !== "vls" && r.lang !== "it"; })];
+      var picks = []; groups.forEach(function (g, i) { if (g.length) picks.push(g[(day + i * 7) % g.length]); });
+      h += '<h3>If you like these <span class="small">three a day from a pool of ' + pool.length + ", Dutch, Flemish and Italian first</span></h3>";
+      h += '<ul class="clean rec">' + picks.map(recLi).join("") + "</ul>";
+      var rest = pool.filter(function (r) { return picks.indexOf(r) < 0; }), byL = {}; rest.forEach(function (r) { (byL[r.lang || "en"] = byL[r.lang || "en"] || []).push(r); });
+      h += '<details class="srcfold nvold"><summary>The whole pool <span class="small">· ' + rest.length + " more, by language</span></summary>" + ["nl", "vls", "it", "de", "fr", "en"].filter(function (k) { return byL[k]; }).map(function (k) { return '<div class="tl-group">' + esc(LN[k] || k) + '</div><ul class="clean rec small">' + byL[k].map(recLi).join("") + "</ul>"; }).join("") + "</details>";
     }
     if (TV.updated) h += '<p class="small">Episode data from TVMaze, refreshed ' + esc(fmtShort(TV.updated)) + ". Dates are the broadcaster's local air date.</p>";
     return h;

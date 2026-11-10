@@ -394,102 +394,378 @@
    ]
   }
  ],
- "similar": [
-  {
-   "title": "Bookish",
-   "where": "U&Alibi (UK), PBS Masterpiece (US)",
-   "like": [
-    "ludwig",
-    "deathvalley"
-   ],
-   "why": "Mark Gatiss as a 1946 London bookseller who solves murders; the same puzzle-a-week warmth as Ludwig."
-  },
-  {
-   "title": "Poker Face",
-   "where": "Peacock",
-   "like": [
-    "omitb",
-    "ludwig"
-   ],
-   "why": "Natasha Lyonne's human lie detector in a case-of-the-week road show; Rian Johnson's answer to Columbo."
-  },
-  {
-   "title": "Elsbeth",
-   "where": "CBS, Paramount+",
-   "like": [
-    "omitb"
-   ],
-   "why": "An inverted-mystery comedy in Manhattan with a guest villain each week."
-  },
-  {
-   "title": "Beyond Paradise",
-   "where": "BBC One",
-   "like": [
-    "deathvalley"
-   ],
-   "why": "Kris Marshall's gentle Devon spin-off of Death in Paradise; small town, small team, one case per episode."
-  },
-  {
-   "title": "Magpie Murders and Moonflower Murders",
-   "where": "BBC One, PBS Masterpiece",
-   "like": [
-    "ludwig",
-    "omitb"
-   ],
-   "why": "Anthony Horowitz's book-within-a-book whodunits with Lesley Manville."
-  },
-  {
-   "title": "The Great Pottery Throw Down",
-   "where": "Channel 4",
-   "like": [
-    "gbbo",
-    "sewingbee"
-   ],
-   "why": "The same production company and format as Bake Off and Sewing Bee, in a Stoke pottery; Keith Brymer Jones cries at good work."
-  },
-  {
-   "title": "Taskmaster",
-   "where": "Channel 4",
-   "like": [
-    "gbbo"
-   ],
-   "why": "Five comedians, absurd tasks, Greg Davies judging; the other Channel 4 show a whole family watches together."
-  },
-  {
-   "title": "Hunted",
-   "where": "Channel 4",
-   "like": [
-    "ratw",
-    "destx"
-   ],
-   "why": "Ordinary pairs go on the run from a team of real surveillance professionals; the same map-reading tension as Race Across the World."
-  },
-  {
-   "title": "Das große Backen",
-   "where": "Sat.1 and Joyn (Germany)",
-   "like": [
-    "gbbo",
-    "hhb"
-   ],
-   "why": "The German Bake Off, autumn Sundays; the same tent format in German, and Joyn streams it across the border."
-  },
-  {
-   "title": "Bake Off: The Professionals",
-   "where": "Channel 4",
-   "like": [
-    "gbbo"
-   ],
-   "why": "Pastry teams instead of amateurs; sharper, shorter, and on between Bake Off series."
-  },
-  {
-   "title": "Il Commissario Montalbano",
-   "where": "Rai 1 and RaiPlay, MHz Choice",
-   "like": [
-    "donmatteo",
-    "blanca",
-    "imma"
-   ],
-   "why": "The Sicilian benchmark; feature-length episodes, slow and sunlit, Camilleri's Italian with Sicilian colour."
-  }
- ]
+ "recs": {
+  "rotate": 3,
+  "note": "Suggestions pool. The page shows three a day by rotation, one Dutch or Flemish, one Italian, one other, with the whole pool folded beneath; the run may add entries (Dutch, Flemish and Italian first, with where it streams in the Netherlands) and never removes one. lang: nl Dutch, vls Flemish, it Italian, de German, en English.",
+  "pool": [
+   {
+    "title": "Bookish",
+    "where": "U&Alibi (UK), PBS Masterpiece (US)",
+    "like": [
+     "ludwig",
+     "deathvalley"
+    ],
+    "why": "Mark Gatiss as a 1946 London bookseller who solves murders; the same puzzle-a-week warmth as Ludwig.",
+    "lang": "en"
+   },
+   {
+    "title": "Poker Face",
+    "where": "Peacock",
+    "like": [
+     "omitb",
+     "ludwig"
+    ],
+    "why": "Natasha Lyonne's human lie detector in a case-of-the-week road show; Rian Johnson's answer to Columbo.",
+    "lang": "en"
+   },
+   {
+    "title": "Elsbeth",
+    "where": "CBS, Paramount+",
+    "like": [
+     "omitb"
+    ],
+    "why": "An inverted-mystery comedy in Manhattan with a guest villain each week.",
+    "lang": "en"
+   },
+   {
+    "title": "Beyond Paradise",
+    "where": "BBC One",
+    "like": [
+     "deathvalley"
+    ],
+    "why": "Kris Marshall's gentle Devon spin-off of Death in Paradise; small town, small team, one case per episode.",
+    "lang": "en"
+   },
+   {
+    "title": "Magpie Murders and Moonflower Murders",
+    "where": "BBC One, PBS Masterpiece",
+    "like": [
+     "ludwig",
+     "omitb"
+    ],
+    "why": "Anthony Horowitz's book-within-a-book whodunits with Lesley Manville.",
+    "lang": "en"
+   },
+   {
+    "title": "The Great Pottery Throw Down",
+    "where": "Channel 4",
+    "like": [
+     "gbbo",
+     "sewingbee"
+    ],
+    "why": "The same production company and format as Bake Off and Sewing Bee, in a Stoke pottery; Keith Brymer Jones cries at good work.",
+    "lang": "en"
+   },
+   {
+    "title": "Taskmaster",
+    "where": "Channel 4",
+    "like": [
+     "gbbo"
+    ],
+    "why": "Five comedians, absurd tasks, Greg Davies judging; the other Channel 4 show a whole family watches together.",
+    "lang": "en"
+   },
+   {
+    "title": "Hunted",
+    "where": "Channel 4",
+    "like": [
+     "ratw",
+     "destx"
+    ],
+    "why": "Ordinary pairs go on the run from a team of real surveillance professionals; the same map-reading tension as Race Across the World.",
+    "lang": "en"
+   },
+   {
+    "title": "Das große Backen",
+    "where": "Sat.1 and Joyn (Germany)",
+    "like": [
+     "gbbo",
+     "hhb"
+    ],
+    "why": "The German Bake Off, autumn Sundays; the same tent format in German, and Joyn streams it across the border.",
+    "lang": "de"
+   },
+   {
+    "title": "Bake Off: The Professionals",
+    "where": "Channel 4",
+    "like": [
+     "gbbo"
+    ],
+    "why": "Pastry teams instead of amateurs; sharper, shorter, and on between Bake Off series.",
+    "lang": "en"
+   },
+   {
+    "title": "Il Commissario Montalbano",
+    "where": "Rai 1 and RaiPlay, MHz Choice",
+    "like": [
+     "donmatteo",
+     "blanca",
+     "imma"
+    ],
+    "why": "The Sicilian benchmark; feature-length episodes, slow and sunlit, Camilleri's Italian with Sicilian colour.",
+    "lang": "it"
+   },
+   {
+    "title": "Flikken Maastricht",
+    "lang": "nl",
+    "where": "NPO 1 and NPO Start (AVROTROS)",
+    "like": [
+     "ludwig",
+     "blanca"
+    ],
+    "why": "Police series shot in Maastricht and the Heuvelland, one case per episode; the streets are a 25-minute drive away and the Dutch is clear, slow and police-procedural."
+   },
+   {
+    "title": "NOS Journaal in Makkelijke Taal",
+    "lang": "nl",
+    "where": "NPO 1 (17:00) and NPO Start",
+    "like": [],
+    "why": "The daily news in short sentences and common words; the model for the Readbook's own Nieuws in makkelijke taal, and ten minutes of listening at B1."
+   },
+   {
+    "title": "Jeugdjournaal",
+    "lang": "nl",
+    "where": "NPO 3 and NPO Start",
+    "like": [],
+    "why": "The children's news at 19:00: clear Dutch, world and Dutch stories explained from the ground up, no irony to decode."
+   },
+   {
+    "title": "Wie is de Mol?",
+    "lang": "nl",
+    "where": "NPO 1 and NPO Start (AVROTROS), January to March",
+    "like": [
+     "destx",
+     "ratw"
+    ],
+    "why": "Ten candidates, one saboteur, a different country each series; the Dutch original of the format Destination X borrows, with the whole country guessing along."
+   },
+   {
+    "title": "Expeditie Robinson",
+    "lang": "nl",
+    "where": "RTL 4 and Videoland, autumn",
+    "like": [
+     "ratw",
+     "amazingrace"
+    ],
+    "why": "The Dutch survival contest; informal spoken Dutch under stress, and the show Dutch colleagues talk about on Monday."
+   },
+   {
+    "title": "De Avondshow met Arjen Lubach",
+    "lang": "nl",
+    "where": "NPO 1 and NPO Start, Monday to Thursday",
+    "like": [],
+    "why": "Satirical late show on Dutch politics; the fastest way to learn what the Tweede Kamer argued about this week, if the Dutch is at your pace."
+   },
+   {
+    "title": "Taarten van Abel",
+    "lang": "nl",
+    "where": "NPO Zapp and NPO Start",
+    "like": [
+     "gbbo",
+     "hhb"
+    ],
+    "why": "A baker makes a cake with a child for someone they want to thank; gentle, simple Dutch, and a baking episode in twenty minutes."
+   },
+   {
+    "title": "Zomergasten",
+    "lang": "nl",
+    "where": "NPO 2 and NPO Start, summer Sundays",
+    "like": [],
+    "why": "A three-hour conversation around the guest's chosen clips; the slowest, richest spoken Dutch on television."
+   },
+   {
+    "title": "Undercover",
+    "lang": "vls",
+    "where": "VRT MAX and Netflix",
+    "like": [
+     "blanca",
+     "ludwig"
+    ],
+    "why": "Dutch and Belgian police infiltrate a drug ring on a Limburg campsite; the Flemish of the Kempen, forty minutes from Hoensbroek, with subtitles worth keeping on."
+   },
+   {
+    "title": "Beau Séjour",
+    "lang": "vls",
+    "where": "VRT MAX and Netflix",
+    "like": [
+     "blanca"
+    ],
+    "why": "A murdered girl investigates her own death in Dilsen-Stokkem, just across the Maas; Limburg Flemish and Limburg landscape in every frame."
+   },
+   {
+    "title": "Grenslanders",
+    "lang": "vls",
+    "where": "NPO Start and VRT MAX",
+    "like": [
+     "blanca",
+     "ludwig"
+    ],
+    "why": "A Dutch police officer and a Flemish psychiatrist work a border case; the two Dutches side by side, which is the Euregio's daily sound."
+   },
+   {
+    "title": "Het Verhaal van Vlaanderen",
+    "lang": "vls",
+    "where": "VRT MAX",
+    "like": [],
+    "why": "Tom Waes walks through Flemish history in ten episodes; narrated Flemish at a measured pace and the best primer on the neighbours' past."
+   },
+   {
+    "title": "De Mol",
+    "lang": "vls",
+    "where": "Play4 and GoPlay, spring",
+    "like": [
+     "destx",
+     "ratw"
+    ],
+    "why": "The Flemish edition of the format, usually abroad; faster and funnier than the Dutch one, and the Flemish is the real test."
+   },
+   {
+    "title": "Thuis",
+    "lang": "vls",
+    "where": "VRT 1 and VRT MAX, weekdays",
+    "like": [],
+    "why": "The daily Flemish soap since 1995; twenty-five minutes of ordinary household Flemish a day, which is how Flemish children learn it too."
+   },
+   {
+    "title": "De Slimste Mens ter Wereld",
+    "lang": "vls",
+    "where": "Play4 and GoPlay, autumn",
+    "like": [],
+    "why": "The Flemish quiz that runs on wordplay and current affairs; hard to follow at first and the best measure of progress."
+   },
+   {
+    "title": "L'amica geniale",
+    "lang": "it",
+    "where": "RaiPlay and HBO (My Brilliant Friend)",
+    "like": [
+     "imma"
+    ],
+    "why": "Ferrante's Naples across four series; the Neapolitan is subtitled in Italian, which is itself the exercise."
+   },
+   {
+    "title": "Il Commissario Ricciardi",
+    "lang": "it",
+    "where": "Rai 1 and RaiPlay",
+    "like": [
+     "donmatteo",
+     "blanca"
+    ],
+    "why": "Naples in the 1930s with a commissario who hears the last words of the dead; de Giovanni's novels, slow and literate Italian."
+   },
+   {
+    "title": "Màkari",
+    "lang": "it",
+    "where": "Rai 1 and RaiPlay",
+    "like": [
+     "donmatteo",
+     "imma"
+    ],
+    "why": "A writer back in his Sicilian village solves cases by the sea; lighter than Montalbano, the same coast."
+   },
+   {
+    "title": "I Bastardi di Pizzofalcone",
+    "lang": "it",
+    "where": "Rai 1 and RaiPlay",
+    "like": [
+     "blanca",
+     "imma"
+    ],
+    "why": "A Naples squad of misfits, de Giovanni again; ensemble Italian with some dialect, one case across two episodes."
+   },
+   {
+    "title": "Rocco Schiavone",
+    "lang": "it",
+    "where": "Rai 2 and RaiPlay",
+    "like": [
+     "blanca"
+    ],
+    "why": "A Roman deputy chief exiled to Aosta, foul-mouthed and good; register practice for the Italian nobody teaches in class."
+   },
+   {
+    "title": "Le indagini di Lolita Lobosco",
+    "lang": "it",
+    "where": "Rai 1 and RaiPlay",
+    "like": [
+     "imma",
+     "blanca"
+    ],
+    "why": "A woman police chief in Bari; Puglia light, Apulian colour in the Italian, and food in every episode."
+   },
+   {
+    "title": "Un passo dal cielo",
+    "lang": "it",
+    "where": "Rai 1 and RaiPlay",
+    "like": [
+     "donmatteo"
+    ],
+    "why": "Forest rangers and carabinieri in the Dolomites; the gentlest Rai crime series and the clearest Italian."
+   },
+   {
+    "title": "Studio Battaglia",
+    "lang": "it",
+    "where": "Rai 1 and RaiPlay",
+    "like": [
+     "omitb"
+    ],
+    "why": "Three sisters in a Milan divorce practice; fast, urban, upper-register Italian, the counterweight to the southern series."
+   },
+   {
+    "title": "Petra",
+    "lang": "it",
+    "where": "Sky Italia and NOW",
+    "like": [
+     "blanca"
+    ],
+    "why": "Paola Cortellesi as a Genoa inspector; Blanca's city again, drier and more adult."
+   },
+   {
+    "title": "Pechino Express",
+    "lang": "it",
+    "where": "Sky Italia, TV8 and NOW",
+    "like": [
+     "ratw",
+     "amazingrace"
+    ],
+    "why": "The Italian race across Asia in pairs on a euro a day; Race Across the World with Italian arguing."
+   },
+   {
+    "title": "Bake Off Italia",
+    "lang": "it",
+    "where": "Real Time and Discovery+ Italia",
+    "like": [
+     "gbbo",
+     "hhb"
+    ],
+    "why": "The Italian tent, with Benedetta Parodi; the same format in a third language and pastry vocabulary you will use in Italy."
+   },
+   {
+    "title": "Ulisse: il piacere della scoperta",
+    "lang": "it",
+    "where": "Rai 1 and RaiPlay",
+    "like": [],
+    "why": "Alberto Angela's history and travel documentaries; the clearest spoken Italian on Rai and the deep cut's Italian cousin."
+   },
+   {
+    "title": "Report",
+    "lang": "it",
+    "where": "Rai 3 and RaiPlay, Sunday evenings",
+    "like": [],
+    "why": "Rai's investigative programme, Sigfrido Ranucci; dense current-affairs Italian and the stories Italian papers follow up on Monday."
+   },
+   {
+    "title": "Il Paradiso delle Signore",
+    "lang": "it",
+    "where": "Rai 1 and RaiPlay, weekdays",
+    "like": [],
+    "why": "A 1960s Milan department-store daily drama; the easiest sustained Italian listening on television, one episode a day."
+   },
+   {
+    "title": "Mare Fuori",
+    "lang": "it",
+    "where": "Rai 2 and RaiPlay",
+    "like": [],
+    "why": "Teenagers in a Naples juvenile prison; the series Italian teenagers watch, and the Neapolitan of today."
+   }
+  ]
+ }
 }

@@ -303,7 +303,7 @@ Edited rarely. Add a school year when the ministry publishes it. The page merges
 
 ### `data/tv.json`
 
-`{ "updated", "shows": [{"id","tvmaze","title","where","status","last":{"s","e","date","name"},"next":{"s","e","date","name","time"}|null,"note","src":[[title,url]]}], "similar": [{"title","where","like":[ids],"why"}] }`. The TV section in the Planner sorts shows by next air date, puts the next episode on the week board, the calendar (category TV) and the countdowns, and lists `similar` under "If you like these".
+`{ "updated", "shows": [{"id","tvmaze","title","where","status","last":{"s","e","date","name"},"next":{"s","e","date","name","time"}|null,"note","src":[[title,url]]}], "similar": [{"title","where","like":[ids],"why"}] }`. The TV section in the Planner sorts shows by next air date, puts the next episode on the week board, the calendar (category TV) and the countdowns, and lists `similar` under "If you like these". Since 7.5 the suggestions live in `recs.pool` as `{"title","lang":"nl|vls|it|de|en|fr","where","like":[show ids],"why"}`; the page rotates three a day by date (one Dutch or Flemish, one Italian, one other) and folds the rest by language.
 
 ### `data/week.json`
 
