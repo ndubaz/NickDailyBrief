@@ -75,6 +75,10 @@ The edition is a daily snapshot. The standing files under `data/` are the Readbo
 
 Editions in the 2.5, 3.0 and 4.0 formats still render: an edition whose `world` is an array shows under Developments, and the page falls back to the edition's own threads, horizon and school rows when a standing file is missing.
 
+## Prompt revisions
+
+Every change to the run prompt raises its revision number (7.5.1, 7.5.2, …), shown in the prompt title. The run writes it into the edition as `promptRev`; the page holds the revision it expects in `PROMPT_REV` in `app.js`, and Readbook health shows a line to act on when the scheduled task is running an older prompt.
+
 ## If the morning edition does not appear
 
 The scheduled run writes its commit and must push it to `main`; Vercel deploys nothing else. When a session is given a `claude/...` branch name it can end up pushing there instead. Check `git ls-remote --heads origin` for a branch whose last commit is today's edition, then fast-forward main to it and push:

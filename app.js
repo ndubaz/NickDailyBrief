@@ -847,7 +847,7 @@
   }
 
   /* ---------- health checks: when to remodel ---------- */
-  var PAGE_V = "7.5";
+  var PAGE_V = "7.5", PROMPT_REV = "7.5.1";
   function health(E, ctx, TD, words) {
     var rows = [], realToday = key(new Date());
     function add(name, level, detail) { rows.push([name, level, detail]); }
@@ -855,6 +855,7 @@
     function age(d) { return d ? daysBetween(d, TD) : null; }
     function fresh(name, d, warn, act, what) { var a = age(d); if (a == null) add(name, "act", "no dated entry at all"); else add(name, a >= act ? "act" : a >= warn ? "watch" : "ok", (what || "last entry") + " " + fmtShort(d) + (a ? ", " + a + (a === 1 ? " day" : " days") + " ago" : ", today")); }
     /* format and cadence */
+    add("Prompt revision", !E.promptRev ? "watch" : E.promptRev === PROMPT_REV ? "ok" : "act", !E.promptRev ? "edition carries no promptRev yet; the page expects " + PROMPT_REV + " (paste the current prompt into the scheduled task)" : E.promptRev === PROMPT_REV ? "edition written with prompt " + E.promptRev + ", the current one" : "edition written with prompt " + E.promptRev + "; the page expects " + PROMPT_REV + ": paste the new prompt into the scheduled task");
     var ev = parseFloat(E.v || "0"); add("Edition format", ev < parseFloat(PAGE_V) ? "act" : "ok", "edition " + (E.v || "?") + " on page " + PAGE_V + (ev < parseFloat(PAGE_V) ? ": the task prompt is behind the page" : ""));
     var lag = daysBetween(ctx.index.latest, realToday); add("Morning run", lag <= 0 ? "ok" : lag === 1 ? "watch" : "act", "latest edition " + fmtShort(ctx.index.latest) + (lag > 0 ? ", " + lag + " day" + (lag > 1 ? "s" : "") + " behind today" : ", today"));
     var mins = Math.round(words / 230); add("Read time", "ok", "≈ " + mins + " min for the Brief, the news and the reading; shown for information, not a target");
