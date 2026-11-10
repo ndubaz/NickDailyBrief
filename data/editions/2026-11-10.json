@@ -446,7 +446,7 @@
      ],
      [
       "Attribution",
-      "A2 for the amplification, named by the minister. On the attack itself, Justice Minister Waldemar Żurek said on 9 Nov a Russian hybrid scenario “Nie został wykluczony”, has not been excluded, and Eryk Stasielak, head of the National Prosecutor's Office's Kraków department, said “Każdy wątek będziemy badać, również rosyjski”, we will examine every lead, including the Russian one. The gunman died in hospital on 9 Nov; prosecutors found four firearms and about 500 rounds and say the motive is still unclear. [55, 56]"
+      "A2 for the amplification, named by the minister. On the attack itself, Justice Minister Waldemar Żurek said on 9 Nov a Russian hybrid scenario “Nie został wykluczony”, has not been excluded, and Eryk Stasielak, head of the National Prosecutor's Office's Kraków department, said “Każdy wątek będziemy badać, również rosyjski” (“We will examine every lead, including the Russian one”). The gunman died in hospital on 9 Nov; prosecutors found four firearms and about 500 rounds and say the motive is still unclear. [55, 56]"
      ],
      [
       "Response",
@@ -619,7 +619,7 @@
    "tag": "Slovakia · Cyber",
    "conf": "high",
    "badge": "NEW",
-   "body": "Armed Forces spokesman Štefan Zemanovič told TASR on 9 Nov that the army disconnected the Ministry of Defence website from the internet on 21 Oct after the National Cyber Security Centre warned of two critical vulnerabilities in PHP. [74] The 6th Signal Regiment, which runs the ministry's websites, took it down to prevent loss of data, and the rebuilt site “sa v súčasnosti podrobuje penetračným testom”, is now undergoing penetration tests. [74] The statement answered media reports that the ministry's database of orders and invoices had been deleted: only contracts published since the shutdown are online, and older ones move to the new portal once it is cleared. [74, 75]",
+   "body": "Armed Forces spokesman Štefan Zemanovič told TASR on 9 Nov that the army disconnected the Ministry of Defence website from the internet on 21 Oct after the National Cyber Security Centre warned of two critical vulnerabilities in PHP. [74] The 6th Signal Regiment, which runs the ministry's websites, took it down to prevent loss of data, and the rebuilt site “sa v súčasnosti podrobuje penetračným testom” (“Is now undergoing penetration tests”). [74] The statement answered media reports that the ministry's database of orders and invoices had been deleted: only contracts published since the shutdown are online, and older ones move to the new portal once it is cleared. [74, 75]",
    "sw": "Baseline requirement 1 (continuity of government): a defence ministry's public portal ran outdated code until the national cyber centre's warning and has been dark for three weeks, with its procurement record offline.",
    "links": [
     "country:sk"
@@ -657,7 +657,7 @@
    "tag": "Germany · Defence industry",
    "conf": "moderate",
    "badge": "NEW",
-   "body": "The federal government pays €6.6bn for the 50% of KNDS held by the owner families through the Wegmann holding, Spiegel reported on 10 Nov, citing parliamentary circles and a confidential finance ministry briefing to the Bundestag. [76] The price is half of an €11.2bn valuation set before the abandoned stock-market listing plus €1bn, and the briefing says a sale to foreign investors, among them Czechia's CSG, “würde die deutschen Sicherheitsinteressen an der Schlüsseltechnologie ›geschützte und gepanzerte Fahrzeuge‹ erheblich gefährden”, would seriously endanger German security interests in protected and armoured vehicles. [76] The purchase contract is due in November and Berlin and Paris intend to sell 10% each later, while the first Boxer tranche of 1,800 vehicles under the Arminius programme is being renegotiated. [76]",
+   "body": "The federal government pays €6.6bn for the 50% of KNDS held by the owner families through the Wegmann holding, Spiegel reported on 10 Nov, citing parliamentary circles and a confidential finance ministry briefing to the Bundestag. [76] The price is half of an €11.2bn valuation set before the abandoned stock-market listing plus €1bn, and the briefing says a sale to foreign investors, among them Czechia's CSG, “würde die deutschen Sicherheitsinteressen an der Schlüsseltechnologie ›geschützte und gepanzerte Fahrzeuge‹ erheblich gefährden” (“Would seriously endanger German security interests in protected and armoured vehicles”). [76] The purchase contract is due in November and Berlin and Paris intend to sell 10% each later, while the first Boxer tranche of 1,800 vehicles under the Arminius programme is being renegotiated. [76]",
    "sw": "Host-nation and reinforcement fleets (Leopard 2, Puma, Boxer) come from KNDS; federal ownership of the German half keeps their intellectual property and output under Berlin's control.",
    "links": [
     "country:de"
