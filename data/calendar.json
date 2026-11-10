@@ -2,8 +2,14 @@
  "note": "Standing calendar, edited rarely: public holidays and observances (c = nl, be, de, us, info), school breaks per system, and seasonal markets. The morning run completes missing school years when they are published and otherwise leaves this file alone. Window: 2026-11-01 to 2028-04-30. Holiday dates are computed from the statutory rules (Easter-based dates via the Gregorian algorithm) and should be spot-checked once a year.",
  "from": "2026-11-01",
  "to": "2028-04-30",
- "updated": "2026-11-03",
+ "updated": "2026-11-10",
  "holidays": [
+  {
+   "date": "2026-10-12",
+   "c": "us",
+   "n": "Columbus Day · JFCBS US holiday",
+   "note": "JFCBS FY27 US holiday: local pass authorised; falls on a Monday, so a four-day pass with the adjoining non-duty days may be requested; leave authorisation from the NATO supervisor first, pass within 7 days either side if the mission requires."
+  },
   {
    "date": "2026-11-01",
    "c": "be",
@@ -33,7 +39,8 @@
   {
    "date": "2026-11-11",
    "c": "us",
-   "n": "Veterans Day"
+   "n": "Veterans Day · JFCBS US holiday",
+   "note": "JFCBS FY27 US holiday: local pass authorised; midweek, so a single-day pass; leave authorisation from the NATO supervisor first, pass within 7 days either side if the mission requires."
   },
   {
    "date": "2026-11-15",
@@ -50,7 +57,8 @@
   {
    "date": "2026-11-26",
    "c": "us",
-   "n": "Thanksgiving"
+   "n": "Thanksgiving · JFCBS US holiday",
+   "note": "JFCBS FY27 US holiday: local pass authorised; falls on a Thursday, so a four-day pass with the adjoining non-duty days may be requested; leave authorisation from the NATO supervisor first, pass within 7 days either side if the mission requires."
   },
   {
    "date": "2026-12-05",
@@ -75,7 +83,8 @@
   {
    "date": "2026-12-25",
    "c": "us",
-   "n": "Christmas Day"
+   "n": "Christmas Day · JFCBS US holiday",
+   "note": "JFCBS FY27 US holiday: local pass authorised; falls on a Friday, so a four-day pass with the adjoining non-duty days may be requested; leave authorisation from the NATO supervisor first, pass within 7 days either side if the mission requires."
   },
   {
    "date": "2026-12-26",
@@ -105,12 +114,14 @@
   {
    "date": "2027-01-01",
    "c": "us",
-   "n": "New Year's Day"
+   "n": "New Year's Day · JFCBS US holiday",
+   "note": "JFCBS FY27 US holiday: local pass authorised; falls on a Friday, so a four-day pass with the adjoining non-duty days may be requested; leave authorisation from the NATO supervisor first, pass within 7 days either side if the mission requires."
   },
   {
    "date": "2027-01-18",
    "c": "us",
-   "n": "Martin Luther King Jr. Day"
+   "n": "Martin Luther King Jr. Day · JFCBS US holiday",
+   "note": "JFCBS FY27 US holiday: local pass authorised; falls on a Monday, so a four-day pass with the adjoining non-duty days may be requested; leave authorisation from the NATO supervisor first, pass within 7 days either side if the mission requires."
   },
   {
    "date": "2027-02-07",
@@ -121,7 +132,8 @@
   {
    "date": "2027-02-15",
    "c": "us",
-   "n": "Presidents' Day"
+   "n": "Presidents' Day · JFCBS US holiday",
+   "note": "JFCBS FY27 US holiday: local pass authorised; falls on a Monday, so a four-day pass with the adjoining non-duty days may be requested; leave authorisation from the NATO supervisor first, pass within 7 days either side if the mission requires."
   },
   {
    "date": "2027-03-14",
@@ -163,6 +175,12 @@
    "date": "2027-03-29",
    "c": "nl",
    "n": "Tweede Paasdag"
+  },
+  {
+   "date": "2027-03-29",
+   "c": "us",
+   "n": "Easter Monday (observed) · JFCBS US holiday",
+   "note": "JFCBS FY27 US holiday: local pass authorised; falls on a Monday, so a four-day pass with the adjoining non-duty days may be requested; leave authorisation from the NATO supervisor first, pass within 7 days either side if the mission requires."
   },
   {
    "date": "2027-04-27",
@@ -229,7 +247,14 @@
   {
    "date": "2027-05-31",
    "c": "us",
-   "n": "Memorial Day"
+   "n": "Memorial Day · JFCBS US holiday",
+   "note": "JFCBS FY27 US holiday: local pass authorised; falls on a Monday, so a four-day pass with the adjoining non-duty days may be requested; leave authorisation from the NATO supervisor first, pass within 7 days either side if the mission requires."
+  },
+  {
+   "date": "2027-06-18",
+   "c": "us",
+   "n": "Juneteenth (observed) · JFCBS US holiday",
+   "note": "JFCBS FY27 US holiday: local pass authorised; falls on a Friday, so a four-day pass with the adjoining non-duty days may be requested; leave authorisation from the NATO supervisor first, pass within 7 days either side if the mission requires."
   },
   {
    "date": "2027-06-19",
@@ -240,6 +265,12 @@
    "date": "2027-07-04",
    "c": "us",
    "n": "Independence Day"
+  },
+  {
+   "date": "2027-07-05",
+   "c": "us",
+   "n": "Independence Day (observed) · JFCBS US holiday",
+   "note": "JFCBS FY27 US holiday: local pass authorised; falls on a Monday, so a four-day pass with the adjoining non-duty days may be requested; leave authorisation from the NATO supervisor first, pass within 7 days either side if the mission requires."
   },
   {
    "date": "2027-07-21",
@@ -254,7 +285,8 @@
   {
    "date": "2027-09-06",
    "c": "us",
-   "n": "Labor Day"
+   "n": "Labor Day · JFCBS US holiday",
+   "note": "JFCBS FY27 US holiday: local pass authorised; falls on a Monday, so a four-day pass with the adjoining non-duty days may be requested; leave authorisation from the NATO supervisor first, pass within 7 days either side if the mission requires."
   },
   {
    "date": "2027-10-03",
@@ -794,5 +826,12 @@
    "2026-11-27",
    "2026-12-20"
   ]
+ ],
+ "sources": [
+  {
+   "t": "JFC Brunssum FY27 Holiday Observance Policy for US service members, memorandum of 7 Aug 2026 (US Senior National Representative)",
+   "added": "2026-11-10",
+   "note": "Twelve US holidays Oct 2026 to Sep 2027; local pass on the day, four-day pass when the holiday falls Thu, Fri, Mon or Tue; observe within 7 days either side when the mission requires."
+  }
  ]
 }
