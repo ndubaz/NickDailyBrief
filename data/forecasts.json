@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-10",
+ "updated": "2026-11-11",
  "note": "Forecast ledger, run only. Dated, falsifiable calls with a probability and a resolution date. The run adds one to three a week, never edits a call after it is made, resolves each on its date (yes, no, or void when the question stopped being meaningful) with the fact and source, and the page keeps a Brier score. Seed entries dated 7 Nov 2026 were made at the 7.0 build.",
  "items": [
   {
@@ -10,8 +10,19 @@
    "resolves": "2026-11-11",
    "domain": "Ukraine",
    "theatre": "ru-ua",
-   "status": "open",
-   "why": "Putin named the date on 6 Nov and Ukraine named its delegation head."
+   "status": "yes",
+   "why": "Putin named the date on 6 Nov and Ukraine named its delegation head.",
+   "resolvedDate": "2026-11-11",
+   "note": "Held: Ukrainian, Russian and US delegations met in Abu Dhabi on 10 Nov for four hours, Rustem Umerov leading Ukraine's team and Vladimir Medinsky Russia's, with Witkoff and Kushner mediating; a second day followed on 11 Nov. [6]",
+   "src": [
+    [
+     6,
+     "Ukraine, Russia, US conclude 1st day of peace talks in Abu Dhabi, discuss 'humanitarian, de-escalation steps'",
+     "Kyiv Independent",
+     "https://kyivindependent.com/ukraine-russia-us-resume-trilateral-peace-talks-in-abu-dhabi-after-9-month-pause/",
+     3
+    ]
+   ]
   },
   {
    "id": "2026-11-07-belgium-government",

@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-08",
- "asof": "2026-09",
+ "updated": "2026-11-11",
+ "asof": "2026-10",
  "vat": "included",
  "src": [
   [
@@ -17,25 +17,6 @@
  },
  "note": "Weighted average monthly consumer prices for new variable contracts, including VAT. var = supply price per kWh or m³; tax = energy tax per unit (ODE merged into it from 2023); dyn = average dynamic-contract supply price; net = network (transport) charge per year; fixed = supplier standing charge per year; rebate = energy-tax reduction per connection per year. The last month is provisional until CBS publishes the next.",
  "months": [
-  {
-   "m": "2023-10",
-   "elec": {
-    "var": 0.1922,
-    "tax": 0.15245,
-    "ode": null,
-    "dyn": null,
-    "net": 342.16,
-    "fixed": 78.02
-   },
-   "gas": {
-    "var": 0.6609,
-    "tax": 0.59266,
-    "ode": null,
-    "net": 217.69,
-    "fixed": 75.13
-   },
-   "rebate": -596.86
-  },
   {
    "m": "2023-11",
    "elec": {
@@ -698,6 +679,25 @@
     "ode": null,
     "net": 268.37,
     "fixed": 93.05
+   },
+   "rebate": -628.96
+  },
+  {
+   "m": "2026-10",
+   "elec": {
+    "var": 0.1601,
+    "tax": 0.11085,
+    "ode": null,
+    "dyn": 0.2295,
+    "net": 476.87,
+    "fixed": 115.74
+   },
+   "gas": {
+    "var": 0.6965,
+    "tax": 0.7268,
+    "ode": null,
+    "net": 268.37,
+    "fixed": 93.13
    },
    "rebate": -628.96
   }

@@ -86,25 +86,6 @@
    "updated": "2026-11-07"
   },
   {
-   "id": "khartoum-jpsm",
-   "date": "2026-11-08",
-   "dateText": "8–10 Nov",
-   "t": "Sudan–South Sudan joint political and security mechanism meets in Khartoum",
-   "n": "After the UN called Abyei's drone strikes “a new and concerning dimension”",
-   "h": false,
-   "status": "confirmed",
-   "added": "2026-11-06",
-   "src": [
-    [
-     27,
-     "Abyei: Deadly drone strikes mark 'new and concerning' threat, UN peacekeeping chief warns",
-     "UN News",
-     "https://news.un.org/en/story/2026/11/1168749",
-     1
-    ]
-   ]
-  },
-  {
    "id": "koalicja-exercise",
    "date": "2026-11-09",
    "dateText": "9–22 Nov",
@@ -239,9 +220,9 @@
    "date": "2026-11-09",
    "dateText": "9–10 Nov",
    "t": "G7 foreign ministers meet in Paris",
-   "n": "At the Quai d'Orsay, the last ministerial of the French presidency, with sessions on Ukraine and the Middle East; Rubio attends. [9]",
+   "n": "Met on 9–10 Nov; Barrot said ministers agreed on the need to avoid a security void in Lebanon after UNIFIL, and Sybiha said a separate session with Ukraine lasted an hour and a half. [39, 25]",
    "h": false,
-   "status": "confirmed",
+   "status": "done",
    "added": "2026-11-07",
    "src": [
     [
@@ -257,9 +238,23 @@
      "French Ministry for Europe and Foreign Affairs",
      "https://www.diplomatie.gouv.fr/fr/presse-et-ressources/decouvrir-et-informer/actualites/conference-de-presse-du-porte-parole-du-5-novembre-2026",
      1
+    ],
+    [
+     39,
+     "UNIFIL patrol comes under fire in southern Lebanon",
+     "Al Jazeera (AFP)",
+     "https://www.aljazeera.com/news/2026/11/10/unifil-patrol-comes-under-fire-in-southern-lebanon",
+     3
+    ],
+    [
+     25,
+     "Discussion on restoring European security order to continue in Dublin",
+     "Ukrinform",
+     "https://www.ukrinform.net/rubric-polytics/4183524-discussion-on-restoring-european-security-order-to-continue-in-dublin.html",
+     2
     ]
    ],
-   "updated": "2026-11-09"
+   "updated": "2026-11-11"
   },
   {
    "id": "eurogroup-ecb",
@@ -293,9 +288,9 @@
    "date": "2026-11-09",
    "dateText": "10–12 Nov",
    "t": "Rep. Massie's impeachment articles against Secretary Hegseth",
-   "n": "On the House floor schedule since 9 Nov; NOS and tagesschau say a vote could come by Wednesday; last votes Thursday by 15:00 EST. [p1, p3, p4, p5]",
+   "n": "The House referred the resolution to the Judiciary Committee on 10 Nov, 211–204; no impeachment vote. [16, 105]",
    "h": false,
-   "status": "reported",
+   "status": "done",
    "added": "2026-11-08",
    "src": [
     [
@@ -311,9 +306,23 @@
      "ABC News",
      "https://abcnews.com/Politics/im-hard-hakeem-jeffries-announces-support-hegseth-impeachment/story?id=137952235",
      3
+    ],
+    [
+     16,
+     "House opts to stall Hegseth impeachment vote, sending resolution to Judiciary Committee",
+     "Breaking Defense",
+     "https://breakingdefense.com/2026/11/house-opts-to-stall-hegseth-impeachment-vote-sending-resolution-to-judiciary-committee/",
+     3
+    ],
+    [
+     105,
+     "US-Repräsentantenhaus lehnt Amtsenthebungsverfahren gegen Hegseth ab",
+     "tagesschau",
+     "https://www.tagesschau.de/ausland/amerika/hegseth-amtsenthebungsverfahren-gestoppt-100.html",
+     3
     ]
    ],
-   "updated": "2026-11-10"
+   "updated": "2026-11-11"
   },
   {
    "id": "qatar-pm-white-house",
@@ -374,9 +383,9 @@
    "date": "2026-11-10",
    "dateText": "10–11 Nov",
    "t": "US–Russia–Ukraine talks, Abu Dhabi",
-   "n": "France will take part, Barrot said on 8 Nov. [12]",
+   "n": "Day one held on 10 Nov with both delegations, four hours; prisoner exchange, security guarantees and de-escalation discussed; day two on 11 Nov. [6, 24, 22]",
    "h": true,
-   "status": "confirmed",
+   "status": "done",
    "added": "2026-11-02",
    "src": [
     [
@@ -424,16 +433,37 @@
      "Ukrinform",
      "https://www.ukrinform.net/rubric-polytics/4182691-barrot-announces-frances-participation-in-trilateral-talks-in-abu-dhabi.html",
      2
+    ],
+    [
+     6,
+     "Ukraine, Russia, US conclude 1st day of peace talks in Abu Dhabi, discuss 'humanitarian, de-escalation steps'",
+     "Kyiv Independent",
+     "https://kyivindependent.com/ukraine-russia-us-resume-trilateral-peace-talks-in-abu-dhabi-after-9-month-pause/",
+     3
+    ],
+    [
+     24,
+     "Release of POWs, security guarantees discussed on first day of Abu Dhabi talks",
+     "Ukrinform",
+     "https://www.ukrinform.net/rubric-polytics/4183461-release-of-pows-security-guarantees-discussed-on-first-day-of-abu-dhabi-talks.html",
+     2
+    ],
+    [
+     22,
+     "Abu Dhabi talks are productive but agreement will take time, Rubio says",
+     "Ukrinform (Sky News)",
+     "https://www.ukrinform.net/rubric-polytics/4183472-abu-dhabi-alks-are-productive-but-agreement-will-take-time-rubio-says.html",
+     2
     ]
    ],
-   "updated": "2026-11-09"
+   "updated": "2026-11-11"
   },
   {
    "id": "tk-tax-plan-debate-2",
    "date": "2026-11-10",
    "dateText": "10 Nov",
    "t": "Tweede Kamer tax-plan debate, part two",
-   "n": "Runs today 16:15–23:00 as “Pakket Belastingplan 2027 (voortzetting)”; vote Thu 12 Nov. [133]",
+   "n": "Ran late on 10 Nov and ended without a deal on majorities in either chamber; votes are set for 12 Nov but could slip a week. [8, 147]",
    "h": false,
    "status": "done",
    "added": "2026-11-05",
@@ -450,18 +480,32 @@
      "Tweede Kamer",
      "https://www.tweedekamer.nl/debat_en_vergadering/plenaire_vergaderingen",
      1
+    ],
+    [
+     8,
+     "Coalitie en Kamer nog geen steek verder met belastingplan",
+     "NOS",
+     "https://nos.nl/l/2638942",
+     3
+    ],
+    [
+     147,
+     "Plenaire vergaderingen, donderdag 12 november 2026 (stemmingen over het Pakket Belastingplan 2027 en de Novelle uitbreiding vermogenswinstbelasting box 3)",
+     "Tweede Kamer",
+     "https://www.tweedekamer.nl/debat_en_vergadering/plenaire_vergaderingen?qry=%2A&fromdate=2026-11-12&todate=2026-11-12",
+     1
     ]
    ],
-   "updated": "2026-11-10"
+   "updated": "2026-11-11"
   },
   {
    "id": "sk-parliament-votes",
    "date": "2026-11-10",
    "dateText": "10 Nov, 11:00",
    "t": "Slovak parliament votes, postponed from last week",
-   "n": "Coalition at 75 secure votes of 150",
+   "n": "Held 10 Nov: only 75 of 150 deputies voted to move the cooperating-witness amendment to third reading, so it failed; repeat vote 11 Nov at 11:00. [66]",
    "h": false,
-   "status": "confirmed",
+   "status": "done",
    "added": "2026-11-06",
    "src": [
     [
@@ -470,17 +514,25 @@
      "STVR",
      "https://spravy.stvr.sk/2026/11/roman-malatinec-odchadza-od-huliakovcov-a-pridava-sa-k-tarabovej-strane/",
      3
+    ],
+    [
+     66,
+     "Smer-SD vníma postoj Tarabu k novele o kajúcnikoch ako politikárčenie",
+     "TASR (teraz.sk)",
+     "https://www.teraz.sk/slovensko/smer-sd-vnima-postoj-tarabu-k-novele-o/1006517-clanok.html",
+     2
     ]
-   ]
+   ],
+   "updated": "2026-11-11"
   },
   {
    "id": "magyar-merz-berlin",
    "date": "2026-11-10",
    "dateText": "Tue 10 Nov, 11:00",
    "t": "Magyar meets Merz in Berlin with four ministers",
-   "n": "Defence, energy and Ukraine on the agenda; press conference 13:30. [81]",
+   "n": "Held as the first intergovernmental consultations: Merz offered German LNG, air defence under SAFE was named for cooperation, and Magyar invited Merz to Budapest in the spring. [18, 63]",
    "h": false,
-   "status": "confirmed",
+   "status": "done",
    "added": "2026-11-08",
    "src": [
     [
@@ -489,17 +541,32 @@
      "Ukrinform",
      "https://www.ukrinform.net/rubric-polytics/4182316-merz-to-discuss-further-support-for-ukraine-with-magyar.html",
      2
+    ],
+    [
+     18,
+     "Magyar Péter Ukrajna támogatásáról: Nem tartom jó iránynak, hogy ha az EU költségvetését egy másik ügyhöz hozzákötjük",
+     "HVG",
+     "https://hvg.hu/itthon/20261110_magyar-peter-friedrich-merz-berlin-sajtotajekoztato",
+     3
+    ],
+    [
+     63,
+     "Új fejezet a magyar-német kapcsolatokban",
+     "Honvédelem.hu (Hungarian Ministry of Defence)",
+     "https://honvedelem.hu/hirek/uj-fejezet-a-magyar-nemet-kapcsolatokban.html",
+     1
     ]
-   ]
+   ],
+   "updated": "2026-11-11"
   },
   {
    "id": "us-cpi-oct",
    "date": "2026-11-10",
    "dateText": "Tue 10 Nov, 14:30 CET",
    "t": "US October consumer prices",
-   "n": "Published without a year-on-year rate. [130]",
+   "n": "Released 10 Nov: CPI-U +0.4% in October, core +0.3%; no 12-month rate published because October 2025 data are missing. [138]",
    "h": false,
-   "status": "confirmed",
+   "status": "done",
    "added": "2026-11-08",
    "src": [
     [
@@ -508,17 +575,25 @@
      "Bureau of Labor Statistics",
      "https://www.bls.gov/schedule/2026/11_sched.htm",
      1
+    ],
+    [
+     138,
+     "Consumer Price Index, October 2026",
+     "Bureau of Labor Statistics",
+     "https://www.bls.gov/news.release/cpi.nr0.htm",
+     1
     ]
-   ]
+   ],
+   "updated": "2026-11-11"
   },
   {
    "id": "knesset-sworn-in",
    "date": "2026-11-10",
    "dateText": "Tue 10 Nov",
    "t": "Israel's new Knesset is sworn in",
-   "n": "Eisenkot holds the mandate to form a government, 28 days. [40, 35]",
+   "n": "Sworn in on 10 Nov; Eisenkot and Netanyahu traded warnings in the chamber. [38]",
    "h": false,
-   "status": "confirmed",
+   "status": "done",
    "src": [
     [
      40,
@@ -533,18 +608,26 @@
      "Anadolu Agency",
      "https://www.aa.com.tr/en/middle-east/israeli-president-tasks-eisenkot-with-forming-new-government/4116158",
      2
+    ],
+    [
+     38,
+     "Israel's new parliament sworn in as leaders compete to form government",
+     "BBC News",
+     "https://www.bbc.co.uk/news/articles/crd939lpzjp9o",
+     3
     ]
    ],
-   "added": "2026-11-09"
+   "added": "2026-11-09",
+   "updated": "2026-11-11"
   },
   {
    "id": "aod-op-nuj",
    "date": "2026-11-10",
    "dateText": "Tue 10 Nov, from 18:30",
    "t": "Aod òp Nuj opens carnival in Heerlen",
-   "n": "Free, Burgemeester van Grunsvenplein. [11]",
+   "n": "Held on 10 Nov, with a children's countdown before the traditional countdown to the Elfde van de Elfde just before midnight. [205]",
    "h": false,
-   "status": "confirmed",
+   "status": "done",
    "src": [
     [
      11,
@@ -552,18 +635,26 @@
      "Aod òp Nuj (organiser)",
      "https://aodopnuj.nl/",
      1
+    ],
+    [
+     205,
+     "Kinderen tellen tijdens Aod Òp Nuj in Heerlen af naar de elfde van de elfde, samen met Danny Pouwels en John Tana",
+     "De Limburger",
+     "https://www.limburger.nl/regio/heerlen/kinderen-tellen-tijdens-aod-op-nuj-in-heerlen-af-naar-de-elfde-van-de-elfde-samen-met-danny-pouwels-en-john-tana/164337809.html",
+     3
     ]
    ],
-   "added": "2026-11-09"
+   "added": "2026-11-09",
+   "updated": "2026-11-11"
   },
   {
    "id": "vdl-varna",
    "date": "2026-11-10",
    "dateText": "Tue 10 Nov",
    "t": "Von der Leyen meets Bulgaria's Prime Minister Radev in Varna",
-   "n": "Visits the Naval Academy after announcing about €60 million for Black Sea security in Bucharest. [39]",
+   "n": "Von der Leyen and Radev briefed at the Varna naval academy on 10 Nov; she said Black Sea security is European security. [36]",
    "h": false,
-   "status": "confirmed",
+   "status": "done",
    "added": "2026-11-10",
    "src": [
     [
@@ -572,17 +663,25 @@
      "Balkan Insight",
      "https://balkaninsight.com/2026/11/09/eu-offers-black-sea-countries-support-to-counter-security-threats/bi/",
      3
+    ],
+    [
+     36,
+     "Black Sea Security Is European Security, European Commission President Ursula von der Leyen Says in Varna",
+     "BTA",
+     "https://www.bta.bg/en/news/world/1243778-black-sea-security-is-european-security-european-commission-president-ursula-vo",
+     2
     ]
-   ]
+   ],
+   "updated": "2026-11-11"
   },
   {
    "id": "sk-pellegrini-paris",
    "date": "2026-11-10",
    "dateText": "10–11 Nov",
    "t": "Pellegrini at the Paris Peace Forum and in talks with Macron",
-   "n": "Élysée dinner on 10 Nov; Štefánik wreath-laying in Meudon on day two. [160]",
+   "n": "Pellegrini skipped the Paris Peace Forum on 10 Nov; his office said he travels on 11 Nov for talks with Macron, then to Poland on 12 Nov. [206]",
    "h": false,
-   "status": "confirmed",
+   "status": "done",
    "added": "2026-11-10",
    "src": [
     [
@@ -591,17 +690,25 @@
      "TASR (teraz.sk)",
      "https://www.teraz.sk/slovensko/prezident-odcestuje-na-parizske-mierov/1006055-clanok.html",
      2
+    ],
+    [
+     206,
+     "Prezident odcestuje v stredu do Francúzska, vo štvrtok navštívi Poľsko",
+     "TASR (teraz.sk)",
+     "https://www.teraz.sk/slovensko/prezident-odcestuje-v-stredu-do-francuz/1006600-clanok.html",
+     2
     ]
-   ]
+   ],
+   "updated": "2026-11-11"
   },
   {
    "id": "hegseth-presser-2026-11-10",
    "date": "2026-11-10",
    "dateText": "10 Nov",
    "t": "Hegseth press conference on the impeachment push",
-   "n": "Announced as his first in more than half a year; time not given. [92, 18]",
+   "n": "Held on 10 Nov, under 25 minutes, his first since 5 May; he called the articles a farce. [98, 99]",
    "h": false,
-   "status": "reported",
+   "status": "done",
    "added": "2026-11-10",
    "src": [
     [
@@ -617,15 +724,30 @@
      "NOS",
      "https://nos.nl/l/2638802",
      3
+    ],
+    [
+     98,
+     "Hegseth denounces ‘farce’ impeachment in first briefing since May",
+     "Defense News",
+     "https://www.defensenews.com/pentagon/2026/11/10/hegseth-denounces-farce-impeachment-in-first-briefing-since-may/",
+     3
+    ],
+    [
+     99,
+     "House Republicans sidestep effort to impeach Hegseth",
+     "Defense News",
+     "https://www.defensenews.com/congress/2026/11/10/house-republicans-sidestep-effort-to-impeach-hegseth/",
+     3
     ]
-   ]
+   ],
+   "updated": "2026-11-11"
   },
   {
    "id": "rutte-oslo-hms-pow",
    "date": "2026-11-11",
-   "dateText": "Wed 11 Nov, remarks 18:50 CET",
+   "dateText": "Wed 11 Nov, 18:10 and 18:50 CET",
    "t": "Rutte at the Atlantic Future Forum aboard HMS Prince of Wales, Oslo",
-   "n": "Tours the carrier with UK Defence Secretary Wes Streeting and Norway's foreign minister Espen Barth Eide. [49]",
+   "n": "Keynote at 18:10, remarks with Streeting at 18:50; JEF navy chiefs signed the Northern Navies Initiative on the same carrier on 10 Nov. [80, 7]",
    "h": false,
    "status": "confirmed",
    "added": "2026-11-10",
@@ -636,8 +758,23 @@
      "NATO",
      "https://www.nato.int/en/news-and-events/events/media-advisories/2026/11/09/nato-secretary-general-to-visit-norway",
      1
+    ],
+    [
+     80,
+     "NATO Secretary General to visit Norway (media advisory, 9 Nov)",
+     "NATO",
+     "https://www.nato.int/en/news-and-events/events/media-advisories/2026/11/09/nato-secretary-general-to-visit-norway",
+     1
+    ],
+    [
+     7,
+     "New Royal Navy-Led Northern Navies Initiative",
+     "UK Ministry of Defence",
+     "https://www.gov.uk/government/news/new-royal-navy-led-northern-navies-initiative",
+     1
     ]
-   ]
+   ],
+   "updated": "2026-11-11"
   },
   {
    "id": "lt-china-diplomats",
@@ -1036,9 +1173,9 @@
   {
    "id": "pl-us-base-decision",
    "date": "2026-12-01",
-   "dateText": "December",
-   "t": "US decision on a permanent base in Poland",
-   "n": "Pentagon talks in mid-November first",
+   "dateText": "early December",
+   "t": "White House decision on a permanent US base in Poland",
+   "n": "Kosiniak-Kamysz said after meeting Hegseth on 10 Nov that the Pentagon gave a green light. [19, 20]",
    "h": false,
    "status": "reported",
    "added": "2026-11-04",
@@ -1048,8 +1185,23 @@
      "Stała baza USA w Polsce głównym tematem obrad RBN",
      "Defence24",
      "https://defence24.pl/polityka-obronna/stala-baza-usa-w-polsce-glownym-tematem-obrad-rbn"
+    ],
+    [
+     19,
+     "Pentagon backs permanent US troop presence in Poland, defence minister says after talks in Washington",
+     "Polskie Radio",
+     "https://www.polskieradio.pl/395/7784/Artykul/3751557,pentagon-backs-permanent-us-troop-presence-in-poland%C2%A0defence-minister-says-after-talks-in-washington",
+     3
+    ],
+    [
+     20,
+     "Poland says Pentagon green lit for permanent U.S. military base",
+     "Ukrinform",
+     "https://www.ukrinform.net/rubric-polytics/4183550-poland-says-pentagon-green-lit-for-permanent-us-military-base.html",
+     2
     ]
-   ]
+   ],
+   "updated": "2026-11-11"
   },
   {
    "id": "posture-review-complete",
@@ -1331,7 +1483,269 @@
    "status": "confirmed",
    "added": "2026-11-02",
    "src": []
+  },
+  {
+   "id": "csto-moscow-2026",
+   "date": "2026-11-11",
+   "dateText": "Wed 11 Nov",
+   "t": "CSTO Collective Security Council meets in Moscow",
+   "n": "Lukashenko met Putin for almost four hours on the eve. [31, 72]",
+   "h": false,
+   "status": "confirmed",
+   "added": "2026-11-11",
+   "src": [
+    [
+     31,
+     "Почти четыре часа продолжались переговоры Путина и Лукашенко накануне сессии ОДКБ (Putin and Lukashenko talk for almost four hours before the CSTO session)",
+     "Interfax",
+     "https://www.interfax.ru/russia/1128187",
+     2
+    ],
+    [
+     72,
+     "Лукашенко поблагодарил Путина за поддержку Беларуси по современным видам вооружений",
+     "BelTA (Belarusian state news agency; the state's own words)",
+     "https://www.belta.by/president/view/lukashenko-poblagodaril-putina-za-podderzhku-belarusi-po-sovremennym-vidam-vooruzhenij-810325-2026/",
+     2
+    ]
+   ],
+   "updated": "2026-11-11"
+  },
+  {
+   "id": "unifil-mandate-ends",
+   "date": "2026-12-31",
+   "dateText": "31 Dec",
+   "t": "UNIFIL's mandate in southern Lebanon ends",
+   "n": "G7 foreign ministers agreed on 10 Nov on the need to avoid a security void; no breakthrough on a replacement, Barrot said. [39]",
+   "h": false,
+   "status": "confirmed",
+   "added": "2026-11-11",
+   "src": [
+    [
+     39,
+     "UNIFIL patrol comes under fire in southern Lebanon",
+     "Al Jazeera (AFP)",
+     "https://www.aljazeera.com/news/2026/11/10/unifil-patrol-comes-under-fire-in-southern-lebanon",
+     3
+    ]
+   ]
+  },
+  {
+   "id": "sk-cooperating-witness-revote",
+   "date": "2026-11-11",
+   "dateText": "Wed 11 Nov, 11:00",
+   "t": "Slovak parliament repeats the cooperating-witness vote",
+   "n": "75 of 150 voted to advance it on 10 Nov; Taraba, Malatinec and Slyško voted against. [66]",
+   "h": false,
+   "status": "confirmed",
+   "added": "2026-11-11",
+   "src": [
+    [
+     66,
+     "Smer-SD vníma postoj Tarabu k novele o kajúcnikoch ako politikárčenie",
+     "TASR (teraz.sk)",
+     "https://www.teraz.sk/slovensko/smer-sd-vnima-postoj-tarabu-k-novele-o/1006517-clanok.html",
+     2
+    ]
+   ]
+  },
+  {
+   "id": "sk-pellegrini-macron-nawrocki",
+   "date": "2026-11-11",
+   "dateText": "11–12 Nov",
+   "t": "Pellegrini meets Macron in Paris, then Nawrocki at Rogalin",
+   "n": "Poznań Economic Congress and the Three Seas digital forum on 12 Nov. [206]",
+   "h": false,
+   "status": "confirmed",
+   "added": "2026-11-11",
+   "src": [
+    [
+     206,
+     "Prezident odcestuje v stredu do Francúzska, vo štvrtok navštívi Poľsko",
+     "TASR (teraz.sk)",
+     "https://www.teraz.sk/slovensko/prezident-odcestuje-v-stredu-do-francuz/1006600-clanok.html",
+     2
+    ]
+   ]
+  },
+  {
+   "id": "hu-merz-budapest",
+   "date": "2027-03-01",
+   "dateText": "spring 2027",
+   "t": "Merz visits Budapest at Magyar's invitation",
+   "n": "Invitation made at the Berlin consultations on 10 Nov. [18]",
+   "h": false,
+   "status": "reported",
+   "added": "2026-11-11",
+   "src": [
+    [
+     18,
+     "Magyar Péter Ukrajna támogatásáról: Nem tartom jó iránynak, hogy ha az EU költségvetését egy másik ügyhöz hozzákötjük",
+     "HVG",
+     "https://hvg.hu/itthon/20261110_magyar-peter-friedrich-merz-berlin-sajtotajekoztato",
+     3
+    ]
+   ]
+  },
+  {
+   "id": "sinterklaas-parkstad-2026",
+   "date": "2026-11-15",
+   "dateText": "15 and 21 Nov",
+   "t": "Sinterklaas arrives in Heerlen, then Hoensbroek, Kerkrade and Brunssum",
+   "n": "Heerlen's Bongerd on Sun 15 Nov, time to come; Hoensbroek, Kerkrade and Brunssum on Sat 21 Nov. [158]",
+   "h": false,
+   "status": "confirmed",
+   "added": "2026-11-11",
+   "src": [
+    [
+     158,
+     "Sinterklaas komt naar Parkstad: intochten op meerdere plekken",
+     "ZO-NWS",
+     "https://zo-nws.nl/sinterklaas-komt-naar-parkstad-intochten-op-meerdere-plekken",
+     3
+    ]
+   ]
+  },
+  {
+   "id": "be-peace-demo-brussels-2026-11-22",
+   "date": "2026-11-22",
+   "dateText": "Sun 22 Nov",
+   "t": "Peace and anti-militarisation demonstration in Brussels",
+   "n": "About forty organisations under the slogan “Oorlogskoorts verwoest, welzijn beschermt!” (“War fever destroys, welfare protects”); route not yet published. [207]",
+   "h": false,
+   "status": "reported",
+   "added": "2026-11-11",
+   "src": [
+    [
+     207,
+     "Betoging voor vrede en tegen militarisering in Brussel op 22 november (RSS summary)",
+     "Het Belang van Limburg",
+     "https://www.hbvl.be/binnenland/betoging-voor-vrede-en-tegen-militarisering-in-brussel-op-22-november/164371908.html",
+     3
+    ]
+   ]
+  },
+  {
+   "id": "eu-hoax-experts-meeting",
+   "date": "2026-11-11",
+   "dateText": "Wed 11 Nov",
+   "t": "EU experts meet on the airline bomb hoaxes",
+   "n": "Commission-chaired, with Norway, Switzerland and Iceland; reviews whether extra measures are needed [203]",
+   "h": false,
+   "status": "confirmed",
+   "added": "2026-11-11",
+   "src": [
+    [
+     203,
+     "EU Commission to host security talks after week of bomb hoaxes that hit 20 airports and dozens of European flights",
+     "EUobserver",
+     "https://euobserver.com/248019/eu-commission-to-host-security-talks-after-week-of-bomb-hoaxes-that-hit-20-airports-and-dozens-of-european-flights/",
+     3
+    ]
+   ]
+  },
+  {
+   "id": "bt-innenausschuss-hybrid",
+   "date": "2026-11-11",
+   "dateText": "Wed 11 Nov",
+   "t": "Bundestag interior committee asked for a report on hybrid attacks",
+   "n": "The Greens requested a government report on the refrigeration attacks and how the centres detect them [202]",
+   "h": false,
+   "status": "reported",
+   "added": "2026-11-11",
+   "src": [
+    [
+     202,
+     "Grüne verlangen von Dobrindt Aufklärung zu Kühlattacken",
+     "n-tv",
+     "https://www.n-tv.de/politik/Gruene-verlangen-von-Dobrindt-Aufklaerung-zu-Kuehlattacken-id31519168.html",
+     3
+    ]
+   ]
+  },
+  {
+   "id": "arrc-soldier-custody",
+   "date": "2026-11-24",
+   "dateText": "by about 24 Nov",
+   "t": "Limit to charge or release the US soldier held over Russian spying",
+   "n": "Arrested 10 Nov; the National Security Act allows up to 14 days without charge [12]",
+   "h": false,
+   "status": "reported",
+   "added": "2026-11-11",
+   "src": [
+    [
+     12,
+     "US Army soldier suspected of spying for Russia arrested in UK",
+     "BBC News",
+     "https://www.bbc.co.uk/news/articles/c6d7q77xgw0vo",
+     3
+    ]
+   ]
+  },
+  {
+   "id": "senate-hconres93-vote",
+   "date": "2026-11-20",
+   "dateText": "by Fri 20 Nov",
+   "t": "Senate votes on H.Con.Res. 93, Iran war powers",
+   "n": "Discharge from Foreign Relations and six hours of debate agreed on 10 Nov. [17, 108]",
+   "h": false,
+   "status": "confirmed",
+   "added": "2026-11-11",
+   "src": [
+    [
+     17,
+     "Tuesday, November 10, 2026: floor log and wrap-up (executive business, unanimous-consent agreements)",
+     "U.S. Senate Daily Press (Senate Press Gallery)",
+     "https://www.dailypress.senate.gov/tuesday-november-10-2026/",
+     1
+    ],
+    [
+     108,
+     "H. Con. Res. 93: Directing the President, pursuant to section 5(c) of the War Powers Resolution, to remove United States Armed Forces from hostilities with Iran (introduced text)",
+     "U.S. Government Publishing Office",
+     "https://www.govinfo.gov/content/pkg/BILLS-119hconres93ih/html/BILLS-119hconres93ih.htm",
+     1
+    ]
+   ]
+  },
+  {
+   "id": "dynamic-merlin-26",
+   "date": "2026-11-09",
+   "dateText": "9–13 Nov",
+   "t": "Dynamic Merlin 26: NATO anti-submarine exercise off Sweden",
+   "n": "SNMG1, with the Dutch HNLMS Den Helder as flagship, hunts German and Swedish submarines. [208]",
+   "h": false,
+   "status": "confirmed",
+   "added": "2026-11-11",
+   "src": [
+    [
+     208,
+     "NATO sub hunters in Baltic exercise to face drone attacks",
+     "UK Defence Journal",
+     "https://ukdefencejournal.org.uk/nato-sub-hunters-in-baltic-exercise-to-face-drone-attacks/",
+     3
+    ]
+   ]
+  },
+  {
+   "id": "oranje-nations-league-nov",
+   "date": "2026-11-13",
+   "dateText": "13 and 16 Nov",
+   "t": "Oranje vs Greece, then at Germany",
+   "n": "Nations League A group 2 finale, both 20:45 CET; the Netherlands and Greece level on eight points [177]",
+   "h": false,
+   "status": "confirmed",
+   "added": "2026-11-11",
+   "src": [
+    [
+     177,
+     "Oranje met 25 spelers naar slotduels groepsfase Nations League",
+     "OnsOranje (KNVB)",
+     "https://www.onsoranje.nl/nieuws/nederlands-elftal-mannen/82811/oranje-met-25-spelers-naar-slotduels-groepsfase-nations-league",
+     1
+    ]
+   ]
   }
  ],
- "updated": "2026-11-09"
+ "updated": "2026-11-11"
 }

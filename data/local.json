@@ -3,11 +3,11 @@
   "src": "Open-Meteo air-quality API (CAMS Europe), daily maxima for the town grid cell",
   "days": [
    {
-    "date": "2026-11-10",
-    "aqi": 48,
-    "pm10": 31,
-    "pm25": 28.9,
-    "uv": 1.4,
+    "date": "2026-11-11",
+    "aqi": 47,
+    "pm10": 19.3,
+    "pm25": 17.1,
+    "uv": 0.2,
     "pollen": {
      "alder": 0,
      "birch": 0,
@@ -18,11 +18,11 @@
     }
    },
    {
-    "date": "2026-11-11",
-    "aqi": 47,
-    "pm10": 19.3,
-    "pm25": 17.1,
-    "uv": 0.3,
+    "date": "2026-11-12",
+    "aqi": 49,
+    "pm10": 27.9,
+    "pm25": 25.3,
+    "uv": 1.1,
     "pollen": {
      "alder": 0,
      "birch": 0,
@@ -35,139 +35,27 @@
   ],
   "lki": {
    "station": "Heerlen-Looierstraat (NL10136)",
-   "value": 3,
-   "time": "2026-11-10T15:00:00+00:00",
+   "value": 2,
+   "time": "2026-11-11T03:00:00+00:00",
    "src": "Luchtmeetnet (RIVM) air-quality index LKI, 1 good to 11 very bad"
   },
-  "fetched": "2026-11-10T15:57:18.738Z"
+  "fetched": "2026-11-11T04:16:33.034Z"
  },
  "power": {
   "src": "EnergyZero day-ahead hourly prices, euro per kWh, VAT included, before energy tax and the supplier margin",
   "note": "Add the energy tax per kWh from energy.json and your supplier's margin to get the dynamic-contract price.",
   "days": [
    {
-    "date": "2026-11-09",
-    "hours": [
-     [
-      23,
-      0.3
-     ]
-    ],
-    "avg": 0.3,
-    "cheapest3": null,
-    "dearest3": null
-   },
-   {
     "date": "2026-11-10",
     "hours": [
      [
-      0,
-      0.29
-     ],
-     [
-      1,
-      0.28
-     ],
-     [
-      2,
-      0.27
-     ],
-     [
-      3,
-      0.28
-     ],
-     [
-      4,
-      0.27
-     ],
-     [
-      5,
-      0.28
-     ],
-     [
-      6,
-      0.39
-     ],
-     [
-      7,
-      0.53
-     ],
-     [
-      8,
-      0.57
-     ],
-     [
-      9,
-      0.54
-     ],
-     [
-      10,
-      0.5
-     ],
-     [
-      11,
-      0.47
-     ],
-     [
-      12,
-      0.44
-     ],
-     [
-      13,
-      0.44
-     ],
-     [
-      14,
-      0.46
-     ],
-     [
-      15,
-      0.51
-     ],
-     [
-      16,
-      0.56
-     ],
-     [
-      17,
-      0.54
-     ],
-     [
-      18,
-      0.5
-     ],
-     [
-      19,
-      0.46
-     ],
-     [
-      20,
-      0.39
-     ],
-     [
-      21,
-      0.34
-     ],
-     [
-      22,
-      0.3
-     ],
-     [
       23,
       0.27
      ]
     ],
-    "avg": 0.412,
-    "cheapest3": {
-     "from": 2,
-     "to": 5,
-     "avg": 0.273
-    },
-    "dearest3": {
-     "from": 7,
-     "to": 10,
-     "avg": 0.547
-    }
+    "avg": 0.27,
+    "cheapest3": null,
+    "dearest3": null
    },
    {
     "date": "2026-11-11",
@@ -282,7 +170,7 @@
     }
    }
   ],
-  "fetched": "2026-11-10T15:57:19.387Z"
+  "fetched": "2026-11-11T04:16:33.698Z"
  },
  "maas": {
   "src": "Open-Meteo Flood API (GloFAS model), Maas grid cell north of Maastricht; a model estimate, not the Rijkswaterstaat gauge",
@@ -293,11 +181,6 @@
    "note": "Rijkswaterstaat raises the Maas to heightened watch above about 1,000 m3/s at Sint Pieter and to high water above 1,500; July 2021 peaked near 3,300 (to confirm against the current RWS phases)"
   },
   "days": [
-   [
-    "2026-11-03",
-    43.8,
-    45.3
-   ],
    [
     "2026-11-04",
     39.8,
@@ -362,28 +245,33 @@
     "2026-11-16",
     45,
     64.2
+   ],
+   [
+    "2026-11-17",
+    43.1,
+    299.6
    ]
   ],
-  "fetched": "2026-11-10T15:57:20.106Z"
+  "fetched": "2026-11-11T04:16:34.392Z"
  },
  "sky": {
   "src": "NOAA SWPC planetary K-index forecast",
   "now": {
-   "time": "2026-11-10T12:00:00",
-   "kp": 1.33
+   "time": "2026-11-11T00:00:00",
+   "kp": 1.67
   },
   "max3d": {
-   "time": "2026-11-11T00:00:00",
+   "time": "2026-11-11T03:00:00",
    "kp": 3,
    "scale": null
   },
   "note": "Kp 5 is a minor storm (aurora possible on the northern horizon from Limburg on a clear night), Kp 7 or more reached the Netherlands in May and October 2024",
-  "fetched": "2026-11-10T15:57:20.447Z"
+  "fetched": "2026-11-11T04:16:34.680Z"
  },
  "roads": {
   "src": "NDW open data, actueel beeld (traffic measures and incidents in force), within 25 km of the town centre",
-  "asof": "2026-11-10T15:57:21.486Z",
-  "count": 32,
+  "asof": "2026-11-11T04:16:35.884Z",
+  "count": 21,
   "highSeverity": 4,
   "items": [
    {
@@ -447,18 +335,6 @@
     "sev": "low"
    },
    {
-    "km": 5.4,
-    "lat": 50.872,
-    "lon": 5.928,
-    "type": "GeneralObstruction",
-    "cause": "",
-    "mgmt": "",
-    "by": "NDW",
-    "from": "2026-11-10",
-    "to": "",
-    "sev": "unknown"
-   },
-   {
     "km": 5.7,
     "lat": 50.872,
     "lon": 5.959,
@@ -519,30 +395,42 @@
     "sev": "low"
    },
    {
-    "km": 10.1,
-    "lat": 50.961,
-    "lon": 5.802,
-    "type": "AbnormalTraffic",
-    "cause": "",
-    "mgmt": "",
-    "by": "NLRWS",
-    "from": "2026-11-10",
-    "to": "",
-    "sev": "lowest"
+    "km": 10.7,
+    "lat": 51.006,
+    "lon": 5.861,
+    "type": "RoadOrCarriagewayOrLaneManagement",
+    "cause": "roadMaintenance",
+    "mgmt": "carriagewayClosures",
+    "by": "Gemeente Sittard-Geleen",
+    "from": "2026-09-24",
+    "to": "2027-04-16",
+    "sev": "low"
+   },
+   {
+    "km": 10.9,
+    "lat": 50.955,
+    "lon": 5.786,
+    "type": "RoadOrCarriagewayOrLaneManagement",
+    "cause": "roadMaintenance",
+    "mgmt": "carriagewayClosures",
+    "by": "Gemeente Stein",
+    "from": "2026-11-09",
+    "to": "2026-12-18",
+    "sev": "high"
    }
   ],
-  "fetched": "2026-11-10T15:57:21.486Z"
+  "fetched": "2026-11-11T04:16:35.884Z"
  },
  "rail": {
   "src": "Rijden de Treinen, current disruptions (NS and regional operators)",
-  "total": 7,
+  "total": 0,
   "items": [],
-  "asof": "2026-11-10T15:57:22.380Z",
-  "fetched": "2026-11-10T15:57:22.380Z"
+  "asof": "2026-11-11T04:16:36.778Z",
+  "fetched": "2026-11-11T04:16:36.778Z"
  },
  "notices": {
   "src": "Officiële bekendmakingen (overheid.nl SRU), gemeente Heerlen notices that name Hoensbroek, last three weeks; street postcodes stripped",
-  "count": 28,
+  "count": 27,
   "items": [
    {
     "id": "gmb-2026-524524",
@@ -650,83 +538,94 @@
     "en": "St. Gerlachstraat 19, Hoensbroek. Permit granted for temporary use of municipal land: Z2026-00007948"
    }
   ],
-  "fetched": "2026-11-10T15:57:23.337Z"
+  "fetched": "2026-11-11T04:16:37.796Z"
  },
  "news": {
   "src": "L1 Nieuws (L1 and 1Limburg), newest headlines, English by the morning run",
   "items": [
    {
+    "id": "3270307",
+    "t": "Limburg komt er bekaaid vanaf in Nederlands-Duitse spoorambities",
+    "url": "https://www.l1nieuws.nl/nieuws/3270307/limburg-komt-er-bekaaid-vanaf-in-nederlands-duitse-spoorambities",
+    "en": "Limburg comes off badly in Dutch-German rail ambitions"
+   },
+   {
+    "id": "3270294",
+    "t": "Titel Culturele Hoofdstad voor Heerlen en Parkstad kost naar schatting 70 miljoen euro",
+    "url": "https://www.l1nieuws.nl/nieuws/3270294/titel-culturele-hoofdstad-voor-heerlen-en-parkstad-kost-naar-schatting-70-miljoen-euro",
+    "en": "European Capital of Culture title for Heerlen and Parkstad would cost an estimated 70 million euros"
+   },
+   {
+    "id": "3270152",
+    "t": "Winnaar 't Broenssems Leedje verdedigt AI: 'Ik kan geen noten lezen'",
+    "url": "https://www.l1nieuws.nl/nieuws/3270152/winnaar-t-broenssems-leedje-verdedigt-ai-ik-kan-geen-noten-lezen",
+    "en": "Winner of 't Broenssems Leedje defends using AI: 'I can't read music'"
+   },
+   {
+    "id": "3269641",
+    "t": "Koempels van de Noordzee: Ton uit Thorn werkt al 43 jaar op een gasplatform",
+    "url": "https://www.l1nieuws.nl/nieuws/3269641/koempels-van-de-noordzee-ton-uit-thorn-werkt-al-43-jaar-op-een-gasplatform",
+    "en": "North Sea miners: Ton from Thorn has worked on a gas platform for 43 years"
+   },
+   {
+    "id": "3270257",
+    "t": "Benelux-premiers willen grensoverschrijdende samenwerking verbeteren",
+    "url": "https://www.l1nieuws.nl/nieuws/3270257/benelux-premiers-willen-grensoverschrijdende-samenwerking-verbeteren",
+    "en": "Benelux prime ministers want to improve cross-border cooperation"
+   },
+   {
+    "id": "3270121",
+    "t": "Herdenking Kristallnacht in Kerkrade: 'Ik zou ook gewoon proberen een beetje te overleven, snap je?'",
+    "url": "https://www.l1nieuws.nl/nieuws/3270121/herdenking-kristallnacht-in-kerkrade-ik-zou-ook-gewoon-proberen-een-beetje-te-overleven-snap-je",
+    "en": "Kristallnacht remembrance in Kerkrade: 'I would also just try to survive a bit, you know?'"
+   },
+   {
+    "id": "3270136",
+    "t": "Een bril mag geen luxe zijn: oogtest voor 1300 Maastrichtse kinderen",
+    "url": "https://www.l1nieuws.nl/nieuws/3270136/een-bril-mag-geen-luxe-zijn-oogtest-voor-1300-maastrichtse-kinderen",
+    "en": "Glasses should not be a luxury: eye tests for 1,300 Maastricht children"
+   },
+   {
     "id": "3270166",
-    "t": "Nepbericht in gaat rond in Gennep, maar D'n Aftrap gaat gewoon door",
-    "url": "https://www.l1nieuws.nl/nieuws/3270166/nepbericht-in-gaat-rond-in-gennep-maar-dn-aftrap-gaat-gewoon-door"
+    "t": "Nepbericht gaat rond in Gennep, maar D'n Aftrap gaat gewoon door",
+    "url": "https://www.l1nieuws.nl/nieuws/3270166/nepbericht-gaat-rond-in-gennep-maar-dn-aftrap-gaat-gewoon-door",
+    "en": "Fake message circulates in Gennep, but D'n Aftrap goes ahead as planned"
    },
    {
     "id": "3269826",
     "t": "Loslopende panters en opgesloten kinderen: bizarre verkoopvideo voor Nederweertse villa gaat viraal",
-    "url": "https://www.l1nieuws.nl/nieuws/3269826/loslopende-panters-en-opgesloten-kinderen-bizarre-verkoopvideo-voor-nederweertse-villa-gaat-viraal"
+    "url": "https://www.l1nieuws.nl/nieuws/3269826/loslopende-panters-en-opgesloten-kinderen-bizarre-verkoopvideo-voor-nederweertse-villa-gaat-viraal",
+    "en": "Roaming panthers and locked-up children: bizarre sales video for a Nederweert villa goes viral"
    },
    {
     "id": "3269929",
     "t": "Zeven bedrijven in Limburg failliet verklaard: zes mensen verliezen hun baan",
-    "url": "https://www.l1nieuws.nl/nieuws/3269929/zeven-bedrijven-in-limburg-failliet-verklaard-zes-mensen-verliezen-hun-baan"
+    "url": "https://www.l1nieuws.nl/nieuws/3269929/zeven-bedrijven-in-limburg-failliet-verklaard-zes-mensen-verliezen-hun-baan",
+    "en": "Seven Limburg companies declared bankrupt: six people lose their jobs"
    },
    {
     "id": "3269812",
     "t": "Koningin Máxima geeft startschot voor tentoonstelling Cooking from the Fridge in Maastricht",
-    "url": "https://www.l1nieuws.nl/nieuws/3269812/koningin-maxima-geeft-startschot-voor-tentoonstelling-cooking-from-the-fridge-in-maastricht"
+    "url": "https://www.l1nieuws.nl/nieuws/3269812/koningin-maxima-geeft-startschot-voor-tentoonstelling-cooking-from-the-fridge-in-maastricht",
+    "en": "Queen Máxima opens the Cooking from the Fridge exhibition in Maastricht"
    },
    {
     "id": "3269904",
     "t": "Komt er dan toch een einde aan Vynova? LVM Netherlands vraagt uitstel van betaling aan",
-    "url": "https://www.l1nieuws.nl/nieuws/3269904/komt-er-dan-toch-een-einde-aan-vynova-lvm-netherlands-vraagt-uitstel-van-betaling-aan"
-   },
-   {
-    "id": "3269885",
-    "t": "Politie kiest voor aangepaste boodschap tegen nepagenten om laaggeletterden beter te bereiken",
-    "url": "https://www.l1nieuws.nl/nieuws/3269885/politie-kiest-voor-aangepaste-boodschap-tegen-nepagenten-om-laaggeletterden-beter-te-bereiken"
-   },
-   {
-    "id": "3269715",
-    "t": "Krakers voormalige watertoren Maastricht willen blijven, eigenaar wil ze eruit",
-    "url": "https://www.l1nieuws.nl/nieuws/3269715/krakers-voormalige-watertoren-maastricht-willen-blijven-eigenaar-wil-ze-eruit"
-   },
-   {
-    "id": "3269758",
-    "t": "In Weert opgegroeide politicus haalt Time Top 100",
-    "url": "https://www.l1nieuws.nl/nieuws/3269758/in-weert-opgegroeide-politicus-haalt-time-top-100"
-   },
-   {
-    "id": "3269707",
-    "t": "Bever bedreigt bijzondere natuur in Tegelen, biologen slaan alarm",
-    "url": "https://www.l1nieuws.nl/nieuws/3269707/bever-bedreigt-bijzondere-natuur-in-tegelen-biologen-slaan-alarm"
-   },
-   {
-    "id": "3269319",
-    "t": "Thomas Schwarz werd in 2019 gemarteld en vermoord in huis: hoger beroep tegen drietal van start",
-    "url": "https://www.l1nieuws.nl/nieuws/3269319/thomas-schwarz-werd-in-2019-gemarteld-en-vermoord-in-huis-hoger-beroep-tegen-drietal-van-start"
-   },
-   {
-    "id": "3269629",
-    "t": "Hoog bezoek: Benelux-premiers en koningin Máxima naar Maastricht",
-    "url": "https://www.l1nieuws.nl/nieuws/3269629/hoog-bezoek-benelux-premiers-en-koningin-maxima-naar-maastricht"
-   },
-   {
-    "id": "3269615",
-    "t": "Politie deelt uitgebreide reconstructie van bankhelpdeskfraude Wellerlooi",
-    "url": "https://www.l1nieuws.nl/nieuws/3269615/politie-deelt-uitgebreide-reconstructie-van-bankhelpdeskfraude-wellerlooi",
-    "en": "Police share a detailed reconstruction of a bank-helpdesk fraud in Wellerlooi"
+    "url": "https://www.l1nieuws.nl/nieuws/3269904/komt-er-dan-toch-een-einde-aan-vynova-lvm-netherlands-vraagt-uitstel-van-betaling-aan",
+    "en": "Is this the end for Vynova after all? LVM Netherlands applies for a suspension of payments"
    }
   ],
-  "asof": "2026-11-10T15:57:24.035Z",
-  "fetched": "2026-11-10T15:57:24.035Z"
+  "asof": "2026-11-11T04:16:39.125Z",
+  "fetched": "2026-11-11T04:16:39.125Z"
  },
- "updated": "2026-11-10",
- "asof": "2026-11-10T15:57:24.035Z",
+ "updated": "2026-11-11",
+ "asof": "2026-11-11T04:16:39.125Z",
  "town": "Hoensbroek",
  "errors": [],
  "note": "Parkstad daily-life feeds. The tool rewrites air, power, maas, sky, roads, rail, notices and news; the run writes flu, noise, woord (Limburgs word of the day, appended), culture (dated local events, confirmed), admin (dated household admin), roda (next fixtures) and shops. Town-centre coordinates only; no address or postcode is stored. strikes: announced or threatened strikes and action days that touch daily life in Parkstad, the Netherlands, Belgium, Germany or French rail links, written by the run; the page shows the next ones and feeds them to the planner. protests: demonstrations announced or notified in the major Dutch, Belgian and NRW cities and in Maastricht, Heerlen, Liège and Aachen, written by the run; nearest first on the page.",
  "flu": {
-  "t": "Week 44 (26 Oct – 1 Nov): 136 per 100,000 people saw a GP with a respiratory infection, a low level; RIVM on 4 Nov: few people with flu, no epidemic. Since September RIVM and Nivel report all acute respiratory infections, and the 2026–27 thresholds are not yet set, so the old 58 per 100,000 flu line no longer applies. Next update Wed 11 Nov.",
+  "t": "Week 44 (26 Oct – 1 Nov): 136 per 100,000 people saw a GP with a respiratory infection, a low level; RIVM on 4 Nov: few people with flu, no epidemic, though flu detections are rising from a low base. Since September RIVM and Nivel report all acute respiratory infections, and the 2026–27 thresholds are not yet set, so the old 58 per 100,000 flu line no longer applies. RIVM's 11 Nov update was not yet published at 05:30.",
   "src": [
    [
     "Actualiteiten over luchtweginfecties",
@@ -789,20 +688,6 @@
  },
  "culture": [
   {
-   "date": "2026-11-10",
-   "t": "Aod òp Nuj: Heerlen opens the carnival season on the Burgemeester van Grunsvenplein from 18:30, free",
-   "prio": true,
-   "verified": true,
-   "src": [
-    [
-     "Aod Òp Nuj 2026",
-     "https://aodopnuj.nl/"
-    ]
-   ],
-   "end": "2026-11-10",
-   "note": "Organiser page on 10 Nov: Tuesday 10 Nov from 18:30, free entry; Heerlen's event calendar names Stichting Sjpas en Cultuur Parkstad as organiser"
-  },
-  {
    "date": "2026-11-11",
    "t": "Elfde van de Elfde: the Vastelaovend season opens at 11:11; Sint Maarten lantern walks after dark",
    "prio": true,
@@ -814,29 +699,51 @@
     [
      "Sint Maarten: 11 november 2026",
      "https://www.beleven.org/feest/sint_maarten"
+    ],
+    [
+     "Limburgse pleinen kleuren op de elfde van de elfde weer rood, geel en groen: waar zijn al die feestjes?",
+     "https://www.limburger.nl/uittips-limburg/limburgse-pleinen-kleuren-op-de-elfde-van-de-elfde-weer-rood-geel-en-groen-waar-zijn-al-die-feestjes/164063242.html"
     ]
    ],
    "verified": true,
    "end": "2026-11-11",
-   "note": "Season start on 11 Nov and lantern walks early in the evening confirmed; the 11:11 time is custom and not stated on these pages; rain all day forecast"
+   "note": "Season start on 11 Nov confirmed. In Parkstad today, per De Limburger: Kerkrade opens with 11-11 Kirchroa at 11:11, Brunssum starts at 11:11 at cafézaal Schobben, Hoensbroek holds its song contest at the castle, and CV de Bokkeriejesj opens in Heerlerheide's Corneliuskerk in the evening; the provincial opening in Roermond runs 11:11–20:00 at €24.95 with about 15,000 expected. Rain most of the day.",
+   "updated": "2026-11-11"
   },
   {
    "date": "2026-11-11",
-   "t": "Leedjeskonkoer, the carnival song contest, at Kasteel Hoensbroek (time not published)",
+   "t": "Breuker Vastelaoves Leedjes Konkoer, the carnival song contest, at Kasteel Hoensbroek (time not published)",
    "prio": false,
    "verified": true,
    "src": [
     [
      "Evenementenkalender gemeente Heerlen 2026 (Gemeenteblad 2025, 515528)",
      "https://zoek.officielebekendmakingen.nl/gmb-2025-515528.html"
+    ],
+    [
+     "Limburgse pleinen kleuren op de elfde van de elfde weer rood, geel en groen: waar zijn al die feestjes?",
+     "https://www.limburger.nl/uittips-limburg/limburgse-pleinen-kleuren-op-de-elfde-van-de-elfde-weer-rood-geel-en-groen-waar-zijn-al-die-feestjes/164063242.html"
     ]
    ],
    "end": "2026-11-11",
-   "note": "Organiser Stichting CCH Gebrook; still no start time published"
+   "note": "Heerlen's event calendar lists the organiser as Stichting CCH Gebrook; De Limburger names it the Breuker Vastelaoves Leedjes Konkoer of the Comité Carnavalsviering Hoensbroek. No start time found on 11 Nov.",
+   "updated": "2026-11-11"
+  },
+  {
+   "date": "2026-11-11",
+   "t": "Poppy Day remembrance at Brunssum War Cemetery, Heufstraat, 10:30, open to all; the mayor speaks and a Coriovallum Pipe Band musician plays",
+   "prio": true,
+   "verified": true,
+   "src": [
+    [
+     "Herdenking Poppy Day op 11 november",
+     "https://www.brunssum.nl/nieuws_en_actualiteit/nieuwsberichten/Herdenking_Poppy_Day_op_11_november"
+    ]
+   ]
   },
   {
    "date": "2026-11-14",
-   "t": "Sinterklaas national arrival in Grave, on NPO television; local arrivals in Maastricht on 14 Nov, Heerlen on 15 Nov and Hoensbroek on 21 Nov",
+   "t": "Sinterklaas national arrival in Grave, on NPO television; Maastricht and Schinveld (De Sjinskoel, from 13:45) welcome him the same day",
    "prio": false,
    "verified": true,
    "src": [
@@ -847,8 +754,32 @@
     [
      "Sinterklaas komt naar Parkstad: intochten op meerdere plekken",
      "https://zo-nws.nl/sinterklaas-komt-naar-parkstad-intochten-op-meerdere-plekken"
+    ],
+    [
+     "Sinterklaas komt naar Parkstad: intochten op meerdere plekken",
+     "https://zo-nws.nl/sinterklaas-komt-naar-parkstad-intochten-op-meerdere-plekken"
+    ],
+    [
+     "Sinterklaasintochten 2026",
+     "https://www.kidsproof.nl/zuid-limburg/blog/sinterklaasintochten-blog-zuid-limburg-tip/"
     ]
-   ]
+   ],
+   "updated": "2026-11-11",
+   "note": "Parkstad arrivals follow on 15 Nov (Heerlen), 21 Nov (Hoensbroek, Kerkrade, Brunssum, Oirsbeek, Simpelveld) and 22 Nov (Schaesberg); several times and routes are still to be announced."
+  },
+  {
+   "date": "2026-11-15",
+   "t": "Sinterklaas arrives in Heerlen, Bongerd (time to be announced)",
+   "prio": true,
+   "verified": true,
+   "note": "ZO-NWS, 10 Nov; the Miljoenenlijn runs Sinterklaas steam-train rides from Simpelveld on 15 and 22 Nov.",
+   "src": [
+    [
+     "Sinterklaas komt naar Parkstad: intochten op meerdere plekken",
+     "https://zo-nws.nl/sinterklaas-komt-naar-parkstad-intochten-op-meerdere-plekken"
+    ]
+   ],
+   "added": "2026-11-11"
   },
   {
    "date": "2026-11-21",
@@ -861,6 +792,66 @@
      "https://zo-nws.nl/sinterklaas-komt-naar-parkstad-intochten-op-meerdere-plekken"
     ]
    ]
+  },
+  {
+   "date": "2026-11-21",
+   "t": "Sinterklaas in Brunssum (Victoriaplein, 12:00–17:00) and Kerkrade (Markt, 14:00)",
+   "prio": false,
+   "verified": true,
+   "note": "ZO-NWS gives 14:00 for Kerkrade; Kidsproof gives from 13:30. Hoensbroek's arrival on the Gebrookerplein the same day has its own row.",
+   "src": [
+    [
+     "Sinterklaas komt naar Parkstad: intochten op meerdere plekken",
+     "https://zo-nws.nl/sinterklaas-komt-naar-parkstad-intochten-op-meerdere-plekken"
+    ],
+    [
+     "Sinterklaasintochten 2026",
+     "https://www.kidsproof.nl/zuid-limburg/blog/sinterklaasintochten-blog-zuid-limburg-tip/"
+    ]
+   ],
+   "added": "2026-11-11"
+  },
+  {
+   "date": "2026-12-06",
+   "t": "LVK 2027 song entries close at 09:00",
+   "prio": false,
+   "verified": true,
+   "note": "Stichting LVK opened entries at 11:11 on 11 Nov; it announces the number of songs on 7 Dec and the 60 semi-finalists live on L1 radio on 14 Dec, 19:00–21:00, when ticket sales for the three semi-finals in Borenburg, Voerendaal, start.",
+   "src": [
+    [
+     "LVK opent inzending liedjes voor Limburgs Vastelaovesleedjes Konkoer 2027: Wie volgt Pruuf Mar op?",
+     "https://www.limburger.nl/regio/limburg/lvk-opent-inzending-liedjes-voor-limburgs-vastelaovesleedjes-konkoer-2027-wie-volgt-pruuf-mar-op/164298253.html"
+    ]
+   ],
+   "added": "2026-11-11"
+  },
+  {
+   "date": "2026-12-14",
+   "t": "LVK semi-finalists announced live on L1 radio, 19:00–21:00; semi-final tickets go on sale",
+   "prio": false,
+   "verified": true,
+   "note": "Semi-finals in cultureel centrum Borenburg, Voerendaal; dates not yet published.",
+   "src": [
+    [
+     "LVK opent inzending liedjes voor Limburgs Vastelaovesleedjes Konkoer 2027: Wie volgt Pruuf Mar op?",
+     "https://www.limburger.nl/regio/limburg/lvk-opent-inzending-liedjes-voor-limburgs-vastelaovesleedjes-konkoer-2027-wie-volgt-pruuf-mar-op/164298253.html"
+    ]
+   ],
+   "added": "2026-11-11"
+  },
+  {
+   "date": "2027-01-29",
+   "t": "LVK final, the Limburg carnival song contest, Stadsbrug site in Weert",
+   "prio": false,
+   "verified": true,
+   "note": "51st edition.",
+   "src": [
+    [
+     "LVK opent inzending liedjes voor Limburgs Vastelaovesleedjes Konkoer 2027: Wie volgt Pruuf Mar op?",
+     "https://www.limburger.nl/regio/limburg/lvk-opent-inzending-liedjes-voor-limburgs-vastelaovesleedjes-konkoer-2027-wie-volgt-pruuf-mar-op/164298253.html"
+    ]
+   ],
+   "added": "2026-11-11"
   },
   {
    "date": "2027-02-07",
@@ -880,18 +871,6 @@
     [
      "Pinkpop: 18, 19 and 20 juni 2027",
      "https://www.pinkpop.nl/"
-    ]
-   ]
-  },
-  {
-   "date": "2026-11-11",
-   "t": "Poppy Day remembrance at Brunssum War Cemetery, Heufstraat, 10:30, open to all; the mayor speaks and a Coriovallum Pipe Band musician plays",
-   "prio": true,
-   "verified": true,
-   "src": [
-    [
-     "Herdenking Poppy Day op 11 november",
-     "https://www.brunssum.nl/nieuws_en_actualiteit/nieuwsberichten/Herdenking_Poppy_Day_op_11_november"
     ]
    ]
   }
@@ -969,6 +948,34 @@
     "say": "ZOW-wuh-luh",
     "tip": "au as in English now; the -ele ending is two light schwa syllables and the stress stays on the first"
    }
+  },
+  {
+   "date": "2026-11-11",
+   "word": "sjpas",
+   "meaning_nl": "pret, plezier, schik",
+   "meaning_en": "fun",
+   "example": "Vier hant schpas gehat.",
+   "example_en": "We had fun.",
+   "uitspraak": {
+    "ipa": "[ʃpɑs]",
+    "say": "SHPAHSS",
+    "tip": "sj (written sch in the 1914 example) is English sh run straight into the p; the a is short and open, quicker than in German Spaß, and the final s stays sharp"
+   },
+   "note": "Heerlens: e-WLD records sjpas, sjpasz and sjpàs for Heerlen, with sjpàssich (prettig, fun) and sjpàs-máákə (to have fun); its Hoensbroek entry for the same idea gives lôl instead. Borrowed from German Spaß. The example is e-WLD's Heerlen record from 1914, spelled as recorded. On the Elfde van de Elfde the word is in the name of Stichting Sjpas en Cultuur Parkstad, which Heerlen's event calendar lists as organiser of Aod òp Nuj.",
+   "src": [
+    [
+     "e-WLD, begrip pret, schik (Heerlen: sjpas, sjpàs; Hoensbroek: lôl)",
+     "https://www.e-wld.nl/lemma/search/?search=pret*"
+    ],
+    [
+     "e-WLD, begrip plezier maken (Heerlen: sjpàs-máákə)",
+     "https://www.e-wld.nl/lemma/search/?search=plezier*"
+    ],
+    [
+     "Evenementenkalender gemeente Heerlen 2026 (Gemeenteblad 2025, 515528)",
+     "https://zoek.officielebekendmakingen.nl/gmb-2025-515528.html"
+    ]
+   ]
   }
  ],
  "strikes": [
@@ -976,18 +983,23 @@
    "id": "nl-bus-2026-11-16",
    "date": "2026-11-16",
    "end": "2026-11-22",
-   "t": "Regional bus strikes possible across the Netherlands (Arriva and other regional operators, not NS)",
+   "t": "Regional bus and train strikes possible across the Netherlands (Arriva and other regional operators, not NS)",
    "who": "FNV and CNV drivers",
    "where": "Regional buses including Arriva Limburg",
-   "impact": "Parkstad and Heuvelland bus routes; trains run",
+   "impact": "Arriva buses and regional trains in Limburg, as the cao covers both drivers and train drivers; NS trains run",
    "status": "threatened",
-   "note": "FNV members vote 9 to 12 Nov with the result on 13 Nov, CNV to 16 Nov; action only if both reject the final offer",
+   "note": "FNV members vote 9 to 12 Nov with the result on 13 Nov, CNV to 16 Nov; action only if both reject the final offer. CNV put the offer to members with a negative advice (Treinreiziger, 2 Nov). No result yet on 11 Nov.",
    "src": [
     [
      "Vakbonden verwachten nieuwe stakingen in streekvervoer",
      "https://rtvnoord.nl/verkeer/1449544/vakbonden-verwachten-nieuwe-stakingen-in-streekvervoer"
+    ],
+    [
+     "Actiedreiging is weer terug in het streekvervoer – bonden niet tevreden met eindbod",
+     "https://www.treinreiziger.nl/actiedreiging-is-weer-terug-in-het-streekvervoer-bonden-niet-tevreden-met-eindbod/"
     ]
-   ]
+   ],
+   "updated": "2026-11-11"
   },
   {
    "id": "fr-national-2026-11-17",
@@ -1036,6 +1048,28 @@
   }
  ],
  "protests": [
+  {
+   "id": "be-brussels-2026-11-22-peace",
+   "date": "2026-11-22",
+   "end": "2026-11-22",
+   "time": "",
+   "t": "For peace and against militarisation, under the slogan “Oorlogskoorts verwoest, welzijn beschermt!” (“War fever destroys, welfare protects”)",
+   "city": "Brussels",
+   "cc": "be",
+   "where": "Brussels; meeting point and route not yet published",
+   "who": "About forty organisations",
+   "size": "",
+   "impact": "Not yet known",
+   "near": false,
+   "status": "announced",
+   "src": [
+    [
+     "Betoging voor vrede en tegen militarisering in Brussel op 22 november",
+     "https://www.hbvl.be/binnenland/betoging-voor-vrede-en-tegen-militarisering-in-brussel-op-22-november/164371908.html"
+    ]
+   ],
+   "added": "2026-11-11"
+  },
   {
    "id": "be-brussels-national-2026-11-23",
    "date": "2026-11-23",

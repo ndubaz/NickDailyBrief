@@ -1,29 +1,7 @@
 {
  "note": "Out and about: curated events within about 90 minutes by car (Maastricht, Aachen, Liège, Köln, Düsseldorf, Bonn, Eindhoven, Antwerp, Brussels, the Eifel and Ardennes). The run adds events with a source, prunes those that have passed, and sets updated when details change. cat = music|markets|museums|sport|kids|food|outdoors|festival. kid = suitable for children. drive = minutes from Hoensbroek, approximate. prio = true marks the few major events (big festivals, Sinterklaas arrivals, the carnival opening) that also appear in the Planner's This week; Christmas markets come from calendar.json.",
- "updated": "2026-11-10",
+ "updated": "2026-11-11",
  "events": [
-  {
-   "id": "born-to-play-bonnefanten-2026",
-   "t": "Born to Play: hands-on art floor for ages 6–12",
-   "cat": "museums",
-   "from": "2026-04-18",
-   "to": "2027-02-28",
-   "town": "Maastricht",
-   "venue": "Bonnefanten, Tue–Sun 11:00–17:00",
-   "cc": "NL",
-   "drive": 25,
-   "cost": "Adults €22; under-18s free",
-   "kid": true,
-   "added": "2026-11-03",
-   "src": [
-    [
-     188,
-     "Born to Play: do & dare like an artist",
-     "Visit Maastricht",
-     "https://www.visitmaastricht.com/en/agenda/2556837283/born-to-play-do-dare-like-an-artist"
-    ]
-   ]
-  },
   {
    "id": "gaiazoo-ijstijd-2026",
    "t": "IJstijd (Ice Age winter theme) at GaiaZOO",
@@ -69,6 +47,29 @@
    ]
   },
   {
+   "id": "cannerberg-navo-tour-2026",
+   "t": "Guided tour of the former NATO headquarters caves in the Cannerberg",
+   "cat": "museums",
+   "from": "2026-11-06",
+   "to": "2027-01-03",
+   "town": "Maastricht",
+   "venue": "Cannerberg caves; Fridays, Saturdays and Sundays; tours in Dutch and English",
+   "cc": "NL",
+   "drive": 30,
+   "cost": "€7.25–€9.75; book a time slot",
+   "kid": true,
+   "added": "2026-11-06",
+   "src": [
+    [
+     106,
+     "Rondleiding grotten NAVO-hoofdkwartier",
+     "Explore Maastricht",
+     "https://www.exploremaastricht.nl/rondleiding/rondleiding-grotten-navo-hoofdkwartier",
+     1
+    ]
+   ]
+  },
+  {
    "id": "dutch-mountain-film-2026",
    "t": "Dutch Mountain Film Festival",
    "cat": "festival",
@@ -92,6 +93,29 @@
    "prio": true
   },
   {
+   "id": "marres-eceiza-2026",
+   "t": "Celina Eceiza: Rubyfruit Jungle, hand-worked textile installation",
+   "cat": "museums",
+   "from": "2026-11-06",
+   "to": "2027-01-03",
+   "town": "Maastricht",
+   "venue": "Marres, Capucijnenstraat; Tue–Sun 12:00–17:00, Fri to 20:00",
+   "cc": "NL",
+   "drive": 30,
+   "cost": "Free on Fridays 17:00–20:00; workshops listed",
+   "kid": false,
+   "added": "2026-11-06",
+   "src": [
+    [
+     9,
+     "Celina Eceiza: Rubyfruit Jungle",
+     "Marres",
+     "https://marres.org/program/celina-eceiza/",
+     1
+    ]
+   ]
+  },
+  {
    "id": "glow-eindhoven-2026",
    "t": "GLOW Eindhoven light-art festival",
    "cat": "festival",
@@ -113,6 +137,27 @@
     ]
    ],
    "prio": true
+  },
+  {
+   "id": "textilmuseum-sehnsucht-wald-2026",
+   "t": "Sehnsucht Wald: forest-themed textiles, some under UV light",
+   "cat": "museums",
+   "from": "2026-11-09",
+   "to": "2026-12-27",
+   "town": "Krefeld",
+   "venue": "Deutsches Textilmuseum, Krefeld-Linn",
+   "cc": "DE",
+   "drive": 70,
+   "cost": "Ticket at the door",
+   "kid": true,
+   "prio": false,
+   "src": [
+    [
+     "Deutsches Textilmuseum Krefeld: Sehnsucht Wald",
+     "https://www.deutschestextilmuseum.de/"
+    ]
+   ],
+   "added": "2026-11-09"
   },
   {
    "id": "cooking-from-the-fridge-bonnefanten-2026",
@@ -143,7 +188,7 @@
    "from": "2026-11-11",
    "to": "2026-11-11",
    "town": "Maastricht",
-   "venue": "Kesselskade",
+   "venue": "Kesselskade, 11:11–19:00, about thirty local acts",
    "cc": "NL",
    "drive": 30,
    "cost": "Sold out; remaining places via the organiser",
@@ -155,9 +200,48 @@
      "ELF: Mestreech Geit Loos",
      "ELF Maastricht",
      "https://elfmestreech.nl/"
+    ],
+    [
+     187,
+     "Limburgse pleinen kleuren op de elfde van de elfde weer rood, geel en groen: waar zijn al die feestjes?",
+     "De Limburger",
+     "https://www.limburger.nl/uittips-limburg/limburgse-pleinen-kleuren-op-de-elfde-van-de-elfde-weer-rood-geel-en-groen-waar-zijn-al-die-feestjes/164063242.html",
+     3
     ]
    ],
-   "prio": true
+   "prio": true,
+   "updated": "2026-11-11"
+  },
+  {
+   "id": "kerker-drachen-theater-aachen-2026",
+   "t": "Kerker, Drachen, Würfelwürfe: a pen-and-paper role-playing evening in German with Judith and Christian Vogt",
+   "cat": "kids",
+   "from": "2026-11-12",
+   "to": "2026-11-12",
+   "town": "Aachen",
+   "venue": "Theater Aachen, Mörgens, 20:00; further dates 7 Jan, 31 Mar, 13 May, 14 Jul",
+   "cc": "DE",
+   "drive": 25,
+   "cost": "Ticket via the theatre",
+   "kid": false,
+   "prio": false,
+   "added": "2026-11-11",
+   "src": [
+    [
+     160,
+     "Theater Aachen: Demnächst",
+     "Theater Aachen",
+     "https://www.theateraachen.de/de/start/index.html",
+     1
+    ],
+    [
+     161,
+     "Kerker, Drachen, Würfelwürfe",
+     "Theater Aachen",
+     "https://www.theateraachen.de/de/produktionen/kerker-drachen-wuerfelwuerfe.html",
+     1
+    ]
+   ]
   },
   {
    "id": "rhythmix-philzuid-heerlen-2026",
@@ -178,28 +262,6 @@
      "Familieconcert Rhythmix – Philzuid",
      "Parkstad Limburg Theaters",
      "https://www.plt.nl/programma/rhythmix-philzuid/12-11-2026-19-00"
-    ]
-   ]
-  },
-  {
-   "id": "hans-grietje-kerkrade-2026",
-   "t": "Hans & Grietje op de vlucht!, family opera (8+)",
-   "cat": "kids",
-   "from": "2026-11-13",
-   "to": "2026-11-13",
-   "town": "Kerkrade",
-   "venue": "Theater Kerkrade, 19:00",
-   "cc": "NL",
-   "drive": 15,
-   "cost": "€18.75–€28.75; children to 12 from €13.75",
-   "kid": true,
-   "added": "2026-11-03",
-   "src": [
-    [
-     195,
-     "Hans & Grietje op de vlucht!",
-     "Parkstad Limburg Theaters",
-     "https://www.plt.nl/programma/hans-grietje-op-de-vlucht/13-11-2026-19-00"
     ]
    ]
   },
@@ -248,6 +310,27 @@
    ]
   },
   {
+   "id": "tischlein-deck-dich-aachen-2026",
+   "t": "Tischlein deck dich!, family play in German (6+)",
+   "cat": "kids",
+   "from": "2026-11-13",
+   "to": "2026-11-15",
+   "town": "Aachen",
+   "venue": "Theater Aachen",
+   "cc": "DE",
+   "drive": 25,
+   "cost": "Ticket: book via the theatre; prices not published",
+   "kid": true,
+   "prio": false,
+   "added": "2026-11-08",
+   "src": [
+    [
+     "Theater Aachen: Tischlein deck dich!",
+     "https://www.theateraachen.de/de/produktionen/tischlein-deck-dich.html"
+    ]
+   ]
+  },
+  {
    "id": "winterland-hasselt-2026",
    "t": "Winterland Hasselt: Christmas market, covered ice rink, Ferris wheel",
    "cat": "markets",
@@ -266,6 +349,31 @@
      "Winterland Hasselt",
      "Winterland",
      "https://www.winterland.be/"
+    ]
+   ]
+  },
+  {
+   "id": "geek-village-hasselt-2026",
+   "t": "Geek Village: The Con, pop culture and cosplay",
+   "cat": "kids",
+   "from": "2026-11-14",
+   "to": "2026-11-15",
+   "town": "Hasselt",
+   "venue": "Trixxo Arena",
+   "cc": "BE",
+   "drive": 45,
+   "cost": "Ticket: €14 day (13+) until 12 Nov; under-13s free with an adult; one 18+ area",
+   "kid": true,
+   "prio": false,
+   "added": "2026-11-08",
+   "src": [
+    [
+     "Geek Village: The Con 2026",
+     "https://www.geekvillage.be/"
+    ],
+    [
+     "Tickets",
+     "https://www.geekvillage.be/tickets"
     ]
    ]
   },
@@ -297,24 +405,143 @@
    "updated": "2026-11-10"
   },
   {
-   "id": "sinterklaas-venlo-blerick-2026",
-   "t": "Sinterklaas arrives in Blerick (12:45) and Venlo (15:30)",
+   "id": "sinterklaas-maastricht-2026",
+   "t": "Sinterklaas arrives in Maastricht",
+   "cat": "kids",
+   "from": "2026-11-14",
+   "to": "2026-11-14",
+   "town": "Maastricht",
+   "venue": "City centre; same day as the national arrival in Grave",
+   "cc": "NL",
+   "drive": 30,
+   "cost": "Free",
+   "kid": true,
+   "prio": false,
+   "added": "2026-11-11",
+   "src": [
+    [
+     159,
+     "Sinterklaasintochten 2026",
+     "Kidsproof Zuid-Limburg",
+     "https://www.kidsproof.nl/zuid-limburg/blog/sinterklaasintochten-blog-zuid-limburg-tip/",
+     4
+    ]
+   ]
+  },
+  {
+   "id": "miljoenenlijn-sinterklaas-2026",
+   "t": "Sinterklaas steam-train rides on the Miljoenenlijn",
+   "cat": "kids",
+   "from": "2026-11-15",
+   "to": "2026-11-22",
+   "town": "Simpelveld",
+   "venue": "From Simpelveld station; Sundays 15 and 22 Nov only",
+   "cc": "NL",
+   "drive": 20,
+   "cost": "Ticket; check the railway's site for times and booking",
+   "kid": true,
+   "prio": false,
+   "added": "2026-11-11",
+   "src": [
+    [
+     158,
+     "Sinterklaas komt naar Parkstad: intochten op meerdere plekken",
+     "ZO-NWS",
+     "https://zo-nws.nl/sinterklaas-komt-naar-parkstad-intochten-op-meerdere-plekken",
+     3
+    ]
+   ]
+  },
+  {
+   "id": "sinterklaas-heerlen-2026",
+   "t": "Sinterklaas arrives in Heerlen",
    "cat": "kids",
    "from": "2026-11-15",
    "to": "2026-11-15",
-   "town": "Venlo",
-   "venue": "Blerick harbour, then Venlo Maasboulevard and the Markt",
+   "town": "Heerlen",
+   "venue": "Bongerd, city centre; time not yet published",
    "cc": "NL",
-   "drive": 50,
+   "drive": 10,
    "cost": "Free",
    "kid": true,
-   "added": "2026-11-03",
+   "prio": true,
+   "added": "2026-11-11",
    "src": [
     [
-     197,
-     "Intocht Sinterklaas Venlo & Blerick 2026",
-     "Kidsproof Eindhoven",
-     "https://www.kidsproof.nl/eindhoven/?p=38614"
+     158,
+     "Sinterklaas komt naar Parkstad: intochten op meerdere plekken",
+     "ZO-NWS",
+     "https://zo-nws.nl/sinterklaas-komt-naar-parkstad-intochten-op-meerdere-plekken",
+     3
+    ]
+   ]
+  },
+  {
+   "id": "stoffen-spektakel-leuven-2026",
+   "t": "Stoffen Spektakel Leuven: fabric and haberdashery fair, about 55 stands",
+   "cat": "markets",
+   "from": "2026-11-15",
+   "to": "2026-11-15",
+   "town": "Leuven",
+   "venue": "Brabanthal",
+   "cc": "BE",
+   "drive": 75,
+   "cost": "Free; online registration optional",
+   "kid": false,
+   "prio": false,
+   "added": "2026-11-08",
+   "src": [
+    [
+     "Stoffen Spektakel Leuven, 15 november 2026",
+     "https://stoffenspektakel.nl/stoffenbeurs-agenda/leuven/"
+    ]
+   ]
+  },
+  {
+   "id": "koeln-dom-markt-2026",
+   "t": "Weihnachtsmarkt am Kölner Dom",
+   "cat": "markets",
+   "from": "2026-11-16",
+   "to": "2026-12-23",
+   "town": "Köln",
+   "venue": "By the cathedral; Sun–Wed 11:00–21:00, Thu–Fri to 22:00, Sat 10:00–22:00; closed Sun 22 Nov",
+   "cc": "DE",
+   "drive": 65,
+   "cost": "Free entry",
+   "kid": true,
+   "prio": false,
+   "added": "2026-11-11",
+   "src": [
+    [
+     155,
+     "Weihnachtsmarkt am Kölner Dom 2026",
+     "koeln.de",
+     "https://www.koeln.de/weihnachten/weihnachtsmaerkte-koeln/weihnachtsmarkt-am-koelner-dom/",
+     2
+    ]
+   ]
+  },
+  {
+   "id": "duesseldorf-weihnachtsmarkt-2026",
+   "t": "Düsseldorfer Weihnachtsmarkt: several markets across the city centre",
+   "cat": "markets",
+   "from": "2026-11-19",
+   "to": "2026-12-30",
+   "town": "Düsseldorf",
+   "venue": "City centre; Sun–Thu 11:00–20:00, Fri–Sat 11:00–21:00; closed Sun 22 Nov and 25 Dec",
+   "cc": "DE",
+   "drive": 75,
+   "cost": "Free entry",
+   "kid": true,
+   "prio": false,
+   "added": "2026-11-11",
+   "src": [
+    [
+     156,
+     "Weihnachtsmarkt in Düsseldorf",
+     "Visit Düsseldorf",
+     "https://www.visitduesseldorf.de/erleben/veranstaltungen/weihnachtsmarkt",
+     1
     ]
    ]
   },
@@ -341,24 +568,49 @@
    ]
   },
   {
-   "id": "geheimen-parkstad-2026",
-   "t": "Geheimen van Parkstad, family show",
-   "cat": "kids",
+   "id": "afnorth-christmas-fayre-2026",
+   "t": "AFNorth Christmas Fayre",
+   "cat": "markets",
    "from": "2026-11-21",
-   "to": "2026-11-22",
-   "town": "Heerlen",
-   "venue": "Theater Heerlen",
+   "to": "2026-11-21",
+   "town": "Brunssum",
+   "venue": "AFNORTH International School, 11:00–14:00",
    "cc": "NL",
-   "drive": 10,
-   "cost": "Tickets",
+   "drive": 15,
+   "cost": "Free entry",
    "kid": true,
-   "added": "2026-11-03",
+   "prio": true,
+   "added": "2026-11-07",
    "src": [
     [
-     199,
-     "Geheimen van Parkstad brengt streekverhalen tot leven in Theater Heerlen",
-     "Drimble / ParkstadActueel",
-     "https://drimble.nl/regio/limburg/heerlen/108460506/geheimen-van-parkstad-brengt-streekverhalen-tot-leven-in-theater-heerlen.html"
+     1,
+     "AFNORTH calendar, important dates September 2026 to February 2027",
+     "JFCBS MWA November newsletter",
+     "https://afnorth-is.com/"
+    ]
+   ]
+  },
+  {
+   "id": "sinterklaas-brunssum-2026",
+   "t": "Sinterklaas in Brunssum: activities on the Victoriaplein",
+   "cat": "kids",
+   "from": "2026-11-21",
+   "to": "2026-11-21",
+   "town": "Brunssum",
+   "venue": "Victoriaplein, 12:00–17:00",
+   "cc": "NL",
+   "drive": 10,
+   "cost": "Free",
+   "kid": true,
+   "prio": false,
+   "added": "2026-11-11",
+   "src": [
+    [
+     158,
+     "Sinterklaas komt naar Parkstad: intochten op meerdere plekken",
+     "ZO-NWS",
+     "https://zo-nws.nl/sinterklaas-komt-naar-parkstad-intochten-op-meerdere-plekken",
+     3
     ]
    ]
   },
@@ -387,12 +639,12 @@
   },
   {
    "id": "sinterklaas-kerkrade-2026",
-   "t": "Sinterklaas arrives in Kerkrade (from 13:30)",
+   "t": "Sinterklaas arrives in Kerkrade (13:30 or 14:00)",
    "cat": "kids",
    "from": "2026-11-21",
    "to": "2026-11-21",
    "town": "Kerkrade",
-   "venue": "Town centre",
+   "venue": "Markt; ZO-NWS gives 14:00, Kidsproof from 13:30",
    "cc": "NL",
    "drive": 15,
    "cost": "Free",
@@ -404,10 +656,38 @@
      "Sinterklaasintochten 2026 Zuid-Limburg",
      "Kidsproof Zuid-Limburg",
      "https://www.kidsproof.nl/zuid-limburg/?p=29216"
+    ],
+    [
+     158,
+     "Sinterklaas komt naar Parkstad: intochten op meerdere plekken",
+     "ZO-NWS",
+     "https://zo-nws.nl/sinterklaas-komt-naar-parkstad-intochten-op-meerdere-plekken",
+     3
     ]
    ],
    "prio": true,
-   "updated": "2026-11-03"
+   "updated": "2026-11-11"
+  },
+  {
+   "id": "stoffencircus-genk-2026",
+   "t": "Stoffencircus fabric and haberdashery market",
+   "cat": "markets",
+   "from": "2026-11-22",
+   "to": "2026-11-22",
+   "town": "Genk",
+   "venue": "Expo grounds",
+   "cc": "BE",
+   "drive": 40,
+   "cost": "Entry terms not stated",
+   "kid": false,
+   "prio": false,
+   "src": [
+    [
+     "Termine",
+     "https://www.stoffencircus.nl/de/agenda"
+    ]
+   ],
+   "added": "2026-11-09"
   },
   {
    "id": "liege-noel-2026",
@@ -476,26 +756,46 @@
    ]
   },
   {
-   "id": "oliver-musical-kerkrade-2026",
-   "t": "Oliver en het avontuur van de straatkinderen, youth musical (8+)",
-   "cat": "kids",
-   "from": "2026-11-29",
+   "id": "kommern-advent-2026",
+   "t": "Advent weekend at the LVR open-air museum: Christmas baking from the museum ovens, crafts, carols and lantern tours",
+   "cat": "museums",
+   "from": "2026-11-28",
    "to": "2026-11-29",
-   "town": "Kerkrade",
-   "venue": "Theater Kerkrade, 15:00–16:15",
-   "cc": "NL",
-   "drive": 15,
-   "cost": "€20–€25",
+   "town": "Mechernich-Kommern",
+   "venue": "LVR-Freilichtmuseum Kommern, 10:00–18:00",
+   "cc": "DE",
+   "drive": 70,
+   "cost": "Adults €13",
    "kid": true,
-   "added": "2026-11-03",
+   "prio": false,
    "src": [
     [
-     202,
-     "Oliver en het avontuur van de straatkinderen",
-     "Parkstad Limburg Theaters",
-     "https://www.plt.nl/programma/oliver-en-het-avontuur-van-de-straatkinderen/29-11-2026-15-00"
+     "Advent weekend at the LVR Open-Air Museum Kommern, Mechernich",
+     "https://www.nrw-tourism.com/christmas-market-mechernich-freilichtmuseum-kommern"
     ]
-   ]
+   ],
+   "added": "2026-11-10"
+  },
+  {
+   "id": "jauchzet-frohlocket-koeln-2026",
+   "t": "»Jauchzet, frohlocket!«: Bach's Christmas Oratorio for families, in German (6–10)",
+   "cat": "music",
+   "from": "2026-11-29",
+   "to": "2026-11-29",
+   "town": "Köln",
+   "venue": "Kölner Philharmonie",
+   "cc": "DE",
+   "drive": 80,
+   "cost": "Ticket, €18 adults, €9 under 17",
+   "kid": true,
+   "prio": false,
+   "src": [
+    [
+     "Kölner Philharmonie: Jauchzet, frohlocket!",
+     "https://www.koelner-philharmonie.de/en/events/jauchzet-frohlocket/9206"
+    ]
+   ],
+   "added": "2026-11-09"
   },
   {
    "id": "roda-jc-de-graafschap-2026",
@@ -518,6 +818,48 @@
      "https://www.rodajckerkrade.nl/"
     ]
    ]
+  },
+  {
+   "id": "wintertijd-heerlen-2026",
+   "t": "Wintertijd Heerlen: ice rink, ice slide, curling and a free winter parade",
+   "cat": "outdoors",
+   "from": "2026-12-10",
+   "to": "2027-01-03",
+   "town": "Heerlen",
+   "venue": "Pancratiusplein and Bongerd",
+   "cc": "NL",
+   "drive": 10,
+   "cost": "Ticket at the box office",
+   "kid": true,
+   "prio": false,
+   "src": [
+    [
+     "Wintertijd Heerlen: 10 december 2026 - 3 januari 2027",
+     "https://www.wintertijdheerlen.nl/"
+    ]
+   ],
+   "added": "2026-11-09"
+  },
+  {
+   "id": "domchor-kroenungssaal-2026",
+   "t": "Christmas concert of the Aachen Cathedral Choir in the Krönungssaal",
+   "cat": "music",
+   "from": "2026-12-13",
+   "to": "2026-12-13",
+   "town": "Aachen",
+   "venue": "Rathaus, Krönungssaal",
+   "cc": "DE",
+   "drive": 30,
+   "cost": "Ticket",
+   "kid": true,
+   "prio": false,
+   "src": [
+    [
+     "Dommusik Aachen: Termine",
+     "https://dommusik-aachen.de/termine/"
+    ]
+   ],
+   "added": "2026-11-09"
   },
   {
    "id": "aachener-weihnachtscircus-2026",
@@ -584,311 +926,6 @@
      "https://www.haie.de/spielplan"
     ]
    ]
-  },
-  {
-   "id": "nieuwjaarsconcert-philzuid-2027",
-   "t": "Philzuid New Year's Concert (Strauss, Lehár)",
-   "cat": "music",
-   "from": "2027-01-07",
-   "to": "2027-01-07",
-   "town": "Maastricht",
-   "venue": "Theater aan het Vrijthof, 20:00",
-   "cc": "NL",
-   "drive": 25,
-   "cost": "€39–€55",
-   "kid": false,
-   "added": "2026-11-03",
-   "src": [
-    [
-     210,
-     "Nieuwjaarsconcert - Philzuid",
-     "Theater aan het Vrijthof",
-     "https://www.theateraanhetvrijthof.nl/voorstellingen/2027/01/nieuwjaarsconcert-philzuid"
-    ]
-   ]
-  },
-  {
-   "id": "cannerberg-navo-tour-2026",
-   "t": "Guided tour of the former NATO headquarters caves in the Cannerberg",
-   "cat": "museums",
-   "from": "2026-11-06",
-   "to": "2027-01-03",
-   "town": "Maastricht",
-   "venue": "Cannerberg caves; Fridays, Saturdays and Sundays; tours in Dutch and English",
-   "cc": "NL",
-   "drive": 30,
-   "cost": "€7.25–€9.75; book a time slot",
-   "kid": true,
-   "added": "2026-11-06",
-   "src": [
-    [
-     106,
-     "Rondleiding grotten NAVO-hoofdkwartier",
-     "Explore Maastricht",
-     "https://www.exploremaastricht.nl/rondleiding/rondleiding-grotten-navo-hoofdkwartier",
-     1
-    ]
-   ]
-  },
-  {
-   "id": "marres-eceiza-2026",
-   "t": "Celina Eceiza: Rubyfruit Jungle, hand-worked textile installation",
-   "cat": "museums",
-   "from": "2026-11-06",
-   "to": "2027-01-03",
-   "town": "Maastricht",
-   "venue": "Marres, Capucijnenstraat; Tue–Sun 12:00–17:00, Fri to 20:00",
-   "cc": "NL",
-   "drive": 30,
-   "cost": "Free on Fridays 17:00–20:00; workshops listed",
-   "kid": false,
-   "added": "2026-11-06",
-   "src": [
-    [
-     9,
-     "Celina Eceiza: Rubyfruit Jungle",
-     "Marres",
-     "https://marres.org/program/celina-eceiza/",
-     1
-    ]
-   ]
-  },
-  {
-   "id": "afnorth-christmas-fayre-2026",
-   "t": "AFNorth Christmas Fayre",
-   "cat": "markets",
-   "from": "2026-11-21",
-   "to": "2026-11-21",
-   "town": "Brunssum",
-   "venue": "AFNORTH International School, 11:00–14:00",
-   "cc": "NL",
-   "drive": 15,
-   "cost": "Free entry",
-   "kid": true,
-   "prio": true,
-   "added": "2026-11-07",
-   "src": [
-    [
-     1,
-     "AFNORTH calendar, important dates September 2026 to February 2027",
-     "JFCBS MWA November newsletter",
-     "https://afnorth-is.com/"
-    ]
-   ]
-  },
-  {
-   "id": "stoffen-spektakel-leuven-2026",
-   "t": "Stoffen Spektakel Leuven: fabric and haberdashery fair, about 55 stands",
-   "cat": "markets",
-   "from": "2026-11-15",
-   "to": "2026-11-15",
-   "town": "Leuven",
-   "venue": "Brabanthal",
-   "cc": "BE",
-   "drive": 75,
-   "cost": "Free; online registration optional",
-   "kid": false,
-   "prio": false,
-   "added": "2026-11-08",
-   "src": [
-    [
-     "Stoffen Spektakel Leuven, 15 november 2026",
-     "https://stoffenspektakel.nl/stoffenbeurs-agenda/leuven/"
-    ]
-   ]
-  },
-  {
-   "id": "geek-village-hasselt-2026",
-   "t": "Geek Village: The Con, pop culture and cosplay",
-   "cat": "kids",
-   "from": "2026-11-14",
-   "to": "2026-11-15",
-   "town": "Hasselt",
-   "venue": "Trixxo Arena",
-   "cc": "BE",
-   "drive": 45,
-   "cost": "Ticket: €14 day (13+) until 12 Nov; under-13s free with an adult; one 18+ area",
-   "kid": true,
-   "prio": false,
-   "added": "2026-11-08",
-   "src": [
-    [
-     "Geek Village: The Con 2026",
-     "https://www.geekvillage.be/"
-    ],
-    [
-     "Tickets",
-     "https://www.geekvillage.be/tickets"
-    ]
-   ]
-  },
-  {
-   "id": "tischlein-deck-dich-aachen-2026",
-   "t": "Tischlein deck dich!, family play in German (6+)",
-   "cat": "kids",
-   "from": "2026-11-13",
-   "to": "2026-11-15",
-   "town": "Aachen",
-   "venue": "Theater Aachen",
-   "cc": "DE",
-   "drive": 25,
-   "cost": "Ticket: book via the theatre; prices not published",
-   "kid": true,
-   "prio": false,
-   "added": "2026-11-08",
-   "src": [
-    [
-     "Theater Aachen: Tischlein deck dich!",
-     "https://www.theateraachen.de/de/produktionen/tischlein-deck-dich.html"
-    ]
-   ]
-  },
-  {
-   "id": "aod-op-nuj-heerlen-2026",
-   "t": "Aod òp Nuj: Heerlen's carnival opening, 25+ acts and a kids' area",
-   "cat": "festival",
-   "from": "2026-11-10",
-   "to": "2026-11-10",
-   "town": "Heerlen",
-   "venue": "Burgemeester van Grunsvenplein",
-   "cc": "NL",
-   "drive": 10,
-   "cost": "Free",
-   "kid": true,
-   "prio": true,
-   "src": [
-    [
-     "Aod òp Nuj 2026",
-     "https://aodopnuj.nl/"
-    ]
-   ],
-   "added": "2026-11-09"
-  },
-  {
-   "id": "stoffencircus-genk-2026",
-   "t": "Stoffencircus fabric and haberdashery market",
-   "cat": "markets",
-   "from": "2026-11-22",
-   "to": "2026-11-22",
-   "town": "Genk",
-   "venue": "Expo grounds",
-   "cc": "BE",
-   "drive": 40,
-   "cost": "Entry terms not stated",
-   "kid": false,
-   "prio": false,
-   "src": [
-    [
-     "Termine",
-     "https://www.stoffencircus.nl/de/agenda"
-    ]
-   ],
-   "added": "2026-11-09"
-  },
-  {
-   "id": "textilmuseum-sehnsucht-wald-2026",
-   "t": "Sehnsucht Wald: forest-themed textiles, some under UV light",
-   "cat": "museums",
-   "from": "2026-11-09",
-   "to": "2026-12-27",
-   "town": "Krefeld",
-   "venue": "Deutsches Textilmuseum, Krefeld-Linn",
-   "cc": "DE",
-   "drive": 70,
-   "cost": "Ticket at the door",
-   "kid": true,
-   "prio": false,
-   "src": [
-    [
-     "Deutsches Textilmuseum Krefeld: Sehnsucht Wald",
-     "https://www.deutschestextilmuseum.de/"
-    ]
-   ],
-   "added": "2026-11-09"
-  },
-  {
-   "id": "wintertijd-heerlen-2026",
-   "t": "Wintertijd Heerlen: ice rink, ice slide, curling and a free winter parade",
-   "cat": "outdoors",
-   "from": "2026-12-10",
-   "to": "2027-01-03",
-   "town": "Heerlen",
-   "venue": "Pancratiusplein and Bongerd",
-   "cc": "NL",
-   "drive": 10,
-   "cost": "Ticket at the box office",
-   "kid": true,
-   "prio": false,
-   "src": [
-    [
-     "Wintertijd Heerlen: 10 december 2026 - 3 januari 2027",
-     "https://www.wintertijdheerlen.nl/"
-    ]
-   ],
-   "added": "2026-11-09"
-  },
-  {
-   "id": "domchor-kroenungssaal-2026",
-   "t": "Christmas concert of the Aachen Cathedral Choir in the Krönungssaal",
-   "cat": "music",
-   "from": "2026-12-13",
-   "to": "2026-12-13",
-   "town": "Aachen",
-   "venue": "Rathaus, Krönungssaal",
-   "cc": "DE",
-   "drive": 30,
-   "cost": "Ticket",
-   "kid": true,
-   "prio": false,
-   "src": [
-    [
-     "Dommusik Aachen: Termine",
-     "https://dommusik-aachen.de/termine/"
-    ]
-   ],
-   "added": "2026-11-09"
-  },
-  {
-   "id": "jauchzet-frohlocket-koeln-2026",
-   "t": "»Jauchzet, frohlocket!«: Bach's Christmas Oratorio for families, in German (6–10)",
-   "cat": "music",
-   "from": "2026-11-29",
-   "to": "2026-11-29",
-   "town": "Köln",
-   "venue": "Kölner Philharmonie",
-   "cc": "DE",
-   "drive": 80,
-   "cost": "Ticket, €18 adults, €9 under 17",
-   "kid": true,
-   "prio": false,
-   "src": [
-    [
-     "Kölner Philharmonie: Jauchzet, frohlocket!",
-     "https://www.koelner-philharmonie.de/en/events/jauchzet-frohlocket/9206"
-    ]
-   ],
-   "added": "2026-11-09"
-  },
-  {
-   "id": "kommern-advent-2026",
-   "t": "Advent weekend at the LVR open-air museum: Christmas baking from the museum ovens, crafts, carols and lantern tours",
-   "cat": "museums",
-   "from": "2026-11-28",
-   "to": "2026-11-29",
-   "town": "Mechernich-Kommern",
-   "venue": "LVR-Freilichtmuseum Kommern, 10:00–18:00",
-   "cc": "DE",
-   "drive": 70,
-   "cost": "Adults €13",
-   "kid": true,
-   "prio": false,
-   "src": [
-    [
-     "Advent weekend at the LVR Open-Air Museum Kommern, Mechernich",
-     "https://www.nrw-tourism.com/christmas-market-mechernich-freilichtmuseum-kommern"
-    ]
-   ],
-   "added": "2026-11-10"
   }
  ]
 }

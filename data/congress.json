@@ -1,6 +1,6 @@
 {
  "note": "Congress tracker for the Profession part, three lanes in one list. kind = bill (stages introduced, committee, house, senate, conference, enacted; status 'stalled' or 'vetoed' greys the pipeline), budget (stages request, house, senate, cr, enacted, plus a deadline date), nomination (stages vacant, announced, nominated, hearing, committee, floor, confirmed, or withdrawn). dates holds the date each stage was reached. The run adds rows for key defence bills, the appropriations cycle and defence posts (service secretaries and chiefs, Joint Staff, combatant and NATO commanders, OSD, ambassadors to NATO and the host nations), moves stage and dates as Congress acts, sets updated, copies cited source rows into src, and never deletes rows (the page hides enacted, confirmed and withdrawn rows after 30 days). Deadlines feed the Planner. watch = the register of posts the tracker follows (tiers: army, joint, cocom, army4, europe; senate = requires Senate confirmation). The run fills holder, since, acting and src when it can source them, sets updated on a change, and opens a nomination row (with postId) when a post falls vacant or a name is announced. Never delete posts.",
- "updated": "2026-11-10",
+ "updated": "2026-11-11",
  "items": [
   {
    "id": "ndaa-fy27",
@@ -170,15 +170,16 @@
    "title": "Commanding General, US Army Europe and Africa",
    "org": "Army",
    "nominee": "Lt. Gen. Kevin Admiral",
-   "stage": "committee",
+   "stage": "confirmed",
    "dates": {
     "vacant": "2026-07-02",
     "announced": "2026-07-23",
     "nominated": "2026-07-23",
-    "committee": "2026-09-23"
+    "committee": "2026-09-23",
+    "confirmed": "2026-11-10"
    },
    "committee": "SASC",
-   "next": "Senate floor vote in the lame duck from 9 Nov; nominations still pending at adjournment go back to the White House.",
+   "next": "Assumes command of USAREUR-AF and Allied Land Command at a ceremony not yet dated; Maj. Gen. Norrie, acting since 2 Jul, was confirmed the same day to be lieutenant general. [17, 107]",
    "postId": "usareur",
    "added": "2026-11-03",
    "src": [
@@ -200,11 +201,32 @@
      "U.S. Senate",
      "https://www.senate.gov/legislative/LIS/executive_calendar/xcalv.pdf",
      1
+    ],
+    [
+     17,
+     "Tuesday, November 10, 2026: floor log and wrap-up (executive business, unanimous-consent agreements)",
+     "U.S. Senate Daily Press (Senate Press Gallery)",
+     "https://www.dailypress.senate.gov/tuesday-november-10-2026/",
+     1
+    ],
+    [
+     107,
+     "Executive Calendar, Wednesday, November 11, 2026 (Issue No. 345)",
+     "U.S. Senate",
+     "https://www.senate.gov/legislative/LIS/executive_calendar/2026/11_11_2026.pdf",
+     1
+    ],
+    [
+     106,
+     "Executive Calendar, Tuesday, November 10, 2026 (Issue No. 344)",
+     "U.S. Senate",
+     "https://www.senate.gov/legislative/LIS/executive_calendar/2026/11_10_2026.pdf",
+     1
     ]
    ],
    "number": "PN1188",
-   "status": "Reported by SASC on 23 Sep; still Calendar No. 924 on the Senate Executive Calendar of 10 Nov, no floor action.",
-   "updated": "2026-11-10",
+   "status": "Confirmed by the Senate on 10 Nov (Exec. Cal. #924) in the evening wrap-up, with 19 other military calendar items reported on 23 Sep; gone from the 11 Nov Executive Calendar.",
+   "updated": "2026-11-11",
    "verified": true
   },
   {
@@ -355,13 +377,14 @@
    "kind": "bill",
    "title": "Impeaching Peter Brian Hegseth, Secretary of Defense (Rep. Massie)",
    "number": "H.Res. (number not yet assigned)",
-   "stage": "introduced",
+   "stage": "committee",
    "dates": {
-    "introduced": "2026-11-09"
+    "introduced": "2026-11-09",
+    "committee": "2026-11-10"
    },
-   "status": "Offered by Rep. Massie on 9 Nov; listed on the House floor schedule as an item that may be considered; 34 pages, Article I on section 2(c) of the War Powers Resolution over Iran.",
-   "next": "Privileged: the House must act within two legislative days; NOS and tagesschau say a vote could come by Wed 11 Nov. [17, 97, 92, 18]",
-   "committee": "House floor (privileged); Judiciary on referral",
+   "status": "Stalled in committee: the House voted 211–204 on 10 Nov to refer the resolution to the Judiciary Committee; Massie called it a “procedural motion to kill the resolution”.",
+   "next": "Judiciary is not obliged to take it up; Democrats hold the House majority from January. [16, 99, 105]",
+   "committee": "House Judiciary (referred 10 Nov)",
    "added": "2026-11-10",
    "src": [
     [
@@ -391,9 +414,68 @@
      "NOS",
      "https://nos.nl/l/2638802",
      3
+    ],
+    [
+     16,
+     "House opts to stall Hegseth impeachment vote, sending resolution to Judiciary Committee",
+     "Breaking Defense",
+     "https://breakingdefense.com/2026/11/house-opts-to-stall-hegseth-impeachment-vote-sending-resolution-to-judiciary-committee/",
+     3
+    ],
+    [
+     99,
+     "House Republicans sidestep effort to impeach Hegseth",
+     "Defense News",
+     "https://www.defensenews.com/congress/2026/11/10/house-republicans-sidestep-effort-to-impeach-hegseth/",
+     3
+    ],
+    [
+     105,
+     "US-Repräsentantenhaus lehnt Amtsenthebungsverfahren gegen Hegseth ab",
+     "tagesschau",
+     "https://www.tagesschau.de/ausland/amerika/hegseth-amtsenthebungsverfahren-gestoppt-100.html",
+     3
     ]
    ],
-   "updated": "2026-11-10"
+   "updated": "2026-11-11"
+  },
+  {
+   "id": "hconres93-iran-war-powers-2026",
+   "kind": "bill",
+   "title": "Directing the President to remove US forces from hostilities with Iran (War Powers Resolution, section 5(c))",
+   "number": "H.Con.Res. 93",
+   "stage": "house",
+   "dates": {
+    "introduced": "2026-04-28"
+   },
+   "status": "Filed by Rep. Moulton on 28 Apr; the White House opposed it on 15 Sep, calling such concurrent resolutions without the force of law; now in the Senate Foreign Relations Committee.",
+   "next": "Senate agreed on 10 Nov to discharge it and vote no later than Fri 20 Nov after six hours of debate. [17, 108, 109]",
+   "committee": "Senate Foreign Relations (discharge agreed)",
+   "added": "2026-11-11",
+   "updated": "2026-11-11",
+   "src": [
+    [
+     17,
+     "Tuesday, November 10, 2026: floor log and wrap-up (executive business, unanimous-consent agreements)",
+     "U.S. Senate Daily Press (Senate Press Gallery)",
+     "https://www.dailypress.senate.gov/tuesday-november-10-2026/",
+     1
+    ],
+    [
+     108,
+     "H. Con. Res. 93: Directing the President, pursuant to section 5(c) of the War Powers Resolution, to remove United States Armed Forces from hostilities with Iran (introduced text)",
+     "U.S. Government Publishing Office",
+     "https://www.govinfo.gov/content/pkg/BILLS-119hconres93ih/html/BILLS-119hconres93ih.htm",
+     1
+    ],
+    [
+     109,
+     "Statement of Administration Policy: H. Con. Res. 93 (15 Sep 2026)",
+     "Executive Office of the President, Office of Management and Budget",
+     "https://www.whitehouse.gov/wp-content/uploads/2026/09/SAP-HCR93.pdf",
+     1
+    ]
+   ]
   }
  ],
  "tiers": [
@@ -893,10 +975,18 @@
      "Gen. Christopher Donahue relinquishes command of US Army Europe and Africa",
      "Defense News",
      "https://development.defensenews.com/?p=45565"
+    ],
+    [
+     17,
+     "Tuesday, November 10, 2026: floor log and wrap-up (executive business, unanimous-consent agreements)",
+     "U.S. Senate Daily Press (Senate Press Gallery)",
+     "https://www.dailypress.senate.gov/tuesday-november-10-2026/",
+     1
     ]
    ],
-   "updated": "2026-11-03",
-   "verified": true
+   "updated": "2026-11-11",
+   "verified": true,
+   "note": "Norrie remains acting until Lt. Gen. Admiral, confirmed by the Senate on 10 Nov, assumes command; no ceremony date found. Norrie was confirmed the same day to be lieutenant general (post not named in the Senate log)."
   },
   {
    "id": "usareur-dcg",
@@ -1077,11 +1167,18 @@
      "Commander, Allied Land Command",
      "lc.nato.int",
      "https://lc.nato.int/about-us/biographies/commander"
+    ],
+    [
+     17,
+     "Tuesday, November 10, 2026: floor log and wrap-up (executive business, unanimous-consent agreements)",
+     "U.S. Senate Daily Press (Senate Press Gallery)",
+     "https://www.dailypress.senate.gov/tuesday-november-10-2026/",
+     1
     ]
    ],
-   "updated": "2026-11-10",
+   "updated": "2026-11-11",
    "verified": true,
-   "note": "Dual-hatted with the USAREUR-AF commander; empty since Donahue left on 2 Jul 2026, pending Lt. Gen. Admiral's confirmation.",
+   "note": "Dual-hatted with the USAREUR-AF commander; empty since Donahue left on 2 Jul 2026. Lt. Gen. Admiral was confirmed by the Senate on 10 Nov and takes the post when he assumes command; no date found.",
    "vacant": true
   },
   {

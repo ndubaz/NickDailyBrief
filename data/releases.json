@@ -1,6 +1,6 @@
 {
  "note": "Frontier log: dated releases, published results and shipped capabilities in AI, chips, robotics and autonomy. One entry per release; the run appends and never edits. kind = model|chip|robot|autonomy|result|tool.",
- "updated": "2026-11-07",
+ "updated": "2026-11-11",
  "releases": [
   {
    "date": "2026-11-02",
@@ -524,6 +524,102 @@
      "Meta releases Muse Ember, a new lightweight model for agent execution",
      "TechCrunch",
      "https://techcrunch.com/2026/11/09/meta-releases-muse-ember-a-new-lightweight-model-for-agent-execution/",
+     3
+    ]
+   ]
+  },
+  {
+   "id": "2026-11-10-google-gemini-4-carbon-ga",
+   "date": "2026-11-10",
+   "kind": "model",
+   "t": "Google makes Gemini 4 Carbon generally available",
+   "lab": "Google DeepMind",
+   "n": "Artificial Analysis Intelligence Index v5 59 (first); Coding Agent Index 59 against 62 for Claude Opus 5.5; $7.76 per index task against $10.04 for Opus 5.5; introductory price $2/$10 per million tokens; /swarm multi-agent preview in Antigravity. [89, 90, 91]",
+   "src": [
+    [
+     89,
+     "Gemini 4 Carbon is now available (Koray Kavukcuoglu, 10 Nov 2026)",
+     "Google",
+     "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/",
+     1
+    ],
+    [
+     90,
+     "Gemini 4 Carbon is the new #1 on the Artificial Analysis Intelligence Index v5",
+     "Artificial Analysis",
+     "https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1",
+     1
+    ],
+    [
+     91,
+     "Google releases Gemini 4 Carbon with agent ‘swarm’ feature (Robert Hart)",
+     "The Verge",
+     "https://www.theverge.com/ai-artificial-intelligence/1030787/google-gemini-4-carbon-public-rollout",
+     3
+    ]
+   ]
+  },
+  {
+   "id": "2026-11-10-deepmind-aa-mka",
+   "date": "2026-11-10",
+   "kind": "result",
+   "t": "Google DeepMind and Artificial Analysis launch the Multimodal Knowledge Agent benchmark",
+   "lab": "Google DeepMind and Artificial Analysis",
+   "n": "200 private visual tasks in 10 industries, about 70 rubric criteria each; Claude Fable 5.2 57%, Gemini 4 Carbon 54%, Claude Opus 5.5 53%; $31.97 against $6.29 per task (Fable 5.2 against Carbon). [92]",
+   "src": [
+    [
+     92,
+     "Multimodal Knowledge Agent (MKA) benchmark: testing knowledge work capabilities with complex visual files",
+     "Artificial Analysis",
+     "https://artificialanalysis.ai/articles/google-deepmind-multimodal-knowledge-agent",
+     1
+    ]
+   ]
+  },
+  {
+   "id": "2026-11-09-google-tpu-8tx-8i-max",
+   "date": "2026-11-09",
+   "kind": "chip",
+   "t": "Google adds TPU 8tx for confidential inference and dual-chip TPU 8i Max",
+   "lab": "Google",
+   "n": "Four eighth-generation TPU systems in one year; 8tx up to 2x lower latency than TPU 8t with hardware-level confidential compute; 8i Max doubles compute, SRAM and HBM bandwidth of TPU 8i; nearly 100 TPU customers. [93, 94]",
+   "src": [
+    [
+     93,
+     "Our newest TPUs: 8tx and 8i Max, built for the agentic era (9 Nov 2026)",
+     "Google",
+     "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/tpu-8i-max-and-8tx/",
+     1
+    ],
+    [
+     94,
+     "Google broadens its AI hardware portfolio with two new specialized chips (Ram Iyer)",
+     "TechCrunch",
+     "https://techcrunch.com/2026/11/10/google-broadens-its-ai-hardware-portfolio-with-two-new-specialized-chips/",
+     3
+    ]
+   ]
+  },
+  {
+   "id": "2026-11-10-amd-epyc-venice",
+   "date": "2026-11-10",
+   "kind": "chip",
+   "t": "AMD makes 6th Gen EPYC (Zen 6, ‘Venice’) server processors generally available",
+   "lab": "AMD",
+   "n": "2P EPYC 9996 (2 x 256 cores, 600 W, $14,904 per chip) 5,470 SPECrate2017_int_base against 3,260 (EPYC 9965) and 2,510 (Xeon 6980P); up to 5.3 GHz; Helion racks up to 73,728 threads; TSMC N2P compute die. [217, 218]",
+   "src": [
+    [
+     217,
+     "AMD Showcases 6th Gen AMD EPYC Processors to Lead Next Era of AI and Enterprise Computing (press release, 10 Nov 2026)",
+     "AMD",
+     "https://ir.amd.com/news-events/press-releases/detail/1305/amd-showcases-6th-gen-amd-epyc-processors-to-lead-next-era-of-ai-and-enterprise-computing",
+     1
+    ],
+    [
+     218,
+     "AMD Zen 6 EPYC ‘Venice’ deep dive and benchmarking (Jake Roach)",
+     "Tom's Hardware",
+     "https://www.tomshardware.com/pc-components/cpus/amd-zen-6-epyc-venice-deep-dive-and-benchmarking-dual-epyc-9996-with-1-024-threads-delivers-up-to-93-percent-performance-gain-gen-on-gen-9686f-outclasses-nvidias-vera",
      3
     ]
    ]

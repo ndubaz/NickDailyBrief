@@ -1,6 +1,6 @@
 {
  "note": "The board: ten tracked theatres with a dated log of facts per theatre. The morning run appends one entry per theatre that had a reportable event (newest last) with the cited source rows copied into src, and never edits or deletes old entries. No status labels: the page derives activity from the dates. lat/lon place the marker on the schematic map. short = map label; lp = label position (above, below, left, right).",
- "updated": "2026-11-10",
+ "updated": "2026-11-11",
  "theatres": [
   {
    "id": "ru-ua",
@@ -369,6 +369,61 @@
        2
       ]
      ]
+    },
+    {
+     "date": "2026-11-11",
+     "t": "The Air Force said Russia launched one Iskander-M ballistic missile and 162 Shahed-type drones, 96 of them jet-powered, from 18:00 on 9 Nov, and that 135 drones were downed or suppressed by 07:30 on 10 Nov. [26] It counted 155 more Shahed-type drones, two Kh-59/69 missiles and Bandrol munitions between 06:30 and 19:00 on 10 Nov, with 138 targets downed. [27] US-mediated trilateral talks with Ukrainian and Russian delegations opened in Abu Dhabi on 10 Nov and ran four hours; a second day is set for 11 Nov. [6, 22] The General Staff said a drone attack overnight into 10 Nov caused explosions and a fire at the 123rd Aircraft Repair Plant in Staraya Russa, which services A-50 aircraft. [30] Leningrad Oblast's governor said a drone hit the Ust-Luga port zone overnight into 11 Nov, starting a fire, and that 146 drones were downed over the region. [28, 29]",
+     "src": [
+      [
+       26,
+       "ADF down 135 of 162 Russian drones launched against Ukraine overnight",
+       "Ukrinform",
+       "https://www.ukrinform.net/rubric-ato/4183161-adf-down-135-of-162-russian-drones-launched-against-ukraine-overnight.html",
+       2
+      ],
+      [
+       27,
+       "Ukrainian air defenses neutralize 124 hostile drones, 14 Bandrol jet-powered munitions",
+       "Ukrinform",
+       "https://www.ukrinform.net/rubric-ato/4183518-ukrainian-air-defenses-neutralize-124-hostile-drones-14-bandrol-jetpowered-munitions.html",
+       2
+      ],
+      [
+       6,
+       "Ukraine, Russia, US conclude 1st day of peace talks in Abu Dhabi, discuss 'humanitarian, de-escalation steps'",
+       "Kyiv Independent",
+       "https://kyivindependent.com/ukraine-russia-us-resume-trilateral-peace-talks-in-abu-dhabi-after-9-month-pause/",
+       3
+      ],
+      [
+       22,
+       "Abu Dhabi talks are productive but agreement will take time, Rubio says",
+       "Ukrinform (Sky News)",
+       "https://www.ukrinform.net/rubric-polytics/4183472-abu-dhabi-alks-are-productive-but-agreement-will-take-time-rubio-says.html",
+       2
+      ],
+      [
+       30,
+       "Ukraine strikes Russian plant responsible for repairing A-50 spy planes, General Staff confirms",
+       "Ukrinform",
+       "https://www.ukrinform.net/rubric-ato/4183386-ukraine-strikes-russian-plant-responsible-for-repairing-a50-spy-planes-general-staff-confirms.html",
+       2
+      ],
+      [
+       28,
+       "Портовая зона Усть-Луги подверглась атаке БПЛА, начался пожар (Ust-Luga port zone hit in drone attack, fire breaks out)",
+       "Interfax",
+       "https://www.interfax.ru/russia/1128182",
+       2
+      ],
+      [
+       29,
+       "Число сбитых над Ленобластью БПЛА увеличилось до 146 (Drones downed over Leningrad Oblast rise to 146)",
+       "Interfax",
+       "https://www.interfax.ru/russia/1128177",
+       2
+      ]
+     ]
     }
    ],
    "short": "Ukraine",
@@ -632,6 +687,33 @@
        3
       ]
      ]
+    },
+    {
+     "date": "2026-11-11",
+     "t": "The US Justice Department charged three men on 10 Nov whom it described as acting for the IRGC and Kataib Hezbollah over nearly 20 attacks and attempted attacks in the US and Europe, including a plot at RAF Fairford; Iran denies involvement. [15] Bushehr's crisis management office said a fire on a Phase 14 platform in the South Pars gas field was put out on 10 Nov and all 17 workers who jumped into the sea were rescued. [34] Foreign ministry spokesman Esmaeil Baqaei said on 9 Nov that Iran remains committed to the NPT and confirmed IAEA inspections at Bushehr days earlier. [189]",
+     "src": [
+      [
+       15,
+       "US charges 3 men over alleged Iranian-backed plot at UK Fairford air base",
+       "Al Jazeera",
+       "https://www.aljazeera.com/news/2026/11/11/us-charges-3-iranian-backed-men-over-alleged-plot-at-uk-fairford-air-base",
+       3
+      ],
+      [
+       34,
+       "Fire contained on platform in Iran's South Pars gas field",
+       "Al Jazeera (Reuters)",
+       "https://www.aljazeera.com/news/2026/11/10/fire-contained-on-platform-in-irans-south-pars-gas-field",
+       3
+      ],
+      [
+       189,
+       "Iran backs nuclear treaty even as hardliners raise prospect of bomb",
+       "Al Jazeera",
+       "https://www.aljazeera.com/news/2026/11/10/iran-backs-nuclear-treaty-even-as-hardliners-raise-prospect-of-bomb",
+       3
+      ]
+     ]
     }
    ],
    "short": "Iran",
@@ -778,6 +860,33 @@
        "Anadolu Agency",
        "https://www.aa.com.tr/en/middle-east/eisenkot-s-bloc-seeks-to-oust-netanyahu-ally-as-israeli-parliament-speaker/4118104",
        2
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-11",
+     "t": "Israel's new Knesset was sworn in on 10 Nov; Gadi Eisenkot has 28 days from 8 Nov to form a government, with a possible two-week extension. [38] UNIFIL said about a dozen rounds were fired at one of its patrols near Wadi Jilu in Tyre district on 10 Nov; the patrol returned fire and there were no casualties. [39] French Foreign Minister Barrot said G7 foreign ministers agreed in Paris on the need to avoid a security void in Lebanon after UNIFIL's mandate ends on 31 Dec. [39] The Board of Peace said Israel's response to flooding in Gaza “remains insufficient”. [190]",
+     "src": [
+      [
+       38,
+       "Israel's new parliament sworn in as leaders compete to form government",
+       "BBC News",
+       "https://www.bbc.co.uk/news/articles/crd939lpzjp9o",
+       3
+      ],
+      [
+       39,
+       "UNIFIL patrol comes under fire in southern Lebanon",
+       "Al Jazeera (AFP)",
+       "https://www.aljazeera.com/news/2026/11/10/unifil-patrol-comes-under-fire-in-southern-lebanon",
+       3
+      ],
+      [
+       190,
+       "Board of Peace says Israel's aid response after Gaza floods 'insufficent'",
+       "BBC News",
+       "https://www.bbc.co.uk/news/articles/cw4g1g4ll5m1o",
+       3
       ]
      ]
     }
@@ -948,6 +1057,19 @@
        "Saudi Arabia downs missiles fired at Riyadh after Houthi attack on pipeline",
        "Al Jazeera (AFP)",
        "https://www.aljazeera.com/news/2026/11/10/saudi-arabia-downs-missiles-fired-at-riyadh-after-houthi-attack-on-pipeline",
+       3
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-11",
+     "t": "Al Jazeera reported on 10 Nov that an oil company building in Sanaa was struck overnight on Monday and that Saudi Arabia said it intercepted missiles fired by the Houthis. [191]",
+     "src": [
+      [
+       191,
+       "Attacks escalate between Saudi-led forces and Yemen's Iran-backed Houthis (video)",
+       "Al Jazeera",
+       "https://www.aljazeera.com/video/newsfeed/2026/11/10/attacks-escalate-between-saudi-led-forces-and-yemens-iran-backed-houthis",
        3
       ]
      ]
@@ -1127,6 +1249,26 @@
        2
       ]
      ]
+    },
+    {
+     "date": "2026-11-11",
+     "t": "Taiwan's defence ministry counted four PLA aircraft sorties, two of which crossed the median line into the southwestern ADIZ, seven navy ships and three official ships in the 24 hours to 06:00 on 11 Nov. [45] The ministry's daily reports for November 2025 to October 2026 add up to 3,125 sorties. [40]",
+     "src": [
+      [
+       45,
+       "PLA activities in the waters and airspace around Taiwan, 11 Nov",
+       "Taiwan Ministry of National Defense",
+       "https://www.mnd.gov.tw/en/News/PLAAct/88195",
+       1
+      ],
+      [
+       40,
+       "PLA activities in the waters and airspace around Taiwan: daily report archive (Chinese), reports of 1 Nov 2025 to 11 Nov 2026",
+       "Taiwan Ministry of National Defense",
+       "https://www.mnd.gov.tw/news/plaactlist",
+       1
+      ]
+     ]
     }
    ],
    "short": "Taiwan",
@@ -1269,6 +1411,19 @@
        "(LEAD) N. Korea tests new torpedo, eyes early 2027 deployment",
        "Yonhap",
        "https://en.yna.co.kr/view/AEN20261110001251315",
+       3
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-11",
+     "t": "Kim Yo-jong rejected on 10 Nov, in a statement carried by KCNA, UN Secretary-General Guterres's call to restore inter-Korean communication channels after the 21 Sep mine blast in the DMZ, calling his attitude “prejudiced and irresponsible”. [192]",
+     "src": [
+      [
+       192,
+       "N. Korea rejects U.N. chief's call for inter-Korean dialogue after mine blast",
+       "Yonhap",
+       "https://en.yna.co.kr/view/AEN20261110007400315",
        3
       ]
      ]
@@ -1443,6 +1598,19 @@
        3
       ]
      ]
+    },
+    {
+     "date": "2026-11-11",
+     "t": "The Dar Hamar Emergency Response Room accused the RSF on 10 Nov of beatings, levies on mining mill operators and seizures of Starlink terminals in Foga and Wad Banda in West Kordofan, and of closing the Wad Banda market; Radio Tamazuj reported fierce fighting between the army and the RSF near Foga over the previous two days. [193]",
+     "src": [
+      [
+       193,
+       "RSF accused of abuses, market closure in West Kordofan",
+       "Radio Tamazuj",
+       "https://www.radiotamazuj.org/en/news/article/rsf-accused-of-abuses-market-closure-in-west-kordofan",
+       3
+      ]
+     ]
     }
    ],
    "short": "Sudan",
@@ -1501,6 +1669,19 @@
        "Niger: des propos de l'UE sur l'envoi de militaires algériens dans le pays suscitent la polémique",
        "RFI",
        "https://www.rfi.fr/fr/afrique/20261110-niger-alg%C3%A9rieutoreit",
+       3
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-11",
+     "t": "RFI reported on 10 Nov that Mali's transitional prime minister, General Abdoulaye Maïga, deplored a “refoulement non concerté” (“uncoordinated expulsion”) by Guinea; Malian figures put the gold miners arriving from Guinea since 1 Nov at about 160,000, and nearly 15,000 have left for Burkina Faso. [194]",
+     "src": [
+      [
+       194,
+       "Le Mali déplore un «refoulement non concerté» d'orpailleurs arrivés de Guinée et poursuit leur prise en charge (Mali deplores an uncoordinated expulsion of gold miners from Guinea)",
+       "RFI",
+       "https://www.rfi.fr/fr/afrique/20261110-mali-d%C3%A9plore-refoulement-non-concert%C3%A9-d-orpailleurs-arriv%C3%A9s-de-guin%C3%A9e-et-poursuit-leur-prise-en-charge",
        3
       ]
      ]
@@ -1644,6 +1825,26 @@
        3
       ]
      ]
+    },
+    {
+     "date": "2026-11-11",
+     "t": "Actualite.cd reported on 10 Nov, citing local and humanitarian sources, that at least 40 bodies of civilians killed by the ADF have been found since 1 Nov in the Bakaiku grouping of Mambasa territory, Ituri, in villages that remain inaccessible. [195] The airports authority extended the closure of Bunia airport to at least 8 Feb 2027; only humanitarian, medical and emergency flights are allowed. [196]",
+     "src": [
+      [
+       195,
+       "RDC : découverte de plus de 40 corps après une série d'attaques des ADF dans différents villages de Mambasa (More than 40 bodies found after ADF attacks in Mambasa)",
+       "Actualite.cd",
+       "https://actualite.cd/2026/11/10/rdc-decouverte-de-plus-de-40-corps-apres-une-serie-dattaques-des-adf-dans-differents",
+       3
+      ],
+      [
+       196,
+       "RDC: la fermeture de l'aéroport de Bunia prolongé jusqu'au 8 février 2027 (Bunia airport closure extended to 8 Feb 2027)",
+       "RFI",
+       "https://www.rfi.fr/fr/afrique/20261110-rdc-la-fermeture-de-l-a%C3%A9roport-de-bunia-prolong%C3%A9-jusqu-au-8-f%C3%A9vrier-2027",
+       3
+      ]
+     ]
     }
    ],
    "short": "DRC",
@@ -1689,6 +1890,19 @@
        "Beijing urges US to correct its 'wrongdoings' swiftly after Washington sanctions Chinese companies over Cuba",
        "Anadolu Agency",
        "https://www.aa.com.tr/en/asia-pacific/beijing-urges-us-to-correct-its-wrongdoings-swiftly-after-washington-sanctions-chinese-companies-over-cuba/4115021",
+       3
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-11",
+     "t": "El Salvador's military struck the 400 Mawozo gang's headquarters outside Port-au-Prince in Haiti on 10 Nov, President Nayib Bukele said; it is El Salvador's first military action on a Haitian target since it deployed more than 2,000 soldiers in October. [197]",
+     "src": [
+      [
+       197,
+       "Headquarters of Haitian gang destroyed, El Salvador's president says",
+       "BBC News",
+       "https://www.bbc.co.uk/news/articles/cmvg2xdwnwezo",
        3
       ]
      ]
@@ -1872,6 +2086,33 @@
        1
       ]
      ]
+    },
+    {
+     "date": "2026-11-11",
+     "t": "The UK announced a £90 million Atlantic Net framework with Ocean Infinity Solutions for uncrewed systems and sensors to detect submarines and protect undersea infrastructure in the North Atlantic, at the International Sea Power Conference in Oslo on 10 Nov. [198] The Barents Observer reported on 10 Nov that the PanStar Acro, the first Korean container ship to sail the Northern Sea Route, had a series of problems and is reportedly up for sale. [199] NATO Secretary General Rutte gives a keynote at the Atlantic Future Forum aboard HMS Prince of Wales in Oslo at 18:10 CET on 11 Nov. [80]",
+     "src": [
+      [
+       198,
+       "UK Launches £90M 'Atlantic Net' Project to Protect Undersea Cables and Hunt Submarines",
+       "Naval News",
+       "https://www.navalnews.com/naval-news/2026/11/90-million-investment-for-new-drones-and-sensors-to-protect-undersea-cables-and-hunt-russian-submarines/",
+       3
+      ],
+      [
+       199,
+       "Korea's historical Arctic voyage did not go all smoothly",
+       "The Barents Observer",
+       "https://thebarentsobserver.com/news/koreas-historical-arctic-voyage-did-not-go-all-smoothly/461691",
+       3
+      ],
+      [
+       80,
+       "NATO Secretary General to visit Norway (media advisory, 9 Nov)",
+       "NATO",
+       "https://www.nato.int/en/news-and-events/events/media-advisories/2026/11/09/nato-secretary-general-to-visit-norway",
+       1
+      ]
+     ]
     }
    ]
   },
@@ -1942,6 +2183,26 @@
        "Balkan Insight",
        "https://balkaninsight.com/2026/11/09/montenegro-registers-14-citizens-fighting-in-foreign-wars-since-2022/bi/",
        3
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-11",
+     "t": "The UN International Residual Mechanism for Criminal Tribunals announced on 10 Nov that it denied early release, for a second time, to Mićo Stanišić, Republika Srpska's wartime interior minister serving 22 years. [200] Serbia's electronic media regulator imposed four measures on the pro-Vučić channel Informer TV on 10 Nov, including bans of 10 and 15 days on one of its programmes. [201]",
+     "src": [
+      [
+       200,
+       "UN Court Rejects Bosnian Serb War Criminal's Early Release Plea Again",
+       "Balkan Insight",
+       "https://balkaninsight.com/2026/11/10/un-court-rejects-bosnian-serb-war-criminals-early-release-plea-again/btj/",
+       3
+      ],
+      [
+       201,
+       "Serbia's Media Regulator Imposes Four Bans on pro-Vucic Informer TV",
+       "BTA",
+       "https://www.bta.bg/en/news/balkans/1244226-serbia-s-media-regulator-imposes-four-bans-on-pro-vucic-informer-tv",
+       2
       ]
      ]
     }
@@ -2062,6 +2323,33 @@
        "Moldpres",
        "https://www.moldpres.md/eng/politics/moldovan-central-electoral-commission-accredits-16-international-observers-to-monitor-regional-elections-in-gagauzia",
        2
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-11",
+     "t": "In Varna on 10 Nov, with Prime Minister Rumen Radev, Commission President von der Leyen said: “the intention of these attacks is clear: Russia wants to spread fear and uncertainty in Europe.” [36] Romanian President Nicușor Dan said on 10 Nov that Romania, Bulgaria and Türkiye are setting up a Black Sea maritime security centre with a dual location in Constanța and Varna, toward which the Commission pledged €50 million. [35] Russia's foreign ministry expelled a Moldovan embassy staff member on 10 Nov in reply to Moldova's expulsion of a Russian embassy employee on 23 Oct over a drone carrying explosives. [37]",
+     "src": [
+      [
+       36,
+       "Black Sea Security Is European Security, European Commission President Ursula von der Leyen Says in Varna",
+       "BTA",
+       "https://www.bta.bg/en/news/world/1243778-black-sea-security-is-european-security-european-commission-president-ursula-vo",
+       2
+      ],
+      [
+       35,
+       "Cooperation with Bulgaria on Black Sea Security Is Very Good, Romanian President Says",
+       "BTA",
+       "https://www.bta.bg/en/news/balkans/1244238-cooperation-with-bulgaria-on-black-sea-security-is-very-good-romanian-president",
+       2
+      ],
+      [
+       37,
+       "Russia expels Moldovan diplomat in tit-for-tat move",
+       "Al Jazeera (AFP)",
+       "https://www.aljazeera.com/news/2026/11/10/russia-expels-moldovan-diplomat-in-tit-for-tat-move",
+       3
       ]
      ]
     }

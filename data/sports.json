@@ -366,11 +366,100 @@
    },
    "offseason": [
     {
-     "date": "2026-12-06",
+     "date": "2026-11-10",
+     "end": "2026-11-12",
+     "t": "GM Meetings, Las Vegas",
+     "verified": true,
+     "note": "NBC Sports and Dodger Blue, 30 Oct",
+     "updated": "2026-11-11",
+     "src": [
+      [
+       174,
+       "MLB Offseason Calendar 2026-27: Key dates, free agency and lockout questions answered",
+       "NBC Sports",
+       "https://www.nbcsports.com/mlb/news/mlb-offseason-calendar-2026-27-key-dates-free-agency-and-lockout-questions-answered",
+       3
+      ],
+      [
+       219,
+       "Key MLB Offseason Dates 2026: Free Agency, Roster Deadlines, Winter Meetings & More",
+       "Dodger Blue",
+       "https://dodgerblue.com/key-mlb-offseason-2026-dates-free-agency-roster-deadlines-winter-meetings-more/2026/10/30/",
+       4
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-17",
+     "t": "Qualifying-offer decisions and Rule 5 roster deadline",
+     "verified": true,
+     "note": "NBC Sports, 30 Oct",
+     "updated": "2026-11-11",
+     "src": [
+      [
+       174,
+       "MLB Offseason Calendar 2026-27: Key dates, free agency and lockout questions answered",
+       "NBC Sports",
+       "https://www.nbcsports.com/mlb/news/mlb-offseason-calendar-2026-27-key-dates-free-agency-and-lockout-questions-answered",
+       3
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-20",
+     "t": "Non-tender deadline",
+     "verified": true,
+     "note": "NBC Sports, 30 Oct",
+     "updated": "2026-11-11",
+     "src": [
+      [
+       174,
+       "MLB Offseason Calendar 2026-27: Key dates, free agency and lockout questions answered",
+       "NBC Sports",
+       "https://www.nbcsports.com/mlb/news/mlb-offseason-calendar-2026-27-key-dates-free-agency-and-lockout-questions-answered",
+       3
+      ]
+     ]
+    },
+    {
+     "date": "2026-12-01",
+     "t": "Labour deal (CBA) expires 23:59 ET; lockout possible from 2 Dec",
+     "verified": true,
+     "note": "NBC Sports, 30 Oct: a lockout on 2 Dec “seems all but certain”",
+     "updated": "2026-11-11",
+     "src": [
+      [
+       174,
+       "MLB Offseason Calendar 2026-27: Key dates, free agency and lockout questions answered",
+       "NBC Sports",
+       "https://www.nbcsports.com/mlb/news/mlb-offseason-calendar-2026-27-key-dates-free-agency-and-lockout-questions-answered",
+       3
+      ]
+     ]
+    },
+    {
+     "date": "2026-12-07",
      "end": "2026-12-09",
-     "t": "MLB Winter Meetings",
+     "t": "MLB Winter Meetings, San Diego",
      "verified": false,
-     "note": "dates to confirm from MLB"
+     "note": "7–9 Dec in San Diego per Dodger Blue (30 Oct); NBC Sports (30 Oct) expects them cancelled if no new labour deal is in place; to confirm from MLB",
+     "updated": "2026-11-11",
+     "src": [
+      [
+       219,
+       "Key MLB Offseason Dates 2026: Free Agency, Roster Deadlines, Winter Meetings & More",
+       "Dodger Blue",
+       "https://dodgerblue.com/key-mlb-offseason-2026-dates-free-agency-roster-deadlines-winter-meetings-more/2026/10/30/",
+       4
+      ],
+      [
+       174,
+       "MLB Offseason Calendar 2026-27: Key dates, free agency and lockout questions answered",
+       "NBC Sports",
+       "https://www.nbcsports.com/mlb/news/mlb-offseason-calendar-2026-27-key-dates-free-agency-and-lockout-questions-answered",
+       3
+      ]
+     ]
     },
     {
      "date": "2027-02-12",
@@ -379,13 +468,70 @@
      "note": "to confirm from the club"
     },
     {
+     "date": "2027-02-19",
+     "t": "Grapefruit League opener: at Miami, Roger Dean Chevrolet Stadium, Jupiter FL",
+     "verified": true,
+     "note": "in the MLB schedule (Stats API, read 11 Nov); subject to a new labour deal",
+     "updated": "2026-11-11",
+     "src": [
+      [
+       220,
+       "St. Louis Cardinals 2027 schedule (spring and regular season)",
+       "MLB Stats API",
+       "https://statsapi.mlb.com/api/v1/schedule?sportId=1&teamId=138&season=2027&gameType=S,R",
+       1
+      ]
+     ]
+    },
+    {
      "date": "2027-03-25",
-     "t": "Opening Day 2027",
-     "verified": false,
-     "note": "to confirm from the MLB schedule"
+     "t": "Opening Day 2027: at Cincinnati, Great American Ball Park, 21:10 CET",
+     "verified": true,
+     "note": "in the MLB schedule (Stats API, read 11 Nov); subject to a new labour deal",
+     "updated": "2026-11-11",
+     "src": [
+      [
+       220,
+       "St. Louis Cardinals 2027 schedule (spring and regular season)",
+       "MLB Stats API",
+       "https://statsapi.mlb.com/api/v1/schedule?sportId=1&teamId=138&season=2027&gameType=S,R",
+       1
+      ]
+     ]
     }
    ],
-   "news": [],
+   "news": [
+    {
+     "date": "2026-11-06",
+     "h": "Cardinals promote Rob Cerfolio to general manager",
+     "body": "The Cardinals named Rob Cerfolio general manager on Fri 6 Nov, promoting him from assistant general manager for player development and performance; he joined from Cleveland in October 2024 [221]. President of baseball operations Chaim Bloom said Cerfolio keeps player development and performance and will now partner with him “in every area of baseball operations” [221]. Assistant GM Randy Flores left the week before to become the Astros' GM [221].",
+     "conf": "high",
+     "src": [
+      [
+       221,
+       "Cerfolio named Cardinals' new general manager",
+       "MLB.com (Brenden Schaeffer)",
+       "https://www.mlb.com/cardinals/news/rob-cerfolio-cardinals-general-manager",
+       1
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-10",
+     "h": "Wetherholt finishes third in NL Rookie of the Year voting",
+     "body": "Second baseman JJ Wetherholt finished third in the National League Rookie of the Year vote announced on MLB Network on Mon 9 Nov; the Reds' Sal Stewart won and the Mets' Carson Benge was second [173]. Wetherholt drew 99 points, including three of 30 first-place votes, after 17 home runs, 14 steals in 15 attempts and +25 outs above average at second base [173].",
+     "conf": "high",
+     "src": [
+      [
+       173,
+       "Breakout '26 nets Wetherholt 3rd-place finish in NL Rookie of the Year voting",
+       "MLB.com (Theo DeRosa)",
+       "https://www.mlb.com/cardinals/news/jj-wetherholt-third-nl-rookie-of-the-year-award-2026",
+       1
+      ]
+     ]
+    }
+   ],
    "src": [
     [
      "MLB Stats API standings 2026",
@@ -1748,8 +1894,8 @@
    ]
   ]
  },
- "updated": "2026-11-10",
- "asof": "2026-11-10T13:51:04.974Z",
+ "updated": "2026-11-11",
+ "asof": "2026-11-11T04:16:34.984Z",
  "errors": [],
  "note": "Written by tools/sports.js every run (Saints, Cardinals record, local football); the run keeps mlb.cardinals.offseason and mlb.cardinals.news."
 }

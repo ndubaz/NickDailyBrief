@@ -639,10 +639,10 @@
    "attr": "A0",
    "local": true,
    "country": "DE",
-   "place": "Cologne area, rail network (exact site not given; marker at Cologne)",
+   "place": "Köln Messe/Deutz station, Cologne",
    "lat": 50.94,
    "lon": 6.96,
-   "summary": "WDR reported on the evening of 8 Nov that after vandalism and signal-box damage in the Cologne area rail traffic was slowly resuming: “Der Staatsschutz ermittelt”, the state-security police are investigating. About 75 km from Heerlen. [57]",
+   "summary": "Federal police say an unknown man cut several signal cables at Köln Messe/Deutz station early on 8 Nov, halting passenger and freight trains on the line towards Troisdorf and Siegburg/Bonn; Cologne police call it a “Sabotagehandlung” (“act of sabotage”) and state-security police are investigating. A second cable fault in the night to 9 Nov knocked out another signal box; whether it was vandalism and linked is under investigation. No arrest reported by 11 Nov. About 70 km from Heerlen. [57]",
    "edition": "2026-11-09",
    "src": [
     [
@@ -651,8 +651,16 @@
      "WDR",
      "https://www1.wdr.de/nrw/koeln/bahn-stellwerkschaden-ersatzverkehr-100.html",
      3
+    ],
+    [
+     57,
+     "Sabotage: Signalkabel an Kölner Bahnhof durchtrennt",
+     "WDR",
+     "https://www1.wdr.de/nrw/koeln/bahn-stellwerkschaden-ersatzverkehr-100.html",
+     3
     ]
-   ]
+   ],
+   "updated": "2026-11-11"
   },
   {
    "id": "2026-11-08-md-air-aerostats",
@@ -685,7 +693,7 @@
   },
   {
    "id": "2026-11-08-pl-inf-krakow-disinfo",
-   "date": "2026-11-08",
+   "date": "2026-11-07",
    "code": "INF",
    "attr": "A2",
    "local": false,
@@ -693,7 +701,7 @@
    "place": "Kraków (online campaign; marker at the Rynek Główny)",
    "lat": 50.06,
    "lon": 19.94,
-   "summary": "Digital Affairs Minister Krzysztof Gawkowski said on 9 Nov that false claims about the 8 Nov Kraków shooting spread within tens of minutes and were amplified by Russian bots and trolls; more than 2,000 accounts were reported for blocking or moderation in 24 hours, and NASK put the false claim that the gunman was a soldier at nearly 18 million reach. [50]",
+   "summary": "Digital Affairs Minister Krzysztof Gawkowski said on 9 Nov that false claims about the 7 Nov Kraków shooting spread within tens of minutes and were amplified by Russian bots and trolls; more than 2,000 accounts were reported for blocking or moderation in 24 hours, and NASK put the false claim that the gunman was a soldier at nearly 18 million reach. [50] An RTBF fact-check found that montages calling the gunman left-wing, first posted late on 7 Nov and one seen about 3.5 million times, used images sharpened with AI tools that invented details. [50]",
    "edition": "2026-11-10",
    "src": [
     [
@@ -702,8 +710,16 @@
      "RMF24 (PAP)",
      "https://www.rmf24.pl/fakty/polska/news-fala-dezinformacji-po-zamachu-w-krakowie-chaos-informacyjny-,nIdn,1025465",
      3
+    ],
+    [
+     50,
+     "Les montages présentant le tireur de Cracovie comme « d'extrême gauche » contiennent des images retouchées par IA",
+     "RTBF",
+     "https://www.rtbf.be/article/les-montages-presentant-le-tireur-de-cracovie-comme-d-extreme-gauche-contiennent-des-images-retouchees-par-ia-11813771",
+     3
     ]
-   ]
+   ],
+   "updated": "2026-11-11"
   },
   {
    "id": "2026-10-11-fr-cyb-coldchain",
@@ -715,7 +731,7 @@
    "place": "France: about 700 food-retail sites nationwide (marker at Paris)",
    "lat": 48.86,
    "lon": 2.35,
-   "summary": "In the night of 11–12 Oct attackers took over Danfoss, Dixell and Copeland refrigeration controllers at about 700 French retail sites, forcing endless defrost cycles with alarms disabled; food losses and between 15 and about 20 fires followed. On 9 Nov France attributed the attack to the IRGC's Shahid Kaveh unit, summoned Iran's ambassador and opened a judicial case against the unit's head and two deputies. [13, 12, 52]",
+   "summary": "In the night of 11–12 Oct attackers took over Danfoss, Dixell and Copeland refrigeration controllers at about 700 French retail sites, forcing endless defrost cycles with alarms disabled; food losses and between 15 and about 20 fires followed. On 9 Nov France attributed the attack to the IRGC's Shahid Kaveh unit, summoned Iran's ambassador and opened a judicial case against the unit's head and two deputies. [13, 12, 52] Iran's foreign ministry called the accusation baseless and hostile on 10 Nov; Barrot said France rules nothing out beyond sanctions, while Belgium and Germany have not tied their own November incidents to Iran. [51, 52, 53, 54]",
    "edition": "2026-11-10",
    "src": [
     [
@@ -737,6 +753,166 @@
      "Frankreich macht Iran für Cyberangriffe auf Supermarkt-Kühltruhen verantwortlich",
      "tagesschau",
      "https://www.tagesschau.de/ausland/europa/kuehlanlagen-cyberangriffe-100.html",
+     3
+    ],
+    [
+     51,
+     "Iran rejects French claims it was behind supermarket fridge hacking",
+     "BBC News",
+     "https://www.bbc.co.uk/news/articles/cmg474vk6dyqo",
+     3
+    ],
+    [
+     52,
+     "France rules 'nothing out' in response to suspected Iran-linked cyberattack",
+     "Anadolu Agency",
+     "https://www.aa.com.tr/en/world/france-rules-nothing-out-in-response-to-suspected-iran-linked-cyberattack/4118212",
+     3
+    ],
+    [
+     53,
+     "Frigos de supermarchés piratés : la Belgique prend très au sérieux les informations des autorités françaises citant l'Iran",
+     "RTBF",
+     "https://www.rtbf.be/article/frigos-de-supermarches-pirates-la-belgique-prend-tres-au-serieux-les-informations-des-autorites-francaises-citant-l-iran-11813514",
+     3
+    ],
+    [
+     54,
+     "Wadephul warnt Iran vor hybriden Angriffen",
+     "tagesschau",
+     "https://www.tagesschau.de/ausland/wadephul-iran-102.html",
+     3
+    ]
+   ],
+   "updated": "2026-11-11"
+  },
+  {
+   "id": "2026-09-27-gb-prx-fairford",
+   "date": "2026-09-27",
+   "code": "PRX",
+   "attr": "A4",
+   "local": false,
+   "country": "GB",
+   "place": "RAF Fairford, Gloucestershire (US bomber base)",
+   "lat": 51.68,
+   "lon": -1.79,
+   "summary": "The US Justice Department unsealed an eight-count indictment on 10 Nov against Mohammad Ali al-Hassani, Mohsen Mohajeri and Mohammad Baqer Saad Dawood al-Saadi, accusing them of directing, for the IRGC and Kataib Hezbollah, a plot in which paid UK associates surveilled the base perimeter on 22 Aug and on 26–27 Sep drove three vans, some with fuel barrels and disguised as delivery vehicles, towards it; a roadblock turned at least two back and no explosives were found. Two British nationals were charged in the UK in October; Iran denies involvement. [14, 15]",
+   "edition": "2026-11-11",
+   "src": [
+    [
+     14,
+     "Three Iran-backed suspects plotted attacks including RAF Fairford incident, US says",
+     "BBC News",
+     "https://www.bbc.co.uk/news/articles/c3rryrryk59zo",
+     3
+    ],
+    [
+     15,
+     "US charges 3 men over alleged Iranian-backed plot at UK Fairford air base",
+     "Al Jazeera",
+     "https://www.aljazeera.com/news/2026/11/11/us-charges-3-iranian-backed-men-over-alleged-plot-at-uk-fairford-air-base",
+     3
+    ]
+   ]
+  },
+  {
+   "id": "2026-11-10-gb-prx-arrc-spy",
+   "date": "2026-11-10",
+   "code": "PRX",
+   "attr": "A2",
+   "local": false,
+   "country": "GB",
+   "place": "Near Gloucester; Imjin Barracks, Innsworth (ARRC headquarters), per the BBC",
+   "lat": 51.88,
+   "lon": -2.2,
+   "summary": "Counter Terrorism Policing London arrested a 41-year-old senior US Army soldier on 10 Nov on suspicion of spying for Russia, under sections 1 and 3 of the National Security Act 2023 (protected information; assisting a foreign intelligence service); the BBC understands he was based at the ARRC headquarters. Police say the case is not linked to other investigations. [12, 13]",
+   "edition": "2026-11-11",
+   "src": [
+    [
+     12,
+     "US Army soldier suspected of spying for Russia arrested in UK",
+     "BBC News",
+     "https://www.bbc.co.uk/news/articles/c6d7q77xgw0vo",
+     3
+    ],
+    [
+     13,
+     "US soldier arrested in UK on suspicion of spying for Russia",
+     "Al Jazeera",
+     "https://www.aljazeera.com/news/2026/11/10/us-soldier-arrested-in-uk-over-alleged-russian-espionage",
+     3
+    ]
+   ]
+  },
+  {
+   "id": "2026-11-10-ie-air-hoax-threats",
+   "date": "2026-11-10",
+   "code": "AIR",
+   "attr": "A1",
+   "local": false,
+   "country": "IE",
+   "place": "Ireland: an airline and a school (marker at Dublin)",
+   "lat": 53.35,
+   "lon": -6.26,
+   "summary": "Garda Commissioner Justin Kelly said on 10 Nov that new hoax bomb threats were made against a school on 9 Nov and an airline on 10 Nov, judged not credible and without disruption; he believes the senders are outside Ireland and Gardaí work with Europol to identify them. [46]",
+   "edition": "2026-11-11",
+   "src": [
+    [
+     46,
+     "Zero tolerance over protests during EU events, says Kelly",
+     "RTÉ News",
+     "https://www.rte.ie/news/dublin/2026/1110/1598665-dublin-meeting-security/",
+     3
+    ]
+   ]
+  },
+  {
+   "id": "2026-11-10-lv-uas-air-alerts",
+   "date": "2026-11-10",
+   "code": "UAS",
+   "attr": "A0",
+   "local": false,
+   "country": "LV",
+   "place": "Eastern and central Latvia, ten municipalities (marker at Jēkabpils)",
+   "lat": 56.5,
+   "lon": 25.87,
+   "summary": "In the night of 9–10 Nov yellow and orange cell-broadcast alerts ran in Ludza, Krāslava, Augšdaugava, Balvi, Aizkraukle, Jēkabpils, Madona, Cēsis, Smiltene and Gulbene as a drone threat moved across the country; interceptor drones, air-defence units and NATO jets were activated, and similar alerts were issued in parts of Estonia and Lithuania. [47]",
+   "edition": "2026-11-11",
+   "src": [
+    [
+     47,
+     "Air alerts across large parts of Latvia overnight",
+     "LSM (Latvian Public Broadcasting)",
+     "https://eng.lsm.lv/article/society/defence/10.11.2026-air-alerts-across-large-parts-of-latvia-overnight.a671412/",
+     3
+    ]
+   ]
+  },
+  {
+   "id": "2026-11-10-lt-uas-belarus-object",
+   "date": "2026-11-10",
+   "code": "UAS",
+   "attr": "A0",
+   "local": false,
+   "country": "LT",
+   "place": "Vilnius and Utena counties, then Kaunas (marker at Ignalina)",
+   "lat": 55.34,
+   "lon": 26.16,
+   "summary": "An unidentified object detected in Belarus heading for Lithuania triggered a yellow air alert in Vilnius and Utena counties at about 23:00 on 10 Nov, lifted before midnight; early on 11 Nov alerts again covered parts of Latvia and Lithuania including Kaunas, and NATO air-policing jets took off. [48, 49]",
+   "edition": "2026-11-11",
+   "src": [
+    [
+     48,
+     "Lithuania calls off air alert warning in Vilnius and Utena regions",
+     "LRT",
+     "https://www.lrt.lt/en/news-in-english/19/3110468/lithuania-calls-off-air-alert-warning-in-vilnius-and-utena-regions",
+     3
+    ],
+    [
+     49,
+     "Ukraine: Lettland und Litauen warnen vor Drohnen im Luftraum (live blog)",
+     "Handelsblatt",
+     "https://www.handelsblatt.com/politik/international/ukraine-lettland-und-litauen-warnen-vor-drohnen-im-luftraum/27982126.html",
      3
     ]
    ]
@@ -838,5 +1014,5 @@
   }
  ],
  "attrLogNote": "One entry per attribution change: {id (incident id), date, from (A0..A5), to (A0..A5), t (what moved), src (optional [[n,title,outlet,url]])}. The page lists the last 7 days under Attribution moves.",
- "updated": "2026-11-10"
+ "updated": "2026-11-11"
 }

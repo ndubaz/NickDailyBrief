@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-09",
+ "asof": "2026-11-10",
  "metro": [
   {
    "team": "CAR",
@@ -23,21 +23,21 @@
   {
    "team": "NJD",
    "name": "Devils",
-   "gp": 18,
+   "gp": 19,
    "w": 13,
-   "l": 5,
+   "l": 6,
    "otl": 0,
    "pts": 26,
-   "pct": 0.722,
-   "gf": 66,
-   "ga": 51,
-   "gd": 15,
+   "pct": 0.684,
+   "gf": 68,
+   "ga": 55,
+   "gd": 13,
    "rw": 8,
-   "l10": "9-1-0",
-   "streak": "W5",
+   "l10": "8-2-0",
+   "streak": "L1",
    "div": 2,
    "wc": 0,
-   "conf": 3
+   "conf": 4
   },
   {
    "team": "NYR",
@@ -56,26 +56,26 @@
    "streak": "L1",
    "div": 3,
    "wc": 0,
-   "conf": 7
+   "conf": 8
   },
   {
    "team": "WSH",
    "name": "Capitals",
-   "gp": 15,
-   "w": 9,
+   "gp": 16,
+   "w": 10,
    "l": 6,
    "otl": 0,
-   "pts": 18,
-   "pct": 0.6,
-   "gf": 53,
-   "ga": 51,
-   "gd": 2,
+   "pts": 20,
+   "pct": 0.625,
+   "gf": 56,
+   "ga": 53,
+   "gd": 3,
    "rw": 8,
-   "l10": "6-4-0",
-   "streak": "W1",
+   "l10": "7-3-0",
+   "streak": "W2",
    "div": 4,
-   "wc": 4,
-   "conf": 10
+   "wc": 3,
+   "conf": 9
   },
   {
    "team": "NYI",
@@ -118,18 +118,18 @@
   {
    "team": "CBJ",
    "name": "Blue Jackets",
-   "gp": 15,
+   "gp": 16,
    "w": 7,
-   "l": 8,
+   "l": 9,
    "otl": 0,
    "pts": 14,
-   "pct": 0.467,
-   "gf": 40,
-   "ga": 47,
-   "gd": -7,
+   "pct": 0.438,
+   "gf": 41,
+   "ga": 51,
+   "gd": -10,
    "rw": 2,
-   "l10": "5-5-0",
-   "streak": "L1",
+   "l10": "4-6-0",
+   "streak": "L2",
    "div": 7,
    "wc": 9,
    "conf": 15
@@ -161,13 +161,13 @@
    "gp": 19
   },
   {
-   "team": "EDM",
-   "pts": 29,
-   "gp": 19
+   "team": "MIN",
+   "pts": 30,
+   "gp": 20
   },
   {
-   "team": "MIN",
-   "pts": 28,
+   "team": "EDM",
+   "pts": 29,
    "gp": 19
   },
   {
@@ -176,7 +176,7 @@
    "gp": 18
   },
   {
-   "team": "NJD",
+   "team": "MTL",
    "pts": 26,
    "gp": 18
   }
@@ -199,7 +199,7 @@
     "name": "Kirill Kaprizov",
     "team": "MIN",
     "pos": "L",
-    "v": 31
+    "v": 32
    },
    {
     "name": "Evan Bouchard",
@@ -217,6 +217,18 @@
     "name": "Auston Matthews",
     "team": "TOR",
     "pos": "C",
+    "v": 28
+   },
+   {
+    "name": "Quinn Hughes",
+    "team": "MIN",
+    "pos": "D",
+    "v": 27
+   },
+   {
+    "name": "Matthew Tkachuk",
+    "team": "FLA",
+    "pos": "L",
     "v": 27
    },
    {
@@ -226,21 +238,9 @@
     "v": 26
    },
    {
-    "name": "Leo Carlsson",
-    "team": "ANA",
+    "name": "Jack Hughes",
+    "team": "NJD",
     "pos": "C",
-    "v": 26
-   },
-   {
-    "name": "Quinn Hughes",
-    "team": "MIN",
-    "pos": "D",
-    "v": 26
-   },
-   {
-    "name": "Matthew Tkachuk",
-    "team": "FLA",
-    "pos": "L",
     "v": 26
    }
   ],
@@ -255,7 +255,7 @@
     "name": "Kirill Kaprizov",
     "team": "MIN",
     "pos": "L",
-    "v": 16
+    "v": 17
    },
    {
     "name": "Cutter Gauthier",
@@ -267,13 +267,13 @@
     "name": "Kyle Connor",
     "team": "WPG",
     "pos": "L",
-    "v": 13
+    "v": 15
    },
    {
     "name": "Artturi Lehkonen",
     "team": "COL",
     "pos": "L",
-    "v": 12
+    "v": 13
    },
    {
     "name": "Connor McDavid",
@@ -317,11 +317,17 @@
     "name": "Matthew Tkachuk",
     "team": "FLA",
     "pos": "L",
-    "v": 22
+    "v": 23
    },
    {
     "name": "Evan Bouchard",
     "team": "EDM",
+    "pos": "D",
+    "v": 21
+   },
+   {
+    "name": "Quinn Hughes",
+    "team": "MIN",
     "pos": "D",
     "v": 21
    },
@@ -341,12 +347,6 @@
     "name": "Leo Carlsson",
     "team": "ANA",
     "pos": "C",
-    "v": 20
-   },
-   {
-    "name": "Quinn Hughes",
-    "team": "MIN",
-    "pos": "D",
     "v": 20
    },
    {
@@ -375,14 +375,14 @@
     "v": 0.945
    },
    {
-    "name": "Jacob Fowler",
-    "team": "MTL",
+    "name": "Jesper Wallstedt",
+    "team": "MIN",
     "v": 0.925
    },
    {
-    "name": "Jesper Wallstedt",
-    "team": "MIN",
-    "v": 0.922
+    "name": "Jacob Fowler",
+    "team": "MTL",
+    "v": 0.925
    },
    {
     "name": "Pyotr Kochetkov",
@@ -400,7 +400,7 @@
     "name": "Jesper Wallstedt",
     "team": "MIN",
     "pos": "G",
-    "v": 11
+    "v": 12
    },
    {
     "name": "Pyotr Kochetkov",
@@ -412,7 +412,7 @@
     "name": "Mackenzie Blackwood",
     "team": "COL",
     "pos": "G",
-    "v": 9
+    "v": 10
    },
    {
     "name": "Jeremy Swayman",
@@ -439,13 +439,13 @@
     "v": 1.67
    },
    {
-    "name": "Jake Oettinger",
-    "team": "DAL",
-    "v": 1.99
-   },
-   {
     "name": "Jesper Wallstedt",
     "team": "MIN",
+    "v": 1.93
+   },
+   {
+    "name": "Jake Oettinger",
+    "team": "DAL",
     "v": 1.99
    },
    {
@@ -827,7 +827,7 @@
    ]
   ]
  },
- "updated": "2026-11-10",
+ "updated": "2026-11-11",
  "errors": [],
  "src": [
   [

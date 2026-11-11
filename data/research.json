@@ -1,6 +1,6 @@
 {
  "note": "Research rotation. Three pieces a day: one military or security piece (field \"military\") and two from the wider fields. `rotation` maps each field to institutions and journals the run draws from; `queue` holds publications picked for coming days with their field; `covered` is the append-only log. No institution twice within 10 days within a field.",
- "updated": "2026-11-10",
+ "updated": "2026-11-11",
  "rotation": {
   "military": [
    "Africa Center for Strategic Studies",
@@ -23,7 +23,8 @@
    "Hoover",
    "Brookings",
    "Egmont",
-   "CSET Georgetown"
+   "CSET Georgetown",
+   "CEPA"
   ],
   "economics": [
    "NBER",
@@ -74,7 +75,8 @@
    "Past & Present",
    "Journal of Cold War Studies",
    "Wilson Center History and Public Policy Program",
-   "Imperial War Museums research"
+   "Imperial War Museums research",
+   "Nature Communications"
   ],
   "tech": [
    "Stanford HAI",
@@ -111,7 +113,8 @@
    "Behavioral Public Policy",
    "Judgment and Decision Making",
    "Good Judgment / Forecasting Research Institute",
-   "Annual Review of Psychology"
+   "Annual Review of Psychology",
+   "Nature Communications"
   ],
   "philosophy": [
    "Journal of Military Ethics",
@@ -191,6 +194,36 @@
    "url": "https://www.ecb.europa.eu/pub/pdf/scpwps/ecb.wp3303~10146acd61.en.pdf",
    "for": "",
    "note": "Confidential Eurosystem holdings data and local projections for Belgium, Spain, France, Italy: domestic holders steady, foreign holders sell on geopolitical risk shocks. Results are impulse responses with 68% bands, few headline numbers."
+  },
+  {
+   "field": "social",
+   "org": "PNAS",
+   "title": "Heterogeneous impacts of temperature extremes on climate attitudes and Green voting",
+   "authors": "Jacopo Bassetto, Roman Hoffmann, Raya Muttarak, Jonas Peisker, Piero Stanig",
+   "date": "2026-10-26",
+   "url": "https://www.pnas.org/doi/abs/10.1073/pnas.2321153122",
+   "for": "",
+   "note": "From the PNAS feed only; the article page returned a block on 11 Nov. Candidate for the uncovered social field."
+  },
+  {
+   "field": "ir",
+   "org": "Nature Human Behaviour",
+   "title": "A natural field experiment on the effectiveness of economic sanctions before and after the Russian invasion of Ukraine",
+   "authors": "Michael G. Findley et al.",
+   "date": "2026-11-09",
+   "url": "https://www.nature.com/articles/s41562-026-02591-5",
+   "for": "",
+   "note": "Only the feed title and lead author were read."
+  },
+  {
+   "field": "military",
+   "org": "Army War College / SSI",
+   "title": "Forecasting China’s Posturing for a Global War",
+   "authors": "Brennan Deveraux and Joshua Arostegui",
+   "date": "2026-11-09",
+   "url": "https://press.armywarcollege.edu/monographs/991",
+   "for": "",
+   "note": "USAWC Press collaborative study (ISBN 1-58487-878-9): a limited US–PRC conflict scenario and China’s horizontal escalation across seven regions including Europe, plus space and information. Landing page read; the full-text and summary PDFs returned a Cloudflare challenge on 11 Nov."
   }
  ],
  "covered": [
@@ -281,6 +314,30 @@
    "title": "Global Carbon Budget 2026",
    "authors": "Pierre Friedlingstein, Michael O’Sullivan, Robbie M. Andrew and 141 co-authors",
    "url": "https://essd.copernicus.org/preprints/essd-2026-895"
+  },
+  {
+   "date": "2026-11-11",
+   "field": "military",
+   "org": "Center for European Policy Analysis (CEPA)",
+   "title": "Managing Russia’s Military-Industrial Degradation: Navigating Wartime Industrial Constraints, Stockpile Exhaustion, and Hardware Attrition",
+   "authors": "Mathieu Boulègue, Federico Borsari, Pavel Luzin",
+   "url": "https://cepa.org/comprehensive-reports/managing-russias-military-industrial-degradation/"
+  },
+  {
+   "date": "2026-11-11",
+   "field": "history",
+   "org": "Max Planck Institute of Geoanthropology, Fudan University and partners (Nature Communications)",
+   "title": "Archival and palaeoenvironmental documentation of extreme climate events reveals generational amnesia in collective memory",
+   "authors": "Shuang Song, Bo Hu, David Max Findley, Xutong Wu, Wei Liu, Robert W. Middeke-Conlin, Victor L. Caetano-Andrade, Yuda Yang, Shuai Wang, Jürgen Renn, Patrick Roberts",
+   "url": "https://www.nature.com/articles/s41467-026-78922-x"
+  },
+  {
+   "date": "2026-11-11",
+   "field": "psychology",
+   "org": "NYU Grossman School of Medicine and NYU Center for Data Science (Nature Communications)",
+   "title": "LLM ensemble PREVIA predicts future PTSD risk from emergency department trauma narratives with expert-level accuracy",
+   "authors": "Victoria Mueller, Jyoti Yadav, Annie Farnsworth, Charlotte E. Hilberdink, Sapir Gershov, Eric K. Oermann, Stephen P. Wall, Arieh Y. Shalev, Katharina Schultebraucks",
+   "url": "https://www.nature.com/articles/s41467-026-78768-3"
   }
  ],
  "fields": {

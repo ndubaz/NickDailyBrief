@@ -71,6 +71,15 @@
    "url": "https://www.ukrinform.net/",
    "decimals": 0,
    "note": "Seeded from the statements in the 6 and 8 Nov editions (105 of 130 on 5 Nov; 153 of 208 on 7 Nov). Ballistic missiles are counted with the rest, so a heavy ballistic night pulls the share down."
+  },
+  "tw-pla-aircraft-month": {
+   "label": "PLA aircraft sorties around Taiwan per month",
+   "unit": "",
+   "cadence": "monthly",
+   "source": "Taiwan Ministry of National Defense daily reports on PLA activities in the waters and airspace around Taiwan (Chinese-language archive), aircraft sorties detected in the 24 hours to 06:00 (UTC+8), summed by month of report date by the morning run",
+   "url": "https://www.mnd.gov.tw/news/plaactlist",
+   "decimals": 0,
+   "note": "Rows dated the first of the month. Each report covers 06:00 the day before to 06:00 on the report date; reports that detected no aircraft count as zero. Retrieved 11 Nov 2026 from all 376 daily reports dated 1 Nov 2025 to 11 Nov 2026. November 2026 to 11 Nov (11 reports): 170 sorties, not charted until the month is complete."
   }
  },
  "series": {
@@ -106,6 +115,10 @@
    [
     "2026-11-09",
     317
+   ],
+   [
+    "2026-11-10",
+    163
    ]
   ],
   "ru-personnel-day": [
@@ -316,6 +329,60 @@
    [
     "2026-11-09",
     85
+   ],
+   [
+    "2026-11-10",
+    83
+   ]
+  ],
+  "tw-pla-aircraft-month": [
+   [
+    "2025-11-01",
+    398
+   ],
+   [
+    "2025-12-01",
+    492
+   ],
+   [
+    "2026-01-01",
+    272
+   ],
+   [
+    "2026-02-01",
+    191
+   ],
+   [
+    "2026-03-01",
+    162
+   ],
+   [
+    "2026-04-01",
+    236
+   ],
+   [
+    "2026-05-01",
+    278
+   ],
+   [
+    "2026-06-01",
+    195
+   ],
+   [
+    "2026-07-01",
+    268
+   ],
+   [
+    "2026-08-01",
+    176
+   ],
+   [
+    "2026-09-01",
+    234
+   ],
+   [
+    "2026-10-01",
+    223
    ]
   ]
  }

@@ -112,6 +112,64 @@
      2
     ]
    ]
+  },
+  {
+   "date": "2026-11-11",
+   "edition": 10,
+   "section": "Planner, Christmas market planner notes",
+   "t": "The five notes cited sources [160]–[164], which in edition 10's source list are Slovak and Hungarian news items; the notes rest on koeln.de, the Aachen Christmas market site, Tourismus Kreis Düren, Kidsproof and Visit Zuid-Limburg. [155, 157, 181, 182, 183]",
+   "src": [
+    [
+     155,
+     "Weihnachtsmarkt am Kölner Dom 2026",
+     "koeln.de",
+     "https://www.koeln.de/weihnachten/weihnachtsmaerkte-koeln/weihnachtsmarkt-am-koelner-dom/",
+     2
+    ],
+    [
+     157,
+     "Aachener Weihnachtsmarkt: dates and hours",
+     "Aachen Christmas market",
+     "https://aachenweihnachtsmarkt.de/en/pages/offers/",
+     1
+    ],
+    [
+     181,
+     "Christmas market Monschau",
+     "Tourismus Kreis Düren",
+     "https://www.tourismus.kreis-dueren.de/en/e-christmas-market-monschau-2",
+     1
+    ],
+    [
+     182,
+     "Magisch Maastricht",
+     "Kidsproof",
+     "https://www.kidsproof.nl/zuid-limburg/eropuit/magisch-maastricht/magisch-maastricht-kerst-gezinsuitje-eu/",
+     4
+    ],
+    [
+     183,
+     "Village de Noël in Luik",
+     "Visit Zuid-Limburg",
+     "https://www.visitzuidlimburg.com/experience-zuid-limburg/event/village-de-noel-in-luik/64128",
+     2
+    ]
+   ]
+  },
+  {
+   "date": "2026-11-11",
+   "edition": 10,
+   "section": "hybrid",
+   "t": "Edition 10 dated the Kraków shooting 8 Nov in the disinformation incident; it took place on Sat 7 Nov at about 15:00, and the false claims began that evening. [50]",
+   "src": [
+    [
+     50,
+     "Les montages présentant le tireur de Cracovie comme « d'extrême gauche » contiennent des images retouchées par IA",
+     "RTBF",
+     "https://www.rtbf.be/article/les-montages-presentant-le-tireur-de-cracovie-comme-d-extreme-gauche-contiennent-des-images-retouchees-par-ia-11813771",
+     3
+    ]
+   ]
   }
  ]
 }

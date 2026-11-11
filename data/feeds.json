@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-10",
+ "updated": "2026-11-11",
  "note": "Fetch-first register (7.5). Every morning the run reads these before it searches: an RSS feed or a listing page costs a fetch, not a search. `for` names the section or theatre the feed serves; `tier` is the source tier the page shows. `blocked` lists hosts that refuse scripted clients so no fetch or search is wasted on them. Verified from the build environment on 9 Nov 2026; the run adds a feed when it finds one that works and moves a host to `blocked` after two failed mornings.",
  "feeds": [
   {
@@ -608,8 +608,8 @@
   {
    "id": "milby",
    "for": "countries:by",
-   "title": "Belarus defence ministry news (HTTP only; HTTPS fails)",
-   "url": "http://www.mil.by/ru/news/",
+   "title": "Belarus defence ministry news (HTTPS works again as of 11 Nov; plain HTTP redirects)",
+   "url": "https://www.mil.by/ru/news/",
    "kind": "page",
    "lang": "ru",
    "tier": 1

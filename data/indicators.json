@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-10",
+  "updated": "2026-11-11",
   "note": "Indicators and warning. Each indicator names what is watched, the threshold that changes its status, and the source. The run sets status (green, amber, red) each day it has the fact and appends to history only on a change, with the date, the new status and the fact that moved it. Numeric indicators name a world-series key and a rule so the page can show the latest value.",
   "items": [
     {
@@ -24,13 +24,18 @@
       "name": "Russia–Ukraine talks: a trilateral round held with named delegations",
       "theatre": "ru-ua",
       "threshold": "amber when a round is scheduled, green when held, red when cancelled",
-      "status": "amber",
+      "status": "green",
       "src": "TASS, Ukrainian presidential office",
       "history": [
         {
           "date": "2026-11-07",
           "status": "amber",
           "t": "Putin named 10 Nov in Abu Dhabi; Umerov leads Ukraine's delegation."
+        },
+        {
+          "date": "2026-11-11",
+          "status": "green",
+          "t": "The trilateral round was held in Abu Dhabi on 10 Nov with Umerov's and Medinsky's delegations, four hours; a second day follows on 11 Nov. [6, 22]"
         }
       ]
     },
@@ -184,13 +189,18 @@
       "id": "cyber-kev-7d",
       "name": "Exploited vulnerabilities added to the CISA catalog, 7 days",
       "threshold": "amber above 8, red above 15, or red on any one exploited in European critical infrastructure",
-      "status": "green",
+      "status": "amber",
       "src": "CISA Known Exploited Vulnerabilities catalog (JSON feed)",
       "history": [
         {
           "date": "2026-11-08",
           "status": "green",
           "t": "Three entries added 2 to 8 Nov (catalog 2026.11.06, 1,769 entries); the October weekly peak was six on 20 Oct. [CISA KEV]"
+        },
+        {
+          "date": "2026-11-11",
+          "status": "amber",
+          "t": "Eleven entries added 5–11 Nov (catalog 2026.11.10, 1,779 entries), six of them on 10 Nov, including Microsoft Outlook, Cisco BroadWorks, two Barracuda Email Security Gateway flaws and a Chromium use-after-free; none is listed as exploited against European critical infrastructure. [209]"
         }
       ]
     },

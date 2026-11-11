@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-10",
+ "updated": "2026-11-11",
  "note": "Nick's assigned priority countries as an analyst: Hungary and Slovakia (priority), Germany (secondary). Russia, Belarus and China are context countries (7.3): profiled for what they do to the eastern flank and to the three countries above, logged the same way, no baseline-requirement grid. The run appends dated facts to each country's log and keeps the profile current. Facts and summaries only; the item in the edition carries the So what. verified:false marks a fact to confirm against an official page.",
  "blr": [
   "Continuity of government and critical services",
@@ -42,7 +42,7 @@
    "stance": [
     {
      "k": "Ukraine",
-     "t": "Magyar has said Hungary will deliver neither military vehicles nor lethal arms to Ukraine; first bilateral meeting with Zelensky in Brussels on 16 Oct 2026."
+     "t": "Magyar has said Hungary will deliver neither military vehicles nor lethal arms to Ukraine; first bilateral meeting with Zelensky in Brussels on 16 Oct 2026. On 10 Nov 2026 in Berlin he rejected tying the 2028–2034 EU budget to Ukraine aid and said borrowing to fund Kyiv is not acceptable for Hungary; humanitarian aid continues."
     },
     {
      "k": "Russia",
@@ -56,8 +56,13 @@
    "blr": [
     {
      "n": 2,
-     "t": "Russian crude imports to end by October 2027, the government's stated deadline; gas still arrives via TurkStream through Serbia; the Economy and Energy Ministry ordered a financial review of the Paks II expansion in May 2026 and the government later proposed doubling its 2026 state financing.",
-     "date": "2026-10-31"
+     "t": "Russian crude imports to end by October 2027, the government's stated deadline; gas still arrives via TurkStream through Serbia; the Economy and Energy Ministry ordered a financial review of the Paks II expansion in May 2026 and the government later proposed doubling its 2026 state financing. Merz offered German LNG on 10 Nov 2026; Magyar said the prices still have to be agreed.",
+     "date": "2026-11-11"
+    },
+    {
+     "n": 6,
+     "t": "First SMS-blaster case: a fake base station run from a car disrupted a commercial mobile network and sent fake police texts in July 2026; the operator's anomaly monitoring led the NNI to the car (disclosed 10 Nov 2026).",
+     "date": "2026-11-11"
     }
    ],
    "log": [
@@ -220,6 +225,52 @@
        "https://444.hu/2026/10/28/az-europai-bizottsag-hozzajarult-hogy-magyarorszag-54-milliard-euro-hitelt-vegyen-fel-vedelmi-beruhazasokra"
       ]
      ]
+    },
+    {
+     "date": "2026-11-11",
+     "t": "On 10 Nov Merz and Magyar held the first German–Hungarian intergovernmental consultations in Berlin: Merz offered to sell Hungary LNG (Magyar said prices are still to be agreed), the two named air defence, fundable under the EU's SAFE loan, as the lead area of defence cooperation, and Magyar rejected tying the 2028–2034 EU budget to Ukraine aid or borrowing for Kyiv. Defence Minister Ruszin-Szendi met Pistorius and said Hungary is ready to take a larger role in Europe's conventional defence. [18, 63, 62]",
+     "src": [
+      [
+       "Magyar Péter Ukrajna támogatásáról: Nem tartom jó iránynak, hogy ha az EU költségvetését egy másik ügyhöz hozzákötjük",
+       "https://hvg.hu/itthon/20261110_magyar-peter-friedrich-merz-berlin-sajtotajekoztato"
+      ],
+      [
+       "Új fejezet a magyar-német kapcsolatokban",
+       "https://honvedelem.hu/hirek/uj-fejezet-a-magyar-nemet-kapcsolatokban.html"
+      ],
+      [
+       "Merz: Nový rozpočet EÚ musí zahrnúť prostriedky na pomoc Ukrajine",
+       "https://www.teraz.sk/ekonomika/merz-novy-rozpocet-eu-musi-zahrnu/1006606-clanok.html"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-11",
+     "t": "Magyar invited Merz to Budapest in spring 2027 and travels to Dublin on 11 Nov for the European summits of 12–13 Nov; he said the V4 coordinate their positions on the EU budget. [18, 210]",
+     "src": [
+      [
+       "Magyar Péter Ukrajna támogatásáról: Nem tartom jó iránynak, hogy ha az EU költségvetését egy másik ügyhöz hozzákötjük",
+       "https://hvg.hu/itthon/20261110_magyar-peter-friedrich-merz-berlin-sajtotajekoztato"
+      ],
+      [
+       "Magyar Péter: a V4-ek együttműködnek az uniós hétéves költségvetésének tárgyalása során",
+       "https://hvg.hu/gazdasag/20261110_magyar-peter-v4-energiaellatas-unios-koltsegvetes"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-11",
+     "t": "On 10 Nov the National Bureau of Investigation (NNI), the NMHH and Yettel disclosed Hungary's first SMS-blaster case: a fake mobile base station run from a moving car disrupted an operator's network and sent phishing texts posing as the police in July; a Chinese citizen was arrested in Pécs on 22 July and is in custody. [64, 65]",
+     "src": [
+      [
+       "SMS Blaster: hamis bázisállomás, csaló üzenetek",
+       "https://www.police.hu/hu/hirek-es-informaciok/legfrissebb-hireink/matrix-projekt/sms-blaster-hamis-bazisallomas-csalo"
+      ],
+      [
+       "Autóból működtetett hamis mobilhálózatot a csaló, közel 5 millió forintos kárt okozott",
+       "https://index.hu/belfold/2026/11/10/gepkocsi-adathalasz-sms-kinai-ferfi-rendorseg/"
+      ]
+     ]
     }
    ],
    "src": [
@@ -266,6 +317,18 @@
     [
      "Magyar Péter Berlinben: a második világháború óta nem volt ennyire bonyolult és veszélyes a nemzetközi helyzet (full speech text from Government Communications)",
      "https://www.portfolio.hu/gazdasag/20261109/magyar-peter-berlinben-a-masodik-vilaghaboru-ota-nem-volt-ennyire-bonyolult-es-veszelyes-a-nemzetkozi-helyzet-875304"
+    ],
+    [
+     "Magyar Péter Ukrajna támogatásáról: Nem tartom jó iránynak, hogy ha az EU költségvetését egy másik ügyhöz hozzákötjük",
+     "https://hvg.hu/itthon/20261110_magyar-peter-friedrich-merz-berlin-sajtotajekoztato"
+    ],
+    [
+     "Új fejezet a magyar-német kapcsolatokban",
+     "https://honvedelem.hu/hirek/uj-fejezet-a-magyar-nemet-kapcsolatokban.html"
+    ],
+    [
+     "SMS Blaster: hamis bázisállomás, csaló üzenetek",
+     "https://www.police.hu/hu/hirek-es-informaciok/legfrissebb-hireink/matrix-projekt/sms-blaster-hamis-bazisallomas-csalo"
     ]
    ],
    "verified": false,
@@ -324,7 +387,7 @@
     "note": "NATO estimates, share of GDP; 2014 to 2024 from the annual press releases, 2025 from the March 2026 report via press coverage; to confirm against the NATO table",
     "verified": false
    },
-   "updated": "2026-11-10"
+   "updated": "2026-11-11"
   },
   {
    "id": "sk",
@@ -373,8 +436,13 @@
    "blr": [
     {
      "n": 2,
-     "t": "Gas supply depends on TurkStream flows through Hungary since Ukrainian transit ended; Druzhba crude via Ukraine remains exposed to strikes and transit decisions.",
-     "date": "2026-10-31"
+     "t": "Gas supply depends on TurkStream flows through Hungary since Ukrainian transit ended; Druzhba crude via Ukraine remains exposed to strikes and transit decisions. Slovakia and Czechia have gas-storage agreements, have tested emergency diesel deliveries and are examining reverse oil flow through Druzhba, about €41m on the Czech side (Economy Minister Saková, 10 Nov 2026).",
+     "date": "2026-11-11"
+    },
+    {
+     "n": 5,
+     "t": "Joint Slovak–Czech procurement agreed on 10 Nov 2026: hardened large-capacity tanker engines, hardened personnel carriers, firefighting robots, flood and hazardous-material equipment, off-road vehicles and evacuation buses (Czechia buys eight items, Slovakia five).",
+     "date": "2026-11-11"
     }
    ],
    "log": [
@@ -527,6 +595,64 @@
        "https://www.deutschlandfunk.de/bundeskanzler-merz-fordert-beteiligung-aller-eu-staaten-102.html"
       ]
      ]
+    },
+    {
+     "date": "2026-11-11",
+     "t": "On 10 Nov only 75 of the 150 deputies present voted to move the cooperating-witness (kajúcnici) amendment to the Code of Criminal Procedure into third reading, so it did not advance; non-attached deputies Taraba, Malatinec and Slyško voted with the opposition. The vote is repeated on 11 Nov at 11:00. [66, 211]",
+     "src": [
+      [
+       "Smer-SD vníma postoj Tarabu k novele o kajúcnikoch ako politikárčenie",
+       "https://www.teraz.sk/slovensko/smer-sd-vnima-postoj-tarabu-k-novele-o/1006517-clanok.html"
+      ],
+      [
+       "Radosť opozície, ale dočasná. Kajúcnici? Pre Fica absolútna priorita, mieni politológ",
+       "https://www.pravda.sk/spravy/domace/clanok/2076085-radost-opozicie-ale-docasna-kajucnici-pre-fica-absolutna-priorita-mieni-politolog-taraba-podla-neho-napokon-ohne-chrbat"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-11",
+     "t": "Pellegrini's office said on 10 Nov that Fico stays in charge of the environment ministry until the president decides; Pellegrini will not appoint the SNS nominee Filip Kuffa before the Constitutional Court rules. [212]",
+     "src": [
+      [
+       "Prezident: Premiér zatiaľ zostáva poverený vedením envirorezortu",
+       "https://www.teraz.sk/slovensko/prezident-premier-zatial-zostava-pov/1006465-clanok.html"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-11",
+     "t": "At the joint Slovak–Czech government session in Bratislava on 10 Nov the two fire and rescue services signed a joint procurement contract (Czechia buys eight items, Slovakia five), and Economy Minister Saková said the countries are examining reverse oil flow through Druzhba at about €41 million on the Czech side. [68, 69]",
+     "src": [
+      [
+       "Slovensko a Česko budú spoločne obstarávať špeciálnu hasičskú techniku",
+       "https://www.teraz.sk/slovensko/slovensko-a-cesko-budu-spolocne-obsta/1006655-clanok.html"
+      ],
+      [
+       "Rezort Hospodárstva: SR a ČR posilňujú spoluprácu v energetike",
+       "https://www.teraz.sk/ekonomika/rezort-hospodarstva-sr-a-cr-posilnuj/1006631-clanok.html"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-11",
+     "t": "Pellegrini dropped the 10 Nov Paris Peace Forum day; he meets Macron in Paris on 11 Nov and Polish President Nawrocki at Rogalin on 12 Nov, where he also attends the Poznań Economic Congress and the Three Seas digital forum. [206]",
+     "src": [
+      [
+       "Prezident odcestuje v stredu do Francúzska, vo štvrtok navštívi Poľsko",
+       "https://www.teraz.sk/slovensko/prezident-odcestuje-v-stredu-do-francuz/1006600-clanok.html"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-11",
+     "t": "Denník N (10 Nov): Fico said Slovakia would not be intimidated by the German chancellor and that Merz once shouted at him on the phone, after Merz tied the EU budget to Ukraine funding. [213]",
+     "src": [
+      [
+       "Z nemeckého kancelára sa „nepokakáme“, odkázal Fico a povedal, že Merz naňho v telefóne už raz kričal",
+       "https://dennikn.sk/5682561/z-nemeckeho-kancelara-sa-nepokakame-odkazal-fico-a-povedal-ze-merz-nanho-v-telefone-uz-raz-krical/"
+      ]
+     ]
     }
    ],
    "src": [
@@ -549,6 +675,18 @@
     [
      "Ukraine-Hilfe: Bundeskanzler Merz fordert Beteiligung aller EU-Staaten",
      "https://www.deutschlandfunk.de/bundeskanzler-merz-fordert-beteiligung-aller-eu-staaten-102.html"
+    ],
+    [
+     "Smer-SD vníma postoj Tarabu k novele o kajúcnikoch ako politikárčenie",
+     "https://www.teraz.sk/slovensko/smer-sd-vnima-postoj-tarabu-k-novele-o/1006517-clanok.html"
+    ],
+    [
+     "Slovensko a Česko budú spoločne obstarávať špeciálnu hasičskú techniku",
+     "https://www.teraz.sk/slovensko/slovensko-a-cesko-budu-spolocne-obsta/1006655-clanok.html"
+    ],
+    [
+     "Rezort Hospodárstva: SR a ČR posilňujú spoluprácu v energetike",
+     "https://www.teraz.sk/ekonomika/rezort-hospodarstva-sr-a-cr-posilnuj/1006631-clanok.html"
     ]
    ],
    "verified": false,
@@ -607,7 +745,7 @@
     "note": "NATO estimates, share of GDP; 2014 to 2024 from the annual press releases, 2025 from the March 2026 report via press coverage; to confirm against the NATO table",
     "verified": false
    },
-   "updated": "2026-11-10"
+   "updated": "2026-11-11"
   },
   {
    "id": "de",
@@ -635,7 +773,7 @@
     "posture": [
      "Operationsplan Deutschland: the Bundeswehr's plan linking national and alliance defence with civil support, covering peacetime, hybrid threat, crisis and war",
      "Host nation support: up to 800,000 allied troops and 200,000 vehicles must be able to move through Germany within six months (Bundeswehr)",
-     "Wehrdienst-Modernisierungsgesetz passed 5 Dec 2025: all 18-year-old men receive a questionnaire from January 2026; service stays voluntary with a compulsory fallback"
+     "Wehrdienst-Modernisierungsgesetz passed 5 Dec 2025: all 18-year-old men receive a questionnaire from January 2026; service stays voluntary with a compulsory fallback; 16,869 conscientious-objection applications 1 Jan–31 Oct 2026, against 3,879 in 2025 (BAFzA)"
     ]
    },
    "stance": [
@@ -804,6 +942,44 @@
        "https://www.handelsblatt.com/politik/deutschland/ruestung-bund-zahlt-offenbar-66-milliarden-euro-fuer-knds-einstieg/100268563.html"
       ]
      ]
+    },
+    {
+     "date": "2026-11-11",
+     "t": "Spiegel reported on 10 Nov that the Bundeswehr ordered commercial drones from the large Chinese makers out of service, to be replaced by national or European products, and plans to bar Chinese-made cars from its barracks over data-transmitting sensors. [81, 82]",
+     "src": [
+      [
+       "Bundeswehr verbannt Drohnen und Autos aus China aus den Kasernen – Spionagegefahr",
+       "https://www.spiegel.de/politik/deutschland/bundeswehr-verbannt-drohnen-und-autos-aus-china-aus-den-kasernen-spionagegefahr-a-551cf80d-6065-427d-b469-70727ea4cf24"
+      ],
+      [
+       "Bundeswehr verbietet wegen Sicherheitsbedenken chinesische Drohnen und Autos in Militäreinrichtungen (Spiegel-Bericht)",
+       "https://www.deutschlandfunk.de/bundeswehr-verbietet-wegen-sicherheitsbedenken-chinesische-drohnen-und-autos-in-militaereinrichtunge-100.html"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-11",
+     "t": "The BAFzA counted 16,869 applications for conscientious objection from 1 Jan to 31 Oct 2026, against 3,879 in all of 2025 and 2,249 in 2024; almost 1,900 came in October. [70, 71]",
+     "src": [
+      [
+       "Zahl der Kriegsdienstverweigerer steigt weiter deutlich",
+       "https://www.tagesschau.de/inland/kriegsdienstverweigerer-steigend-100.html"
+      ],
+      [
+       "Fast 17.000 Anträge auf Kriegsdienstverweigerung in diesem Jahr",
+       "https://www.deutschlandfunk.de/fast-17-000-antraege-auf-kriegsdienstverweigerung-in-diesem-jahr-100.html"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-11",
+     "t": "At the 10 Nov press conference with Magyar, Merz said Germany's Ukraine policy must be fully built into the EU budget and that the 2028–2034 proposal needs significant changes before talks can close. [62]",
+     "src": [
+      [
+       "Merz: Nový rozpočet EÚ musí zahrnúť prostriedky na pomoc Ukrajine",
+       "https://www.teraz.sk/ekonomika/merz-novy-rozpocet-eu-musi-zahrnu/1006606-clanok.html"
+      ]
+     ]
     }
    ],
    "src": [
@@ -818,6 +994,10 @@
     [
      "Rekordetat Verteidigung: Haushaltsdebatte",
      "https://www.bmvg.de/de/aktuelles/rekordetat-verteidigung-haushaltsdebatte-6149920"
+    ],
+    [
+     "Zahl der Kriegsdienstverweigerer steigt weiter deutlich",
+     "https://www.tagesschau.de/inland/kriegsdienstverweigerer-steigend-100.html"
     ]
    ],
    "verified": false,
@@ -876,7 +1056,7 @@
     "note": "NATO estimates, share of GDP; 2014 to 2024 from the annual press releases, 2025 from the March 2026 report via press coverage; to confirm against the NATO table",
     "verified": false
    },
-   "updated": "2026-11-10"
+   "updated": "2026-11-11"
   },
   {
    "id": "ru",
@@ -900,7 +1080,7 @@
     "dateText": "Presidential election due March 2030; State Duma elected 18–20 Sep 2026"
    },
    "nato": {
-    "spend": "SIPRI estimate 7.5% of GDP in 2025, almost 16 trillion roubles; SIPRI puts planned 2026 military spending at 14.9 trillion roubles, 6.3% of GDP, after the 2026 budget law cut the national-defence line by more than 800 billion roubles from the 12.9 trillion draft. The 2027–29 draft budget went to the Duma on 30 Sep 2026 and passed first reading on 29 Oct, with 2027 spending of 48.7 trillion roubles; the national-defence section total is not yet confirmed",
+    "spend": "SIPRI estimate 7.5% of GDP in 2025, almost 16 trillion roubles; SIPRI puts planned 2026 military spending at 14.9 trillion roubles, 6.3% of GDP, after the 2026 budget law cut the national-defence line by more than 800 billion roubles from the 12.9 trillion draft. The 2027–29 draft budget went to the Duma on 30 Sep 2026 and passed first reading on 29 Oct, with 2027 spending of 48.7 trillion roubles; the explanatory note to the draft puts 2027 national-defence spending at 17.15 trillion roubles, about 35% of all spending, with only about 2.3 trillion in open budget lines",
     "posture": [
      "Leningrad and Moscow military districts re-established by Presidential Decree No. 141 of 26 Feb 2024, in force 1 Mar 2024, facing Finland, the Baltics and Poland",
      "Baltic Fleet and the 11th Army Corps in Kaliningrad",
@@ -988,6 +1168,16 @@
        "http://kremlin.ru/events/president/news/81200"
       ]
      ]
+    },
+    {
+     "date": "2026-11-11",
+     "t": "The explanatory note to the draft 2027–29 budget, submitted on 30 Sep, puts 2027 national-defence spending at 17.15 trillion roubles, about 35% of total spending of 48.7 trillion, with only about 2.3 trillion visible in open lines. [214]",
+     "src": [
+      [
+       "Что нужно знать о бюджете на 2027 год (reading of the explanatory note to the draft budget)",
+       "https://t-j.ru/budget-2027/"
+      ]
+     ]
     }
    ],
    "src": [
@@ -1038,9 +1228,13 @@
     [
      "Госдума приняла проект федерального бюджета на 2027–2029 годы в первом чтении (citing TASS)",
      "https://www.amic.ru/news/gosduma-prinyala-proekt-federalnogo-byudzheta-na-2027-2029-gody-v-pervom-chtenii-595733"
+    ],
+    [
+     "Что нужно знать о бюджете на 2027 год (reading of the explanatory note to the draft budget)",
+     "https://t-j.ru/budget-2027/"
     ]
    ],
-   "updated": "2026-11-10"
+   "updated": "2026-11-11"
   },
   {
    "id": "by",
@@ -1100,7 +1294,7 @@
    "stance": [
     {
      "k": "Ukraine",
-     "t": "Staging ground for the Feb 2022 invasion from the north; no Belarusian units committed (to confirm)."
+     "t": "Staging ground for the Feb 2022 invasion from the north; Lukashenko told Putin on 10 Nov 2026 that the Belarusian army and the Russian formations on the western direction were never sent to the combat zone in Ukraine (the state's own words, BelTA)."
     },
     {
      "k": "Kaliningrad and the Suwałki corridor",
@@ -1120,6 +1314,20 @@
       [
        "Pasienyje su Baltarusija apgręžti septyni neteisėti migrantai",
        "https://www.lrt.lt/naujienos/lietuvoje/2/3108020/pasienyje-su-baltarusija-apgrezti-septyni-neteiseti-migrantai"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-11",
+     "t": "Lukashenko told Putin at Novo-Ogaryovo on 10 Nov, in the state's own words: “Все виды вооружений, самые новые” (all types of weapons, the newest), saying Belarus has mastered everything Russia promised on security, and thanked him for keeping Russian formations on the western direction combat-ready and out of the war in Ukraine; the talks lasted 3 hours 50 minutes, on the eve of the CSTO council in Moscow on 11 Nov. [72, 31]",
+     "src": [
+      [
+       "Лукашенко поблагодарил Путина за поддержку Беларуси по современным видам вооружений",
+       "https://www.belta.by/president/view/lukashenko-poblagodaril-putina-za-podderzhku-belarusi-po-sovremennym-vidam-vooruzhenij-810325-2026/"
+      ],
+      [
+       "Почти четыре часа продолжались переговоры Путина и Лукашенко накануне сессии ОДКБ",
+       "https://www.interfax.ru/russia/1128187"
       ]
      ]
     }
@@ -1148,9 +1356,13 @@
     [
      "Новости (news list, 9 Nov item on the Armed Forces delegation to Russia)",
      "http://www.mil.by/ru/news/"
+    ],
+    [
+     "Лукашенко поблагодарил Путина за поддержку Беларуси по современным видам вооружений",
+     "https://www.belta.by/president/view/lukashenko-poblagodaril-putina-za-podderzhku-belarusi-po-sovremennym-vidam-vooruzhenij-810325-2026/"
     ]
    ],
-   "updated": "2026-11-10"
+   "updated": "2026-11-11"
   },
   {
    "id": "cn",
@@ -1212,7 +1424,7 @@
     },
     {
      "k": "Slovakia",
-     "t": "Strategic partnership agreed by Xi Jinping and Robert Fico in Beijing on 1 Nov 2024."
+     "t": "Strategic partnership agreed by Xi Jinping and Robert Fico in Beijing on 1 Nov 2024; Wang Yi and Foreign Minister Blanár met in Beijing on 10 Nov 2026, China is ready to extend visa-free entry for Slovaks by a year, and a Slovak firm signed memoranda with CGN and CNNC."
     },
     {
      "k": "Germany",
@@ -1260,6 +1472,24 @@
       [
        "商务部新闻发言人就优化调整无人机相关物项出口管制措施答记者问 (19 Oct)",
        "https://www.news.cn/fortune/20261019/06e8685081394fdd92f5530302c044a7/c.html"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-11",
+     "t": "Wang Yi met Slovak Foreign Minister Blanár in Beijing on 10 Nov; the Chinese readout says, in the state's own words, “希望斯方继续为中欧关系稳健发展发挥建设性作用” (we hope Slovakia keeps playing a constructive role in the steady development of China–EU relations). China is ready to extend visa-free entry for Slovaks by a year, and the Slovak firm Nuclear Power signed memoranda with CGN and CNNC at a business forum. [73, 74, 215]",
+     "src": [
+      [
+       "王毅同斯洛伐克外长布拉纳尔会谈（2026-11-10）",
+       "https://www.mfa.gov.cn/wjbzhd/202611/t20261110_12056955.shtml"
+      ],
+      [
+       "J. Blanár: SR chce znížiť obchodný deficit s Čínou a získať investície",
+       "https://www.teraz.sk/ekonomika/j-blanar-sr-chce-znizit-obchodny/1006435-clanok.html"
+      ],
+      [
+       "Čína predĺži bezvízový režim pre slovenských občanov o ďalší rok",
+       "https://www.teraz.sk/zahranicie/cina-predlzi-bezvizovy-rezim-pre/1006489-clanok.html"
       ]
      ]
     }
@@ -1312,9 +1542,17 @@
     [
      "商务部新闻发言人就优化调整无人机相关物项出口管制措施答记者问 (19 Oct)",
      "https://www.news.cn/fortune/20261019/06e8685081394fdd92f5530302c044a7/c.html"
+    ],
+    [
+     "王毅同斯洛伐克外长布拉纳尔会谈（2026-11-10）",
+     "https://www.mfa.gov.cn/wjbzhd/202611/t20261110_12056955.shtml"
+    ],
+    [
+     "J. Blanár: SR chce znížiť obchodný deficit s Čínou a získať investície",
+     "https://www.teraz.sk/ekonomika/j-blanar-sr-chce-znizit-obchodny/1006435-clanok.html"
     ]
    ],
-   "updated": "2026-11-10"
+   "updated": "2026-11-11"
   }
  ],
  "map": {

@@ -1,6 +1,6 @@
 {
  "note": "NATO and allied exercise calendar. The run adds exercises with dates, lead, location and forces when announced, sets updated when dates change, and never deletes past ones (the page hides those older than 60 days). Feeds the Planner and the Horizon.",
- "updated": "2026-11-09",
+ "updated": "2026-11-11",
  "exercises": [
   {
    "id": "avenger-triad-26",
@@ -223,6 +223,49 @@
      "US, Colombian troops kick off exercise amid the Pentagon's Western Hemisphere pivot",
      "Military Times",
      "https://www.militarytimes.com/news/your-military/2026/11/06/us-colombian-troops-kick-off-exercise-amid-the-pentagons-western-hemisphere-pivot/",
+     3
+    ]
+   ]
+  },
+  {
+   "id": "dynamic-merlin-26",
+   "name": "Dynamic Merlin 26",
+   "from": "2026-11-09",
+   "to": "2026-11-13",
+   "lead": "NATO (Allied Maritime Command; Commander Submarines NATO)",
+   "where": "Baltic Sea off Sweden; pre-sail in Stockholm",
+   "forces": "German and Swedish submarines; Standing NATO Maritime Group One (flagship HNLMS Den Helder, with FGS Berlin, HMCS Ville de Québec, HDMS Esbern Snare, FNS Hamina) plus Canadian, Danish, Finnish, German, Dutch and Swedish ships; maritime patrol aircraft from France, Germany, Sweden and the UK; anti-submarine warfare against drone attack",
+   "status": "under way",
+   "added": "2026-11-11",
+   "updated": "2026-11-11",
+   "src": [
+    [
+     208,
+     "NATO sub hunters in Baltic exercise to face drone attacks",
+     "UK Defence Journal",
+     "https://ukdefencejournal.org.uk/nato-sub-hunters-in-baltic-exercise-to-face-drone-attacks/",
+     3
+    ]
+   ]
+  },
+  {
+   "id": "albiston-shadow-27",
+   "name": "Albiston Shadow 2027 (UK home defence)",
+   "from": "2027-01-01",
+   "to": "2027-12-31",
+   "dateText": "2027, dates not set",
+   "lead": "UK Cabinet Office, with full Ministry of Defence participation",
+   "where": "United Kingdom (whole of government)",
+   "forces": "Ministers and officials across government; tests preparedness for hybrid attacks and the refreshed Government War Book; described as the largest UK home defence exercise in decades",
+   "status": "planned",
+   "added": "2026-11-11",
+   "updated": "2026-11-11",
+   "src": [
+    [
+     216,
+     "Britain’s biggest home defence drill named Albiston Shadow",
+     "UK Defence Journal",
+     "https://ukdefencejournal.org.uk/britains-biggest-home-defence-drill-named-albiston-shadow/",
      3
     ]
    ]

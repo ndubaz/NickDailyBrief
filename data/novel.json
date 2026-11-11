@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-10",
+ "updated": "2026-11-11",
  "note": "New uses of technology in war: first-seen or newly combined techniques observed in any theatre and any domain. Append-only. Each entry: id (YYYY-MM-DD-slug), date (when observed or first reported), theatre (board id), actor, t (headline), what (fact sentences with [n] citations), new (one or two sentences on what is new, in the reporters' and actors' terms, no prediction), domains (from the list below), src rows copied from the edition. The run checks ids and titles before appending so a technique is logged once; a later development of the same technique is a new entry that names the earlier id in prev.",
  "domains": {
   "uas": "Drones",
@@ -164,6 +164,90 @@
     ]
    ],
    "edition": 9
+  },
+  {
+   "id": "2026-11-11-fairford-jail-coded-calls",
+   "date": "2026-11-10",
+   "theatre": "iran",
+   "actor": "IRGC and Kataib Hezbollah (alleged by US prosecutors)",
+   "t": "A jailed operative allegedly steered a UK air-base plot through coded calls to relatives",
+   "what": "The US indictment unsealed on 10 Nov says Mohammad Baqer Saad Dawood al-Saadi, held in New York since May, passed coded messages in phone calls to his mother and sister in Iraq to coordinate co-defendants, while paid UK associates surveilled RAF Fairford and drove vans in fuel-delivery and pool-supply livery to its perimeter. [15, 14]",
+   "new": "Prosecutors describe tasking relayed from a US detention facility through family phone calls to a cell that used commercial liveries and paid local helpers for surveillance and logistics against an air base.",
+   "domains": [
+    "c2",
+    "log"
+   ],
+   "src": [
+    [
+     15,
+     "US charges 3 men over alleged Iranian-backed plot at UK Fairford air base",
+     "Al Jazeera",
+     "https://www.aljazeera.com/news/2026/11/11/us-charges-3-iranian-backed-men-over-alleged-plot-at-uk-fairford-air-base",
+     3
+    ],
+    [
+     14,
+     "Three Iran-backed suspects plotted attacks including RAF Fairford incident, US says",
+     "BBC News",
+     "https://www.bbc.co.uk/news/articles/c3rryrryk59zo",
+     3
+    ]
+   ],
+   "edition": 11
+  },
+  {
+   "id": "2026-11-11-atlantic-net-surveillance-service",
+   "date": "2026-11-10",
+   "theatre": "arctic",
+   "actor": "UK Ministry of Defence and Royal Navy",
+   "t": "The Royal Navy buys North Atlantic undersea surveillance as a contracted service of drones, sensors and AI",
+   "what": "The MoD announced on 10 Nov a £90 million framework with Ocean Infinity Solutions for Atlantic Net, a network of uncrewed systems and sensors in the North Atlantic that the Royal Navy directs as a single surveillance service cueing warships and Astute-class submarines against Russian submarines and threats to cables. [88]",
+   "new": "A commercial operator brings maritime systems, underwater sensing, communications, remote operations and data services into one capability under naval direction, so persistent anti-submarine and cable surveillance is bought as a service rather than as platforms.",
+   "domains": [
+    "naval",
+    "uas",
+    "ai"
+   ],
+   "src": [
+    [
+     88,
+     "£90 million investment for new drones and sensors to protect undersea cables and hunt Russian submarines",
+     "UK Ministry of Defence",
+     "https://www.gov.uk/government/news/90-million-investment-for-new-drones-and-sensors-to-protect-undersea-cables-and-hunt-russian-submarines",
+     1
+    ]
+   ],
+   "edition": 11
+  },
+  {
+   "id": "2026-11-11-mig29-for-cuas-tech",
+   "date": "2026-11-10",
+   "theatre": "ru-ua",
+   "actor": "Polish and Ukrainian defence ministries",
+   "t": "Poland pays for Ukrainian counter-drone technology with life-expired MiG-29 fighters",
+   "what": "Polish Deputy Defence Minister Tomczyk said on 10 Nov that Ukraine committed to transfer drone and counter-drone technologies in exchange for two MiG-29s past their service life, and that the two ministries signed an agreement on joint working groups on drone and counter-drone technology. [84, 83]",
+   "new": "A NATO member acquires battlefield counter-drone technology from a country at war by bartering retired combat aircraft, government to government, alongside standing joint working groups rather than through an industry purchase.",
+   "domains": [
+    "cuas",
+    "uas"
+   ],
+   "src": [
+    [
+     84,
+     "MiGs for anti-drone systems. An agreement between Poland and Ukraine",
+     "Defence24",
+     "https://defence24.com/armed-forces/migs-for-anti-drone-systems-an-agreement-between-poland-and-ukraine",
+     3
+    ],
+    [
+     83,
+     "Ukraine and Poland to establish joint working groups on drone and counter-drone technologies",
+     "Ukrinform",
+     "https://www.ukrinform.net/rubric-ato/4183535-ukraine-and-poland-to-establish-joint-working-groups-on-drone-and-counterdrone-technologies.html",
+     2
+    ]
+   ],
+   "edition": 11
   }
  ]
 }

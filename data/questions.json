@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-10",
+ "updated": "2026-11-11",
  "note": "Open questions the Readbook is carrying: what we do not know. The run adds a question when an item turns on a fact nobody has published, and closes it with the answer and source when one appears. Never delete.",
  "items": [
   {
@@ -106,7 +106,25 @@
    "q": "On which motion (adopt, table or refer) does the House take up Massie's resolution, and how many Republicans vote against tabling?",
    "thread": "thread:hegseth-impeachment",
    "opened": "2026-11-10",
-   "status": "open"
+   "status": "closed",
+   "closed": "2026-11-11",
+   "answer": "A motion to refer to the Judiciary Committee, adopted 211–204 on 10 Nov; tagesschau says Republicans voted almost as a bloc, and no party split was published in the reports read. [16, 105]",
+   "src": [
+    [
+     16,
+     "House opts to stall Hegseth impeachment vote, sending resolution to Judiciary Committee",
+     "Breaking Defense",
+     "https://breakingdefense.com/2026/11/house-opts-to-stall-hegseth-impeachment-vote-sending-resolution-to-judiciary-committee/",
+     3
+    ],
+    [
+     105,
+     "US-Repräsentantenhaus lehnt Amtsenthebungsverfahren gegen Hegseth ab",
+     "tagesschau",
+     "https://www.tagesschau.de/ausland/amerika/hegseth-amtsenthebungsverfahren-gestoppt-100.html",
+     3
+    ]
+   ]
   },
   {
    "id": "2026-11-10-coldchain-second-wave",
@@ -127,6 +145,55 @@
    "q": "What information keeps a Russian hybrid scenario open in the Kraków attack investigation?",
    "thread": "thread:krakow-attack",
    "opened": "2026-11-10",
+   "status": "open"
+  },
+  {
+   "id": "2026-11-11-ust-luga-target",
+   "q": "What did the drone strike on the Ust-Luga port zone on 11 Nov hit, and did oil or gas loadings stop?",
+   "thread": "theatre:ru-ua",
+   "opened": "2026-11-11",
+   "status": "open"
+  },
+  {
+   "id": "2026-11-11-hu-german-lng",
+   "q": "By which route and at what price would German LNG reach Hungary under Merz's 10 Nov offer?",
+   "thread": "country:hu",
+   "opened": "2026-11-11",
+   "status": "open"
+  },
+  {
+   "id": "2026-11-11-mildenhall-threat",
+   "q": "What Iranian threat did US officials cite when aircraft left RAF Mildenhall on 10 Nov, and which units moved?",
+   "thread": "thread:uk-us-bases",
+   "opened": "2026-11-11",
+   "status": "open"
+  },
+  {
+   "id": "2026-11-11-arrc-soldier-charge",
+   "q": "Is the US soldier arrested near Gloucester on 10 Nov charged by about 24 Nov, and what information is he alleged to have passed?",
+   "thread": "thread:uk-us-bases",
+   "opened": "2026-11-11",
+   "status": "open"
+  },
+  {
+   "id": "2026-11-11-baltic-drone-origin",
+   "q": "Whose drones set off the Latvian and Lithuanian alerts on 9–11 Nov, and did any crash or get shot down?",
+   "thread": "theatre:ru-ua",
+   "opened": "2026-11-11",
+   "status": "open"
+  },
+  {
+   "id": "2026-11-11-admiral-assumption",
+   "q": "When does Lt. Gen. Admiral take command of USAREUR-AF and Allied Land Command, and to which post does Maj. Gen. Norrie go as a lieutenant general?",
+   "thread": "congress:usareur-2026",
+   "opened": "2026-11-11",
+   "status": "open"
+  },
+  {
+   "id": "2026-11-11-hconres93-senate",
+   "q": "Does the Senate adopt H.Con.Res. 93 on ending US hostilities with Iran by 20 Nov, and with how many Republican votes?",
+   "thread": "congress:hconres93-iran-war-powers-2026",
+   "opened": "2026-11-11",
    "status": "open"
   }
  ]

@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-10",
+ "updated": "2026-11-11",
  "note": "Shows Nick follows. The run refreshes last and next from the TVMaze API (https://api.tvmaze.com/shows/<tvmaze>?embed[]=previousepisode&embed[]=nextepisode) and keeps the renewal note current from press reports. Dates are the broadcaster's local air date.",
  "shows": [
   {
@@ -10,15 +10,15 @@
    "status": "airing",
    "last": {
     "s": 17,
-    "e": 7,
-    "date": "2026-11-03",
-    "name": "Free-from Party Week"
+    "e": 8,
+    "date": "2026-11-10",
+    "name": "Caramel Week"
    },
    "next": {
     "s": 17,
-    "e": 8,
-    "date": "2026-11-10",
-    "name": "Caramel Week",
+    "e": 9,
+    "date": "2026-11-17",
+    "name": "Patisserie Week",
     "time": "20:00 UK"
    },
    "note": "Series 17, Tuesdays at 20:00 UK. Nigella Lawson judges with Paul Hollywood. Fan schedules list the final for 24 Nov; Channel 4 has not published the date.",
@@ -248,23 +248,29 @@
    "tvmaze": 11657,
    "title": "Heel Holland Bakt",
    "where": "NPO 1 (Omroep MAX), NPO Start",
-   "status": "between",
+   "status": "airing",
    "last": {
-    "s": 14,
-    "e": 10,
-    "date": "2026-04-24",
-    "name": "Finale"
+    "s": 15,
+    "e": 1,
+    "date": "2026-11-08",
+    "name": "Biscuit"
    },
-   "next": null,
-   "note": "Series 14 ended 24 Apr 2026. A new series usually starts in January on Sunday evenings at 20:25; Omroep MAX has not yet published the 2027 date. Dutch at an easy B1 level, with the bakers' Limburgs and Brabants accents a bonus.",
+   "next": {
+    "s": 15,
+    "e": 2,
+    "date": "2026-11-15",
+    "name": "Mexico",
+    "time": "20:40"
+   },
+   "note": "Series 15 started on Sun 8 Nov at 20:40 on NPO 1 (episode 1, Biscuit), with a repeat on Saturday afternoon; episode 2 airs Sun 15 Nov. Dutch at an easy B1 level, with the bakers' Limburgs and Brabants accents a bonus.",
    "src": [
     [
      "TVMaze: Heel Holland Bakt",
      "https://www.tvmaze.com/shows/11657/heel-holland-bakt"
     ],
     [
-     "Omroep MAX: Heel Holland Bakt",
-     "http://heelhollandbakt.omroepmax.nl/home/"
+     "MAX Vandaag: Heel Holland Bakt",
+     "https://www.maxvandaag.nl/programmas/tv/heel-holland-bakt/"
     ]
    ]
   },
