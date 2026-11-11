@@ -875,3 +875,9 @@ table.clubs td{white-space:normal}
 .nwl li.flag { background: color-mix(in srgb, var(--down, #b3261e) 9%, transparent); border-left: 3px solid var(--down, #b3261e); padding-left: .5rem; border-radius: 4px; }
 .flagtag { display: inline-block; font: 700 .68rem/1.2 ui-monospace, monospace; letter-spacing: .04em; text-transform: uppercase; color: #fff; background: var(--down, #b3261e); padding: .1rem .35rem; border-radius: 3px; vertical-align: middle; }
 .flagtxt { color: var(--down, #b3261e); font-weight: 700; }
+
+/* calendar priority: HQ and AFNORTH rows stand out, awareness-only rows recede */
+.agenda tr.must td:first-child { font-weight: 700; }
+.agenda tr.must b { color: var(--ink); }
+.agenda tr.aware { opacity: .62; }
+.agenda tr.aware b { font-weight: 500; }

@@ -1,5 +1,5 @@
 {
- "note": "Standing calendar, edited rarely: public holidays and observances (c = nl, be, de, us, jfc = JFCBS HQ closed, nat = an allied nation's staff off with the HQ open, info), school breaks per system, and seasonal markets. The morning run completes missing school years when they are published and otherwise leaves this file alone. Window: 2026-11-01 to 2028-04-30. Holiday dates are computed from the statutory rules (Easter-based dates via the Gregorian algorithm) and should be spot-checked once a year.",
+ "note": "Standing calendar, edited rarely: public holidays and observances (c = nl, be, de, us, jfc = JFCBS HQ closed, nat = an allied nation's staff off with the HQ open, clinic = Geilenkirchen clinic closures, info). Rows may carry `shops` (store closures). `hqFrom` is the first date the HQ day-off list covers., school breaks per system, and seasonal markets. The morning run completes missing school years when they are published and otherwise leaves this file alone. Window: 2026-11-01 to 2028-04-30. Holiday dates are computed from the statutory rules (Easter-based dates via the Gregorian algorithm) and should be spot-checked once a year.",
  "from": "2026-11-01",
  "to": "2028-04-30",
  "updated": "2026-11-11",
@@ -13,13 +13,15 @@
   {
    "date": "2026-11-01",
    "c": "be",
-   "n": "Allerheiligen"
+   "n": "Allerheiligen",
+   "shops": "Belgian shop hours vary by chain; many supermarkets open."
   },
   {
    "date": "2026-11-01",
    "c": "de",
    "n": "Allerheiligen",
-   "note": "NRW"
+   "note": "NRW",
+   "shops": "Shops shut by law in Germany; bakeries, petrol stations and station shops excepted."
   },
   {
    "date": "2026-11-01",
@@ -29,7 +31,8 @@
   {
    "date": "2026-11-11",
    "c": "be",
-   "n": "Wapenstilstand"
+   "n": "Wapenstilstand",
+   "shops": "Belgian shop hours vary by chain; many supermarkets open."
   },
   {
    "date": "2026-11-11",
@@ -49,6 +52,12 @@
    "note": "Quiet day in NRW; markets closed or limited"
   },
   {
+   "date": "2026-11-18",
+   "c": "clinic",
+   "n": "Geilenkirchen clinic · Clinic closed mornings",
+   "note": "Training day: closed in the morning, open in the afternoon. 852d Medical Squadron; posted on the clinic's Facebook page."
+  },
+  {
    "date": "2026-11-22",
    "c": "de",
    "n": "Totensonntag",
@@ -66,19 +75,40 @@
    "n": "Pakjesavond (Sinterklaas)"
   },
   {
+   "date": "2026-12-23",
+   "c": "clinic",
+   "n": "Geilenkirchen clinic · Clinic closes 12:00",
+   "note": "Holiday schedule. 852d Medical Squadron; posted on the clinic's Facebook page."
+  },
+  {
+   "date": "2026-12-24",
+   "c": "clinic",
+   "n": "Geilenkirchen clinic · Clinic closed",
+   "note": "Holiday schedule. 852d Medical Squadron; posted on the clinic's Facebook page."
+  },
+  {
    "date": "2026-12-25",
    "c": "be",
-   "n": "Kerstmis"
+   "n": "Kerstmis",
+   "shops": "Most Belgian shops closed."
+  },
+  {
+   "date": "2026-12-25",
+   "c": "clinic",
+   "n": "Geilenkirchen clinic · Clinic closed",
+   "note": "Holiday schedule. 852d Medical Squadron; posted on the clinic's Facebook page."
   },
   {
    "date": "2026-12-25",
    "c": "de",
-   "n": "1. Weihnachtstag"
+   "n": "1. Weihnachtstag",
+   "shops": "Shops shut by law in Germany; bakeries, petrol stations and station shops excepted."
   },
   {
    "date": "2026-12-25",
    "c": "nl",
-   "n": "Eerste Kerstdag"
+   "n": "Eerste Kerstdag",
+   "shops": "Most Dutch shops closed."
   },
   {
    "date": "2026-12-25",
@@ -89,22 +119,56 @@
   {
    "date": "2026-12-26",
    "c": "de",
-   "n": "2. Weihnachtstag"
+   "n": "2. Weihnachtstag",
+   "shops": "Shops shut by law in Germany; bakeries, petrol stations and station shops excepted."
   },
   {
    "date": "2026-12-26",
    "c": "nl",
-   "n": "Tweede Kerstdag"
+   "n": "Tweede Kerstdag",
+   "shops": "Dutch supermarkets usually open with shorter hours; check your store."
+  },
+  {
+   "date": "2026-12-28",
+   "c": "clinic",
+   "n": "Geilenkirchen clinic · Clinic closes 12:00",
+   "note": "Holiday schedule. 852d Medical Squadron; posted on the clinic's Facebook page."
+  },
+  {
+   "date": "2026-12-29",
+   "c": "clinic",
+   "n": "Geilenkirchen clinic · Clinic closes 12:00",
+   "note": "Holiday schedule. 852d Medical Squadron; posted on the clinic's Facebook page."
+  },
+  {
+   "date": "2026-12-30",
+   "c": "clinic",
+   "n": "Geilenkirchen clinic · Clinic closes 12:00",
+   "note": "Holiday schedule. 852d Medical Squadron; posted on the clinic's Facebook page."
+  },
+  {
+   "date": "2026-12-31",
+   "c": "clinic",
+   "n": "Geilenkirchen clinic · Clinic closed",
+   "note": "Holiday schedule. 852d Medical Squadron; posted on the clinic's Facebook page."
   },
   {
    "date": "2027-01-01",
    "c": "be",
-   "n": "Nieuwjaar"
+   "n": "Nieuwjaar",
+   "shops": "Most Belgian shops closed."
+  },
+  {
+   "date": "2027-01-01",
+   "c": "clinic",
+   "n": "Geilenkirchen clinic · Clinic closed",
+   "note": "Holiday schedule. 852d Medical Squadron; posted on the clinic's Facebook page."
   },
   {
    "date": "2027-01-01",
    "c": "de",
-   "n": "Neujahr"
+   "n": "Neujahr",
+   "shops": "Shops shut by law in Germany; bakeries, petrol stations and station shops excepted."
   },
   {
    "date": "2027-01-01",
@@ -115,7 +179,8 @@
   {
    "date": "2027-01-01",
    "c": "nl",
-   "n": "Nieuwjaarsdag"
+   "n": "Nieuwjaarsdag",
+   "shops": "Most Dutch shops closed."
   },
   {
    "date": "2027-01-01",
@@ -133,7 +198,8 @@
    "date": "2027-02-07",
    "c": "nl",
    "n": "Carnaval (Limburg) Sun–Tue",
-   "note": "Vastelaovend 7 to 9 Feb; schools and many offices closed Mon–Tue in Zuid-Limburg"
+   "note": "Vastelaovend 7 to 9 Feb; schools and many offices closed Mon–Tue in Zuid-Limburg",
+   "shops": "Supermarkets mostly open; many local shops in Zuid-Limburg keep short hours Mon–Tue."
   },
   {
    "date": "2027-02-08",
@@ -185,7 +251,8 @@
   {
    "date": "2027-03-26",
    "c": "de",
-   "n": "Karfreitag"
+   "n": "Karfreitag",
+   "shops": "Shops shut by law in Germany; bakeries, petrol stations and station shops excepted."
   },
   {
    "date": "2027-03-26",
@@ -207,17 +274,20 @@
   {
    "date": "2027-03-28",
    "c": "nl",
-   "n": "Eerste Paasdag"
+   "n": "Eerste Paasdag",
+   "shops": "Most Dutch shops closed."
   },
   {
    "date": "2027-03-29",
    "c": "be",
-   "n": "Paasmaandag"
+   "n": "Paasmaandag",
+   "shops": "Belgian shop hours vary by chain; many supermarkets open."
   },
   {
    "date": "2027-03-29",
    "c": "de",
-   "n": "Ostermontag"
+   "n": "Ostermontag",
+   "shops": "Shops shut by law in Germany; bakeries, petrol stations and station shops excepted."
   },
   {
    "date": "2027-03-29",
@@ -228,7 +298,8 @@
   {
    "date": "2027-03-29",
    "c": "nl",
-   "n": "Tweede Paasdag"
+   "n": "Tweede Paasdag",
+   "shops": "Dutch supermarkets usually open with shorter hours; check your store."
   },
   {
    "date": "2027-03-29",
@@ -245,7 +316,8 @@
   {
    "date": "2027-04-27",
    "c": "nl",
-   "n": "Koningsdag"
+   "n": "Koningsdag",
+   "shops": "Dutch supermarkets usually open with shorter hours; check your store."
   },
   {
    "date": "2027-04-30",
@@ -256,12 +328,14 @@
   {
    "date": "2027-05-01",
    "c": "be",
-   "n": "Dag van de Arbeid"
+   "n": "Dag van de Arbeid",
+   "shops": "Belgian shop hours vary by chain; many supermarkets open."
   },
   {
    "date": "2027-05-01",
    "c": "de",
-   "n": "Tag der Arbeit"
+   "n": "Tag der Arbeit",
+   "shops": "Shops shut by law in Germany; bakeries, petrol stations and station shops excepted."
   },
   {
    "date": "2027-05-03",
@@ -290,12 +364,14 @@
   {
    "date": "2027-05-06",
    "c": "be",
-   "n": "O.L.H. Hemelvaart"
+   "n": "O.L.H. Hemelvaart",
+   "shops": "Belgian shop hours vary by chain; many supermarkets open."
   },
   {
    "date": "2027-05-06",
    "c": "de",
-   "n": "Christi Himmelfahrt"
+   "n": "Christi Himmelfahrt",
+   "shops": "Shops shut by law in Germany; bakeries, petrol stations and station shops excepted."
   },
   {
    "date": "2027-05-06",
@@ -306,7 +382,8 @@
   {
    "date": "2027-05-06",
    "c": "nl",
-   "n": "Hemelvaartsdag"
+   "n": "Hemelvaartsdag",
+   "shops": "Dutch supermarkets usually open with shorter hours; check your store."
   },
   {
    "date": "2027-05-07",
@@ -323,17 +400,20 @@
   {
    "date": "2027-05-16",
    "c": "nl",
-   "n": "Eerste Pinksterdag"
+   "n": "Eerste Pinksterdag",
+   "shops": "Most Dutch shops closed."
   },
   {
    "date": "2027-05-17",
    "c": "be",
-   "n": "Pinkstermaandag"
+   "n": "Pinkstermaandag",
+   "shops": "Belgian shop hours vary by chain; many supermarkets open."
   },
   {
    "date": "2027-05-17",
    "c": "de",
-   "n": "Pfingstmontag"
+   "n": "Pfingstmontag",
+   "shops": "Shops shut by law in Germany; bakeries, petrol stations and station shops excepted."
   },
   {
    "date": "2027-05-17",
@@ -344,13 +424,15 @@
   {
    "date": "2027-05-17",
    "c": "nl",
-   "n": "Tweede Pinksterdag"
+   "n": "Tweede Pinksterdag",
+   "shops": "Dutch supermarkets usually open with shorter hours; check your store."
   },
   {
    "date": "2027-05-27",
    "c": "de",
    "n": "Fronleichnam",
-   "note": "NRW"
+   "note": "NRW",
+   "shops": "Shops shut by law in Germany; bakeries, petrol stations and station shops excepted."
   },
   {
    "date": "2027-05-28",
@@ -437,7 +519,8 @@
   {
    "date": "2027-07-21",
    "c": "be",
-   "n": "Nationale feestdag"
+   "n": "Nationale feestdag",
+   "shops": "Belgian shop hours vary by chain; many supermarkets open."
   },
   {
    "date": "2027-07-21",
@@ -448,7 +531,8 @@
   {
    "date": "2027-08-15",
    "c": "be",
-   "n": "O.L.V. Hemelvaart"
+   "n": "O.L.V. Hemelvaart",
+   "shops": "Belgian shop hours vary by chain; many supermarkets open."
   },
   {
    "date": "2027-08-16",
@@ -495,7 +579,8 @@
   {
    "date": "2027-10-03",
    "c": "de",
-   "n": "Tag der Deutschen Einheit"
+   "n": "Tag der Deutschen Einheit",
+   "shops": "Shops shut by law in Germany; bakeries, petrol stations and station shops excepted."
   },
   {
    "date": "2027-10-03",
@@ -540,13 +625,15 @@
   {
    "date": "2027-11-01",
    "c": "be",
-   "n": "Allerheiligen"
+   "n": "Allerheiligen",
+   "shops": "Belgian shop hours vary by chain; many supermarkets open."
   },
   {
    "date": "2027-11-01",
    "c": "de",
    "n": "Allerheiligen",
-   "note": "NRW"
+   "note": "NRW",
+   "shops": "Shops shut by law in Germany; bakeries, petrol stations and station shops excepted."
   },
   {
    "date": "2027-11-07",
@@ -556,7 +643,8 @@
   {
    "date": "2027-11-11",
    "c": "be",
-   "n": "Wapenstilstand"
+   "n": "Wapenstilstand",
+   "shops": "Belgian shop hours vary by chain; many supermarkets open."
   },
   {
    "date": "2027-11-11",
@@ -611,17 +699,20 @@
   {
    "date": "2027-12-25",
    "c": "be",
-   "n": "Kerstmis"
+   "n": "Kerstmis",
+   "shops": "Most Belgian shops closed."
   },
   {
    "date": "2027-12-25",
    "c": "de",
-   "n": "1. Weihnachtstag"
+   "n": "1. Weihnachtstag",
+   "shops": "Shops shut by law in Germany; bakeries, petrol stations and station shops excepted."
   },
   {
    "date": "2027-12-25",
    "c": "nl",
-   "n": "Eerste Kerstdag"
+   "n": "Eerste Kerstdag",
+   "shops": "Most Dutch shops closed."
   },
   {
    "date": "2027-12-25",
@@ -631,12 +722,14 @@
   {
    "date": "2027-12-26",
    "c": "de",
-   "n": "2. Weihnachtstag"
+   "n": "2. Weihnachtstag",
+   "shops": "Shops shut by law in Germany; bakeries, petrol stations and station shops excepted."
   },
   {
    "date": "2027-12-26",
    "c": "nl",
-   "n": "Tweede Kerstdag"
+   "n": "Tweede Kerstdag",
+   "shops": "Dutch supermarkets usually open with shorter hours; check your store."
   },
   {
    "date": "2027-12-27",
@@ -671,17 +764,20 @@
   {
    "date": "2028-01-01",
    "c": "be",
-   "n": "Nieuwjaar"
+   "n": "Nieuwjaar",
+   "shops": "Most Belgian shops closed."
   },
   {
    "date": "2028-01-01",
    "c": "de",
-   "n": "Neujahr"
+   "n": "Neujahr",
+   "shops": "Shops shut by law in Germany; bakeries, petrol stations and station shops excepted."
   },
   {
    "date": "2028-01-01",
    "c": "nl",
-   "n": "Nieuwjaarsdag"
+   "n": "Nieuwjaarsdag",
+   "shops": "Most Dutch shops closed."
   },
   {
    "date": "2028-01-01",
@@ -702,7 +798,8 @@
    "date": "2028-02-28",
    "c": "nl",
    "n": "Carnaval (Limburg) Sun–Tue",
-   "note": "Vastelaovend; schools and many offices closed Mon–Tue in Zuid-Limburg"
+   "note": "Vastelaovend; schools and many offices closed Mon–Tue in Zuid-Limburg",
+   "shops": "Supermarkets mostly open; many local shops in Zuid-Limburg keep short hours Mon–Tue."
   },
   {
    "date": "2028-03-12",
@@ -717,7 +814,8 @@
   {
    "date": "2028-04-14",
    "c": "de",
-   "n": "Karfreitag"
+   "n": "Karfreitag",
+   "shops": "Shops shut by law in Germany; bakeries, petrol stations and station shops excepted."
   },
   {
    "date": "2028-04-14",
@@ -728,27 +826,32 @@
   {
    "date": "2028-04-16",
    "c": "nl",
-   "n": "Eerste Paasdag"
+   "n": "Eerste Paasdag",
+   "shops": "Most Dutch shops closed."
   },
   {
    "date": "2028-04-17",
    "c": "be",
-   "n": "Paasmaandag"
+   "n": "Paasmaandag",
+   "shops": "Belgian shop hours vary by chain; many supermarkets open."
   },
   {
    "date": "2028-04-17",
    "c": "de",
-   "n": "Ostermontag"
+   "n": "Ostermontag",
+   "shops": "Shops shut by law in Germany; bakeries, petrol stations and station shops excepted."
   },
   {
    "date": "2028-04-17",
    "c": "nl",
-   "n": "Tweede Paasdag"
+   "n": "Tweede Paasdag",
+   "shops": "Dutch supermarkets usually open with shorter hours; check your store."
   },
   {
    "date": "2028-04-27",
    "c": "nl",
-   "n": "Koningsdag"
+   "n": "Koningsdag",
+   "shops": "Dutch supermarkets usually open with shorter hours; check your store."
   }
  ],
  "school": {
@@ -1189,6 +1292,12 @@
    "t": "JFC Brunssum 2027 holidays and year planner directive (HQ holidays, JFCBS SNR designated national holidays, school breaks)",
    "added": "2026-11-11",
    "note": "Fifteen HQ-wide days off in 2027; national days for each nation's staff with the HQ open; consolidated school-break periods for planning. Assumption Day's observed date is pending SHAPE Directive 005-005."
+  },
+  {
+   "t": "852d Medical Squadron (Geilenkirchen clinic) upcoming closures, Facebook post, screenshot supplied by Nick on 11 Nov 2026",
+   "added": "2026-11-11",
+   "note": "The clinic posts closures only on Facebook, which the run cannot read without logging in; new closures come from Nick."
   }
- ]
+ ],
+ "hqFrom": "2027-01-01"
 }

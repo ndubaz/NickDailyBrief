@@ -293,7 +293,7 @@ Append one row per published value; never backfill estimates. A weekly series ke
 ### `data/calendar.json`
 
 ```
-{ "from", "to", "holidays": [{"date","c":"nl|be|de|us|jfc|nat|info","n","note"}] (jfc = a JFCBS HQ-wide day off, its `n` starts "HQ closed ·"; nat = one nation's staff off with the HQ open; a `us` row names whether the HQ also closes),
+{ "from", "to", "holidays": [{"date","c":"nl|be|de|us|jfc|nat|clinic|info","n","note","shops"}], "hqFrom" (jfc = a JFCBS HQ-wide day off, its `n` starts "HQ closed ·"; nat = one nation's staff off with the HQ open; a `us` row names whether the HQ also closes; clinic = a Geilenkirchen clinic (852d Medical Squadron) closure; `shops` = store closures on a Dutch, German or Belgian holiday; `hqFrom` = the first date the HQ day-off list covers. Priority on the page: HQ closed and AFNORTH first, then US pass days and the clinic, then the rest; allied national days, clocks and other school systems are awareness only and stay out of This week),
   "school": { "<system>": {"name","color","source","segs":[[from,to,label]],"days":[[date,label]],"weekly","hq"} } (hq: true marks a planning row such as the JFCBS consolidated breaks: drawn in The year ahead, left out of "All systems off" and the leave windows),
   "markets": [[name, c, from, to]] }
 ```

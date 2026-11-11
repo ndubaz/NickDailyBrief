@@ -7,7 +7,7 @@
   "use strict";
   var MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
   var DOW = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
-  var CAT = { nl:["Netherlands","--c-nl"], be:["Belgium","--c-be"], de:["Germany","--c-de"], us:["US / AFNORTH","--c-us"], jfc:["HQ closed (JFCBS)","--p-frontier"], nat:["Allied staff national days","--p-plan"], mkt:["Markets & events","--c-mkt"], pro:["Work & world","--c-pro"],
+  var CAT = { nl:["Netherlands","--c-nl"], be:["Belgium","--c-be"], de:["Germany","--c-de"], us:["US / AFNORTH","--c-us"], jfc:["HQ closed (JFCBS)","--p-frontier"], nat:["Allied staff national days","--p-plan"], clinic:["Geilenkirchen clinic","--p-news"], mkt:["Markets & events","--c-mkt"], pro:["Work & world","--c-pro"],
               hockey:["Hurricanes","--p-hockey"], home:["Bins & home","--p-home"], school:["School breaks","--p-pro"], watch:["Horizon","--p-watch"], deadline:["Deadlines","--crit"], info:["Clocks","--muted"], out:["Out and about","--c-mkt"], ex:["Exercises","--p-pro"], me:["Yours","--ink"], nfl:["Saints & Cardinals","--p-sec"], tv:["TV","--p-reading"], mail:["From your mail","--c-us"] };
   var CODE_COLORS = { CYB:"--c-us", SAB:"--crit", UAS:"--c-mkt", UWI:"--c-pro", GNSS:"--c-be", INF:"--c-nl", ELX:"--c-nl", MIG:"--c-de", PRX:"--warn", AIR:"--c-de", SEA:"--c-pro", COE:"--c-be", KIN:"--crit" };
   var PART_CLASSES = ["front","news","money","watch","reading","home"];
@@ -517,7 +517,7 @@
     (ctx.horizon || []).forEach(function (e) { if (e.date) ev.push({ date: e.date, end: hzEnd(e) || undefined, cat: "watch", t: e.t, sub: (e.dateText || "") + (e.n ? " · " + plain(e.n) : ""), src: "horizon" }); });
     var cal = ctx.calendar;
     if (cal) {
-      (cal.holidays || []).forEach(function (h) { ev.push({ date: h.date, cat: h.c === "info" ? "info" : h.c, t: h.n, sub: h.note || (CAT[h.c] ? CAT[h.c][0] : ""), src: "calendar" }); });
+      (cal.holidays || []).forEach(function (h) { ev.push({ date: h.date, cat: h.c === "info" ? "info" : h.c, t: h.n, sub: [h.shops, h.note || (h.shops ? "" : CAT[h.c] ? CAT[h.c][0] : "")].filter(Boolean).join(" · "), src: "calendar" }); });
       Object.keys(cal.school || {}).forEach(function (k) {
         var sys = cal.school[k];
         (sys.segs || []).forEach(function (s) { ev.push({ date: s[0], end: s[1], cat: "school", t: sys.name + ": " + (s[2] || "break"), sub: fmtShort(s[0]) + " – " + fmtShort(s[1]), src: "calendar", sys: k }); });
@@ -537,7 +537,15 @@
     (((ctx.local || {}).admin) || []).forEach(function (e) { if (e.date) ev.push({ date: e.date, cat: "deadline", t: e.t, sub: e.note || "Household admin", src: "local", prio: true }); });
     ((ctx.week && ctx.week.items) || []).forEach(function (w) { if (w.date) ev.push({ date: w.date, end: w.end && w.end !== w.date ? w.end : undefined, cat: "me", t: w.t + (w.time ? " · " + w.time : ""), sub: [w.note, w.url ? "Join: " + w.url : ""].filter(Boolean).join(" · "), src: "week", prio: true }); });
     var seen = {};
-    return ev.filter(function (e) { if (!e.date || !/^\d{4}-\d{2}-\d{2}$/.test(e.date)) return false; var k = e.date + "|" + e.cat + "|" + e.t; if (seen[k]) return false; seen[k] = 1; return true; }).sort(function (a, b) { return a.date < b.date ? -1 : a.date > b.date ? 1 : 0; });
+    return ev.filter(function (e) { if (!e.date || !/^\d{4}-\d{2}-\d{2}$/.test(e.date)) return false; var k = e.date + "|" + e.cat + "|" + e.t; if (seen[k]) return false; seen[k] = 1; return true; }).sort(function (a, b) { return a.date < b.date ? -1 : a.date > b.date ? 1 : evRank(a) - evRank(b); });
+  }
+  /* Nick's order: 0 HQ closed and AFNORTH (school and days off); 1 US pass days (optional) and the Geilenkirchen clinic;
+     2 his own items and everything else; 3 awareness only (allied national days, clocks, other school systems) */
+  function evRank(e) {
+    if (e.cat === "jfc" || (e.cat === "school" && e.sys === "afnorth")) return 0;
+    if (e.cat === "us" || e.cat === "clinic") return 1;
+    if (e.cat === "nat" || e.cat === "info" || e.cat === "school") return 3;
+    return 2;
   }
   function onDay(ev, k) { return ev.filter(function (e) { return e.date === k || (e.end && e.date <= k && k <= e.end); }); }
   function calMonth(ev, y, m, TD, filter) {
@@ -558,7 +566,7 @@
       list.forEach(function (e) {
         var dd = pd(e.date), wk = key(new Date(dd.getFullYear(), dd.getMonth(), dd.getDate() - ((dd.getDay() + 6) % 7)));
         if (wk !== lastW) { lastW = wk; var we = addDays(wk, 6); body += '<tr class="wk"><td colspan="2">Week of ' + esc(fmtShort(wk)) + " – " + esc(fmtShort(we)) + "</td></tr>"; }
-        body += '<tr class="' + (e.date === TD ? "soon" : e.date < TD ? "past" : "") + '"><td class="d"><span class="dot" style="background:' + catColor(e.cat) + '"></span>' + DOW[dd.getDay()] + " " + dd.getDate() + "</td><td><b>" + esc(e.t) + "</b>" + (e.sub ? ' <span class="small">' + esc(e.sub) + "</span>" : "") + "</td></tr>";
+        body += '<tr class="' + (e.date === TD ? "soon" : e.date < TD ? "past" : "") + (evRank(e) === 3 ? " aware" : evRank(e) === 0 ? " must" : "") + '"><td class="d"><span class="dot" style="background:' + catColor(e.cat) + '"></span>' + DOW[dd.getDay()] + " " + dd.getDate() + "</td><td><b>" + esc(e.t) + "</b>" + (e.sub ? ' <span class="small">' + esc(e.sub) + "</span>" : "") + "</td></tr>";
       });
       return table(["Date", "What"], body);
     }
@@ -571,7 +579,7 @@
      major festivals marked prio, Christmas markets opening, exercise start and end, Canes games watchable live in CET) */
   function weekPrio(e) {
     if (e.src === "bins" || e.src === "deadlines" || e.src === "career" || e.src === "exercises" || e.src === "week") return true;
-    if (e.src === "calendar") return e.cat !== "school" || e.sys === "afnorth";
+    if (e.src === "calendar") return e.cat === "nat" || e.cat === "info" ? false : e.cat !== "school" || e.sys === "afnorth";
     if (e.src === "canes" || e.src === "teams") return !!e.live || !!e.prio;
     if (e.src === "tv" || e.src === "inbox") return true;
     if (e.src === "local") return !!e.prio;
@@ -822,12 +830,15 @@
     var tiles = [];
     function next(pred) { for (var i = 0; i < ev.length; i++) if (ev[i].date >= TD && pred(ev[i])) return ev[i]; return null; }
     function tile(lbl, e, alt) { if (!e) return; var n = daysBetween(TD, e.date); tiles.push('<div class="tile cd"><div class="lbl">' + esc(lbl) + '</div><div class="val">' + (n === 0 ? "Today" : n === 1 ? "Tomorrow" : n + " days") + "</div><p>" + esc((alt || e.t) + " · " + fmt(pd(e.date))) + "</p></div>"); }
+    var hqFrom = (ctx.calendar || {}).hqFrom, hq = next(function (e) { return e.cat === "jfc"; });
+    if (hq) tile("Next HQ day off", hq, hq.t.replace(/^HQ closed · /, "") + (hqFrom && TD < hqFrom ? " · the HQ list runs from " + fmtShort(hqFrom) + "; earlier closures not loaded" : ""));
+    tile("Next AFNORTH day off", next(function (e) { return e.cat === "school" && e.sys === "afnorth" && e.end; }), null);
+    tile("Next school break", next(function (e) { return e.cat === "school" && e.sys === "afnorth" && e.end && daysBetween(e.date, e.end) > 1; }), null);
+    var cl = next(function (e) { return e.cat === "clinic"; }); if (cl) tile("Clinic closure", cl, cl.t.replace(/^Geilenkirchen clinic · /, ""));
     tile("Next bin day", next(function (e) { return e.cat === "home" && e.src === "bins"; }), null);
     var g = next(function (e) { return e.cat === "hockey" && e.src === "canes" && e.t.indexOf("Canes") === 0; }); if (g) tile("Next Canes game", g, g.t + (g.sub ? " · " + g.sub.replace("Puck drop ", "") : ""));
     var sg = next(function (e) { return e.cat === "nfl" && /^Saints (vs|at)/.test(e.t); }); if (sg) tile("Next Saints game", sg, sg.t + (sg.sub ? " · " + sg.sub.replace("Kick-off ", "") : ""));
     var te = next(function (e) { return e.cat === "tv"; }); if (te) tile("Next episode", te, te.t);
-    tile("Next AFNORTH day off", next(function (e) { return e.cat === "school" && e.sys === "afnorth" && e.end; }), null);
-    tile("Next school break", next(function (e) { return e.cat === "school" && e.sys === "afnorth" && e.end && daysBetween(e.date, e.end) > 1; }), null);
     tile("Next central bank", next(function (e) { return e.cat === "watch" && /ECB|Fed\b|FOMC|Federal Reserve|rate decision/i.test(e.t); }), null);
     var d = pd(TD), pay = null;
     for (var i = 0; i < 40 && !pay; i++) { var c = new Date(d); c.setDate(c.getDate() + i); if (c.getDate() === 1 || c.getDate() === 15) { while (c.getDay() === 0 || c.getDay() === 6) c.setDate(c.getDate() - 1); if (key(c) >= TD) pay = c; } }
@@ -849,7 +860,7 @@
   }
 
   /* ---------- health checks: when to remodel ---------- */
-  var PAGE_V = "7.5", PROMPT_REV = "7.5.7";
+  var PAGE_V = "7.5", PROMPT_REV = "7.5.8";
   function health(E, ctx, TD, words) {
     var rows = [], realToday = key(new Date());
     function add(name, level, detail) { rows.push([name, level, detail]); }
