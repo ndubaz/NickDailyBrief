@@ -1,6 +1,6 @@
 {
  "note": "Hand-maintained by Nick, never by the morning run. Your own dated entries for the week board, the calendar and the year-ahead board: {date, end (optional), t, note (optional), time (optional, e.g. \"16:00–17:00\"), url (optional join link), act (kept for compatibility)}. Names and dates only; nothing sensitive.",
- "updated": "2026-11-07",
+ "updated": "2026-11-11",
  "items": [
   {
    "date": "2026-11-12",
@@ -17,6 +17,27 @@
    "time": "Mon 08:00 in-processing",
    "note": "Two weeks, 16 to 27 Nov, ending Friday about 14:00. Room at the CCOE from Sun 15 Nov. Fri 20 Nov afternoon: Port of Rotterdam visit, back around 16:00. Bring a USB stick and a mug.",
    "act": true
+  },
+  {
+   "date": "2026-12-09",
+   "t": "Joint US PT event (led by the USMC)",
+   "time": "06:30–07:30",
+   "note": "All US military. NATO Sports Complex, USAG Benelux–Brunssum. Uniform: full winter service PTs.",
+   "act": false
+  },
+  {
+   "date": "2026-12-09",
+   "t": "Joint US All-Hands · mandatory",
+   "time": "10:00–11:30",
+   "note": "Mandatory for all US service members; all US military and civilians, families welcome. JFC Brunssum Alliance Theater, building H405. Policy updates, community resources, points of emphasis, upcoming events. Uniform: ACU.",
+   "act": true
+  },
+  {
+   "date": "2026-12-09",
+   "t": "US Muster: Space Force birthday",
+   "time": "15:00–18:00",
+   "note": "All US military, civilians, Alliance members and families. US National Support Element Heritage Room, building H307. Team building, beverages, cake and trivia. ACU or civilian clothes.",
+   "act": false
   },
   {
    "date": "2026-12-10",
