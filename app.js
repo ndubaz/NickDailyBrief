@@ -15,7 +15,7 @@
   var PARTS = ["front","news","money","reading","watch","home"].map(function (k) { return PART_DEF[k]; });
   function setPartOrder(weekend) { PARTS = (weekend ? ["front","reading","news","money","watch","sports","home"] : ["front","news","money","reading","watch","sports","home"]).map(function (k) { return PART_DEF[k]; }); }
   function pn(cls) { var i = PARTS.map(function (p) { return p[0]; }).indexOf(cls); return "Part " + i; }
-  var TIERS = { news: ["world","hybrid","europe","countries","euregio","army","nato","deftech","frontier","nl"], money: ["markets","fx","fuel","rates"], watch: ["board","numbers","horizon","threads","novel","congress-sec","releases","sota","forecasts"], reading: ["feature","research","philosophy","depth","ttpsec","aperture"], sports: ["hockey","nfl","mlb","football"], home: ["local","afnorth","offduty","makkelijk","dutch","snow","week","coming","weather","countdown","tv","eurovision","calendar","year"] };
+  var TIERS = { news: ["world","hybrid","europe","countries","euregio","army","nato","deftech","frontier","nl"], money: ["markets","fx","fuel","rates"], watch: ["board","numbers","horizon","threads","novel","congress-sec","releases","sota","forecasts"], reading: ["feature","research","philosophy","depth","ttpsec","aperture"], sports: ["hockey","nfl","mlb","football"], home: ["local","afnorth","offduty","makkelijk","dutch","snow","week","coming","weather","countdown","tv","eurovision","sanremo","calendar","year"] };
   var EVCAT = { music:"Music", markets:"Markets", museums:"Museums", sport:"Sport", kids:"Kids", food:"Food", outdoors:"Outdoors", festival:"Festivals" };
   var SERIES_BY_LABEL = [["s&p 500","spx"],["dow","dji"],["nasdaq","ndx"],["russell","rut"],["aex","aex"],["stoxx","stoxx"],["dax","dax"],["brent","brent"],["dutch ttf","ttf"],["ttf","ttf"],["gold","gold"],["us 10-year","us10y"],["vix","vix"]];
   var HOME = { lat: 50.89, lon: 5.98, name: "Heerlen" };
@@ -514,6 +514,10 @@
       }
     }
     ((ctx.tv && ctx.tv.shows) || []).forEach(function (x) { if (x.next && x.next.date) ev.push({ date: x.next.date, cat: "tv", t: x.title + " " + epCode(x.next), sub: [x.next.name, x.next.time, x.where].filter(Boolean).join(" · "), src: "tv" }); });
+    if (ctx.sanremo) {
+      (ctx.sanremo.nights || []).forEach(function (n) { ev.push({ date: n.date, cat: "tv", t: "Sanremo: " + n.t, sub: "Teatro Ariston · " + (ctx.sanremo.bc || "Rai"), src: "tv" }); });
+      if (ctx.sanremo.giovani && ctx.sanremo.giovani.final) ev.push({ date: ctx.sanremo.giovani.final, cat: "tv", t: "Sanremo Giovani final", sub: ctx.sanremo.giovani.where || "", src: "tv" });
+    }
     if (ctx.eurovision) {
       (ctx.eurovision.shows || []).forEach(function (s) { ev.push({ date: s.date, cat: "tv", t: "Eurovision: " + s.t + " · " + s.time, sub: ctx.eurovision.host ? ctx.eurovision.host.city + ", " + ctx.eurovision.host.country : "", src: "tv" }); });
       (ctx.eurovision.countries || []).forEach(function (c) { if (c.date && !c.song) ev.push({ date: c.date, cat: "tv", t: c.name + " picks its Eurovision act", sub: c.show || "national final", src: "esc" }); });
@@ -797,6 +801,33 @@
   function epCode(x) { return x ? "S" + x.s + "E" + x.e : ""; }
   /* Eurovision 2027: host and show nights, progress across the field, the next national finals, known entries, the full list */
   function srcList(src) { return (src || []).filter(function (s) { return s && s[1]; }).map(function (s) { return '<a href="' + esc(s[1]) + '" target="_blank" rel="noopener">' + esc(s[0]) + "</a>"; }).join(" · "); }
+  /* Sanremo 2027: countdown, the five nights, the Campioni as Rai names them, results, and Sanremo Giovani */
+  function sanremoBlock(ctx, TD) {
+    var S = ctx.sanremo, N = S.nights || [], first = N[0], last = N[N.length - 1], IT = ["dom","lun","mar","mer","gio","ven","sab"], ITM = ["gen","feb","mar","apr","mag","giu","lug","ago","set","ott","nov","dic"];
+    var toFirst = first ? daysBetween(TD, first.date) : null, R = S.results || {}, live = first && TD >= first.date && TD <= last.date;
+    var h = '<div class="sr-hero"><div class="sr-id"><div class="sr-eye">' + esc(S.edition + "\u00ba Festival della Canzone Italiana") + '</div><div class="sr-name">Sanremo</div><div class="sr-sub">' + esc([S.venue, S.bc].filter(Boolean).join(" · ")) + "</div>" + (S.host ? '<p class="sr-host"><b>' + esc(S.host) + "</b> " + esc(S.hostNote || "") + "</p>" : "") + "</div>";
+    h += '<div class="sr-count"><b>' + (toFirst > 0 ? toFirst : live ? "In onda" : "Finito") + "</b><span>" + (toFirst > 0 ? "giorni · days to the first night" : live ? "on air this week on Rai" : "the festival is over") + "</span></div>";
+    h += '<ol class="sr-nights">' + N.map(function (n) { var d = pd(n.date), res = (R.nights || {})[n.n]; return '<li class="' + (n.date < TD ? "past" : n.date === TD ? "now" : "") + (n.n === 4 ? " esc" : n.n === N.length ? " fin" : "") + '"><span class="d">' + IT[d.getDay()] + " " + d.getDate() + " " + ITM[d.getMonth()] + "</span><b>" + esc(n.t) + "</b><span class=\"w\">" + esc(n.what) + "</span>" + (res ? '<span class="res">' + esc(res) + "</span>" : "") + "</li>"; }).join("") + "</ol></div>";
+    if (R.winner || R.eurovision || (R.podium || []).length) h += '<div class="sr-results">' + (R.winner ? '<div><span class="lbl">Vincitore</span><b>' + esc(R.winner) + "</b></div>" : "") + (R.eurovision ? '<div><span class="lbl">To Eurovision</span><b>' + esc(R.eurovision) + "</b></div>" : "") + ((R.podium || []).length ? '<div><span class="lbl">Podium</span>' + R.podium.map(function (p, i) { return "<b>" + (i + 1) + ". " + esc(p) + "</b>"; }).join(" ") + "</div>" : "") + "</div>";
+    var C = S.campioni || [];
+    h += '<h3>Campioni <span class="small">' + (C.length ? C.length + " acts" + (S.expected && S.expected.count ? " of " + S.expected.count : "") : "the main competition") + "</span></h3>";
+    if (C.length) h += '<div class="sr-grid">' + C.slice().sort(function (a, b) { return a.artist < b.artist ? -1 : 1; }).map(function (c) { var nw = c.changed && daysBetween(c.changed, TD) <= 3; return '<div class="sr-act' + (nw ? " new" : "") + '"><b>' + esc(c.artist) + "</b>" + (nw ? '<span class="pill">New</span>' : "") + '<span class="song">' + (c.song ? "\u201c" + esc(c.song) + "\u201d" + (c.en ? ' <span class="small">(' + esc(c.en) + ")</span>" : "") : '<span class="small">song to come</span>') + "</span>" + (c.cover ? '<span class="small">Covers night: ' + esc(c.cover) + "</span>" : "") + (c.giovani ? '<span class="small">From Sanremo Giovani</span>' : "") + "</div>"; }).join("") + "</div>";
+    else h += '<p class="small">' + esc((S.expected && S.expected.note) || "The line-up is not out yet.") + (S.expected && S.expected.listDate ? " Rai names the acts on " + esc(fmtShort(S.expected.listDate)) + "." : " Each act and song is added here as Rai announces it.") + "</p>";
+    var G = S.giovani;
+    if (G) {
+      var gd = G.final ? pd(G.final) : null, gn = G.final ? daysBetween(TD, G.final) : null;
+      h += '<h3>Sanremo Giovani <span class="small">one newcomer joins the Campioni</span></h3><div class="sr-giov"><div class="sr-gdate">' + (gd ? '<b>' + IT[gd.getDay()] + " " + gd.getDate() + " " + ITM[gd.getMonth()] + "</b><span>" + (gn > 0 ? "in " + gn + " days" : gn === 0 ? "tonight" : "final held") + "</span>" : "") + '</div><div><p class="small">' + esc((G.where ? G.where + ". " : "") + (G.how || "")) + "</p>";
+      if (G.winner) h += '<p><span class="pill win">Winner</span> <b>' + esc(G.winner) + "</b></p>";
+      if ((G.finalists || []).length) h += '<p class="sr-chips">' + G.finalists.map(function (f) { return '<span class="' + (f === G.winner ? "win" : "") + '">' + esc(f) + "</span>"; }).join("") + "</p>";
+      if ((G.shortlist || []).length) h += '<details class="srcfold"><summary>The ' + G.shortlist.length + ' acts on the long list</summary><p class="sr-chips small">' + G.shortlist.map(function (f) { return "<span>" + esc(f) + "</span>"; }).join("") + "</p></details>";
+      h += "</div></div>";
+    }
+    h += '<p class="small">Night four picks Italy\'s act for Eurovision in Burgas; it moves into the Eurovision tracker above.</p>';
+    var log = (S.log || []).slice().sort(function (a, b) { return a.date < b.date ? 1 : -1; }).slice(0, 4);
+    if (log.length) h += '<ul class="esc-log small">' + log.map(function (l) { return "<li><b>" + esc(fmtShort(l.date)) + "</b> " + esc(l.t) + "</li>"; }).join("") + "</ul>";
+    h += '<p class="small">Updated ' + esc(fmtShort(S.updated)) + ". " + srcList(S.src) + "</p>";
+    return h;
+  }
   function eurovisionBlock(ctx, TD) {
     var X = ctx.eurovision, C = (X.countries || []).slice(), H = X.host || {}, shows = X.shows || [];
     var ST = { entry: ["Song chosen", 0], artist: ["Artist named", 1], selecting: ["National final", 2], pending: ["Waiting", 3] };
@@ -904,7 +935,7 @@
   }
 
   /* ---------- health checks: when to remodel ---------- */
-  var PAGE_V = "7.5", PROMPT_REV = "7.5.10";
+  var PAGE_V = "7.5", PROMPT_REV = "7.5.11";
   function health(E, ctx, TD, words) {
     var rows = [], realToday = key(new Date());
     function add(name, level, detail) { rows.push([name, level, detail]); }
@@ -1469,7 +1500,7 @@
   }
   function contentsBlock() {
     var tiers = PARTS.slice(1).map(function (p) { return [p[0], p[1], TIERS[p[0]]]; });
-    var SN = { world: "World", hybrid: "Hybrid", europe: "Europe", countries: "Priority countries", euregio: "Euregio", army: "Defence & Army", nato: "NATO & allies", deftech: "Defence tech", frontier: "Frontier", markets: "Markets", rates: "Rates", nl: "Netherlands", board: "The board", forecasts: "Forecasts", novel: "New in war", numbers: "Numbers and indicators", fx: "USD/EUR", fuel: "Pump price", threads: "Threads", horizon: "Horizon", "congress-sec": "Congress", releases: "Releases", sota: "State of the art", feature: "World feature", research: "Research", philosophy: "Philosophy", depth: "Army in depth", ttpsec: "Week in war", aperture: "Aperture", local: "Parkstad", afnorth: "AFNORTH", offduty: "Out and about", makkelijk: "Makkelijke taal", dutch: "Taal", snow: "Snow", hockey: "Canes", nfl: "Saints", mlb: "Cardinals", football: "Local football", week: "This week", coming: "Coming up", weather: "Weather", countdown: "Countdowns", tv: "TV", eurovision: "Eurovision", calendar: "Calendar", year: "Year ahead", school: "School year", season: "Season" };
+    var SN = { world: "World", hybrid: "Hybrid", europe: "Europe", countries: "Priority countries", euregio: "Euregio", army: "Defence & Army", nato: "NATO & allies", deftech: "Defence tech", frontier: "Frontier", markets: "Markets", rates: "Rates", nl: "Netherlands", board: "The board", forecasts: "Forecasts", novel: "New in war", numbers: "Numbers and indicators", fx: "USD/EUR", fuel: "Pump price", threads: "Threads", horizon: "Horizon", "congress-sec": "Congress", releases: "Releases", sota: "State of the art", feature: "World feature", research: "Research", philosophy: "Philosophy", depth: "Army in depth", ttpsec: "Week in war", aperture: "Aperture", local: "Parkstad", afnorth: "AFNORTH", offduty: "Out and about", makkelijk: "Makkelijke taal", dutch: "Taal", snow: "Snow", hockey: "Canes", nfl: "Saints", mlb: "Cardinals", football: "Local football", week: "This week", coming: "Coming up", weather: "Weather", countdown: "Countdowns", tv: "TV", eurovision: "Eurovision", sanremo: "Sanremo", calendar: "Calendar", year: "Year ahead", school: "School year", season: "Season" };
     return '<h3>In this edition</h3><ol class="toc">' + tiers.map(function (t, i) { return '<li data-tier="' + t[0] + '" class="' + t[0] + '"><a href="#p-' + t[0] + '"><b>' + (i + 1) + " · " + esc(t[1]) + '</b></a><span class="tm"></span><span class="secs">' + t[2].map(function (id) { return '<a href="#' + id + '">' + esc(SN[id] || id) + "</a>"; }).join(" · ") + "</span></li>"; }).join("") + "</ol>";
   }
   function yearAhead(ctx, E, TD, today) {
@@ -2042,6 +2073,7 @@
     h += '<section id="countdown" class="home"><h2>Countdowns</h2>' + countdowns(PEV, ctx, TD) + "</section>";
     h += '<section id="tv" class="home"><h2>TV <span class="num">what you follow, what comes next</span></h2>' + tvBlock(ctx, TD) + "</section>";
     if (ctx.eurovision) h += '<section id="eurovision" class="home"><h2>Eurovision 2027 <span class="num">who sings for whom, as each country decides</span></h2>' + eurovisionBlock(ctx, TD) + "</section>";
+    if (ctx.sanremo && TD <= addDays(ctx.sanremo.nights[ctx.sanremo.nights.length - 1].date, 21)) h += '<section id="sanremo" class="home"><h2>Sanremo 2027 <span class="num">Festival della Canzone Italiana · who sings, who wins</span></h2>' + sanremoBlock(ctx, TD) + "</section>";
     h += '<section id="calendar" class="home"><h2>Calendar</h2>';
     if (P.otd) h += '<div class="ap-c" style="margin-bottom:14px"><div class="lbl">' + esc(P.otd.title) + '</div><p style="margin:0">' + rich(P.otd.body) + "</p></div>";
     var FILT = [["all","All"],["me","Yours"],["nl","NL"],["be","BE"],["de","DE"],["us","US"],["ev","Events"],["out","Out and about"],["teams","Teams"],["tv","TV"],["mail","Mail"],["homed","Home"],["school","School"],["watch","Horizon"],["ex","Exercises"]];
@@ -2362,9 +2394,9 @@
     opt("data/incidents.json"), opt("data/bins.json"), opt("data/threads.json"), opt("data/horizon.json"),
     opt("data/fx.json"), opt("data/series.json"), opt("data/canes.json"),
     opt("data/conflicts.json"), opt("data/world-series.json"), opt("data/calendar.json"), opt("data/deadlines.json"),
-    opt("data/congress.json"), opt("data/exercises.json"), opt("data/releases.json"), opt("data/events.json"), opt("data/idioms.json"), opt("data/ski.json"), opt("data/search-index.json"), opt("data/land.json"), opt("data/week.json"), opt("data/corrections.json"), opt("data/research.json"), opt("data/teams.json"), opt("data/tv.json"), opt("data/countries.json"), opt("data/ceu.json"), opt("data/novel.json"), opt("data/indicators.json"), opt("data/forecasts.json"), opt("data/questions.json"), opt("data/ua-front.json"), opt("data/philosophy.json"), opt("data/inbox.json"), opt("data/fuel.json"), opt("data/energy.json"), opt("data/local.json"), opt("data/hockey.json"), opt("data/sports.json"), opt("data/cozi.json"), opt("data/eurovision.json")
+    opt("data/congress.json"), opt("data/exercises.json"), opt("data/releases.json"), opt("data/events.json"), opt("data/idioms.json"), opt("data/ski.json"), opt("data/search-index.json"), opt("data/land.json"), opt("data/week.json"), opt("data/corrections.json"), opt("data/research.json"), opt("data/teams.json"), opt("data/tv.json"), opt("data/countries.json"), opt("data/ceu.json"), opt("data/novel.json"), opt("data/indicators.json"), opt("data/forecasts.json"), opt("data/questions.json"), opt("data/ua-front.json"), opt("data/philosophy.json"), opt("data/inbox.json"), opt("data/fuel.json"), opt("data/energy.json"), opt("data/local.json"), opt("data/hockey.json"), opt("data/sports.json"), opt("data/cozi.json"), opt("data/eurovision.json"), opt("data/sanremo.json")
   ]).then(function (r) {
-    ctx.fuel = r[34] && r[34].series ? r[34] : null; ctx.energy = r[35]; ctx.local = r[36]; ctx.hockeyStats = r[37]; ctx.sports = r[38]; ctx.cozi = r[39] && r[39].items ? r[39] : null; ctx.eurovision = r[40] && r[40].countries ? r[40] : null;
+    ctx.fuel = r[34] && r[34].series ? r[34] : null; ctx.energy = r[35]; ctx.local = r[36]; ctx.hockeyStats = r[37]; ctx.sports = r[38]; ctx.cozi = r[39] && r[39].items ? r[39] : null; ctx.eurovision = r[40] && r[40].countries ? r[40] : null; ctx.sanremo = r[41] && r[41].nights ? r[41] : null;
     ctx.novel = r[27]; ctx.indicators = r[28]; ctx.forecasts = r[29]; ctx.questions = r[30]; ctx.uaFront = r[31]; ctx.philosophy = r[32]; ctx.inbox = r[33];
     ctx.ceu = r[26] && r[26].countries; ctx.countriesMap = r[25] && r[25].map;
     ctx.week = r[20]; ctx.corrections = r[21]; ctx.research = r[22]; ctx.teams = r[23]; ctx.tv = r[24];

@@ -1,0 +1,148 @@
+{
+ "updated": "2026-11-11",
+ "edition": 77,
+ "venue": "Teatro Ariston",
+ "city": "Sanremo",
+ "host": "Stefano De Martino",
+ "hostNote": "Presenter and artistic director, succeeding Carlo Conti; Fabrizio Ferraguzzo co-directs. The Jackal open each night; Gialappa's Band run the late ControFestival.",
+ "bc": "Rai",
+ "nights": [
+  {
+   "n": 1,
+   "date": "2027-02-16",
+   "t": "Prima serata",
+   "what": "Half the Campioni sing their songs. Press, TV and web jury 67%, televote 33%."
+  },
+  {
+   "n": 2,
+   "date": "2027-02-17",
+   "t": "Seconda serata",
+   "what": "The other half sing. Radio jury 67%, televote 33%."
+  },
+  {
+   "n": 3,
+   "date": "2027-02-18",
+   "t": "Serata cover",
+   "what": "Covers night: each act sings an Italian or international classic with guests."
+  },
+  {
+   "n": 4,
+   "date": "2027-02-19",
+   "t": "Serata Eurovision",
+   "what": "Eurovision-style stagings; televote and international jury 50/50 pick Italy's act for Burgas."
+  },
+  {
+   "n": 5,
+   "date": "2027-02-20",
+   "t": "Finale",
+   "what": "Everyone sings again; the top five go to a televote-only run-off for the win."
+  }
+ ],
+ "giovani": {
+  "final": "2026-12-11",
+  "where": "Sanremo Casino, live on Rai 1",
+  "how": "60 acts auditioned in Rome; 15 plus 15 from Area Sanremo went to a second audition; six reach the televised final, and one joins the Campioni.",
+  "shortlist": [
+   "Abat-Jour",
+   "Albe",
+   "Alessandra Tumolillo",
+   "Ansia",
+   "Arianna Rozzo",
+   "Asja",
+   "Axel",
+   "Basim",
+   "Bianca",
+   "Ceneri",
+   "Chiara Vinci",
+   "Cialuna",
+   "Clae",
+   "Daniel Cosmic",
+   "Davide De Luca",
+   "Dubrazil",
+   "Emma Muscat",
+   "Enne",
+   "Florinda",
+   "Frambo",
+   "Frasa",
+   "Futura",
+   "Gallas",
+   "Giorgia Ari",
+   "Hermes",
+   "Ilaria Kappler",
+   "Iora",
+   "Jacopo Sol",
+   "Jones Junior",
+   "Kawakami",
+   "Khamilla",
+   "La Base",
+   "Layana",
+   "Lea Gavino",
+   "Les Votives",
+   "LioN",
+   "Lor3n",
+   "Maddalena",
+   "Malemà",
+   "MilleAlice",
+   "Neartica",
+   "Nodialpettine",
+   "Occhi",
+   "OrioN",
+   "Petit",
+   "Plasma",
+   "Poli Ok",
+   "Quarto",
+   "Rob",
+   "Santachiara",
+   "Santamarea",
+   "Santi",
+   "Sarai",
+   "Selina",
+   "Selma",
+   "Seltsam",
+   "Shizarina",
+   "Tiposchegge",
+   "Tommaso Vulpio",
+   "Ube"
+  ],
+  "finalists": [],
+  "winner": null,
+  "src": [
+   [
+    "Wikipedia: Sanremo Music Festival 2027",
+    "https://en.wikipedia.org/wiki/Sanremo_Music_Festival_2027"
+   ]
+  ]
+ },
+ "campioni": [],
+ "expected": {
+  "count": null,
+  "listDate": null,
+  "note": "The Campioni line-up has not been announced."
+ },
+ "results": {
+  "nights": {},
+  "eurovision": null,
+  "winner": null,
+  "podium": []
+ },
+ "log": [
+  {
+   "date": "2026-06-06",
+   "t": "Rai sets the dates: 16 to 20 February 2027."
+  },
+  {
+   "date": "2026-02-28",
+   "t": "Stefano De Martino named presenter and artistic director."
+  }
+ ],
+ "src": [
+  [
+   "Wikipedia: Sanremo Music Festival 2027",
+   "https://en.wikipedia.org/wiki/Sanremo_Music_Festival_2027"
+  ],
+  [
+   "All Music Italia: Sanremo 2027",
+   "https://www.allmusicitalia.it/sanremo/festival-di-sanremo-2027.html"
+  ]
+ ]
+}

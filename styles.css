@@ -945,3 +945,52 @@ table.clubs td{white-space:normal}
   .esc-list .what{grid-column:2/4}
   .esc-list .st{grid-row:1;grid-column:3}
 }
+
+/* Sanremo 2027: an Ariston-blue band with gold, the five nights as a stepper, the Campioni grid, Sanremo Giovani */
+#sanremo{--sr-blue:#0C2F6B;--sr-blue2:#1A4C9C;--sr-gold:#E3B23C;--sr-ink:#F5F1E6}
+.sr-hero{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:var(--s4);padding:var(--s4);border-radius:var(--r-card);color:var(--sr-ink);background:radial-gradient(circle at 12px 12px,rgba(227,178,60,.14) 1.6px,transparent 2.2px) 0 0/24px 24px,linear-gradient(135deg,var(--sr-blue),var(--sr-blue2));position:relative;overflow:hidden}
+.sr-eye{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--sr-gold)}
+.sr-name{font-family:var(--f-display);font-weight:800;font-size:clamp(34px,6vw,52px);line-height:.95;letter-spacing:-.02em;margin:4px 0}
+.sr-sub{font-size:13px;opacity:.8}
+.sr-host{font-size:13px;margin:8px 0 0;opacity:.88;max-width:58ch}
+.sr-host b{color:var(--sr-gold);font-weight:700}
+.sr-count{text-align:right;align-self:start}
+.sr-count b{display:block;font-family:var(--f-display);font-weight:800;font-size:clamp(44px,8vw,68px);line-height:.9;color:var(--sr-gold);font-variant-numeric:tabular-nums}
+.sr-count span{font-size:12px;opacity:.85}
+.sr-nights{grid-column:1/-1;list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
+.sr-nights li{display:grid;gap:3px;align-content:start;padding:9px 10px;border-radius:8px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);min-width:0}
+.sr-nights .d{font-family:var(--f-mono);font-size:11.5px;color:var(--sr-gold);text-transform:uppercase;letter-spacing:.04em}
+.sr-nights b{font-family:var(--f-display);font-size:15px}
+.sr-nights .w{font-size:12px;line-height:1.35;opacity:.82}
+.sr-nights .res{font-size:12px;font-weight:700;color:var(--sr-gold)}
+.sr-nights li.esc{border-color:rgba(227,178,60,.55)}
+.sr-nights li.fin{background:rgba(227,178,60,.16);border-color:var(--sr-gold)}
+.sr-nights li.past{opacity:.55}
+.sr-nights li.now{outline:2px solid var(--sr-gold)}
+.sr-results{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s5);margin-top:var(--s3);padding:var(--s3);border:1px solid var(--line);border-radius:var(--r-card);background:var(--surface)}
+.sr-results .lbl{display:block;font-family:var(--f-mono);font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.sr-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:var(--s2)}
+.sr-act{display:grid;gap:3px;padding:var(--s3);border:1px solid var(--line);border-radius:var(--r-card);background:var(--surface);min-width:0}
+.sr-act b{font-family:var(--f-display);font-size:16px}
+.sr-act .song{font-style:italic}
+.sr-act.new{border-color:var(--sr-blue2)}
+#sanremo .pill{font-family:var(--f-mono);font-size:10.5px;padding:1px 6px;border-radius:999px;border:1px solid var(--line);color:var(--muted);justify-self:start}
+#sanremo .pill.win{border-color:var(--sr-gold);color:var(--ink);background:color-mix(in srgb,var(--sr-gold) 25%,transparent)}
+.sr-giov{display:grid;grid-template-columns:auto minmax(0,1fr);gap:var(--s4);align-items:start}
+.sr-gdate{text-align:center;padding:8px 12px;border-radius:var(--r-card);border:1px solid var(--line);background:var(--surface);min-width:92px}
+.sr-gdate b{display:block;font-family:var(--f-display);font-size:18px;text-transform:capitalize}
+.sr-gdate span{font-size:12px;color:var(--muted)}
+.sr-chips{display:flex;flex-wrap:wrap;gap:4px;margin:6px 0 0}
+.sr-chips span{border:1px solid var(--line);border-radius:999px;padding:1px 8px;font-size:12.5px;background:var(--surface)}
+.sr-chips span.win{border-color:var(--sr-gold);background:color-mix(in srgb,var(--sr-gold) 22%,var(--surface));font-weight:700}
+#sanremo h3{margin-top:var(--s4)}
+@media (max-width:760px){
+  .sr-hero{grid-template-columns:1fr}
+  .sr-count{text-align:left;display:flex;align-items:baseline;gap:10px;grid-row:2}
+  .sr-count b{display:inline}
+  .sr-nights{grid-template-columns:1fr}
+  .sr-nights li{grid-template-columns:78px minmax(0,1fr);gap:2px 10px}
+  .sr-nights .w,.sr-nights .res{grid-column:2}
+  .sr-giov{grid-template-columns:1fr}
+  .sr-gdate{justify-self:start}
+}
