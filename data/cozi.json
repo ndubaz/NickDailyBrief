@@ -1,0 +1,310 @@
+{
+ "updated": "2026-11-11",
+ "fetched": "2026-11-11",
+ "stale": false,
+ "src": "Family Cozi calendar (read-only feed; link kept in the task prompt)",
+ "window": [
+  "2026-11-11",
+  "2027-03-11"
+ ],
+ "dropped": {
+  "recurring": 31,
+  "medical": 5,
+  "birthday": 0,
+  "empty": 0,
+  "outside": 404
+ },
+ "items": [
+  {
+   "id": "366b5f5c44",
+   "date": "2026-11-11",
+   "t": "NATO Drivers Training",
+   "who": "me",
+   "time": "10:00–11:00"
+  },
+  {
+   "id": "31a4a8ae61",
+   "date": "2026-11-12",
+   "t": "Leave",
+   "who": "me",
+   "end": "2026-11-13"
+  },
+  {
+   "id": "96cd1eea57",
+   "date": "2026-11-12",
+   "t": "PTA Meeting",
+   "who": "family",
+   "time": "16:00–17:00",
+   "where": "AFNorth Teacher's Lounge"
+  },
+  {
+   "id": "8c47cceb85",
+   "date": "2026-11-13",
+   "t": "Foggy Fields Market",
+   "who": "all",
+   "end": "2026-11-15",
+   "where": "GK"
+  },
+  {
+   "id": "463de4de32",
+   "date": "2026-11-13",
+   "t": "Drivers License Appt",
+   "who": "family",
+   "time": "10:00–11:00"
+  },
+  {
+   "id": "7fbf5a9eae",
+   "date": "2026-11-14",
+   "t": "Sinterklaas intocht Maastricht majo",
+   "who": "all",
+   "time": "11:00–12:00"
+  },
+  {
+   "id": "d0dd0e31ef",
+   "date": "2026-11-16",
+   "t": "NATO CIMIC Higher Command Course",
+   "who": "me",
+   "end": "2026-11-27",
+   "where": "Den Haag"
+  },
+  {
+   "id": "c617317a9d",
+   "date": "2026-11-16",
+   "t": "No School-Staff/Students",
+   "who": "all"
+  },
+  {
+   "id": "a7032d67f0",
+   "date": "2026-11-17",
+   "t": "Culture Club Lunch",
+   "who": "family",
+   "time": "11:30–12:30"
+  },
+  {
+   "id": "2e187f4661",
+   "date": "2026-11-21",
+   "t": "AFNorth winter fest",
+   "who": "all",
+   "time": "10:00–14:00"
+  },
+  {
+   "id": "0c6988425f",
+   "date": "2026-11-22",
+   "t": "Mass and wreath making",
+   "who": "all",
+   "time": "09:30–10:30"
+  },
+  {
+   "id": "314972e83d",
+   "date": "2026-11-26",
+   "t": "Thanksgiving 4-Day",
+   "who": "all",
+   "end": "2026-11-29"
+  },
+  {
+   "id": "1cda81cb80",
+   "date": "2026-11-28",
+   "t": "Annual Yard Work",
+   "who": "all"
+  },
+  {
+   "id": "05ea5bdbd4",
+   "date": "2026-11-29",
+   "t": "J9 Duty Officer",
+   "who": "me",
+   "end": "2026-12-05",
+   "where": "On Call"
+  },
+  {
+   "id": "860c9d0786",
+   "date": "2026-11-29",
+   "t": "Kerst with Parcival",
+   "who": "all",
+   "time": "13:00–14:00"
+  },
+  {
+   "id": "f13dacd61f",
+   "date": "2026-12-01",
+   "t": "Government Drivers License",
+   "who": "me",
+   "time": "09:00–10:00"
+  },
+  {
+   "id": "92420c1ef7",
+   "date": "2026-12-02",
+   "t": "Christmas tree lighting",
+   "who": "all",
+   "time": "16:30–18:00",
+   "where": "Camp Hendrik"
+  },
+  {
+   "id": "c5d0b0b35e",
+   "date": "2026-12-04",
+   "t": "Post Office Augmentation Duty",
+   "who": "me",
+   "time": "13:00–18:00",
+   "where": "USAG Post Office"
+  },
+  {
+   "id": "eb2b71753a",
+   "date": "2026-12-05",
+   "t": "Mother Daughter Retreat",
+   "who": "family",
+   "end": "2026-12-06"
+  },
+  {
+   "id": "3deabb9823",
+   "date": "2026-12-07",
+   "t": "Plaster Work",
+   "who": "all"
+  },
+  {
+   "id": "e875f1a49c",
+   "date": "2026-12-07",
+   "t": "No School-Q2 CCRS/PD Training",
+   "who": "all"
+  },
+  {
+   "id": "00bed96bba",
+   "date": "2026-12-07",
+   "t": "J9 Christmas Party",
+   "who": "all",
+   "time": "15:00–17:00",
+   "where": "Brit Bar"
+  },
+  {
+   "id": "511d1085c7",
+   "date": "2026-12-08",
+   "t": "CIMIC Christmas Dinner",
+   "who": "all",
+   "time": "18:00–21:00",
+   "where": "Restaurant Biej de Tant"
+  },
+  {
+   "id": "d6ba51eaf1",
+   "date": "2026-12-10",
+   "t": "Camp Hendrik Christmas Party",
+   "who": "all",
+   "time": "16:30–22:00",
+   "where": "ICC"
+  },
+  {
+   "id": "b76d8a4451",
+   "date": "2026-12-12",
+   "t": "Kerstlichtjesstoet Valkenburg majo",
+   "who": "all",
+   "time": "19:00–20:00"
+  },
+  {
+   "id": "5bbfec89ce",
+   "date": "2026-12-15",
+   "t": "Culture Club Lunch",
+   "who": "family",
+   "time": "12:00–13:00"
+  },
+  {
+   "id": "fa252632e8",
+   "date": "2026-12-18",
+   "t": "US Leave - Christmas",
+   "who": "all",
+   "end": "2027-01-02",
+   "where": "MS/PA/CT"
+  },
+  {
+   "id": "2ea598c704",
+   "date": "2026-12-18",
+   "t": "No School - Winter Break",
+   "who": "all",
+   "end": "2027-01-03"
+  },
+  {
+   "id": "987bb95294",
+   "date": "2027-01-12",
+   "t": "Dutch class",
+   "who": "family",
+   "time": "18:00–19:00"
+  },
+  {
+   "id": "15349dc414",
+   "date": "2027-01-15",
+   "t": "No School - Teacher Work Day",
+   "who": "all"
+  },
+  {
+   "id": "ac6cbe4167",
+   "date": "2027-01-19",
+   "t": "Culture Club Lunch",
+   "who": "family",
+   "time": "12:00–13:00"
+  },
+  {
+   "id": "9a6996db88",
+   "date": "2027-01-19",
+   "t": "Dutch class",
+   "who": "family",
+   "time": "18:00–19:00"
+  },
+  {
+   "id": "f690bfec5f",
+   "date": "2027-01-20",
+   "t": "AFNorth 2pm Release",
+   "who": "all"
+  },
+  {
+   "id": "0b1d53d9a2",
+   "date": "2027-01-25",
+   "t": "No School-Staff/Students",
+   "who": "all"
+  },
+  {
+   "id": "d5b904e9e7",
+   "date": "2027-02-06",
+   "t": "Usagso taste of Amsterdam",
+   "who": "all",
+   "where": "Amsterdam"
+  },
+  {
+   "id": "4fb0f38797",
+   "date": "2027-02-08",
+   "t": "No School - Vastelaovend/Carnival Break",
+   "who": "all",
+   "end": "2027-02-12"
+  },
+  {
+   "id": "44f7f2ef6b",
+   "date": "2027-02-16",
+   "t": "Sanremo 2027",
+   "who": "all",
+   "end": "2027-02-20"
+  },
+  {
+   "id": "8282a48489",
+   "date": "2027-02-16",
+   "t": "Culture Club Lunch",
+   "who": "family",
+   "time": "12:00–13:00"
+  },
+  {
+   "id": "f49a6c796e",
+   "date": "2027-02-22",
+   "t": "No School-Q3 CCRS Day",
+   "who": "all"
+  },
+  {
+   "id": "1c8ea6d502",
+   "date": "2027-03-01",
+   "t": "USAREUR-AF CIMIC Conference",
+   "who": "me",
+   "end": "2027-03-05",
+   "where": "Wiesbaden"
+  },
+  {
+   "id": "377bc6e5d1",
+   "date": "2027-03-02",
+   "t": "Concert",
+   "who": "all",
+   "time": "19:00–23:00",
+   "where": "Ziggo Dome"
+  }
+ ]
+}

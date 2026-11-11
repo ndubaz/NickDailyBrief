@@ -7,7 +7,7 @@
   "use strict";
   var MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
   var DOW = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
-  var CAT = { nl:["Netherlands","--c-nl"], be:["Belgium","--c-be"], de:["Germany","--c-de"], us:["US / AFNORTH","--c-us"], jfc:["HQ closed (JFCBS)","--p-frontier"], nat:["Allied staff national days","--p-plan"], clinic:["Geilenkirchen clinic","--p-news"], mkt:["Markets & events","--c-mkt"], pro:["Work & world","--c-pro"],
+  var CAT = { nl:["Netherlands","--c-nl"], be:["Belgium","--c-be"], de:["Germany","--c-de"], us:["US / AFNORTH","--c-us"], jfc:["HQ closed (JFCBS)","--p-frontier"], nat:["Allied staff national days","--p-plan"], clinic:["Geilenkirchen clinic","--p-news"], fam:["Family calendar","--p-world"], mkt:["Markets & events","--c-mkt"], pro:["Work & world","--c-pro"],
               hockey:["Hurricanes","--p-hockey"], home:["Bins & home","--p-home"], school:["School breaks","--p-pro"], watch:["Horizon","--p-watch"], deadline:["Deadlines","--crit"], info:["Clocks","--muted"], out:["Out and about","--c-mkt"], ex:["Exercises","--p-pro"], me:["Yours","--ink"], nfl:["Saints & Cardinals","--p-sec"], tv:["TV","--p-reading"], mail:["From your mail","--c-us"] };
   var CODE_COLORS = { CYB:"--c-us", SAB:"--crit", UAS:"--c-mkt", UWI:"--c-pro", GNSS:"--c-be", INF:"--c-nl", ELX:"--c-nl", MIG:"--c-de", PRX:"--warn", AIR:"--c-de", SEA:"--c-pro", COE:"--c-be", KIN:"--crit" };
   var PART_CLASSES = ["front","news","money","watch","reading","home"];
@@ -536,6 +536,16 @@
     (((ctx.local || {}).protests) || []).forEach(function (e) { if (e.date && e.status !== "cancelled") ev.push({ date: e.date, end: e.end && e.end !== e.date ? e.end : undefined, cat: e.cc === "be" ? "be" : e.cc === "de" ? "de" : "nl", t: "Protest, " + e.city + ": " + e.t, sub: [e.time, e.where, e.size, e.impact].filter(Boolean).join(" · "), src: "local", prio: !!e.near }); });
     (((ctx.local || {}).admin) || []).forEach(function (e) { if (e.date) ev.push({ date: e.date, cat: "deadline", t: e.t, sub: e.note || "Household admin", src: "local", prio: true }); });
     ((ctx.week && ctx.week.items) || []).forEach(function (w) { if (w.date) ev.push({ date: w.date, end: w.end && w.end !== w.date ? w.end : undefined, cat: "me", t: w.t + (w.time ? " · " + w.time : ""), sub: [w.note, w.url ? "Join: " + w.url : ""].filter(Boolean).join(" · "), src: "week", prio: true }); });
+    /* family Cozi calendar: one-off events only; skip what the readbook already holds on the same start day */
+    if (ctx.cozi) {
+      var STOP = { with: 1, from: 1, this: 1, that: 1, staff: 0 }, wordsOf = function (s) { return String(s || "").toLowerCase().replace(/[^a-z0-9à-ÿ ]+/g, " ").split(" ").filter(function (w) { return w.length >= 4 && !STOP[w]; }); };
+      var FIRM = { week: 1, inbox: 1, calendar: 1, deadlines: 1, exercises: 1 }, have = {}; ev.forEach(function (e) { if (FIRM[e.src]) (have[e.date] = have[e.date] || []).push(wordsOf(e.t + " " + (e.sub || ""))); });
+      ctx.cozi.items.forEach(function (c) {
+        if (!c.date || !c.t) return;
+        var cw = wordsOf(c.t); if ((have[c.date] || []).some(function (ws) { return cw.some(function (w) { return ws.indexOf(w) >= 0; }); })) return;
+        ev.push({ date: c.date, end: c.end && c.end !== c.date ? c.end : undefined, cat: c.who === "me" ? "me" : "fam", t: c.t + (c.time ? " · " + c.time : ""), sub: [c.where, "family calendar"].filter(Boolean).join(" · "), src: "cozi", prio: true });
+      });
+    }
     var seen = {};
     return ev.filter(function (e) { if (!e.date || !/^\d{4}-\d{2}-\d{2}$/.test(e.date)) return false; var k = e.date + "|" + e.cat + "|" + e.t; if (seen[k]) return false; seen[k] = 1; return true; }).sort(function (a, b) { return a.date < b.date ? -1 : a.date > b.date ? 1 : evRank(a) - evRank(b); });
   }
@@ -581,7 +591,7 @@
     if (e.src === "bins" || e.src === "deadlines" || e.src === "career" || e.src === "exercises" || e.src === "week") return true;
     if (e.src === "calendar") return e.cat === "nat" || e.cat === "info" ? false : e.cat !== "school" || e.sys === "afnorth";
     if (e.src === "canes" || e.src === "teams") return !!e.live || !!e.prio;
-    if (e.src === "tv" || e.src === "inbox") return true;
+    if (e.src === "tv" || e.src === "inbox" || e.src === "cozi") return true;
     if (e.src === "local") return !!e.prio;
     if (e.src === "events" || e.src === "edition") return !!e.prio;
     return false;
@@ -860,7 +870,7 @@
   }
 
   /* ---------- health checks: when to remodel ---------- */
-  var PAGE_V = "7.5", PROMPT_REV = "7.5.8";
+  var PAGE_V = "7.5", PROMPT_REV = "7.5.9";
   function health(E, ctx, TD, words) {
     var rows = [], realToday = key(new Date());
     function add(name, level, detail) { rows.push([name, level, detail]); }
@@ -2317,9 +2327,9 @@
     opt("data/incidents.json"), opt("data/bins.json"), opt("data/threads.json"), opt("data/horizon.json"),
     opt("data/fx.json"), opt("data/series.json"), opt("data/canes.json"),
     opt("data/conflicts.json"), opt("data/world-series.json"), opt("data/calendar.json"), opt("data/deadlines.json"),
-    opt("data/congress.json"), opt("data/exercises.json"), opt("data/releases.json"), opt("data/events.json"), opt("data/idioms.json"), opt("data/ski.json"), opt("data/search-index.json"), opt("data/land.json"), opt("data/week.json"), opt("data/corrections.json"), opt("data/research.json"), opt("data/teams.json"), opt("data/tv.json"), opt("data/countries.json"), opt("data/ceu.json"), opt("data/novel.json"), opt("data/indicators.json"), opt("data/forecasts.json"), opt("data/questions.json"), opt("data/ua-front.json"), opt("data/philosophy.json"), opt("data/inbox.json"), opt("data/fuel.json"), opt("data/energy.json"), opt("data/local.json"), opt("data/hockey.json"), opt("data/sports.json")
+    opt("data/congress.json"), opt("data/exercises.json"), opt("data/releases.json"), opt("data/events.json"), opt("data/idioms.json"), opt("data/ski.json"), opt("data/search-index.json"), opt("data/land.json"), opt("data/week.json"), opt("data/corrections.json"), opt("data/research.json"), opt("data/teams.json"), opt("data/tv.json"), opt("data/countries.json"), opt("data/ceu.json"), opt("data/novel.json"), opt("data/indicators.json"), opt("data/forecasts.json"), opt("data/questions.json"), opt("data/ua-front.json"), opt("data/philosophy.json"), opt("data/inbox.json"), opt("data/fuel.json"), opt("data/energy.json"), opt("data/local.json"), opt("data/hockey.json"), opt("data/sports.json"), opt("data/cozi.json")
   ]).then(function (r) {
-    ctx.fuel = r[34] && r[34].series ? r[34] : null; ctx.energy = r[35]; ctx.local = r[36]; ctx.hockeyStats = r[37]; ctx.sports = r[38];
+    ctx.fuel = r[34] && r[34].series ? r[34] : null; ctx.energy = r[35]; ctx.local = r[36]; ctx.hockeyStats = r[37]; ctx.sports = r[38]; ctx.cozi = r[39] && r[39].items ? r[39] : null;
     ctx.novel = r[27]; ctx.indicators = r[28]; ctx.forecasts = r[29]; ctx.questions = r[30]; ctx.uaFront = r[31]; ctx.philosophy = r[32]; ctx.inbox = r[33];
     ctx.ceu = r[26] && r[26].countries; ctx.countriesMap = r[25] && r[25].map;
     ctx.week = r[20]; ctx.corrections = r[21]; ctx.research = r[22]; ctx.teams = r[23]; ctx.tv = r[24];
