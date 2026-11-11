@@ -293,8 +293,8 @@ Append one row per published value; never backfill estimates. A weekly series ke
 ### `data/calendar.json`
 
 ```
-{ "from", "to", "holidays": [{"date","c":"nl|be|de|us|info","n","note"}],
-  "school": { "<system>": {"name","color","source","segs":[[from,to,label]],"days":[[date,label]],"weekly"} },
+{ "from", "to", "holidays": [{"date","c":"nl|be|de|us|jfc|nat|info","n","note"}] (jfc = a JFCBS HQ-wide day off, its `n` starts "HQ closed ·"; nat = one nation's staff off with the HQ open; a `us` row names whether the HQ also closes),
+  "school": { "<system>": {"name","color","source","segs":[[from,to,label]],"days":[[date,label]],"weekly","hq"} } (hq: true marks a planning row such as the JFCBS consolidated breaks: drawn in The year ahead, left out of "All systems off" and the leave windows),
   "markets": [[name, c, from, to]] }
 ```
 

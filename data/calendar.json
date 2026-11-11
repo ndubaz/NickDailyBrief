@@ -1,13 +1,13 @@
 {
- "note": "Standing calendar, edited rarely: public holidays and observances (c = nl, be, de, us, info), school breaks per system, and seasonal markets. The morning run completes missing school years when they are published and otherwise leaves this file alone. Window: 2026-11-01 to 2028-04-30. Holiday dates are computed from the statutory rules (Easter-based dates via the Gregorian algorithm) and should be spot-checked once a year.",
+ "note": "Standing calendar, edited rarely: public holidays and observances (c = nl, be, de, us, jfc = JFCBS HQ closed, nat = an allied nation's staff off with the HQ open, info), school breaks per system, and seasonal markets. The morning run completes missing school years when they are published and otherwise leaves this file alone. Window: 2026-11-01 to 2028-04-30. Holiday dates are computed from the statutory rules (Easter-based dates via the Gregorian algorithm) and should be spot-checked once a year.",
  "from": "2026-11-01",
  "to": "2028-04-30",
- "updated": "2026-11-10",
+ "updated": "2026-11-11",
  "holidays": [
   {
    "date": "2026-10-12",
    "c": "us",
-   "n": "Columbus Day · JFCBS US holiday",
+   "n": "Columbus Day · US pass day",
    "note": "JFCBS FY27 US holiday: local pass authorised; falls on a Monday, so a four-day pass with the adjoining non-duty days may be requested; leave authorisation from the NATO supervisor first, pass within 7 days either side if the mission requires."
   },
   {
@@ -39,7 +39,7 @@
   {
    "date": "2026-11-11",
    "c": "us",
-   "n": "Veterans Day · JFCBS US holiday",
+   "n": "Veterans Day · US pass day",
    "note": "JFCBS FY27 US holiday: local pass authorised; midweek, so a single-day pass; leave authorisation from the NATO supervisor first, pass within 7 days either side if the mission requires."
   },
   {
@@ -57,7 +57,7 @@
   {
    "date": "2026-11-26",
    "c": "us",
-   "n": "Thanksgiving · JFCBS US holiday",
+   "n": "Thanksgiving · US pass day",
    "note": "JFCBS FY27 US holiday: local pass authorised; falls on a Thursday, so a four-day pass with the adjoining non-duty days may be requested; leave authorisation from the NATO supervisor first, pass within 7 days either side if the mission requires."
   },
   {
@@ -83,7 +83,7 @@
   {
    "date": "2026-12-25",
    "c": "us",
-   "n": "Christmas Day · JFCBS US holiday",
+   "n": "Christmas Day · US pass day",
    "note": "JFCBS FY27 US holiday: local pass authorised; falls on a Friday, so a four-day pass with the adjoining non-duty days may be requested; leave authorisation from the NATO supervisor first, pass within 7 days either side if the mission requires."
   },
   {
@@ -108,19 +108,25 @@
   },
   {
    "date": "2027-01-01",
+   "c": "jfc",
+   "n": "HQ closed · New Year's Day",
+   "note": "JFCBS HQ-wide holiday, Fri."
+  },
+  {
+   "date": "2027-01-01",
    "c": "nl",
    "n": "Nieuwjaarsdag"
   },
   {
    "date": "2027-01-01",
    "c": "us",
-   "n": "New Year's Day · JFCBS US holiday",
+   "n": "New Year's Day · US pass day; HQ closed too",
    "note": "JFCBS FY27 US holiday: local pass authorised; falls on a Friday, so a four-day pass with the adjoining non-duty days may be requested; leave authorisation from the NATO supervisor first, pass within 7 days either side if the mission requires."
   },
   {
    "date": "2027-01-18",
    "c": "us",
-   "n": "Martin Luther King Jr. Day · JFCBS US holiday",
+   "n": "Martin Luther King Jr. Day · US pass day; HQ open",
    "note": "JFCBS FY27 US holiday: local pass authorised; falls on a Monday, so a four-day pass with the adjoining non-duty days may be requested; leave authorisation from the NATO supervisor first, pass within 7 days either side if the mission requires."
   },
   {
@@ -130,10 +136,28 @@
    "note": "Vastelaovend 7 to 9 Feb; schools and many offices closed Mon–Tue in Zuid-Limburg"
   },
   {
+   "date": "2027-02-08",
+   "c": "jfc",
+   "n": "HQ closed · Carnaval Monday",
+   "note": "JFCBS HQ-wide holiday, Mon."
+  },
+  {
    "date": "2027-02-15",
    "c": "us",
-   "n": "Presidents' Day · JFCBS US holiday",
+   "n": "Presidents' Day · US pass day; HQ open",
    "note": "JFCBS FY27 US holiday: local pass authorised; falls on a Monday, so a four-day pass with the adjoining non-duty days may be requested; leave authorisation from the NATO supervisor first, pass within 7 days either side if the mission requires."
+  },
+  {
+   "date": "2027-02-16",
+   "c": "nat",
+   "n": "Lithuania staff off · State Restoration Day",
+   "note": "National holiday for that nation's staff only; HQ open."
+  },
+  {
+   "date": "2027-02-24",
+   "c": "nat",
+   "n": "Estonia staff off · Independence Day",
+   "note": "National holiday for that nation's staff only; HQ open."
   },
   {
    "date": "2027-03-14",
@@ -141,9 +165,33 @@
    "n": "US clocks forward: ET is 5 h behind until the EU change"
   },
   {
+   "date": "2027-03-15",
+   "c": "nat",
+   "n": "Hungary staff off · Revolution Memorial Day",
+   "note": "National holiday for that nation's staff only; HQ open."
+  },
+  {
+   "date": "2027-03-25",
+   "c": "nat",
+   "n": "Denmark staff off · Maundy Thursday",
+   "note": "National holiday for that nation's staff only; HQ open."
+  },
+  {
+   "date": "2027-03-25",
+   "c": "nat",
+   "n": "Greece staff off · Independence Day",
+   "note": "National holiday for that nation's staff only; HQ open."
+  },
+  {
    "date": "2027-03-26",
    "c": "de",
    "n": "Karfreitag"
+  },
+  {
+   "date": "2027-03-26",
+   "c": "jfc",
+   "n": "HQ closed · Good Friday",
+   "note": "JFCBS HQ-wide holiday, Fri."
   },
   {
    "date": "2027-03-26",
@@ -173,19 +221,37 @@
   },
   {
    "date": "2027-03-29",
+   "c": "jfc",
+   "n": "HQ closed · Easter Monday",
+   "note": "JFCBS HQ-wide holiday, Mon."
+  },
+  {
+   "date": "2027-03-29",
    "c": "nl",
    "n": "Tweede Paasdag"
   },
   {
    "date": "2027-03-29",
    "c": "us",
-   "n": "Easter Monday (observed) · JFCBS US holiday",
+   "n": "Easter Monday (observed) · US pass day; HQ closed too",
    "note": "JFCBS FY27 US holiday: local pass authorised; falls on a Monday, so a four-day pass with the adjoining non-duty days may be requested; leave authorisation from the NATO supervisor first, pass within 7 days either side if the mission requires."
+  },
+  {
+   "date": "2027-04-27",
+   "c": "jfc",
+   "n": "HQ closed · King's Day",
+   "note": "JFCBS HQ-wide holiday, Tue."
   },
   {
    "date": "2027-04-27",
    "c": "nl",
    "n": "Koningsdag"
+  },
+  {
+   "date": "2027-04-30",
+   "c": "jfc",
+   "n": "HQ closed · Labour Day, observed",
+   "note": "Labour Day falls on Saturday 1 May; HQ observes it Friday 30 Apr (Commander authorised)."
   },
   {
    "date": "2027-05-01",
@@ -196,6 +262,24 @@
    "date": "2027-05-01",
    "c": "de",
    "n": "Tag der Arbeit"
+  },
+  {
+   "date": "2027-05-03",
+   "c": "nat",
+   "n": "Poland staff off · Constitution Day",
+   "note": "National holiday for that nation's staff only; HQ open."
+  },
+  {
+   "date": "2027-05-04",
+   "c": "nat",
+   "n": "Latvia staff off · Independence Restoration Day",
+   "note": "National holiday for that nation's staff only; HQ open."
+  },
+  {
+   "date": "2027-05-05",
+   "c": "jfc",
+   "n": "HQ closed · Liberation Day",
+   "note": "JFCBS HQ-wide holiday, Wed."
   },
   {
    "date": "2027-05-05",
@@ -215,8 +299,26 @@
   },
   {
    "date": "2027-05-06",
+   "c": "jfc",
+   "n": "HQ closed · Ascension Day",
+   "note": "JFCBS HQ-wide holiday, Thu."
+  },
+  {
+   "date": "2027-05-06",
    "c": "nl",
    "n": "Hemelvaartsdag"
+  },
+  {
+   "date": "2027-05-07",
+   "c": "nat",
+   "n": "Netherlands staff off · Ascension Day (the Friday after)",
+   "note": "The HQ list designates 7 May for Dutch staff, the bridge day after Ascension (6 May). National holiday for that nation's staff only; HQ open."
+  },
+  {
+   "date": "2027-05-07",
+   "c": "nat",
+   "n": "Norway staff off · Constitution Day, observed",
+   "note": "Constitution Day is 17 May; Norwegian staff observe it on 7 May. National holiday for that nation's staff only; HQ open."
   },
   {
    "date": "2027-05-16",
@@ -235,6 +337,12 @@
   },
   {
    "date": "2027-05-17",
+   "c": "jfc",
+   "n": "HQ closed · Whit Monday",
+   "note": "JFCBS HQ-wide holiday, Mon."
+  },
+  {
+   "date": "2027-05-17",
    "c": "nl",
    "n": "Tweede Pinksterdag"
   },
@@ -245,21 +353,69 @@
    "note": "NRW"
   },
   {
+   "date": "2027-05-28",
+   "c": "nat",
+   "n": "Azerbaijan staff off · Republic Day",
+   "note": "National holiday for that nation's staff only; HQ open."
+  },
+  {
+   "date": "2027-05-30",
+   "c": "nat",
+   "n": "Croatia staff off · Statehood Day",
+   "note": "National holiday for that nation's staff only; HQ open."
+  },
+  {
    "date": "2027-05-31",
    "c": "us",
-   "n": "Memorial Day · JFCBS US holiday",
+   "n": "Memorial Day · US pass day; HQ open",
    "note": "JFCBS FY27 US holiday: local pass authorised; falls on a Monday, so a four-day pass with the adjoining non-duty days may be requested; leave authorisation from the NATO supervisor first, pass within 7 days either side if the mission requires."
+  },
+  {
+   "date": "2027-06-02",
+   "c": "nat",
+   "n": "Italy staff off · Republic Day",
+   "note": "National holiday for that nation's staff only; HQ open."
+  },
+  {
+   "date": "2027-06-10",
+   "c": "nat",
+   "n": "Portugal staff off · Day of Portugal",
+   "note": "National holiday for that nation's staff only; HQ open."
   },
   {
    "date": "2027-06-18",
    "c": "us",
-   "n": "Juneteenth (observed) · JFCBS US holiday",
+   "n": "Juneteenth (observed) · US pass day; HQ open",
    "note": "JFCBS FY27 US holiday: local pass authorised; falls on a Friday, so a four-day pass with the adjoining non-duty days may be requested; leave authorisation from the NATO supervisor first, pass within 7 days either side if the mission requires."
   },
   {
    "date": "2027-06-19",
    "c": "us",
    "n": "Juneteenth"
+  },
+  {
+   "date": "2027-06-25",
+   "c": "nat",
+   "n": "Slovenia staff off · Statehood Day",
+   "note": "National holiday for that nation's staff only; HQ open."
+  },
+  {
+   "date": "2027-06-25",
+   "c": "nat",
+   "n": "Sweden staff off · National Holiday",
+   "note": "National holiday for that nation's staff only; HQ open."
+  },
+  {
+   "date": "2027-07-01",
+   "c": "nat",
+   "n": "Canada staff off · Canada Day",
+   "note": "National holiday for that nation's staff only; HQ open."
+  },
+  {
+   "date": "2027-07-04",
+   "c": "nat",
+   "n": "United States staff off · Independence Day",
+   "note": "A Sunday; US personnel get the pass day on Monday 5 Jul (see the US row). National holiday for that nation's staff only; HQ open."
   },
   {
    "date": "2027-07-04",
@@ -269,8 +425,14 @@
   {
    "date": "2027-07-05",
    "c": "us",
-   "n": "Independence Day (observed) · JFCBS US holiday",
+   "n": "Independence Day (observed) · US pass day; HQ open",
    "note": "JFCBS FY27 US holiday: local pass authorised; falls on a Monday, so a four-day pass with the adjoining non-duty days may be requested; leave authorisation from the NATO supervisor first, pass within 7 days either side if the mission requires."
+  },
+  {
+   "date": "2027-07-14",
+   "c": "nat",
+   "n": "France staff off · National Day",
+   "note": "National holiday for that nation's staff only; HQ open."
   },
   {
    "date": "2027-07-21",
@@ -278,15 +440,57 @@
    "n": "Nationale feestdag"
   },
   {
+   "date": "2027-07-21",
+   "c": "nat",
+   "n": "Belgium staff off · Belgian National Day",
+   "note": "National holiday for that nation's staff only; HQ open."
+  },
+  {
    "date": "2027-08-15",
    "c": "be",
    "n": "O.L.V. Hemelvaart"
   },
   {
+   "date": "2027-08-16",
+   "c": "jfc",
+   "n": "HQ closed · Assumption Day, observed",
+   "note": "Assumption falls on Sunday 15 Aug; HQ observes it Monday 16 Aug (Commander authorised). JFCBS follows SHAPE on this day: the observed date is pending SHAPE Directive 005-005, Leave and Holidays for 2027."
+  },
+  {
+   "date": "2027-08-24",
+   "c": "nat",
+   "n": "Ukraine staff off · Independence Day",
+   "note": "National holiday for that nation's staff only; HQ open."
+  },
+  {
+   "date": "2027-08-30",
+   "c": "nat",
+   "n": "United Kingdom staff off · Summer Bank Holiday",
+   "note": "National holiday for that nation's staff only; HQ open."
+  },
+  {
+   "date": "2027-09-01",
+   "c": "nat",
+   "n": "Slovakia staff off · Constitution Day",
+   "note": "National holiday for that nation's staff only; HQ open."
+  },
+  {
+   "date": "2027-09-06",
+   "c": "nat",
+   "n": "Bulgaria staff off · National Holiday",
+   "note": "National holiday for that nation's staff only; HQ open."
+  },
+  {
    "date": "2027-09-06",
    "c": "us",
-   "n": "Labor Day · JFCBS US holiday",
+   "n": "Labor Day · US pass day; HQ open",
    "note": "JFCBS FY27 US holiday: local pass authorised; falls on a Monday, so a four-day pass with the adjoining non-duty days may be requested; leave authorisation from the NATO supervisor first, pass within 7 days either side if the mission requires."
+  },
+  {
+   "date": "2027-09-08",
+   "c": "nat",
+   "n": "North Macedonia staff off · Independence Day",
+   "note": "National holiday for that nation's staff only; HQ open."
   },
   {
    "date": "2027-10-03",
@@ -294,9 +498,39 @@
    "n": "Tag der Deutschen Einheit"
   },
   {
+   "date": "2027-10-03",
+   "c": "nat",
+   "n": "Germany staff off · Unity Day",
+   "note": "National holiday for that nation's staff only; HQ open."
+  },
+  {
    "date": "2027-10-11",
    "c": "us",
    "n": "Columbus Day"
+  },
+  {
+   "date": "2027-10-12",
+   "c": "nat",
+   "n": "Spain staff off · National Day",
+   "note": "National holiday for that nation's staff only; HQ open."
+  },
+  {
+   "date": "2027-10-26",
+   "c": "nat",
+   "n": "Austria staff off · National Day",
+   "note": "National holiday for that nation's staff only; HQ open."
+  },
+  {
+   "date": "2027-10-28",
+   "c": "nat",
+   "n": "Czechia staff off · Independent Czechoslovak State Day",
+   "note": "National holiday for that nation's staff only; HQ open."
+  },
+  {
+   "date": "2027-10-29",
+   "c": "nat",
+   "n": "Türkiye staff off · National Day",
+   "note": "National holiday for that nation's staff only; HQ open."
   },
   {
    "date": "2027-10-31",
@@ -352,9 +586,27 @@
    "n": "Thanksgiving"
   },
   {
+   "date": "2027-11-29",
+   "c": "nat",
+   "n": "Albania staff off · Independence Day",
+   "note": "28 Nov falls on a Sunday; observed Monday 29 Nov. National holiday for that nation's staff only; HQ open."
+  },
+  {
+   "date": "2027-12-01",
+   "c": "nat",
+   "n": "Romania staff off · National Day",
+   "note": "National holiday for that nation's staff only; HQ open."
+  },
+  {
    "date": "2027-12-05",
    "c": "nl",
    "n": "Pakjesavond (Sinterklaas)"
+  },
+  {
+   "date": "2027-12-06",
+   "c": "nat",
+   "n": "Finland staff off · Independence Day",
+   "note": "National holiday for that nation's staff only; HQ open."
   },
   {
    "date": "2027-12-25",
@@ -385,6 +637,36 @@
    "date": "2027-12-26",
    "c": "nl",
    "n": "Tweede Kerstdag"
+  },
+  {
+   "date": "2027-12-27",
+   "c": "jfc",
+   "n": "HQ closed · Christmas Day, observed",
+   "note": "Christmas falls on Saturday 25 Dec; observed Monday 27 Dec."
+  },
+  {
+   "date": "2027-12-28",
+   "c": "jfc",
+   "n": "HQ closed · Second Christmas Day, observed",
+   "note": "26 Dec falls on a Sunday; observed Tuesday 28 Dec."
+  },
+  {
+   "date": "2027-12-29",
+   "c": "jfc",
+   "n": "HQ closed · Commander-authorised day off",
+   "note": "JFCBS HQ-wide holiday, Wed."
+  },
+  {
+   "date": "2027-12-30",
+   "c": "jfc",
+   "n": "HQ closed · Commander-authorised day off",
+   "note": "JFCBS HQ-wide holiday, Thu."
+  },
+  {
+   "date": "2027-12-31",
+   "c": "jfc",
+   "n": "HQ closed · New Year's Eve",
+   "note": "JFCBS HQ-wide holiday, Fri."
   },
   {
    "date": "2028-01-01",
@@ -564,6 +846,11 @@
      "2027-06-18",
      "2027-06-18",
      "No school: teacher workday"
+    ],
+    [
+     "2027-06-19",
+     "2027-08-15",
+     "Summer break (JFCBS 2027 planner; 2027–28 first day to confirm)"
     ]
    ],
    "days": [
@@ -787,6 +1074,71 @@
      "Herbstferien"
     ]
    ]
+  },
+  "uwc": {
+   "name": "UWC Maastricht",
+   "color": "pro",
+   "source": "JFCBS 2027 year-planner directive, school breaks table, supplied by Nick on 11 Nov 2026. Autumn 2027 and winter 2027–28 to be confirmed.",
+   "segs": [
+    [
+     "2026-12-12",
+     "2027-01-03",
+     "Winter break"
+    ],
+    [
+     "2027-02-06",
+     "2027-02-14",
+     "Carnival break"
+    ],
+    [
+     "2027-04-24",
+     "2027-05-09",
+     "Spring break"
+    ],
+    [
+     "2027-07-24",
+     "2027-09-05",
+     "Summer break"
+    ]
+   ]
+  },
+  "jfcbs": {
+   "name": "JFCBS consolidated breaks",
+   "color": "pro",
+   "hq": true,
+   "source": "JFCBS 2027 year-planner directive: consolidated break periods across UWC, AFNORTH International School and NL Regio Zuid. HQ-level activities are to be planned around them; these are not days off.",
+   "segs": [
+    [
+     "2026-12-19",
+     "2027-01-03",
+     "Winter"
+    ],
+    [
+     "2027-02-06",
+     "2027-02-14",
+     "Carnival"
+    ],
+    [
+     "2027-04-24",
+     "2027-05-09",
+     "Spring"
+    ],
+    [
+     "2027-07-10",
+     "2027-09-05",
+     "Summer"
+    ],
+    [
+     "2027-10-23",
+     "2027-10-31",
+     "Autumn"
+    ],
+    [
+     "2027-12-25",
+     "2028-01-09",
+     "Winter"
+    ]
+   ]
   }
  },
  "markets": [
@@ -832,6 +1184,11 @@
    "t": "JFC Brunssum FY27 Holiday Observance Policy for US service members, memorandum of 7 Aug 2026 (US Senior National Representative)",
    "added": "2026-11-10",
    "note": "Twelve US holidays Oct 2026 to Sep 2027; local pass on the day, four-day pass when the holiday falls Thu, Fri, Mon or Tue; observe within 7 days either side when the mission requires."
+  },
+  {
+   "t": "JFC Brunssum 2027 holidays and year planner directive (HQ holidays, JFCBS SNR designated national holidays, school breaks)",
+   "added": "2026-11-11",
+   "note": "Fifteen HQ-wide days off in 2027; national days for each nation's staff with the HQ open; consolidated school-break periods for planning. Assumption Day's observed date is pending SHAPE Directive 005-005."
   }
  ]
 }

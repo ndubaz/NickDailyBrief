@@ -7,7 +7,7 @@
   "use strict";
   var MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
   var DOW = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
-  var CAT = { nl:["Netherlands","--c-nl"], be:["Belgium","--c-be"], de:["Germany","--c-de"], us:["US / AFNORTH","--c-us"], mkt:["Markets & events","--c-mkt"], pro:["Work & world","--c-pro"],
+  var CAT = { nl:["Netherlands","--c-nl"], be:["Belgium","--c-be"], de:["Germany","--c-de"], us:["US / AFNORTH","--c-us"], jfc:["HQ closed (JFCBS)","--p-frontier"], nat:["Allied staff national days","--p-plan"], mkt:["Markets & events","--c-mkt"], pro:["Work & world","--c-pro"],
               hockey:["Hurricanes","--p-hockey"], home:["Bins & home","--p-home"], school:["School breaks","--p-pro"], watch:["Horizon","--p-watch"], deadline:["Deadlines","--crit"], info:["Clocks","--muted"], out:["Out and about","--c-mkt"], ex:["Exercises","--p-pro"], me:["Yours","--ink"], nfl:["Saints & Cardinals","--p-sec"], tv:["TV","--p-reading"], mail:["From your mail","--c-us"] };
   var CODE_COLORS = { CYB:"--c-us", SAB:"--crit", UAS:"--c-mkt", UWI:"--c-pro", GNSS:"--c-be", INF:"--c-nl", ELX:"--c-nl", MIG:"--c-de", PRX:"--warn", AIR:"--c-de", SEA:"--c-pro", COE:"--c-be", KIN:"--crit" };
   var PART_CLASSES = ["front","news","money","watch","reading","home"];
@@ -836,7 +836,7 @@
   }
   function overlapRows(cal, TD) {
     var from = TD, to = addDays(TD, 365), rows = [], sets = [];
-    Object.keys(cal.school || {}).forEach(function (k) { var s = cal.school[k], segs = (s.segs || []).filter(function (g) { return g[1] >= from && g[0] <= to; }); rows.push({ name: s.name, color: s.color, segs: segs }); sets.push(segs); });
+    Object.keys(cal.school || {}).forEach(function (k) { var s = cal.school[k], segs = (s.segs || []).filter(function (g) { return g[1] >= from && g[0] <= to; }); rows.push({ name: s.name, color: s.color, segs: segs }); if (!s.hq) sets.push(segs); });
     var all = [], d = pd(from), end = pd(to), cur = null;
     for (; d <= end; d.setDate(d.getDate() + 1)) {
       var k = key(d), off = sets.length && sets.every(function (segs) { return segs.some(function (g) { return g[0] <= k && k <= g[1]; }); });
@@ -1420,7 +1420,7 @@
   function yearAhead(ctx, E, TD, today) {
     var from = TD, to = addDays(TD, 365), rows = [], cal = ctx.calendar || {};
     function seg(list) { return list.filter(function (g) { return g[1] >= from && g[0] <= to; }); }
-    Object.keys(cal.school || {}).forEach(function (k) { var sy = cal.school[k]; rows.push({ name: sy.name, color: sy.color, segs: seg(sy.segs || []) }); });
+    Object.keys(cal.school || {}).forEach(function (k) { var sy = cal.school[k]; rows.push({ name: sy.name, sub: sy.hq ? "plan HQ events around; not days off" : undefined, color: sy.color, segs: seg(sy.segs || []) }); });
     var ex = seg((ctx.exercises || []).map(function (x) { return [x.from, x.to, x.name]; })); if (ex.length) rows.push({ name: "Exercises", color: "ex", segs: ex });
     var car = seg((((E.army || {}).career || {}).dates || []).map(function (d) { return [d[0], d[0], plain(d[1])]; })), cg = seg((ctx.congress || []).filter(function (c) { return c.deadline; }).map(function (c) { return [c.deadline, c.deadline, (c.title || c.post) + " deadline"]; }));
     if (car.length || cg.length) rows.push({ name: "Career and Congress", sub: "dates", color: "pro", segs: car.concat(cg) });
@@ -1431,7 +1431,7 @@
     var OVR = cal.school ? overlapRows(cal, TD) : null; if (OVR && OVR.all.length) rows.push({ name: "All systems off", sub: "family and neighbours", color: "us", all: true, segs: OVR.all });
     var ticks = []; for (var m = 0; m < 13; m++) { var t = new Date(today.getFullYear(), today.getMonth() + m + 1, 1); if (key(t) <= to) ticks.push(key(t)); }
     /* leave windows: every school system off and no exercise under way */
-    var sets = Object.keys(cal.school || {}).map(function (k) { return cal.school[k].segs || []; }), win = [], cur = null, d = pd(from), end = pd(to);
+    var sets = Object.keys(cal.school || {}).filter(function (k) { return !cal.school[k].hq; }).map(function (k) { return cal.school[k].segs || []; }), win = [], cur = null, d = pd(from), end = pd(to);
     for (; d <= end; d.setDate(d.getDate() + 1)) { var k = key(d), off = sets.length && sets.every(function (sg) { return sg.some(function (g) { return g[0] <= k && k <= g[1]; }); }) && !ex.some(function (g) { return g[0] <= k && k <= g[1]; }); if (off && !cur) cur = [k, k]; else if (off) cur[1] = k; else if (cur) { win.push(cur); cur = null; } }
     if (cur) win.push(cur);
     var h = gantt({ from: from, to: to, ticks: ticks, rows: rows }, today, { year: true, noXmas: true });
