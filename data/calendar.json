@@ -1018,7 +1018,8 @@
      "Summer break begins"
     ]
    ],
-   "note": "The academic calendar shows no weekly early release; the Wednesday early release listed earlier is not on it, so confirm with the school before relying on it. US federal holidays are school days unless listed: Veterans Day, Thanksgiving, MLK Day, Presidents' Day and Memorial Day are all A or B days."
+   "note": "Every Wednesday is early release (printed on the academic calendar); the school bus brings students home at 14:20 on Wednesdays. US federal holidays are school days unless listed: Veterans Day, Thanksgiving, MLK Day, Presidents' Day and Memorial Day are all A or B days.",
+   "weekly": "Wednesday early release"
   },
   "nl": {
    "name": "NL region Zuid",
