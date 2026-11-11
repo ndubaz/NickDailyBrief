@@ -15,7 +15,7 @@
   var PARTS = ["front","news","money","reading","watch","home"].map(function (k) { return PART_DEF[k]; });
   function setPartOrder(weekend) { PARTS = (weekend ? ["front","reading","news","money","watch","sports","home"] : ["front","news","money","reading","watch","sports","home"]).map(function (k) { return PART_DEF[k]; }); }
   function pn(cls) { var i = PARTS.map(function (p) { return p[0]; }).indexOf(cls); return "Part " + i; }
-  var TIERS = { news: ["world","hybrid","europe","countries","euregio","army","nato","deftech","frontier","nl"], money: ["markets","fx","fuel","rates"], watch: ["board","numbers","horizon","threads","novel","congress-sec","releases","sota","forecasts"], reading: ["feature","research","philosophy","depth","ttpsec","aperture"], sports: ["hockey","nfl","mlb","football"], home: ["local","afnorth","offduty","makkelijk","dutch","snow","week","coming","weather","countdown","tv","calendar","year"] };
+  var TIERS = { news: ["world","hybrid","europe","countries","euregio","army","nato","deftech","frontier","nl"], money: ["markets","fx","fuel","rates"], watch: ["board","numbers","horizon","threads","novel","congress-sec","releases","sota","forecasts"], reading: ["feature","research","philosophy","depth","ttpsec","aperture"], sports: ["hockey","nfl","mlb","football"], home: ["local","afnorth","offduty","makkelijk","dutch","snow","week","coming","weather","countdown","tv","eurovision","calendar","year"] };
   var EVCAT = { music:"Music", markets:"Markets", museums:"Museums", sport:"Sport", kids:"Kids", food:"Food", outdoors:"Outdoors", festival:"Festivals" };
   var SERIES_BY_LABEL = [["s&p 500","spx"],["dow","dji"],["nasdaq","ndx"],["russell","rut"],["aex","aex"],["stoxx","stoxx"],["dax","dax"],["brent","brent"],["dutch ttf","ttf"],["ttf","ttf"],["gold","gold"],["us 10-year","us10y"],["vix","vix"]];
   var HOME = { lat: 50.89, lon: 5.98, name: "Heerlen" };
@@ -514,6 +514,10 @@
       }
     }
     ((ctx.tv && ctx.tv.shows) || []).forEach(function (x) { if (x.next && x.next.date) ev.push({ date: x.next.date, cat: "tv", t: x.title + " " + epCode(x.next), sub: [x.next.name, x.next.time, x.where].filter(Boolean).join(" · "), src: "tv" }); });
+    if (ctx.eurovision) {
+      (ctx.eurovision.shows || []).forEach(function (s) { ev.push({ date: s.date, cat: "tv", t: "Eurovision: " + s.t + " · " + s.time, sub: ctx.eurovision.host ? ctx.eurovision.host.city + ", " + ctx.eurovision.host.country : "", src: "tv" }); });
+      (ctx.eurovision.countries || []).forEach(function (c) { if (c.date && !c.song) ev.push({ date: c.date, cat: "tv", t: c.name + " picks its Eurovision act", sub: c.show || "national final", src: "esc" }); });
+    }
     (ctx.horizon || []).forEach(function (e) { if (e.date) ev.push({ date: e.date, end: hzEnd(e) || undefined, cat: "watch", t: e.t, sub: (e.dateText || "") + (e.n ? " · " + plain(e.n) : ""), src: "horizon" }); });
     var cal = ctx.calendar;
     if (cal) {
@@ -791,6 +795,36 @@
   }
   var TVST = { airing: "Airing", scheduled: "Date set", renewed: "Renewed", between: "Between series", awaiting: "Awaiting renewal", ended: "Ended" };
   function epCode(x) { return x ? "S" + x.s + "E" + x.e : ""; }
+  /* Eurovision 2027: host and show nights, progress across the field, the next national finals, known entries, the full list */
+  function srcList(src) { return (src || []).filter(function (s) { return s && s[1]; }).map(function (s) { return '<a href="' + esc(s[1]) + '" target="_blank" rel="noopener">' + esc(s[0]) + "</a>"; }).join(" · "); }
+  function eurovisionBlock(ctx, TD) {
+    var X = ctx.eurovision, C = (X.countries || []).slice(), H = X.host || {}, shows = X.shows || [];
+    var ST = { entry: ["Song chosen", 0], artist: ["Artist named", 1], selecting: ["National final", 2], pending: ["Waiting", 3] };
+    var stOf = function (c) { return c.song ? "entry" : c.artist ? "artist" : ST[c.status] ? c.status : "pending"; };
+    var fin = shows.filter(function (s) { return s.id === "final"; })[0], left = fin ? daysBetween(TD, fin.date) : null;
+    var nextShow = shows.filter(function (s) { return s.date >= TD; })[0];
+    var h = '<div class="esc-hero"><div class="esc-where"><div class="esc-eye">' + esc((X.edition ? X.edition + "th" : "") + " Eurovision Song Contest") + '</div><div class="esc-city">' + esc(H.city || "") + '<span>' + esc([H.country, H.venue].filter(Boolean).join(" · ")) + "</span></div>" + (H.why ? '<p class="small">' + esc(H.why) + "</p>" : "") + "</div>";
+    if (left != null) h += '<div class="esc-count"><b>' + (left > 0 ? left : left === 0 ? "Tonight" : "Done") + "</b><span>" + (left > 0 ? "days to the final" : left === 0 ? "the final, 21:00" : "the final has been sung") + "</span></div>";
+    h += '<ol class="esc-shows">' + shows.map(function (s) { var d = pd(s.date); return '<li class="' + (s.date < TD ? "past" : nextShow && s.id === nextShow.id ? "next" : "") + (s.id === "final" ? " fin" : "") + '"><span class="d">' + DOW[d.getDay()] + " " + d.getDate() + " " + MON[d.getMonth()] + "</span><b>" + esc(s.t) + "</b><span>" + esc(s.time) + " CET</span></li>"; }).join("") + "</ol></div>";
+    var cnt = { entry: 0, artist: 0, selecting: 0, pending: 0 }; C.forEach(function (c) { cnt[stOf(c)]++; });
+    var order = C.slice().sort(function (a, b) { return ST[stOf(a)][1] - ST[stOf(b)][1] || (a.name < b.name ? -1 : 1); });
+    h += '<div class="esc-prog"><div class="esc-bar" role="img" aria-label="' + cnt.entry + " songs chosen, " + cnt.artist + " artists named, of " + C.length + ' countries">' + order.map(function (c) { return '<i class="s-' + stOf(c) + '" title="' + esc(c.name + ": " + ST[stOf(c)][0]) + '"></i>'; }).join("") + "</div>";
+    h += '<ul class="esc-key">' + ["entry", "artist", "selecting", "pending"].map(function (k) { return '<li><i class="s-' + k + '"></i>' + ST[k][0] + " <b>" + cnt[k] + "</b></li>"; }).join("") + "<li>of <b>" + C.length + "</b> countries</li></ul></div>";
+    var up = C.filter(function (c) { return c.date && c.date >= TD && !c.song; }).sort(function (a, b) { return a.date < b.date ? -1 : 1; }).slice(0, 6);
+    if (up.length) h += '<h3>Next national finals</h3><ol class="esc-next">' + up.map(function (c) { var d = pd(c.date), n = daysBetween(TD, c.date); return '<li><span class="d">' + DOW[d.getDay()] + " " + d.getDate() + " " + MON[d.getMonth()] + '</span><span class="cc">' + esc(c.cc) + '</span><span class="nm"><b>' + esc(c.name) + '</b> <span class="small">' + esc(c.show || "national final") + '</span></span><span class="in">' + (n === 0 ? "tonight" : n === 1 ? "tomorrow" : "in " + n + " days") + "</span></li>"; }).join("") + "</ol>";
+    var known = order.filter(function (c) { return c.artist || c.song; });
+    if (known.length) h += '<h3>Entries so far</h3><div class="esc-cards">' + known.map(function (c) { return '<article class="esc-card' + (c.changed && daysBetween(c.changed, TD) <= 3 ? " new" : "") + '"><header><span class="cc">' + esc(c.cc) + "</span><b>" + esc(c.name) + "</b>" + (c.final ? '<span class="pill">' + (c.final === "host" ? "Host" : "Big Five") + "</span>" : "") + (c.changed && daysBetween(c.changed, TD) <= 3 ? '<span class="pill nw">New</span>' : "") + '</header><div class="who">' + esc(c.artist || "Artist to come") + '</div><div class="song">' + (c.song ? "\u201c" + esc(c.song) + "\u201d" + (c.lang ? ' <span class="small">' + esc(c.lang) + "</span>" : "") : '<span class="small">Song to come' + (c.date ? ", " + esc(fmtShort(c.date)) : "") + "</span>") + "</div>" + (c.sf ? '<div class="small">Semi-final ' + esc(c.sf) + "</div>" : "") + (c.src ? '<div class="small src">' + srcList(c.src) + "</div>" : "") + "</article>"; }).join("") + "</div>";
+    var rows = C.slice().sort(function (a, b) { return a.name < b.name ? -1 : 1; }).map(function (c) {
+      var s = stOf(c), what = c.song ? esc(c.artist || "") + " · \u201c" + esc(c.song) + "\u201d" : c.artist ? esc(c.artist) + ' <span class="small">song to come</span>' : '<span class="small">' + esc(c.show ? c.show + (c.date ? ", " + fmtShort(c.date) : c.dateText ? ", " + c.dateText : "") : "method not yet announced") + "</span>";
+      return '<li><span class="cc">' + esc(c.cc) + '</span><span class="nm">' + esc(c.name) + (c.final ? ' <span class="pill">' + (c.final === "host" ? "Host" : "Big Five") + "</span>" : "") + '</span><span class="what">' + what + (c.note ? '<span class="note">' + esc(c.note) + "</span>" : "") + '</span><span class="st s-' + s + '">' + ST[s][0] + "</span></li>";
+    });
+    h += '<details class="srcfold esc-all"><summary>All ' + C.length + " countries · " + cnt.entry + " songs, " + (cnt.entry + cnt.artist) + " artists known</summary><ul class=\"esc-list\">" + rows.join("") + "</ul></details>";
+    if ((X.out || []).length || (X.undecided || []).length) h += '<p class="small esc-out">' + ((X.out || []).length ? "<b>Not taking part:</b> " + X.out.map(function (o) { return '<span title="' + esc(o.why || "") + '">' + esc(o.name) + "</span>"; }).join(", ") + ". " : "") + ((X.undecided || []).length ? "<b>Undecided:</b> " + X.undecided.map(function (o) { return esc(o.name) + (o.why ? " (" + esc(o.why.replace(/\.$/, "")) + ")" : ""); }).join("; ") + "." : "") + "</p>";
+    var log = (X.log || []).slice().sort(function (a, b) { return a.date < b.date ? 1 : -1; }).slice(0, 4);
+    if (log.length) h += '<ul class="esc-log small">' + log.map(function (l) { return "<li><b>" + esc(fmtShort(l.date)) + "</b> " + esc(l.t) + "</li>"; }).join("") + "</ul>";
+    h += '<p class="small">Updated ' + esc(fmtShort(X.updated)) + ". " + srcList(X.src) + "</p>";
+    return h;
+  }
   function tvBlock(ctx, TD) {
     var TV = ctx.tv; if (!TV || !(TV.shows || []).length) return quiet("No shows tracked. Add them to data/tv.json.");
     var shows = TV.shows.filter(function (x) { return x.status !== "ended"; }).sort(function (a, b) { var ad = a.next && a.next.date ? a.next.date : "9", bd = b.next && b.next.date ? b.next.date : "9"; return ad < bd ? -1 : ad > bd ? 1 : 0; }), ended = TV.shows.filter(function (x) { return x.status === "ended"; });
@@ -870,7 +904,7 @@
   }
 
   /* ---------- health checks: when to remodel ---------- */
-  var PAGE_V = "7.5", PROMPT_REV = "7.5.9";
+  var PAGE_V = "7.5", PROMPT_REV = "7.5.10";
   function health(E, ctx, TD, words) {
     var rows = [], realToday = key(new Date());
     function add(name, level, detail) { rows.push([name, level, detail]); }
@@ -1435,7 +1469,7 @@
   }
   function contentsBlock() {
     var tiers = PARTS.slice(1).map(function (p) { return [p[0], p[1], TIERS[p[0]]]; });
-    var SN = { world: "World", hybrid: "Hybrid", europe: "Europe", countries: "Priority countries", euregio: "Euregio", army: "Defence & Army", nato: "NATO & allies", deftech: "Defence tech", frontier: "Frontier", markets: "Markets", rates: "Rates", nl: "Netherlands", board: "The board", forecasts: "Forecasts", novel: "New in war", numbers: "Numbers and indicators", fx: "USD/EUR", fuel: "Pump price", threads: "Threads", horizon: "Horizon", "congress-sec": "Congress", releases: "Releases", sota: "State of the art", feature: "World feature", research: "Research", philosophy: "Philosophy", depth: "Army in depth", ttpsec: "Week in war", aperture: "Aperture", local: "Parkstad", afnorth: "AFNORTH", offduty: "Out and about", makkelijk: "Makkelijke taal", dutch: "Taal", snow: "Snow", hockey: "Canes", nfl: "Saints", mlb: "Cardinals", football: "Local football", week: "This week", coming: "Coming up", weather: "Weather", countdown: "Countdowns", tv: "TV", calendar: "Calendar", year: "Year ahead", school: "School year", season: "Season" };
+    var SN = { world: "World", hybrid: "Hybrid", europe: "Europe", countries: "Priority countries", euregio: "Euregio", army: "Defence & Army", nato: "NATO & allies", deftech: "Defence tech", frontier: "Frontier", markets: "Markets", rates: "Rates", nl: "Netherlands", board: "The board", forecasts: "Forecasts", novel: "New in war", numbers: "Numbers and indicators", fx: "USD/EUR", fuel: "Pump price", threads: "Threads", horizon: "Horizon", "congress-sec": "Congress", releases: "Releases", sota: "State of the art", feature: "World feature", research: "Research", philosophy: "Philosophy", depth: "Army in depth", ttpsec: "Week in war", aperture: "Aperture", local: "Parkstad", afnorth: "AFNORTH", offduty: "Out and about", makkelijk: "Makkelijke taal", dutch: "Taal", snow: "Snow", hockey: "Canes", nfl: "Saints", mlb: "Cardinals", football: "Local football", week: "This week", coming: "Coming up", weather: "Weather", countdown: "Countdowns", tv: "TV", eurovision: "Eurovision", calendar: "Calendar", year: "Year ahead", school: "School year", season: "Season" };
     return '<h3>In this edition</h3><ol class="toc">' + tiers.map(function (t, i) { return '<li data-tier="' + t[0] + '" class="' + t[0] + '"><a href="#p-' + t[0] + '"><b>' + (i + 1) + " · " + esc(t[1]) + '</b></a><span class="tm"></span><span class="secs">' + t[2].map(function (id) { return '<a href="#' + id + '">' + esc(SN[id] || id) + "</a>"; }).join(" · ") + "</span></li>"; }).join("") + "</ol>";
   }
   function yearAhead(ctx, E, TD, today) {
@@ -2007,6 +2041,7 @@
     h += '<section id="weather" class="home"><h2>Weather and daylight <span class="num">' + esc(HOME.name) + " · 7 days</span></h2>" + weatherBlock(E, TD) + "</section>";
     h += '<section id="countdown" class="home"><h2>Countdowns</h2>' + countdowns(PEV, ctx, TD) + "</section>";
     h += '<section id="tv" class="home"><h2>TV <span class="num">what you follow, what comes next</span></h2>' + tvBlock(ctx, TD) + "</section>";
+    if (ctx.eurovision) h += '<section id="eurovision" class="home"><h2>Eurovision 2027 <span class="num">who sings for whom, as each country decides</span></h2>' + eurovisionBlock(ctx, TD) + "</section>";
     h += '<section id="calendar" class="home"><h2>Calendar</h2>';
     if (P.otd) h += '<div class="ap-c" style="margin-bottom:14px"><div class="lbl">' + esc(P.otd.title) + '</div><p style="margin:0">' + rich(P.otd.body) + "</p></div>";
     var FILT = [["all","All"],["me","Yours"],["nl","NL"],["be","BE"],["de","DE"],["us","US"],["ev","Events"],["out","Out and about"],["teams","Teams"],["tv","TV"],["mail","Mail"],["homed","Home"],["school","School"],["watch","Horizon"],["ex","Exercises"]];
@@ -2327,9 +2362,9 @@
     opt("data/incidents.json"), opt("data/bins.json"), opt("data/threads.json"), opt("data/horizon.json"),
     opt("data/fx.json"), opt("data/series.json"), opt("data/canes.json"),
     opt("data/conflicts.json"), opt("data/world-series.json"), opt("data/calendar.json"), opt("data/deadlines.json"),
-    opt("data/congress.json"), opt("data/exercises.json"), opt("data/releases.json"), opt("data/events.json"), opt("data/idioms.json"), opt("data/ski.json"), opt("data/search-index.json"), opt("data/land.json"), opt("data/week.json"), opt("data/corrections.json"), opt("data/research.json"), opt("data/teams.json"), opt("data/tv.json"), opt("data/countries.json"), opt("data/ceu.json"), opt("data/novel.json"), opt("data/indicators.json"), opt("data/forecasts.json"), opt("data/questions.json"), opt("data/ua-front.json"), opt("data/philosophy.json"), opt("data/inbox.json"), opt("data/fuel.json"), opt("data/energy.json"), opt("data/local.json"), opt("data/hockey.json"), opt("data/sports.json"), opt("data/cozi.json")
+    opt("data/congress.json"), opt("data/exercises.json"), opt("data/releases.json"), opt("data/events.json"), opt("data/idioms.json"), opt("data/ski.json"), opt("data/search-index.json"), opt("data/land.json"), opt("data/week.json"), opt("data/corrections.json"), opt("data/research.json"), opt("data/teams.json"), opt("data/tv.json"), opt("data/countries.json"), opt("data/ceu.json"), opt("data/novel.json"), opt("data/indicators.json"), opt("data/forecasts.json"), opt("data/questions.json"), opt("data/ua-front.json"), opt("data/philosophy.json"), opt("data/inbox.json"), opt("data/fuel.json"), opt("data/energy.json"), opt("data/local.json"), opt("data/hockey.json"), opt("data/sports.json"), opt("data/cozi.json"), opt("data/eurovision.json")
   ]).then(function (r) {
-    ctx.fuel = r[34] && r[34].series ? r[34] : null; ctx.energy = r[35]; ctx.local = r[36]; ctx.hockeyStats = r[37]; ctx.sports = r[38]; ctx.cozi = r[39] && r[39].items ? r[39] : null;
+    ctx.fuel = r[34] && r[34].series ? r[34] : null; ctx.energy = r[35]; ctx.local = r[36]; ctx.hockeyStats = r[37]; ctx.sports = r[38]; ctx.cozi = r[39] && r[39].items ? r[39] : null; ctx.eurovision = r[40] && r[40].countries ? r[40] : null;
     ctx.novel = r[27]; ctx.indicators = r[28]; ctx.forecasts = r[29]; ctx.questions = r[30]; ctx.uaFront = r[31]; ctx.philosophy = r[32]; ctx.inbox = r[33];
     ctx.ceu = r[26] && r[26].countries; ctx.countriesMap = r[25] && r[25].map;
     ctx.week = r[20]; ctx.corrections = r[21]; ctx.research = r[22]; ctx.teams = r[23]; ctx.tv = r[24];

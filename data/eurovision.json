@@ -1,0 +1,523 @@
+{
+ "updated": "2026-11-11",
+ "edition": 71,
+ "host": {
+  "city": "Burgas",
+  "country": "Bulgaria",
+  "venue": "Arena Burgas",
+  "bc": "BNT",
+  "why": "DARA won in Vienna in 2026 with “Bangaranga”, Bulgaria's first win."
+ },
+ "shows": [
+  {
+   "id": "sf1",
+   "date": "2027-05-11",
+   "time": "21:00",
+   "t": "First semi-final"
+  },
+  {
+   "id": "sf2",
+   "date": "2027-05-13",
+   "time": "21:00",
+   "t": "Second semi-final"
+  },
+  {
+   "id": "final",
+   "date": "2027-05-15",
+   "time": "21:00",
+   "t": "Grand final"
+  }
+ ],
+ "draw": null,
+ "countries": [
+  {
+   "cc": "AL",
+   "name": "Albania",
+   "bc": "RTSH",
+   "status": "selecting",
+   "artist": null,
+   "song": null,
+   "lang": null,
+   "show": "Festivali i Këngës 65",
+   "date": "2026-12-20",
+   "updated": "2026-11-11"
+  },
+  {
+   "cc": "AM",
+   "name": "Armenia",
+   "bc": "AMPTV",
+   "status": "pending",
+   "artist": null,
+   "song": null,
+   "lang": null,
+   "updated": "2026-11-11"
+  },
+  {
+   "cc": "AU",
+   "name": "Australia",
+   "bc": "SBS",
+   "status": "pending",
+   "artist": null,
+   "song": null,
+   "lang": null,
+   "updated": "2026-11-11"
+  },
+  {
+   "cc": "AT",
+   "name": "Austria",
+   "bc": "ORF",
+   "status": "pending",
+   "artist": null,
+   "song": null,
+   "lang": null,
+   "updated": "2026-11-11"
+  },
+  {
+   "cc": "AZ",
+   "name": "Azerbaijan",
+   "bc": "İTV",
+   "status": "pending",
+   "artist": null,
+   "song": null,
+   "lang": null,
+   "updated": "2026-11-11"
+  },
+  {
+   "cc": "BE",
+   "name": "Belgium",
+   "bc": "VRT",
+   "status": "pending",
+   "artist": null,
+   "song": null,
+   "lang": null,
+   "updated": "2026-11-11"
+  },
+  {
+   "cc": "BG",
+   "name": "Bulgaria",
+   "bc": "BNT",
+   "status": "pending",
+   "artist": null,
+   "song": null,
+   "lang": null,
+   "final": "host",
+   "updated": "2026-11-11"
+  },
+  {
+   "cc": "CA",
+   "name": "Canada",
+   "bc": "CBC/Radio-Canada",
+   "status": "selecting",
+   "artist": null,
+   "song": null,
+   "lang": null,
+   "show": "Canada's Choice",
+   "date": "2026-12-05",
+   "note": "Debut. Five acts: Josiane, Rêve, TALK, Tyler Shaw and William Cloutier.",
+   "src": [
+    [
+     "Aussievision: Canada reveals five artists",
+     "https://www.aussievision.net/post/canada-reveals-five-artists-competing-for-eurovision-2027-debut"
+    ]
+   ],
+   "updated": "2026-11-11"
+  },
+  {
+   "cc": "HR",
+   "name": "Croatia",
+   "bc": "HRT",
+   "status": "selecting",
+   "artist": null,
+   "song": null,
+   "lang": null,
+   "show": "national selection",
+   "dateText": "February 2027",
+   "updated": "2026-11-11"
+  },
+  {
+   "cc": "CY",
+   "name": "Cyprus",
+   "bc": "CyBC",
+   "status": "artist",
+   "artist": "George Perris",
+   "song": null,
+   "lang": null,
+   "show": "internal selection",
+   "src": [
+    [
+     "Wikipedia: Eurovision Song Contest 2027",
+     "https://en.wikipedia.org/wiki/Eurovision_Song_Contest_2027"
+    ]
+   ],
+   "updated": "2026-11-11"
+  },
+  {
+   "cc": "DK",
+   "name": "Denmark",
+   "bc": "DR",
+   "status": "selecting",
+   "artist": null,
+   "song": null,
+   "lang": null,
+   "show": "Dansk Melodi Grand Prix 2027",
+   "date": "2027-02-13",
+   "updated": "2026-11-11"
+  },
+  {
+   "cc": "EE",
+   "name": "Estonia",
+   "bc": "ERR",
+   "status": "selecting",
+   "artist": null,
+   "song": null,
+   "lang": null,
+   "show": "Eesti Laul 2027",
+   "date": "2027-01-30",
+   "note": "Twelve acts, among them Daniel Levi, Jaagup Tuisk & Wanda, Kerli Kivilaan and Laura.",
+   "src": [
+    [
+     "EBU: Eesti Laul 2027 lineup revealed",
+     "https://www.eurovision.com/stories/eesti-laul-2027-lineup-revealed-in-estonia/"
+    ]
+   ],
+   "updated": "2026-11-11"
+  },
+  {
+   "cc": "FI",
+   "name": "Finland",
+   "bc": "Yle",
+   "status": "selecting",
+   "artist": null,
+   "song": null,
+   "lang": null,
+   "show": "Uuden Musiikin Kilpailu 2027",
+   "date": "2027-02-20",
+   "updated": "2026-11-11"
+  },
+  {
+   "cc": "FR",
+   "name": "France",
+   "bc": "France Télévisions",
+   "status": "pending",
+   "artist": null,
+   "song": null,
+   "lang": null,
+   "final": "big5",
+   "updated": "2026-11-11"
+  },
+  {
+   "cc": "GE",
+   "name": "Georgia",
+   "bc": "GPB",
+   "status": "pending",
+   "artist": null,
+   "song": null,
+   "lang": null,
+   "updated": "2026-11-11"
+  },
+  {
+   "cc": "DE",
+   "name": "Germany",
+   "bc": "SWR",
+   "status": "selecting",
+   "artist": null,
+   "song": null,
+   "lang": null,
+   "show": "national selection",
+   "dateText": "February 2027",
+   "final": "big5",
+   "updated": "2026-11-11"
+  },
+  {
+   "cc": "GR",
+   "name": "Greece",
+   "bc": "ERT",
+   "status": "selecting",
+   "artist": null,
+   "song": null,
+   "lang": null,
+   "show": "national final, Thessaloniki",
+   "date": "2027-02-13",
+   "updated": "2026-11-11"
+  },
+  {
+   "cc": "IL",
+   "name": "Israel",
+   "bc": "Kan",
+   "status": "selecting",
+   "artist": null,
+   "song": null,
+   "lang": null,
+   "show": "The Next Star",
+   "updated": "2026-11-11"
+  },
+  {
+   "cc": "IT",
+   "name": "Italy",
+   "bc": "RAI",
+   "status": "selecting",
+   "artist": null,
+   "song": null,
+   "lang": null,
+   "show": "Sanremo festival",
+   "date": "2027-02-19",
+   "final": "big5",
+   "note": "The Sanremo winner traditionally takes the Eurovision place.",
+   "updated": "2026-11-11"
+  },
+  {
+   "cc": "LV",
+   "name": "Latvia",
+   "bc": "LSM",
+   "status": "selecting",
+   "artist": null,
+   "song": null,
+   "lang": null,
+   "show": "Supernova",
+   "date": "2027-02-06",
+   "updated": "2026-11-11"
+  },
+  {
+   "cc": "LT",
+   "name": "Lithuania",
+   "bc": "LRT",
+   "status": "selecting",
+   "artist": null,
+   "song": null,
+   "lang": null,
+   "show": "national final",
+   "date": "2027-02-20",
+   "updated": "2026-11-11"
+  },
+  {
+   "cc": "LU",
+   "name": "Luxembourg",
+   "bc": "RTL",
+   "status": "selecting",
+   "artist": null,
+   "song": null,
+   "lang": null,
+   "show": "national final",
+   "date": "2027-01-30",
+   "updated": "2026-11-11"
+  },
+  {
+   "cc": "MT",
+   "name": "Malta",
+   "bc": "PBS",
+   "status": "pending",
+   "artist": null,
+   "song": null,
+   "lang": null,
+   "updated": "2026-11-11"
+  },
+  {
+   "cc": "MD",
+   "name": "Moldova",
+   "bc": "TRM",
+   "status": "pending",
+   "artist": null,
+   "song": null,
+   "lang": null,
+   "updated": "2026-11-11"
+  },
+  {
+   "cc": "ME",
+   "name": "Montenegro",
+   "bc": "RTCG",
+   "status": "pending",
+   "artist": null,
+   "song": null,
+   "lang": null,
+   "updated": "2026-11-11"
+  },
+  {
+   "cc": "MK",
+   "name": "North Macedonia",
+   "bc": "MRT",
+   "status": "pending",
+   "artist": null,
+   "song": null,
+   "lang": null,
+   "note": "Back after four years away.",
+   "updated": "2026-11-11"
+  },
+  {
+   "cc": "NO",
+   "name": "Norway",
+   "bc": "NRK",
+   "status": "pending",
+   "artist": null,
+   "song": null,
+   "lang": null,
+   "updated": "2026-11-11"
+  },
+  {
+   "cc": "PL",
+   "name": "Poland",
+   "bc": "TVP",
+   "status": "selecting",
+   "artist": null,
+   "song": null,
+   "lang": null,
+   "show": "national preselection",
+   "dateText": "January or February 2027",
+   "updated": "2026-11-11"
+  },
+  {
+   "cc": "PT",
+   "name": "Portugal",
+   "bc": "RTP",
+   "status": "selecting",
+   "artist": null,
+   "song": null,
+   "lang": null,
+   "show": "Festival da Canção",
+   "date": "2027-03-06",
+   "updated": "2026-11-11"
+  },
+  {
+   "cc": "RO",
+   "name": "Romania",
+   "bc": "TVR",
+   "status": "pending",
+   "artist": null,
+   "song": null,
+   "lang": null,
+   "updated": "2026-11-11"
+  },
+  {
+   "cc": "SM",
+   "name": "San Marino",
+   "bc": "SMRTV",
+   "status": "selecting",
+   "artist": null,
+   "song": null,
+   "lang": null,
+   "show": "national final",
+   "date": "2027-03-06",
+   "updated": "2026-11-11"
+  },
+  {
+   "cc": "RS",
+   "name": "Serbia",
+   "bc": "RTS",
+   "status": "pending",
+   "artist": null,
+   "song": null,
+   "lang": null,
+   "updated": "2026-11-11"
+  },
+  {
+   "cc": "SE",
+   "name": "Sweden",
+   "bc": "SVT",
+   "status": "selecting",
+   "artist": null,
+   "song": null,
+   "lang": null,
+   "show": "Melodifestivalen 2027",
+   "date": "2027-03-13",
+   "updated": "2026-11-11"
+  },
+  {
+   "cc": "CH",
+   "name": "Switzerland",
+   "bc": "SRG SSR",
+   "status": "pending",
+   "artist": null,
+   "song": null,
+   "lang": null,
+   "updated": "2026-11-11"
+  },
+  {
+   "cc": "UA",
+   "name": "Ukraine",
+   "bc": "Suspilne",
+   "status": "selecting",
+   "artist": null,
+   "song": null,
+   "lang": null,
+   "show": "Vidbir",
+   "dateText": "February 2027",
+   "updated": "2026-11-11"
+  },
+  {
+   "cc": "GB",
+   "name": "United Kingdom",
+   "bc": "BBC",
+   "status": "pending",
+   "artist": null,
+   "song": null,
+   "lang": null,
+   "show": "internal selection",
+   "final": "big5",
+   "note": "BBC internal search under way since 27 Oct.",
+   "updated": "2026-11-11"
+  }
+ ],
+ "out": [
+  {
+   "name": "Netherlands",
+   "why": "AVROTROS stays out over Israel's participation; NPO briefly said yes on 23 Sep and reversed on 27 Oct."
+  },
+  {
+   "name": "Ireland",
+   "why": "RTÉ stays out over Israel's participation."
+  },
+  {
+   "name": "Iceland",
+   "why": "RÚV's board voted to keep its boycott; no final decision announced."
+  },
+  {
+   "name": "Czechia",
+   "why": "ČT withdrew, citing budget cuts."
+  },
+  {
+   "name": "Andorra",
+   "why": "Not taking part."
+  },
+  {
+   "name": "Bosnia and Herzegovina",
+   "why": "Not taking part."
+  }
+ ],
+ "undecided": [
+  {
+   "name": "Hungary",
+   "why": "Lower fee negotiated; deadline 7 Dec."
+  },
+  {
+   "name": "Slovenia",
+   "why": "Deadline extended to December."
+  },
+  {
+   "name": "Spain",
+   "why": "RTVE board decides in November; would go straight to the final as one of the Big Five."
+  }
+ ],
+ "log": [
+  {
+   "date": "2026-10-28",
+   "t": "EBU confirms 36 broadcasters; Canada debuts, North Macedonia returns."
+  },
+  {
+   "date": "2026-08-13",
+   "t": "Burgas named host city; final on 15 May 2027."
+  }
+ ],
+ "src": [
+  [
+   "EBU: Burgas to host the 71st contest",
+   "https://www.eurovision.com/stories/burgas-to-host-71st-eurovision-bulgaria-2027/"
+  ],
+  [
+   "RTÉ: 36 countries confirmed for 2027",
+   "https://www.rte.ie/entertainment/2026/1028/1597100-36-countries-confirmed-to-compete-in-eurovision-2027/"
+  ],
+  [
+   "Wikipedia: Eurovision Song Contest 2027",
+   "https://en.wikipedia.org/wiki/Eurovision_Song_Contest_2027"
+  ]
+ ]
+}

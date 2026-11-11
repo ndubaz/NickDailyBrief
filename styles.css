@@ -881,3 +881,67 @@ table.clubs td{white-space:normal}
 .agenda tr.must b { color: var(--ink); }
 .agenda tr.aware { opacity: .62; }
 .agenda tr.aware b { font-weight: 500; }
+
+/* Eurovision 2027 tracker: a stage-lit band for the host and the three nights, a one-segment-per-country progress bar,
+   the next national finals as a timetable, entry cards, and the full field in a fold */
+#eurovision{--esc:#C8175D;--esc2:#5B3BD6;--esc-soft:color-mix(in srgb,var(--esc) 10%,var(--surface))}
+.esc-hero{position:relative;display:grid;grid-template-columns:minmax(0,1.3fr) auto minmax(0,1.6fr);gap:var(--s3) var(--s4);align-items:center;padding:var(--s4);border-radius:var(--r-card);background:radial-gradient(120% 140% at 0% 0%,color-mix(in srgb,var(--esc2) 16%,transparent),transparent 55%),radial-gradient(120% 140% at 100% 100%,color-mix(in srgb,var(--esc) 16%,transparent),transparent 55%),var(--surface);border:1px solid var(--line);overflow:hidden}
+.esc-hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,var(--esc2),var(--esc))}
+.esc-eye{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.esc-city{font-family:var(--f-display);font-weight:800;font-size:clamp(30px,5vw,44px);line-height:1;letter-spacing:-.02em;margin:4px 0 6px}
+.esc-city span{display:block;font-size:13px;font-weight:500;letter-spacing:0;color:var(--muted);margin-top:6px;font-family:var(--f-body)}
+.esc-where .small{margin:0;max-width:44ch}
+.esc-count{text-align:center;padding:0 var(--s3);border-left:1px solid var(--line);border-right:1px solid var(--line)}
+.esc-count b{display:block;font-family:var(--f-display);font-weight:800;font-size:clamp(40px,7vw,60px);line-height:.95;font-variant-numeric:tabular-nums;background:linear-gradient(135deg,var(--esc2),var(--esc));-webkit-background-clip:text;background-clip:text;color:transparent}
+.esc-count span{font-size:12px;color:var(--muted)}
+.esc-shows{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.esc-shows li{display:grid;grid-template-columns:88px minmax(0,1fr) auto;gap:8px;align-items:baseline;padding:7px 10px;border-radius:8px;background:color-mix(in srgb,var(--surface) 70%,transparent);border:1px solid var(--line);font-size:13.5px}
+.esc-shows li .d{font-family:var(--f-mono);font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.esc-shows li span:last-child{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.esc-shows li.fin{border-color:color-mix(in srgb,var(--esc) 45%,var(--line));background:var(--esc-soft)}
+.esc-shows li.fin b{color:var(--esc)}
+.esc-shows li.past{opacity:.55}
+.esc-prog{margin:var(--s4) 0 var(--s2)}
+.esc-bar{display:grid;grid-template-columns:repeat(36,minmax(0,1fr));gap:3px}
+.esc-bar i,.esc-key i{display:block;height:12px;border-radius:3px;background:var(--line)}
+.esc-key{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:4px 16px;font-size:12.5px;color:var(--muted)}
+.esc-key li{display:flex;align-items:center;gap:6px}
+.esc-key i{width:12px;height:12px}
+.esc-key b{color:var(--ink);font-variant-numeric:tabular-nums}
+.s-entry{background:linear-gradient(135deg,var(--esc2),var(--esc))!important}
+.s-artist{background:color-mix(in srgb,var(--esc) 55%,var(--surface))!important}
+.s-selecting{background:color-mix(in srgb,var(--esc2) 30%,var(--surface))!important}
+.s-pending{background:var(--line)!important}
+#eurovision h3{margin-top:var(--s4)}
+.esc-next{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,460px),1fr));gap:0 var(--s4)}
+.esc-next li{display:grid;grid-template-columns:84px 32px minmax(0,1fr) auto;gap:8px;align-items:baseline;padding:7px 0;border-bottom:1px solid var(--line);font-size:14px}
+.esc-next .d{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.esc-next .nm{min-width:0}
+.esc-next .in{font-family:var(--f-mono);font-size:11.5px;color:var(--esc);white-space:nowrap}
+#eurovision .cc{font-family:var(--f-mono);font-size:11px;font-weight:600;letter-spacing:.04em;padding:2px 4px;border-radius:4px;background:var(--esc-soft);color:var(--esc);text-align:center;line-height:1.2}
+.esc-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:var(--s2)}
+.esc-card{border:1px solid var(--line);border-radius:var(--r-card);padding:var(--s3);background:var(--surface);display:grid;gap:4px;min-width:0}
+.esc-card header{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.esc-card .who{font-family:var(--f-display);font-weight:700;font-size:18px;line-height:1.15}
+.esc-card .song{font-style:italic}
+.esc-card.new{border-color:var(--esc)}
+#eurovision .pill{font-family:var(--f-mono);font-size:10.5px;padding:1px 6px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+#eurovision .pill.nw{border-color:var(--esc);color:var(--esc)}
+.esc-list{list-style:none;margin:var(--s2) 0 0;padding:0;columns:2 520px;column-gap:var(--s5)}
+.esc-list li{break-inside:avoid;display:grid;grid-template-columns:32px minmax(0,9.5em) minmax(0,1fr) auto;gap:8px;align-items:baseline;padding:6px 0;border-bottom:1px solid var(--line);font-size:13.5px}
+.esc-list .nm{font-weight:600}
+.esc-list .note{display:block;font-size:12px;color:var(--muted);margin-top:2px}
+.esc-list .st{font-family:var(--f-mono);font-size:10.5px;padding:1px 6px;border-radius:999px;white-space:nowrap;color:var(--ink)}
+.esc-list .st.s-entry{color:#fff}
+.esc-out{margin-top:var(--s3)}
+.esc-out span[title]{text-decoration:underline dotted;text-underline-offset:3px;cursor:help}
+.esc-log{list-style:none;margin:var(--s2) 0 0;padding:0;display:grid;gap:3px}
+@media (max-width:760px){
+  .esc-hero{grid-template-columns:minmax(0,1fr) auto}
+  .esc-shows{grid-column:1/-1}
+  .esc-count{border-right:0;padding-right:0}
+  .esc-bar{grid-template-columns:repeat(18,minmax(0,1fr))}
+  .esc-list li{grid-template-columns:30px minmax(0,1fr) auto}
+  .esc-list .what{grid-column:2/4}
+  .esc-list .st{grid-row:1;grid-column:3}
+}
