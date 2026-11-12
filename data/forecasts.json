@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-11",
+ "updated": "2026-11-12",
  "note": "Forecast ledger, run only. Dated, falsifiable calls with a probability and a resolution date. The run adds one to three a week, never edits a call after it is made, resolves each on its date (yes, no, or void when the question stopped being meaningful) with the fact and source, and the page keeps a Brier score. Seed entries dated 7 Nov 2026 were made at the 7.0 build.",
  "items": [
   {
@@ -64,6 +64,38 @@
    "domain": "Netherlands",
    "status": "open",
    "why": "The coalition's 66 seats plus ChristenUnie, 50PLUS and the Markuszower group make a majority, per DutchNews on 5 Nov."
+  },
+  {
+   "id": "2026-11-12-pow-swap-1000",
+   "q": "Russia and Ukraine complete a prisoner exchange of at least 1,000 people on each side by 3 Dec",
+   "p": 0.4,
+   "made": "2026-11-12",
+   "resolves": "2026-12-03",
+   "domain": "Russia–Ukraine",
+   "theatre": "ru-ua",
+   "status": "open",
+   "why": "Medinsky and Umerov announced agreement on a large-scale exchange on 11 Nov and TASS gave two to three weeks; the largest swap so far was 1,000 for 1,000 in May 2025."
+  },
+  {
+   "id": "2026-11-12-vvd-in-cabinet",
+   "q": "The VVD still has ministers in the Dutch cabinet on 30 Nov",
+   "p": 0.7,
+   "made": "2026-11-12",
+   "resolves": "2026-11-30",
+   "domain": "Netherlands",
+   "status": "open",
+   "why": "Yesilgöz threatened a fundamental reset over the D66–CDA tax deal on 11 Nov but did not announce a departure."
+  },
+  {
+   "id": "2026-11-12-israel-strikes-iran",
+   "q": "Israel carries out an acknowledged strike on Iranian territory by 15 Dec",
+   "p": 0.25,
+   "made": "2026-11-12",
+   "resolves": "2026-12-15",
+   "domain": "Iran",
+   "theatre": "iran",
+   "status": "open",
+   "why": "Israeli media reported on 11 Nov that the security cabinet ordered strike preparations, while Netanyahu governs as caretaker and Eisenkot forms a government."
   }
  ]
 }

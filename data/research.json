@@ -126,16 +126,6 @@
  },
  "queue": [
   {
-   "org": "Egmont",
-   "title": "Memoranda of Understanding? Minilateral Defence Frameworks and Avoiding the Fragmentation of European Defence (Security Policy Brief No. 418)",
-   "authors": "Noam Peisih",
-   "date": "2026-10-22",
-   "url": "https://egmontinstitute.be/memoranda-of-understanding-minilateral-defence-frameworks-and-avoiding-the-fragmentation-of-european-defence/",
-   "for": "",
-   "note": "Counts more than 160 defence arrangements among EU states, the UK and Ukraine since 2014.",
-   "field": "military"
-  },
-  {
    "org": "RAND Europe",
    "title": "Towards a new framework for nuclear deterrence in Europe: European perceptions of Russian nuclear policy and the role of the UK and France in NATO's nuclear posture",
    "authors": "Artur Honich, Thomas Kenchington, Ondrej Palicka",
@@ -196,16 +186,6 @@
    "note": "Confidential Eurosystem holdings data and local projections for Belgium, Spain, France, Italy: domestic holders steady, foreign holders sell on geopolitical risk shocks. Results are impulse responses with 68% bands, few headline numbers."
   },
   {
-   "field": "social",
-   "org": "PNAS",
-   "title": "Heterogeneous impacts of temperature extremes on climate attitudes and Green voting",
-   "authors": "Jacopo Bassetto, Roman Hoffmann, Raya Muttarak, Jonas Peisker, Piero Stanig",
-   "date": "2026-10-26",
-   "url": "https://www.pnas.org/doi/abs/10.1073/pnas.2321153122",
-   "for": "",
-   "note": "From the PNAS feed only; the article page returned a block on 11 Nov. Candidate for the uncovered social field."
-  },
-  {
    "field": "ir",
    "org": "Nature Human Behaviour",
    "title": "A natural field experiment on the effectiveness of economic sanctions before and after the Russian invasion of Ukraine",
@@ -224,6 +204,16 @@
    "url": "https://press.armywarcollege.edu/monographs/991",
    "for": "",
    "note": "USAWC Press collaborative study (ISBN 1-58487-878-9): a limited US–PRC conflict scenario and China’s horizontal escalation across seven regions including Europe, plus space and information. Landing page read; the full-text and summary PDFs returned a Cloudflare challenge on 11 Nov."
+  },
+  {
+   "field": "philosophy",
+   "org": "Journal of Military Ethics",
+   "title": "The Morality of Autonomous Weapons: An Answer to the Threshold Objection",
+   "authors": "Erich Riesen",
+   "date": "2026-11-09",
+   "url": "https://doi.org/10.1080/15027570.2026.2753860",
+   "for": "",
+   "note": "Online 9 Nov 2026; abstract not yet read."
   }
  ],
  "covered": [
@@ -338,6 +328,30 @@
    "title": "LLM ensemble PREVIA predicts future PTSD risk from emergency department trauma narratives with expert-level accuracy",
    "authors": "Victoria Mueller, Jyoti Yadav, Annie Farnsworth, Charlotte E. Hilberdink, Sapir Gershov, Eric K. Oermann, Stephen P. Wall, Arieh Y. Shalev, Katharina Schultebraucks",
    "url": "https://www.nature.com/articles/s41467-026-78768-3"
+  },
+  {
+   "date": "2026-11-12",
+   "field": "military",
+   "org": "Egmont Institute",
+   "title": "Memoranda of Understanding? Minilateral Defence Frameworks and Avoiding the Fragmentation of European Defence (Security Policy Brief 418)",
+   "authors": "Noam Peisih",
+   "url": "https://egmontinstitute.be/memoranda-of-understanding-minilateral-defence-frameworks-and-avoiding-the-fragmentation-of-european-defence/"
+  },
+  {
+   "date": "2026-11-12",
+   "field": "social",
+   "org": "PNAS",
+   "title": "Heterogeneous impacts of temperature extremes on climate attitudes and Green voting",
+   "authors": "Jacopo Bassetto, Roman Hoffmann, Raya Muttarak, Jonas Peisker, Piero Stanig",
+   "url": "https://www.pnas.org/doi/10.1073/pnas.2321153122"
+  },
+  {
+   "date": "2026-11-12",
+   "field": "philosophy",
+   "org": "Ethics & International Affairs (Cambridge University Press)",
+   "title": "The Ethics of Intervention in Iran and the Autocratic Way of War",
+   "authors": "James Pattison",
+   "url": "https://doi.org/10.1017/s0892679426100501"
   }
  ],
  "fields": {

@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-11",
+ "updated": "2026-11-12",
  "note": "Shows Nick follows. The run refreshes last and next from the TVMaze API (https://api.tvmaze.com/shows/<tvmaze>?embed[]=previousepisode&embed[]=nextepisode) and keeps the renewal note current from press reports. Dates are the broadcaster's local air date.",
  "shows": [
   {
@@ -172,16 +172,16 @@
    "status": "airing",
    "last": {
     "s": 4,
-    "e": 2,
-    "date": "2026-11-04",
-    "name": "Episode 2"
+    "e": 3,
+    "date": "2026-11-11",
+    "name": "Episode 3"
    },
    "next": {
     "s": 4,
-    "e": 3,
-    "date": "2026-11-11",
-    "name": "Episode 3",
-    "time": "21:00 UK"
+    "e": 4,
+    "date": "2026-11-18",
+    "name": "Episode 4",
+    "time": "20:00 UK"
    },
    "note": "Series 4, Wednesdays on BBC One.",
    "src": [
@@ -199,15 +199,15 @@
    "status": "airing",
    "last": {
     "s": 39,
-    "e": 7,
-    "date": "2026-11-04",
-    "name": "The Amazing Nightmare"
+    "e": 8,
+    "date": "2026-11-11",
+    "name": "Million Dollar Moves"
    },
    "next": {
     "s": 39,
-    "e": 8,
-    "date": "2026-11-11",
-    "name": "Million Dollar Moves",
+    "e": 9,
+    "date": "2026-11-18",
+    "name": "A Double-Edged Sword with an Alliance",
     "time": "Wednesdays, US"
    },
    "note": "Season 39 on CBS, Wednesdays.",
@@ -260,7 +260,7 @@
     "e": 2,
     "date": "2026-11-15",
     "name": "Mexico",
-    "time": "20:40"
+    "time": "20:25"
    },
    "note": "Series 15 started on Sun 8 Nov at 20:40 on NPO 1 (episode 1, Biscuit), with a repeat on Saturday afternoon; episode 2 airs Sun 15 Nov. Dutch at an easy B1 level, with the bakers' Limburgs and Brabants accents a bonus.",
    "src": [

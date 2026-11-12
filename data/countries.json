@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-11",
+ "updated": "2026-11-12",
  "note": "Nick's assigned priority countries as an analyst: Hungary and Slovakia (priority), Germany (secondary). Russia, Belarus and China are context countries (7.3): profiled for what they do to the eastern flank and to the three countries above, logged the same way, no baseline-requirement grid. The run appends dated facts to each country's log and keeps the profile current. Facts and summaries only; the item in the edition carries the So what. verified:false marks a fact to confirm against an official page.",
  "blr": [
   "Continuity of government and critical services",
@@ -269,6 +269,36 @@
       [
        "Autóból működtetett hamis mobilhálózatot a csaló, közel 5 millió forintos kárt okozott",
        "https://index.hu/belfold/2026/11/10/gepkocsi-adathalasz-sms-kinai-ferfi-rendorseg/"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-12",
+     "t": "On 11 Nov: The parliamentary national security committee heard the heads of the Information Office and the Constitutional Protection Office in closed session on Szijjártó's move to BYD; State Secretary Velkey said some information was new and surprising to him.",
+     "src": [
+      [
+       "A titkosszolgálati vezetőket is meghallgatták Szijjártó Péter BYD-s állása miatt a nemzetbiztonsági bizottságban",
+       "https://444.hu/2026/11/11/a-titkosszolgalati-vezetoket-is-meghallgattak-szijjarto-peter-byd-s-allasa-miatt-a-nemzetbiztonsagi-bizottsagban"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-12",
+     "t": "On 11 Nov: Government decree of 11 Nov moves about HUF 144 billion from the Havária Fund, including HUF 41.4 billion for electricity generation as compensation for system-security services.",
+     "src": [
+      [
+       "Döntést hozott a kormány: 144 milliárdot csoportosít át a Havária Alapból",
+       "https://www.portfolio.hu/befektetes/20261111/dontest-hozott-a-kormany-144-milliardot-csoportosit-at-a-havaria-alapbol-875874"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-12",
+     "t": "On 11 Nov: Defence Minister Ruszin-Szendi said Hungary's SAFE loan is €5.4 billion, to be used by 2030, awaiting Council approval after Commission approval on 28 Oct.",
+     "src": [
+      [
+       "Újabb lépés a védelmi képesség fejlesztésére",
+       "https://honvedelem.hu/hirek/ujabb-lepes-a-vedelmi-kepesseg-fejlesztesere.html"
       ]
      ]
     }
@@ -653,6 +683,20 @@
        "https://dennikn.sk/5682561/z-nemeckeho-kancelara-sa-nepokakame-odkazal-fico-a-povedal-ze-merz-nanho-v-telefone-uz-raz-krical/"
       ]
      ]
+    },
+    {
+     "date": "2026-11-12",
+     "t": "On 11 Nov: The National Council definitively rejected the government's amendment on cooperating accused; the opposition and unaffiliated MPs Taraba, Malatinec and Slyško voted against, Ferenčák abstained.",
+     "src": [
+      [
+       "Susko: Novela o kajúcnikoch mala chrániť pred vykonštruovaným obvinením",
+       "https://www.teraz.sk/slovensko/suskonovela-o-kajucnikoch-mala-chrani/1006954-clanok.html"
+      ],
+      [
+       "Kostolný, Obradovič: Taraba to prešpekuloval, na zákone o kajúcnikoch politicky nezíska",
+       "https://dennikn.sk/5686229/kostolny-obradovic-taraba-to-prespekuloval-na-zakone-o-kajucnikoch-politicky-neziska/"
+      ]
+     ]
     }
    ],
    "src": [
@@ -978,6 +1022,26 @@
       [
        "Merz: Nový rozpočet EÚ musí zahrnúť prostriedky na pomoc Ukrajine",
        "https://www.teraz.sk/ekonomika/merz-novy-rozpocet-eu-musi-zahrnu/1006606-clanok.html"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-12",
+     "t": "On 11 Nov: The federal cabinet approved a bill for a national strategic gas reserve of about 24 TWh for extreme cases such as sabotage, financed by a levy from 1 Oct 2027.",
+     "src": [
+      [
+       "Für Krisensituationen: Kabinett beschließt Aufbau einer Gasreserve",
+       "https://www.tagesschau.de/inland/gasreserve-126.html"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-12",
+     "t": "On 11 Nov: Defence Minister Pistorius presented the Bundeswehr's first dark-field study on sexual misconduct and a 34-measure action plan.",
+     "src": [
+      [
+       "Sexualisiertes Fehlverhalten in Bundeswehr: Pistorius pocht auf \"null Toleranz\"",
+       "https://www.tagesschau.de/inland/innenpolitik/bundeswehr-dunkelfeldstudie-102.html"
       ]
      ]
     }

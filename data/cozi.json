@@ -1,27 +1,20 @@
 {
- "updated": "2026-11-11",
- "fetched": "2026-11-11",
+ "updated": "2026-11-12",
+ "fetched": "2026-11-12",
  "stale": false,
  "src": "Family Cozi calendar (read-only feed; link kept in the task prompt)",
  "window": [
-  "2026-11-11",
-  "2027-03-11"
+  "2026-11-12",
+  "2027-03-12"
  ],
  "dropped": {
   "recurring": 31,
-  "medical": 5,
+  "medical": 4,
   "birthday": 0,
   "empty": 0,
-  "outside": 404
+  "outside": 406
  },
  "items": [
-  {
-   "id": "366b5f5c44",
-   "date": "2026-11-11",
-   "t": "NATO Drivers Training",
-   "who": "me",
-   "time": "10:00–11:00"
-  },
   {
    "id": "31a4a8ae61",
    "date": "2026-11-12",
@@ -78,7 +71,7 @@
    "date": "2026-11-17",
    "t": "Culture Club Lunch",
    "who": "family",
-   "time": "11:30–12:30"
+   "time": "11:00–12:00"
   },
   {
    "id": "2e187f4661",

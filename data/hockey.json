@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-10",
+ "asof": "2026-11-11",
  "metro": [
   {
    "team": "CAR",
@@ -37,26 +37,26 @@
    "streak": "L1",
    "div": 2,
    "wc": 0,
-   "conf": 4
+   "conf": 5
   },
   {
    "team": "NYR",
    "name": "Rangers",
-   "gp": 19,
-   "w": 10,
+   "gp": 20,
+   "w": 11,
    "l": 8,
    "otl": 1,
-   "pts": 21,
-   "pct": 0.553,
-   "gf": 56,
-   "ga": 55,
-   "gd": 1,
-   "rw": 10,
-   "l10": "4-5-1",
-   "streak": "L1",
+   "pts": 23,
+   "pct": 0.575,
+   "gf": 59,
+   "ga": 56,
+   "gd": 3,
+   "rw": 11,
+   "l10": "5-5-0",
+   "streak": "W1",
    "div": 3,
    "wc": 0,
-   "conf": 8
+   "conf": 7
   },
   {
    "team": "WSH",
@@ -176,7 +176,7 @@
    "gp": 18
   },
   {
-   "team": "MTL",
+   "team": "TBL",
    "pts": 26,
    "gp": 18
   }
@@ -294,14 +294,14 @@
     "v": 11
    },
    {
-    "name": "Logan Cooley",
-    "team": "UTA",
-    "pos": "C",
+    "name": "Brandon Hagel",
+    "team": "TBL",
+    "pos": "L",
     "v": 11
    },
    {
-    "name": "Logan Stankoven",
-    "team": "CAR",
+    "name": "Logan Cooley",
+    "team": "UTA",
     "pos": "C",
     "v": 11
    }
@@ -385,13 +385,13 @@
     "v": 0.925
    },
    {
-    "name": "Pyotr Kochetkov",
-    "team": "CAR",
+    "name": "Joel Hofer",
+    "team": "STL",
     "v": 0.92
    },
    {
-    "name": "Jeremy Swayman",
-    "team": "BOS",
+    "name": "Pyotr Kochetkov",
+    "team": "CAR",
     "v": 0.92
    }
   ],
@@ -415,14 +415,14 @@
     "v": 10
    },
    {
-    "name": "Jeremy Swayman",
-    "team": "BOS",
+    "name": "Andrei Vasilevskiy",
+    "team": "TBL",
     "pos": "G",
     "v": 9
    },
    {
-    "name": "Jake Oettinger",
-    "team": "DAL",
+    "name": "Jeremy Swayman",
+    "team": "BOS",
     "pos": "G",
     "v": 9
    }
@@ -827,7 +827,7 @@
    ]
   ]
  },
- "updated": "2026-11-11",
+ "updated": "2026-11-12",
  "errors": [],
  "src": [
   [

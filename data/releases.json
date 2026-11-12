@@ -623,6 +623,57 @@
      3
     ]
    ]
+  },
+  {
+   "id": "2026-11-11-arxiv-expertcrowd-swe",
+   "date": "2026-11-11",
+   "kind": "result",
+   "t": "ExpertCrowd-SWE benchmark of 100 expert-written engineering tasks",
+   "lab": "ExpertCrowd-SWE authors (arXiv)",
+   "n": "Claude Opus 5.5 67.3%, GPT-6 Astra 63.7%, Claude Fable 5.1 46.5%, Gemini 3.8 Flash 40.0%; 3,495 scored runs. [36]",
+   "src": [
+    [
+     36,
+     "ExpertCrowd-SWE: Measuring Frontier Coding Agents on Expert-Authored Engineering Tasks in Unfamiliar Codebases (arXiv:2611.13246)",
+     "arXiv",
+     "https://arxiv.org/abs/2611.13246",
+     1
+    ]
+   ]
+  },
+  {
+   "id": "2026-11-11-arxiv-earthrecord",
+   "date": "2026-11-11",
+   "kind": "result",
+   "t": "EarthRecord benchmark of agents on four decades of raw satellite imagery",
+   "lab": "EarthRecord authors (arXiv)",
+   "n": "56 sites, 238 questions, 12 agents; half of right answers follow an altered satellite feed. [37]",
+   "src": [
+    [
+     37,
+     "EarthRecord: From Pixels to Land Change with Multimodal Agents over Four Decades of Satellite Imagery (arXiv:2611.12934)",
+     "arXiv",
+     "https://arxiv.org/abs/2611.12934",
+     1
+    ]
+   ]
+  },
+  {
+   "id": "2026-11-11-merlin-labs-africom-casevac",
+   "date": "2026-11-11",
+   "kind": "autonomy",
+   "t": "AFRICOM contract to test Merlin Pilot autonomy on a Cessna 208B air ambulance",
+   "lab": "Merlin Labs",
+   "n": "$500,000 AFRICOM contract; $8.9 million SOCOM C-130J task order the day before. [38]",
+   "src": [
+    [
+     38,
+     "Autonomous Cessna Caravan air ambulance to be tested by U.S. military",
+     "The War Zone",
+     "https://www.twz.com/news-features/autonomous-cessna-caravan-air-ambulance-to-be-tested-by-u-s-military",
+     3
+    ]
+   ]
   }
  ],
  "sota": {

@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-11",
+ "updated": "2026-11-12",
  "note": "Open questions the Readbook is carrying: what we do not know. The run adds a question when an item turns on a fact nobody has published, and closes it with the answer and source when one appears. Never delete.",
  "items": [
   {
@@ -92,7 +92,25 @@
    "q": "Did the Abu Dhabi round on 10–11 Nov agree a prisoner exchange, a next date or a format that includes the Europeans?",
    "thread": "thread:russia-ukraine-talks",
    "opened": "2026-11-10",
-   "status": "open"
+   "status": "closed",
+   "closed": "2026-11-12",
+   "answer": "Yes on a prisoner exchange: the sides agreed a large-scale swap, numbers due 12 Nov, TASS says within two to three weeks; no next date was set, and Peskov said Moscow had no contact with the Europeans present. [6, 14]",
+   "src": [
+    [
+     6,
+     "Russia-Ukraine talks in Abu Dhabi end with prisoner exchange agreement",
+     "Al Jazeera (with AP and Reuters)",
+     "https://www.aljazeera.com/news/2026/11/11/russia-ukraine-talks-in-abu-dhabi-end-with-prisoner-exchange-agreement",
+     2
+    ],
+    [
+     14,
+     "Ukraine-Verhandlungen: Russland plant kein Treffen mit Europäern",
+     "tagesschau",
+     "https://www.tagesschau.de/ausland/asien/ukraine-russland-abu-dhabi-eu-100.html",
+     3
+    ]
+   ]
   },
   {
    "id": "2026-11-10-black-sea-hub",
@@ -194,6 +212,27 @@
    "q": "Does the Senate adopt H.Con.Res. 93 on ending US hostilities with Iran by 20 Nov, and with how many Republican votes?",
    "thread": "congress:hconres93-iran-war-powers-2026",
    "opened": "2026-11-11",
+   "status": "open"
+  },
+  {
+   "id": "2026-11-12-pow-numbers",
+   "q": "How many prisoners will each side release in the exchange agreed in Abu Dhabi, and on what date?",
+   "thread": "thread:russia-ukraine-talks",
+   "opened": "2026-11-12",
+   "status": "open"
+  },
+  {
+   "id": "2026-11-12-kyiv-strike",
+   "q": "What did the Russian ballistic missiles fired at Kyiv at about 01:00 on 12 Nov hit, and with what casualties?",
+   "thread": "theatre:ru-ua",
+   "opened": "2026-11-12",
+   "status": "open"
+  },
+  {
+   "id": "2026-11-12-vvd-reset",
+   "q": "Does the VVD stay in the Dutch cabinet after the 12 Nov tax-plan votes, and what does Yesilgöz mean by a “fundamentele reset” (“fundamental reset”)?",
+   "thread": "thread:nl-tax-plan-2027",
+   "opened": "2026-11-12",
    "status": "open"
   }
  ]

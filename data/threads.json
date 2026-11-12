@@ -776,6 +776,33 @@
        2
       ]
      ]
+    },
+    {
+     "date": "2026-11-12",
+     "t": "The Abu Dhabi round ended on 11 Nov with agreement on a large-scale prisoner exchange and no breakthrough; Kushner and Witkoff go to Moscow and then Dublin, and TASS said the swap should happen in two to three weeks. [6] Peskov said Moscow had no contact with the Europeans present. [14] Russia fired ballistic missiles at Kyiv hours later. [8]",
+     "src": [
+      [
+       6,
+       "Russia-Ukraine talks in Abu Dhabi end with prisoner exchange agreement",
+       "Al Jazeera (with AP and Reuters)",
+       "https://www.aljazeera.com/news/2026/11/11/russia-ukraine-talks-in-abu-dhabi-end-with-prisoner-exchange-agreement",
+       2
+      ],
+      [
+       14,
+       "Ukraine-Verhandlungen: Russland plant kein Treffen mit Europäern",
+       "tagesschau",
+       "https://www.tagesschau.de/ausland/asien/ukraine-russland-abu-dhabi-eu-100.html",
+       3
+      ],
+      [
+       8,
+       "Russia attacks Kyiv with ballistic missiles hours after peace talks end (live page)",
+       "Kyiv Independent",
+       "https://kyivindependent.com/russia-attacks-kyiv-with-ballistic-missiles-hours-after-peace-talks-end/",
+       3
+      ]
+     ]
     }
    ]
   },
@@ -1036,6 +1063,19 @@
        3
       ]
      ]
+    },
+    {
+     "date": "2026-11-12",
+     "t": "Israel's security cabinet ordered strike preparations against Iran (Israeli media, 11 Nov); Rezaei named bases “from West Asia to Europe” as targets if the US starts another war. [9]",
+     "src": [
+      [
+       9,
+       "Iran warns of expanded retaliation as Israel reportedly readies to attack",
+       "Al Jazeera (with AP and Reuters)",
+       "https://www.aljazeera.com/news/2026/11/12/iran-warns-of-expanded-retaliation-as-israel-reportedly-readies-to-attack",
+       2
+      ]
+     ]
     }
    ]
   },
@@ -1203,6 +1243,26 @@
        "Tweede Kamer",
        "https://www.tweedekamer.nl/debat_en_vergadering/plenaire_vergaderingen?qry=%2A&fromdate=2026-11-12&todate=2026-11-12",
        1
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-12",
+     "t": "D66 and CDA agreed tax-plan changes with Pro and Volt shifting about €1 billion from labour to wealth; VVD leader Yesilgöz wants the deal withdrawn or a “fundamentele reset” (“fundamental reset”), and D66 and CDA refuse to renegotiate; votes on 12 Nov. [4, 56]",
+     "src": [
+      [
+       4,
+       "Toekomst minderheidskabinet aan zijden draadje, VVD twijfelt openlijk",
+       "NOS",
+       "https://nos.nl/l/2639075",
+       3
+      ],
+      [
+       56,
+       "Hoogspanning in coalitie over belastingplan: 'dit geeft krassen'",
+       "NOS",
+       "https://nos.nl/l/2639038",
+       3
       ]
      ]
     }
@@ -1579,6 +1639,19 @@
        3
       ]
      ]
+    },
+    {
+     "date": "2026-11-12",
+     "t": "The UK launched the £90 million Atlantic Net project with Ocean Infinity Solutions on 10 Nov for autonomous sensors to protect undersea cables and detect submarines. [23]",
+     "src": [
+      [
+       23,
+       "UK launches £90M 'Atlantic Net' project to protect undersea cables and hunt submarines",
+       "Naval News",
+       "https://www.navalnews.com/naval-news/2026/11/90-million-investment-for-new-drones-and-sensors-to-protect-undersea-cables-and-hunt-russian-submarines/",
+       3
+      ]
+     ]
     }
    ]
   },
@@ -1830,6 +1903,26 @@
        "US Army soldier suspected of spying for Russia arrested in UK",
        "BBC News",
        "https://www.bbc.co.uk/news/articles/c6d7q77xgw0vo",
+       3
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-12",
+     "t": "Iran's security chief Mohsen Rezaei named bases in Europe as legitimate targets if the US launches another war, a day after the US indictment over the Fairford plot. [9, 21]",
+     "src": [
+      [
+       9,
+       "Iran warns of expanded retaliation as Israel reportedly readies to attack",
+       "Al Jazeera (with AP and Reuters)",
+       "https://www.aljazeera.com/news/2026/11/12/iran-warns-of-expanded-retaliation-as-israel-reportedly-readies-to-attack",
+       2
+      ],
+      [
+       21,
+       "US charges 3 men over alleged Iranian-backed plot at UK Fairford air base",
+       "Al Jazeera",
+       "https://www.aljazeera.com/news/2026/11/11/us-charges-3-iranian-backed-men-over-alleged-plot-at-uk-fairford-air-base",
        3
       ]
      ]

@@ -182,37 +182,6 @@
    ]
   },
   {
-   "id": "elf-mestreech-2026",
-   "t": "ELF: Mestreech Geit Loos, carnival opening",
-   "cat": "festival",
-   "from": "2026-11-11",
-   "to": "2026-11-11",
-   "town": "Maastricht",
-   "venue": "Kesselskade, 11:11–19:00, about thirty local acts",
-   "cc": "NL",
-   "drive": 30,
-   "cost": "Sold out; remaining places via the organiser",
-   "kid": false,
-   "added": "2026-11-02",
-   "src": [
-    [
-     38,
-     "ELF: Mestreech Geit Loos",
-     "ELF Maastricht",
-     "https://elfmestreech.nl/"
-    ],
-    [
-     187,
-     "Limburgse pleinen kleuren op de elfde van de elfde weer rood, geel en groen: waar zijn al die feestjes?",
-     "De Limburger",
-     "https://www.limburger.nl/uittips-limburg/limburgse-pleinen-kleuren-op-de-elfde-van-de-elfde-weer-rood-geel-en-groen-waar-zijn-al-die-feestjes/164063242.html",
-     3
-    ]
-   ],
-   "prio": true,
-   "updated": "2026-11-11"
-  },
-  {
    "id": "kerker-drachen-theater-aachen-2026",
    "t": "Kerker, Drachen, Würfelwürfe: a pen-and-paper role-playing evening in German with Judith and Christian Vogt",
    "cat": "kids",

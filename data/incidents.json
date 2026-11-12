@@ -916,6 +916,28 @@
      3
     ]
    ]
+  },
+  {
+   "id": "2026-11-11-md-air-banderol-missiles",
+   "date": "2026-11-11",
+   "code": "AIR",
+   "attr": "A3",
+   "local": false,
+   "country": "MD",
+   "place": "South-east Moldova, from Odesa Oblast (marker at Ștefan Vodă)",
+   "lat": 46.51,
+   "lon": 29.66,
+   "summary": "Two Russian Banderol cruise missiles crossed into Moldovan airspace from Odesa Oblast and returned after four to five minutes, Moldovan authorities said. [15]",
+   "edition": "2026-11-12",
+   "src": [
+    [
+     15,
+     "Russian attacks kill 9, injure 39 across Ukraine over past day as 2 Russian cruise missiles violate Moldovan airspace",
+     "Kyiv Independent",
+     "https://kyivindependent.com/russian-attacks-kill-9-injure-39-across-ukraine-over-past-day-as-2-russian-cruise-missiles-violate-moldovan-airspace/",
+     3
+    ]
+   ]
   }
  ],
  "attrLog": [
@@ -1014,5 +1036,5 @@
   }
  ],
  "attrLogNote": "One entry per attribution change: {id (incident id), date, from (A0..A5), to (A0..A5), t (what moved), src (optional [[n,title,outlet,url]])}. The page lists the last 7 days under Attribution moves.",
- "updated": "2026-11-11"
+ "updated": "2026-11-12"
 }

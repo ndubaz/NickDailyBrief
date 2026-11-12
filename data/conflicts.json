@@ -424,6 +424,33 @@
        2
       ]
      ]
+    },
+    {
+     "date": "2026-11-12",
+     "t": "The Air Force counted one Kh-59/69 missile, 163 long-range attack drones (91 jet-powered), decoys and Banderol/Dan-T cruise missiles for the night into 11 Nov; by 08:00, 130 drones and 14 Banderol/Dan-T missiles were downed, with hits at 17 locations, and regional officials reported 9 killed and 39 injured over the day. [15] Talks in Abu Dhabi ended on 11 Nov with agreement on a large-scale prisoner exchange and no breakthrough. [6] Explosions shook Kyiv at about 01:00 on 12 Nov after an Air Force warning of ballistic missiles, and the Kyiv Independent reported an eight-hour drone attack on the Omsk refinery. [8]",
+     "src": [
+      [
+       15,
+       "Russian attacks kill 9, injure 39 across Ukraine over past day as 2 Russian cruise missiles violate Moldovan airspace",
+       "Kyiv Independent",
+       "https://kyivindependent.com/russian-attacks-kill-9-injure-39-across-ukraine-over-past-day-as-2-russian-cruise-missiles-violate-moldovan-airspace/",
+       3
+      ],
+      [
+       6,
+       "Russia-Ukraine talks in Abu Dhabi end with prisoner exchange agreement",
+       "Al Jazeera (with AP and Reuters)",
+       "https://www.aljazeera.com/news/2026/11/11/russia-ukraine-talks-in-abu-dhabi-end-with-prisoner-exchange-agreement",
+       2
+      ],
+      [
+       8,
+       "Russia attacks Kyiv with ballistic missiles hours after peace talks end (live page)",
+       "Kyiv Independent",
+       "https://kyivindependent.com/russia-attacks-kyiv-with-ballistic-missiles-hours-after-peace-talks-end/",
+       3
+      ]
+     ]
     }
    ],
    "short": "Ukraine",
@@ -714,6 +741,26 @@
        3
       ]
      ]
+    },
+    {
+     "date": "2026-11-12",
+     "t": "Israel's security cabinet ordered the military to step up preparations for a possible attack on Iran, Israeli media reported on 11 Nov; Mohsen Rezaei wrote that every base involved in a new US war, “from West Asia to Europe”, would be a legitimate target. [9] Al Jazeera reported that Tehran rejected a US proposal to move its 60% enriched uranium to a third country. [16]",
+     "src": [
+      [
+       9,
+       "Iran warns of expanded retaliation as Israel reportedly readies to attack",
+       "Al Jazeera (with AP and Reuters)",
+       "https://www.aljazeera.com/news/2026/11/12/iran-warns-of-expanded-retaliation-as-israel-reportedly-readies-to-attack",
+       2
+      ],
+      [
+       16,
+       "Iran war live: IRGC chief says sanctions won't stop missile programme",
+       "Al Jazeera",
+       "https://www.aljazeera.com/news/liveblog/2026/11/12/iran-war-live-tehran-warns-of-wider-retaliation-israel-kills-in-gaza",
+       3
+      ]
+     ]
     }
    ],
    "short": "Iran",
@@ -886,6 +933,26 @@
        "Board of Peace says Israel's aid response after Gaza floods 'insufficent'",
        "BBC News",
        "https://www.bbc.co.uk/news/articles/cw4g1g4ll5m1o",
+       3
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-12",
+     "t": "Naim Qassem said on 11 Nov there would be “no state monopoly on the resistance's weapons, no regulation, no prohibition”. [17] Israeli attacks killed at least nine Palestinians in Gaza on 11–12 Nov, at least four in an air strike on the Nasser Medical Complex in Khan Younis. [18]",
+     "src": [
+      [
+       17,
+       "US election results could be positive for Lebanon, Hezbollah chief says",
+       "Al Jazeera",
+       "https://www.aljazeera.com/news/2026/11/12/us-election-results-could-be-positive-for-lebanon-hezbollah-chief-says",
+       3
+      ],
+      [
+       18,
+       "Israeli strikes hit medical complex as nine killed across Gaza",
+       "Al Jazeera",
+       "https://www.aljazeera.com/news/2026/11/11/israeli-strikes-hit-tent-camp-as-five-killed-in-gaza",
        3
       ]
      ]
@@ -2113,6 +2180,26 @@
        1
       ]
      ]
+    },
+    {
+     "date": "2026-11-12",
+     "t": "HMS Prince of Wales ended its Arctic deployment in Oslo, where Secretary General Rutte joined the Atlantic Future Forum aboard on 11 Nov; the deployment included an F-35 intercept of a Russian Tu-95. [32, 33]",
+     "src": [
+      [
+       32,
+       "NATO Secretary General to visit Norway (media advisory)",
+       "NATO",
+       "https://www.nato.int/en/news-and-events/events/media-advisories/2026/11/09/nato-secretary-general-to-visit-norway",
+       1
+      ],
+      [
+       33,
+       "HMS Prince of Wales arrives in Oslo for Atlantic Future Forum and Sea Power Conference",
+       "Ocean News",
+       "https://oceannews.com/news/defense/hms-prince-of-wales-arrives-in-oslo-for-atlantic-future-forum-and-sea-power-conference/",
+       3
+      ]
+     ]
     }
    ]
   },
@@ -2349,6 +2436,19 @@
        "Russia expels Moldovan diplomat in tit-for-tat move",
        "Al Jazeera (AFP)",
        "https://www.aljazeera.com/news/2026/11/10/russia-expels-moldovan-diplomat-in-tit-for-tat-move",
+       3
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-12",
+     "t": "Two Banderol cruise missiles entered Moldovan airspace from Odesa Oblast at about 06:00 on 11 Nov and returned after four to five minutes, Moldovan authorities said. [15]",
+     "src": [
+      [
+       15,
+       "Russian attacks kill 9, injure 39 across Ukraine over past day as 2 Russian cruise missiles violate Moldovan airspace",
+       "Kyiv Independent",
+       "https://kyivindependent.com/russian-attacks-kill-9-injure-39-across-ukraine-over-past-day-as-2-russian-cruise-missiles-violate-moldovan-airspace/",
        3
       ]
      ]

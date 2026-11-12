@@ -747,9 +747,9 @@
    "date": "2026-11-11",
    "dateText": "Wed 11 Nov, 18:10 and 18:50 CET",
    "t": "Rutte at the Atlantic Future Forum aboard HMS Prince of Wales, Oslo",
-   "n": "Keynote at 18:10, remarks with Streeting at 18:50; JEF navy chiefs signed the Northern Navies Initiative on the same carrier on 10 Nov. [80, 7]",
+   "n": "Rutte joined the Atlantic Future Forum aboard HMS Prince of Wales in Oslo on 11 Nov; no transcript was published by the morning of 12 Nov.",
    "h": false,
-   "status": "confirmed",
+   "status": "done",
    "added": "2026-11-10",
    "src": [
     [
@@ -774,45 +774,7 @@
      1
     ]
    ],
-   "updated": "2026-11-11"
-  },
-  {
-   "id": "lt-china-diplomats",
-   "date": "2026-11-11",
-   "dateText": "11–12 Nov",
-   "t": "Chinese diplomats in Vilnius for talks on restoring ties",
-   "n": "Lithuania weighs renaming Taiwan's office. [67]",
-   "h": false,
-   "status": "reported",
-   "added": "2026-11-10",
-   "src": [
-    [
-     67,
-     "Lithuania asked Taiwan’s Vilnius office to change its name, report says",
-     "LRT",
-     "https://www.lrt.lt/en/news-in-english/19/3109087/lithuania-asked-taiwan-s-vilnius-office-to-change-its-name-report-says",
-     3
-    ]
-   ]
-  },
-  {
-   "id": "pl-independence-day",
-   "date": "2026-11-11",
-   "dateText": "Wed 11 Nov",
-   "t": "Polish Independence Day marches",
-   "n": "Marsz Niepodległości; a viral false narrative claimed the Kraków attack was staged to cancel it. [50]",
-   "h": false,
-   "status": "confirmed",
-   "added": "2026-11-10",
-   "src": [
-    [
-     50,
-     "Fala dezinformacji po zamachu w Krakowie. Chaos informacyjny podsycali m.in. politycy",
-     "RMF24 (PAP)",
-     "https://www.rmf24.pl/fakty/polska/news-fala-dezinformacji-po-zamachu-w-krakowie-chaos-informacyjny-,nIdn,1025465",
-     3
-    ]
-   ]
+   "updated": "2026-11-12"
   },
   {
    "id": "canes-helsinki",
@@ -1485,33 +1447,6 @@
    "src": []
   },
   {
-   "id": "csto-moscow-2026",
-   "date": "2026-11-11",
-   "dateText": "Wed 11 Nov",
-   "t": "CSTO Collective Security Council meets in Moscow",
-   "n": "Lukashenko met Putin for almost four hours on the eve. [31, 72]",
-   "h": false,
-   "status": "confirmed",
-   "added": "2026-11-11",
-   "src": [
-    [
-     31,
-     "Почти четыре часа продолжались переговоры Путина и Лукашенко накануне сессии ОДКБ (Putin and Lukashenko talk for almost four hours before the CSTO session)",
-     "Interfax",
-     "https://www.interfax.ru/russia/1128187",
-     2
-    ],
-    [
-     72,
-     "Лукашенко поблагодарил Путина за поддержку Беларуси по современным видам вооружений",
-     "BelTA (Belarusian state news agency; the state's own words)",
-     "https://www.belta.by/president/view/lukashenko-poblagodaril-putina-za-podderzhku-belarusi-po-sovremennym-vidam-vooruzhenij-810325-2026/",
-     2
-    ]
-   ],
-   "updated": "2026-11-11"
-  },
-  {
    "id": "unifil-mandate-ends",
    "date": "2026-12-31",
    "dateText": "31 Dec",
@@ -1535,9 +1470,9 @@
    "date": "2026-11-11",
    "dateText": "Wed 11 Nov, 11:00",
    "t": "Slovak parliament repeats the cooperating-witness vote",
-   "n": "75 of 150 voted to advance it on 10 Nov; Taraba, Malatinec and Slyško voted against. [66]",
+   "n": "The National Council definitively rejected the amendment on 11 Nov; three unaffiliated MPs voted against.",
    "h": false,
-   "status": "confirmed",
+   "status": "done",
    "added": "2026-11-11",
    "src": [
     [
@@ -1547,26 +1482,8 @@
      "https://www.teraz.sk/slovensko/smer-sd-vnima-postoj-tarabu-k-novele-o/1006517-clanok.html",
      2
     ]
-   ]
-  },
-  {
-   "id": "sk-pellegrini-macron-nawrocki",
-   "date": "2026-11-11",
-   "dateText": "11–12 Nov",
-   "t": "Pellegrini meets Macron in Paris, then Nawrocki at Rogalin",
-   "n": "Poznań Economic Congress and the Three Seas digital forum on 12 Nov. [206]",
-   "h": false,
-   "status": "confirmed",
-   "added": "2026-11-11",
-   "src": [
-    [
-     206,
-     "Prezident odcestuje v stredu do Francúzska, vo štvrtok navštívi Poľsko",
-     "TASR (teraz.sk)",
-     "https://www.teraz.sk/slovensko/prezident-odcestuje-v-stredu-do-francuz/1006600-clanok.html",
-     2
-    ]
-   ]
+   ],
+   "updated": "2026-11-12"
   },
   {
    "id": "hu-merz-budapest",
@@ -1621,44 +1538,6 @@
      "Betoging voor vrede en tegen militarisering in Brussel op 22 november (RSS summary)",
      "Het Belang van Limburg",
      "https://www.hbvl.be/binnenland/betoging-voor-vrede-en-tegen-militarisering-in-brussel-op-22-november/164371908.html",
-     3
-    ]
-   ]
-  },
-  {
-   "id": "eu-hoax-experts-meeting",
-   "date": "2026-11-11",
-   "dateText": "Wed 11 Nov",
-   "t": "EU experts meet on the airline bomb hoaxes",
-   "n": "Commission-chaired, with Norway, Switzerland and Iceland; reviews whether extra measures are needed [203]",
-   "h": false,
-   "status": "confirmed",
-   "added": "2026-11-11",
-   "src": [
-    [
-     203,
-     "EU Commission to host security talks after week of bomb hoaxes that hit 20 airports and dozens of European flights",
-     "EUobserver",
-     "https://euobserver.com/248019/eu-commission-to-host-security-talks-after-week-of-bomb-hoaxes-that-hit-20-airports-and-dozens-of-european-flights/",
-     3
-    ]
-   ]
-  },
-  {
-   "id": "bt-innenausschuss-hybrid",
-   "date": "2026-11-11",
-   "dateText": "Wed 11 Nov",
-   "t": "Bundestag interior committee asked for a report on hybrid attacks",
-   "n": "The Greens requested a government report on the refrigeration attacks and how the centres detect them [202]",
-   "h": false,
-   "status": "reported",
-   "added": "2026-11-11",
-   "src": [
-    [
-     202,
-     "Grüne verlangen von Dobrindt Aufklärung zu Kühlattacken",
-     "n-tv",
-     "https://www.n-tv.de/politik/Gruene-verlangen-von-Dobrindt-Aufklaerung-zu-Kuehlattacken-id31519168.html",
      3
     ]
    ]
@@ -1742,6 +1621,49 @@
      "Oranje met 25 spelers naar slotduels groepsfase Nations League",
      "OnsOranje (KNVB)",
      "https://www.onsoranje.nl/nieuws/nederlands-elftal-mannen/82811/oranje-met-25-spelers-naar-slotduels-groepsfase-nations-league",
+     1
+    ]
+   ]
+  },
+  {
+   "id": "eu-informal-dublin",
+   "date": "2026-11-13",
+   "t": "Informal EU leaders' meeting, Dublin",
+   "n": "Informal meeting of EU leaders in Dublin after the European Political Community summit; Zelensky attends and Kushner and Witkoff plan to brief him there. [8, 5]",
+   "h": false,
+   "status": "confirmed",
+   "added": "2026-11-12",
+   "src": [
+    [
+     8,
+     "Russia attacks Kyiv with ballistic missiles hours after peace talks end (live page)",
+     "Kyiv Independent",
+     "https://kyivindependent.com/russia-attacks-kyiv-with-ballistic-missiles-hours-after-peace-talks-end/",
+     3
+    ],
+    [
+     5,
+     "First talks about EU envoy on Ukraine war to dominate Dublin summits",
+     "EUobserver",
+     "https://euobserver.com/248409/first-talks-about-eu-envoy-on-ukraine-war-to-dominate-dublin-summits/",
+     3
+    ]
+   ]
+  },
+  {
+   "id": "hconres93-vote",
+   "date": "2026-11-20",
+   "t": "Senate vote on Iran war powers (H.Con.Res. 93)",
+   "n": "The Senate agreed on 10 Nov to vote on H.Con.Res. 93 on Iran war powers no later than 20 Nov. [22]",
+   "h": false,
+   "status": "confirmed",
+   "added": "2026-11-12",
+   "src": [
+    [
+     22,
+     "Tuesday, November 10, 2026: floor log and wrap-up",
+     "US Senate Daily Press",
+     "https://www.dailypress.senate.gov/tuesday-november-10-2026/",
      1
     ]
    ]
