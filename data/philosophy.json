@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12",
+ "updated": "2026-11-13",
  "note": "Philosophy note of the day: serious philosophy, read closely. One passage a day from a major philosopher, quoted exactly from a named edition or translation, with a gloss that states the argument, its place in the work and the strongest objection. No aphorism collections, no self-help, no quotation sites. The run appends {date, thinker, work, tradition} here so no thinker repeats within 30 days and no work within 90; `canon` is the pool to draw from and may grow with thinkers of the same weight. Since 7.5.2 the canon also holds the wider Stoa, thirty Chinese thinkers from Mencius to Mou Zongsan, and the philosophers of science from Bacon to Longino; one Chinese or Stoic note and one philosophy-of-science note each week, obscure figures welcome when a named scholarly edition exists (see sources).",
  "traditions": [
   "Ancient Greek (Plato, Aristotle, the pre-Socratics)",
@@ -46,6 +46,12 @@
    "thinker": "Marcus Aurelius",
    "work": "Meditations",
    "tradition": "The Stoa, early to late (Zeno, Cleanthes, Chrysippus, Panaetius, Posidonius, Musonius, Epictetus, Hierocles, Marcus)"
+  },
+  {
+   "date": "2026-11-13",
+   "thinker": "Thomas Hobbes",
+   "work": "Leviathan",
+   "tradition": "Medieval and early modern (Augustine, Aquinas, Spinoza, Hobbes, Locke)"
   }
  ],
  "canon": [

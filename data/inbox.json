@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12",
+ "updated": "2026-11-13",
  "note": "Dated items the morning run pulls from Nick's mail: the AFNORTH school office, the AFNorth MS/HS PTA, JFCBS Morale and Welfare Activities, USAG Benelux-Brunssum Child and Youth Services, and travel and ticket confirmations. Dates, titles, times and places only. Never a pupil's, parent's or teacher's name, a grade or score, a confirmation code, booking reference, ticket, order or seat number, a price, a passenger name, a medical detail, or a link that carries a token. Append-only; id = YYYY-MM-DD-slug; dedupe by date and title. src is one of AFNORTH, PTA, MWA, CYS, TRAVEL, TICKETS.",
  "items": [
   {

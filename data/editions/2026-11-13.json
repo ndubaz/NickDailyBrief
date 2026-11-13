@@ -1,0 +1,2806 @@
+{
+ "v": "7.5",
+ "promptRev": "7.5.12",
+ "date": "2026-11-13",
+ "weekday": "Friday",
+ "edition": 13,
+ "lookback": "12–13 Nov",
+ "note": "Putin lets Europe into the next round; Iran claims a strike on a US radar in Bahrain; the Pentagon backs a permanent presence in Poland; the Dutch tax plan passes without the VVD.",
+ "today": {
+  "weather": {
+   "now": "Clear and 1 °C before dawn; the forecast for Heerlen has a high of 9 °C and a low of 1 °C, a 4% chance of drizzle and a light west-south-west wind, force 2. [1]",
+   "hi": 9,
+   "lo": 1,
+   "tomorrow": "Sat: 10 °C, 2 °C at night, overcast and dry with a light south-east wind. [1]",
+   "sunrise": "07:48",
+   "sunset": "16:51",
+   "src": 1,
+   "week": [
+    [
+     "2026-11-13",
+     9,
+     1,
+     4,
+     "WSW 2",
+     "suncloud"
+    ],
+    [
+     "2026-11-14",
+     10,
+     2,
+     0,
+     "SE 2",
+     "cloud"
+    ],
+    [
+     "2026-11-15",
+     12,
+     2,
+     66,
+     "SSW 5",
+     "rain"
+    ],
+    [
+     "2026-11-16",
+     10,
+     3,
+     47,
+     "SW 4",
+     "showers"
+    ],
+    [
+     "2026-11-17",
+     5,
+     1,
+     67,
+     "ENE 4",
+     "showers"
+    ],
+    [
+     "2026-11-18",
+     6,
+     0,
+     53,
+     "WSW 3",
+     "cloud"
+    ],
+    [
+     "2026-11-19",
+     7,
+     -1,
+     43,
+     "SW 3",
+     "cloud"
+    ]
+   ],
+   "weekNote": "Dry through Saturday; Sunday turns wet with a fresh south-south-west wind, and a colder spell from Tuesday brings a high of 5 °C and a frost risk on Thursday night. Daylight is 9 h 3 min. [1]"
+  },
+  "canes": {
+   "line": "W 4–1 v Seattle in Helsinki",
+   "sub": "15-3-2 · 32 pts · 1st in the Metropolitan",
+   "src": 2
+  },
+  "markets": [
+   [
+    "Dow",
+    "−0.36% Thu",
+    "down"
+   ],
+   [
+    "S&P 500",
+    "+1.31% Wed",
+    "up"
+   ],
+   [
+    "Brent",
+    "$91.50 Wed",
+    "flat"
+   ],
+   [
+    "USD/EUR",
+    "0.9024",
+    "up"
+   ]
+  ],
+  "items": [
+   {
+    "k": "Today",
+    "t": "Clear, then cloudy and dry, 9 °C; a light west-south-west wind. [1]",
+    "cat": "nl"
+   },
+   {
+    "k": "Today",
+    "t": "Heerlerweg: the gemeente's refusal on 5 Nov of a permit to open a gym at a Heerlerweg address in Hoensbroek is still the only notice for the street; no roadworks, closures or events are listed. [3]",
+    "cat": "nl"
+   },
+   {
+    "k": "Today",
+    "t": "AFNORTH's evacuation drill this morning, with no sign-in or sign-out; the family calendar's driving-licence appointment at 10:00–11:00 falls in the same morning. [4]",
+    "cat": "us"
+   },
+   {
+    "k": "Today",
+    "t": "Jetten meets Yeşilgöz and Van den Brink this morning on the coalition's future after the tax-plan vote. [5]",
+    "cat": "nl"
+   },
+   {
+    "k": "Sat",
+    "t": "Canes v Seattle in Helsinki at 19:00 CET; Sinterklaas arrives in Maastricht; no trains Roermond–Sittard until Monday 03:00; Roda JC v FC Volendam at 20:00. [2, 6]",
+    "cat": "nl"
+   }
+  ]
+ },
+ "brief": {
+  "takeaways": [
+   {
+    "t": "**President Vladimir Putin agreed on 12 Nov to let European representatives join the next round of Ukraine peace talks, US envoy Steve Witkoff said after their Kremlin meeting;** the same day President Zelensky said new restrictions were affecting the US-made satellite communications Ukraine uses at the front. [7, 8]",
+    "to": "world",
+    "part": "world",
+    "links": [
+     "theatre:ru-ua",
+     "thread:russia-ukraine-talks"
+    ]
+   },
+   {
+    "t": "**Iran's Revolutionary Guard said on 13 Nov it had targeted a US early-warning radar in Bahrain in retaliation for an attack on a telecom tower in Sirik,** the first Iranian claim of an attack on US military assets in a Gulf country since early September, Reuters reported; Washington and Manama had not commented. [9]",
+    "to": "world",
+    "part": "world",
+    "links": [
+     "theatre:iran",
+     "thread:iran-hormuz"
+    ]
+   },
+   {
+    "t": "**The Pentagon has “greenlit” a permanent US troop presence in Poland, with the White House to decide in early December,** Defense News reported on 12 Nov; Defence Minister Władysław Kosiniak-Kamysz called it “our absolute priority”. [10]",
+    "to": "dod",
+    "part": "pro",
+    "links": [
+     "thread:us-europe-posture"
+    ]
+   },
+   {
+    "t": "**The Tweede Kamer passed the 2027 tax plan on 12 Nov with 76 of 150 seats and without the VVD,** after a Pro and Volt amendment that taxes wealth more; Prime Minister Rob Jetten meets deputy prime ministers Dilan Yeşilgöz (VVD) and Van den Brink (CDA) this morning to hold the coalition together. [5]",
+    "to": "nl",
+    "part": "home",
+    "links": [
+     "thread:nl-tax-plan-2027"
+    ]
+   },
+   {
+    "t": "**Finland's Defence Forces said on 12 Nov they had detected “a strike” on a Russian warship in the Gulf of Finland area the day before,** and that Finland faces no immediate military threat; Estonian media reported a small navy ship returned to St Petersburg. [11, 12]",
+    "to": "world",
+    "part": "world",
+    "links": [
+     "theatre:ru-ua",
+     "thread:kaliningrad-line"
+    ]
+   },
+   {
+    "t": "**The Bundestag passed the Bundeswehr infrastructure acceleration law on 12 Nov with CDU/CSU and SPD votes,** granting the forces exceptions from environmental and nature-protection law for building and expanding military sites. [13]",
+    "to": "countries",
+    "part": "sec",
+    "links": [
+     "country:de"
+    ]
+   }
+  ],
+  "unknowns": [
+   {
+    "q": "What, if anything, did the IRGC hit in Bahrain on 13 Nov, and what attacked the telecom tower in Sirik the day before?",
+    "thread": "theatre:iran"
+   },
+   {
+    "q": "Who will represent Europe at the next round of Ukraine talks, and when and where does it meet?",
+    "thread": "thread:russia-ukraine-talks"
+   },
+   {
+    "q": "What struck the Russian warship in the Gulf of Finland on 11 Nov, and was it damaged?",
+    "thread": "theatre:ru-ua"
+   }
+  ]
+ },
+ "five": [
+  {
+   "t": "**President Vladimir Putin agreed on 12 Nov to let European representatives join the next round of Ukraine peace talks, US envoy Steve Witkoff said after their Kremlin meeting;** the same day President Zelensky said new restrictions were affecting the US-made satellite communications Ukraine uses at the front. [7, 8]",
+   "to": "world",
+   "part": "world"
+  },
+  {
+   "t": "**Iran's Revolutionary Guard said on 13 Nov it had targeted a US early-warning radar in Bahrain in retaliation for an attack on a telecom tower in Sirik,** the first Iranian claim of an attack on US military assets in a Gulf country since early September, Reuters reported; Washington and Manama had not commented. [9]",
+   "to": "world",
+   "part": "world"
+  },
+  {
+   "t": "**The Pentagon has “greenlit” a permanent US troop presence in Poland, with the White House to decide in early December,** Defense News reported on 12 Nov; Defence Minister Władysław Kosiniak-Kamysz called it “our absolute priority”. [10]",
+   "to": "dod",
+   "part": "pro"
+  },
+  {
+   "t": "**The Tweede Kamer passed the 2027 tax plan on 12 Nov with 76 of 150 seats and without the VVD,** after a Pro and Volt amendment that taxes wealth more; Prime Minister Rob Jetten meets deputy prime ministers Dilan Yeşilgöz (VVD) and Van den Brink (CDA) this morning to hold the coalition together. [5]",
+   "to": "nl",
+   "part": "home"
+  },
+  {
+   "t": "**Finland's Defence Forces said on 12 Nov they had detected “a strike” on a Russian warship in the Gulf of Finland area the day before,** and that Finland faces no immediate military threat; Estonian media reported a small navy ship returned to St Petersburg. [11, 12]",
+   "to": "world",
+   "part": "world"
+  }
+ ],
+ "pick": {
+  "t": "If you read one thing: Bertelsmann's transatlantic trust survey. 72% of Americans call Europe a trustworthy partner and 36% of Europeans say the same of the United States, yet 61% of Europeans still want the US military presence kept or increased; Germans (25%) and the French (30%) trust Washington least, Romanians, Poles and Lithuanians most. [14]",
+  "to": "research"
+ },
+ "world": {
+  "items": [
+   {
+    "region": "Russia–Ukraine",
+    "h": "Putin agrees to let Europeans join the next round of Ukraine talks",
+    "conf": "high",
+    "badge": "UPDATED",
+    "body": "Steve Witkoff and Jared Kushner met President Vladimir Putin in the Kremlin on 12 Nov, a day after the Abu Dhabi round ended. [7] Witkoff told Russian state television: “The Europeans will join at the next meeting, which we consider to be a very important moment because they are our partners and it's important to us that they take part.” [7] Putin said Washington must work with its European allies to understand whether they want peace or war in Ukraine. [7] Witkoff told CNN at Vnukovo airport: “We've restarted it. We've set a new meeting.” [8] Zelensky said new restrictions were affecting the US-made satellite communications Kyiv uses on the battlefield and called the US approach of discussing a new European security order with Russia “a bit strange”. [7]",
+    "next": "Witkoff and Kushner were due to brief Zelensky in Dublin; no date or venue for the next round is published, and Europe has not named its representative. [8, 15]",
+    "links": [
+     "theatre:ru-ua",
+     "thread:russia-ukraine-talks"
+    ]
+   },
+   {
+    "region": "Russia–Ukraine",
+    "h": "Drones and missiles hit Kyiv and Kramatorsk on 12 Nov; five killed",
+    "conf": "high",
+    "badge": "UPDATED",
+    "body": "The Ukrainian Air Force counted 123 long-range attack drones, 72 of them jet-powered, plus Iskander-M, S-400 and Zircon missiles overnight into 12 Nov; by about 08:00, 89 drones and five S8000 Banderol munitions were downed, with drone impacts at 17 locations. [16] Mayor Vitali Klitschko said one person was killed and eight injured in Kyiv in the overnight and daytime strikes. [16] Between 06:30 and 19:00 on 12 Nov the Air Force counted 143 drones and S8000 Banderol/Dan-T missiles, of which 124 drones and two missiles were downed. [17] Four people were killed and six injured in Kramatorsk the same day. [18] Ukraine's General Staff claimed 2,150 Russian personnel and 1,013 drones for the day. [19]",
+    "next": "The Air Force count for the night into 13 Nov was not out by 05:30 CET. [18]",
+    "links": [
+     "theatre:ru-ua"
+    ]
+   },
+   {
+    "region": "Baltic Sea",
+    "h": "Finland detects a strike on a Russian warship in the Gulf of Finland",
+    "conf": "moderate",
+    "badge": "NEW",
+    "body": "Finland's Defence Forces said on 12 Nov that they had detected “a strike” on a Russian warship in the Gulf of Finland area a day earlier. [11] A spokesperson wrote to Reuters: “The Finnish Defence Forces detected… a strike on a Russian warship in the Gulf of Finland area and has monitored the development of the situation,” and said Finland is not under any immediate military threat. [11] Estonian media reported that the vessel was a small Russian navy ship that later returned to St Petersburg; Finnish broadcaster Yle cited Ukraine's Security Service as saying it carried out the attack. [11, 12] Smoke rose over the Ust-Luga port area after a drone attack on 11 Nov, in a Reuters photograph. [12]",
+    "next": "The Finnish Defence Forces declined further detail; Russia had not commented by 05:30. [11]",
+    "links": [
+     "theatre:ru-ua",
+     "thread:kaliningrad-line"
+    ]
+   },
+   {
+    "region": "Iran and the Gulf",
+    "h": "Revolutionary Guard says it targeted a US radar in Bahrain",
+    "conf": "moderate",
+    "badge": "UPDATED",
+    "body": "Iran's Islamic Revolutionary Guard Corps said on 13 Nov it had targeted a US early-warning radar in Bahrain in retaliation for what it called an air attack on a telecommunications tower in Sirik, Hormozgan province, which state agency IRNA said was hit by “enemy fire” on 12 Nov. [9] Its statement, carried by Tasnim, said: “Should these violations and acts of aggression recur, the IRGC Aerospace Force stands in full readiness to engage without limits.” [9] The IRGC-affiliated Fars agency said the radar was “targeted and destroyed”; Washington and Manama had not commented, and Reuters called it the first Iranian claim of an attack on US military assets in a Gulf country since early September. [9] Bahrain hosts the headquarters of the US Navy's Fifth Fleet. [9] Al Jazeera's live page reported that President Trump said Gulf partners had asked him to pause further strikes on Iran. [20]",
+    "next": "No date is published for US–Iran talks on the Qatar track; Israel's security cabinet order of 11 Nov to prepare for a possible attack stands. [21]",
+    "links": [
+     "theatre:iran",
+     "thread:iran-hormuz"
+    ]
+   },
+   {
+    "region": "Europe",
+    "h": "Hoaxes and Ukraine dominate the European Political Community in Dublin",
+    "conf": "moderate",
+    "badge": "NEW",
+    "body": "Leaders from more than 40 European countries met in Dublin on 12 Nov for the European Political Community summit. [15] Taoiseach Micheál Martin said those behind the recent attacks seek to “create confusion, sow division and weaken public confidence in our democratic systems” and added: “We will not allow them to succeed.” [15] More than 3,700 Italian schools received hoax bomb warnings on 12 Nov, a day after 6,300 schools got similar alerts. [15] Zelensky told the summit that Russia's negotiators in Abu Dhabi had no mandate to discuss a ceasefire and that Ukraine's Black Sea de-escalation proposal got a negative answer. [22] UK Prime Minister Andy Burnham announced that the UK was the first country to sanction all 10 of Russia's major oil producers and chaired a side meeting on defence support for Ukraine. [23]",
+    "next": "The EU–UK summit follows next week; nominations for an EU envoy for the talks are expected in December. [23, 24]",
+    "links": [
+     "theatre:ru-ua",
+     "thread:russia-ukraine-talks",
+     "thread:aviation-hoaxes"
+    ]
+   }
+  ],
+  "numbers": [
+   "ua-air",
+   "ua-downed-pct",
+   "ru-personnel-day",
+   "ru-uav-day",
+   "ua-occupied-km2",
+   "ua-drones-month",
+   "hormuz-transits",
+   "bab-transits-month"
+  ],
+  "feature": {
+   "rota": "fri",
+   "kind": "Friday · Week on the board",
+   "title": "Week on the board, 7–13 Nov: talks restart, Iran claims a hit in Bahrain, 74 entries across 13 theatres",
+   "body": [
+    "Talks set the pace on the Russia–Ukraine board. The trilateral round ran on 10–11 Nov in Abu Dhabi and ended with agreement on a large-scale prisoner exchange and no other breakthrough. [25] Witkoff and Kushner met Putin on 12 Nov; Witkoff said a new meeting was set and that Europeans would join it. [8, 7] Strikes continued alongside: two Russian cruise missiles crossed Moldovan airspace on 11 Nov, and Finland detected a strike on a Russian warship in the Gulf of Finland the same day. [26, 11]",
+    "The Gulf board moved from mines to a direct claim. The Revolutionary Guard said two tankers hit mines near the Strait of Hormuz on 7 Nov. [27] Israeli media reported on 11 Nov that the security cabinet had ordered preparations for a possible attack on Iran. [21] On 13 Nov the IRGC said it had targeted a US radar in Bahrain. [9] In Israel, President Herzog gave Gadi Eisenkot the mandate to form a government, and Hezbollah's Naim Qassem ruled out a state monopoly on the group's weapons. [28, 29]",
+    "Elsewhere the week was steadier. Taiwan's defence ministry counted 11 PLA aircraft sorties on 7 Nov and four on 11 Nov, and Kim Yo-jong rejected the UN Secretary-General's call to restore inter-Korean channels on 10 Nov. [30, 31, 32] In the north, two Chinese heavy-lift carriers that crossed the Arctic route were held near Andøya, and ten Joint Expeditionary Force navies signed a Northern Navies Initiative aboard HMS Prince of Wales on 12 Nov. [33, 34] The World Food Programme put DR Congo's acutely food-insecure population at 28.8 million. [35]",
+    "The Black Sea board closes the week on a date: Gagauzia votes for its governor and People's Assembly on 15 Nov. [36] The Balkans carried court news only, with the UN court refusing Jovica Stanišić early release and a Bosnian court sentencing three men for 1992 abuses in Bosanski Novi. [37, 38]"
+   ],
+   "table": {
+    "head": [
+     "Theatre",
+     "Entries 7–13 Nov",
+     "What moved"
+    ],
+    "rows": [
+     [
+      "Russia–Ukraine",
+      "9",
+      "Abu Dhabi round ends with a prisoner-swap deal; envoys meet Putin, who lets Europeans into the next round [25, 7]"
+     ],
+     [
+      "Iran, US and Hormuz",
+      "8",
+      "IRGC mine claim on 7 Nov; Israeli cabinet order on 11 Nov; IRGC claims a Bahrain radar strike on 13 Nov [27, 21, 9]"
+     ],
+     [
+      "Gaza and Lebanon",
+      "6",
+      "Eisenkot given the mandate on 8 Nov; Qassem rejects a state monopoly on weapons; Gaza flooding [28, 29, 39]"
+     ],
+     [
+      "Red Sea and Yemen",
+      "7",
+      "30 killed at a Taiz market on 6 Nov; UN Security Council renews Yemen sanctions [40, 41]"
+     ],
+     [
+      "Taiwan Strait",
+      "6",
+      "11 PLA sorties on 7 Nov, four on 11 Nov [30, 31]"
+     ],
+     [
+      "Korean peninsula",
+      "5",
+      "Kim Yo-jong rejects Guterres's call on inter-Korean channels, 10 Nov [32]"
+     ],
+     [
+      "Sudan",
+      "5",
+      "Army says it downed a drone over West Kordofan, 7 Nov [42]"
+     ],
+     [
+      "Sahel",
+      "4",
+      "Mali counts gold miners expelled from Guinea [43]"
+     ],
+     [
+      "Eastern DRC",
+      "6",
+      "More than 40 bodies found after ADF attacks in Ituri; WFP counts 28.8 million acutely hungry [44, 35]"
+     ],
+     [
+      "Venezuela and the Caribbean",
+      "2",
+      "El Salvador's military strikes a Haitian gang headquarters, 10 Nov [45]"
+     ],
+     [
+      "Arctic and High North",
+      "6",
+      "Chinese heavy-lift carriers held near Andøya; JEF Northern Navies Initiative signed, 12 Nov [33, 34]"
+     ],
+     [
+      "Western Balkans",
+      "4",
+      "Stanišić early release refused; Bosnian court sentences three for 1992 abuses [37, 38]"
+     ],
+     [
+      "Black Sea and Moldova",
+      "6",
+      "Two Banderol missiles cross Moldovan airspace, 11 Nov; Gagauzia votes on 15 Nov [26, 36]"
+     ]
+    ]
+   },
+   "after": [
+    "Compiled from the board's own log for 7–13 Nov plus this morning's entries; counts are log entries, not events, and the Balkans, Sahel and Venezuela boards rest on one or two outlets each."
+   ],
+   "links": [
+    "theatre:ru-ua",
+    "theatre:iran",
+    "theatre:arctic",
+    "theatre:blacksea"
+   ]
+  }
+ },
+ "hybrid": {
+  "incidents": [
+   {
+    "id": "2026-11-12-it-inf-school-bomb-hoaxes",
+    "date": "2026-11-12",
+    "when": "11 and 12 Nov, school day",
+    "code": "INF",
+    "attr": "A0",
+    "local": false,
+    "country": "IT",
+    "place": "Schools across Italy (marker at Rome)",
+    "lat": 41.9,
+    "lon": 12.5,
+    "text": "More than 3,700 Italian schools received hoax bomb warnings on 12 Nov, a day after 6,300 schools got similar alerts; the sender was not named. [15]",
+    "badge": "NEW"
+   }
+  ],
+  "leads": [
+   {
+    "id": "lead-1",
+    "title": "Belgium's interior and foreign ministers split in public over naming Iran for the fridge attacks",
+    "teaser": "Bernard Quintin points to Iran in the Chamber; Maxime Prévot says it is too early, as France has already named an IRGC unit.",
+    "rows": [
+     [
+      "What",
+      "Interior Minister Bernard Quintin told the Chamber on 12 Nov that there are serious indications Iran is behind the early-November cyberattacks on supermarket refrigeration in Belgium, and asked Foreign Affairs to back France's call for EU sanctions. [46, 47] Foreign Minister Maxime Prévot said it was “trop précoce” (“too early”) to confirm and that attribution is his department's call. [46]"
+     ],
+     [
+      "Where and when",
+      "The Belgian Chamber, 12 Nov; the Belgian incidents date from early November, and France attributed its October attack to an IRGC unit on 9 Nov. [46]"
+     ],
+     [
+      "Attribution",
+      "Not attributed by Belgium; the federal prosecutor is investigating, and Iran's embassy in Brussels denies involvement. [46]"
+     ],
+     [
+      "Response",
+      "Prévot said Belgium already backed EU sanctions on Iranian actors over cyberattacks on other states; no decision to summon the Iranian ambassador. [46]"
+     ],
+     [
+      "Next",
+      "The federal prosecutor's findings, and whether Belgium joins France's sanctions request. [46]"
+     ]
+    ],
+    "sw": "Baseline requirement 4 (food and water): a host nation that cannot agree who attacked its food cold chain will be slower to ask NATO for help with the next one, and Belgium hosts SHAPE.",
+    "links": [
+     "thread:cold-chain",
+     "thread:be-government-crisis"
+    ]
+   }
+  ],
+  "pattern": [
+   "**Attribution gap:** Belgium's interior and foreign ministers disagreed in public on 12 Nov over naming Iran for the fridge attacks; France named an IRGC unit on 9 Nov. [46]",
+   "**Hoaxes:** 6,300 Italian schools on 11 Nov and 3,700 on 12 Nov received hoax bomb warnings, and the Taoiseach opened the Dublin summit on the theme. [15]",
+   "**Sanctions:** the UK sanctioned all 10 of Russia's major oil producers on 12 Nov. [23]",
+   "**Espionage:** Nvidia's chief executive Jensen Huang resigned on 11 Nov after an affair with an executive whom US intelligence reports had identified as working for China's Ministry of State Security, The Verge reported. [48]",
+   "**Cyber:** NCSC-NL published 11 advisories on 12 Nov covering Ivanti, Fortinet, Citrix, SAP, Barracuda, Node.js and Apache products. [49]"
+  ],
+  "tracker": [
+   [
+    "UK sanctions all 10 major Russian oil producers, 12 Nov [23]",
+    "Punish"
+   ],
+   [
+    "Belgian interior minister asks Foreign Affairs to back France's call for EU sanctions on Iran, 12 Nov [46]",
+    "Punish"
+   ],
+   [
+    "Bundestag passes the Bundeswehr infrastructure acceleration law, 12 Nov [13]",
+    "Resilience"
+   ],
+   [
+    "JEF navies sign the Northern Navies Initiative, naming undersea infrastructure and hybrid aggression, 12 Nov [34]",
+    "Defend"
+   ]
+  ],
+  "indicators": [
+   [
+    "steady",
+    "Iranian proxy plots in Europe",
+    "Belgian ministers split on naming Iran on 12 Nov; France's attribution of 9 Nov stands. [46]"
+   ],
+   [
+    "nodata",
+    "Drone incursions over the Baltics and Poland",
+    "No report dated 12 or 13 Nov found after the Latvian and Lithuanian alerts of 9–11 Nov."
+   ],
+   [
+    "steady",
+    "Sabotage on European rail",
+    "No new case found since Köln on 8 Nov."
+   ],
+   [
+    "watch",
+    "Hoax threats to aviation",
+    "No aviation hoax found for 12–13 Nov; separately, about 10,000 Italian schools received bomb hoaxes on 11–12 Nov. [15]"
+   ],
+   [
+    "steady",
+    "Cyber attacks on European infrastructure",
+    "Fridge cases under investigation in Belgium; CISA's exploited-vulnerability catalogue added 10 entries in seven days. [46, 50]"
+   ]
+  ],
+  "week": {
+   "t": "Eleven incidents were logged for 7–13 Nov, against 17 the week before: three influence operations (the fabricated Merz quote on the Nord Stream trial, disinformation after the Kraków shooting and the Italian school bomb hoaxes), three airspace or hoax cases (aerostats and two Banderol missiles over Moldova, hoax threats in Ireland), two drone cases (air alerts in Latvia and an object from Belarus over Lithuania), one cyber case (the NoName057(16) list naming Italy's foreign minister), one sabotage (signal cables at Köln Messe/Deutz) and one espionage arrest (a US soldier of the Allied Rapid Reaction Corps near Gloucester). [15] On the response side, France named an IRGC unit for the October fridge attack on 9 Nov, the US charged three men over the Fairford plot on 10 Nov, Belgium's ministers split on naming Iran on 12 Nov and the UK sanctioned Russia's ten largest oil producers. [46, 23]"
+  },
+  "note": "One new incident, the Italian school hoaxes; the morning's hybrid news is mostly about attribution and response."
+ },
+ "europe": [
+  {
+   "h": "UK sanctions all 10 of Russia's major oil producers",
+   "tag": "Sanctions · Russia",
+   "conf": "moderate",
+   "badge": "NEW",
+   "body": "UK Prime Minister Andy Burnham announced at the European Political Community in Dublin on 12 Nov that the UK had become the first country to sanction all 10 of Russia's major oil producers, EUobserver reported. [23] He also chaired a side meeting on defence support for Ukraine. [23] EU foreign policy chief Kaja Kallas said in Dublin she would “very much like the United Kingdom to return to Europe”, ahead of next week's EU–UK summit. [23]",
+   "sw": "Sanctions on Russian oil output bear on the energy revenue behind Russia's 2027 defence budget, the force NATO's eastern-flank plans are sized against.",
+   "links": [
+    "country:ru"
+   ]
+  },
+  {
+   "h": "Belgian ministers clash over Iran as De Wever defends the budget",
+   "tag": "Belgium · Cyber · Politics",
+   "conf": "moderate",
+   "badge": "UPDATED",
+   "body": "Interior Minister Bernard Quintin said in the Chamber on 12 Nov that serious indications point to Iran behind the early-November fridge cyberattacks, and Foreign Minister Maxime Prévot answered that it was “trop précoce” (“too early”) to say so. [46, 47] Quintin told VRT there were “voldoende elementen” (“sufficient elements”) for his remarks. [47] The same day Prime Minister Bart De Wever faced repeated criticism in the Chamber over the federal budget, RTBF reported. [51] The King hears De Wever's report on 16 Nov.",
+   "sw": "Belgium hosts SHAPE, so a stalled federal budget reaches the host-nation-support funding and civil-preparedness commitments Allied Command Operations relies on.",
+   "fy": "Nothing to do; Belgian supermarkets are trading normally.",
+   "links": [
+    "thread:be-government-crisis",
+    "thread:cold-chain"
+   ]
+  }
+ ],
+ "countries": [
+  {
+   "cc": "hu",
+   "h": "444 reads Merz's letter as pressure on Hungary over EU budget money",
+   "tag": "Hungary · EU funds",
+   "conf": "moderate",
+   "badge": "UPDATED",
+   "body": "444 reported on 12 Nov that Chancellor Friedrich Merz used Prime Minister Péter Magyar's Berlin visit on 10 Nov to tell Ukraine-sceptic member states that there is “nincs ingyen ebéd” (“no free lunch”): they cannot stay out of the shared Ukraine financing and still draw on the common budget. [52] The paper reads this as a veiled threat to hold up other money questions in the EU budget for 2028 to 2034 unless every state joins. [52] It is the paper's reading of Merz's letter, not a Commission or Hungarian government statement, and the article is partly paywalled. [52] Magyar said on 10 Nov that borrowing to fund Kyiv is not acceptable for Hungary.",
+   "sw": "Baseline requirement 2 (energy) and 1 (continuity of government): Hungary's resilience spending leans on EU money, so linking it to Ukraine financing ties Budapest's civil preparedness to its Ukraine stance.",
+   "links": [
+    "country:hu",
+    "country:de"
+   ],
+   "q": {
+    "lang": "hu",
+    "t": "Nem lehet kimaradni a közös pénzügyi kötelezettségvállalásból, majd lehívni a forrásokat a közös költségvetésből, mintha mi sem történt volna.",
+    "en": "You cannot stay out of the shared financial commitment and then draw funds from the common budget as if nothing had happened.",
+    "src": 52
+   }
+  },
+  {
+   "cc": "sk",
+   "h": "Anti-corruption foundation asks parliament to examine Kaliňák over arms-dealer links",
+   "tag": "Slovakia · Defence procurement",
+   "conf": "moderate",
+   "badge": "NEW",
+   "body": "The foundation Zastavme korupciu (Let's Stop Corruption) asked the National Council's committee on incompatibility of functions on 12 Nov to examine Defence Minister Robert Kaliňák over his links to the Czech arms dealer Michal Strnad, TASR reported. [53] It says Kaliňák's firm Kallan Consulting was paid by a Strnad company for services while the ministry was arranging contracts for Strnad's firms, a link that continued after Kaliňák took office. [53] These are the foundation's allegations; no finding has been made. [53]",
+   "sw": "Baseline requirement 1 (continuity of government): Slovak procurement by direct award under security exemptions is the channel for allied ammunition and equipment buys, and a committee case against the minister tests its oversight.",
+   "links": [
+    "country:sk"
+   ],
+   "q": {
+    "lang": "sk",
+    "t": "Takýto postup vytvára vážne podozrenie z klientelizmu a korupcie.",
+    "en": "Such a procedure creates a serious suspicion of clientelism and corruption.",
+    "src": 53
+   }
+  },
+  {
+   "cc": "de",
+   "h": "Bundestag passes the Bundeswehr infrastructure acceleration law",
+   "tag": "Germany · Host-nation support",
+   "conf": "high",
+   "badge": "NEW",
+   "body": "The Bundestag passed the Bundeswehr-Infrastrukturbeschleunigungsgesetz (Bundeswehr infrastructure acceleration law) on 12 Nov; CDU/CSU and SPD voted for it, the Greens and the Left against, and the AfD abstained. [13] The law gives the forces exceptions from environmental and nature-protection law and adjusts the rules on protected military areas and land procurement, so that sites can be used and expanded faster, with a strategic property reserve. [13] The draft puts extra costs for shared accommodation at up to €210 million over five years. [13]",
+   "sw": "Baseline requirement 7 (civil transportation) and host-nation support: faster building and expansion of German military sites is the reception and staging capacity that reinforcement through Germany depends on.",
+   "links": [
+    "country:de"
+   ],
+   "q": {
+    "lang": "de",
+    "t": "Dafür stimmten CDU/CSU und SPD, dagegen Bündnis 90/Die Grünen und Die Linke.",
+    "en": "CDU/CSU and SPD voted for it; Alliance 90/The Greens and The Left voted against.",
+    "src": 13
+   }
+  }
+ ],
+ "euregio": [],
+ "nato": {
+  "items": [
+   {
+    "h": "Ten JEF navies sign a Northern Navies Initiative aboard HMS Prince of Wales",
+    "tag": "NATO · Posture · Leaders' words",
+    "conf": "moderate",
+    "badge": "NEW",
+    "body": "The Royal Navy and its Joint Expeditionary Force (JEF) partners signed a Northern Navies Initiative aboard HMS Prince of Wales in Oslo on 12 Nov, during the International Sea Power Conference. [34] It aims to make the JEF NATO's maritime vanguard in the North Atlantic, High North and Baltic, able to act early and pass into NATO command if the Alliance mobilises at scale, and names risks to undersea infrastructure and hybrid aggression. [34] First Sea Lord Gen. Sir Gwyn Jenkins said: “The threats we face are multiplying and that we must rise to the challenge before us.” [34]",
+    "sw": "A JEF force built to hand over to NATO command is the maritime flank of the northern reinforcement picture that a land HQ plans beside.",
+    "links": [
+     "theatre:arctic",
+     "thread:undersea-cables"
+    ]
+   },
+   {
+    "h": "Leaked draft NATO guidance would plan for a European war or out-of-area missions, not both",
+    "tag": "NATO · Strategy",
+    "conf": "low",
+    "badge": "NEW",
+    "body": "Index reported on 12 Nov, citing a leaked draft of NATO's Political Guidance, that allies would no longer be asked to field enough forces for a large European war and several smaller missions outside Europe at once, but for one or the other. [54] The paper writes that the draft runs to 2029 and treats a major European contingency as overriding every other priority. [54] NATO has not published the document. [54]",
+    "sw": "Political Guidance sets the capability targets behind NATO's defence planning cycle, which in turn size the forces a JFC's regional plans can count on.",
+    "links": []
+   },
+   {
+    "h": "Germany and Poland hire SATIM to analyse military satellite imagery",
+    "tag": "NATO · Autonomy",
+    "conf": "moderate",
+    "badge": "NEW",
+    "body": "SATIM, a Polish maker of AI-based satellite-imagery analysis, has contracts with the German and Polish militaries, Defense News reported from Warsaw on 12 Nov. [55]",
+    "sw": "Shared commercial imagery analysis between the two largest eastern-flank armies is a data source a land HQ may be asked to fuse.",
+    "links": [
+     "country:de"
+    ]
+   }
+  ],
+  "table": null
+ },
+ "deftech": {
+  "items": [
+   {
+    "h": "Royal Navy orders Saab radars for its K3 Scout counter-drone boats",
+    "tag": "Autonomy · Counter-drone",
+    "conf": "moderate",
+    "badge": "NEW",
+    "body": "The Royal Navy awarded Saab a £15 million contract on 12 Nov for Sea Giraffe 1X radars to fit to Kraken Technology's K3 Scout uncrewed surface vessels, an autonomous “drone seeker” first shown earlier this year. [56] The boats are meant to give persistent surveillance and early warning against aerial threats to ships, ports and critical national infrastructure. [56]",
+    "sw": "Port protection by uncrewed radar pickets is the kind of host-nation capability that reception at North Sea ports would draw on.",
+    "links": []
+   },
+   {
+    "h": "SeaOwl and KNDS unveil the Tracus kamikaze surface drone at Euronaval",
+    "tag": "Autonomy · Production",
+    "conf": "moderate",
+    "badge": "NEW",
+    "body": "French robotics firm SeaOwl and KNDS announced at Euronaval in Paris on 12 Nov a cooperation agreement to develop and field Tracus, an uncrewed surface vessel with a 30 kg warhead for anti-ship and anti-swarm missions. [57] It began as a training target for the French Navy and launches from a box up to 7 metres above the water. [57]",
+    "sw": "European one-way surface drones copy Ukraine's Black Sea playbook into allied inventories.",
+    "links": []
+   },
+   {
+    "h": "Army plans to buy small attack drones as needed rather than stockpile them",
+    "tag": "Autonomy · Force design",
+    "conf": "moderate",
+    "badge": "NEW",
+    "body": "Army Materiel Command plans to manufacture small attack drones to deliver rather than to store, Breaking Defense reported on 12 Nov. [58] Jon Strzelec of the command said Russia can counter a new drone within 72 hours; about 10,000 of the first 30,000 Drone Dominance drones had reached units for training. [58] The Pentagon plans $1 billion of Drone Dominance spending over two years. [58]",
+    "sw": "Replace-not-repair sustainment changes the logistics annexes a land HQ writes for small-drone units.",
+    "links": []
+   }
+  ],
+  "series": [
+   "ua-drones-month"
+  ],
+  "ttp": null
+ },
+ "frontier": {
+  "items": [
+   {
+    "h": "Google puts Gemini 4 Hydrogen into Search's AI Mode",
+    "tag": "Model · Shipped",
+    "conf": "moderate",
+    "badge": "NEW",
+    "body": "Google moved Search's AI Mode to its Gemini 4 Hydrogen model on 12 Nov, saying it handles complicated questions better; Google's Robby Stein called it “the biggest model upgrade to Search yet”. [59] Google did not publish benchmark figures with the announcement. [59]",
+    "sw": "Search answers written by a frontier model become a source staff officers cite without seeing it, which raises the bar for source checking in open-source work.",
+    "links": [
+     "release:2026-11-12-google-gemini-4-hydrogen-search"
+    ]
+   },
+   {
+    "h": "Study finds chatbots showed risky shopping links in up to 15% of conversations",
+    "tag": "Result · Safety",
+    "conf": "moderate",
+    "badge": "NEW",
+    "body": "A study that tested Gemini, Perplexity and ChatGPT on shopping questions found that in as many as 15% of conversations the chatbots displayed “risky” URLs, including fake retail websites, The Verge reported on 12 Nov. [60]",
+    "sw": "Chatbots that cite fake sites are an influence and fraud channel that hybrid actors can seed.",
+    "links": [
+     "release:2026-11-12-study-chatbot-risky-urls"
+    ]
+   }
+  ]
+ },
+ "army": {
+  "cards": [
+   {
+    "l": "Poland decision",
+    "v": "Early Dec",
+    "n": "White House to decide on a permanent US presence the Pentagon has backed. [10]"
+   },
+   {
+    "l": "Iran war powers",
+    "v": "Vote by 20 Nov",
+    "n": "The Senate agreed to vote on H.Con.Res. 93 no later than 20 Nov. [61]"
+   },
+   {
+    "l": "CR expiry",
+    "v": "11 Dec",
+    "n": "FY2026 levels and no new starts until then."
+   },
+   {
+    "l": "SO/LIC transfer",
+    "v": "100 staff in 60 days",
+    "n": "75 civilians and 25 Joint Staff members move to the special operations office under Hegseth's memo. [62]"
+   }
+  ],
+  "words": [
+   {
+    "who": "Władysław Kosiniak-Kamysz",
+    "role": "Deputy Prime Minister and Minister of National Defence, Poland",
+    "where": "Ministry statement after meeting Secretary Hegseth at the Pentagon",
+    "date": "2026-11-10",
+    "quote": "The permanent presence of US troops in Poland is our absolute priority and we will not abandon this matter.",
+    "context": "Poland's ministry quoted Hegseth as saying “everything is going in a good direction”; the White House decides in early December. [10]",
+    "badge": "NEW"
+   },
+   {
+    "who": "Gen. Sir Gwyn Jenkins",
+    "role": "First Sea Lord, Royal Navy",
+    "where": "Signing of the JEF Northern Navies Initiative aboard HMS Prince of Wales, Oslo",
+    "date": "2026-11-12",
+    "quote": "After nine months of hard work, I'm delighted that the JEF Northern Navies Initiative has today taken a huge step forward.",
+    "context": "Ten JEF navies agreed to train to one standard and plan together before a crisis. [34]",
+    "badge": "NEW"
+   }
+  ],
+  "depth": {
+   "rota": "fri",
+   "kind": "Friday · The week's decisions",
+   "title": "Seven decisions in a week: Poland, special operations, drones and the Iran vote",
+   "body": [
+    "The week's decisions ran from Warsaw to the Senate floor. On 10 Nov Secretary Pete Hegseth met Poland's Władysław Kosiniak-Kamysz at the Pentagon; by 12 Nov Defense News reported that the Pentagon had “greenlit” a permanent US presence in Poland, leaving the final call to the White House in early December. [10] The same day the Senate agreed to vote on H.Con.Res. 93, the House resolution directing the removal of US forces from hostilities with Iran, no later than 20 Nov. [61]",
+    "Inside the department, the largest organisational move concerns special operations. A Hegseth memo dated 2 Nov and released on 12 Nov would raise the assistant secretary for Special Operations and Low-Intensity Conflict to an under secretary of strategic services, a title only Congress can grant; meanwhile the office moves up the order of precedence, gains a seat on the Joint Requirements Oversight Council and in budget reviews, and receives 75 civilians and 25 Joint Staff members within 60 days, with the comptroller told to find $45 million a year. [62] Kori Schake of the American Enterprise Institute said Hegseth lacks the authority to make the change. [62]",
+    "Money and kit decisions followed. The department issued three loans totalling $450 million to US space companies on 11 Nov. [63] Army Materiel Command set out a buy-to-deliver model for small attack drones on 12 Nov, citing Russian counters within 72 hours. [58] On Capitol Hill the House passed a bill on 12 Nov that would let combat-injured retirees with under 20 years of service draw full retired pay and VA disability compensation without the dollar-for-dollar offset, and Senator Chris Van Hollen led a push to strip US–Israel industrial-base provisions from both NDAA texts. [64, 65]",
+    "What did not move is as telling. No assumption-of-command date has been published for Lt. Gen. Admiral at USAREUR-AF, the Europe posture review's options have not been made public, and the continuing resolution still expires on 11 Dec."
+   ],
+   "table": {
+    "head": [
+     "Date",
+     "Decision",
+     "Who",
+     "Source"
+    ],
+    "rows": [
+     [
+      "10 Nov",
+      "Senate agrees to vote on H.Con.Res. 93 (Iran war powers) by 20 Nov",
+      "Senate",
+      "[61]"
+     ],
+     [
+      "10–12 Nov",
+      "Pentagon backs a permanent US presence in Poland; White House decides in early December",
+      "Hegseth, Kosiniak-Kamysz",
+      "[10]"
+     ],
+     [
+      "11 Nov",
+      "Three loans worth $450 million to US space companies",
+      "DoD",
+      "[63]"
+     ],
+     [
+      "12 Nov",
+      "Special operations civilian chief raised in precedence; 100 staff transfer in 60 days",
+      "Hegseth (memo of 2 Nov)",
+      "[62]"
+     ],
+     [
+      "12 Nov",
+      "Small attack drones bought to deliver, not to stockpile",
+      "Army Materiel Command",
+      "[58]"
+     ],
+     [
+      "12 Nov",
+      "House passes concurrent receipt for combat-injured retirees under 20 years",
+      "House",
+      "[64]"
+     ],
+     [
+      "12 Nov",
+      "Push to remove US–Israel industrial-base provisions from the NDAA",
+      "Sen. Van Hollen",
+      "[65]"
+     ]
+    ]
+   }
+  },
+  "dod": [
+   {
+    "h": "Pentagon backs a permanent US troop presence in Poland",
+    "tag": "Posture · Strategy",
+    "conf": "moderate",
+    "badge": "UPDATED",
+    "body": "The Pentagon has “greenlit” the permanent presence of US troops in Poland, with the final decision due from the White House in early December, Defense News reported on 12 Nov, citing Poland's defence ministry. [10] The ministry said Secretary Hegseth told Defence Minister Kosiniak-Kamysz on 10 Nov that “everything is going in a good direction”. [10] Warsaw has offered Bydgoszcz, Poznań, Szczecin and Wrocław as sites for about 5,000 troops.",
+    "sw": "Bases west of the Vistula sit on the reinforcement routes from the North Sea ports that JFC Brunssum's plans depend on.",
+    "links": [
+     "thread:us-europe-posture"
+    ]
+   },
+   {
+    "h": "Hegseth moves to raise the top special operations civilian to service-secretary rank",
+    "tag": "SOF · Strategy",
+    "conf": "moderate",
+    "badge": "NEW",
+    "body": "A memo from Secretary Hegseth dated 2 Nov and released on 12 Nov would make the assistant secretary of defense for Special Operations and Low-Intensity Conflict an under secretary of strategic services, which needs Congress. [62] Until then the office moves to Code 2 in the order of precedence and gets a seat on the Joint Requirements Oversight Council and in budget reviews; 75 civilians and 25 Joint Staff members transfer within 60 days and the comptroller must find $45 million a year. [62]",
+    "sw": "A stronger special operations civilian chief changes who sets priorities for the SOF that NATO's special operations headquarters draws on in Europe.",
+    "links": [
+     "congress:ndaa-fy27"
+    ]
+   }
+  ],
+  "news": [
+   {
+    "h": "Army CID seeks commercial tools to watch the darknet and encrypted apps",
+    "tag": "Army",
+    "conf": "moderate",
+    "badge": "NEW",
+    "body": "Army Criminal Investigation Division is looking for commercial software to monitor darknet sites and encrypted messaging platforms, DefenseScoop reported on 12 Nov. [66]",
+    "sw": "Darknet monitoring is where doxxing lists of service members, like the ones logged on this board, first surface.",
+    "links": [
+     "thread:official-doxxing"
+    ]
+   }
+  ],
+  "congress": [
+   {
+    "h": "House passes full retired pay for combat-injured retirees under 20 years",
+    "tag": "Congress · Pay",
+    "conf": "moderate",
+    "badge": "NEW",
+    "body": "The House passed a bill on 12 Nov that would let combat-injured military retirees with less than 20 years of service collect their full retired pay and VA disability compensation without the dollar-for-dollar offset. [64] The Senate has not acted. [64]",
+    "sw": "Concurrent receipt is a retirement-planning variable for every field-grade officer with a combat injury.",
+    "links": []
+   },
+   {
+    "h": "Van Hollen leads a push to strip US–Israel industrial provisions from the NDAA",
+    "tag": "Congress · Strategy",
+    "conf": "moderate",
+    "badge": "NEW",
+    "body": "Senator Chris Van Hollen sent a letter to House and Senate leaders on 10 Nov urging them to remove provisions from both versions of this year's NDAA that would tie the US defence industrial base more closely to Israel's, Defense News reported on 12 Nov. [65]",
+    "sw": "Every contested provision slows the NDAA conference, which carries the Europe posture and authorities language the theatre depends on.",
+    "links": [
+     "congress:ndaa-fy27"
+    ]
+   }
+  ],
+  "career": {
+   "items": [
+    {
+     "h": "Concurrent receipt for combat-injured retirees clears the House",
+     "tag": "Pay",
+     "conf": "moderate",
+     "badge": "NEW",
+     "body": "The bill the House passed on 12 Nov would end the offset between retired pay and VA disability pay for combat-injured retirees with under 20 years of service. [64]",
+     "fy": "Nothing to file; note it if a medical retirement is ever on the table.",
+     "links": []
+    }
+   ],
+   "dates": [
+    [
+     "2026-11-20",
+     "Senate vote on H.Con.Res. 93 (Iran war powers) due"
+    ],
+    [
+     "2026-12-08",
+     "TRICARE Open Season closes"
+    ],
+    [
+     "2026-12-11",
+     "Continuing resolution expires"
+    ],
+    [
+     "2026-12-14",
+     "Federal Benefits Open Season (FEDVIP, FSAFEDS) closes"
+    ],
+    [
+     "2027-01-01",
+     "2027 tax year, retiree COLA and TRICARE cost changes take effect"
+    ]
+   ],
+   "note": "Checked: boards, assignments, PCS and TRICARE had nothing new; no assumption-of-command date for Lt. Gen. Admiral at USAREUR-AF."
+  }
+ },
+ "research": [
+  {
+   "field": "military",
+   "org": "War on the Rocks",
+   "title": "Winning Time: Ukraine's Unmanned Systems Forces and the New Dimension of War",
+   "authors": "Oleksiy Honcharuk",
+   "date": "2026-11-10",
+   "kind": "article",
+   "length": "long-form essay",
+   "src": 67,
+   "summary": [
+    "Honcharuk argues that the decisive contest in the Russia–Ukraine war is the speed of adaptation, which he calls the “Time Domain”: the interval between a new capability reaching the front and the enemy's effective counter. Mass decides how long a side can keep paying, he writes, and speed decides what each payment buys. [67]",
+    "He treats Ukraine's Unmanned Systems Forces as the first force built to compete in that domain. Most senior officers opposed a separate branch in late 2023 on the logic of “No domain, no branch of service”, but Ukraine created it anyway; the force holds about 2.5% of Ukraine's personnel and, citing The Wall Street Journal, “has accounted for roughly a third of Russian losses this past year”. [67]",
+    "His working model is the “Combat Hub”, which puts operations, analytics, research and production under one command and runs three cycles: daily fixes, iterations of about six weeks and changes of about six months. The evidence comes from the 412th Brigade “Nemesis”: in its first seven months 47 crews flew more than 950 sorties and destroyed more than 520 targets, including over 360 pieces of equipment he values at $308 million, for 107 airframes lost worth about $3.2 million. [67]",
+    "He recommends adding a time axis to planning, buying adaptation cycles rather than systems, funding by verified effect, and creating a small insulated unit with its own budget line. Visible adaptation machinery deters, he argues, but “a window that is closing invites” attack. [67]"
+   ],
+   "findings": [
+    "**Share of force:** about 2.5% of Ukraine's personnel, credited (via the WSJ) with roughly a third of Russian losses in the past year. [67]",
+    "**Nemesis output:** 47 crews, 950+ sorties and 520+ targets in seven months, with 360+ pieces of equipment valued at $308 million. [67]",
+    "**Cost exchange:** 107 airframes lost, worth about $3.2 million, roughly $100 of Russian equipment per $1 of airframe. [67]",
+    "**Range:** the strike copter grew from about 6 kg over 10 km to nearly 100 km reach. [67]",
+    "**Fibre optics:** by April 2025 Ukraine had more than 20 certified fibre-optic drone models from 11 producers. [67]",
+    "**Procurement:** the drone marketplace is to carry 70% of drone buying in 2026, paid in points for strikes verified in Delta. [67]"
+   ],
+   "table": {
+    "head": [
+     "412th Brigade, first seven months",
+     "Figure"
+    ],
+    "rows": [
+     [
+      "Crews",
+      "47"
+     ],
+     [
+      "Sorties",
+      "950+"
+     ],
+     [
+      "Targets destroyed",
+      "520+"
+     ],
+     [
+      "Equipment destroyed (author's value)",
+      "360+ ($308 million)"
+     ],
+     [
+      "Airframes lost (value)",
+      "107 (about $3.2 million)"
+     ]
+    ]
+   },
+   "method": "A practitioner's essay, not peer-reviewed. The brigade figures come from the unit's own flight records, which are not public, and the author advised the first commander of the force and co-founded a defence technology firm. It cannot show that the Combat Hub, rather than other factors, produced the results, or that the model transfers to armies without Ukraine's networks. Yesterday's long read pointed to the same essay; it is summarised here because no peer-reviewed military paper could be read in full this morning.",
+   "sw": "For Brunssum: it turns a vague lesson into a planning question a land HQ can test, how many weeks an adversary needs to counter a new system, and argues that training and procurement should be scored on adaptation time as well as inventory.",
+   "links": [
+    "theatre:ru-ua"
+   ],
+   "badge": "NEW"
+  },
+  {
+   "field": "polsci",
+   "org": "Bertelsmann Stiftung (eupinions)",
+   "title": "Unequal Trust, Shared Interests: European and American Views on the Future of Transatlantic Relations",
+   "authors": "Brandon Bohrn, Courtney Flynn Martino, Daniela Schmidt",
+   "date": "2026-10-26",
+   "kind": "brief",
+   "length": "16 pp",
+   "src": 68,
+   "summary": [
+    "The brief compares European and American opinion on the transatlantic partnership, from an August 2026 survey run by Nira Data for the Bertelsmann Stiftung's eupinions project and the Bertelsmann Foundation North America. Its central finding is lopsided trust: 72% of Americans call Europe a trustworthy partner, while 36% of Europeans say the same of the United States. [14]",
+    "Both publics still want cooperation: 62% of Europeans and 73% of Americans back deepening the partnership whoever is in the White House, security and defence top both lists, and 61% of Europeans and 66% of Americans want the US military presence in Europe kept or increased as European spending rises. [14] Trust varies sharply by country, from 25% in Germany and 30% in France to 60% in Romania, 58% in Poland and 57% in Lithuania. [14]"
+   ],
+   "findings": [
+    "**Trust gap:** 72% of Americans trust Europe; 36% of Europeans trust the US and 64% call it untrustworthy, up 10 points since September 2025. [14]",
+    "**Ally ranking:** Europeans naming the US as the EU's most valuable ally fell from 51% (2024) to 29% (2026); the UK rose from 13% to 20%. [14]",
+    "**US presence:** 61% of Europeans and 66% of Americans want it kept or increased; 16% and 10% want it ended. [14]",
+    "**Independence:** 73% of Europeans and 52% of Americans say the EU should go its own way. [14]",
+    "**China:** 65% of Europeans and 72% of Americans back cutting economic dependence on China even at short-term cost. [14]"
+   ],
+   "table": {
+    "head": [
+     "Who says the partner is trustworthy",
+     "Share"
+    ],
+    "rows": [
+     [
+      "Americans about Europe",
+      "72%"
+     ],
+     [
+      "EU-27 about the US",
+      "36%"
+     ],
+     [
+      "Romania",
+      "60%"
+     ],
+     [
+      "Poland",
+      "58%"
+     ],
+     [
+      "Lithuania",
+      "57%"
+     ],
+     [
+      "France",
+      "30%"
+     ],
+     [
+      "Germany",
+      "25%"
+     ]
+    ]
+   },
+   "method": "Online survey by Nira Data in August 2026, weighted to national demographics: EU n = 18,514 and US n = 5,294, ages 18 to 69 only; Lithuania is weighted on fewer variables. It measures stated opinion at one moment and cannot show what governments will do or why trust moved. [68]",
+   "sw": "Support for a US presence is weakest in the two biggest European allies and strongest on the eastern flank, which is where host-nation politics around US forces will diverge.",
+   "links": [
+    "thread:us-europe-posture"
+   ],
+   "badge": "NEW"
+  },
+  {
+   "field": "tech",
+   "org": "NBER",
+   "title": "AI as Shared Business Infrastructure: Firm Growth and the Distribution of Gains (NBER Working Paper 36003)",
+   "authors": "Panle Jia Barwick, Lu Fang, Jinhan Liu, Huilan Xu, Zhe Yuan",
+   "date": "2026-11-09",
+   "kind": "working paper",
+   "length": "111 pp",
+   "src": 69,
+   "summary": [
+    "The authors study a leading Chinese e-commerce platform that built generative AI into the software merchants use to run their stores: a content tool from April 2024 and a business-operations tool from July 2024, free for a month and then RMB 99 (about $14) a month. [70]",
+    "Matching 148,770 adopting firms with annual sales under RMB 5 million to 77,347 non-adopters in a difference-in-differences design, they find adoption raises monthly sales by 51.6% and orders by 47.0%, with little change in price per order. The gain is largest for the smallest firms, 61.5% in the bottom sales quartile against 10.3% in the top, because producing the same content at market prices would cost the median small firm 22.7% of annual sales against 0.4% for the largest. [70]"
+   ],
+   "findings": [
+    "**Sales and orders:** +51.6% and +47.0% a month. [70]",
+    "**Size gradient:** +61.5% in the bottom quartile, +10.3% in the top. [70]",
+    "**New customers:** sales to new customers +75.6%; new products +66.2%. [70]",
+    "**Routine work:** listing updates per product +124.8%; staff time per order −5.6%. [70]",
+    "**Market effect:** high-friction categories saw more entry and total sales, with little sign of business-stealing from non-adopters. [70]"
+   ],
+   "table": {
+    "head": [
+     "Outcome for adopters",
+     "Effect"
+    ],
+    "rows": [
+     [
+      "Monthly sales, all firms",
+      "+51.6%"
+     ],
+     [
+      "Bottom size quartile",
+      "+61.5%"
+     ],
+     [
+      "Top size quartile",
+      "+10.3%"
+     ],
+     [
+      "Orders",
+      "+47.0%"
+     ],
+     [
+      "Sales to new customers",
+      "+75.6%"
+     ]
+    ]
+   },
+   "method": "Matched-cohort difference-in-differences on platform records from October 2023 to July 2025, with instrumental-variable checks and a category-level spillover test. Adoption was a choice, and the authors say their tests cannot fully rule out selection; it covers small goods sellers on one Chinese platform. [69]",
+   "sw": "It is rare firm-level evidence that AI supplied as shared infrastructure helps the smallest firms most, which bears on how Europe's small businesses gain from AI they do not build.",
+   "links": [],
+   "badge": "NEW"
+  }
+ ],
+ "philosophy": {
+  "thinker": "Thomas Hobbes",
+  "work": "Leviathan",
+  "where": "Part I, chapter 13, “Of the Naturall Condition of Mankind, as concerning their Felicity, and Misery”",
+  "year": "1651",
+  "tradition": "Medieval and early modern (Augustine, Aquinas, Spinoza, Hobbes, Locke)",
+  "quote": "“And from this diffidence of one another, there is no way for any man to secure himselfe, so reasonable, as Anticipation; that is, by force, or wiles, to master the persons of all men he can, so long, till he see no other power great enough to endanger him: And this is no more than his own conservation requireth, and is generally allowed.”",
+  "translation": "Hobbes's English of 1651, original spelling, as in the Project Gutenberg e-text prepared from the Pelican Classics edition (ed. C. B. Macpherson), checked word for word. [71]",
+  "gloss": "Hobbes has just argued that people are roughly equal in strength and hope, so any two who want the same thing become enemies, and he names three causes of quarrel: competition, diffidence (distrust) and glory. [71] This passage draws the consequence of distrust: where no one can read another's intent and no common power exists, striking first is the most reasonable form of self-protection, and he insists it is no more than self-preservation requires. [71] The next sentence adds that a few who enjoy conquest beyond what security needs force even the moderate to expand or perish, which carries the chapter to its “warre of every man against every man”. [71] The strongest objection is Rousseau's in the Discourse on the Origin of Inequality (1755), Part One: Hobbes gives natural man the pride and fear that only society produces, so the war he describes is a social artefact, not a state of nature; game theorists add that his own logic of anticipation can be broken by repeated dealings and reputation, as the Stanford Encyclopedia's entry sets out. [72]",
+  "why": "Which plan or posture on your desk would a partner read as defensive only after a signal you have not yet sent?",
+  "src": 71
+ },
+ "aperture": {
+  "rota": "fri",
+  "deep": {
+   "kind": "Friday deep cut · Ally spotlight",
+   "title": "Lithuania: the highest share of GDP, and the bill that comes with it",
+   "body": [
+    "Lithuania now spends one of the largest shares of its economy on defence of any NATO ally, and carries one of the larger budget deficits to go with it. The government's draft 2027 budget allocates more than €4.8 billion to defence, 5% of projected GDP and about €35 million more than in 2026; the 2026 share was higher, at 5.38%, so the share falls even as the euro figure rises. [73] The State Defence Council agreed in early 2025 to spend 5% to 6% of GDP a year from 2026 to 2030. [73]",
+    "The trajectory is steep. NATO's 2025 expenditure report puts Lithuania at 0.88% of GDP in 2014 and an estimated 4.00% in 2025, with military personnel rising from 8,600 to 19,500 and equipment rising from 14.06% of defence spending to an estimated 45.84%, while personnel costs fell to 25.29%. [74] Vilnius is buying capability, not a larger payroll.",
+    "The money has three named purposes: air defence, hosting a German brigade and building a national division. [75] The German brigade was inaugurated in May 2025 and is to be fully operational with up to 5,000 troops by 2027. [76] The €710.5 million approved from the State Defence Fund for 2026 shows the split: €504.7 million for the national division, including tracked infantry fighting vehicles, tanks and simulators, €49 million for the German brigade's infrastructure at the Rūdninkai training area and €34.7 million for mines and other obstacles. [77]",
+    "The cost shows on the fiscal side. The general government deficit is projected at 3.8% of GDP in 2027, above the 3% Maastricht line, with debt at 48.2%, and the prime minister has tied most spending beyond revenue to the 5% goal and indexed benefits. [73] By early October only 43.92% of this year's defence appropriations had been spent, and the opposition Nemunas Dawn party criticises delayed buys, purchases outside public procurement and advance payments for kit that arrives in a year or two. [75]",
+    "The argument for a land headquarters is that Lithuania shows how fast money can be committed and how slowly it turns into delivered capability. The binding limit is no longer the budget line but absorption: contracts, infrastructure and training ground for a German brigade and a national division at the same time. Plans that count Lithuanian or German forces in the Baltic by date should carry that delivery risk, not the appropriation, as the planning factor. [75, 76]"
+   ],
+   "table": {
+    "head": [
+     "Measure",
+     "Figure",
+     "Source"
+    ],
+    "rows": [
+     [
+      "Defence, 2027 draft",
+      "More than €4.8 billion, 5% of GDP",
+      "[73]"
+     ],
+     [
+      "Defence, 2026",
+      "5.38% of GDP",
+      "[73]"
+     ],
+     [
+      "NATO estimate, 2025",
+      "4.00% of GDP",
+      "[74]"
+     ],
+     [
+      "Military personnel, 2014 and 2025e",
+      "8,600 and 19,500",
+      "[74]"
+     ],
+     [
+      "Equipment share, 2014 and 2025e",
+      "14.06% and 45.84%",
+      "[74]"
+     ],
+     [
+      "State Defence Fund, 2026",
+      "€710.5 million (€504.7 million for the division)",
+      "[77]"
+     ],
+     [
+      "Appropriations spent by early October",
+      "43.92%",
+      "[75]"
+     ],
+     [
+      "Deficit, 2027 projection",
+      "3.8% of GDP",
+      "[73]"
+     ]
+    ]
+   }
+  },
+  "longread": {
+   "title": "Japan's Most Dangerous Military Constraint Is Time",
+   "outlet": "War on the Rocks",
+   "url": "https://warontherocks.com/japans-most-dangerous-military-constraint-is-time/",
+   "why": "A Marine planner at US Forces Japan argues that legal and administrative access timelines, not forces, may decide whether defence of the southern islands works, the same decision-time problem that governs reinforcement of NATO's eastern flank."
+  }
+ },
+ "money": {
+  "asof": "Dow: Thu 12 Nov close from FRED; US Treasury yields: Thu 12 Nov; other indices, Brent, TTF and gold: Wed 11 Nov closes (Yahoo Finance refused scripted requests this morning); USD/EUR: ECB fix of Thu 12 Nov; year-to-date bars to the 11 Nov close",
+  "cards": [
+   [
+    "S&P 500",
+    "7,619.38",
+    "+1.31%",
+    "up",
+    "Wed 11 Nov close",
+    78,
+    "spx"
+   ],
+   [
+    "Dow",
+    "52,297.09",
+    "−0.36%",
+    "down",
+    "Thu 12 Nov close (FRED)",
+    79,
+    "dji"
+   ],
+   [
+    "Nasdaq",
+    "25,466.19",
+    "+1.60%",
+    "up",
+    "Wed 11 Nov close",
+    78,
+    "ndx"
+   ],
+   [
+    "Russell 2000",
+    "2,846.26",
+    "+0.88%",
+    "up",
+    "Wed 11 Nov close",
+    78,
+    "rut"
+   ],
+   [
+    "AEX",
+    "1,145.14",
+    "+1.12%",
+    "up",
+    "Wed 11 Nov close",
+    78,
+    "aex"
+   ],
+   [
+    "Stoxx 600",
+    "663.05",
+    "+0.72%",
+    "up",
+    "Wed 11 Nov close",
+    78,
+    "stoxx"
+   ],
+   [
+    "DAX",
+    "26,662.77",
+    "+1.20%",
+    "up",
+    "Wed 11 Nov close",
+    78,
+    "dax"
+   ],
+   [
+    "VIX",
+    "17.49",
+    "−10.12%",
+    "down",
+    "Wed 11 Nov close",
+    78,
+    "vix"
+   ],
+   [
+    "Brent",
+    "$91.50",
+    "+0.01%",
+    "flat",
+    "Front month, Wed 11 Nov",
+    78,
+    "brent"
+   ],
+   [
+    "Dutch TTF gas",
+    "€87.22",
+    "+2.94%",
+    "up",
+    "Front month, Wed 11 Nov",
+    78,
+    "ttf"
+   ],
+   [
+    "Gold",
+    "$3,983.90",
+    "−1.15%",
+    "down",
+    "Front month, Wed 11 Nov",
+    78,
+    "gold"
+   ],
+   [
+    "US 10-year",
+    "5.10%",
+    "+12 bp",
+    "up",
+    "Treasury par curve, Thu 12 Nov; first reading since Veterans Day",
+    80,
+    "us10y"
+   ],
+   [
+    "USD/EUR",
+    "0.9024",
+    "+0.42%",
+    "up",
+    "euros per dollar",
+    81
+   ]
+  ],
+  "ytd": [
+   [
+    "AEX",
+    20.4
+   ],
+   [
+    "Russell 2000",
+    14.7
+   ],
+   [
+    "Stoxx 600",
+    11.9
+   ],
+   [
+    "S&P 500",
+    11.3
+   ],
+   [
+    "Nasdaq",
+    9.6
+   ],
+   [
+    "Dow",
+    9.2
+   ],
+   [
+    "DAX",
+    8.9
+   ]
+  ],
+  "ytdSrc": 78,
+  "driver": "Thursday's picture is partial: the Dow fell 0.36% to 52,297.09, and the 10-year Treasury yield rose 12 basis points to 5.10% from Tuesday's 4.98% in the first reading after the Veterans Day closure, with the 2-year at 4.86% and the 30-year at 5.43%. [79, 80] Other Thursday closes were not available because Yahoo Finance refused scripted requests, so the cards show Wednesday for them. [78] The ECB fixed the euro at 1.1081 dollars, down from 1.1127, so USD/EUR rose to 0.9024. [81] Nvidia's board accepted Jensen Huang's resignation on the night of 11 Nov and named finance chief Colette Kress interim chief executive, The Verge reported. [48]",
+  "rates": [
+   [
+    "Fed funds",
+    "3.75–4.00%",
+    "Held 28 Oct; next decision 9 Dec. [82, 83]"
+   ],
+   [
+    "ECB deposit rate",
+    "2.50%",
+    "Held 29 Oct; next decision 17 Dec. [84]"
+   ],
+   [
+    "US 2-year",
+    "4.86%",
+    "Thu 12 Nov, from 4.73% on Tuesday. [80]"
+   ],
+   [
+    "US 10-year",
+    "5.10%",
+    "Thu 12 Nov; 30-year 5.43%. [80]"
+   ],
+   [
+    "USD/EUR",
+    "0.9024",
+    "ECB fix of Thu 12 Nov, 1.1081 dollars per euro, from 1.1127. [81]"
+   ],
+   [
+    "Euro 95, Netherlands",
+    "€2.196 per litre",
+    "CBS daily average, 9 Nov; EU bulletin €2.196 the same day. [85, 86]"
+   ]
+  ],
+  "week": [
+   "**Wed 11:** S&P 500 +1.31%, AEX +1.12%; Brent flat at $91.50. [78]",
+   "**Thu 12:** Dow −0.36%; 10-year yield 5.10%; ECB fix 1.1081; Nvidia names an interim CEO. [79, 80, 81, 48]",
+   "**Fri 13:** Jetten's coalition talks in The Hague. [5]",
+   "**Wed 9 Dec:** Fed decision; **Thu 17 Dec:** ECB decision. [83, 84]"
+  ],
+  "fy": "Thursday's ECB fix of 1.1081 puts USD/EUR at 0.9024: $1,000 of pay buys €902.45, €3.73 more than at Wednesday's fix and the best rate of the week so far. [81]",
+  "fuel": {
+   "asof": "Mon 9 Nov, bulletin of 12 Nov",
+   "rows": [
+    [
+     "Netherlands",
+     2.196,
+     2.361
+    ],
+    [
+     "Belgium",
+     1.844,
+     2.357
+    ],
+    [
+     "Germany",
+     2.067,
+     2.253
+    ]
+   ],
+   "note": "Prices with taxes, € per litre. Dutch Euro 95 fell 8.8 cents and diesel 10.7 cents on the week; Belgium's Euro 95 fell 7.0 cents and Germany's 6.1 cents, so the German border is 12.9 cents cheaper than a Dutch pump for petrol. [86]",
+   "src": 86,
+   "weekly": "Fridays"
+  }
+ },
+ "nl": {
+  "items": [
+   {
+    "h": "Tax plan passes with 76 seats as the VVD votes against",
+    "tag": "Politics",
+    "conf": "high",
+    "badge": "UPDATED",
+    "body": "The Tweede Kamer passed the 2027 tax plan late on 12 Nov with the narrowest possible majority, 76 seats, built on the left and without the VVD. [5] The VVD voted against after a Pro and Volt amendment, agreed with D66 and CDA, that raises tax on people with large assets. [5] D66 and CDA won Denk and the Partij voor de Dieren shortly before the vote, the latter with a higher tax on private jets and a promise that a rise in train fares is off the table. [5] VVD parliamentary leader Ruben Brekelmans called the day “ontluisterend” (“dismal”). [5]",
+    "sw": "The VVD's Finance Minister Eelco Heinen must now carry out a plan his party voted against, and the 2027 defence budget passes through the same strained coalition.",
+    "fy": "Nothing changes in your pay; the Eerste Kamer still has to vote.",
+    "links": [
+     "thread:nl-tax-plan-2027"
+    ]
+   },
+   {
+    "h": "Jetten meets Yeşilgöz and Van den Brink to save the coalition",
+    "tag": "Politics",
+    "conf": "high",
+    "badge": "UPDATED",
+    "body": "NOS called the coalition's survival “zeer de vraag” (“very much in question”) after the vote. [5] Prime Minister Rob Jetten (D66) said he will “alles aan doen” (“do everything”) to hold the coalition together, hopes for “een doorstart” (“a fresh start”) and meets deputy prime ministers Dilan Yeşilgöz (VVD) and Van den Brink (CDA) this morning. [5] A broad group of civil-society organisations asked the cabinet to solve problems rather than cause a crisis. [87]",
+    "sw": "Yeşilgöz is also Defence Minister, so a VVD exit would put the ministry that runs Dutch host-nation support in caretaker hands.",
+    "fy": "Check the news at midday for the result of the talks.",
+    "links": [
+     "thread:nl-tax-plan-2027"
+    ]
+   },
+   {
+    "h": "Health premiums for 2027 rise by up to €17 a month",
+    "tag": "Daily life",
+    "conf": "high",
+    "badge": "NEW",
+    "body": "Dutch health insurers published their 2027 basic-insurance premiums before midnight on 12 Nov. [88] Zilveren Kruis's cheapest policy rises €5.50 to €159.45 a month, Menzis goes to €165.75 (+€9.50), VGZ's Ruime Keuze to €170.75 (+€16.50) and CZ's basic policy to €177.25, more than €17 up. [88]",
+    "sw": "Premiums feed Dutch wage demands and the cost of living for local staff at NATO sites.",
+    "fy": "Only relevant if anyone in the household holds a Dutch basic policy; TRICARE families are not affected.",
+    "links": []
+   }
+  ],
+  "temp": "Hot: the coalition voted split on its own tax plan, and NOS calls its survival “zeer de vraag” (“very much in question”). [5]",
+  "lees": {
+   "nl": "De zorgpremie wordt komend jaar een stuk duurder.",
+   "gloss": [
+    [
+     "de zorgpremie",
+     "the health insurance premium"
+    ],
+    [
+     "komend jaar",
+     "next year"
+    ],
+    [
+     "een stuk",
+     "a good deal (here: much)"
+    ],
+    [
+     "duurder",
+     "more expensive"
+    ]
+   ],
+   "src": 88
+  },
+  "phrase": {
+   "w": "de doorstart",
+   "en": "a fresh start, a restart (of a firm or a coalition)",
+   "lvl": "B1",
+   "note": "Jetten said he hopes for “een doorstart” of the coalition after the tax-plan vote. [5]"
+  }
+ },
+ "makkelijk": {
+  "niveau": "B1",
+  "items": [
+   {
+    "kop": "Europa mag meepraten over vrede",
+    "nl": "Amerikaanse onderhandelaars spraken met Poetin in Moskou. Poetin vindt het goed dat Europa bij het volgende gesprek is. Er is nog geen datum.",
+    "en": "American negotiators talked with Putin in Moscow. Putin agrees that Europe will be at the next talks. There is no date yet.",
+    "woorden": [
+     [
+      "de onderhandelaar",
+      "the negotiator"
+     ],
+     [
+      "meepraten",
+      "to take part in the talks"
+     ],
+     [
+      "het gesprek",
+      "the talk, the meeting"
+     ]
+    ],
+    "src": 7,
+    "to": "world",
+    "badge": "NEW"
+   },
+   {
+    "kop": "Iran zegt dat het een radar heeft aangevallen",
+    "nl": "Iran zegt dat het een Amerikaanse radar in Bahrein heeft aangevallen. Amerika heeft nog niet gereageerd. Iran wil wraak voor een aanval op een zendmast.",
+    "en": "Iran says it attacked an American radar in Bahrain. America has not responded yet. Iran wants revenge for an attack on a transmitter mast.",
+    "woorden": [
+     [
+      "aanvallen",
+      "to attack"
+     ],
+     [
+      "reageren",
+      "to respond"
+     ],
+     [
+      "de zendmast",
+      "the transmitter mast"
+     ]
+    ],
+    "src": 9,
+    "to": "world",
+    "badge": "NEW"
+   },
+   {
+    "kop": "Belastingplan aangenomen zonder VVD",
+    "nl": "De Tweede Kamer heeft het belastingplan aangenomen. De VVD stemde tegen. Vandaag praat premier Jetten met de VVD en het CDA. Hij wil de coalitie redden.",
+    "en": "The Tweede Kamer passed the tax plan. The VVD voted against. Today Prime Minister Jetten talks with the VVD and the CDA. He wants to save the coalition.",
+    "woorden": [
+     [
+      "aannemen",
+      "to pass (a law)"
+     ],
+     [
+      "tegenstemmen",
+      "to vote against"
+     ],
+     [
+      "redden",
+      "to save"
+     ]
+    ],
+    "src": 5,
+    "to": "nl",
+    "badge": "NEW"
+   },
+   {
+    "kop": "Zorgverzekering wordt duurder",
+    "nl": "De zorgverzekering wordt volgend jaar duurder. Bij sommige verzekeraars stijgt de premie met 17 euro per maand. Je kunt nog overstappen.",
+    "en": "Health insurance gets more expensive next year. At some insurers the premium rises by 17 euros a month. You can still switch.",
+    "woorden": [
+     [
+      "de verzekeraar",
+      "the insurer"
+     ],
+     [
+      "stijgen",
+      "to rise"
+     ],
+     [
+      "overstappen",
+      "to switch"
+     ]
+    ],
+    "src": 88,
+    "to": "nl",
+    "badge": "NEW"
+   },
+   {
+    "kop": "Duitsland bouwt sneller voor het leger",
+    "nl": "Het Duitse parlement heeft een nieuwe wet aangenomen. Het leger mag nu sneller bouwen. Sommige regels voor de natuur gelden dan niet.",
+    "en": "The German parliament passed a new law. The army may now build faster. Some rules for nature then do not apply.",
+    "woorden": [
+     [
+      "de wet",
+      "the law"
+     ],
+     [
+      "het leger",
+      "the army"
+     ],
+     [
+      "gelden",
+      "to apply"
+     ]
+    ],
+    "src": 13,
+    "to": "countries",
+    "badge": "NEW"
+   },
+   {
+    "kop": "Sinterklaas komt dit weekend",
+    "nl": "Zaterdag komt Sinterklaas aan in Maastricht. Zondag is hij in Heerlen. Zaterdag blijft het droog, zondag gaat het regenen.",
+    "en": "On Saturday Sinterklaas arrives in Maastricht. On Sunday he is in Heerlen. Saturday stays dry, on Sunday it will rain.",
+    "woorden": [
+     [
+      "aankomen",
+      "to arrive"
+     ],
+     [
+      "droog",
+      "dry"
+     ],
+     [
+      "regenen",
+      "to rain"
+     ]
+    ],
+    "src": 89,
+    "to": "offduty",
+    "badge": "NEW"
+   }
+  ]
+ },
+ "afnorth": {
+  "intro": "From the AFNORTH 2026–2027 calendars (US Middle/High School and whole school) and the school and PTA mail; rows for the next 60 days, the next 14 marked; middle-school-only items left out. [4, 90]",
+  "rows": [
+   [
+    "13 Nov",
+    "Evacuation drill in the morning: no sign-in or sign-out",
+    "Students walk to the ICC; dry, 1–9 °C",
+    "soon"
+   ],
+   [
+    "14–21 Nov",
+    "PTA spirit-wear pre-order window",
+    "Givebacks shop; delivery before the holiday break",
+    "soon"
+   ],
+   [
+    "16 Nov",
+    "No school, staff and students",
+    "Childcare",
+    "soon"
+   ],
+   [
+    "21 Nov",
+    "AFNorth Christmas Fayre, 11:00–14:00",
+    "PTA table; the family calendar has it from 10:00",
+    "soon"
+   ],
+   [
+    "26–27 Nov",
+    "Thanksgiving: school days",
+    "No closure on the school calendar; 26 Nov is a US pass day at the HQ",
+    "soon"
+   ],
+   [
+    "7 Dec",
+    "No school (US school), Q2 training day",
+    "Childcare",
+    ""
+   ],
+   [
+    "18 Dec – 1 Jan",
+    "Winter break (US school from 18 Dec; whole school from 21 Dec)",
+    "Back Mon 4 Jan",
+    ""
+   ]
+  ],
+  "note": "No new school mail since 11 Nov. [4]"
+ },
+ "offduty": {
+  "items": [
+   {
+    "h": "Kerststad Valkenburg's cave Christmas markets open today",
+    "tag": "NL",
+    "badge": "NEW",
+    "body": "The Christmas markets in Valkenburg's Gemeentegrot and Fluweelengrot open on 13 Nov and run to 3 Jan, with weekend entry by booked time slot. [91]",
+    "fy": "Book a Saturday slot; Sunday is wet. About 20 minutes away.",
+    "links": [
+     "event:kerststad-valkenburg-2026"
+    ]
+   },
+   {
+    "h": "Stoffen Spektakel brings about 55 fabric and haberdashery stands to Leuven on Sunday",
+    "tag": "BE",
+    "badge": "NEW",
+    "body": "The fabric fair fills the Brabanthal in Leuven on Sun 15 Nov with about 55 stands; entry is free, with optional online registration. [92]",
+    "fy": "A rainy-day trip for a sewer, about 75 minutes by car.",
+    "links": [
+     "event:stoffen-spektakel-leuven-2026"
+    ]
+   },
+   {
+    "h": "Geek Village fills Hasselt's Trixxo Arena with cosplay and pop culture this weekend",
+    "tag": "BE",
+    "badge": "NEW",
+    "body": "Geek Village: The Con runs on 14–15 Nov at the Trixxo Arena in Hasselt; day tickets for 13 and over were €14 until 12 Nov, and one area is 18+. [93]",
+    "fy": "A teenager's pick; about 45 minutes away, and Winterland's ice rink is in the same town.",
+    "links": [
+     "event:geek-village-hasselt-2026",
+     "event:winterland-hasselt-2026"
+    ]
+   }
+  ],
+  "weekend": {
+   "rows": [
+    [
+     "Sat",
+     "Sinterklaas arrives in Maastricht",
+     "Maastricht city centre",
+     "Free, the big local arrival on a dry day",
+     "Free"
+    ],
+    [
+     "Sat",
+     "GLOW light-art walk, last night",
+     "Eindhoven, from Centraal",
+     "About 5 km, 18:30–23:00",
+     "Free"
+    ],
+    [
+     "Sat–Sun",
+     "Geek Village: The Con",
+     "Hasselt, Trixxo Arena",
+     "Cosplay and pop culture for a teenager",
+     "Ticket"
+    ],
+    [
+     "Sat–Sun",
+     "Tischlein deck dich!, family play in German",
+     "Theater Aachen",
+     "German-language theatre, ages 6+",
+     "Ticket"
+    ],
+    [
+     "Sun",
+     "Sinterklaas arrives in Heerlen",
+     "Heerlen, Bongerd",
+     "Ten minutes away; time not yet published [89]",
+     "Free"
+    ],
+    [
+     "Sun",
+     "Stoffen Spektakel fabric fair",
+     "Leuven, Brabanthal",
+     "About 55 fabric and haberdashery stands",
+     "Free"
+    ]
+   ],
+   "gem": "Phantasialand's Wintertraum season opens on Saturday, with the opening offer from €30 on sale until 16 Nov. [94]",
+   "family": "Saturday is the dry day: Sinterklaas in Maastricht in the morning and the Valkenburg caves in the afternoon, then Sunday indoors in Leuven or Aachen. [6, 91, 95]"
+  },
+  "weather": "Saturday overcast and dry, 10 °C with a light south-east wind; Sunday 12 °C with rain likely (66%) and a fresh south-south-west wind, force 5. [1]"
+ },
+ "hockey": {
+  "canes": {
+   "result": {
+    "date": "2026-11-12",
+    "home": "SEA",
+    "hs": 1,
+    "away": "CAR",
+    "as": 4,
+    "ot": false,
+    "venue": "Veikkaus Arena, Helsinki",
+    "lines": [
+     "Sebastian Aho scored twice, once on the power play, and Nikolaj Ehlers, Juuso Välimäki and Aho took the three stars. [96]",
+     "Carolina led 2–0 after the first on goals 66 seconds apart by Ehlers and Aho; Välimäki, playing in his home country, made it 3–0 in the second. [96]",
+     "Frédérick Gaudreau spoiled the shutout at 13:15 of the third; Carolina outshot Seattle 30–13. [96]"
+    ],
+    "src": 96
+   },
+   "noGame": "",
+   "next": [
+    [
+     "Sat 14 Nov",
+     "v Seattle, Helsinki",
+     "13:00 ET",
+     "Sat 19:00 CET",
+     true
+    ],
+    [
+     "Thu 19 Nov",
+     "vs Montreal",
+     "19:00 ET",
+     "Fri 01:00 CET",
+     false
+    ]
+   ],
+   "nextSrc": 2
+  },
+  "scores": [
+   [
+    "CAR",
+    4,
+    "SEA",
+    1,
+    ""
+   ],
+   [
+    "MTL",
+    5,
+    "BOS",
+    2,
+    ""
+   ],
+   [
+    "MIN",
+    5,
+    "TOR",
+    2,
+    ""
+   ],
+   [
+    "COL",
+    3,
+    "OTT",
+    4,
+    "OT"
+   ],
+   [
+    "WSH",
+    2,
+    "NJD",
+    5,
+    ""
+   ],
+   [
+    "TBL",
+    3,
+    "CBJ",
+    1,
+    ""
+   ],
+   [
+    "DET",
+    4,
+    "FLA",
+    5,
+    ""
+   ],
+   [
+    "BUF",
+    2,
+    "CHI",
+    3,
+    "OT"
+   ],
+   [
+    "WPG",
+    8,
+    "DAL",
+    3,
+    ""
+   ],
+   [
+    "STL",
+    0,
+    "UTA",
+    0,
+    "pending"
+   ],
+   [
+    "NYI",
+    3,
+    "LAK",
+    1,
+    "pending"
+   ]
+  ],
+  "scoresDate": "Thu 12 Nov",
+  "scoresNote": "Away team listed first; games marked pending were still being played when the run read the NHL API. [97]",
+  "scoresSrc": 97,
+  "news": [
+   {
+    "h": "Hurricanes beat Seattle 4–1 in Helsinki to reach 32 points",
+    "badge": "NEW",
+    "conf": "high",
+    "links": [],
+    "body": "Carolina won the first of two games at Veikkaus Arena 4–1 on 12 Nov to go to 15-3-2 and 32 points, first in the Metropolitan, four clear of New Jersey. [96, 2]"
+   },
+   {
+    "h": "Välimäki scores at home as the Finns star in Helsinki",
+    "badge": "NEW",
+    "conf": "high",
+    "links": [],
+    "body": "Defenceman Juuso Välimäki, one of two Finns on the roster with Jesperi Kotkaniemi, scored Carolina's third goal and was named second star. [96] The teams meet again on Saturday at 19:00 CET. [2]"
+   }
+  ]
+ },
+ "sports": {
+  "saints": [
+   {
+    "h": "Saints host Carolina on Sunday at 19:00 CET",
+    "badge": "NEW",
+    "conf": "high",
+    "body": "The Saints, 3-5, host the Carolina Panthers at the Caesars Superdome on Sun 15 Nov at 12:00 CT, 19:00 CET. [98]",
+    "fy": "Kick-off 19:00 CET Sunday.",
+    "links": []
+   }
+  ],
+  "cardinals": [],
+  "football": []
+ },
+ "planner": {
+  "events": [
+   [
+    "2026-11-13",
+    "nl",
+    "Jetten meets Yeşilgöz and Van den Brink on the coalition",
+    "The Hague",
+    "Morning, after the tax-plan vote",
+    "Whether the VVD stays in the cabinet",
+    true
+   ],
+   [
+    "2026-11-13",
+    "nl",
+    "Result of the FNV vote on the regional bus and train offer",
+    "Parkstad",
+    "CNV members vote until 16 Nov",
+    "Strikes from 16 Nov only if both unions reject"
+   ],
+   [
+    "2026-11-14",
+    "nl",
+    "Sinterklaas in Schinveld",
+    "Schinveld",
+    "De Sjinskoel, activities from 13:45",
+    ""
+   ],
+   [
+    "2026-11-14",
+    "nl",
+    "No trains Roermond–Sittard (to 16 Nov)",
+    "Sittard",
+    "Sat 05:00 – Mon 03:00",
+    "Replacement buses"
+   ],
+   [
+    "2026-11-14",
+    "nl",
+    "Roda JC v FC Volendam",
+    "Kerkrade",
+    "Keuken Kampioen Divisie, 20:00",
+    ""
+   ],
+   [
+    "2026-11-15",
+    "pro",
+    "Gagauzia elections, Moldova",
+    "Comrat",
+    "Governor and People's Assembly",
+    ""
+   ],
+   [
+    "2026-11-20",
+    "nl",
+    "Roda JC at TOP Oss",
+    "Oss",
+    "Keuken Kampioen Divisie, 20:00",
+    ""
+   ],
+   [
+    "2026-11-20",
+    "us",
+    "Senate vote on H.Con.Res. 93 (Iran war powers) due",
+    "Washington",
+    "No later than 20 Nov",
+    ""
+   ],
+   [
+    "2026-11-22",
+    "nl",
+    "Sinterklaas in Schaesberg",
+    "Landgraaf",
+    "Time not yet published",
+    ""
+   ]
+  ],
+  "season": {
+   "title": "Christmas market planner",
+   "intro": "Dates from organisers' or tourism-office pages. Drive times from Hoensbroek are approximate. Dotted red line = today; grey line = 25 Dec.",
+   "from": "2026-11-02",
+   "to": "2027-01-05",
+   "ticks": [
+    "2026-11-02",
+    "2026-11-16",
+    "2026-12-01",
+    "2026-12-15",
+    "2027-01-01"
+   ],
+   "rows": [
+    {
+     "name": "Valkenburg caves",
+     "sub": "NL · ~20 min",
+     "color": "mkt",
+     "segs": [
+      [
+       "2026-11-13",
+       "2027-01-03"
+      ]
+     ]
+    },
+    {
+     "name": "Köln Dom",
+     "sub": "DE · ~1 h 5 min",
+     "color": "de",
+     "segs": [
+      [
+       "2026-11-16",
+       "2026-11-21"
+      ],
+      [
+       "2026-11-23",
+       "2026-12-23"
+      ]
+     ]
+    },
+    {
+     "name": "Aachen",
+     "sub": "DE · ~25 min",
+     "color": "de",
+     "segs": [
+      [
+       "2026-11-20",
+       "2026-12-23"
+      ]
+     ]
+    },
+    {
+     "name": "Magisch Maastricht",
+     "sub": "NL · ~30 min",
+     "color": "nl",
+     "segs": [
+      [
+       "2026-11-27",
+       "2026-12-27"
+      ]
+     ]
+    },
+    {
+     "name": "Liège Village de Noël",
+     "sub": "BE · ~45 min",
+     "color": "be",
+     "segs": [
+      [
+       "2026-11-27",
+       "2026-12-30"
+      ]
+     ]
+    },
+    {
+     "name": "Monschau",
+     "sub": "DE · ~50 min · Fri–Sun",
+     "color": "de",
+     "segs": [
+      [
+       "2026-11-27",
+       "2026-11-29"
+      ],
+      [
+       "2026-12-04",
+       "2026-12-06"
+      ],
+      [
+       "2026-12-11",
+       "2026-12-13"
+      ],
+      [
+       "2026-12-18",
+       "2026-12-20"
+      ]
+     ]
+    }
+   ],
+   "notes": [
+    "**Köln Dom:** closed Sun 22 Nov (Totensonntag). Sat 10:00–22:00. [99]",
+    "**Aachen:** Sun 22 Nov open 18:00–21:00 only; long day Sat 12 Dec until 22:00. [100]",
+    "**Monschau:** four weekends only (Fri–Sat 11:00–21:00, Sun to 20:00). [101]",
+    "**Magisch Maastricht:** free entry, covered ice rink on the Vrijthof. [102] **Liège:** Village de Noël 27 Nov – 30 Dec. [103]"
+   ]
+  },
+  "culture": null
+ },
+ "sources": [
+  [
+   1,
+   "Seven-day forecast for Heerlen (50.89 N, 5.98 E)",
+   "Open-Meteo",
+   "https://open-meteo.com/en/docs",
+   2
+  ],
+  [
+   2,
+   "Hockey: Hurricanes club schedule",
+   "NHL API",
+   "https://api-web.nhle.com/v1/club-schedule-season/CAR/20262027",
+   2
+  ],
+  [
+   3,
+   "Officiële bekendmakingen, gemeente Heerlen: Heerlerweg, Hoensbroek, weigering omgevingsvergunning",
+   "overheid.nl",
+   "https://zoek.officielebekendmakingen.nl/gmb-2026-516416.html",
+   1
+  ],
+  [
+   4,
+   "AFNORTH US Middle/High School 2026–27 calendar",
+   "AFNORTH International School / DoDEA",
+   "https://afnorth-is.com/wp-content/uploads/2026/08/AFNORTH-US-MHS-2026-27-Calendar-2.pdf",
+   1
+  ],
+  [
+   5,
+   "Belastingplan aangenomen, en nu is de vraag wat de VVD gaat doen",
+   "NOS",
+   "https://nos.nl/l/2639225",
+   3
+  ],
+  [
+   6,
+   "Sinterklaasintochten 2026",
+   "Kidsproof Zuid-Limburg",
+   "https://www.kidsproof.nl/zuid-limburg/blog/sinterklaasintochten-blog-zuid-limburg-tip/",
+   4
+  ],
+  [
+   7,
+   "Putin lets Europe join Ukraine peace talks, as Kyiv says Starshield disrupted again (Reuters)",
+   "Defense News",
+   "https://www.defensenews.com/global/2026/11/12/putin-lets-europe-join-ukraine-peace-talks-as-kyiv-says-starshield-disrupted-again/",
+   2
+  ],
+  [
+   8,
+   "Witkoff, Kushner hope Europe will join next round of peace talks after meeting with Putin",
+   "Ukrinform",
+   "https://www.ukrinform.net/rubric-polytics/4184078-witkoff-kushner-hope-europe-will-join-next-round-of-peace-talks-after-meeting-with-putin.html",
+   2
+  ],
+  [
+   9,
+   "Iran says it targeted US radar site in Bahrain (with Reuters)",
+   "Al Jazeera",
+   "https://www.aljazeera.com/news/2026/11/13/iran-says-it-struck-us-radar-site-in-bahrain",
+   3
+  ],
+  [
+   10,
+   "Pentagon 'greenlit' permanent presence of US troops in Poland, official says",
+   "Defense News",
+   "https://www.defensenews.com/global/europe/2026/11/12/pentagon-greenlit-permanent-presence-of-us-troops-in-poland-official-says/",
+   3
+  ],
+  [
+   11,
+   "Finland says it detects strike on Russian warship in Baltic Sea (Reuters)",
+   "Defense News",
+   "https://www.defensenews.com/global/europe/2026/11/12/finland-says-it-detects-strike-on-russian-warship-in-baltic-sea/",
+   2
+  ],
+  [
+   12,
+   "Finland detects strike on Russian warship as Zelenskyy meets US envoys",
+   "Al Jazeera",
+   "https://www.aljazeera.com/news/2026/11/13/finland-detects-strike-on-russian-warship-as-zelenskyy-meets-us-envoys",
+   3
+  ],
+  [
+   13,
+   "Beschleunigung von Infrastrukturvorhaben der Bundeswehr",
+   "Deutscher Bundestag",
+   "https://www.bundestag.de/dokumente/textarchiv/2026/kw46-de-bundeswehr-infrastruktur-1231504",
+   1
+  ],
+  [
+   14,
+   "Unequal Trust, Shared Interests (policy brief, 16 pp)",
+   "Bertelsmann Stiftung",
+   "https://www.bertelsmann-stiftung.de/fileadmin/files/Projekte/eupinions/ST-EZ_Policy_Brief_Unequal_Trust_Shared_Interests_2026.pdf",
+   1
+  ],
+  [
+   15,
+   "Regional security dominates European talks in Dublin amid hybrid attacks",
+   "Al Jazeera (with AP and DPA)",
+   "https://www.aljazeera.com/news/2026/11/12/regional-security-dominates-european-talks-in-dublin-amid-hybrid-attacks",
+   3
+  ],
+  [
+   16,
+   "Russia attacks Kyiv with ballistic missiles hours after peace talks end (live page)",
+   "The Kyiv Independent",
+   "https://kyivindependent.com/russia-attacks-kyiv-with-ballistic-missiles-hours-after-peace-talks-end/",
+   3
+  ],
+  [
+   17,
+   "Air defense neutralizes 124 Russian drones, two S8000 Banderol/Dan-T missiles on Nov 12",
+   "Ukrinform",
+   "https://www.ukrinform.net/rubric-ato/4184063-air-defense-neutralizes-124-russian-drones-two-s8000-banderoldant-missiles-on-nov-12.html",
+   2
+  ],
+  [
+   18,
+   "Ukrinform war rubric (12 Nov items, Kramatorsk)",
+   "Ukrinform",
+   "https://www.ukrinform.net/rubric-ato",
+   2
+  ],
+  [
+   19,
+   "Russian losses",
+   "index.minfin.com.ua",
+   "https://index.minfin.com.ua/en/russian-invading/casualties/",
+   2
+  ],
+  [
+   20,
+   "Iran war live: Riyadh, China discuss Houthis as group claims Aramco attacks (live page)",
+   "Al Jazeera",
+   "https://www.aljazeera.com/news/liveblog/2026/11/13/iran-war-live-riyadh-china-discuss-houthis-as-group-claims-aramco-attacks",
+   3
+  ],
+  [
+   21,
+   "Iran warns of expanded retaliation as Israel reportedly readies to attack",
+   "Al Jazeera (with AP and Reuters)",
+   "https://www.aljazeera.com/news/2026/11/12/iran-warns-of-expanded-retaliation-as-israel-reportedly-readies-to-attack",
+   2
+  ],
+  [
+   22,
+   "Putin wants to destroy life in Kyiv and other major Ukrainian cities – Zelensky",
+   "Ukrinform",
+   "https://www.ukrinform.net/rubric-ato/4183885-putin-wants-to-destroy-life-in-kyiv-and-other-major-ukrainian-cities-zelensky.html",
+   2
+  ],
+  [
+   23,
+   "EU's Kallas wants next week's UK-EU summit to kick-start 'small steps' to rejoin",
+   "EUobserver",
+   "https://euobserver.com/248679/eus-kallas-wants-next-weeks-ukeu-summit-to-kickstart-small-steps-to-rejoin/",
+   3
+  ],
+  [
+   24,
+   "First talks about EU envoy on Ukraine war to dominate Dublin summits",
+   "EUobserver",
+   "https://euobserver.com/248409/first-talks-about-eu-envoy-on-ukraine-war-to-dominate-dublin-summits/",
+   3
+  ],
+  [
+   25,
+   "Russia-Ukraine talks in Abu Dhabi end with prisoner exchange agreement",
+   "Al Jazeera (with AP and Reuters)",
+   "https://www.aljazeera.com/news/2026/11/11/russia-ukraine-talks-in-abu-dhabi-end-with-prisoner-exchange-agreement",
+   2
+  ],
+  [
+   26,
+   "Russian attacks kill 9, injure 39 across Ukraine over past day as 2 Russian cruise missiles violate Moldovan airspace",
+   "The Kyiv Independent",
+   "https://kyivindependent.com/russian-attacks-kill-9-injure-39-across-ukraine-over-past-day-as-2-russian-cruise-missiles-violate-moldovan-airspace/",
+   3
+  ],
+  [
+   27,
+   "Iran's Revolutionary Guards say 2 oil tankers hit mines, caught fire near Strait of Hormuz",
+   "Anadolu Agency",
+   "https://www.aa.com.tr/en/middle-east/iran-s-revolutionary-guards-say-2-oil-tankers-hit-mines-caught-fire-near-strait-of-hormuz/4115596",
+   3
+  ],
+  [
+   28,
+   "Israeli president tasks Eisenkot with forming new government",
+   "Anadolu Agency",
+   "https://www.aa.com.tr/en/middle-east/israeli-president-tasks-eisenkot-with-forming-new-government/4116158",
+   3
+  ],
+  [
+   29,
+   "US election results could be positive for Lebanon, Hezbollah chief says",
+   "Al Jazeera",
+   "https://www.aljazeera.com/news/2026/11/12/us-election-results-could-be-positive-for-lebanon-hezbollah-chief-says",
+   3
+  ],
+  [
+   30,
+   "PLA activity report, 7 Nov",
+   "Taiwan Ministry of National Defense",
+   "https://www.mnd.gov.tw/en/News/PLAAct/88166",
+   1
+  ],
+  [
+   31,
+   "PLA activity report, 11 Nov",
+   "Taiwan Ministry of National Defense",
+   "https://www.mnd.gov.tw/en/News/PLAAct/88195",
+   1
+  ],
+  [
+   32,
+   "Kim Yo-jong statement on Guterres call (10 Nov)",
+   "Yonhap",
+   "https://en.yna.co.kr/view/AEN20261110007400315",
+   3
+  ],
+  [
+   33,
+   "After crossing Arctic route from China, two heavy-lift carriers get stuck near Norwegian air base",
+   "The Barents Observer",
+   "https://www.thebarentsobserver.com/news/after-crossing-arctic-route-from-china-two-heavy-lift-carriers-get-stuck-near-norwegian-air-base/461490",
+   3
+  ],
+  [
+   34,
+   "UK and JEF Allies Sign Landmark Northern Navies Initiative Aboard HMS Prince of Wales",
+   "Naval News",
+   "https://www.navalnews.com/naval-news/2026/11/uk-and-jef-allies-sign-landmark-northern-navies-initiative-aboard-hms-prince-of-wales/",
+   3
+  ],
+  [
+   35,
+   "Hunger crisis deepens in DR Congo as 28.8M face acute food insecurity: WFP",
+   "Anadolu Agency",
+   "https://www.aa.com.tr/en/africa/hunger-crisis-deepens-in-dr-congo-as-288m-face-acute-food-insecurity-wfp/4123541",
+   3
+  ],
+  [
+   36,
+   "Elections to People's Assembly of Gagauzia set for 15 November",
+   "Moldpres",
+   "https://moldpres.md/eng/politics/elections-to-people-s-assembly-of-gagauzia-set-for-15-november",
+   2
+  ],
+  [
+   37,
+   "UN court rejects Bosnian Serb war criminal's early release plea again",
+   "Balkan Insight",
+   "https://balkaninsight.com/2026/11/10/un-court-rejects-bosnian-serb-war-criminals-early-release-plea-again/btj/",
+   3
+  ],
+  [
+   38,
+   "Bosnian Court Convicts Three of Wartime Abuses of Civilian Prisoners",
+   "Balkan Insight",
+   "https://balkaninsight.com/2026/11/12/bosnian-court-convicts-three-of-wartime-abuses-of-civilian-prisoners/btj/",
+   3
+  ],
+  [
+   39,
+   "INTERVIEW - Flooding 'nightmare' in Gaza 'only the beginning,' UN humanitarian office warns",
+   "Anadolu Agency",
+   "https://www.aa.com.tr/en/world/interview-flooding-nightmare-in-gaza-only-the-beginning-un-humanitarian-office-warns/4122439",
+   3
+  ],
+  [
+   40,
+   "Yemeni govt forces, Houthis trade blame for deadly strikes on Taiz market",
+   "Al Jazeera",
+   "https://www.aljazeera.com/news/2026/11/6/yemeni-govt-forces-houthis-trade-blame-for-deadly-strikes-on-taiz-market",
+   3
+  ],
+  [
+   41,
+   "UN Security Council renews Yemen sanctions for another year",
+   "Anadolu Agency",
+   "https://www.aa.com.tr/en/middle-east/un-security-council-renews-yemen-sanctions-for-another-year/4123568",
+   3
+  ],
+  [
+   42,
+   "Sudanese army says it shot down hostile drone in West Kordofan",
+   "Anadolu Agency",
+   "https://www.aa.com.tr/en/middle-east/sudanese-army-says-it-shot-down-hostile-drone-in-west-kordofan/4115265",
+   3
+  ],
+  [
+   43,
+   "Mali déplore le refoulement non concerté d'orpailleurs arrivés de Guinée",
+   "RFI",
+   "https://www.rfi.fr/fr/afrique/20261110-mali-d%C3%A9plore-refoulement-non-concert%C3%A9-d-orpailleurs-arriv%C3%A9s-de-guin%C3%A9e-et-poursuit-leur-prise-en-charge",
+   3
+  ],
+  [
+   44,
+   "RDC: découverte de plus de 40 corps après une série d'attaques des ADF",
+   "Actualite.cd",
+   "https://actualite.cd/2026/11/10/rdc-decouverte-de-plus-de-40-corps-apres-une-serie-dattaques-des-adf-dans-differents",
+   3
+  ],
+  [
+   45,
+   "El Salvador military strikes Haitian gang headquarters",
+   "BBC News",
+   "https://www.bbc.co.uk/news/articles/cmvg2xdwnwezo",
+   3
+  ],
+  [
+   46,
+   "Cyberattaque des frigos : le ministre Quintin pointe la piste iranienne, Prévot le recadre",
+   "RTBF",
+   "https://www.rtbf.be/article/cyberattaque-des-frigos-le-ministre-quintin-pointe-la-piste-iranienne-prevot-le-recadre-11814638",
+   3
+  ],
+  [
+   47,
+   "Quintin verdedigt uitspraken over betrokkenheid Iran bij cyberaanvallen: 'Voldoende elementen'",
+   "VRT NWS",
+   "https://vrtnws.be/p.lObLR0VbV",
+   3
+  ],
+  [
+   48,
+   "Nvidia CEO Jensen Huang has resigned. What happens next?",
+   "The Verge",
+   "https://www.theverge.com/ai-artificial-intelligence/1030422/nvidia-jensen-huang-ai-china-alice-huang",
+   3
+  ],
+  [
+   49,
+   "NCSC advisories feed, 12 Nov 2026",
+   "NCSC-NL",
+   "https://advisories.ncsc.nl/rss/advisories",
+   1
+  ],
+  [
+   50,
+   "Known Exploited Vulnerabilities Catalog (JSON feed)",
+   "CISA",
+   "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+   1
+  ],
+  [
+   51,
+   "Budget fédéral : De Wever imperturbable sous le feu des critiques à la Chambre",
+   "RTBF",
+   "https://www.rtbf.be/article/budget-federal-de-wever-imperturbable-sous-le-feu-des-critiques-a-la-chambre-11814809",
+   3
+  ],
+  [
+   52,
+   "Friedrich Merz erővel mozdítaná el Magyar Pétert az orbáni pozícióból",
+   "444",
+   "https://444.hu/2026/11/12/friedrich-merz-erovel-mozditana-el-magyar-petert-az-orbani-poziciobol",
+   3
+  ],
+  [
+   53,
+   "Nadácia Zastavme korupciu oslovuje NR SR pre možné pochybenie Kaliňáka",
+   "TASR via teraz.sk",
+   "https://www.teraz.sk/slovensko/nadacia-zastavme-korupciu-oslovuje-nr-s/1007172-clanok.html",
+   2
+  ],
+  [
+   54,
+   "Kiszivárgott a NATO új stratégiája: 2029-re Oroszország megtámadhatja Európát",
+   "Index",
+   "https://index.hu/kulfold/2026/11/12/nato-strategia-tamadas-oroszorszag-2029/",
+   3
+  ],
+  [
+   55,
+   "Germany, Poland tap SATIM to analyze military satellite imagery",
+   "Defense News",
+   "https://www.defensenews.com/global/europe/2026/11/12/germany-poland-tap-satim-to-analyze-military-satellite-imagery/",
+   3
+  ],
+  [
+   56,
+   "Royal Navy Orders Saab Sea Giraffe 1X Radars for K3 Scout Counter-Drone USVs",
+   "Naval News",
+   "https://www.navalnews.com/naval-news/2026/11/royal-navy-orders-saab-sea-giraffe-1x-radars-for-k3-scout-counter-drone-usvs/",
+   3
+  ],
+  [
+   57,
+   "Euronaval 2026: SeaOwl and KNDS Unveil Tracus Kamikaze USV",
+   "Naval News",
+   "https://www.navalnews.com/event-news/euronaval-2026/2026/11/euronaval-2026-seaowl-and-knds-unveil-tracus-kamikaze-usv/",
+   3
+  ],
+  [
+   58,
+   "Instead of stockpiling small attack drones, Army looking to simply buy new ones",
+   "Breaking Defense",
+   "https://breakingdefense.com/2026/11/instead-of-stockpiling-small-attack-drones-army-looking-to-simply-buy-new-ones/",
+   3
+  ],
+  [
+   59,
+   "Google's new Gemini model is better at understanding complicated questions",
+   "The Verge",
+   "https://www.theverge.com/ai-artificial-intelligence/1032505/google-search-ai-mode-gemini-4-hydrogen",
+   3
+  ],
+  [
+   60,
+   "AI chatbots are recommending fake retail websites, study finds",
+   "The Verge",
+   "https://www.theverge.com/ai-artificial-intelligence/1032020/gemini-chatgpt-perplexity-shopping-test-risky-fake-websites-citations",
+   3
+  ],
+  [
+   61,
+   "Tuesday, November 10, 2026: floor log and wrap-up",
+   "US Senate Daily Press",
+   "https://www.dailypress.senate.gov/tuesday-november-10-2026/",
+   1
+  ],
+  [
+   62,
+   "Hegseth seeks to elevate top SOF civilian to service-secretary equivalent",
+   "Breaking Defense",
+   "https://breakingdefense.com/2026/11/hegseth-seeks-to-elevate-top-sof-civilian-to-service-secretary-equivalent/",
+   3
+  ],
+  [
+   63,
+   "DoD pushes out 3 loans totaling $450M to bolster US space companies",
+   "Breaking Defense",
+   "https://breakingdefense.com/2026/11/dod-pushes-out-3-loans-totally-450m-to-bolster-us-space-companies/",
+   3
+  ],
+  [
+   64,
+   "House passes bill to expand benefits for combat-injured veterans",
+   "Defense News",
+   "https://www.defensenews.com/news/2026/11/12/house-passes-bill-to-expand-benefits-for-combat-injured-veterans/",
+   3
+  ],
+  [
+   65,
+   "Democrats push to remove US-Israel tech measure from defense bill",
+   "Defense News",
+   "https://www.defensenews.com/congress/2026/11/12/democrats-push-to-remove-us-israel-tech-measure-from-defense-bill/",
+   3
+  ],
+  [
+   66,
+   "Army CID looking for new commercial software tools to monitor darknet, encrypted messaging platforms",
+   "DefenseScoop",
+   "https://defensescoop.com/2026/11/12/army-cid-software-darknet-encrypted-messaging/",
+   3
+  ],
+  [
+   67,
+   "Winning Time: Ukraine's Unmanned Systems Forces and the New Dimension of War",
+   "War on the Rocks",
+   "https://warontherocks.com/winning-time-ukraines-unmanned-systems-forces-and-the-new-dimension-of-war/",
+   1
+  ],
+  [
+   68,
+   "Unequal Trust, Shared Interests (publication page)",
+   "Bertelsmann Stiftung",
+   "https://www.bertelsmann-stiftung.de/en/publications/publication/did/unequal-trust-shared-interests",
+   1
+  ],
+  [
+   69,
+   "AI as Shared Business Infrastructure (NBER Working Paper 36003)",
+   "NBER",
+   "https://www.nber.org/papers/w36003",
+   1
+  ],
+  [
+   70,
+   "AI as Shared Business Infrastructure (NBER Working Paper 36003, full text)",
+   "NBER",
+   "https://www.nber.org/system/files/working_papers/w36003/w36003.pdf",
+   1
+  ],
+  [
+   71,
+   "Leviathan, Thomas Hobbes (1651), e-text prepared from the Pelican Classics edition",
+   "Project Gutenberg",
+   "https://www.gutenberg.org/cache/epub/3207/pg3207.txt",
+   2
+  ],
+  [
+   72,
+   "Hobbes's Moral and Political Philosophy",
+   "Stanford Encyclopedia of Philosophy",
+   "https://plato.stanford.edu/entries/hobbes-moral/",
+   2
+  ],
+  [
+   73,
+   "Lithuania's 2027 budget: 5% for defence, growing government deficit",
+   "LRT English",
+   "https://www.lrt.lt/en/news-in-english/19/3084074/lithuania-s-2027-budget-5-for-defence-growing-government-deficit",
+   3
+  ],
+  [
+   74,
+   "Defence Expenditure of NATO Countries (2014–2025)",
+   "NATO",
+   "https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2025-en.pdf",
+   1
+  ],
+  [
+   75,
+   "Lithuania plans EUR 4.8 billion for defence in 2027, substantial budget deficit",
+   "LRT English",
+   "https://www.lrt.lt/en/news-in-english/19/3076225/lithuania-plans-eur4-8-billion-for-defence-in-2027-substantial-budget-deficit",
+   3
+  ],
+  [
+   76,
+   "Strengthening NATO's eastern flank",
+   "NATO",
+   "https://www.nato.int/en/what-we-do/deterrence-and-defence/strengthening-natos-eastern-flank",
+   1
+  ],
+  [
+   77,
+   "Lithuania approves defence funding for 2026, local assembly of Leopard 2A8",
+   "Janes",
+   "https://janes.com/osint-insights/defence-news/industry/lithuania-approves-defence-funding-for-2026-local-assembly-of-leopard-2a8",
+   3
+  ],
+  [
+   78,
+   "Daily closes, 11 Nov: ^GSPC, ^IXIC, ^RUT, ^AEX, ^STOXX, ^GDAXI, ^VIX, BZ=F, TTF=F, GC=F",
+   "Yahoo Finance chart API",
+   "https://finance.yahoo.com/",
+   2
+  ],
+  [
+   79,
+   "Dow Jones Industrial Average (DJIA)",
+   "FRED, Federal Reserve Bank of St. Louis",
+   "https://fred.stlouisfed.org/series/DJIA",
+   2
+  ],
+  [
+   80,
+   "Daily Treasury par yield curve rates",
+   "US Treasury",
+   "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve",
+   1
+  ],
+  [
+   81,
+   "Euro foreign exchange reference rates (history)",
+   "European Central Bank",
+   "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html",
+   1
+  ],
+  [
+   82,
+   "Federal Reserve issues FOMC statement, 28 October 2026",
+   "Federal Reserve",
+   "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
+   1
+  ],
+  [
+   83,
+   "Meeting calendars and information",
+   "Federal Reserve",
+   "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+   1
+  ],
+  [
+   84,
+   "Monetary policy decisions, 29 October 2026",
+   "European Central Bank",
+   "https://www.ecb.europa.eu/press/pr/date/2026/html/ecb.mp261029~9a493adf17.en.html",
+   1
+  ],
+  [
+   85,
+   "Pompprijzen motorbrandstoffen; brandstofsoort, per dag (80416ned)",
+   "CBS",
+   "https://opendata.cbs.nl/statline/#/CBS/nl/dataset/80416ned/table",
+   1
+  ],
+  [
+   86,
+   "Weekly Oil Bulletin, prices with taxes, 9 November 2026",
+   "European Commission",
+   "https://energy.ec.europa.eu/data-and-analysis/weekly-oil-bulletin_en",
+   1
+  ],
+  [
+   87,
+   "Maatschappelijke organisaties uiten onvrede over kabinetscrisis: 'Los dit samen op'",
+   "NOS",
+   "https://nos.nl/l/2639206",
+   3
+  ],
+  [
+   88,
+   "Zorgpremies stijgen volgend jaar flink, maar er zijn grote verschillen",
+   "NOS",
+   "https://nos.nl/l/2639241",
+   3
+  ],
+  [
+   89,
+   "Sinterklaas komt naar Parkstad: intochten op meerdere plekken",
+   "ZO-NWS",
+   "https://zo-nws.nl/sinterklaas-komt-naar-parkstad-intochten-op-meerdere-plekken",
+   3
+  ],
+  [
+   90,
+   "AFNORTH International School calendar SY26/27",
+   "AFNORTH International School",
+   "https://afnorth-is.com/wp-content/uploads/2026/06/Calendar-SY26-27-v-2026.03.31.pdf",
+   1
+  ],
+  [
+   91,
+   "Kerststad Valkenburg",
+   "Visit Zuid-Limburg",
+   "https://www.visitzuidlimburg.com/experience-zuid-limburg/event/kerststad-valkenburg/60635/",
+   1
+  ],
+  [
+   92,
+   "Stoffen Spektakel Leuven, 15 november 2026",
+   "Stoffen Spektakel",
+   "https://stoffenspektakel.nl/stoffenbeurs-agenda/leuven/",
+   1
+  ],
+  [
+   93,
+   "Geek Village: The Con 2026",
+   "Geek Village",
+   "https://www.geekvillage.be/",
+   1
+  ],
+  [
+   94,
+   "Wintertraum",
+   "Phantasialand",
+   "https://www.phantasialand.de/de/themenpark/wintertraum/",
+   1
+  ],
+  [
+   95,
+   "Tischlein deck dich!",
+   "Theater Aachen",
+   "https://www.theateraachen.de/de/produktionen/tischlein-deck-dich.html",
+   1
+  ],
+  [
+   96,
+   "Gamecenter: Hurricanes at Kraken, Helsinki, 12 Nov (game 2026020309)",
+   "NHL API",
+   "https://api-web.nhle.com/v1/gamecenter/2026020309/landing",
+   2
+  ],
+  [
+   97,
+   "Scores, 12 Nov 2026",
+   "NHL API",
+   "https://api-web.nhle.com/v1/score/2026-11-12",
+   2
+  ],
+  [
+   98,
+   "New Orleans Saints schedule",
+   "ESPN",
+   "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/no/schedule",
+   2
+  ],
+  [
+   99,
+   "Weihnachtsmarkt am Kölner Dom 2026",
+   "koeln.de",
+   "https://www.koeln.de/weihnachten/weihnachtsmaerkte-koeln/weihnachtsmarkt-am-koelner-dom/",
+   2
+  ],
+  [
+   100,
+   "Aachener Weihnachtsmarkt: dates and hours",
+   "Aachen Christmas market",
+   "https://aachenweihnachtsmarkt.de/en/pages/offers/",
+   1
+  ],
+  [
+   101,
+   "Christmas market Monschau",
+   "Tourismus Kreis Düren",
+   "https://www.tourismus.kreis-dueren.de/en/e-christmas-market-monschau-2",
+   1
+  ],
+  [
+   102,
+   "Magisch Maastricht",
+   "Kidsproof",
+   "https://www.kidsproof.nl/zuid-limburg/eropuit/magisch-maastricht/magisch-maastricht-kerst-gezinsuitje-eu/",
+   4
+  ],
+  [
+   103,
+   "Village de Noël in Luik",
+   "Visit Zuid-Limburg",
+   "https://www.visitzuidlimburg.com/experience-zuid-limburg/event/village-de-noel-in-luik/64128",
+   2
+  ]
+ ],
+ "flags": "Morning run, 13 Nov, about 05:15–07:00 CET, prompt revision 7.5.12. Searches: board 14 of 20, countries 11 of 18, security 9 of 12, profession 6 of 14, frontier 1 of 6, reading 3 of 10, home 2 of 6 and 3 of 6, editor 0 (fetches only); 49 in all, so the allowance did not run out and no tier was cut. Data: Yahoo Finance answered 429 to every request, so series.json adds only the Dow for Thu 12 Nov (FRED) and the US 10-year for 12 Nov (Treasury); the S&P 500, Nasdaq, Russell 2000, AEX, Stoxx 600, DAX, VIX, Brent, TTF and gold cards and today's year-to-date bars stay at Wed 11 Nov. FRED's Brent is a spot price and was not mixed into the front-month series. ECB fix of 12 Nov (1.1081) appended. tools/local.js, fuel.js (last CBS day 9 Nov), hockey.js, sports.js and cozi.js ran without failures; Rijden de Treinen listed one disruption with no detail. CISA KEV: 10 entries added 7–13 Nov (all on 9–10 Nov), cyber-kev-7d stays amber; ECDC: newest items are the Bundibugyo Ebola update of 12 Nov and the West Nile monthly report, no new EU/EEA event, ecdc-threats stays amber on the Frankfurt malaria event of 6 Nov. ua-air and ua-downed-pct are not extended: the Air Force statement for the night into 12 Nov gave 123 drones but no missile count, and the count for the night into 13 Nov was not out. Ski snow not refreshed (out of season). Energy: CBS table 85592NED unchanged since 10 Nov. Mail check: nothing new (the 11 Nov school mail and the travel thread were handled yesterday; no CYS mail). Cozi: 39 items (dropped 31 recurring, 4 medical, 0 birthdays), none removed in the privacy check. Calendar notes for the next seven days: the AFNORTH evacuation drill this morning overlaps the family calendar's driving-licence appointment at 10:00–11:00; Cozi shows leave for you on 12–13 Nov and the NATO CIMIC Higher Command Course in The Hague from 16 to 27 Nov, which starts on the AFNORTH no-school day of 16 Nov; the Geilenkirchen clinic is closed on the morning of Wed 18 Nov. Cozi and the readbook still disagree on the AFNorth winter fest on 21 Nov (Cozi from 10:00, PTA mail 11:00–14:00) and on Thanksgiving (Cozi a four-day break 26–29 Nov, school calendar school days on 26–27 Nov, the HQ a US pass day on 26 Nov). Unchecked or skipped: the Air Force count for the night into 13 Nov; what the Kyiv ballistic missiles of 12 Nov hit; the prisoner numbers; whether Witkoff and Kushner met Zelensky in Dublin; the informal EU leaders' meeting of 13 Nov; Taiwan, Korea, Sudan, Sahel and Venezuela had no item in the window and no board entry today; the Balkans entry is a court verdict only (EUFOR's site returned 503); Druzhba flows, Hungary's EU-funds talks and Slovak snap-election talk: no new fact; no context-profile line was confirmed today (the Belarus line on Lithuanian crossings is still marked); no hybrid incident in the Baltics or Poland for 12–13 Nov; Euregio: De Limburger, HBVL and WDR feeds unreachable, nothing found on L1 worth an item, so the section is empty; no Cardinals or local football news verified (an Oranje fixture list in one search conflicted with other results and was not used); no new events or TV suggestions added; Eurovision (eurovisionworld.com 403, English Wikipedia read) and Sanremo (Italian Wikipedia 404, English read) unchanged; the FNV bus vote result was not out; the SOTA table was not re-checked this Friday and keeps its 6 Nov rows (LMArena and OpenAI pages returned 403); no NATO HQ item (nato.int listing client-rendered); no senior US leader transcript in the window. Single-source items: the Bahrain radar claim (IRGC via Tasnim and Fars, reported by Al Jazeera and Reuters) and Trump's reported pause (Al Jazeera live page, no direct quote); the Finnish warship statement (Reuters via Defense News) and the Yle report of an SBU claim (Al Jazeera); the Poland decision (Defense News, from Poland's ministry statement); the leaked NATO Political Guidance (Index, citing a leak, tier 3); 444's reading of Merz's letter (partly paywalled); the Kaliňák allegations (TASR, the foundation's claims); the chatbot study (The Verge's summary, the study's authors not named on the page read); the JEF quote (UK MoD release via Naval News). Research: the military piece is the War on the Rocks essay that was yesterday's long read, used because the Army War College monograph in the queue sits behind a Cloudflare challenge and no other military paper could be read in full; the Lithuania deep cut uses LRT, Janes and NATO figures because kam.lt returned 403. The philosophy note quotes the Project Gutenberg text of Leviathan, checked word for word; the Rousseau objection is cited from the Discourse itself, not a page fetched today. The Limburgs word's pronunciation is a broad estimate from e-WLD's spelling; e-WLD gives no tone mark. Feeds and hosts unreachable or empty this morning: Yahoo Finance (429), arXiv cs.AI feed (no items), OpenAI news and LMArena (403), defense.gov feed (redirects to war.gov), USAREUR-AF feed (503), army.mil static feed (stale), EUFOR (503), BBC World feed, tagesschau, Spiegel, FAZ and DLF to the countries worker, Aktuality, Pravda.sk (redirect), De Limburger, HBVL and WDR feeds, FNV news page (404), NU.nl, eurovisionworld.com (403), Italian Wikipedia Sanremo page (404), kam.lt (403).",
+ "changelog": [
+  [
+   "2026-11-11",
+   "Home adds the family calendar (Cozi, read-only), a Eurovision 2027 tracker and a Sanremo 2027 tracker; school items are limited to high school; workers run on a cheaper model with lean briefs."
+  ],
+  [
+   "2026-11-10",
+   "Sports is its own tier (the Canes with Metropolitan standings, league and club leaders and the McDavid watch, the Saints, the Cardinals, local football); Parkstad today lists strikes and demonstrations for 30 days and flags anything on Heerlerweg, with English lines on the Hoensbroek notices; the philosophy canon takes in the whole Stoa, Chinese thought and the philosophers of science; the calendar holds the JFC Brunssum FY27 US holidays; editions record their prompt revision."
+  ],
+  [
+   "2026-11-10",
+   "Overwrite: edition 10 replaces edition 9 for 10 Nov; refreshed mail (travel itinerary added to inbox.json), KEV indicator reading, index entry."
+  ],
+  [
+   "2026-11-09",
+   "v7.5: a fetch-first source register (feeds.json) steers every run, with search shares by tier and caps per worker; Aperture keeps the deep cut and the long read and adds a weekend red-team piece; By the numbers adds the occupied area from DeepState and the intercept share; Limburg headlines carry an English line; growth bounds fold quiet threads, compact green indicators, shorten ended shows and cap the research queue."
+  ],
+  [
+   "2026-11-09",
+   "v7.4: Parkstad today opens Home and planning (air and pollen, day-ahead power, the Maas, the sky, roads, rails, gemeente notices, L1 headlines and the local calendar), with the Limburgs word in Taal, household admin, Roda fixtures, flu and flight-noise notes, and Maas and flu indicators; Markets & economy is its own tier with household energy and a tank of petrol at the tax-exempt rate."
+  ],
+  [
+   "2026-11-08",
+   "v7.3: Russia, Belarus and China join Hungary, Slovakia and Germany as context profiles; every Hungary, Slovakia and Germany item quotes a sentence from a source in the country's language with its translation; the Western Balkans and the Black Sea and Moldova join the board as theatres twelve and thirteen; CISA exploited-vulnerability and ECDC outbreak indicators. This edition was reissued in the 7.3 format at 10:25."
+  ],
+  [
+   "2026-11-08",
+   "v7.2: The watch in ten sections with one Horizon (horizon entries, exercises, Congress deadlines, open forecasts and elections); From your mail and decisions fold into Coming up; denser logs and rows, and the source list folds under a summary line."
+  ],
+  [
+   "2026-11-07",
+   "v7.1: three research pieces a day across fields, a daily philosophy note read closely, a mail check that feeds From your mail, and a larger reading budget."
+  ],
+  [
+   "2026-11-07",
+   "v7.0: the Brief (takeaways, what changed, what to watch, what we do not know, indicators), the Ukraine panel with the DeepState front line, Indicators and warning, the forecast ledger, New in war and the Arctic theatre; at weekends The reading comes before The news."
+  ],
+  [
+   "2026-11-05",
+   "v6.5: Priority countries (Hungary, Slovakia, Germany) in The news, with profiles and dated logs from countries.json; Readbook health lists a data-ingest line per standing file, the top line shows the last run, and the page warns when the latest edition is older than today."
+  ],
+  [
+   "2026-11-05",
+   "v6.1: a daily Research piece in The reading with a queue and a covered log; the Saints and Cardinals under the Canes; a TV tracker; sky icons and wind arrows in the weather strip; calendar fixes."
+  ],
+  [
+   "2026-11-04",
+   "v6.0: five tiers (Today, The news, The watch, The reading, Home and planning), cross-links from items to the trackers they update, source tiers, Since yesterday, Decisions due, calendar files, the year-ahead board, corrections and a style guide. This edition was reissued in the 6.0 format at 13:00."
+  ]
+ ],
+ "generated": "2026-11-13T05:36:13+01:00"
+}

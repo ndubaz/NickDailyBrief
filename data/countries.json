@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12",
+ "updated": "2026-11-13",
  "note": "Nick's assigned priority countries as an analyst: Hungary and Slovakia (priority), Germany (secondary). Russia, Belarus and China are context countries (7.3): profiled for what they do to the eastern flank and to the three countries above, logged the same way, no baseline-requirement grid. The run appends dated facts to each country's log and keeps the profile current. Facts and summaries only; the item in the edition carries the So what. verified:false marks a fact to confirm against an official page.",
  "blr": [
   "Continuity of government and critical services",
@@ -299,6 +299,16 @@
       [
        "Újabb lépés a védelmi képesség fejlesztésére",
        "https://honvedelem.hu/hirek/ujabb-lepes-a-vedelmi-kepesseg-fejlesztesere.html"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-13",
+     "t": "On 12 Nov: 444 reported that Merz used Magyar's 10 Nov Berlin visit to tell Ukraine-sceptic states they cannot stay out of the shared Ukraine financing and still draw on the common budget; the paper reads a veiled threat over the 2028–2034 budget.",
+     "src": [
+      [
+       "Friedrich Merz erővel mozdítaná el Magyar Pétert az orbáni pozícióból",
+       "https://444.hu/2026/11/12/friedrich-merz-erovel-mozditana-el-magyar-petert-az-orbani-poziciobol"
       ]
      ]
     }
@@ -697,6 +707,16 @@
        "https://dennikn.sk/5686229/kostolny-obradovic-taraba-to-prespekuloval-na-zakone-o-kajucnikoch-politicky-neziska/"
       ]
      ]
+    },
+    {
+     "date": "2026-11-13",
+     "t": "On 12 Nov: The foundation Zastavme korupciu asked the National Council's incompatibility committee to examine Defence Minister Kaliňák over payments from an arms dealer's company to his firm while the ministry arranged contracts for that dealer (allegation).",
+     "src": [
+      [
+       "Nadácia Zastavme korupciu oslovuje NR SR pre možné pochybenie Kaliňáka",
+       "https://www.teraz.sk/slovensko/nadacia-zastavme-korupciu-oslovuje-nr-s/1007172-clanok.html"
+      ]
+     ]
     }
    ],
    "src": [
@@ -1042,6 +1062,16 @@
       [
        "Sexualisiertes Fehlverhalten in Bundeswehr: Pistorius pocht auf \"null Toleranz\"",
        "https://www.tagesschau.de/inland/innenpolitik/bundeswehr-dunkelfeldstudie-102.html"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-13",
+     "t": "On 12 Nov: The Bundestag passed the Bundeswehr infrastructure acceleration law (CDU/CSU and SPD for, Greens and Left against, AfD abstaining), with exceptions from environmental and nature-protection law for military sites.",
+     "src": [
+      [
+       "Beschleunigung von Infrastrukturvorhaben der Bundeswehr",
+       "https://www.bundestag.de/dokumente/textarchiv/2026/kw46-de-bundeswehr-infrastruktur-1231504"
       ]
      ]
     }

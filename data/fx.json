@@ -2,7 +2,7 @@
  "source": "ECB euro foreign exchange reference rates",
  "url": "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist.zip",
  "pair": "EUR/USD",
- "updated": "2026-11-11",
+ "updated": "2026-11-12",
  "series": [
   [
    "2024-11-01",
@@ -2071,6 +2071,10 @@
   [
    "2026-11-11",
    1.1127
+  ],
+  [
+   "2026-11-12",
+   1.1081
   ]
  ]
 }

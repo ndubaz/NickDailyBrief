@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12",
+ "updated": "2026-11-13",
  "note": "New uses of technology in war: first-seen or newly combined techniques observed in any theatre and any domain. Append-only. Each entry: id (YYYY-MM-DD-slug), date (when observed or first reported), theatre (board id), actor, t (headline), what (fact sentences with [n] citations), new (one or two sentences on what is new, in the reporters' and actors' terms, no prediction), domains (from the list below), src rows copied from the edition. The run checks ids and titles before appending so a technique is logged once; a later development of the same technique is a new entry that names the earlier id in prev.",
  "domains": {
   "uas": "Drones",

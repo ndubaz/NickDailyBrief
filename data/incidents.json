@@ -938,6 +938,28 @@
      3
     ]
    ]
+  },
+  {
+   "id": "2026-11-12-it-inf-school-bomb-hoaxes",
+   "date": "2026-11-12",
+   "when": "11 and 12 Nov, school day",
+   "code": "INF",
+   "attr": "A0",
+   "local": false,
+   "country": "IT",
+   "place": "Schools across Italy (marker at Rome)",
+   "lat": 41.9,
+   "lon": 12.5,
+   "text": "More than 3,700 Italian schools received hoax bomb warnings on 12 Nov, a day after 6,300 schools got similar alerts; the sender was not named. [15]",
+   "src": [
+    [
+     15,
+     "Regional security dominates European talks in Dublin amid hybrid attacks",
+     "Al Jazeera (with AP and DPA)",
+     "https://www.aljazeera.com/news/2026/11/12/regional-security-dominates-european-talks-in-dublin-amid-hybrid-attacks",
+     3
+    ]
+   ]
   }
  ],
  "attrLog": [
@@ -1036,5 +1058,5 @@
   }
  ],
  "attrLogNote": "One entry per attribution change: {id (incident id), date, from (A0..A5), to (A0..A5), t (what moved), src (optional [[n,title,outlet,url]])}. The page lists the last 7 days under Attribution moves.",
- "updated": "2026-11-12"
+ "updated": "2026-11-13"
 }

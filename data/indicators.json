@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12",
+ "updated": "2026-11-13",
  "note": "Indicators and warning. Each indicator names what is watched, the threshold that changes its status, and the source. The run sets status (green, amber, red) each day it has the fact and appends to history only on a change, with the date, the new status and the fact that moved it. Numeric indicators name a world-series key and a rule so the page can show the latest value.",
  "items": [
   {

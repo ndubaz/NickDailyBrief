@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12",
+ "updated": "2026-11-13",
  "note": "Open questions the Readbook is carrying: what we do not know. The run adds a question when an item turns on a fact nobody has published, and closes it with the answer and source when one appears. Never delete.",
  "items": [
   {
@@ -226,13 +226,42 @@
    "q": "What did the Russian ballistic missiles fired at Kyiv at about 01:00 on 12 Nov hit, and with what casualties?",
    "thread": "theatre:ru-ua",
    "opened": "2026-11-12",
-   "status": "open"
+   "status": "closed",
+   "closed": "2026-11-13",
+   "answer": "Mayor Klitschko said one person was killed and eight injured in Kyiv in the overnight and daytime strikes of 12 Nov; the targets were not published.",
+   "src": [
+    [
+     "Russia attacks Kyiv with ballistic missiles hours after peace talks end (live page)",
+     "https://kyivindependent.com/russia-attacks-kyiv-with-ballistic-missiles-hours-after-peace-talks-end/"
+    ]
+   ]
   },
   {
    "id": "2026-11-12-vvd-reset",
    "q": "Does the VVD stay in the Dutch cabinet after the 12 Nov tax-plan votes, and what does Yesilgöz mean by a “fundamentele reset” (“fundamental reset”)?",
    "thread": "thread:nl-tax-plan-2027",
    "opened": "2026-11-12",
+   "status": "open"
+  },
+  {
+   "id": "2026-11-13-bahrain-radar",
+   "q": "What, if anything, did the IRGC hit in Bahrain on 13 Nov, and what attacked the telecom tower in Sirik the day before?",
+   "thread": "theatre:iran",
+   "opened": "2026-11-13",
+   "status": "open"
+  },
+  {
+   "id": "2026-11-13-europe-seat",
+   "q": "Who will represent Europe at the next round of Ukraine talks, and when and where does it meet?",
+   "thread": "thread:russia-ukraine-talks",
+   "opened": "2026-11-13",
+   "status": "open"
+  },
+  {
+   "id": "2026-11-13-gulf-finland-strike",
+   "q": "What struck the Russian warship in the Gulf of Finland on 11 Nov, and was it damaged?",
+   "thread": "theatre:ru-ua",
+   "opened": "2026-11-13",
    "status": "open"
   }
  ]

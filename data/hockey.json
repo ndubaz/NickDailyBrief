@@ -1,21 +1,21 @@
 {
- "asof": "2026-11-11",
+ "asof": "2026-11-12",
  "metro": [
   {
    "team": "CAR",
    "name": "Hurricanes",
-   "gp": 19,
-   "w": 14,
+   "gp": 20,
+   "w": 15,
    "l": 3,
    "otl": 2,
-   "pts": 30,
-   "pct": 0.789,
-   "gf": 78,
-   "ga": 45,
-   "gd": 33,
-   "rw": 13,
-   "l10": "7-2-1",
-   "streak": "W2",
+   "pts": 32,
+   "pct": 0.8,
+   "gf": 82,
+   "ga": 46,
+   "gd": 36,
+   "rw": 14,
+   "l10": "8-1-1",
+   "streak": "W3",
    "div": 1,
    "wc": 0,
    "conf": 1
@@ -23,21 +23,21 @@
   {
    "team": "NJD",
    "name": "Devils",
-   "gp": 19,
-   "w": 13,
+   "gp": 20,
+   "w": 14,
    "l": 6,
    "otl": 0,
-   "pts": 26,
-   "pct": 0.684,
-   "gf": 68,
-   "ga": 55,
-   "gd": 13,
-   "rw": 8,
+   "pts": 28,
+   "pct": 0.7,
+   "gf": 73,
+   "ga": 57,
+   "gd": 16,
+   "rw": 9,
    "l10": "8-2-0",
-   "streak": "L1",
+   "streak": "W1",
    "div": 2,
    "wc": 0,
-   "conf": 5
+   "conf": 4
   },
   {
    "team": "NYR",
@@ -56,23 +56,23 @@
    "streak": "W1",
    "div": 3,
    "wc": 0,
-   "conf": 7
+   "conf": 8
   },
   {
    "team": "WSH",
    "name": "Capitals",
-   "gp": 16,
+   "gp": 17,
    "w": 10,
-   "l": 6,
+   "l": 7,
    "otl": 0,
    "pts": 20,
-   "pct": 0.625,
-   "gf": 56,
-   "ga": 53,
-   "gd": 3,
+   "pct": 0.588,
+   "gf": 58,
+   "ga": 58,
+   "gd": 0,
    "rw": 8,
-   "l10": "7-3-0",
-   "streak": "W2",
+   "l10": "6-4-0",
+   "streak": "L1",
    "div": 4,
    "wc": 3,
    "conf": 9
@@ -97,58 +97,58 @@
    "conf": 11
   },
   {
-   "team": "PHI",
-   "name": "Flyers",
-   "gp": 20,
-   "w": 5,
+   "team": "PIT",
+   "name": "Penguins",
+   "gp": 19,
+   "w": 7,
    "l": 10,
-   "otl": 5,
-   "pts": 15,
-   "pct": 0.375,
-   "gf": 45,
-   "ga": 66,
-   "gd": -21,
-   "rw": 5,
-   "l10": "4-4-2",
+   "otl": 2,
+   "pts": 16,
+   "pct": 0.421,
+   "gf": 61,
+   "ga": 67,
+   "gd": -6,
+   "rw": 3,
+   "l10": "4-5-1",
    "streak": "W1",
    "div": 6,
    "wc": 8,
    "conf": 14
   },
   {
-   "team": "CBJ",
-   "name": "Blue Jackets",
-   "gp": 16,
-   "w": 7,
-   "l": 9,
-   "otl": 0,
-   "pts": 14,
-   "pct": 0.438,
-   "gf": 41,
-   "ga": 51,
-   "gd": -10,
-   "rw": 2,
-   "l10": "4-6-0",
-   "streak": "L2",
+   "team": "PHI",
+   "name": "Flyers",
+   "gp": 21,
+   "w": 5,
+   "l": 10,
+   "otl": 6,
+   "pts": 16,
+   "pct": 0.381,
+   "gf": 47,
+   "ga": 69,
+   "gd": -22,
+   "rw": 5,
+   "l10": "3-4-3",
+   "streak": "OT1",
    "div": 7,
    "wc": 9,
    "conf": 15
   },
   {
-   "team": "PIT",
-   "name": "Penguins",
-   "gp": 18,
-   "w": 6,
+   "team": "CBJ",
+   "name": "Blue Jackets",
+   "gp": 17,
+   "w": 7,
    "l": 10,
-   "otl": 2,
+   "otl": 0,
    "pts": 14,
-   "pct": 0.389,
-   "gf": 58,
-   "ga": 65,
-   "gd": -7,
-   "rw": 3,
-   "l10": "3-6-1",
-   "streak": "L1",
+   "pct": 0.412,
+   "gf": 42,
+   "ga": 54,
+   "gd": -12,
+   "rw": 2,
+   "l10": "4-6-0",
+   "streak": "L3",
    "div": 8,
    "wc": 10,
    "conf": 16
@@ -157,28 +157,28 @@
  "league": [
   {
    "team": "CAR",
-   "pts": 30,
-   "gp": 19
-  },
-  {
-   "team": "MIN",
-   "pts": 30,
+   "pts": 32,
    "gp": 20
   },
   {
-   "team": "EDM",
-   "pts": 29,
-   "gp": 19
+   "team": "MIN",
+   "pts": 32,
+   "gp": 21
   },
   {
-   "team": "BOS",
-   "pts": 27,
-   "gp": 18
+   "team": "EDM",
+   "pts": 31,
+   "gp": 20
   },
   {
    "team": "TBL",
-   "pts": 26,
-   "gp": 18
+   "pts": 28,
+   "gp": 19
+  },
+  {
+   "team": "MTL",
+   "pts": 28,
+   "gp": 19
   }
  ],
  "leaders": {
@@ -187,25 +187,25 @@
     "name": "Connor McDavid",
     "team": "EDM",
     "pos": "C",
-    "v": 48
+    "v": 49
    },
    {
     "name": "Leon Draisaitl",
     "team": "EDM",
     "pos": "C",
-    "v": 36
+    "v": 37
    },
    {
     "name": "Kirill Kaprizov",
     "team": "MIN",
     "pos": "L",
-    "v": 32
+    "v": 35
    },
    {
     "name": "Evan Bouchard",
     "team": "EDM",
     "pos": "D",
-    "v": 31
+    "v": 33
    },
    {
     "name": "Nathan MacKinnon",
@@ -217,31 +217,31 @@
     "name": "Auston Matthews",
     "team": "TOR",
     "pos": "C",
+    "v": 29
+   },
+   {
+    "name": "Sebastian Aho",
+    "team": "CAR",
+    "pos": "C",
+    "v": 28
+   },
+   {
+    "name": "Nikita Kucherov",
+    "team": "TBL",
+    "pos": "R",
     "v": 28
    },
    {
     "name": "Quinn Hughes",
     "team": "MIN",
     "pos": "D",
-    "v": 27
+    "v": 28
    },
    {
     "name": "Matthew Tkachuk",
     "team": "FLA",
     "pos": "L",
-    "v": 27
-   },
-   {
-    "name": "Sebastian Aho",
-    "team": "CAR",
-    "pos": "C",
-    "v": 26
-   },
-   {
-    "name": "Jack Hughes",
-    "team": "NJD",
-    "pos": "C",
-    "v": 26
+    "v": 28
    }
   ],
   "goals": [
@@ -258,52 +258,52 @@
     "v": 17
    },
    {
-    "name": "Cutter Gauthier",
-    "team": "ANA",
-    "pos": "L",
-    "v": 15
-   },
-   {
     "name": "Kyle Connor",
     "team": "WPG",
     "pos": "L",
-    "v": 15
+    "v": 16
+   },
+   {
+    "name": "Cutter Gauthier",
+    "team": "ANA",
+    "pos": "L",
+    "v": 16
    },
    {
     "name": "Artturi Lehkonen",
     "team": "COL",
     "pos": "L",
-    "v": 13
-   },
-   {
-    "name": "Connor McDavid",
-    "team": "EDM",
-    "pos": "C",
-    "v": 11
-   },
-   {
-    "name": "Auston Matthews",
-    "team": "TOR",
-    "pos": "C",
-    "v": 11
-   },
-   {
-    "name": "William Nylander",
-    "team": "TOR",
-    "pos": "R",
-    "v": 11
+    "v": 14
    },
    {
     "name": "Brandon Hagel",
     "team": "TBL",
     "pos": "L",
-    "v": 11
+    "v": 13
    },
    {
-    "name": "Logan Cooley",
-    "team": "UTA",
+    "name": "Auston Matthews",
+    "team": "TOR",
     "pos": "C",
-    "v": 11
+    "v": 12
+   },
+   {
+    "name": "Sebastian Aho",
+    "team": "CAR",
+    "pos": "C",
+    "v": 12
+   },
+   {
+    "name": "Tage Thompson",
+    "team": "BUF",
+    "pos": "C",
+    "v": 12
+   },
+   {
+    "name": "Cole Caufield",
+    "team": "MTL",
+    "pos": "R",
+    "v": 12
    }
   ],
   "assists": [
@@ -311,25 +311,25 @@
     "name": "Connor McDavid",
     "team": "EDM",
     "pos": "C",
-    "v": 37
+    "v": 38
    },
    {
     "name": "Matthew Tkachuk",
     "team": "FLA",
     "pos": "L",
-    "v": 23
+    "v": 24
    },
    {
     "name": "Evan Bouchard",
     "team": "EDM",
     "pos": "D",
-    "v": 21
+    "v": 22
    },
    {
     "name": "Quinn Hughes",
     "team": "MIN",
     "pos": "D",
-    "v": 21
+    "v": 22
    },
    {
     "name": "Jackson LaCombe",
@@ -344,35 +344,40 @@
     "v": 20
    },
    {
+    "name": "Nikita Kucherov",
+    "team": "TBL",
+    "pos": "R",
+    "v": 20
+   },
+   {
     "name": "Leo Carlsson",
     "team": "ANA",
     "pos": "C",
     "v": 20
    },
    {
-    "name": "Adam Fox",
-    "team": "NYR",
-    "pos": "D",
-    "v": 20
-   },
-   {
     "name": "Clayton Keller",
     "team": "UTA",
     "pos": "R",
-    "v": 19
+    "v": 20
    },
    {
-    "name": "Leon Draisaitl",
-    "team": "EDM",
-    "pos": "C",
-    "v": 18
+    "name": "Mitch Marner",
+    "team": "VGK",
+    "pos": "R",
+    "v": 20
    }
   ],
   "savePctg": [
    {
     "name": "Linus Ullmark",
     "team": "OTT",
-    "v": 0.945
+    "v": 0.938
+   },
+   {
+    "name": "Jacob Fowler",
+    "team": "MTL",
+    "v": 0.926
    },
    {
     "name": "Jesper Wallstedt",
@@ -380,18 +385,13 @@
     "v": 0.925
    },
    {
-    "name": "Jacob Fowler",
-    "team": "MTL",
+    "name": "Michael DiPietro",
+    "team": "BOS",
     "v": 0.925
    },
    {
     "name": "Joel Hofer",
     "team": "STL",
-    "v": 0.92
-   },
-   {
-    "name": "Pyotr Kochetkov",
-    "team": "CAR",
     "v": 0.92
    }
   ],
@@ -400,7 +400,7 @@
     "name": "Jesper Wallstedt",
     "team": "MIN",
     "pos": "G",
-    "v": 12
+    "v": 13
    },
    {
     "name": "Pyotr Kochetkov",
@@ -415,8 +415,8 @@
     "v": 10
    },
    {
-    "name": "Andrei Vasilevskiy",
-    "team": "TBL",
+    "name": "Jacob Fowler",
+    "team": "MTL",
     "pos": "G",
     "v": 9
    },
@@ -431,7 +431,7 @@
    {
     "name": "Linus Ullmark",
     "team": "OTT",
-    "v": 1.33
+    "v": 1.52
    },
    {
     "name": "Pyotr Kochetkov",
@@ -441,12 +441,12 @@
    {
     "name": "Jesper Wallstedt",
     "team": "MIN",
-    "v": 1.93
+    "v": 1.94
    },
    {
-    "name": "Jake Oettinger",
-    "team": "DAL",
-    "v": 1.99
+    "name": "Connor Hellebuyck",
+    "team": "NJD",
+    "v": 1.97
    },
    {
     "name": "Daniil Tarasov",
@@ -460,122 +460,122 @@
    {
     "name": "Sebastian Aho",
     "pos": "C",
-    "gp": 19,
-    "g": 10,
+    "gp": 20,
+    "g": 12,
     "a": 16,
-    "p": 26,
-    "pm": 14,
-    "ppg": 4,
-    "shots": 54,
-    "toi": 1188.5263
-   },
-   {
-    "name": "Jackson Blake",
-    "pos": "R",
-    "gp": 19,
-    "g": 5,
-    "a": 14,
-    "p": 19,
-    "pm": 14,
-    "ppg": 1,
-    "shots": 49,
-    "toi": 1074.4211
+    "p": 28,
+    "pm": 15,
+    "ppg": 5,
+    "shots": 56,
+    "toi": 1182.75
    },
    {
     "name": "Logan Stankoven",
     "pos": "C",
-    "gp": 19,
+    "gp": 20,
     "g": 11,
-    "a": 7,
-    "p": 18,
-    "pm": 15,
+    "a": 9,
+    "p": 20,
+    "pm": 17,
     "ppg": 1,
-    "shots": 55,
-    "toi": 1012.4737
+    "shots": 56,
+    "toi": 1009.4
+   },
+   {
+    "name": "Jackson Blake",
+    "pos": "R",
+    "gp": 20,
+    "g": 5,
+    "a": 15,
+    "p": 20,
+    "pm": 16,
+    "ppg": 1,
+    "shots": 50,
+    "toi": 1074.3
    },
    {
     "name": "Andrei Svechnikov",
     "pos": "R",
-    "gp": 19,
+    "gp": 20,
     "g": 9,
-    "a": 9,
-    "p": 18,
-    "pm": 12,
+    "a": 10,
+    "p": 19,
+    "pm": 13,
     "ppg": 3,
-    "shots": 56,
-    "toi": 1048.6316
+    "shots": 59,
+    "toi": 1050.9
    },
    {
     "name": "Nikolaj Ehlers",
     "pos": "L",
-    "gp": 19,
-    "g": 4,
-    "a": 11,
-    "p": 15,
-    "pm": 6,
+    "gp": 20,
+    "g": 5,
+    "a": 12,
+    "p": 17,
+    "pm": 8,
     "ppg": 2,
-    "shots": 43,
-    "toi": 971.4737
+    "shots": 46,
+    "toi": 976.15
    },
    {
     "name": "Shayne Gostisbehere",
     "pos": "D",
-    "gp": 19,
+    "gp": 20,
     "g": 3,
     "a": 11,
     "p": 14,
     "pm": 14,
     "ppg": 1,
-    "shots": 35,
-    "toi": 1069.4737
+    "shots": 38,
+    "toi": 1066.6
    },
    {
     "name": "William Carrier",
     "pos": "L",
-    "gp": 19,
+    "gp": 20,
     "g": 1,
     "a": 11,
     "p": 12,
     "pm": 4,
     "ppg": 0,
     "shots": 31,
-    "toi": 770.4737
+    "toi": 772.4
    },
    {
     "name": "Jesperi Kotkaniemi",
     "pos": "C",
-    "gp": 17,
+    "gp": 18,
     "g": 5,
     "a": 5,
     "p": 10,
     "pm": 7,
     "ppg": 0,
     "shots": 20,
-    "toi": 708.4706
+    "toi": 705.6667
    },
    {
     "name": "Jordan Martinook",
     "pos": "L",
-    "gp": 19,
+    "gp": 20,
     "g": 4,
     "a": 6,
     "p": 10,
-    "pm": 5,
+    "pm": 6,
     "ppg": 0,
-    "shots": 30,
-    "toi": 883.7368
+    "shots": 32,
+    "toi": 875.7
    },
    {
     "name": "Sean Walker",
     "pos": "D",
-    "gp": 19,
+    "gp": 20,
     "g": 3,
     "a": 7,
     "p": 10,
-    "pm": 9,
+    "pm": 11,
     "ppg": 0,
-    "shots": 38,
-    "toi": 1260.4211
+    "shots": 39,
+    "toi": 1262.45
    }
   ],
   "goalies": [
@@ -591,12 +591,12 @@
    },
    {
     "name": "Brandon Bussi",
-    "gp": 7,
-    "w": 3,
+    "gp": 8,
+    "w": 4,
     "l": 2,
     "otl": 2,
-    "svp": 0.869,
-    "gaa": 3.23,
+    "svp": 0.872,
+    "gaa": 2.96,
     "so": 0
    }
   ]
@@ -607,33 +607,33 @@
   "team": "EDM",
   "number": 97,
   "season": 20262027,
-  "gp": 19,
-  "teamGp": 19,
+  "gp": 20,
+  "teamGp": 20,
   "g": 11,
-  "a": 37,
-  "p": 48,
-  "ppg": 2.53,
-  "gpg": 0.58,
-  "apg": 1.95,
-  "plusMinus": 24,
-  "ppp": 19,
-  "shots": 53,
-  "shootingPctg": 0.208,
+  "a": 38,
+  "p": 49,
+  "ppg": 2.45,
+  "gpg": 0.55,
+  "apg": 1.9,
+  "plusMinus": 25,
+  "ppp": 20,
+  "shots": 55,
+  "shootingPctg": 0.2,
   "l10": {
    "gp": 10,
-   "p": 22,
-   "ppg": 2.2
+   "p": 18,
+   "ppg": 1.8
   },
   "pace82": {
-   "g": 47,
-   "a": 160,
-   "p": 207
+   "g": 45,
+   "a": 156,
+   "p": 201
   },
   "remaining": {
-   "g": 47,
-   "a": 160,
-   "p": 207,
-   "note": "today's totals plus his per-game rate over the Oilers' 63 remaining games"
+   "g": 45,
+   "a": 156,
+   "p": 201,
+   "note": "today's totals plus his per-game rate over the Oilers' 62 remaining games"
   },
   "marks": {
    "own": {
@@ -818,6 +818,15 @@
     48,
     "NYR",
     1
+   ],
+   [
+    "2026-11-11",
+    20,
+    11,
+    38,
+    49,
+    "PHI",
+    1
    ]
   ],
   "src": [
@@ -827,7 +836,7 @@
    ]
   ]
  },
- "updated": "2026-11-12",
+ "updated": "2026-11-13",
  "errors": [],
  "src": [
   [

@@ -781,9 +781,9 @@
    "date": "2026-11-12",
    "dateText": "12 and 14 Nov",
    "t": "Canes vs Kraken in Helsinki",
-   "n": "18:00 and 19:00 CET, live at a European hour",
+   "n": "Carolina won the first game 4–1 on 12 Nov; the second is on 14 Nov.",
    "h": false,
-   "status": "confirmed",
+   "status": "done",
    "added": "2026-11-03",
    "src": [
     [
@@ -792,16 +792,17 @@
      "NHL.com",
      "https://www.nhl.com/news/carolina-seattle-to-play-in-2026-global-series-finland"
     ]
-   ]
+   ],
+   "updated": "2026-11-13"
   },
   {
    "id": "nl-budget-votes",
    "date": "2026-11-12",
    "dateText": "12 Nov",
    "t": "Dutch budget votes",
-   "n": "Fuel duty, Box 3",
+   "n": "The tax plan passed on 12 Nov with 76 seats, without the VVD.",
    "h": false,
-   "status": "confirmed",
+   "status": "done",
    "added": "2026-11-02",
    "src": [
     [
@@ -810,16 +811,17 @@
      "DutchNews",
      "https://www.dutchnews.nl/2026/11/no-sign-of-deal-on-budget-ahead-of-crucial-week-in-parliament/"
     ]
-   ]
+   ],
+   "updated": "2026-11-13"
   },
   {
    "id": "epc-dublin",
    "date": "2026-11-12",
    "dateText": "12–13 Nov",
    "t": "European Political Community summit and informal EU leaders' meeting, Dublin",
-   "n": "Ireland's largest security operation. [72]",
+   "n": "More than 40 leaders met on 12 Nov; hoaxes and Ukraine led the agenda.",
    "h": true,
-   "status": "confirmed",
+   "status": "done",
    "added": "2026-11-08",
    "src": [
     [
@@ -829,16 +831,17 @@
      "https://www.standard.co.uk/news/politics/dublin-children-russian-europe-late-late-show-b1303932.html",
      2
     ]
-   ]
+   ],
+   "updated": "2026-11-13"
   },
   {
    "id": "de-budget-bereinigung",
    "date": "2026-11-12",
    "dateText": "12–13 Nov",
    "t": "Bundestag budget committee's final session on the 2027 budget",
-   "n": "Plenary vote planned 23–27 Nov. [79]",
+   "n": "The committee met in closed session on 12 Nov; its result was not published by 05:30 on 13 Nov.",
    "h": false,
-   "status": "confirmed",
+   "status": "done",
    "src": [
     [
      79,
@@ -848,7 +851,8 @@
      1
     ]
    ],
-   "added": "2026-11-09"
+   "added": "2026-11-09",
+   "updated": "2026-11-13"
   },
   {
    "id": "ms-senate-certify",
@@ -1665,6 +1669,25 @@
      "US Senate Daily Press",
      "https://www.dailypress.senate.gov/tuesday-november-10-2026/",
      1
+    ]
+   ]
+  },
+  {
+   "id": "wh-poland-decision",
+   "date": "2026-12-01",
+   "dateText": "early December",
+   "t": "White House decision on a permanent US presence in Poland",
+   "n": "The Pentagon has backed it; Warsaw offers four cities west of the Vistula.",
+   "h": false,
+   "status": "reported",
+   "added": "2026-11-13",
+   "src": [
+    [
+     10,
+     "Pentagon 'greenlit' permanent presence of US troops in Poland, official says",
+     "Defense News",
+     "https://www.defensenews.com/global/europe/2026/11/12/pentagon-greenlit-permanent-presence-of-us-troops-in-poland-official-says/",
+     3
     ]
    ]
   }

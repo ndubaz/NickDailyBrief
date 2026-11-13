@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12",
+ "updated": "2026-11-13",
  "note": "Forecast ledger, run only. Dated, falsifiable calls with a probability and a resolution date. The run adds one to three a week, never edits a call after it is made, resolves each on its date (yes, no, or void when the question stopped being meaningful) with the fact and source, and the page keeps a Brier score. Seed entries dated 7 Nov 2026 were made at the 7.0 build.",
  "items": [
   {
@@ -62,8 +62,16 @@
    "made": "2026-11-09",
    "resolves": "2026-11-13",
    "domain": "Netherlands",
-   "status": "open",
-   "why": "The coalition's 66 seats plus ChristenUnie, 50PLUS and the Markuszower group make a majority, per DutchNews on 5 Nov."
+   "status": "yes",
+   "why": "The coalition's 66 seats plus ChristenUnie, 50PLUS and the Markuszower group make a majority, per DutchNews on 5 Nov.",
+   "resolvedDate": "2026-11-13",
+   "note": "The Tweede Kamer passed the 2027 tax plan on 12 Nov with 76 seats, without the VVD (NOS).",
+   "src": [
+    [
+     "Belastingplan aangenomen, en nu is de vraag wat de VVD gaat doen",
+     "https://nos.nl/l/2639225"
+    ]
+   ]
   },
   {
    "id": "2026-11-12-pow-swap-1000",

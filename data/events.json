@@ -182,59 +182,6 @@
    ]
   },
   {
-   "id": "kerker-drachen-theater-aachen-2026",
-   "t": "Kerker, Drachen, Würfelwürfe: a pen-and-paper role-playing evening in German with Judith and Christian Vogt",
-   "cat": "kids",
-   "from": "2026-11-12",
-   "to": "2026-11-12",
-   "town": "Aachen",
-   "venue": "Theater Aachen, Mörgens, 20:00; further dates 7 Jan, 31 Mar, 13 May, 14 Jul",
-   "cc": "DE",
-   "drive": 25,
-   "cost": "Ticket via the theatre",
-   "kid": false,
-   "prio": false,
-   "added": "2026-11-11",
-   "src": [
-    [
-     160,
-     "Theater Aachen: Demnächst",
-     "Theater Aachen",
-     "https://www.theateraachen.de/de/start/index.html",
-     1
-    ],
-    [
-     161,
-     "Kerker, Drachen, Würfelwürfe",
-     "Theater Aachen",
-     "https://www.theateraachen.de/de/produktionen/kerker-drachen-wuerfelwuerfe.html",
-     1
-    ]
-   ]
-  },
-  {
-   "id": "rhythmix-philzuid-heerlen-2026",
-   "t": "Rhythmix: Philzuid and Percossa family concert (8+)",
-   "cat": "music",
-   "from": "2026-11-12",
-   "to": "2026-11-12",
-   "town": "Heerlen",
-   "venue": "Theater Heerlen, 19:00–20:00",
-   "cc": "NL",
-   "drive": 10,
-   "cost": "€19.50; children to 12 €9.50",
-   "kid": true,
-   "added": "2026-11-03",
-   "src": [
-    [
-     194,
-     "Familieconcert Rhythmix – Philzuid",
-     "Parkstad Limburg Theaters",
-     "https://www.plt.nl/programma/rhythmix-philzuid/12-11-2026-19-00"
-    ]
-   ]
-  },
-  {
    "id": "jazzout-2026",
    "t": "JazzOUT! with Nate Smith (Live Action)",
    "cat": "music",

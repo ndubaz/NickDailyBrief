@@ -136,16 +136,6 @@
    "field": "military"
   },
   {
-   "org": "Bertelsmann Stiftung (eupinions)",
-   "title": "Unequal Trust, Shared Interests",
-   "authors": "Bertelsmann Stiftung and Bertelsmann Foundation North America",
-   "date": "2026-10-26",
-   "url": "https://www.bertelsmann-stiftung.de/en/publications/publication/did/unequal-trust-shared-interests",
-   "for": "",
-   "note": "Transatlantic trust survey; Europeans half as likely to trust the US as Americans are to trust Europe.",
-   "field": "polsci"
-  },
-  {
    "org": "Epoch AI",
    "title": "Introducing the AI Chip Imports explorer",
    "authors": "Lucio Melito and Isabel Juniewicz",
@@ -164,16 +154,6 @@
    "url": "https://www.nber.org/papers/w35994",
    "for": "",
    "note": "2.5 million revenue observations from all European fishing vessels, 2013–2022; projected losses up to €560 million a year by 2100 in the warmest scenario. Only the abstract was read."
-  },
-  {
-   "field": "tech",
-   "org": "NBER",
-   "title": "AI as Shared Business Infrastructure: Firm Growth and the Distribution of Gains (NBER Working Paper 36003)",
-   "authors": "Panle Jia Barwick, Lu Fang, Jinhan Liu, Huilan Xu, Zhe Yuan",
-   "date": "2026-11-09",
-   "url": "https://www.nber.org/papers/w36003",
-   "for": "",
-   "note": "Matched difference-in-differences on a Chinese e-commerce platform: AI adoption raises small firms’ monthly sales 51.6%. Only the abstract was read."
   },
   {
    "field": "economics",
@@ -214,6 +194,16 @@
    "url": "https://doi.org/10.1080/15027570.2026.2753860",
    "for": "",
    "note": "Online 9 Nov 2026; abstract not yet read."
+  },
+  {
+   "field": "military",
+   "org": "War on the Rocks",
+   "title": "How Purges Are Affecting Chinese Military Readiness and Taiwan Contingencies",
+   "authors": "",
+   "date": "2026-11-12",
+   "url": "https://warontherocks.com/how-purges-are-affecting-chinese-military-readiness-and-taiwan-contingencies/",
+   "for": "",
+   "note": "Feed title only; not yet read."
   }
  ],
  "covered": [
@@ -352,6 +342,30 @@
    "title": "The Ethics of Intervention in Iran and the Autocratic Way of War",
    "authors": "James Pattison",
    "url": "https://doi.org/10.1017/s0892679426100501"
+  },
+  {
+   "date": "2026-11-13",
+   "field": "military",
+   "org": "War on the Rocks",
+   "title": "Winning Time: Ukraine's Unmanned Systems Forces and the New Dimension of War",
+   "authors": "Oleksiy Honcharuk",
+   "url": "https://warontherocks.com/winning-time-ukraines-unmanned-systems-forces-and-the-new-dimension-of-war/"
+  },
+  {
+   "date": "2026-11-13",
+   "field": "polsci",
+   "org": "Bertelsmann Stiftung (eupinions)",
+   "title": "Unequal Trust, Shared Interests: European and American Views on the Future of Transatlantic Relations",
+   "authors": "Brandon Bohrn, Courtney Flynn Martino, Daniela Schmidt",
+   "url": "https://www.bertelsmann-stiftung.de/en/publications/publication/did/unequal-trust-shared-interests"
+  },
+  {
+   "date": "2026-11-13",
+   "field": "tech",
+   "org": "NBER",
+   "title": "AI as Shared Business Infrastructure: Firm Growth and the Distribution of Gains (NBER Working Paper 36003)",
+   "authors": "Panle Jia Barwick, Lu Fang, Jinhan Liu, Huilan Xu, Zhe Yuan",
+   "url": "https://www.nber.org/papers/w36003"
   }
  ],
  "fields": {

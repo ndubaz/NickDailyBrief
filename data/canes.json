@@ -1,7 +1,7 @@
 {
  "season": "2026-27",
  "team": "CAR",
- "source": "NHL API (api-web.nhle.com club-schedule-season and standings), 12 Nov 2026",
+ "source": "NHL API (api-web.nhle.com club-schedule-season and standings), 13 Nov 2026",
  "games": [
   {
    "date": "2026-09-29",
@@ -154,19 +154,21 @@
    "gf": 9,
    "ga": 2,
    "res": "W"
-  }
- ],
- "record": "14-3-2",
- "points": 30,
- "metro": 1,
- "updated": "2026-11-12",
- "upcoming": [
+  },
   {
    "date": "2026-11-12",
    "opp": "SEA",
    "home": false,
-   "utc": "2026-11-12T17:00:00Z"
-  },
+   "gf": 4,
+   "ga": 1,
+   "res": "W"
+  }
+ ],
+ "record": "15-3-2",
+ "points": 32,
+ "metro": 1,
+ "updated": "2026-11-13",
+ "upcoming": [
   {
    "date": "2026-11-14",
    "opp": "SEA",
@@ -250,6 +252,12 @@
    "opp": "UTA",
    "home": false,
    "utc": "2026-12-18T02:00:00Z"
+  },
+  {
+   "date": "2026-12-18",
+   "opp": "COL",
+   "home": false,
+   "utc": "2026-12-19T02:00:00Z"
   }
  ]
 }

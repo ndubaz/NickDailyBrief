@@ -1,18 +1,18 @@
 {
- "updated": "2026-11-12",
- "fetched": "2026-11-12",
+ "updated": "2026-11-13",
+ "fetched": "2026-11-13",
  "stale": false,
  "src": "Family Cozi calendar (read-only feed; link kept in the task prompt)",
  "window": [
-  "2026-11-12",
-  "2027-03-12"
+  "2026-11-13",
+  "2027-03-13"
  ],
  "dropped": {
   "recurring": 31,
   "medical": 4,
   "birthday": 0,
   "empty": 0,
-  "outside": 406
+  "outside": 407
  },
  "items": [
   {
@@ -21,14 +21,6 @@
    "t": "Leave",
    "who": "me",
    "end": "2026-11-13"
-  },
-  {
-   "id": "96cd1eea57",
-   "date": "2026-11-12",
-   "t": "PTA Meeting",
-   "who": "family",
-   "time": "16:00–17:00",
-   "where": "AFNorth Teacher's Lounge"
   },
   {
    "id": "8c47cceb85",

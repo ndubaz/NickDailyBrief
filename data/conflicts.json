@@ -1,6 +1,6 @@
 {
  "note": "The board: ten tracked theatres with a dated log of facts per theatre. The morning run appends one entry per theatre that had a reportable event (newest last) with the cited source rows copied into src, and never edits or deletes old entries. No status labels: the page derives activity from the dates. lat/lon place the marker on the schematic map. short = map label; lp = label position (above, below, left, right).",
- "updated": "2026-11-11",
+ "updated": "2026-11-13",
  "theatres": [
   {
    "id": "ru-ua",
@@ -451,6 +451,54 @@
        3
       ]
      ]
+    },
+    {
+     "date": "2026-11-12",
+     "t": "Witkoff and Kushner met Putin in the Kremlin on 12 Nov; Witkoff said Europeans would join the next round and that a new meeting was set. [7, 8] The Air Force counted 123 drones plus Iskander-M, S-400 and Zircon missiles overnight into 12 Nov and, for 06:30–19:00, 143 drones and Banderol/Dan-T missiles, of which 124 drones and two missiles were downed; Klitschko reported one killed and eight injured in Kyiv, and four were killed in Kramatorsk. [16, 17, 18] Finland's Defence Forces said they detected a strike on a Russian warship in the Gulf of Finland area on 11 Nov. [11]",
+     "src": [
+      [
+       7,
+       "Putin lets Europe join Ukraine peace talks, as Kyiv says Starshield disrupted again (Reuters)",
+       "Defense News",
+       "https://www.defensenews.com/global/2026/11/12/putin-lets-europe-join-ukraine-peace-talks-as-kyiv-says-starshield-disrupted-again/",
+       2
+      ],
+      [
+       8,
+       "Witkoff, Kushner hope Europe will join next round of peace talks after meeting with Putin",
+       "Ukrinform",
+       "https://www.ukrinform.net/rubric-polytics/4184078-witkoff-kushner-hope-europe-will-join-next-round-of-peace-talks-after-meeting-with-putin.html",
+       2
+      ],
+      [
+       16,
+       "Russia attacks Kyiv with ballistic missiles hours after peace talks end (live page)",
+       "The Kyiv Independent",
+       "https://kyivindependent.com/russia-attacks-kyiv-with-ballistic-missiles-hours-after-peace-talks-end/",
+       3
+      ],
+      [
+       17,
+       "Air defense neutralizes 124 Russian drones, two S8000 Banderol/Dan-T missiles on Nov 12",
+       "Ukrinform",
+       "https://www.ukrinform.net/rubric-ato/4184063-air-defense-neutralizes-124-russian-drones-two-s8000-banderoldant-missiles-on-nov-12.html",
+       2
+      ],
+      [
+       18,
+       "Ukrinform war rubric (12 Nov items, Kramatorsk)",
+       "Ukrinform",
+       "https://www.ukrinform.net/rubric-ato",
+       2
+      ],
+      [
+       11,
+       "Finland says it detects strike on Russian warship in Baltic Sea (Reuters)",
+       "Defense News",
+       "https://www.defensenews.com/global/europe/2026/11/12/finland-says-it-detects-strike-on-russian-warship-in-baltic-sea/",
+       2
+      ]
+     ]
     }
    ],
    "short": "Ukraine",
@@ -761,6 +809,26 @@
        3
       ]
      ]
+    },
+    {
+     "date": "2026-11-13",
+     "t": "The IRGC said on 13 Nov it targeted a US early-warning radar in Bahrain in retaliation for an attack on a telecom tower in Sirik, Hormozgan, on 12 Nov; Fars said the radar was “targeted and destroyed”, and Washington and Manama had not commented. [9] Al Jazeera's live page reported that Trump said Gulf partners had asked him to pause further strikes. [20]",
+     "src": [
+      [
+       9,
+       "Iran says it targeted US radar site in Bahrain (with Reuters)",
+       "Al Jazeera",
+       "https://www.aljazeera.com/news/2026/11/13/iran-says-it-struck-us-radar-site-in-bahrain",
+       3
+      ],
+      [
+       20,
+       "Iran war live: Riyadh, China discuss Houthis as group claims Aramco attacks (live page)",
+       "Al Jazeera",
+       "https://www.aljazeera.com/news/liveblog/2026/11/13/iran-war-live-riyadh-china-discuss-houthis-as-group-claims-aramco-attacks",
+       3
+      ]
+     ]
     }
    ],
    "short": "Iran",
@@ -956,6 +1024,19 @@
        3
       ]
      ]
+    },
+    {
+     "date": "2026-11-12",
+     "t": "The UN humanitarian office said heavy rain may have affected more than 200,000 Palestinians in Gaza, damaged more than 40,000 family shelters and killed at least four children. [39]",
+     "src": [
+      [
+       39,
+       "INTERVIEW - Flooding 'nightmare' in Gaza 'only the beginning,' UN humanitarian office warns",
+       "Anadolu Agency",
+       "https://www.aa.com.tr/en/world/interview-flooding-nightmare-in-gaza-only-the-beginning-un-humanitarian-office-warns/4122439",
+       3
+      ]
+     ]
     }
    ],
    "short": "Gaza · Lebanon",
@@ -1137,6 +1218,19 @@
        "Attacks escalate between Saudi-led forces and Yemen's Iran-backed Houthis (video)",
        "Al Jazeera",
        "https://www.aljazeera.com/video/newsfeed/2026/11/10/attacks-escalate-between-saudi-led-forces-and-yemens-iran-backed-houthis",
+       3
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-13",
+     "t": "The UN Security Council renewed the Yemen sanctions regime for another year. [41]",
+     "src": [
+      [
+       41,
+       "UN Security Council renews Yemen sanctions for another year",
+       "Anadolu Agency",
+       "https://www.aa.com.tr/en/middle-east/un-security-council-renews-yemen-sanctions-for-another-year/4123568",
        3
       ]
      ]
@@ -1912,6 +2006,19 @@
        3
       ]
      ]
+    },
+    {
+     "date": "2026-11-13",
+     "t": "The World Food Programme said 28.8 million people in DR Congo face acute food insecurity, 3.6 million of them in emergency conditions. [35]",
+     "src": [
+      [
+       35,
+       "Hunger crisis deepens in DR Congo as 28.8M face acute food insecurity: WFP",
+       "Anadolu Agency",
+       "https://www.aa.com.tr/en/africa/hunger-crisis-deepens-in-dr-congo-as-288m-face-acute-food-insecurity-wfp/4123541",
+       3
+      ]
+     ]
     }
    ],
    "short": "DRC",
@@ -2200,6 +2307,19 @@
        3
       ]
      ]
+    },
+    {
+     "date": "2026-11-12",
+     "t": "Ten Joint Expeditionary Force navies signed a Northern Navies Initiative aboard HMS Prince of Wales in Oslo on 12 Nov, covering the North Atlantic, High North and Baltic and naming risks to undersea infrastructure. [34]",
+     "src": [
+      [
+       34,
+       "UK and JEF Allies Sign Landmark Northern Navies Initiative Aboard HMS Prince of Wales",
+       "Naval News",
+       "https://www.navalnews.com/naval-news/2026/11/uk-and-jef-allies-sign-landmark-northern-navies-initiative-aboard-hms-prince-of-wales/",
+       3
+      ]
+     ]
     }
    ]
   },
@@ -2290,6 +2410,19 @@
        "BTA",
        "https://www.bta.bg/en/news/balkans/1244226-serbia-s-media-regulator-imposes-four-bans-on-pro-vucic-informer-tv",
        2
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-12",
+     "t": "The Court of Bosnia and Herzegovina sentenced three men to a combined 41 years for abusing detained civilians in Bosanski Novi in 1992. [38]",
+     "src": [
+      [
+       38,
+       "Bosnian Court Convicts Three of Wartime Abuses of Civilian Prisoners",
+       "Balkan Insight",
+       "https://balkaninsight.com/2026/11/12/bosnian-court-convicts-three-of-wartime-abuses-of-civilian-prisoners/btj/",
+       3
       ]
      ]
     }
@@ -2450,6 +2583,26 @@
        "Kyiv Independent",
        "https://kyivindependent.com/russian-attacks-kill-9-injure-39-across-ukraine-over-past-day-as-2-russian-cruise-missiles-violate-moldovan-airspace/",
        3
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-13",
+     "t": "Moldova's Central Electoral Commission has set elections for Gagauzia's governor and People's Assembly for 15 Nov. [36] Zelensky said on 12 Nov that Russia gave a negative answer to Ukraine's Black Sea de-escalation proposal. [22]",
+     "src": [
+      [
+       36,
+       "Elections to People's Assembly of Gagauzia set for 15 November",
+       "Moldpres",
+       "https://moldpres.md/eng/politics/elections-to-people-s-assembly-of-gagauzia-set-for-15-november",
+       2
+      ],
+      [
+       22,
+       "Putin wants to destroy life in Kyiv and other major Ukrainian cities – Zelensky",
+       "Ukrinform",
+       "https://www.ukrinform.net/rubric-ato/4183885-putin-wants-to-destroy-life-in-kyiv-and-other-major-ukrainian-cities-zelensky.html",
+       2
       ]
      ]
     }

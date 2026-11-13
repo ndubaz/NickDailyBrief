@@ -674,6 +674,40 @@
      3
     ]
    ]
+  },
+  {
+   "id": "2026-11-12-google-gemini-4-hydrogen-search",
+   "date": "2026-11-12",
+   "kind": "model",
+   "t": "Gemini 4 Hydrogen becomes the model behind Google Search's AI Mode",
+   "lab": "Google",
+   "n": "Called “the biggest model upgrade to Search yet”; no benchmark figures published. [59]",
+   "src": [
+    [
+     59,
+     "Google's new Gemini model is better at understanding complicated questions",
+     "The Verge",
+     "https://www.theverge.com/ai-artificial-intelligence/1032505/google-search-ai-mode-gemini-4-hydrogen",
+     3
+    ]
+   ]
+  },
+  {
+   "id": "2026-11-12-study-chatbot-risky-urls",
+   "date": "2026-11-12",
+   "kind": "result",
+   "t": "Study finds Gemini, Perplexity and ChatGPT showed risky shopping URLs in up to 15% of conversations",
+   "lab": "Independent study (reported by The Verge)",
+   "n": "Up to 15% of conversations displayed risky URLs. [60]",
+   "src": [
+    [
+     60,
+     "AI chatbots are recommending fake retail websites, study finds",
+     "The Verge",
+     "https://www.theverge.com/ai-artificial-intelligence/1032020/gemini-chatgpt-perplexity-shopping-test-risky-fake-websites-citations",
+     3
+    ]
+   ]
   }
  ],
  "sota": {
