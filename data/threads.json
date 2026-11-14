@@ -856,6 +856,33 @@
        2
       ]
      ]
+    },
+    {
+     "date": "2026-11-14",
+     "t": "EU leaders named the EU institutions and the E5 of the Coalition of the Willing as Europe's team at Dublin on 13 Nov; Kushner said both sides agreed to include Europeans in the next round; Zelensky said Ukraine hopes for an exchange of more than 1,000 prisoners on each side. [10, 13, 20]",
+     "src": [
+      [
+       10,
+       "EU leaders agree on joint team to represent Europe in Ukraine peace talks",
+       "Ukrinform",
+       "https://www.ukrinform.net/rubric-polytics/4184513-eu-leaders-agree-on-joint-team-to-represent-europe-in-ukraine-peace-talks.html",
+       2
+      ],
+      [
+       13,
+       "Ukraine hopes for large-scale POW exchange – Zelensky",
+       "Ukrinform",
+       "https://www.ukrinform.net/rubric-polytics/4184534-ukraine-hopes-for-largescale-pow-exchange-zelensky.html",
+       2
+      ],
+      [
+       20,
+       "Kushner says next round of Russia-Ukraine talks to include Europe",
+       "Anadolu Agency",
+       "https://www.aa.com.tr/en/world/us-envoy-kushner-says-next-round-of-russia-ukraine-peace-talks-to-include-europe/4123847",
+       2
+      ]
+     ]
     }
    ]
   },
@@ -1142,6 +1169,26 @@
        3
       ]
      ]
+    },
+    {
+     "date": "2026-11-14",
+     "t": "The IRGC said a gas carrier caught fire after hitting mines in Hormuz and that it destroyed a US radar in Bahrain. [17, 18]",
+     "src": [
+      [
+       17,
+       "IRGC says tanker caught fire after hitting mines in Strait of Hormuz",
+       "Al Jazeera",
+       "https://www.aljazeera.com/video/newsfeed/2026/11/13/irgc-says-tanker-caught-fire-after-hitting-mines-in-strait-of-hormuz",
+       3
+      ],
+      [
+       18,
+       "Iran claims it destroyed US early-warning radar in Bahrain",
+       "Anadolu Agency",
+       "https://www.aa.com.tr/en/middle-east/iran-claims-it-destroyed-us-early-warning-radar-in-bahrain/4123650",
+       2
+      ]
+     ]
     }
    ]
   },
@@ -1341,6 +1388,26 @@
        "Belastingplan aangenomen, en nu is de vraag wat de VVD gaat doen",
        "NOS",
        "https://nos.nl/l/2639225",
+       3
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-14",
+     "t": "Coalition talks between Jetten, Yeşilgöz and Van den Brink ended after more than eight hours on 13 Nov without a deal; Yeşilgöz called the minority cabinet a “mislukt experiment” (“failed experiment”), and the D66, VVD and CDA leaders resume at De Zwaluwenberg on 14 Nov. [5, 19]",
+     "src": [
+      [
+       5,
+       "D66, VVD en CDA zetten crisisoverleg voort op landgoed De Zwaluwenberg, uitkomst ongewis",
+       "NOS",
+       "https://nos.nl/l/2639424",
+       3
+      ],
+      [
+       19,
+       "Het kan nog steeds fout gaan, is de conclusie na urenlang crisisoverleg",
+       "NOS",
+       "https://nos.nl/l/2639395",
        3
       ]
      ]
@@ -1544,6 +1611,19 @@
        "Budget fédéral : De Wever imperturbable sous le feu des critiques à la Chambre",
        "RTBF",
        "https://www.rtbf.be/article/budget-federal-de-wever-imperturbable-sous-le-feu-des-critiques-a-la-chambre-11814809",
+       3
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-14",
+     "t": "Prime Minister De Wever called majority leaders to weekend budget talks from 13 Nov and reports to the King on Monday 16 Nov at 10:30; without a deal a temporary budget applies from January. [7]",
+     "src": [
+      [
+       7,
+       "Les négociations budgétaires fédérales vont enfin reprendre pour un week-end de tous les dangers",
+       "RTBF",
+       "https://www.rtbf.be/article/les-negociations-budgetaires-federales-vont-enfin-reprendre-pour-un-week-end-de-tous-les-dangers-11815011",
        3
       ]
      ]
@@ -2054,6 +2134,33 @@
        "US charges 3 men over alleged Iranian-backed plot at UK Fairford air base",
        "Al Jazeera",
        "https://www.aljazeera.com/news/2026/11/11/us-charges-3-iranian-backed-men-over-alleged-plot-at-uk-fairford-air-base",
+       3
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-14",
+     "t": "Defense News named Lt. Col. Brandon Carroll Tyner, assigned to the Allied Rapid Reaction Corps at Imjin Barracks, as the US Army officer held in Britain under the National Security Act 2023. [15] Sirens sounded at RAF Lakenheath and RAF Feltwell at about 17:30 on 13 Nov over suspected drones; the US Air Force said nothing was affected. [16] The War Zone, citing the Wall Street Journal, reported FPCON Charlie at Mildenhall and Lakenheath over an Iranian threat. [34]",
+     "src": [
+      [
+       15,
+       "US Army names officer held on 'allegations of espionage'",
+       "Defense News",
+       "https://www.defensenews.com/global/europe/2026/11/13/us-army-names-officer-held-on-allegations-of-espionage/",
+       3
+      ],
+      [
+       16,
+       "Sirens sound at UK air bases over suspected drone activity",
+       "Anadolu Agency",
+       "https://www.aa.com.tr/en/world/sirens-sound-at-uk-air-bases-over-suspected-drone-activity-report/4124827",
+       2
+      ],
+      [
+       34,
+       "Suspected Drones Over RAF Lakenheath Just Triggered Security Response: U.S. Air Force",
+       "The War Zone",
+       "https://www.twz.com/air/suspected-drones-over-raf-lakenheath-just-triggered-security-response-u-s-air-force",
        3
       ]
      ]

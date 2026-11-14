@@ -1,0 +1,2429 @@
+{
+ "v": "7.5",
+ "promptRev": "7.5.12",
+ "date": "2026-11-14",
+ "weekday": "Saturday",
+ "edition": 14,
+ "lookback": "13–14 Nov",
+ "note": "Trump to meet Putin and Xi in Shenzhen on Thursday; Europe names its team for the Ukraine talks; the Army names the officer held in Britain; the Dutch coalition talks go into the weekend.",
+ "today": {
+  "weather": {
+   "now": "Clear and 2 °C before dawn; the forecast for Heerlen has a high of 9 °C and a low of 2 °C, no rain and a light south-east wind, force 3. [1]",
+   "hi": 9,
+   "lo": 2,
+   "tomorrow": "Sun: 10 °C, 1 °C at night, rain likely (85%) with a moderate south wind. [1]",
+   "sunrise": "07:50",
+   "sunset": "16:50",
+   "src": 1,
+   "week": [
+    [
+     "2026-11-14",
+     9,
+     2,
+     0,
+     "SE 3",
+     "sun"
+    ],
+    [
+     "2026-11-15",
+     10,
+     1,
+     85,
+     "S 4",
+     "rain"
+    ],
+    [
+     "2026-11-16",
+     9,
+     6,
+     78,
+     "WSW 5",
+     "showers"
+    ],
+    [
+     "2026-11-17",
+     13,
+     6,
+     94,
+     "SSW 5",
+     "showers"
+    ],
+    [
+     "2026-11-18",
+     12,
+     9,
+     76,
+     "SW 5",
+     "showers"
+    ],
+    [
+     "2026-11-19",
+     11,
+     5,
+     60,
+     "WSW 4",
+     "showers"
+    ],
+    [
+     "2026-11-20",
+     8,
+     2,
+     45,
+     "WSW 3",
+     "showers"
+    ]
+   ],
+   "weekNote": "Today is the last dry day: Sunday turns wet, and Monday to Thursday stay mild (9–13 °C) with showers and a fresh south-west wind on Tuesday. Daylight is 9 h 00 min. [1]"
+  },
+  "canes": {
+   "line": "v Seattle 19:00 tonight, Helsinki",
+   "sub": "15-3-2 · 32 pts · 1st in the Metropolitan",
+   "src": 2
+  },
+  "markets": [
+   [
+    "S&P 500",
+    "−0.40% Fri",
+    "down"
+   ],
+   [
+    "Dow",
+    "+0.10% Fri",
+    "up"
+   ],
+   [
+    "US 10-year",
+    "5.15% Fri",
+    "up"
+   ],
+   [
+    "USD/EUR",
+    "0.9048",
+    "up"
+   ]
+  ],
+  "items": [
+   {
+    "k": "Today",
+    "t": "Heerlerweg: the gemeente's refusal on 5 Nov of a permit to open a gym at a Heerlerweg address in Hoensbroek is still the only notice for the street; no roadworks, closures or events are listed. [3]",
+    "cat": "nl"
+   },
+   {
+    "k": "Today",
+    "t": "Clear and dry, 9 °C. Sinterklaas arrives in Maastricht (family calendar 11:00) and, nationally, in Grave; the Canes play Seattle in Helsinki at 19:00; Roda JC host FC Volendam at 20:00. [1, 2, 4]",
+    "cat": "nl"
+   },
+   {
+    "k": "Today",
+    "t": "D66, VVD and CDA leaders resume crisis talks on the cabinet at the De Zwaluwenberg estate. [5]",
+    "cat": "nl"
+   },
+   {
+    "k": "Sun",
+    "t": "Sinterklaas arrives in Heerlen; the Saints host Carolina at 19:00 CET; rain likely. [1]",
+    "cat": "nl"
+   },
+   {
+    "k": "Mon",
+    "t": "No school at AFNORTH; the family calendar starts your CIMIC course in The Hague; De Wever reports to the King at 10:30; Oranje play in Germany. [6, 7, 8]",
+    "cat": "us"
+   }
+  ]
+ },
+ "brief": {
+  "takeaways": [
+   {
+    "t": "**The White House said on 13 Nov that President Trump will meet Presidents Putin and Xi in Shenzhen on Thursday 19 Nov, the first three-way meeting of the three leaders,** on the margins of the APEC summit, with nuclear arms reduction on the agenda. [9]",
+    "to": "world",
+    "part": "world",
+    "links": [
+     "thread:russia-ukraine-talks"
+    ]
+   },
+   {
+    "t": "**EU leaders agreed in Dublin on 13 Nov that Europe's team for the Ukraine talks is the EU institutions and the E5: France, Germany, the UK, Italy and Poland;** Chancellor Merz said talks with Europe represented are expected “in the coming weeks”. [10, 11, 12]",
+    "to": "world",
+    "part": "world",
+    "links": [
+     "theatre:ru-ua",
+     "thread:russia-ukraine-talks"
+    ]
+   },
+   {
+    "t": "**President Zelensky said on 13 Nov that Ukraine hopes for a prisoner exchange of more than 1,000 people on each side;** overnight Russia launched 117 drones, of which 80 were downed or suppressed. [13, 14]",
+    "to": "world",
+    "part": "world",
+    "links": [
+     "theatre:ru-ua",
+     "thread:russia-ukraine-talks"
+    ]
+   },
+   {
+    "t": "**The Army on 13 Nov named Lt. Col. Brandon Carroll Tyner, assigned to NATO's Allied Rapid Reaction Corps at Imjin Barracks, as the officer held in Britain under the National Security Act 2023;** the same evening suspected drones set off sirens at RAF Lakenheath and Feltwell. [15, 16]",
+    "to": "armynews",
+    "part": "pro",
+    "links": [
+     "thread:uk-us-bases"
+    ]
+   },
+   {
+    "t": "**Iran's Revolutionary Guard said on 13 Nov that a liquefied gas carrier caught fire after hitting mines in the Strait of Hormuz,** and that it had “targeted and destroyed” a US early-warning radar in Bahrain; no US or Bahraini response was published. [17, 18]",
+    "to": "world",
+    "part": "world",
+    "links": [
+     "theatre:iran",
+     "thread:iran-hormuz"
+    ]
+   },
+   {
+    "t": "**Dutch coalition talks ended after more than eight hours on 13 Nov without a deal, and VVD leader Yeşilgöz called the minority cabinet a “mislukt experiment” (“failed experiment”);** the D66, VVD and CDA leaders resume today at De Zwaluwenberg. [5, 19]",
+    "to": "nl",
+    "part": "home",
+    "links": [
+     "thread:nl-tax-plan-2027"
+    ]
+   }
+  ],
+  "unknowns": [
+   {
+    "q": "What, if anything, did the IRGC hit in Bahrain on 13 Nov, and what attacked the telecom tower in Sirik the day before?",
+    "thread": "theatre:iran"
+   },
+   {
+    "q": "When and where does the next round of Ukraine talks with the European team meet?",
+    "thread": "thread:russia-ukraine-talks"
+   },
+   {
+    "q": "Is the US Army officer held in Britain charged by about 24 Nov, and what information is he alleged to have passed?",
+    "thread": "thread:uk-us-bases"
+   }
+  ]
+ },
+ "five": [
+  {
+   "t": "**The White House said on 13 Nov that President Trump will meet Presidents Putin and Xi in Shenzhen on Thursday 19 Nov, the first three-way meeting of the three leaders,** on the margins of the APEC summit, with nuclear arms reduction on the agenda. [9]",
+   "to": "world",
+   "part": "world"
+  },
+  {
+   "t": "**EU leaders agreed in Dublin on 13 Nov that Europe's team for the Ukraine talks is the EU institutions and the E5: France, Germany, the UK, Italy and Poland;** Chancellor Merz said talks with Europe represented are expected “in the coming weeks”. [10, 11, 12]",
+   "to": "world",
+   "part": "world"
+  },
+  {
+   "t": "**President Zelensky said on 13 Nov that Ukraine hopes for a prisoner exchange of more than 1,000 people on each side;** overnight Russia launched 117 drones, of which 80 were downed or suppressed. [13, 14]",
+   "to": "world",
+   "part": "world"
+  },
+  {
+   "t": "**The Army on 13 Nov named Lt. Col. Brandon Carroll Tyner, assigned to NATO's Allied Rapid Reaction Corps at Imjin Barracks, as the officer held in Britain under the National Security Act 2023;** the same evening suspected drones set off sirens at RAF Lakenheath and Feltwell. [15, 16]",
+   "to": "armynews",
+   "part": "pro"
+  },
+  {
+   "t": "**Iran's Revolutionary Guard said on 13 Nov that a liquefied gas carrier caught fire after hitting mines in the Strait of Hormuz,** and that it had “targeted and destroyed” a US early-warning radar in Bahrain; no US or Bahraini response was published. [17, 18]",
+   "to": "world",
+   "part": "world"
+  }
+ ],
+ "pick": {
+  "t": "Saturday's red team takes the seat of the GRU's hybrid planners and argues that the allies' habit of handling hoaxes, cold-chain attacks and rail sabotage nation by nation is the asset it protects.",
+  "to": "aperture"
+ },
+ "world": {
+  "items": [
+   {
+    "region": "Great powers",
+    "h": "Trump to meet Putin and Xi in Shenzhen on Thursday, the first three-way talk",
+    "body": "The White House told reporters on 13 Nov that President Donald Trump will meet President Vladimir Putin and President Xi Jinping in China on Thursday 19 Nov, on the sidelines of the Asia-Pacific Economic Cooperation (APEC) summit in Shenzhen; it is the first time the three leaders meet in a three-way format. [9] The talks will cover reducing nuclear weapons; spokesperson Olivia Wales said, as NOS rendered it, “President Trump is van mening dat de uitbreiding van kernwapens zeer gevaarlijk is” (“President Trump believes the expansion of nuclear weapons is very dangerous”). [9] The last US–Russian nuclear arms treaty expired in February. [9] An unnamed US official told Reuters that Iran will be on the table and Ukraine will not; no one-to-one meeting between Trump and Putin is planned. [9]",
+    "next": "Trump leaves Monday 16 Nov on a four-day trip to Asia that includes the Philippines; the two-day APEC summit opens on Wednesday 18 Nov and the three-way meeting is on 19 Nov. [9]",
+    "conf": "moderate",
+    "badge": "NEW",
+    "links": [
+     "thread:russia-ukraine-talks",
+     "theatre:iran"
+    ]
+   },
+   {
+    "region": "Russia–Ukraine",
+    "h": "EU leaders name the EU institutions and five states as Europe's team for Ukraine talks",
+    "body": "EU leaders agreed at an informal European Council in Dublin on 13 Nov that “the European team for the negotiations on peace in Ukraine is the European Union institutions and the E5 (countries) of the Coalition of the Willing,” Council President António Costa said. [10] EUobserver named the five as France, Germany, the UK, Italy and Poland, with no single envoy. [11] Costa added: “Only Ukraine has the legitimacy to decide on matters concerning its territory and sovereignty.” [10] Chancellor Friedrich Merz said: “In the coming weeks, concrete peace talks are expected to take place for the first time with Europe represented.” [12] Jared Kushner wrote on X on 12 Nov: “Both sides have now agreed to expand the next round of negotiations to include our European partners.” [20]",
+    "next": "No date or venue for the next round is published; Kushner said the schedule would be announced “shortly”. [20] The Coalition of the Willing meets in Berlin on 19 Nov and the European Council on 26–27 Nov. [10, 21]",
+    "conf": "high",
+    "badge": "UPDATED",
+    "links": [
+     "theatre:ru-ua",
+     "thread:russia-ukraine-talks"
+    ]
+   },
+   {
+    "region": "Russia–Ukraine",
+    "h": "Zelensky says Ukraine hopes to swap more than 1,000 prisoners on each side",
+    "body": "President Volodymyr Zelensky said in his evening address on 13 Nov: “We count on a truly large-scale prisoner exchange,” one that could see more than 1,000 people released on each side. [13] Kushner said the US is working toward the largest exchange of the war, a result of the Abu Dhabi talks on 10–11 Nov. [20] Ukraine's Air Force said Russia launched 117 strike drones, 63 of them jet-powered, overnight into 13 Nov; 80 were downed or suppressed, with hits at 24 locations. [14] A jet-powered Geran-5 was downed over the Kyiv region with a Swedish RBS-70 for the first time. [22] Ukrinform counted 243 clashes on 13 Nov, nearly 50 of them in the Pokrovsk sector, and a strike on Zaporizhzhia injured 50 people, eight of them children. [23, 24]",
+    "next": "Zelensky said he expects a detailed briefing on the exchange preparations soon; no date is published. [13]",
+    "conf": "high",
+    "badge": "NEW",
+    "links": [
+     "theatre:ru-ua",
+     "thread:russia-ukraine-talks"
+    ]
+   },
+   {
+    "region": "Iran and the Gulf",
+    "h": "Revolutionary Guard says a gas carrier hit mines in the Strait of Hormuz",
+    "body": "Iran's Islamic Revolutionary Guard Corps (IRGC) said on 13 Nov that a liquefied gas carrier caught fire after hitting naval mines in the Strait of Hormuz, after it “ignored warnings and attempted to navigate an unauthorised route”. [17] The same day it said its forces “targeted and destroyed” a US early-warning radar in Bahrain in response to a strike on a telecommunications tower in Sirik, which IRNA said was hit by an “enemy” strike on the evening of 12 Nov. [18] The IRGC said that if such acts recur its Aerospace Force “stands in full readiness to engage without limits.” [18] No US or Bahraini response and no independent confirmation was published. [18] A UN assistant secretary-general called on 14 Nov for safe navigation to be restored in Hormuz and the Red Sea. [25]",
+    "next": "No date is published for further contacts between Iran and the US.",
+    "conf": "moderate",
+    "badge": "UPDATED",
+    "links": [
+     "theatre:iran",
+     "thread:iran-hormuz"
+    ]
+   },
+   {
+    "region": "Western Balkans",
+    "h": "EU and UK warn Kosovo MPs against curbing the Hague court's powers",
+    "body": "The EU Office in Kosovo and the British Embassy in Pristina warned MPs on 13 Nov against passing amendments that curb the Kosovo Specialist Chambers' powers; the EU called for “prior consultations before any adoption, in line with Kosovo's international obligations.” [26] PDK MP Blerta Deliu-Kodra said on 12 Nov: “we have agreed to pass the bill, but there is no consensus on amending it.” [26] MPs first voted for the amended law on 6 Oct. [26]",
+    "next": "No date for the final vote is published. [26]",
+    "conf": "moderate",
+    "badge": "NEW",
+    "links": [
+     "theatre:balkans"
+    ]
+   }
+  ],
+  "numbers": [
+   "ua-air",
+   "ua-downed-pct",
+   "ru-personnel-day",
+   "ru-uav-day",
+   "ua-occupied-km2",
+   "ua-drones-month",
+   "hormuz-transits",
+   "bab-transits-month"
+  ],
+  "feature": {
+   "rota": "sat",
+   "kind": "Saturday · Geography",
+   "title": "Eastern Congo's road war: the FRN pushes up national road 3 from Kalehe",
+   "body": [
+    "The front that moved this week in eastern Congo runs along one road. National road 3 (RN3) leaves Bukavu on Lake Kivu and climbs west through Kahuzi-Biega National Park towards Walikale and, eventually, Kisangani. [27, 28] The FRN, the movement led by former president Joseph Kabila and launched in Goma on 12 Oct, took over from the AFC, the political wing of M23, whose commanders still lead on the ground. [27]",
+    "Its offensive began overnight on 6–7 Nov through the park and along RN3. [27, 28] By 8 Nov it held Bitale, Bulambika and Bunyakiri in Kalehe territory; Bulambika, about 30 km from Hombo on the Kalehe–Walikale border, has a general hospital, a health-zone office and a prison. [28, 29] Local civil society estimated that the FRN took 20 to 60 km of the road in two days, and a government counterattack on Kambale failed on 10 Nov. [28] The army's 34th military region said on 9 Nov: “Nous avons fixé l'ennemi. Il est stoppé au niveau de Bulambika.” (“We have pinned the enemy down. He is stopped at Bulambika.”) [27]",
+    "A preliminary humanitarian alert of 9 Nov counts 166,500 newly displaced people, about 27,750 households; the territory administrator put it at more than 160,000. [27, 30] Kinshasa accuses Kabila of acting for Rwanda, which Kigali denies. [27] Further north, the airport at Bunia in Ituri stays closed to all but humanitarian, medical and emergency flights to at least 8 Feb 2027 because of the Ebola outbreak declared there on 15 May. [31] Straight-line distances show the scale: Bukavu to Walikale is 151 km, Bukavu to Goma 101 km, and Goma to Bunia 379 km."
+   ],
+   "table": {
+    "head": [
+     "Date",
+     "Place",
+     "Actor",
+     "What happened"
+    ],
+    "rows": [
+     [
+      "6–7 Nov",
+      "Kahuzi-Biega park, RN3",
+      "FRN",
+      "Offensive opens overnight [27, 28]"
+     ],
+     [
+      "8 Nov",
+      "Bitale, Bulambika, Bunyakiri (Kalehe)",
+      "FRN",
+      "Taken; army and Wazalendo withdraw [28, 29]"
+     ],
+     [
+      "9 Nov",
+      "Bulambika",
+      "Army (34th military region)",
+      "“Il est stoppé au niveau de Bulambika” (“He is stopped at Bulambika”) [27]"
+     ],
+     [
+      "9 Nov",
+      "Kalehe territory",
+      "Humanitarian alert",
+      "166,500 newly displaced [27]"
+     ],
+     [
+      "10 Nov",
+      "Kambale",
+      "Army",
+      "Counterattack fails [28]"
+     ],
+     [
+      "To 8 Feb 2027",
+      "Bunia airport (Ituri)",
+      "Airports authority",
+      "Closed to all but humanitarian flights, Ebola [31]"
+     ]
+    ]
+   },
+   "geo": {
+    "title": "Eastern DR Congo schematic · the FRN advance on RN3, Nov 2026",
+    "bbox": [
+     24.6,
+     -3.9,
+     31.0,
+     2.1
+    ],
+    "points": [
+     {
+      "n": "Bukavu",
+      "lat": -2.51,
+      "lon": 28.86,
+      "k": "city"
+     },
+     {
+      "n": "Goma",
+      "lat": -1.68,
+      "lon": 29.23,
+      "k": "city"
+     },
+     {
+      "n": "Walikale",
+      "lat": -1.42,
+      "lon": 28.05,
+      "k": "city"
+     },
+     {
+      "n": "Kisangani",
+      "lat": 0.52,
+      "lon": 25.19,
+      "k": "city"
+     },
+     {
+      "n": "Bunia",
+      "lat": 1.57,
+      "lon": 30.25,
+      "k": "city"
+     },
+     {
+      "n": "Mambasa",
+      "lat": 1.36,
+      "lon": 29.05,
+      "k": "city"
+     },
+     {
+      "n": "Uvira",
+      "lat": -3.4,
+      "lon": 29.14,
+      "k": "city"
+     },
+     {
+      "n": "Kalehe",
+      "lat": -2.1,
+      "lon": 28.91,
+      "k": "city"
+     }
+    ],
+    "lines": [
+     {
+      "a": [
+       -2.51,
+       28.86
+      ],
+      "b": [
+       -1.42,
+       28.05
+      ],
+      "t": "RN3, 151 km straight line",
+      "solid": true
+     },
+     {
+      "a": [
+       -1.42,
+       28.05
+      ],
+      "b": [
+       0.52,
+       25.19
+      ],
+      "t": "RN3 on to Kisangani, 384 km",
+      "solid": false
+     },
+     {
+      "a": [
+       -2.51,
+       28.86
+      ],
+      "b": [
+       -1.68,
+       29.23
+      ],
+      "t": "101 km",
+      "solid": false
+     },
+     {
+      "a": [
+       -1.68,
+       29.23
+      ],
+      "b": [
+       1.57,
+       30.25
+      ],
+      "t": "379 km",
+      "solid": false
+     }
+    ],
+    "labels": [
+     {
+      "t": "Lake Kivu",
+      "lat": -2.0,
+      "lon": 29.15
+     },
+     {
+      "t": "Kahuzi-Biega",
+      "lat": -2.25,
+      "lon": 28.45
+     },
+     {
+      "t": "Ituri",
+      "lat": 1.9,
+      "lon": 29.6
+     }
+    ]
+   }
+  }
+ },
+ "hybrid": {
+  "incidents": [
+   {
+    "id": "2026-11-13-gb-uas-lakenheath",
+    "date": "2026-11-13",
+    "when": "13 Nov, about 17:30",
+    "code": "UAS",
+    "attr": "A0",
+    "local": false,
+    "country": "GB",
+    "place": "RAF Lakenheath, Suffolk",
+    "lat": 52.41,
+    "lon": 0.56,
+    "text": "Sirens sounded at RAF Lakenheath in Suffolk and RAF Feltwell in Norfolk at about 17:30 on 13 Nov; the US Air Force said the alarm was linked to “suspected unauthorized drones” and that no personnel, aircraft or infrastructure were affected. [16] The UK Ministry of Defence said the situation was resolved; no operator was named. [32]",
+    "badge": "NEW"
+   },
+   {
+    "id": "2026-11-13-be-inf-mechelen-school-hoax",
+    "date": "2026-11-13",
+    "when": "13 Nov, shortly before 10:00",
+    "code": "INF",
+    "attr": "A0",
+    "local": false,
+    "country": "BE",
+    "place": "Ursulinen school, Mechelen",
+    "lat": 51.03,
+    "lon": 4.48,
+    "text": "A phoned bomb threat led to the evacuation of 2,150 pupils and staff; federal police found nothing and released the building at 13:35. Police arrested a 17-year-old from Mechelen at 14:30 and placed him at the prosecutor's disposal. The same school was evacuated after a threat in early October, and authorities are checking whether the cases link. [33]",
+    "badge": "NEW"
+   }
+  ],
+  "leads": [
+   {
+    "id": "lead-1",
+    "title": "Suspected drones set off sirens at RAF Lakenheath and Feltwell as the US raises base security in England",
+    "teaser": "The alarm came days after tankers left RAF Mildenhall over an Iran-related threat, and the same week the Army named an officer held in Britain.",
+    "rows": [
+     [
+      "What",
+      "Sirens sounded at RAF Lakenheath and RAF Feltwell at about 17:30 on 13 Nov; the US Air Force linked the Lakenheath alarm to “suspected unauthorized drones” and said nothing was affected. [16]"
+     ],
+     [
+      "Where and when",
+      "RAF Lakenheath (Suffolk) and RAF Feltwell (Norfolk), evening of 13 Nov; about 125 km north-east of London. [16]"
+     ],
+     [
+      "Attribution",
+      "None. No operator was named, and no device was reported recovered. [16, 32]"
+     ],
+     [
+      "Response",
+      "A US European Command spokesperson said: “We continue to work closely with our host nation counterparts to ensure the safety and security of our US service members.” [16] The War Zone, citing the Wall Street Journal, reported FPCON Charlie at Mildenhall and Lakenheath over an Iranian threat, and that KC-135 tankers left Mildenhall from 9 Nov. [34]"
+     ],
+     [
+      "Next",
+      "The UK Ministry of Defence said it is working with the US to establish the facts; no date is given. [34]"
+     ]
+    ],
+    "sw": "Host-nation support: drone alarms over US bases in a NATO host nation test the civil-military arrangements for base protection and airfield use that reinforcement through Britain relies on, baseline requirement 7 (civil transportation).",
+    "links": [
+     "thread:uk-us-bases"
+    ]
+   }
+  ],
+  "pattern": [
+   "**Hoaxes:** A school bomb hoax hit Mechelen on 13 Nov and a 17-year-old was arrested, two days after hoax warnings reached 6,300 Italian schools. [33]",
+   "**Drones:** Unauthorised drone activity over RAF Lakenheath on 13 Nov, single-source and resolved. [32]",
+   "**Infrastructure:** the US Federal Aviation Administration halted all US air traffic for about five hours on the night of 13–14 Nov after air-traffic-control communications equipment was overloaded; Transportation Secretary Sean Duffy blamed a large volume of data, not an attack. [35]",
+   "**Advisories:** NCSC-NL issued two advisories on 13 Nov (Ivanti Endpoint Manager, Zoom Workplace). [36]"
+  ],
+  "tracker": [
+   [
+    "Dublin informal summit names Europe's Ukraine talks team as EU institutions plus France, Germany, the UK, Italy and Poland, 13 Nov [11]",
+    "Resilience"
+   ],
+   [
+    "US forces respond to suspected drones over RAF Lakenheath, 13 Nov [16]",
+    "Defend"
+   ],
+   [
+    "UK police hold a US Army officer under the National Security Act 2023, named on 13 Nov [15]",
+    "Punish"
+   ]
+  ],
+  "indicators": [
+   [
+    "watch",
+    "Iranian proxy plots in Europe",
+    "RTBF cites WSJ and FT on US aircraft moved from RAF Mildenhall over an Iran-related threat; second-hand, no new plot in the window [32]"
+   ],
+   [
+    "steady",
+    "Drone incursions over the Baltics and Poland",
+    "No Baltic or Polish incursion found in the window"
+   ],
+   [
+    "nodata",
+    "Sabotage on European rail",
+    "Nothing found in the feeds in the window"
+   ],
+   [
+    "steady",
+    "Hoax threats to aviation",
+    "No new aviation hoax found on 13 Nov; the Mechelen hoax targeted a school [33]"
+   ],
+   [
+    "watch",
+    "Cyber attacks on European infrastructure",
+    "Microsoft 365 outage on 13 Nov, cause not stated as an attack [37]; NCSC-NL posted two advisories [36]"
+   ]
+  ],
+  "note": "Two incidents in the window, neither attributed; ten logged in seven days, so hybrid-7d drops from red to amber.",
+  "week": null
+ },
+ "europe": [
+  {
+   "h": "De Wever holds weekend budget talks before reporting to the King on Monday",
+   "tag": "Belgium · Politics",
+   "conf": "moderate",
+   "badge": "UPDATED",
+   "body": "Prime Minister Bart De Wever called majority leaders to talks all weekend, with a core meeting at 19:00 on Friday 13 Nov, RTBF reported. [7] He wants a budget to 2029 with at least €10 billion in savings; without a deal a temporary budget applies from January. [7] He reports to the King on Monday 16 Nov at 10:30, and cancelled his trip to the Dublin summit. [7]",
+   "sw": "A caretaker Belgian government would slow decisions on host-nation support and defence spending for SHAPE and the NATO headquarters in the country.",
+   "fy": "Hold off on any Belgian official engagement that needs a budget decision until after the 16 Nov report.",
+   "links": [
+    "thread:be-government-crisis"
+   ]
+  },
+  {
+   "h": "Security guarantees for Ukraine go to the Coalition of the Willing, coordinated with NATO",
+   "tag": "EU · Ukraine",
+   "conf": "moderate",
+   "badge": "NEW",
+   "body": "At the informal Dublin summit on 13 Nov, EU leaders agreed that security guarantees for Ukraine sit with the Coalition of the Willing, coordinated with NATO, with no timeline given, EUobserver reported. [11] Whether High Representative Kaja Kallas gets a seat at the talks is unresolved; one senior diplomat said it was “just not possible”, and Kallas warned Russia was “setting traps” with a debate on NATO's role. [11] The Coalition of the Willing meets in Berlin on 19 Nov. [21]",
+   "sw": "Guarantees coordinated with NATO set the planning frame for any post-ceasefire civil-military tasks, which is where JFC Brunssum's J9 would meet baseline requirement 1 (continuity of government) in Ukraine.",
+   "links": [
+    "thread:russia-ukraine-talks"
+   ]
+  }
+ ],
+ "countries": [
+  {
+   "cc": "hu",
+   "h": "Hungary pays over 6 billion forints seized in the Seszták case into the Treasury",
+   "tag": "Hungary · Rule of law",
+   "conf": "moderate",
+   "badge": "NEW",
+   "body": "Hungary's asset recovery office (NVVH) said on 13 Nov that searches on 12 and 13 Nov in Budapest and Pest, Békés and Nógrád counties found cash tied to the criminal case against former minister Miklós Seszták (KDNP). [38] The haul was 5,071,632,000 forints, €2,658,350 and $1,257,100, reportedly buried in forests and hidden in farm buildings and a safe. [38] Seszták has been in custody since 28 Sep on suspicion of taking 12.6 billion forints in bribes in a Volánbusz case; these are allegations, not a verdict. [38] Interfax put the seizure at about €17.7 million on 14 Nov. [39] Finance Minister András Kármán said 12 Treasury staff spent eight hours counting the cash with five machines. [38]",
+   "sw": "Budget line: Hungary's civil-resilience spending leans on the EU money held back over rule-of-law conditions, so visible asset recovery bears on the hu-eu-funds indicator and on baseline requirement 1 (continuity of government).",
+   "links": [
+    "country:hu"
+   ],
+   "q": {
+    "lang": "hu",
+    "t": "A hatóság közlése szerint a teljes összeget pénteken befizették a Magyar Államkincstárba.",
+    "en": "According to the authority, the full amount was paid into the Hungarian State Treasury on Friday.",
+    "src": 38
+   }
+  },
+  {
+   "cc": "sk",
+   "h": "EPPO closes its case over Slovakia's 2022 ammunition donation to Ukraine",
+   "tag": "Slovakia · Defence procurement",
+   "conf": "high",
+   "badge": "NEW",
+   "body": "The European Public Prosecutor's Office (EPPO) stopped its investigation into suspected misuse of European Peace Facility funds for ammunition Slovakia sent to Ukraine in 2022, TASR reported on 13 Nov. [40] The case, opened in April 2025, ended because “zabezpečené dôkazy nepreukázali spáchanie trestného činu” (“the evidence secured did not prove a criminal offence”). [40] EPPO found the ministry used the urgency exception in procurement law, all ammunition was delivered and the price matched the market. [40] In June 2025 EPPO had reported a suspected €7.4 million embezzlement and eight detentions. [40]",
+   "sw": "Budget line: the case concerned European Peace Facility money and the security-urgency exemption that direct-award buys of allied ammunition rely on, so the closure bears on how freely Slovak procurement can use that route.",
+   "links": [
+    "country:sk"
+   ],
+   "q": {
+    "lang": "sk",
+    "t": "zabezpečené dôkazy nepreukázali spáchanie trestného činu",
+    "en": "the evidence secured did not prove a criminal offence",
+    "src": 40
+   }
+  },
+  {
+   "cc": "ru",
+   "h": "Bild reports Russian terms that would bar NATO bases in the Baltic states",
+   "tag": "Russia · Posture toward NATO",
+   "conf": "low",
+   "badge": "NEW",
+   "body": "Index reported on 13 Nov, citing the German paper Bild, that an unofficial Russian proposal shown to European representatives at the Abu Dhabi talks would demand “az európai biztonsági rendszer átalakítását” (“a transformation of the European security system”) in exchange for ending the war. [41] It would block further NATO enlargement, bar NATO bases in Estonia, Latvia and Lithuania and have Finland leave NATO, while Russia would withdraw nuclear weapons from Belarus and drop plans for intermediate-range missiles there. [41] 444 also carried the Finland demand. [42] It is a press report of an unofficial paper, not a Russian state statement. [41]",
+   "sw": "Host-nation support: Baltic basing limits and a Belarus missile pledge would touch the eastern-flank posture JFC Brunssum plans for, so the terms are a planning input even before any official text.",
+   "links": [
+    "country:ru",
+    "thread:russia-ukraine-talks"
+   ],
+   "q": {
+    "lang": "hu",
+    "t": "megakadályozná a NATO további bővítését",
+    "en": "it would block further NATO enlargement",
+    "src": 41
+   }
+  }
+ ],
+ "euregio": [],
+ "nato": {
+  "items": [
+   {
+    "h": "UK buys three mine-hunting drone motherships under a Norway deal",
+    "tag": "NATO · UK · Norway",
+    "conf": "high",
+    "badge": "NEW",
+    "body": "UK Defence Secretary Wes Streeting and Norway's Tore O. Sandvik finalised the purchase on 12 Nov at the Atlantic Future Forum in Oslo, with £90 million ($119.1 million) allocated under the Lunna House Agreement. [43] The ships follow Norway's P1118 vessel design, the first is due in 2031 and the UK holds an option for three more. [43] The UK says they support anti-submarine warfare on NATO's northern flank. [43]",
+    "sw": "Autonomous mine countermeasures on the northern flank enter the sea-lane assumptions that reinforcement planning across Allied Command Operations relies on.",
+    "links": []
+   },
+   {
+    "h": "Italy raises GCAP fighter spending and cuts army vehicle funding",
+    "tag": "NATO · Italy",
+    "conf": "high",
+    "badge": "NEW",
+    "body": "Italy's 2026 defence budget documents show GCAP spending of €875 million, up from €625 million in 2025 and well above the €275 million planned. [44] Spending on new Rheinmetall-based tanks and fighting vehicles plus Ariete upgrades fell to €177 million from €281 million, against a €425 million forecast; the 2027 forecast is €872 million. [44] The 1,050 Lynx and 272 Panther deal is worth about €23 billion. [44]",
+    "sw": "Slower Italian land-vehicle delivery affects the land-force capability targets NATO defence planning assigns to Italy.",
+    "links": []
+   },
+   {
+    "h": "US bases in England go to FPCON Charlie over an Iranian threat, the WSJ reports",
+    "tag": "UK · Posture",
+    "conf": "moderate",
+    "badge": "NEW",
+    "body": "The War Zone reported on 13 Nov that security levels were raised at US bases in England and that KC-135 tankers left RAF Mildenhall from 9 Nov; citing the Wall Street Journal, it put Mildenhall and Lakenheath at Force Protection Condition (FPCON) Charlie over an Iranian threat. [34] The same evening US Air Force Security Forces responded to suspected drones over Lakenheath. [34] Neither the Pentagon nor the UK Ministry of Defence has published the threat. [34]",
+    "sw": "Posture: FPCON Charlie at the main US tanker and fighter bases in Britain shows how an Iran contingency now reaches into the European rear area that NATO reinforcement plans count on.",
+    "links": [
+     "thread:uk-us-bases"
+    ]
+   }
+  ],
+  "table": null
+ },
+ "deftech": {
+  "items": [
+   {
+    "h": "Ukraine-founded UFORCE raises $700 million at a $6 billion valuation",
+    "tag": "Autonomy · Ukraine",
+    "conf": "moderate",
+    "badge": "NEW",
+    "body": "Defense One reported on 13 Nov that drone maker UFORCE raised a $700 million Series A led by Valor Equity Partners and the UK National Wealth Fund, with the US-Ukraine Reconstruction Investment Fund also investing. [45] Revenue doubled and headcount tripled to over 1,000; the company claims its Nemesis drone has destroyed over 10,000 Russian vehicles, a figure not independently verified. [45] It plans more unmanned surface vessels, ground and air integration, and acquisitions. [45]",
+    "sw": "Western capital now backs Ukrainian-origin drone makers directly, which shapes the supplier base for NATO-interoperable systems.",
+    "links": []
+   },
+   {
+    "h": "Beretta shows an eight-shotgun remote turret for last-line drone defence",
+    "tag": "Counter-drone · Italy",
+    "conf": "moderate",
+    "badge": "NEW",
+    "body": "The War Zone reported on 13 Nov that Beretta's LIVET remote weapon station pairs eight Benelli M4 shotguns with AI-assisted tracking as a short-range, last-line defence against small drones. [46]",
+    "sw": "It is a cheap inner layer for the point defence of command posts and bases under NATO counter-drone planning.",
+    "links": []
+   },
+   {
+    "h": "Hermeus brings Northrop Grumman onto the Quarterhorse drone",
+    "tag": "Autonomy · Industry",
+    "conf": "high",
+    "badge": "NEW",
+    "body": "Hermeus announced on 13 Nov that Northrop Grumman will supply Quarterhorse mission systems (electronic warfare, communications, sensing, navigation), with trials of the Northrop kit expected in the summer. [47] The Defense Innovation Unit funds the drone, Anduril supplies autonomy software and Hermeus will build the Pratt & Whitney F100 engine under licence, aiming for speeds up to Mach 3. [47]",
+    "sw": "Autonomous high-speed reconnaissance aircraft would feed the same joint targeting picture NATO commands draw on.",
+    "links": []
+   }
+  ],
+  "ttp": {
+   "title": "Week in war, 8–14 Nov: base drones, layered counter-drone kit and robots in the assault",
+   "body": [
+    "The clearest pattern of the week is the layering of defence against small drones. On 13 Nov The War Zone reported Beretta's LIVET remote weapon station, which puts eight Benelli M4 shotguns on a turret with AI-assisted tracking as a short-range, last-line defence. [46] The same day Defense News showed Motorola Solutions' EAGLS air defence platform and a planned successor, built around affordable, modular counter-drone kit. [48] At doctrine level, the US Air Force's classified Force Design 2026, announced on 13 Nov, moves away from intercepting individual drones toward sensors and software, and calls for autonomy and command and control linked to aircraft in denied environments. [49]",
+    "Drones over bases are the second pattern. On 13 Nov US Air Force Security Forces responded to suspected unauthorised drones over RAF Lakenheath; no personnel, aircraft or infrastructure were affected, and bases in England had raised security levels earlier in the week, The War Zone reported. [34]",
+    "On the ground in Ukraine, ground robots are now part of the assault rather than only the supply line. EUobserver's battlefield update of 6 Nov said Ukraine's 3rd Army Corps sent dozens of robots into one assault; a Russian channel counted two carrying Mk 19 grenade launchers, 18 carrying two RPGs each and eight kamikaze robots, and the outcome rests on Russian sources only. [50] The same update said shoot-down rates against drones are improving only slowly. [50]",
+    "Production follows the money: UFORCE raised $700 million on 13 Nov to scale its drones and surface vessels, and says its Nemesis drone has destroyed over 10,000 Russian vehicles, a company claim. [45]"
+   ]
+  },
+  "series": [
+   "ua-drones-month"
+  ]
+ },
+ "frontier": {
+  "items": [
+   {
+    "h": "llama.cpp reaches v1.0.0 with a stable C API and semantic versioning",
+    "tag": "tool",
+    "conf": "high",
+    "badge": "NEW",
+    "body": "The ggml-org project released llama.cpp v1.0.0 and ggml v1.0.0 on 13 Nov, about 3.5 years after the project began. It covers more than 150 model architecture variants and all mainstream speculative decoding methods, and ships builds for Linux, macOS, Windows, Android and iOS [51]. Breaking API or ABI changes now require a major-version bump [51].",
+    "sw": "A stable, versioned local inference library lets a staff section pin a tested build and run models offline on disconnected or classified laptops without surprise API breaks.",
+    "links": [
+     "release:2026-11-13-ggml-llama-cpp-v1"
+    ]
+   },
+   {
+    "h": "IBM releases Granite 4.1 LLMON previews that separate instructions from data",
+    "tag": "model",
+    "conf": "moderate",
+    "badge": "NEW",
+    "body": "IBM published two experimental preview models, granite-4.1-3b-llmon-preview and granite-4.1-8b-llmon-preview, on 12 Nov. LLMON marks structure with reserved special tokens, so instructions and data sit apart [52]. IBM says the models avoid 47% more prompt-injection attacks than the best frontier model it tested and 95% more than the best open-source model on the OPI benchmark, with general capability on par with Granite 4.1 Instruct. These are vendor figures and the models are not for production [52].",
+    "sw": "Prompt injection through ingested documents is the main risk when an assistant summarises open-source or partner reporting, and token-level separation of data from instructions is a mitigation staff can test before any pilot.",
+    "links": [
+     "release:2026-11-12-ibm-granite-llmon"
+    ]
+   },
+   {
+    "h": "Researcher finds Blackwell fingerprints in leading Chinese open-weight models",
+    "tag": "result",
+    "conf": "moderate",
+    "badge": "NEW",
+    "body": "Will DePue of Unemployment Labs analysed released weights and reports that Moonshot's Kimi K3 and DeepSeek's V4 carry signs of training on Nvidia Blackwell GPUs, which are banned from export to China [53]. Epoch AI estimates about 2 million advanced chips entered China in 2024 and 2025 through concealment schemes, and 275,000 Nvidia accelerators went to Malaysia [53]. The finding does not prove violations, since the chips could sit in offshore data centres [53].",
+    "sw": "Export-control evasion through third-country data centres affects how allies assess adversary AI capability, so this feeds technology-transfer and capability-assessment inputs to NATO threat estimates.",
+    "links": [
+     "release:2026-11-13-depue-blackwell-china-weights"
+    ]
+   }
+  ]
+ },
+ "army": {
+  "cards": [
+   {
+    "l": "Iran war powers",
+    "v": "Vote by 20 Nov",
+    "n": "The Senate agreed to vote on H.Con.Res. 93, the Iran war-powers resolution, no later than 20 Nov."
+   },
+   {
+    "l": "CR expiry",
+    "v": "11 Dec",
+    "n": "The continuing resolution at FY2026 levels runs out; no new starts until then."
+   },
+   {
+    "l": "Poland decision",
+    "v": "Early Dec",
+    "n": "White House call on a permanent US presence in Poland that the Pentagon has backed."
+   },
+   {
+    "l": "AUTOWARCOM",
+    "v": "1 Oct 2027",
+    "n": "Target date to stand up the four-star Autonomous Warfare Command; it needs congressional authorisation and no commander is named. [54]"
+   }
+  ],
+  "words": [
+   {
+    "who": "Kash Patel",
+    "role": "Director, Federal Bureau of Investigation",
+    "where": "Statement on the arrest of a US Army officer in the UK, reported by Defense News",
+    "date": "2026-11-13",
+    "quote": "This important arrest involves allegations of espionage, which is of the utmost concern to the United States and our allies.",
+    "context": "Patel also said the FBI has made 167 counterintelligence and espionage arrests over the last 21 months. [15]",
+    "badge": "NEW"
+   },
+   {
+    "who": "Wes Streeting",
+    "role": "Defence Secretary, United Kingdom",
+    "where": "Atlantic Future Forum, Oslo, as reported by Breaking Defense",
+    "date": "2026-11-12",
+    "quote": "This deal strengthens our ability to protect freedom of navigation",
+    "context": "He finalised the purchase of three mine-hunting drone motherships with Norway's defence minister Tore O. Sandvik. [43]",
+    "badge": "NEW"
+   }
+  ],
+  "dod": [
+   {
+    "h": "Pentagon renames its AI office the Super Intelligence Office",
+    "tag": "DoD · Autonomy",
+    "conf": "high",
+    "badge": "NEW",
+    "body": "On 13 Nov the Defense Department redesignated the Chief Digital and Artificial Intelligence Office as the Super Intelligence Office, led by Cameron Stanley, following a September order from President Trump to say “super intelligence” across government. [55] The office runs the Maven Smart System, the War Data Platform (formerly Advana) and GenAI.mil, and the department says existing programmes and solicitations continue uninterrupted. [55] The rebrand rolls out over the coming weeks under a new SI.mil site. [55]",
+    "sw": "Maven Smart System and GenAI.mil are the tools US counterparts use alongside NATO staffs, so contract and portal names on US-side data requests will change.",
+    "fy": "Expect SI.mil and new office names on US data-sharing requests in the coming weeks.",
+    "links": []
+   },
+   {
+    "h": "Air Force adopts a classified Force Design 2026 built on sensors and autonomy",
+    "tag": "DoD · Force design · Autonomy",
+    "conf": "high",
+    "badge": "NEW",
+    "body": "The Air Force announced Force Design 2026 on 13 Nov, replacing the October 2024 One Force Design; the document is classified with no releasable copy. [49] It shifts counter-drone work from intercepting single drones toward sensors and software, and calls for autonomy, sensors and command and control integrated with aircraft in denied environments. [49] Chief of Staff Gen. Ken Wilsbach said it “presents a fundamental shift”. [49]",
+    "sw": "The sensor-and-software approach to air defence will shape the joint track and targeting data the Army contributes to NATO integrated air and missile defence.",
+    "links": []
+   }
+  ],
+  "news": [
+   {
+    "h": "Army names the lieutenant colonel held in the UK over alleged help to Russian intelligence",
+    "tag": "Army · NATO · USAREUR-AF",
+    "conf": "moderate",
+    "badge": "NEW",
+    "body": "Lt. Col. Brandon Carroll Tyner, 41, an Army human resources officer, was arrested earlier this week under sections 1 and 3 of Britain's National Security Act 2023, Defense News reported on 13 Nov. [15] He was assigned at Imjin Barracks, Gloucestershire, home of NATO's Allied Rapid Reaction Corps, and remains in custody in London; Counter Terrorism Policing London leads the case and no charge has been reported. [15] Brig. Gen. Sean Stinchon, commanding Army Counterintelligence Command, called insider threats “real and persistent” and asked personnel to report suspicious activity to their local counterintelligence office. [15]",
+    "sw": "He held a field-grade post in a NATO headquarters, so the case falls under the same Army counterintelligence reporting requirement (AR 381-12) that covers every US officer in a NATO billet, Brunssum included.",
+    "fy": "Check you know your local counterintelligence office contact and the date of your next threat-awareness briefing.",
+    "links": [
+     "thread:uk-us-bases"
+    ]
+   }
+  ],
+  "congress": [],
+  "career": {
+   "items": [],
+   "dates": [],
+   "note": "Nothing new for a field-grade officer in a NATO billet in the window; see the Tyner case under Army news for the counterintelligence reporting reminder."
+  },
+  "depth": null
+ },
+ "research": [
+  {
+   "field": "military",
+   "org": "Modern War Institute (West Point)",
+   "title": "Combat Power, Sustained: A Hub-and-Mesh Architecture for Contested Logistics",
+   "authors": "Col. Matthew M. Andrews",
+   "date": "2026-11-13",
+   "kind": "article",
+   "src": 56,
+   "summary": [
+    "Andrews, a US Air Force weapons officer who leads global mobility operations at the 618th Air Operations Center, argues that the services' dispersal concepts (agile combat employment, distributed maritime operations, expeditionary advanced base operations and multidomain operations) complicate the enemy's targeting but raise the logistics burden. [56] The theatre must be set while major combat is under way, so the network is still being built while it is under attack. [56]",
+    "He sees two failure modes. Concentrating capacity in a few hubs makes those hubs targets; spreading it everywhere leaves each site too thinly protected. [56] His answer is a hub-and-mesh architecture: keep the major gateways, add alternate airfields and routes, and make sure that losing one hub does not stop combat power from flowing. [56] A mesh must do more than offer other landing sites: diverted cargo must still reach the supported force in time for the commander's manoeuvre plan. [56]",
+    "He draws on history and current practice. About 85% of US combat power is based in the continental United States, so homeland mobility infrastructure is itself a target. [56] In Operation Nickel Grass (1973), 22,305 tons moved in 32 days on 566 C-5 and C-141 missions, and European landing and overflight denials made Lajes Field in the Azores critical. [56] He quotes a Ukrainian commander's rule, “You never take off and land in the same airfield,” and Gen. James Hecker's remark that defenders “can only protect a few” airfields. [56] The article is a serving officer's argument and states that it does not reflect official positions. [56]"
+   ],
+   "findings": [
+    "About 85% of US combat power is based in the continental United States. [56]",
+    "Operation Nickel Grass (1973): 22,305 tons over 32 days on 566 C-5 and C-141 missions, with European denials making Lajes Field critical. [56]",
+    "Tarawa: engineers returned a shell-damaged airfield to operation within 15 hours. [56]",
+    "Proposal: set up alternate aerial ports connected to working theatre distribution paths before disruption, and define how much displaced demand each can absorb. [56]",
+    "Proposal: assign clear authority to redirect flow between USTRANSCOM (strategic mobility) and the geographic combatant command (theatre distribution). [56]",
+    "Proposal: track cargo contents, recipients and timing, not just aircraft location. [56]"
+   ],
+   "method": "Argument by historical case (Nickel Grass, Tarawa, the Red Ball Express, Operation Iraqi Freedom) and current Ukrainian practice; no model, wargame or dataset. It cannot show that a mesh would hold under a modern strike campaign, or what it would cost.",
+   "sw": "For Brunssum: the same logic applies to reception, staging and onward movement across Europe, where alternate airfields, rail and road links and the authority to redirect flow between strategic and theatre commands need settling before a crisis, not during it.",
+   "links": [],
+   "badge": "NEW"
+  },
+  {
+   "field": "ir",
+   "org": "Nature Human Behaviour",
+   "title": "A natural field experiment on the effectiveness of economic sanctions before and after the Russian invasion of Ukraine",
+   "authors": "Michael G. Findley, Daniel L. Nielson, J. C. Sharman",
+   "date": "2026-11-09",
+   "kind": "article",
+   "src": 57,
+   "summary": [
+    "The authors tested whether sanctioned Russian officials could still reach the international financial system. They emailed 7,081 solicitations to corporate service providers (law firms and incorporation services that form shell companies and open accounts) in 202 countries and jurisdictions, using the names of six Russian officials on Magnitsky sanctions lists with altered middle initials, and compared the replies with those to placebo names. [57] Two rounds were run, one before the February 2022 invasion and one in May 2022. [57]",
+    "Before the invasion, sanctioned names did not fare significantly worse than placebo names. After it, they did: replies fell, and non-compliant offers declined. [57] The authors conclude that war-related factors, not sanctions law itself, were decisive, because the legal regime was the same in both rounds. [57] Sanctioned names still received many positive responses, so access was reduced, not closed: of 76 firms taken to the payment stage, 15 completed an incorporation, and no firm materially changed its compliance requirements. [57]"
+   ],
+   "findings": [
+    "7,081 emails to firms in 202 jurisdictions; 5,084 firms in the final sample. [57]",
+    "Pre-invasion round (Magnitsky-law countries, n = 1,502): non-compliant responses 4.6% for sanctioned names against 2.4% for placebo; P = 0.104, not significant. [57]",
+    "Post-invasion round (n = 715): no reply 89.5% for sanctioned names against 78.8% for placebo; P = 0.0001. [57]",
+    "Post-invasion drop in the non-compliant response rate: 4.0 percentage points (95% CI 1.2 to 6.8, P = 0.006). [57]",
+    "15 of 76 firms followed to payment completed an incorporation; none materially changed requirements. [57]"
+   ],
+   "table": {
+    "head": [
+     "Round",
+     "Sample (Magnitsky-law countries)",
+     "Result for sanctioned names"
+    ],
+    "rows": [
+     [
+      "Before the invasion",
+      "1,502 (153 treated)",
+      "Non-compliant 4.6% against 2.4% placebo; not significant (P = 0.104)"
+     ],
+     [
+      "May 2022",
+      "715 (361 treated)",
+      "No reply 89.5% against 78.8% placebo (P = 0.0001)"
+     ]
+    ]
+   },
+   "method": "Preregistered audit-style field experiment with random assignment within blocks and two independent coders; 3,484 hybrid observations (33%) excluded. Banks were not contacted, only corporate service providers, and the study measures access to company formation and accounts, not the wider economic effect of sanctions on Russia.",
+   "sw": "Enforcement by private intermediaries, not the sanctions lists alone, decides whether sanctions bite, and many of those intermediaries sit in European jurisdictions.",
+   "links": [],
+   "badge": "NEW"
+  },
+  {
+   "field": "climate",
+   "org": "NBER",
+   "title": "The Impact of Climate Change on Fisheries (NBER Working Paper 35994)",
+   "authors": "Fabio Cevenini, Christopher Costello, Carlo Fezzi",
+   "date": "2026-11-09",
+   "kind": "working paper",
+   "src": 58,
+   "summary": [
+    "The authors give what they call the first causal estimate of how ocean temperature variation affects fishing revenue, using 2.5 million spatially explicit revenue observations from all European fishing vessels for 2013 to 2022. [58] The key variable, “Marine Degree Days”, measures a species' exposure to temperatures relative to its biologically established thermal tolerance range. [58]",
+    "Deviations from species' thermal preferences cause significant revenue losses, and heat exposure has the largest effect; vertical mobility and ecological traits mediate it. [58] Under climate scenarios, revenue declines are widespread by 2100, reaching €560 million a year in the warmest scenario, with lower-income equatorial areas hit hardest and some colder regions gaining. [58] Only the abstract page was read; the coefficients are in the paper. [58]"
+   ],
+   "findings": [
+    "2.5 million spatially explicit revenue observations, all European fishing vessels, 2013 to 2022. [58]",
+    "Heat exposure beyond species' thermal tolerance has the largest negative effect on revenue. [58]",
+    "Projected loss of up to €560 million a year by 2100 in the warmest scenario. [58]",
+    "Losses are largest in lower-income equatorial areas; some colder regions gain. [58]"
+   ],
+   "method": "Panel estimation of revenue on a species-specific temperature exposure index, with controls for spatial selection and ecological interdependence, then projection under several climate scenarios. The projections depend on scenario assumptions and cannot show how fleets or prices would adapt.",
+   "sw": "It puts a euro figure on warming for Europe's own fishing fleets, the first sector to feel it in coastal economies.",
+   "links": [],
+   "badge": "NEW"
+  }
+ ],
+ "philosophy": {
+  "thinker": "Aristotle",
+  "work": "Politics",
+  "where": "Book VII, chapter 14, 1333a",
+  "year": "c. 335–322 BCE",
+  "tradition": "Ancient Greek (Plato, Aristotle, the pre-Socratics)",
+  "quote": "In these matters the same principle of preference that applies to the parts of the soul must apply also to the activities of those parts: war must be for the sake of peace, business for the sake of leisure, things necessary and useful for the purpose of things noble.",
+  "translation": "H. Rackham, Aristotle: Politics, Loeb Classical Library (Harvard University Press, 1944), as given on Perseus.",
+  "gloss": "Aristotle has just divided the soul into a part that has reason and a part that obeys it, and split the rational part into practical and theoretical reason. He argues that the same ranking holds for activities: the lower exists for the sake of the higher, so war exists for peace, as work exists for leisure. [59] The sentence sits in the ideal-state books, where he asks what the lawgiver should educate citizens for, and its use is polemical: in the same chapter he faults lawgivers who admire Sparta's constitution for training citizens only to conquer, a state safe only while it fights. The strongest challenge comes from the rival view Aristotle is writing against, put most sharply in Heraclitus' fragment that war is “father of all and king of all” (DK 22 B53): if war generates the order it is said to serve, it cannot be ranked simply as a means to peace.",
+  "why": "Which task on your desk this week exists for a purpose nobody has written down?",
+  "src": 59
+ },
+ "aperture": {
+  "rota": "sat",
+  "deep": null,
+  "longread": {
+   "title": "Europe sees surge in suspected Russian hybrid warfare incidents",
+   "outlet": "Atlantic Council",
+   "url": "https://www.atlanticcouncil.org/?p=959811",
+   "why": "By Maksym Beznosiuk, 10 Nov 2026, readable in full without a paywall. It sets the airport bomb threats and supermarket freezer attacks in one frame of hard-to-attribute gray-zone pressure and argues Moscow is likely to intensify it."
+  },
+  "redteam": {
+   "title": "The week no one had to claim",
+   "actor": "GRU hybrid cell planning staff",
+   "premise": "Allies assume the November hoax bomb threats, supermarket cold-chain cyberattacks and rail sabotage are a nuisance each nation can absorb through its own police and national CERT, without a shared attribution.",
+   "body": [
+    "Our staff measures a week by the form of the reply, not by damage. Gerasimov wrote in 2013 that “The role of non-military means of achieving political and strategic goals has grown, and, in many cases, they have exceeded the power of force of weapons in their effectiveness.” [60] Nothing in the week of 8 to 14 November was kinetic, and nothing needed to be. The allied assumption under test is that this is acceptable: each capital files the incidents with its police and its CERT and moves on.",
+    "Read the replies as we would. France named an IRGC unit for its October fridge attacks on 9 November and the Paris prosecutor sought international arrest warrants. [61] Belgium split in public three days later: Interior Minister Quintin pointed to Iran, and Foreign Minister Prévot called that “trop précoce” (“too early”). [62] Paris prosecutors opened a separate inquiry on 7 November into the hoax emails and “any potential links they may have to foreign powers”. [63] That is three files in two countries with three different answers, while more than 100 stores had already been hit. [64] The EU agriculture commissioner called it a deliberate attempt to disrupt the food supply, and that is a statement, not a joint finding. [65]",
+    "Our objective is not credit. It is to keep the target society busy with itself. The 2014 Military Doctrine lists use of “the protest potential of the population” among the features of modern conflict, and Gerasimov described non-military measures “applied in coordination with the protest potential of the population”, aimed “to create a permanently operating front through the entire territory of the enemy state”. [60, 66] A hoax email costs the sender almost nothing and costs the state a school day: 6,300 Italian schools on 11 November and more than 3,700 on 12 November, the day the Taoiseach named hoaxes among the attacks on Europe at the Dublin summit. [67] The front runs through classrooms, check-in halls and cold rooms, not through a border.",
+    "The attribution split is where the week paid. Where a capital names Iran, the cold-chain file becomes an Iranian file in a separate theatre, and the hoax file stays unnamed. Where a capital names no one, the CERT closes the ticket. An outside analyst wrote on 10 November that these attacks are hard to attribute and that Moscow is likely to intensify them. [68] Our constraints point the same way: deniability, low cost per event, and no single act that forces a collective decision. A shared attribution is the one outcome that would convert thirty national nuisances into one alliance problem, so our planning treats the national reflex as the protected asset.",
+    "What would show our week was wasted is observable: a joint finding or a common sanctions listing that covers hoaxes, cold chain and rail together, rather than one capital naming one actor for one file."
+   ],
+   "assumptions": [
+    "national police and CERTs are enough",
+    "attribution can stay national and slow",
+    "each file can be handled alone"
+   ],
+   "links": [
+    "thread:cold-chain",
+    "thread:aviation-hoaxes",
+    "thread:rail-sabotage"
+   ],
+   "moves": [
+    [
+     "A fresh wave of emailed bomb threats to schools or airports in a country not yet hit, timed to a political date such as the Coalition of the Willing meeting in Berlin on 19 Nov",
+     "Police or ministry statements dated 18–20 Nov; the aviation-hoax-day indicator and new INF entries in the incident log"
+    ],
+    [
+     "Hoax messages on the French national strike day, 17 Nov, when police and transport are already stretched",
+     "Prefecture, SNCF or airline statements dated 17 Nov"
+    ],
+    [
+     "A new cold-chain intrusion in a country that has not attributed the first wave",
+     "A retailer or national CERT notice; the hybrid-7d indicator back above 10"
+    ],
+    [
+     "Exploitation of freshly published flaws in building-management and retail systems",
+     "CISA catalogue additions; the cyber-kev-7d indicator above 8 in seven days"
+    ],
+    [
+     "Amplifying the Belgian split between the interior and foreign ministers in local-language channels",
+     "A Belgian federal prosecutor statement, or Belgium's decision on France's EU sanctions request"
+    ]
+   ],
+   "src": [
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68
+   ]
+  }
+ },
+ "money": {
+  "asof": "S&P 500 and Dow: Fri 13 Nov closes from FRED; Nasdaq and VIX: Thu 12 Nov (FRED) [71]; US Treasury yields: Fri 13 Nov; Russell 2000, AEX, Stoxx 600, DAX, Brent, TTF and gold: Wed 11 Nov closes (Yahoo Finance refused scripted requests again) [72]; USD/EUR: ECB fix of Fri 13 Nov; year-to-date bars recomputed from the previous edition's base for the US indices, Wednesday for the rest",
+  "cards": [
+   [
+    "S&P 500",
+    "7,561.67",
+    "−0.40%",
+    "down",
+    "Fri 13 Nov close (FRED)",
+    69,
+    "spx"
+   ],
+   [
+    "Dow",
+    "52,347.55",
+    "+0.10%",
+    "up",
+    "Fri 13 Nov close (FRED)",
+    70,
+    "dji"
+   ],
+   [
+    "Nasdaq",
+    "25,366.09",
+    "−0.39%",
+    "down",
+    "Thu 12 Nov close (FRED)",
+    71,
+    "ndx"
+   ],
+   [
+    "Russell 2000",
+    "2,846.26",
+    "+0.88%",
+    "up",
+    "Wed 11 Nov close",
+    72,
+    "rut"
+   ],
+   [
+    "AEX",
+    "1,145.14",
+    "+1.12%",
+    "up",
+    "Wed 11 Nov close",
+    72,
+    "aex"
+   ],
+   [
+    "Stoxx 600",
+    "663.05",
+    "+0.72%",
+    "up",
+    "Wed 11 Nov close",
+    72,
+    "stoxx"
+   ],
+   [
+    "DAX",
+    "26,662.77",
+    "+1.20%",
+    "up",
+    "Wed 11 Nov close",
+    72,
+    "dax"
+   ],
+   [
+    "VIX",
+    "18.70",
+    "+6.92%",
+    "up",
+    "Thu 12 Nov close (FRED)",
+    71,
+    "vix"
+   ],
+   [
+    "Brent",
+    "$91.50",
+    "+0.01%",
+    "flat",
+    "Front month, Wed 11 Nov",
+    72,
+    "brent"
+   ],
+   [
+    "Dutch TTF gas",
+    "€87.22",
+    "+2.94%",
+    "up",
+    "Front month, Wed 11 Nov",
+    72,
+    "ttf"
+   ],
+   [
+    "Gold",
+    "$3,983.90",
+    "−1.15%",
+    "down",
+    "Front month, Wed 11 Nov",
+    72,
+    "gold"
+   ],
+   [
+    "US 10-year",
+    "5.15%",
+    "+5 bp",
+    "up",
+    "Treasury par curve, Fri 13 Nov",
+    73,
+    "us10y"
+   ],
+   [
+    "USD/EUR",
+    "0.9048",
+    "+0.26%",
+    "up",
+    "euros per dollar",
+    74
+   ]
+  ],
+  "ytd": [
+   [
+    "AEX",
+    20.4
+   ],
+   [
+    "Russell 2000",
+    14.7
+   ],
+   [
+    "Stoxx 600",
+    11.9
+   ],
+   [
+    "S&P 500",
+    10.5
+   ],
+   [
+    "Nasdaq",
+    9.2
+   ],
+   [
+    "Dow",
+    8.9
+   ],
+   [
+    "DAX",
+    8.9
+   ]
+  ],
+  "ytdSrc": 72,
+  "driver": "Friday's US session ended mixed: the S&P 500 fell 0.40% to 7,561.67 and the Dow rose 0.10% to 52,347.55. [69, 70] The 10-year Treasury yield rose 5 basis points to 5.15% and the 2-year to 4.88%, the highest 10-year reading in the 30-day series. [73] The ECB fixed the euro at 1.1052 dollars on Friday, down from 1.1081, so USD/EUR rose to 0.9048. [74] Overnight the FAA halted all US air traffic for about five hours after an equipment overload, the longest nationwide stop in 25 years. [35]",
+  "rates": [
+   [
+    "Fed funds",
+    "3.75–4.00%",
+    "Held 28 Oct; next decision 9 Dec. [75, 76]"
+   ],
+   [
+    "ECB deposit rate",
+    "2.50%",
+    "Held 29 Oct; next decision 17 Dec. [77]"
+   ],
+   [
+    "US 2-year",
+    "4.88%",
+    "Fri 13 Nov, from 4.86% on Thursday. [73]"
+   ],
+   [
+    "US 10-year",
+    "5.15%",
+    "Fri 13 Nov; 30-year 5.47%. [73]"
+   ],
+   [
+    "USD/EUR",
+    "0.9048",
+    "ECB fix of Fri 13 Nov, 1.1052 dollars per euro, from 1.1081. [74]"
+   ],
+   [
+    "Euro 95, Netherlands",
+    "€2.196 per litre",
+    "CBS daily average, 9 Nov (no newer CBS day). [78]"
+   ]
+  ],
+  "week": [
+   "**Thu 12:** Dow −0.36%; 10-year 5.10%; ECB fix 1.1081. [70, 73, 74]",
+   "**Fri 13:** S&P 500 −0.40%, Dow +0.10%; 10-year 5.15%; ECB fix 1.1052. [69, 73, 74]",
+   "**Sat 14:** US air traffic resumes after the overnight stop; delays may last days. [35]",
+   "**Wed 9 Dec:** Fed decision; **Thu 17 Dec:** ECB decision. [76, 77]"
+  ],
+  "fy": "Friday's ECB fix of 1.1052 puts USD/EUR at 0.9048: $1,000 of pay buys €904.81, €2.37 more than at Thursday's fix and the best rate of the week. [74]",
+  "fuel": null
+ },
+ "nl": {
+  "items": [
+   {
+    "h": "Coalition talks move to De Zwaluwenberg after eight hours end without a deal",
+    "tag": "Politics",
+    "conf": "high",
+    "badge": "UPDATED",
+    "body": "Prime Minister Rob Jetten (D66), VVD leader Dilan Yeşilgöz and CDA deputy prime minister Van den Brink talked for more than eight hours at the Ministry of General Affairs on 13 Nov without settling the coalition crisis. [19] Jetten said: “Ons werk is nog lang niet klaar” (“Our work is far from finished”); Yeşilgöz called the minority cabinet a “mislukt experiment” (“failed experiment”) and asked that D66 and CDA stop doing deals with the left, possibly with another right-wing party in the cabinet. [5, 19] The six party leaders and parliamentary chairs resume today at the De Zwaluwenberg estate; Yeşilgöz said one outcome could be that the three go to the King. [5, 19]",
+    "sw": "Host-nation support: a caretaker Dutch cabinet could not take new decisions on defence spending or host-nation arrangements for JFC Brunssum until a new coalition forms.",
+    "fy": "Hold off on anything that depends on the 2027 tax plan until the Eerste Kamer takes it, set for about 1 Dec.",
+    "links": [
+     "thread:nl-tax-plan-2027"
+    ]
+   },
+   {
+    "h": "US air traffic halt delays Schiphol's flights to the United States",
+    "tag": "Travel",
+    "conf": "high",
+    "badge": "NEW",
+    "body": "The US Federal Aviation Administration (FAA) halted all air traffic in the United States for about five hours from about 22:00 Dutch time on 13 Nov after communications equipment at regional air-traffic-control centres was overloaded, the longest nationwide stop in 25 years. [35] Eurocontrol suspended flights from its 42 member states, the Netherlands among them, to the US at the FAA's request, and Schiphol said US departures were delayed by a few hours. [35] The FAA reopened the airspace at about 03:00, and NOS reported that normal traffic could take days to return. [35]",
+    "sw": "Civil transportation, baseline requirement 7: a single US system fault grounded transatlantic flights from 42 European states, the corridor US reinforcement and leave travel both use.",
+    "fy": "Check your airline app before any US-bound trip this weekend; the December flight to New York is not affected yet.",
+    "links": []
+   },
+   {
+    "h": "Sinterklaas arrives in Grave today in dry, sunny weather",
+    "tag": "Daily life",
+    "conf": "high",
+    "badge": "NEW",
+    "body": "NOS expects the national arrival in Grave on 14 Nov to be dry and sunny. [4] In Parkstad, Sinterklaas arrives in Heerlen on Sunday 15 Nov and in Hoensbroek on Saturday 21 Nov, with Maastricht's arrival today.",
+    "fy": "Check the organiser's start time before you go; Sunday in Heerlen will be wet.",
+    "links": [
+     "event:sinterklaas-heerlen-2026",
+     "event:sinterklaas-hoensbroek-2026"
+    ]
+   }
+  ],
+  "temp": "Tense: the cabinet survives the weekend only if the VVD settles with D66 and CDA at De Zwaluwenberg. [5]",
+  "lees": {
+   "nl": "Ons werk is nog lang niet klaar.",
+   "gloss": [
+    [
+     "ons werk",
+     "our work"
+    ],
+    [
+     "nog lang niet",
+     "not by a long way, far from"
+    ],
+    [
+     "klaar",
+     "finished, done"
+    ],
+    [
+     "is ... klaar",
+     "is finished (klaar zijn: to be done)"
+    ]
+   ],
+   "src": 19
+  },
+  "phrase": {
+   "w": "minderheidskabinet",
+   "en": "minority cabinet",
+   "lvl": "B1",
+   "note": "Yeşilgöz called the \"minderheidskabinetsexperiment\" (\"minority-cabinet experiment\") a failure on 13 Nov; minderheid (minority) plus kabinet."
+  }
+ },
+ "makkelijk": {
+  "niveau": "B1",
+  "items": [
+   {
+    "kop": "Trump praat met Poetin en Xi",
+    "nl": "President Trump gaat donderdag naar China. Hij praat daar met Poetin en Xi Jinping. Het is de eerste keer met z'n drieën. Ze praten over minder kernwapens.",
+    "en": "President Trump goes to China on Thursday. He will talk there with Putin and Xi Jinping. It is the first time the three meet together. They will talk about fewer nuclear weapons.",
+    "woorden": [
+     [
+      "kernwapen",
+      "nuclear weapon"
+     ],
+     [
+      "met z'n drieën",
+      "the three of them together"
+     ]
+    ],
+    "src": 9,
+    "to": "world",
+    "badge": "NEW"
+   },
+   {
+    "kop": "Europa kiest een team voor vrede",
+    "nl": "De leiders van de EU waren vrijdag in Dublin. Ze kozen een team voor de vredesgesprekken over Oekraïne. In het team zitten de EU en vijf landen. Dat zijn Frankrijk, Duitsland, Groot-Brittannië, Italië en Polen.",
+    "en": "EU leaders were in Dublin on Friday. They chose a team for the peace talks on Ukraine. The team is the EU and five countries: France, Germany, Britain, Italy and Poland.",
+    "woorden": [
+     [
+      "vredesgesprekken",
+      "peace talks"
+     ],
+     [
+      "kiezen (kozen)",
+      "to choose (chose)"
+     ]
+    ],
+    "src": 11,
+    "to": "world",
+    "badge": "NEW"
+   },
+   {
+    "kop": "Oekraïne hoopt op ruil van gevangenen",
+    "nl": "President Zelensky hoopt op een grote ruil van gevangenen. Elk land laat dan meer dan 1000 mensen vrij. In de nacht viel Rusland aan met 117 drones. Oekraïne haalde er 80 neer.",
+    "en": "President Zelensky hopes for a large prisoner exchange. Each country would free more than 1,000 people. In the night Russia attacked with 117 drones. Ukraine shot down 80.",
+    "woorden": [
+     [
+      "ruil",
+      "exchange"
+     ],
+     [
+      "vrijlaten",
+      "to release"
+     ],
+     [
+      "neerhalen",
+      "to shoot down"
+     ]
+    ],
+    "src": 13,
+    "to": "world",
+    "badge": "NEW"
+   },
+   {
+    "kop": "Geen straf voor munitie aan Oekraïne",
+    "nl": "Slowakije gaf in 2022 munitie aan Oekraïne. Europese aanklagers zochten uit of er geld was gestolen. Ze vonden geen bewijs. Het onderzoek is nu gestopt.",
+    "en": "Slovakia gave ammunition to Ukraine in 2022. European prosecutors looked into whether money was stolen. They found no evidence. The investigation has now stopped.",
+    "woorden": [
+     [
+      "aanklager",
+      "prosecutor"
+     ],
+     [
+      "bewijs",
+      "evidence"
+     ],
+     [
+      "onderzoek",
+      "investigation"
+     ]
+    ],
+    "src": 40,
+    "to": "countries",
+    "badge": "NEW"
+   },
+   {
+    "kop": "Kabinet praat het hele weekend",
+    "nl": "Premier Jetten praatte vrijdag acht uur met de VVD en het CDA. Ze vonden geen oplossing. De VVD zegt dat het kabinet mislukt is. Vandaag praten ze verder op een landgoed.",
+    "en": "Prime Minister Jetten talked for eight hours with the VVD and the CDA on Friday. They found no solution. The VVD says the cabinet has failed. Today they talk on at a country estate.",
+    "woorden": [
+     [
+      "oplossing",
+      "solution"
+     ],
+     [
+      "mislukt",
+      "failed"
+     ],
+     [
+      "landgoed",
+      "country estate"
+     ]
+    ],
+    "src": 5,
+    "to": "nl",
+    "badge": "NEW"
+   },
+   {
+    "kop": "Sinterklaas komt naar het land",
+    "nl": "Sinterklaas komt vandaag aan in Grave. Het weer is droog en zonnig. Zondag komt hij in Heerlen. Dan valt er waarschijnlijk regen.",
+    "en": "Sinterklaas arrives in Grave today. The weather is dry and sunny. On Sunday he comes to Heerlen. Then it will probably rain.",
+    "woorden": [
+     [
+      "aankomen",
+      "to arrive"
+     ],
+     [
+      "waarschijnlijk",
+      "probably"
+     ]
+    ],
+    "src": 4,
+    "to": "nl",
+    "badge": "NEW"
+   }
+  ]
+ },
+ "afnorth": {
+  "intro": "From the AFNORTH 2026–2027 calendars (US Middle/High School and whole school) and the school and PTA mail; rows for the next 60 days, the next 14 marked; middle-school-only items left out. [6]",
+  "rows": [
+   [
+    "14–22 Nov",
+    "PTA spirit-wear pre-order window",
+    "Givebacks shop, or cash or IBAN by email; the 13 Nov newsletter gives 22 Nov as the closing date",
+    "soon"
+   ],
+   [
+    "16 Nov",
+    "No school, staff and students",
+    "Childcare; Monday",
+    "soon"
+   ],
+   [
+    "21 Nov",
+    "AFNorth Christmas Fayre, 11:00–14:00",
+    "PTA silent auction, gift wrapping and spirit-wear samples; the family calendar has it from 10:00",
+    "soon"
+   ],
+   [
+    "26–27 Nov",
+    "Thanksgiving: school days",
+    "No closure on the school calendar; 26 Nov is a US pass day at the HQ",
+    "soon"
+   ],
+   [
+    "27 Nov",
+    "Green and White basketball scrimmages",
+    "Winter sports open; the PTA canteen asks for student volunteers",
+    "soon"
+   ],
+   [
+    "7 Dec",
+    "No school (US school), Q2 training day",
+    "Childcare",
+    ""
+   ],
+   [
+    "18 Dec – 1 Jan",
+    "Winter break (US school from 18 Dec; whole school from 21 Dec)",
+    "Back Mon 4 Jan",
+    ""
+   ]
+  ],
+  "note": "New mail on 13 Nov: the PTA November newsletter and the weekly MHS newsletter, whose dates sit in a PDF attachment the run cannot read. [6]"
+ },
+ "offduty": {
+  "items": [
+   {
+    "h": "Catch Sinterklaas in Maastricht today or Heerlen tomorrow",
+    "tag": "Family",
+    "body": "Maastricht's arrival is today in dry, sunny weather, and Heerlen's is on Sunday, when rain is likely. [1, 4]",
+    "fy": "Go today if you want the dry one; check the organiser's times first.",
+    "links": [
+     "event:sinterklaas-maastricht-2026",
+     "event:sinterklaas-heerlen-2026"
+    ]
+   },
+   {
+    "h": "Stoffen Spektakel in Leuven closes on Sunday",
+    "tag": "Sewing",
+    "body": "The fabric and haberdashery market in Leuven runs to Sunday 15 Nov, about 75 minutes away by car; Sunday brings rain. [1]",
+    "fy": "Check the opening hours; take the car, as Sunday is wet.",
+    "links": [
+     "event:stoffen-spektakel-leuven-2026"
+    ]
+   }
+  ],
+  "weekend": null,
+  "weather": null
+ },
+ "hockey": {
+  "canes": {
+   "result": null,
+   "noGame": "Carolina did not play on 13 Nov; the second Helsinki game against Seattle is tonight at 19:00 CET.",
+   "next": [
+    [
+     "Sat 14 Nov",
+     "v Seattle, Helsinki",
+     "13:00 ET",
+     "Sat 19:00 CET",
+     true
+    ],
+    [
+     "Thu 19 Nov",
+     "vs Montreal",
+     "19:00 ET",
+     "Fri 01:00 CET",
+     false
+    ],
+    [
+     "Sat 21 Nov",
+     "vs Edmonton",
+     "13:00 ET",
+     "Sat 19:00 CET",
+     true
+    ]
+   ],
+   "nextSrc": 2
+  },
+  "scores": [
+   [
+    "NYR",
+    5,
+    "VAN",
+    1,
+    "pending"
+   ],
+   [
+    "NSH",
+    1,
+    "VGK",
+    2,
+    "pending"
+   ]
+  ],
+  "scoresDate": "Fri 13 Nov",
+  "scoresNote": "Away team listed first; both games were still being played when the run read the NHL API. [79]",
+  "scoresSrc": 79,
+  "news": [
+   {
+    "h": "Hurricanes face Seattle again in Helsinki tonight at 19:00 CET",
+    "badge": "NEW",
+    "conf": "high",
+    "links": [],
+    "body": "Carolina, 15-3-2 and first in the Metropolitan with 32 points, play the second of two games at Veikkaus Arena at 19:00 CET, a rare game in a European evening slot. [2] Sebastian Aho leads the club with 12 goals and 28 points in 20 games. [80]"
+   }
+  ]
+ },
+ "sports": {
+  "saints": [],
+  "cardinals": [],
+  "football": [
+   {
+    "h": "Oranje beat Greece 7–0 and play Germany on Monday",
+    "body": "The Netherlands beat Greece 7–0 in the Nations League on 13 Nov, which NOS says all but secures a quarter-final place. [81] Germany, Oranje's opponent on Monday 16 Nov, warmed up with an easy win in Serbia. [8]",
+    "conf": "high",
+    "badge": "NEW",
+    "links": [],
+    "fy": "Check the Monday kick-off time on NOS before planning the evening."
+   }
+  ]
+ },
+ "planner": {
+  "events": [
+   [
+    "2026-11-14",
+    "nl",
+    "Coalition crisis talks at De Zwaluwenberg",
+    "Hilversum",
+    "D66, VVD and CDA leaders, Sat–Sun",
+    "Whether the cabinet survives",
+    true
+   ],
+   [
+    "2026-11-14",
+    "nl",
+    "Roda JC v FC Volendam",
+    "Kerkrade",
+    "Keuken Kampioen Divisie, 20:00",
+    ""
+   ],
+   [
+    "2026-11-15",
+    "pro",
+    "Gagauzia elections, Moldova",
+    "Comrat",
+    "Governor and People's Assembly",
+    ""
+   ],
+   [
+    "2026-11-16",
+    "be",
+    "De Wever reports to the King on the budget",
+    "Brussels",
+    "10:30",
+    "A temporary budget from January if no deal",
+    true
+   ],
+   [
+    "2026-11-16",
+    "nl",
+    "CNV vote on the regional bus and train offer closes",
+    "Parkstad",
+    "Strikes only if FNV and CNV both reject",
+    "Arriva buses in Limburg"
+   ],
+   [
+    "2026-11-19",
+    "pro",
+    "Trump, Putin and Xi meet in Shenzhen",
+    "Shenzhen",
+    "APEC summit 18–19 Nov",
+    "Nuclear arms, Iran",
+    true
+   ],
+   [
+    "2026-11-20",
+    "nl",
+    "Roda JC at TOP Oss",
+    "Oss",
+    "Keuken Kampioen Divisie, 20:00",
+    ""
+   ],
+   [
+    "2026-11-20",
+    "us",
+    "Senate vote on H.Con.Res. 93 (Iran war powers) due",
+    "Washington",
+    "No later than 20 Nov",
+    ""
+   ],
+   [
+    "2026-11-22",
+    "nl",
+    "Sinterklaas in Schaesberg",
+    "Landgraaf",
+    "Time not yet published",
+    ""
+   ]
+  ],
+  "season": {
+   "title": "Christmas market planner",
+   "intro": "Dates from organisers' or tourism-office pages. Drive times from Hoensbroek are approximate. Dotted red line = today; grey line = 25 Dec.",
+   "from": "2026-11-02",
+   "to": "2027-01-05",
+   "ticks": [
+    "2026-11-02",
+    "2026-11-16",
+    "2026-12-01",
+    "2026-12-15",
+    "2027-01-01"
+   ],
+   "rows": [
+    {
+     "name": "Valkenburg caves",
+     "sub": "NL · ~20 min",
+     "color": "mkt",
+     "segs": [
+      [
+       "2026-11-13",
+       "2027-01-03"
+      ]
+     ]
+    },
+    {
+     "name": "Köln Dom",
+     "sub": "DE · ~1 h 5 min",
+     "color": "de",
+     "segs": [
+      [
+       "2026-11-16",
+       "2026-11-21"
+      ],
+      [
+       "2026-11-23",
+       "2026-12-23"
+      ]
+     ]
+    },
+    {
+     "name": "Aachen",
+     "sub": "DE · ~25 min",
+     "color": "de",
+     "segs": [
+      [
+       "2026-11-20",
+       "2026-12-23"
+      ]
+     ]
+    },
+    {
+     "name": "Magisch Maastricht",
+     "sub": "NL · ~30 min",
+     "color": "nl",
+     "segs": [
+      [
+       "2026-11-27",
+       "2026-12-27"
+      ]
+     ]
+    },
+    {
+     "name": "Liège Village de Noël",
+     "sub": "BE · ~45 min",
+     "color": "be",
+     "segs": [
+      [
+       "2026-11-27",
+       "2026-12-30"
+      ]
+     ]
+    },
+    {
+     "name": "Monschau",
+     "sub": "DE · ~50 min · Fri–Sun",
+     "color": "de",
+     "segs": [
+      [
+       "2026-11-27",
+       "2026-11-29"
+      ],
+      [
+       "2026-12-04",
+       "2026-12-06"
+      ],
+      [
+       "2026-12-11",
+       "2026-12-13"
+      ],
+      [
+       "2026-12-18",
+       "2026-12-20"
+      ]
+     ]
+    }
+   ],
+   "notes": [
+    "**Köln Dom:** closed Sun 22 Nov (Totensonntag). Sat 10:00–22:00. [82]",
+    "**Aachen:** Sun 22 Nov open 18:00–21:00 only; long day Sat 12 Dec until 22:00. [83]",
+    "**Monschau:** four weekends only (Fri–Sat 11:00–21:00, Sun to 20:00). [84]",
+    "**Magisch Maastricht:** free entry, covered ice rink on the Vrijthof. [85] **Liège:** Village de Noël 27 Nov – 30 Dec. [86]"
+   ]
+  },
+  "otd": {
+   "title": "On this day: 14 November 1940",
+   "body": "The Luftwaffe bombed Coventry on the night of 14–15 November 1940, destroying the medieval cathedral; the city later twinned with Dresden and Stalingrad."
+  },
+  "culture": null
+ },
+ "sources": [
+  [
+   1,
+   "Seven-day forecast for Heerlen (50.89 N, 5.98 E)",
+   "Open-Meteo",
+   "https://open-meteo.com/en/docs",
+   2
+  ],
+  [
+   2,
+   "Hockey: Hurricanes club schedule",
+   "NHL API",
+   "https://api-web.nhle.com/v1/club-schedule-season/CAR/20262027",
+   2
+  ],
+  [
+   3,
+   "Officiële bekendmakingen, gemeente Heerlen: Heerlerweg, Hoensbroek, weigering omgevingsvergunning",
+   "overheid.nl",
+   "https://zoek.officielebekendmakingen.nl/gmb-2026-516416.html",
+   1
+  ],
+  [
+   4,
+   "De Sint komt aan in het land: wordt het bibberen langs de kant?",
+   "NOS",
+   "https://nos.nl/l/2639376",
+   3
+  ],
+  [
+   5,
+   "D66, VVD en CDA zetten crisisoverleg voort op landgoed De Zwaluwenberg, uitkomst ongewis",
+   "NOS",
+   "https://nos.nl/l/2639424",
+   3
+  ],
+  [
+   6,
+   "AFNORTH US Middle/High School 2026–27 calendar",
+   "AFNORTH International School / DoDEA",
+   "https://afnorth-is.com/wp-content/uploads/2026/08/AFNORTH-US-MHS-2026-27-Calendar-2.pdf",
+   1
+  ],
+  [
+   7,
+   "Les négociations budgétaires fédérales vont enfin reprendre pour un week-end de tous les dangers",
+   "RTBF",
+   "https://www.rtbf.be/article/les-negociations-budgetaires-federales-vont-enfin-reprendre-pour-un-week-end-de-tous-les-dangers-11815011",
+   3
+  ],
+  [
+   8,
+   "Duitsland draait met eenvoudige zege in Servië warm voor Oranje",
+   "NOS Sport",
+   "https://nos.nl/l/2639404",
+   3
+  ],
+  [
+   9,
+   "Voor het eerst drielandengesprek tussen Trump, Poetin en Xi Jinping in China",
+   "NOS (with AFP)",
+   "https://nos.nl/l/2639421",
+   3
+  ],
+  [
+   10,
+   "EU leaders agree on joint team to represent Europe in Ukraine peace talks",
+   "Ukrinform",
+   "https://www.ukrinform.net/rubric-polytics/4184513-eu-leaders-agree-on-joint-team-to-represent-europe-in-ukraine-peace-talks.html",
+   2
+  ],
+  [
+   11,
+   "EU leaders hand Ukraine peace talks to France, Germany, UK, Italy, Poland plus Brussels",
+   "EUobserver",
+   "https://euobserver.com/248871/eu-leaders-hand-ukraine-peace-talks-to-france-germany-uk-italy-poland-plus-brussels-instead-of-a-single-envoy/",
+   3
+  ],
+  [
+   12,
+   "Europe will be represented for first time at upcoming peace talks – Merz",
+   "Ukrinform",
+   "https://www.ukrinform.net/rubric-polytics/4184469-europe-will-be-represented-for-first-time-at-upcoming-peace-talks-merz.html",
+   2
+  ],
+  [
+   13,
+   "Ukraine hopes for large-scale POW exchange – Zelensky",
+   "Ukrinform",
+   "https://www.ukrinform.net/rubric-polytics/4184534-ukraine-hopes-for-largescale-pow-exchange-zelensky.html",
+   2
+  ],
+  [
+   14,
+   "Air defense downs 80 of 117 Russian drones launched overnight",
+   "Ukrinform",
+   "https://www.ukrinform.net/rubric-ato/4184168-air-defense-downs-80-of-117-russian-drones-launched-overnight.html",
+   2
+  ],
+  [
+   15,
+   "US Army names officer held on 'allegations of espionage'",
+   "Defense News",
+   "https://www.defensenews.com/global/europe/2026/11/13/us-army-names-officer-held-on-allegations-of-espionage/",
+   3
+  ],
+  [
+   16,
+   "Sirens sound at UK air bases over suspected drone activity",
+   "Anadolu Agency",
+   "https://www.aa.com.tr/en/world/sirens-sound-at-uk-air-bases-over-suspected-drone-activity-report/4124827",
+   2
+  ],
+  [
+   17,
+   "IRGC says tanker caught fire after hitting mines in Strait of Hormuz",
+   "Al Jazeera",
+   "https://www.aljazeera.com/video/newsfeed/2026/11/13/irgc-says-tanker-caught-fire-after-hitting-mines-in-strait-of-hormuz",
+   3
+  ],
+  [
+   18,
+   "Iran claims it destroyed US early-warning radar in Bahrain",
+   "Anadolu Agency",
+   "https://www.aa.com.tr/en/middle-east/iran-claims-it-destroyed-us-early-warning-radar-in-bahrain/4123650",
+   2
+  ],
+  [
+   19,
+   "Het kan nog steeds fout gaan, is de conclusie na urenlang crisisoverleg",
+   "NOS",
+   "https://nos.nl/l/2639395",
+   3
+  ],
+  [
+   20,
+   "Kushner says next round of Russia-Ukraine talks to include Europe",
+   "Anadolu Agency",
+   "https://www.aa.com.tr/en/world/us-envoy-kushner-says-next-round-of-russia-ukraine-peace-talks-to-include-europe/4123847",
+   2
+  ],
+  [
+   21,
+   "Merz outlines two key priorities for Coalition of the Willing summit in Berlin",
+   "Ukrinform",
+   "https://www.ukrinform.net/rubric-polytics/4184504-merz-outlines-two-key-priorities-for-coalition-of-the-willing-summit-in-berlin.html",
+   2
+  ],
+  [
+   22,
+   "Ukraine's air defenders down Russian Geran-5 jet drone for first time using Swedish RBS-70 MANPADS",
+   "Ukrinform",
+   "https://www.ukrinform.net/rubric-ato/4184527-ukraines-air-defenders-down-russian-geran5-jet-drone-for-first-time-using-swedish-rbs70-manpads.html",
+   2
+  ],
+  [
+   23,
+   "War update: 243 clashes on front line, fiercest fighting in Pokrovsk sector",
+   "Ukrinform",
+   "https://www.ukrinform.net/rubric-ato/4184540-war-update-243-clashes-on-front-line-fiercest-fighting-in-pokrovsk-sector.html",
+   2
+  ],
+  [
+   24,
+   "Russian strike on Zaporizhzhia: Injury toll rises to 50, including eight children",
+   "Ukrinform",
+   "https://www.ukrinform.net/rubric-ato/4184479-russian-strike-on-zaporizhzhia-injury-toll-rises-to-50-including-eight-children.html",
+   2
+  ],
+  [
+   25,
+   "UN warns of rising maritime attacks, urges restoration of safe navigation in Hormuz, Red Sea",
+   "Anadolu Agency",
+   "https://www.aa.com.tr/en/middle-east/un-warns-of-rising-maritime-attacks-urges-restoration-of-safe-navigation-in-strait-of-hormuz-red-sea/4124809",
+   2
+  ],
+  [
+   26,
+   "EU, UK 'Concerned' as Kosovo Moves Against Hague Court's Powers Again",
+   "Balkan Insight",
+   "https://balkaninsight.com/2026/11/13/eu-uk-concerned-as-kosovo-moves-against-hague-courts-powers-again/btj/",
+   3
+  ],
+  [
+   27,
+   "RDC : le FRN de Joseph Kabila gagne du terrain au Sud-Kivu, les FARDC préparent la riposte",
+   "Afrik.com",
+   "https://www.afrik.com/rdc-le-frn-de-joseph-kabila-gagne-du-terrain-au-sud-kivu-les-fardc-preparent-la-riposte",
+   3
+  ],
+  [
+   28,
+   "Congo War Security Review, 11 Nov 2026",
+   "Critical Threats",
+   "https://www.criticalthreats.org/briefs/congo-war-security-review/november-11-2026",
+   2
+  ],
+  [
+   29,
+   "RDC : la chute de Bulambika aux mains du FRN",
+   "Actualite.cd",
+   "https://actualite.cd/2026/11/09/rdc-la-chute-de-bulambika-aux-mains-du-frn-fait-craindre-une-progression-vers-hombo-et",
+   3
+  ],
+  [
+   30,
+   "Congo-Kinshasa: Offensive des combattants du FRN au Sud-Kivu",
+   "AllAfrica",
+   "https://fr.allafrica.com/stories/202611100235.html",
+   3
+  ],
+  [
+   31,
+   "Ebola à Bunia : la jeunesse interpelle les élus sur la fermeture de l'aéroport",
+   "ACP",
+   "https://acp.cd/province/ebola-a-bunia-la-jeunesse-interpelle-les-elus-sur-la-fermeture-de-laeroport/",
+   3
+  ],
+  [
+   32,
+   "Un drone suspect détecté au-dessus d'une base britannique",
+   "RTBF",
+   "https://www.rtbf.be/article/un-drone-suspect-detecte-au-dessus-d-une-base-britannique-l-armee-de-l-air-americaine-sur-les-dents-11815438",
+   3
+  ],
+  [
+   33,
+   "Jongen van 17 opgepakt voor valse bommelding bij Ursulinen in Mechelen",
+   "VRT NWS",
+   "https://www.vrt.be/vrtnws/p.LNWAoMZq1",
+   3
+  ],
+  [
+   34,
+   "Suspected Drones Over RAF Lakenheath Just Triggered Security Response: U.S. Air Force",
+   "The War Zone",
+   "https://www.twz.com/air/suspected-drones-over-raf-lakenheath-just-triggered-security-response-u-s-air-force",
+   3
+  ],
+  [
+   35,
+   "Vliegverkeer VS hervat na grote communicatiestoring, apparatuur raakte overbelast",
+   "NOS (with AFP)",
+   "https://nos.nl/l/2639391",
+   3
+  ],
+  [
+   36,
+   "NCSC-NL advisories feed (NCSC-2026-0493 Ivanti, 0494 Zoom)",
+   "NCSC-NL",
+   "https://advisories.ncsc.nl/rss/advisories",
+   1
+  ],
+  [
+   37,
+   "Panne mondiale de Microsoft 365 et Outlook",
+   "RTBF",
+   "https://www.rtbf.be/article/panne-mondiale-de-microsoft-365-et-outlook-ce-que-l-on-sait-de-cet-incident-qui-se-retablit-progressivement-11814924",
+   3
+  ],
+  [
+   38,
+   "Az NVVH szó szerint előásta Seszták Miklós készpénzben tartott milliárdjait",
+   "444.hu",
+   "https://444.hu/2026/11/13/az-nvvh-szo-szerint-eloasta-sesztak-miklos-keszpenzben-tartott-milliardjait-a-kdnp-s-politikus-erdokben-raktarakban-felreeso-szefekben-rejtette-el-a-penzt",
+   3
+  ],
+  [
+   39,
+   "В Венгрии при обысках у бывшего министра изъяли почти 18 млн евро",
+   "Interfax",
+   "https://www.interfax.ru/world/1128965",
+   2
+  ],
+  [
+   40,
+   "EPPO zastavila konanie k dodávke munície zo SR na Ukrajinu v roku 2022",
+   "TASR (teraz.sk)",
+   "https://www.teraz.sk/slovensko/eppo-zastavila-konanie-k-dodavke-munic/1007464-clanok.html",
+   2
+  ],
+  [
+   41,
+   "Putyinék durva követelésekkel álltak elő, hatalmas árat kérnek a békéért",
+   "Index",
+   "https://index.hu/kulfold/2026/11/13/oroszorszag-koveteles-vlagyimir-putyin-ukrajna-nato/",
+   3
+  ],
+  [
+   42,
+   "Az oroszok a békéért cserébe azt követelik, hogy Finnország lépjen ki a NATO-ból",
+   "444.hu",
+   "https://444.hu/2026/11/13/az-oroszok-a-bekeert-cserebe-azt-kovetelik-hogy-finnorszag-lepjen-ki-a-nato-bol",
+   3
+  ],
+  [
+   43,
+   "UK to buy three new mine-hunting drone motherships under Norway agreement",
+   "Breaking Defense",
+   "https://breakingdefense.com/2026/11/uk-to-buy-three-new-mine-hunting-drone-motherships-under-norway-agreement/",
+   3
+  ],
+  [
+   44,
+   "Italy boosts GCAP fighter spending as Army vehicles take a hit in budget",
+   "Defense News",
+   "https://www.defensenews.com/global/europe/2026/11/13/italy-boosts-gcap-fighter-spending-as-army-vehicles-take-a-hit-in-budget/",
+   3
+  ],
+  [
+   45,
+   "Defense Business Brief: This Ukraine-founded drone maker is now worth $6 billion",
+   "Defense One",
+   "https://www.defenseone.com/business/2026/11/defense-business-brief-ukraine-founded-drone-maker-now-worth-6-billion-what-now/417207/",
+   3
+  ],
+  [
+   46,
+   "Beretta's New Counter-Drone System Packs Eight Benelli M4 Shotguns Onto A Remote Turret",
+   "The War Zone",
+   "https://www.twz.com/land/berettas-new-counter-drone-system-packs-eight-benelli-m4-shotguns-onto-a-remote-turret",
+   3
+  ],
+  [
+   47,
+   "Hermeus recruits Northrop Grumman to Quarterhorse drone program",
+   "Breaking Defense",
+   "https://breakingdefense.com/2026/11/hermeus-recruits-northrop-grumman-to-quarterhorse-drone-program/",
+   3
+  ],
+  [
+   48,
+   "Inside MSI's Next Generation of Counter-Drone Defense",
+   "Defense News",
+   "https://www.defensenews.com/video/2026/11/13/inside-msis-next-generation-of-counter-drone-defense/",
+   3
+  ],
+  [
+   49,
+   "US Air Force adopts new Force Design focusing on sensors and autonomy",
+   "Defense News",
+   "https://www.defensenews.com/air/2026/11/13/us-air-force-adopts-new-force-design-focusing-on-sensors-and-autonomy/",
+   3
+  ],
+  [
+   50,
+   "Russians repel attack by Ukrainian ground robots armed with RPGs (Ukraine battlefield update day 1716)",
+   "EUobserver",
+   "https://euobserver.com/247493/russians-repel-attack-by-ukrainian-ground-robots-armed-with-rpgs-in-futuristic-assault-ukraine-battlefield-update-day-1716/",
+   3
+  ],
+  [
+   51,
+   "llama.cpp v1.0.0: A stronger foundation for the local AI ecosystem",
+   "Hugging Face blog (ggml-org)",
+   "https://huggingface.co/blog/ggml-org/llama-cpp-v1",
+   1
+  ],
+  [
+   52,
+   "LLMON: An LLM-Native Markup Language, now in Granite 4.1 3B and 8B",
+   "Hugging Face blog (IBM Granite)",
+   "https://huggingface.co/blog/ibm-granite/llmon-an-llm-native-markup-language-now-in-granite",
+   1
+  ],
+  [
+   53,
+   "Export-banned Nvidia chips are behind China's most powerful AI models",
+   "TechCrunch",
+   "https://techcrunch.com/2026/11/13/export-banned-nvidia-chips-are-behind-chinas-most-powerful-ai-models-uh-oh-jensen/",
+   3
+  ],
+  [
+   54,
+   "Hegseth announces new four-star command for autonomous warfare",
+   "Military Times",
+   "https://www.militarytimes.com/news/your-military/2026/09/30/hegseth-announces-new-four-star-command-for-autonomous-warfare/",
+   3
+  ],
+  [
+   55,
+   "Pentagon rebrands principal AI shop as 'Super Intelligence Office'",
+   "Breaking Defense",
+   "https://breakingdefense.com/2026/11/pentagon-rebrands-principle-ai-shop-as-super-intelligence-office/",
+   3
+  ],
+  [
+   56,
+   "Combat Power, Sustained: A Hub-and-Mesh Architecture for Contested Logistics",
+   "Modern War Institute",
+   "https://mwi.westpoint.edu/combat-power-sustained-a-hub-and-mesh-architecture-for-contested-logistics/",
+   2
+  ],
+  [
+   57,
+   "A natural field experiment on the effectiveness of economic sanctions before and after the Russian invasion of Ukraine",
+   "Nature Human Behaviour",
+   "https://www.nature.com/articles/s41562-026-02591-5",
+   1
+  ],
+  [
+   58,
+   "The Impact of Climate Change on Fisheries (NBER Working Paper 35994)",
+   "NBER",
+   "https://www.nber.org/papers/w35994",
+   1
+  ],
+  [
+   59,
+   "Aristotle, Politics, Book 7, 1333a (Rackham)",
+   "Perseus Digital Library",
+   "http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0058:book=7:section=1333a",
+   1
+  ],
+  [
+   60,
+   "Valery Gerasimov, \"The Value of Science Is in the Foresight\" (Military-Industrial Kurier, 27 Feb 2013), translation by Robert Coalson",
+   "HuffPost / RFE/RL",
+   "https://www.huffpost.com/robert-coalson/valery-gerasimov-putin-ukraine_b_5748480.html?m=true",
+   3
+  ],
+  [
+   61,
+   "France blames Iran for fridge cyberattacks, says some caused fires",
+   "The Record (Recorded Future News)",
+   "https://therecord.media/france-blames-iran-for-fridge-cyberattacks",
+   3
+  ],
+  [
+   62,
+   "Cyberattaque des frigos : le ministre Quintin pointe la piste iranienne, Prévot le recadre",
+   "RTBF",
+   "https://www.rtbf.be/article/cyberattaque-des-frigos-le-ministre-quintin-pointe-la-piste-iranienne-prevot-le-recadre-11814638",
+   3
+  ],
+  [
+   63,
+   "France probes if bomb threats against airlines linked to 'foreign powers'",
+   "AFP via The Straits Times",
+   "https://www.straitstimes.com/world/europe/france-probes-if-bomb-threats-against-airlines-linked-to-foreign-powers",
+   2
+  ],
+  [
+   64,
+   "Over 100 European stores hit as supermarket fridge attacks resume",
+   "SecurityWeek",
+   "https://www.securityweek.com/over-100-european-stores-hit-as-supermarket-fridge-attacks-resume/",
+   3
+  ],
+  [
+   65,
+   "Hacker attacks on EU supermarkets: Hansen says an attempt to disrupt the food supply",
+   "Eunews",
+   "https://www.eunews.it/en/2026/11/02/hacker-attacks-on-eu-supermarkets-hansen-says-an-attempt-to-disrupt-the-food-supply/",
+   3
+  ],
+  [
+   66,
+   "New version of the Military Doctrine (summary of the 2014 doctrine's features of modern conflict)",
+   "russianforces.org",
+   "https://russianforces.org/blog/2014/12/new_version_of_the_military_do.shtml",
+   4
+  ],
+  [
+   67,
+   "Regional security dominates European talks in Dublin amid hybrid attacks",
+   "Al Jazeera (with AP and DPA)",
+   "https://www.aljazeera.com/news/2026/11/12/regional-security-dominates-european-talks-in-dublin-amid-hybrid-attacks",
+   3
+  ],
+  [
+   68,
+   "Europe sees surge in suspected Russian hybrid warfare incidents",
+   "Atlantic Council",
+   "https://www.atlanticcouncil.org/?p=959811",
+   3
+  ],
+  [
+   69,
+   "S&P 500 (SP500), daily close 13 Nov",
+   "FRED, Federal Reserve Bank of St. Louis",
+   "https://fred.stlouisfed.org/series/SP500",
+   2
+  ],
+  [
+   70,
+   "Dow Jones Industrial Average (DJIA)",
+   "FRED, Federal Reserve Bank of St. Louis",
+   "https://fred.stlouisfed.org/series/DJIA",
+   2
+  ],
+  [
+   71,
+   "Nasdaq Composite (NASDAQCOM) and VIX (VIXCLS), daily close 12 Nov",
+   "FRED, Federal Reserve Bank of St. Louis",
+   "https://fred.stlouisfed.org/series/NASDAQCOM",
+   2
+  ],
+  [
+   72,
+   "Daily closes, 11 Nov: ^GSPC, ^IXIC, ^RUT, ^AEX, ^STOXX, ^GDAXI, ^VIX, BZ=F, TTF=F, GC=F",
+   "Yahoo Finance chart API",
+   "https://finance.yahoo.com/",
+   2
+  ],
+  [
+   73,
+   "Daily Treasury par yield curve rates",
+   "US Treasury",
+   "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve",
+   1
+  ],
+  [
+   74,
+   "Euro foreign exchange reference rates (history)",
+   "European Central Bank",
+   "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html",
+   1
+  ],
+  [
+   75,
+   "Federal Reserve issues FOMC statement, 28 October 2026",
+   "Federal Reserve",
+   "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
+   1
+  ],
+  [
+   76,
+   "Meeting calendars and information",
+   "Federal Reserve",
+   "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+   1
+  ],
+  [
+   77,
+   "Monetary policy decisions, 29 October 2026",
+   "European Central Bank",
+   "https://www.ecb.europa.eu/press/pr/date/2026/html/ecb.mp261029~9a493adf17.en.html",
+   1
+  ],
+  [
+   78,
+   "Pompprijzen motorbrandstoffen; brandstofsoort, per dag (80416ned)",
+   "CBS",
+   "https://opendata.cbs.nl/statline/#/CBS/nl/dataset/80416ned/table",
+   1
+  ],
+  [
+   79,
+   "NHL scores, 13 Nov",
+   "NHL API",
+   "https://api-web.nhle.com/v1/score/2026-11-13",
+   2
+  ],
+  [
+   80,
+   "Standings, leaders and club stats (tools/hockey.js)",
+   "NHL API",
+   "https://api-web.nhle.com/v1/standings/now",
+   2
+  ],
+  [
+   81,
+   "Monsterzege wervelend Oranje op Grieken (7-0)",
+   "NOS Sport",
+   "https://nos.nl/l/2639398",
+   3
+  ],
+  [
+   82,
+   "Weihnachtsmarkt am Kölner Dom 2026",
+   "koeln.de",
+   "https://www.koeln.de/weihnachten/weihnachtsmaerkte-koeln/weihnachtsmarkt-am-koelner-dom/",
+   2
+  ],
+  [
+   83,
+   "Aachener Weihnachtsmarkt: dates and hours",
+   "Aachen Christmas market",
+   "https://aachenweihnachtsmarkt.de/en/pages/offers/",
+   1
+  ],
+  [
+   84,
+   "Christmas market Monschau",
+   "Tourismus Kreis Düren",
+   "https://www.tourismus.kreis-dueren.de/en/e-christmas-market-monschau-2",
+   1
+  ],
+  [
+   85,
+   "Magisch Maastricht",
+   "Kidsproof",
+   "https://www.kidsproof.nl/zuid-limburg/eropuit/magisch-maastricht/magisch-maastricht-kerst-gezinsuitje-eu/",
+   4
+  ],
+  [
+   86,
+   "Village de Noël in Luik",
+   "Visit Zuid-Limburg",
+   "https://www.visitzuidlimburg.com/experience-zuid-limburg/event/village-de-noel-in-luik/64128",
+   2
+  ]
+ ],
+ "flags": "Morning run, 14 Nov, about 05:15–07:00 CET, prompt revision 7.5.12. Searches by worker: board 15 of 22, countries 12 of 18, security 4 of 12, profession 14 of 14 (cap reached), frontier 0 of 4, reading 4 of 8, aperture 4 of 4, home 0 of 6 and 5 of 6, editor 0 (fetches only); 58 in all, so the shared allowance did not run out. Data: Yahoo Finance answered 429 again, so the S&P 500 and Dow use Friday 13 Nov closes from FRED, the Nasdaq and VIX Thursday 12 Nov (FRED), the US 10-year Friday from the Treasury curve, and the Russell 2000, AEX, Stoxx 600, DAX, Brent, TTF and gold cards stay at Wed 11 Nov; year-to-date bars for the US indices are recomputed from the previous edition's base. ECB fix of 13 Nov (1.1052) appended. tools/local.js, cozi.js, fuel.js (last CBS day still 9 Nov), hockey.js and sports.js ran without failures; Rijden de Treinen listed no disruptions (0 of 0). local.js dropped the 5 Nov Heerlerweg notice from the register window, so the run put it back; it stays until 26 Nov. CISA KEV: 12 entries added 8–14 Nov (two on 13 Nov: UnrealIRCd and Check Point), cyber-kev-7d stays amber, none listed against European critical infrastructure. ECDC public health events page renders its list client-side; no new EU/EEA event seen, ecdc-threats stays amber on the Frankfurt malaria event of 6 Nov. ua-air and ua-downed-pct extended for the night into 13 Nov (117 drones, no missiles, 80 downed); the statement for the night into 14 Nov was not out. minfin gave 13 Nov only (+2,590 personnel, +1,160 drones). No Canes game on 13 Nov; teams.json unchanged (Saints next play Sunday). Ski snow not refreshed (out of season). Energy: CBS table 85592NED unchanged since 10 Nov. Mail check: the PTA November newsletter added one dated item (27 Nov Green and White basketball scrimmages, PTA canteen) and moved the spirit-wear closing date to 22 Nov; the MHS \"13 November Week Ahead\" newsletter's dates are only in a PDF attachment the run cannot read (it lists a Christmas lunch and winter sports schedule); an Outlook outage notice carried no date; no CYS mail; no new travel mail. Cozi: 38 items from the tool (dropped 31 recurring, 4 medical, 0 birthdays); the privacy check removed one more, a youth-group meeting (\"Girl Scout\"), as a child's routine; extend the filter with that word. Calendar notes for the next seven days: no school at AFNORTH on Mon 16 Nov, the day the family calendar starts your NATO CIMIC Higher Command Course in The Hague (16–27 Nov); the Geilenkirchen clinic is closed on the morning of Wed 18 Nov; Cozi and the readbook still disagree on the AFNorth winter fest on 21 Nov (Cozi from 10:00, PTA mail 11:00–14:00) and on Thanksgiving (Cozi a four-day break 26–29 Nov, school calendar school days on 26–27 Nov, the HQ a US pass day on 26 Nov). Unchecked or skipped: the Black Sea and Moldova (no dated 13–14 Nov fact found; last entry 13 Nov), the Arctic, Taiwan (no MND count), Korea, Sudan, the Sahel and Venezuela had no board entry today; the Balkans entry is the Kosovo court law only (EUFOR and RFE/RL not fetched); the Gulf of Finland warship question is unanswered; a Houthi missile on Aden appeared in a worker's notes but not on the page read, so it was left out; Bild's report of Russian terms was read through Index and 444, not Bild or any Russian source; Germany: tagesschau, Spiegel, FAZ and DLF refused the countries worker and no dated German item was verified, so there is no de item; Druzhba flows, Hungary's EU-funds talks and Slovak snap-election talk: no new fact; no context-profile line was confirmed today (the Belarus line on Lithuanian crossings is still marked); Euregio: De Limburger, HBVL and WDR feeds unreachable and the L1 article bodies render client-side, so the section is empty; the L1 Roermond–Sittard headline could not be read beyond the title; AUTOWARCOM, SOF, strategy and the NDAA produced nothing dated in the window, so career, congress and Leaders' words are thin (the Patel and Streeting quotes come through Defense News and Breaking Defense, not transcripts); no NATO HQ item (nato.int listing client-rendered); no exercises or Congress rows moved; no new events or TV suggestions added; Eurovision (English Wikipedia read, no change) and Sanremo (Italian Wikipedia 404, English read, no change) unchanged; the FNV bus vote result was still not published; no protest rows re-verified; no Limburgs culture row re-checked. Single-source items: the Lakenheath drones (Anadolu relaying the Daily Mail and Axios, with RTBF and The War Zone), FPCON Charlie (The War Zone citing the WSJ), the Tyner case (Defense News citing Military Times), the Belgian budget weekend (RTBF), the Mechelen hoax (VRT), the FRN advance (Afrik.com, Actualite.cd and Critical Threats; the Bunia airport extension from an ACP dispatch), the IRGC mine and radar claims (IRGC via IRNA, reported by Anadolu and Al Jazeera), UFORCE's 10,000-vehicle claim (company), IBM's prompt-injection figures (vendor), and the Blackwell weights analysis (TechCrunch, unverified). Research: the military piece is a Modern War Institute essay, an argument without data; the climate paper was read at abstract level; demography had no eligible paper in 60 days. The philosophy quote was checked against Perseus (Rackham, Loeb 1944). The Limburgs word's pronunciation is a broad estimate from e-WLD's spelling; e-WLD gives no tone mark. Feed and host failures this morning: Yahoo Finance (429), tagesschau, Spiegel, FAZ and DLF (to the countries worker), Telex (403), Aktuality, De Limburger, HBVL, WDR, USAREUR-AF (stale), army.mil (no new items), nato.int listing, EUFOR (not fetched), Italian Wikipedia Sanremo (404), armyupress.army.mil (403), the USAWC monograph PDFs (403).",
+ "changelog": [
+  [
+   "2026-11-11",
+   "Home adds the family calendar (Cozi, read-only), a Eurovision 2027 tracker and a Sanremo 2027 tracker; school items are limited to high school; workers run on a cheaper model with lean briefs."
+  ],
+  [
+   "2026-11-10",
+   "Sports is its own tier (the Canes with Metropolitan standings, league and club leaders and the McDavid watch, the Saints, the Cardinals, local football); Parkstad today lists strikes and demonstrations for 30 days and flags anything on Heerlerweg, with English lines on the Hoensbroek notices; the philosophy canon takes in the whole Stoa, Chinese thought and the philosophers of science; the calendar holds the JFC Brunssum FY27 US holidays; editions record their prompt revision."
+  ],
+  [
+   "2026-11-10",
+   "Overwrite: edition 10 replaces edition 9 for 10 Nov; refreshed mail (travel itinerary added to inbox.json), KEV indicator reading, index entry."
+  ],
+  [
+   "2026-11-09",
+   "v7.5: a fetch-first source register (feeds.json) steers every run, with search shares by tier and caps per worker; Aperture keeps the deep cut and the long read and adds a weekend red-team piece; By the numbers adds the occupied area from DeepState and the intercept share; Limburg headlines carry an English line; growth bounds fold quiet threads, compact green indicators, shorten ended shows and cap the research queue."
+  ],
+  [
+   "2026-11-09",
+   "v7.4: Parkstad today opens Home and planning (air and pollen, day-ahead power, the Maas, the sky, roads, rails, gemeente notices, L1 headlines and the local calendar), with the Limburgs word in Taal, household admin, Roda fixtures, flu and flight-noise notes, and Maas and flu indicators; Markets & economy is its own tier with household energy and a tank of petrol at the tax-exempt rate."
+  ],
+  [
+   "2026-11-08",
+   "v7.3: Russia, Belarus and China join Hungary, Slovakia and Germany as context profiles; every Hungary, Slovakia and Germany item quotes a sentence from a source in the country's language with its translation; the Western Balkans and the Black Sea and Moldova join the board as theatres twelve and thirteen; CISA exploited-vulnerability and ECDC outbreak indicators. This edition was reissued in the 7.3 format at 10:25."
+  ],
+  [
+   "2026-11-08",
+   "v7.2: The watch in ten sections with one Horizon (horizon entries, exercises, Congress deadlines, open forecasts and elections); From your mail and decisions fold into Coming up; denser logs and rows, and the source list folds under a summary line."
+  ],
+  [
+   "2026-11-07",
+   "v7.1: three research pieces a day across fields, a daily philosophy note read closely, a mail check that feeds From your mail, and a larger reading budget."
+  ],
+  [
+   "2026-11-07",
+   "v7.0: the Brief (takeaways, what changed, what to watch, what we do not know, indicators), the Ukraine panel with the DeepState front line, Indicators and warning, the forecast ledger, New in war and the Arctic theatre; at weekends The reading comes before The news."
+  ],
+  [
+   "2026-11-05",
+   "v6.5: Priority countries (Hungary, Slovakia, Germany) in The news, with profiles and dated logs from countries.json; Readbook health lists a data-ingest line per standing file, the top line shows the last run, and the page warns when the latest edition is older than today."
+  ],
+  [
+   "2026-11-05",
+   "v6.1: a daily Research piece in The reading with a queue and a covered log; the Saints and Cardinals under the Canes; a TV tracker; sky icons and wind arrows in the weather strip; calendar fixes."
+  ],
+  [
+   "2026-11-04",
+   "v6.0: five tiers (Today, The news, The watch, The reading, Home and planning), cross-links from items to the trackers they update, source tiers, Since yesterday, Decisions due, calendar files, the year-ahead board, corrections and a style guide. This edition was reissued in the 6.0 format at 13:00."
+  ]
+ ],
+ "generated": "2026-11-14T05:37:02+01:00"
+}

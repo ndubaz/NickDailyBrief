@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13",
+ "updated": "2026-11-14",
  "note": "Open questions the Readbook is carrying: what we do not know. The run adds a question when an item turns on a fact nobody has published, and closes it with the answer and source when one appears. Never delete.",
  "items": [
   {
@@ -255,13 +255,38 @@
    "q": "Who will represent Europe at the next round of Ukraine talks, and when and where does it meet?",
    "thread": "thread:russia-ukraine-talks",
    "opened": "2026-11-13",
-   "status": "open"
+   "status": "closed",
+   "closed": "2026-11-14",
+   "answer": "EU leaders agreed in Dublin on 13 Nov that the European team is the EU institutions and the E5 of the Coalition of the Willing (France, Germany, the UK, Italy and Poland); no date or venue for the next round is published, so that part moves to a new question. [10, 11]",
+   "src": [
+    [
+     10,
+     "EU leaders agree on joint team to represent Europe in Ukraine peace talks",
+     "Ukrinform",
+     "https://www.ukrinform.net/rubric-polytics/4184513-eu-leaders-agree-on-joint-team-to-represent-europe-in-ukraine-peace-talks.html",
+     2
+    ],
+    [
+     11,
+     "EU leaders hand Ukraine peace talks to France, Germany, UK, Italy, Poland plus Brussels",
+     "EUobserver",
+     "https://euobserver.com/248871/eu-leaders-hand-ukraine-peace-talks-to-france-germany-uk-italy-poland-plus-brussels-instead-of-a-single-envoy/",
+     3
+    ]
+   ]
   },
   {
    "id": "2026-11-13-gulf-finland-strike",
    "q": "What struck the Russian warship in the Gulf of Finland on 11 Nov, and was it damaged?",
    "thread": "theatre:ru-ua",
    "opened": "2026-11-13",
+   "status": "open"
+  },
+  {
+   "id": "2026-11-14-next-round-date",
+   "q": "When and where does the next round of Ukraine talks with the European team meet?",
+   "thread": "thread:russia-ukraine-talks",
+   "opened": "2026-11-14",
    "status": "open"
   }
  ]

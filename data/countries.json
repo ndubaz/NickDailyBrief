@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13",
+ "updated": "2026-11-14",
  "note": "Nick's assigned priority countries as an analyst: Hungary and Slovakia (priority), Germany (secondary). Russia, Belarus and China are context countries (7.3): profiled for what they do to the eastern flank and to the three countries above, logged the same way, no baseline-requirement grid. The run appends dated facts to each country's log and keeps the profile current. Facts and summaries only; the item in the edition carries the So what. verified:false marks a fact to confirm against an official page.",
  "blr": [
   "Continuity of government and critical services",
@@ -309,6 +309,20 @@
       [
        "Friedrich Merz erővel mozdítaná el Magyar Pétert az orbáni pozícióból",
        "https://444.hu/2026/11/12/friedrich-merz-erovel-mozditana-el-magyar-petert-az-orbani-poziciobol"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-14",
+     "t": "13 Nov: NVVH reported finding 5,071,632,000 forints, €2,658,350 and $1,257,100 in cash linked to the Seszták (KDNP) bribery case and said the sum was paid into the State Treasury; Seszták has been in custody since 28 Sep 2026.",
+     "src": [
+      [
+       "444: Az NVVH szó szerint előásta Seszták Miklós készpénzben tartott milliárdjait",
+       "https://444.hu/2026/11/13/az-nvvh-szo-szerint-eloasta-sesztak-miklos-keszpenzben-tartott-milliardjait-a-kdnp-s-politikus-erdokben-raktarakban-felreeso-szefekben-rejtette-el-a-penzt"
+      ],
+      [
+       "Interfax: В Венгрии при обысках у бывшего министра изъяли почти 18 млн евро",
+       "https://www.interfax.ru/world/1128965"
       ]
      ]
     }
@@ -715,6 +729,26 @@
       [
        "Nadácia Zastavme korupciu oslovuje NR SR pre možné pochybenie Kaliňáka",
        "https://www.teraz.sk/slovensko/nadacia-zastavme-korupciu-oslovuje-nr-s/1007172-clanok.html"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-14",
+     "t": "13 Nov: EPPO closed its case on the 2022 ammunition donation from Slovakia to Ukraine, finding the evidence did not prove a crime.",
+     "src": [
+      [
+       "TASR: EPPO zastavila konanie k dodávke munície zo SR na Ukrajinu v roku 2022",
+       "https://www.teraz.sk/slovensko/eppo-zastavila-konanie-k-dodavke-munic/1007464-clanok.html"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-14",
+     "t": "13 Nov: Prime Minister Fico welcomed the EU agreement on a delegation for talks on Ukraine.",
+     "src": [
+      [
+       "TASR: Fico: EÚ nabrala odvahu, dohodla sa na delegácii na rokovania o Ukrajine",
+       "https://www.teraz.sk/slovensko/ficoeu-nabrala-odvahudohodla-sa-na-de/1007523-clanok.html"
       ]
      ]
     }
@@ -1270,6 +1304,20 @@
       [
        "Что нужно знать о бюджете на 2027 год (reading of the explanatory note to the draft budget)",
        "https://t-j.ru/budget-2027/"
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-14",
+     "t": "13 Nov: Index, citing Bild, reported an unofficial Russian peace proposal at the Abu Dhabi talks demanding no NATO enlargement, no NATO bases in the Baltic states, Finland out of NATO, and withdrawal of nuclear weapons from Belarus (press report, not a state statement).",
+     "src": [
+      [
+       "Index: Putyinék durva követelésekkel álltak elő",
+       "https://index.hu/kulfold/2026/11/13/oroszorszag-koveteles-vlagyimir-putyin-ukrajna-nato/"
+      ],
+      [
+       "444: Az oroszok a békéért cserébe azt követelik, hogy Finnország lépjen ki a NATO-ból",
+       "https://444.hu/2026/11/13/az-oroszok-a-bekeert-cserebe-azt-kovetelik-hogy-finnorszag-lepjen-ki-a-nato-bol"
       ]
      ]
     }

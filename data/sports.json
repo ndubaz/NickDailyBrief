@@ -27,7 +27,7 @@
      "pa": 216,
      "div": "0-1",
      "streak": "W1",
-     "seed": "11"
+     "seed": "12"
     },
     {
      "team": "TB",
@@ -40,7 +40,7 @@
      "pa": 178,
      "div": "2-0",
      "streak": "L1",
-     "seed": "12"
+     "seed": "13"
     },
     {
      "team": "ATL",
@@ -53,7 +53,7 @@
      "pa": 223,
      "div": "1-2",
      "streak": "L2",
-     "seed": "13"
+     "seed": "14"
     }
    ],
    "games": [
@@ -1804,22 +1804,6 @@
   "oranje": {
    "next": [
     {
-     "date": "2026-11-13T19:45Z",
-     "utc": "2026-11-13T19:45Z",
-     "home": true,
-     "opp": "Greece",
-     "oppAbbrev": "GRE",
-     "venue": "Johan Cruijff Arena",
-     "league": "2026-27 UEFA Nations League",
-     "status": "11/13 - 2:45 PM EST",
-     "done": false,
-     "gf": null,
-     "ga": null,
-     "res": null,
-     "homeTeam": "NED",
-     "awayTeam": "GRE"
-    },
-    {
      "date": "2026-11-16T19:45Z",
      "utc": "2026-11-16T19:45Z",
      "home": false,
@@ -1837,22 +1821,6 @@
     }
    ],
    "last": [
-    {
-     "date": "2026-09-27T16:00Z",
-     "utc": "2026-09-27T16:00Z",
-     "home": false,
-     "opp": "Serbia",
-     "oppAbbrev": "SRB",
-     "venue": "Rajko Mitic Stadium",
-     "league": "2026-27 UEFA Nations League",
-     "status": "FT",
-     "done": true,
-     "gf": 2,
-     "ga": 1,
-     "res": "W",
-     "homeTeam": "SRB",
-     "awayTeam": "NED"
-    },
     {
      "date": "2026-10-01T18:45Z",
      "utc": "2026-10-01T18:45Z",
@@ -1884,6 +1852,22 @@
      "res": "W",
      "homeTeam": "NED",
      "awayTeam": "SRB"
+    },
+    {
+     "date": "2026-11-13T19:45Z",
+     "utc": "2026-11-13T19:45Z",
+     "home": true,
+     "opp": "Greece",
+     "oppAbbrev": "GRE",
+     "venue": "Johan Cruijff Arena",
+     "league": "2026-27 UEFA Nations League",
+     "status": "FT",
+     "done": true,
+     "gf": 7,
+     "ga": 0,
+     "res": "W",
+     "homeTeam": "NED",
+     "awayTeam": "GRE"
     }
    ]
   },
@@ -1894,8 +1878,8 @@
    ]
   ]
  },
- "updated": "2026-11-13",
- "asof": "2026-11-13T04:20:14.709Z",
+ "updated": "2026-11-14",
+ "asof": "2026-11-14T04:17:59.740Z",
  "errors": [],
  "note": "Written by tools/sports.js every run (Saints, Cardinals record, local football); the run keeps mlb.cardinals.offseason and mlb.cardinals.news."
 }

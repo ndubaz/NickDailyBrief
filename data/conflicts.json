@@ -499,6 +499,54 @@
        2
       ]
      ]
+    },
+    {
+     "date": "2026-11-14",
+     "t": "Ukraine's Air Force said Russia launched 117 strike drones, 63 of them jet-powered, overnight into 13 Nov from Oryol, Kursk, Millerovo, Shatalovo, Primorsko-Akhtarsk and Hvardiiske in Crimea; 80 were downed or suppressed, with hits at 24 locations. [14] A Geran-5 jet drone was downed over the Kyiv region with a Swedish RBS-70 for the first time. [22] Ukrinform counted 243 clashes on 13 Nov, nearly 50 in the Pokrovsk sector, and a strike on Zaporizhzhia injured 50, eight of them children. [23, 24] EU leaders named the EU institutions and the E5 as Europe's negotiating team, and Zelensky said Ukraine hopes for an exchange of more than 1,000 prisoners on each side. [10, 13]",
+     "src": [
+      [
+       10,
+       "EU leaders agree on joint team to represent Europe in Ukraine peace talks",
+       "Ukrinform",
+       "https://www.ukrinform.net/rubric-polytics/4184513-eu-leaders-agree-on-joint-team-to-represent-europe-in-ukraine-peace-talks.html",
+       2
+      ],
+      [
+       13,
+       "Ukraine hopes for large-scale POW exchange – Zelensky",
+       "Ukrinform",
+       "https://www.ukrinform.net/rubric-polytics/4184534-ukraine-hopes-for-largescale-pow-exchange-zelensky.html",
+       2
+      ],
+      [
+       14,
+       "Air defense downs 80 of 117 Russian drones launched overnight",
+       "Ukrinform",
+       "https://www.ukrinform.net/rubric-ato/4184168-air-defense-downs-80-of-117-russian-drones-launched-overnight.html",
+       2
+      ],
+      [
+       22,
+       "Ukraine's air defenders down Russian Geran-5 jet drone for first time using Swedish RBS-70 MANPADS",
+       "Ukrinform",
+       "https://www.ukrinform.net/rubric-ato/4184527-ukraines-air-defenders-down-russian-geran5-jet-drone-for-first-time-using-swedish-rbs70-manpads.html",
+       2
+      ],
+      [
+       23,
+       "War update: 243 clashes on front line, fiercest fighting in Pokrovsk sector",
+       "Ukrinform",
+       "https://www.ukrinform.net/rubric-ato/4184540-war-update-243-clashes-on-front-line-fiercest-fighting-in-pokrovsk-sector.html",
+       2
+      ],
+      [
+       24,
+       "Russian strike on Zaporizhzhia: Injury toll rises to 50, including eight children",
+       "Ukrinform",
+       "https://www.ukrinform.net/rubric-ato/4184479-russian-strike-on-zaporizhzhia-injury-toll-rises-to-50-including-eight-children.html",
+       2
+      ]
+     ]
     }
    ],
    "short": "Ukraine",
@@ -829,6 +877,40 @@
        3
       ]
      ]
+    },
+    {
+     "date": "2026-11-14",
+     "t": "The IRGC said on 13 Nov it “targeted and destroyed” a US early-warning radar in Bahrain in response to a strike on a telecommunications tower in Sirik, which IRNA said was hit by an “enemy” strike on the evening of 12 Nov; no US or Bahraini response was published. [18] The IRGC said a liquefied gas carrier caught fire after hitting naval mines in Hormuz. [17] Qatar and Türkiye signed a mutual defence pact. [87] A UN assistant secretary-general called on 14 Nov for safe navigation in Hormuz and the Red Sea. [25]",
+     "src": [
+      [
+       17,
+       "IRGC says tanker caught fire after hitting mines in Strait of Hormuz",
+       "Al Jazeera",
+       "https://www.aljazeera.com/video/newsfeed/2026/11/13/irgc-says-tanker-caught-fire-after-hitting-mines-in-strait-of-hormuz",
+       3
+      ],
+      [
+       18,
+       "Iran claims it destroyed US early-warning radar in Bahrain",
+       "Anadolu Agency",
+       "https://www.aa.com.tr/en/middle-east/iran-claims-it-destroyed-us-early-warning-radar-in-bahrain/4123650",
+       2
+      ],
+      [
+       25,
+       "UN warns of rising maritime attacks, urges restoration of safe navigation in Hormuz, Red Sea",
+       "Anadolu Agency",
+       "https://www.aa.com.tr/en/middle-east/un-warns-of-rising-maritime-attacks-urges-restoration-of-safe-navigation-in-strait-of-hormuz-red-sea/4124809",
+       2
+      ],
+      [
+       87,
+       "Iran war live: Fighting grips Yemen as Qatar, Turkiye sign defence deal",
+       "Al Jazeera",
+       "https://www.aljazeera.com/news/liveblog/2026/11/14/iran-war-live-fighting-grips-yemen-as-qatar-turkiye-sign-defence-deal",
+       3
+      ]
+     ]
     }
    ],
    "short": "Iran",
@@ -1037,6 +1119,26 @@
        3
       ]
      ]
+    },
+    {
+     "date": "2026-11-14",
+     "t": "Israeli aircraft, artillery and tanks hit towns in the Nabatieh, Marjayoun, Bint Jbeil and Tyre districts on 13 Nov; no casualties were reported and drones flew low over Beirut without attacking. [88] A nine-month-old infant died of cold in Gaza, the first cold-related death this winter, the Health Ministry said. [89]",
+     "src": [
+      [
+       88,
+       "Israeli airstrikes, shelling, explosions hit towns across southern Lebanon",
+       "Anadolu Agency",
+       "https://www.aa.com.tr/en/world/israeli-airstrikes-shelling-explosions-hit-towns-across-southern-lebanon/4123873",
+       2
+      ],
+      [
+       89,
+       "9-month-old baby dies from severe cold in Gaza",
+       "Anadolu Agency",
+       "https://www.aa.com.tr/en/world/9-month-old-baby-dies-from-severe-cold-in-gaza-1st-cold-related-death-this-winter-health-ministry/4124060",
+       2
+      ]
+     ]
     }
    ],
    "short": "Gaza · Lebanon",
@@ -1232,6 +1334,26 @@
        "Anadolu Agency",
        "https://www.aa.com.tr/en/middle-east/un-security-council-renews-yemen-sanctions-for-another-year/4123568",
        3
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-14",
+     "t": "The IOM says 340,000 people have been displaced as fighting continues in Yemen. [87] The GCC secretary-general welcomed a UN resolution calling on the Houthis to halt attacks. [90]",
+     "src": [
+      [
+       87,
+       "Iran war live: Fighting grips Yemen as Qatar, Turkiye sign defence deal",
+       "Al Jazeera",
+       "https://www.aljazeera.com/news/liveblog/2026/11/14/iran-war-live-fighting-grips-yemen-as-qatar-turkiye-sign-defence-deal",
+       3
+      ],
+      [
+       90,
+       "Gulf states welcome UN resolution calling on Houthis to halt attacks",
+       "Anadolu Agency",
+       "https://www.aa.com.tr/en/middle-east/gulf-states-welcome-un-resolution-calling-on-houthis-to-halt-attacks/4123843",
+       2
       ]
      ]
     }
@@ -2019,6 +2141,26 @@
        3
       ]
      ]
+    },
+    {
+     "date": "2026-11-14",
+     "t": "The FRN offensive in Kalehe territory, South Kivu, which began overnight on 6–7 Nov along national road 3, took Bitale, Bulambika and Bunyakiri by 8 Nov; fighting continued at Kambale on 9–10 Nov, where a government counterattack failed, Critical Threats reported on 11 Nov. [28] Maj. Dieudonné Kasereka, spokesman of the 34th military region, said: “Nous avons fixé l'ennemi. Il est stoppé au niveau de Bulambika.” (“We have pinned the enemy down. He is stopped at Bulambika.”) [27] A preliminary humanitarian alert of 9 Nov counts 166,500 newly displaced people. [27]",
+     "src": [
+      [
+       27,
+       "RDC : le FRN de Joseph Kabila gagne du terrain au Sud-Kivu, les FARDC préparent la riposte",
+       "Afrik.com",
+       "https://www.afrik.com/rdc-le-frn-de-joseph-kabila-gagne-du-terrain-au-sud-kivu-les-fardc-preparent-la-riposte",
+       3
+      ],
+      [
+       28,
+       "Congo War Security Review, 11 Nov 2026",
+       "Critical Threats",
+       "https://www.criticalthreats.org/briefs/congo-war-security-review/november-11-2026",
+       2
+      ]
+     ]
     }
    ],
    "short": "DRC",
@@ -2422,6 +2564,19 @@
        "Bosnian Court Convicts Three of Wartime Abuses of Civilian Prisoners",
        "Balkan Insight",
        "https://balkaninsight.com/2026/11/12/bosnian-court-convicts-three-of-wartime-abuses-of-civilian-prisoners/btj/",
+       3
+      ]
+     ]
+    },
+    {
+     "date": "2026-11-14",
+     "t": "The EU Office in Kosovo and the British Embassy in Pristina warned MPs on 13 Nov against passing amendments that curb the Kosovo Specialist Chambers' powers; the EU called for “prior consultations before any adoption, in line with Kosovo's international obligations.” [26]",
+     "src": [
+      [
+       26,
+       "EU, UK 'Concerned' as Kosovo Moves Against Hague Court's Powers Again",
+       "Balkan Insight",
+       "https://balkaninsight.com/2026/11/13/eu-uk-concerned-as-kosovo-moves-against-hague-courts-powers-again/btj/",
        3
       ]
      ]

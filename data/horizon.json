@@ -859,9 +859,9 @@
    "date": "2026-11-13",
    "dateText": "13 Nov",
    "t": "Mississippi counties certify the Senate count",
-   "n": "Ballot-cure and mail-receipt deadline 10 Nov",
+   "n": "The certification date passed on 13 Nov; this run did not check the certified result.",
    "h": false,
-   "status": "confirmed",
+   "status": "done",
    "added": "2026-11-06",
    "src": [
     [
@@ -871,7 +871,8 @@
      "https://www.aljazeera.com/news/2026/11/5/whats-delaying-us-midterm-election-calls-in-mississippi-and-alaska",
      3
     ]
-   ]
+   ],
+   "updated": "2026-11-14"
   },
   {
    "id": "gagauzia-elections",
@@ -1596,9 +1597,9 @@
    "date": "2026-11-09",
    "dateText": "9–13 Nov",
    "t": "Dynamic Merlin 26: NATO anti-submarine exercise off Sweden",
-   "n": "SNMG1, with the Dutch HNLMS Den Helder as flagship, hunts German and Swedish submarines. [208]",
+   "n": "SNMG1, with the Dutch HNLMS Den Helder as flagship, hunts German and Swedish submarines. [208] The exercise period ended on 13 Nov; no outcome was checked.",
    "h": false,
-   "status": "confirmed",
+   "status": "done",
    "added": "2026-11-11",
    "src": [
     [
@@ -1608,16 +1609,17 @@
      "https://ukdefencejournal.org.uk/nato-sub-hunters-in-baltic-exercise-to-face-drone-attacks/",
      3
     ]
-   ]
+   ],
+   "updated": "2026-11-14"
   },
   {
    "id": "oranje-nations-league-nov",
    "date": "2026-11-13",
    "dateText": "13 and 16 Nov",
    "t": "Oranje vs Greece, then at Germany",
-   "n": "Nations League A group 2 finale, both 20:45 CET; the Netherlands and Greece level on eight points [177]",
+   "n": "Oranje beat Greece 7–0 on 13 Nov; the group ends at Germany on Mon 16 Nov. [81]",
    "h": false,
-   "status": "confirmed",
+   "status": "done",
    "added": "2026-11-11",
    "src": [
     [
@@ -1626,16 +1628,24 @@
      "OnsOranje (KNVB)",
      "https://www.onsoranje.nl/nieuws/nederlands-elftal-mannen/82811/oranje-met-25-spelers-naar-slotduels-groepsfase-nations-league",
      1
+    ],
+    [
+     81,
+     "Monsterzege wervelend Oranje op Grieken (7-0)",
+     "NOS Sport",
+     "https://nos.nl/l/2639398",
+     3
     ]
-   ]
+   ],
+   "updated": "2026-11-14"
   },
   {
    "id": "eu-informal-dublin",
    "date": "2026-11-13",
    "t": "Informal EU leaders' meeting, Dublin",
-   "n": "Informal meeting of EU leaders in Dublin after the European Political Community summit; Zelensky attends and Kushner and Witkoff plan to brief him there. [8, 5]",
+   "n": "Leaders named the EU institutions and the E5 of the Coalition of the Willing as Europe's team for the Ukraine talks. [10]",
    "h": false,
-   "status": "confirmed",
+   "status": "done",
    "added": "2026-11-12",
    "src": [
     [
@@ -1651,8 +1661,16 @@
      "EUobserver",
      "https://euobserver.com/248409/first-talks-about-eu-envoy-on-ukraine-war-to-dominate-dublin-summits/",
      3
+    ],
+    [
+     10,
+     "EU leaders agree on joint team to represent Europe in Ukraine peace talks",
+     "Ukrinform",
+     "https://www.ukrinform.net/rubric-polytics/4184513-eu-leaders-agree-on-joint-team-to-represent-europe-in-ukraine-peace-talks.html",
+     2
     ]
-   ]
+   ],
+   "updated": "2026-11-14"
   },
   {
    "id": "hconres93-vote",
@@ -1687,6 +1705,44 @@
      "Pentagon 'greenlit' permanent presence of US troops in Poland, official says",
      "Defense News",
      "https://www.defensenews.com/global/europe/2026/11/12/pentagon-greenlit-permanent-presence-of-us-troops-in-poland-official-says/",
+     3
+    ]
+   ]
+  },
+  {
+   "id": "trump-putin-xi-shenzhen",
+   "date": "2026-11-19",
+   "dateText": "19 Nov",
+   "t": "Trump, Putin and Xi meet in Shenzhen",
+   "n": "First three-way meeting, on the margins of the APEC summit (18–19 Nov); nuclear arms reduction on the agenda, Iran likely, no Trump–Putin one-to-one planned. [9]",
+   "h": true,
+   "status": "confirmed",
+   "added": "2026-11-14",
+   "src": [
+    [
+     9,
+     "Voor het eerst drielandengesprek tussen Trump, Poetin en Xi Jinping in China",
+     "NOS (with AFP)",
+     "https://nos.nl/l/2639421",
+     3
+    ]
+   ]
+  },
+  {
+   "id": "nl-zwaluwenberg-talks",
+   "date": "2026-11-14",
+   "dateText": "14–15 Nov",
+   "t": "D66, VVD and CDA crisis talks at De Zwaluwenberg",
+   "n": "Jetten, Paternotte, Yeşilgöz, Brekelmans, Van den Brink and Bontenbal on the future of the cabinet. [5]",
+   "h": false,
+   "status": "confirmed",
+   "added": "2026-11-14",
+   "src": [
+    [
+     5,
+     "D66, VVD en CDA zetten crisisoverleg voort op landgoed De Zwaluwenberg, uitkomst ongewis",
+     "NOS",
+     "https://nos.nl/l/2639424",
      3
     ]
    ]

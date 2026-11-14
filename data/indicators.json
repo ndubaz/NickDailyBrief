@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13",
+ "updated": "2026-11-14",
  "note": "Indicators and warning. Each indicator names what is watched, the threshold that changes its status, and the source. The run sets status (green, amber, red) each day it has the fact and appends to history only on a change, with the date, the new status and the fact that moved it. Numeric indicators name a world-series key and a rule so the page can show the latest value.",
  "items": [
   {
@@ -29,7 +29,7 @@
    "name": "Russia–Ukraine talks: a trilateral round held with named delegations",
    "theatre": "ru-ua",
    "threshold": "amber when a round is scheduled, green when held, red when cancelled",
-   "status": "green",
+   "status": "amber",
    "src": "TASS, Ukrainian presidential office",
    "history": [
     {
@@ -41,6 +41,11 @@
      "date": "2026-11-11",
      "status": "green",
      "t": "The trilateral round was held in Abu Dhabi on 10 Nov with Umerov's and Medinsky's delegations, four hours; a second day follows on 11 Nov. [6, 22]"
+    },
+    {
+     "date": "2026-11-14",
+     "status": "amber",
+     "t": "A next round is agreed: EU leaders named the European team on 13 Nov and Kushner said both sides agreed to include Europeans; Merz expects talks “in the coming weeks”, with no date or venue published. [10, 12]"
     }
    ]
   },
@@ -115,7 +120,7 @@
    "name": "Hybrid incidents logged in Europe, 7 days",
    "threshold": "amber above 5, red above 10",
    "rule": "incidents7",
-   "status": "red",
+   "status": "amber",
    "src": "incidents.json",
    "history": [
     {
@@ -127,6 +132,11 @@
      "date": "2026-11-08",
      "status": "red",
      "t": "17 incidents logged 2–8 Nov, led by the cold-chain cyberattacks and the airliner hoaxes. [74, 13]"
+    },
+    {
+     "date": "2026-11-14",
+     "status": "amber",
+     "t": "Ten incidents logged 8–14 Nov, the last two on 13 Nov (drones over RAF Lakenheath, a school bomb hoax in Mechelen); amber above 5, red above 10."
     }
    ]
   },

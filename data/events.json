@@ -1,6 +1,6 @@
 {
  "note": "Out and about: curated events within about 90 minutes by car (Maastricht, Aachen, Liège, Köln, Düsseldorf, Bonn, Eindhoven, Antwerp, Brussels, the Eifel and Ardennes). The run adds events with a source, prunes those that have passed, and sets updated when details change. cat = music|markets|museums|sport|kids|food|outdoors|festival. kid = suitable for children. drive = minutes from Hoensbroek, approximate. prio = true marks the few major events (big festivals, Sinterklaas arrivals, the carnival opening) that also appear in the Planner's This week; Christmas markets come from calendar.json.",
- "updated": "2026-11-11",
+ "updated": "2026-11-14",
  "events": [
   {
    "id": "gaiazoo-ijstijd-2026",
@@ -178,28 +178,6 @@
      "Cooking from the Fridge",
      "Bonnefanten",
      "https://www.bonnefanten.nl/nl/tentoonstellingen/cooking-from-the-fridge"
-    ]
-   ]
-  },
-  {
-   "id": "jazzout-2026",
-   "t": "JazzOUT! with Nate Smith (Live Action)",
-   "cat": "music",
-   "from": "2026-11-13",
-   "to": "2026-11-13",
-   "town": "Heerlen",
-   "venue": "Theater Heerlen",
-   "cc": "NL",
-   "drive": 10,
-   "cost": "Tickets on sale",
-   "kid": false,
-   "added": "2026-11-02",
-   "src": [
-    [
-     40,
-     "JazzOUT! 2026",
-     "Festivalinfo",
-     "https://www.festivalinfo.nl/festival/36675/JazzOUT%21/2026/"
     ]
    ]
   },

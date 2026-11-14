@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-12",
+ "asof": "2026-11-13",
  "metro": [
   {
    "team": "CAR",
@@ -80,21 +80,21 @@
   {
    "team": "NYI",
    "name": "Islanders",
-   "gp": 17,
-   "w": 7,
+   "gp": 18,
+   "w": 8,
    "l": 6,
    "otl": 4,
-   "pts": 18,
-   "pct": 0.529,
-   "gf": 49,
-   "ga": 52,
-   "gd": -3,
-   "rw": 5,
+   "pts": 20,
+   "pct": 0.556,
+   "gf": 54,
+   "ga": 54,
+   "gd": 0,
+   "rw": 6,
    "l10": "4-3-3",
-   "streak": "OT2",
+   "streak": "W1",
    "div": 5,
-   "wc": 5,
-   "conf": 11
+   "wc": 4,
+   "conf": 10
   },
   {
    "team": "PIT",
@@ -380,6 +380,11 @@
     "v": 0.926
    },
    {
+    "name": "Joel Hofer",
+    "team": "STL",
+    "v": 0.926
+   },
+   {
     "name": "Jesper Wallstedt",
     "team": "MIN",
     "v": 0.925
@@ -388,11 +393,6 @@
     "name": "Michael DiPietro",
     "team": "BOS",
     "v": 0.925
-   },
-   {
-    "name": "Joel Hofer",
-    "team": "STL",
-    "v": 0.92
    }
   ],
   "wins": [
@@ -836,7 +836,7 @@
    ]
   ]
  },
- "updated": "2026-11-13",
+ "updated": "2026-11-14",
  "errors": [],
  "src": [
   [

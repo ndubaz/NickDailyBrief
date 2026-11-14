@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13",
+ "updated": "2026-11-14",
  "note": "Dated items the morning run pulls from Nick's mail: the AFNORTH school office, the AFNorth MS/HS PTA, JFCBS Morale and Welfare Activities, USAG Benelux-Brunssum Child and Youth Services, and travel and ticket confirmations. Dates, titles, times and places only. Never a pupil's, parent's or teacher's name, a grade or score, a confirmation code, booking reference, ticket, order or seat number, a price, a passenger name, a medical detail, or a link that carries a token. Append-only; id = YYYY-MM-DD-slug; dedupe by date and title. src is one of AFNORTH, PTA, MWA, CYS, TRAVEL, TICKETS.",
  "items": [
   {
@@ -31,9 +31,9 @@
   {
    "id": "2026-11-14-spirit-wear-preorder",
    "date": "2026-11-14",
-   "end": "2026-11-21",
+   "end": "2026-11-22",
    "t": "PTA spirit-wear pre-order window",
-   "note": "Givebacks shop; delivery before the holiday break.",
+   "note": "Givebacks shop, or email the PTA to pay by cash or IBAN; samples at the Christmas Fayre on 21 Nov; the 13 Nov newsletter gives 22 Nov as the closing date.",
    "src": "PTA",
    "added": "2026-11-07"
   },
@@ -53,6 +53,14 @@
    "note": "PTA table; volunteers sought.",
    "src": "AFNORTH",
    "added": "2026-11-07"
+  },
+  {
+   "id": "2026-11-27-green-white-scrimmages",
+   "date": "2026-11-27",
+   "t": "Green and White basketball scrimmages, AFNorth gym",
+   "note": "Start of the winter sports season; the PTA canteen reopens and asks for student volunteers.",
+   "src": "PTA",
+   "added": "2026-11-14"
   },
   {
    "id": "2026-12-10-mwa-christmas-party",

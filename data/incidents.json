@@ -960,6 +960,57 @@
      3
     ]
    ]
+  },
+  {
+   "id": "2026-11-13-gb-uas-lakenheath",
+   "date": "2026-11-13",
+   "when": "13 Nov, about 17:30",
+   "code": "UAS",
+   "attr": "A0",
+   "local": false,
+   "country": "GB",
+   "place": "RAF Lakenheath, Suffolk",
+   "lat": 52.41,
+   "lon": 0.56,
+   "text": "Sirens sounded at RAF Lakenheath in Suffolk and RAF Feltwell in Norfolk at about 17:30 on 13 Nov; the US Air Force said the alarm was linked to “suspected unauthorized drones” and that no personnel, aircraft or infrastructure were affected. [16] The UK Ministry of Defence said the situation was resolved; no operator was named. [32]",
+   "src": [
+    [
+     16,
+     "Sirens sound at UK air bases over suspected drone activity",
+     "Anadolu Agency",
+     "https://www.aa.com.tr/en/world/sirens-sound-at-uk-air-bases-over-suspected-drone-activity-report/4124827",
+     2
+    ],
+    [
+     32,
+     "Un drone suspect détecté au-dessus d'une base britannique",
+     "RTBF",
+     "https://www.rtbf.be/article/un-drone-suspect-detecte-au-dessus-d-une-base-britannique-l-armee-de-l-air-americaine-sur-les-dents-11815438",
+     3
+    ]
+   ]
+  },
+  {
+   "id": "2026-11-13-be-inf-mechelen-school-hoax",
+   "date": "2026-11-13",
+   "when": "13 Nov, shortly before 10:00",
+   "code": "INF",
+   "attr": "A0",
+   "local": false,
+   "country": "BE",
+   "place": "Ursulinen school, Mechelen",
+   "lat": 51.03,
+   "lon": 4.48,
+   "text": "A phoned bomb threat led to the evacuation of 2,150 pupils and staff; federal police found nothing and released the building at 13:35. Police arrested a 17-year-old from Mechelen at 14:30 and placed him at the prosecutor's disposal. The same school was evacuated after a threat in early October, and authorities are checking whether the cases link. [33]",
+   "src": [
+    [
+     33,
+     "Jongen van 17 opgepakt voor valse bommelding bij Ursulinen in Mechelen",
+     "VRT NWS",
+     "https://www.vrt.be/vrtnws/p.LNWAoMZq1",
+     3
+    ]
+   ]
   }
  ],
  "attrLog": [
@@ -1058,5 +1109,5 @@
   }
  ],
  "attrLogNote": "One entry per attribution change: {id (incident id), date, from (A0..A5), to (A0..A5), t (what moved), src (optional [[n,title,outlet,url]])}. The page lists the last 7 days under Attribution moves.",
- "updated": "2026-11-13"
+ "updated": "2026-11-14"
 }

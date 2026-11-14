@@ -2,14 +2,6 @@
  "_note": "30 trading days per series, appended daily by the morning run. Keys match the series key in money.cards. Sources: S&P 500 (^GSPC), Dow Jones Industrial Average (^DJI), Nasdaq Composite (^IXIC), Russell 2000 (^RUT), AEX (^AEX), STOXX Europe 600 (^STOXX), DAX (^GDAXI), ICE Brent front month (BZ=F), ICE Endex TTF front month (TTF=F), COMEX gold front month (GC=F) and Cboe VIX (^VIX) daily closes via the Yahoo Finance chart API; the US 10-year (us10y) is the 10-year par yield from the US Treasury daily yield curve. dji, rut, stoxx, dax, gold, us10y and vix were added on 8 Nov 2026.",
  "spx": [
   [
-   "2026-10-01",
-   7666.45
-  ],
-  [
-   "2026-10-02",
-   7722.72
-  ],
-  [
    "2026-10-05",
    7773.95
   ],
@@ -120,13 +112,17 @@
   [
    "2026-11-11",
    7619.38
+  ],
+  [
+   "2026-11-12",
+   7592.4
+  ],
+  [
+   "2026-11-13",
+   7561.67
   ]
  ],
  "dji": [
-  [
-   "2026-10-02",
-   51176.96
-  ],
   [
    "2026-10-05",
    51267.9
@@ -242,13 +238,13 @@
   [
    "2026-11-12",
    52297.09
+  ],
+  [
+   "2026-11-13",
+   52347.55
   ]
  ],
  "ndx": [
-  [
-   "2026-10-01",
-   26871.6
-  ],
   [
    "2026-10-02",
    27190.86
@@ -364,6 +360,10 @@
   [
    "2026-11-11",
    25466.19
+  ],
+  [
+   "2026-11-12",
+   25366.09
   ]
  ],
  "rut": [
@@ -1222,10 +1222,6 @@
  ],
  "us10y": [
   [
-   "2026-09-30",
-   5.29
-  ],
-  [
    "2026-10-01",
    5.24
   ],
@@ -1340,13 +1336,13 @@
   [
    "2026-11-12",
    5.1
+  ],
+  [
+   "2026-11-13",
+   5.15
   ]
  ],
  "vix": [
-  [
-   "2026-10-01",
-   16.39
-  ],
   [
    "2026-10-02",
    15.31
@@ -1462,6 +1458,10 @@
   [
    "2026-11-11",
    17.49
+  ],
+  [
+   "2026-11-12",
+   18.7
   ]
  ]
 }

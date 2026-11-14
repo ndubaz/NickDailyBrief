@@ -3,10 +3,10 @@
   "src": "Open-Meteo air-quality API (CAMS Europe), daily maxima for the town grid cell",
   "days": [
    {
-    "date": "2026-11-13",
-    "aqi": 53,
-    "pm10": 28.1,
-    "pm25": 17.1,
+    "date": "2026-11-14",
+    "aqi": 48,
+    "pm10": 24.5,
+    "pm25": 18.3,
     "uv": 1.1,
     "pollen": {
      "alder": 0,
@@ -18,11 +18,11 @@
     }
    },
    {
-    "date": "2026-11-14",
-    "aqi": 52,
-    "pm10": 24.1,
-    "pm25": 19,
-    "uv": 1.1,
+    "date": "2026-11-15",
+    "aqi": 36,
+    "pm10": 16,
+    "pm25": 13.1,
+    "uv": 0.9,
     "pollen": {
      "alder": 0,
      "birch": 0,
@@ -36,53 +36,53 @@
   "lki": {
    "station": "Heerlen-Looierstraat (NL10136)",
    "value": 2,
-   "time": "2026-11-13T03:00:00+00:00",
+   "time": "2026-11-14T03:00:00+00:00",
    "src": "Luchtmeetnet (RIVM) air-quality index LKI, 1 good to 11 very bad"
   },
-  "fetched": "2026-11-13T04:20:01.223Z"
+  "fetched": "2026-11-14T04:17:45.437Z"
  },
  "power": {
   "src": "EnergyZero day-ahead hourly prices, euro per kWh, VAT included, before energy tax and the supplier margin",
   "note": "Add the energy tax per kWh from energy.json and your supplier's margin to get the dynamic-contract price.",
   "days": [
    {
-    "date": "2026-11-12",
+    "date": "2026-11-13",
     "hours": [
      [
       23,
-      0.21
+      0.24
      ]
     ],
-    "avg": 0.21,
+    "avg": 0.24,
     "cheapest3": null,
     "dearest3": null
    },
    {
-    "date": "2026-11-13",
+    "date": "2026-11-14",
     "hours": [
      [
       0,
-      0.22
+      0.27
      ],
      [
       1,
-      0.19
+      0.25
      ],
      [
       2,
-      0.17
+      0.24
      ],
      [
       3,
-      0.17
+      0.23
      ],
      [
       4,
-      0.17
+      0.22
      ],
      [
       5,
-      0.19
+      0.22
      ],
      [
       6,
@@ -90,35 +90,35 @@
      ],
      [
       7,
-      0.29
+      0.28
      ],
      [
       8,
-      0.31
+      0.28
      ],
      [
       9,
-      0.29
+      0.27
      ],
      [
       10,
-      0.24
+      0.22
      ],
      [
       11,
-      0.19
+      0.21
      ],
      [
       12,
-      0.19
+      0.21
      ],
      [
       13,
-      0.23
+      0.21
      ],
      [
       14,
-      0.24
+      0.23
      ],
      [
       15,
@@ -126,51 +126,51 @@
      ],
      [
       16,
-      0.31
-     ],
-     [
-      17,
-      0.35
-     ],
-     [
-      18,
-      0.35
-     ],
-     [
-      19,
-      0.34
-     ],
-     [
-      20,
-      0.33
-     ],
-     [
-      21,
       0.3
      ],
      [
+      17,
+      0.33
+     ],
+     [
+      18,
+      0.33
+     ],
+     [
+      19,
+      0.3
+     ],
+     [
+      20,
+      0.25
+     ],
+     [
+      21,
+      0.25
+     ],
+     [
       22,
-      0.27
+      0.25
      ],
      [
       23,
-      0.24
+      0.23
      ]
     ],
     "avg": 0.254,
     "cheapest3": {
-     "from": 2,
-     "to": 5,
-     "avg": 0.17
+     "from": 11,
+     "to": 14,
+     "avg": 0.21
     },
     "dearest3": {
-     "from": 17,
-     "to": 20,
-     "avg": 0.347
+     "from": 16,
+     "to": 19,
+     "avg": 0.32
     }
    }
   ],
-  "fetched": "2026-11-13T04:20:03.052Z"
+  "fetched": "2026-11-14T04:17:46.123Z"
  },
  "maas": {
   "src": "Open-Meteo Flood API (GloFAS model), Maas grid cell north of Maastricht; a model estimate, not the Rijkswaterstaat gauge",
@@ -181,11 +181,6 @@
    "note": "Rijkswaterstaat raises the Maas to heightened watch above about 1,000 m3/s at Sint Pieter and to high water above 1,500; July 2021 peaked near 3,300 (to confirm against the current RWS phases)"
   },
   "days": [
-   [
-    "2026-11-06",
-    35.2,
-    35.2
-   ],
    [
     "2026-11-07",
     33.8,
@@ -223,55 +218,60 @@
    ],
    [
     "2026-11-14",
-    68.8,
-    72.3
+    66.8,
+    66.9
    ],
    [
     "2026-11-15",
-    63,
-    65.8
+    60.1,
+    60.4
    ],
    [
     "2026-11-16",
-    56.5,
-    70.9
+    53.5,
+    59.8
    ],
    [
     "2026-11-17",
-    59.5,
-    107.4
+    52.1,
+    86.7
    ],
    [
     "2026-11-18",
-    81.4,
-    255.5
+    178.1,
+    695.6
    ],
    [
     "2026-11-19",
-    112.5,
-    460.3
+    330.1,
+    1058.3
+   ],
+   [
+    "2026-11-20",
+    320.4,
+    692.4
    ]
   ],
-  "fetched": "2026-11-13T04:20:03.798Z"
+  "fetched": "2026-11-14T04:17:46.863Z"
  },
  "sky": {
   "src": "NOAA SWPC planetary K-index forecast",
   "now": {
-   "time": "2026-11-13T00:00:00",
-   "kp": 1.33
+   "time": "2026-11-14T00:00:00",
+   "kp": 0.33
   },
   "max3d": {
-   "time": "2026-11-16T00:00:00",
-   "kp": 3.33,
+   "time": "2026-11-17T00:00:00",
+   "kp": 3.67,
    "scale": null
   },
   "note": "Kp 5 is a minor storm (aurora possible on the northern horizon from Limburg on a clear night), Kp 7 or more reached the Netherlands in May and October 2024",
-  "fetched": "2026-11-13T04:20:04.183Z"
+  "fetched": "2026-11-14T04:17:47.196Z"
  },
  "roads": {
   "src": "NDW open data, actueel beeld (traffic measures and incidents in force), within 25 km of the town centre",
-  "asof": "2026-11-13T04:20:05.323Z",
-  "count": 19,
+  "asof": "2026-11-14T04:17:48.452Z",
+  "count": 28,
   "highSeverity": 4,
   "items": [
    {
@@ -282,7 +282,7 @@
     "cause": "roadMaintenance",
     "mgmt": "carriagewayClosures",
     "by": "Gemeente Heerlen",
-    "from": "2026-09-25",
+    "from": "2026-11-13",
     "to": "2026-12-04",
     "sev": "low"
    },
@@ -294,7 +294,7 @@
     "cause": "roadMaintenance",
     "mgmt": "carriagewayClosures",
     "by": "Gemeente Beekdaelen",
-    "from": "2026-11-06",
+    "from": "2026-11-13",
     "to": "2027-04-09",
     "sev": "medium"
    },
@@ -306,7 +306,7 @@
     "cause": "constructionWork",
     "mgmt": "carriagewayClosures",
     "by": "Gemeente Beekdaelen",
-    "from": "2026-10-12",
+    "from": "2026-11-13",
     "to": "2026-12-04",
     "sev": "medium"
    },
@@ -318,7 +318,7 @@
     "cause": "roadMaintenance",
     "mgmt": "carriagewayClosures",
     "by": "Gemeente Heerlen",
-    "from": "2026-11-09",
+    "from": "2026-11-13",
     "to": "2026-11-20",
     "sev": "low"
    },
@@ -333,6 +333,18 @@
     "from": "2025-09-05",
     "to": "2027-03-30",
     "sev": "medium"
+   },
+   {
+    "km": 8.3,
+    "lat": 50.951,
+    "lon": 5.823,
+    "type": "VehicleObstruction",
+    "cause": "",
+    "mgmt": "",
+    "by": "NDW",
+    "from": "2026-11-14",
+    "to": "",
+    "sev": "unknown"
    },
    {
     "km": 9,
@@ -354,33 +366,9 @@
     "cause": "roadMaintenance",
     "mgmt": "carriagewayClosures",
     "by": "Gemeente Sittard-Geleen",
-    "from": "2026-10-26",
+    "from": "2026-11-13",
     "to": "2026-12-18",
-    "sev": "low"
-   },
-   {
-    "km": 9.2,
-    "lat": 50.964,
-    "lon": 5.818,
-    "type": "RoadOrCarriagewayOrLaneManagement",
-    "cause": "roadMaintenance",
-    "mgmt": "carriagewayClosures",
-    "by": "Gemeente Sittard-Geleen",
-    "from": "2026-09-28",
-    "to": "2026-11-13",
-    "sev": "low"
-   },
-   {
-    "km": 9.5,
-    "lat": 50.996,
-    "lon": 5.868,
-    "type": "RoadOrCarriagewayOrLaneManagement",
-    "cause": "roadMaintenance",
-    "mgmt": "carriagewayClosures",
-    "by": "Gemeente Sittard-Geleen",
-    "from": "2026-10-12",
-    "to": "2026-11-13",
-    "sev": "low"
+    "sev": "medium"
    },
    {
     "km": 10.7,
@@ -390,21 +378,21 @@
     "cause": "roadMaintenance",
     "mgmt": "carriagewayClosures",
     "by": "Gemeente Sittard-Geleen",
-    "from": "2026-09-24",
+    "from": "2026-11-13",
     "to": "2027-04-16",
     "sev": "low"
    },
    {
-    "km": 10.9,
-    "lat": 50.955,
-    "lon": 5.786,
-    "type": "RoadOrCarriagewayOrLaneManagement",
+    "km": 10.7,
+    "lat": 50.927,
+    "lon": 5.778,
+    "type": "SpeedManagement",
     "cause": "roadMaintenance",
-    "mgmt": "carriagewayClosures",
-    "by": "Gemeente Stein",
-    "from": "2026-11-09",
-    "to": "2026-12-18",
-    "sev": "high"
+    "mgmt": "speedRestrictionInOperation",
+    "by": "ZN-ZO [RWS Zuid-Nederland District Zuid-Oost]",
+    "from": "2026-11-13",
+    "to": "2026-11-16",
+    "sev": "medium"
    },
    {
     "km": 10.9,
@@ -414,24 +402,43 @@
     "cause": "roadMaintenance",
     "mgmt": "carriagewayClosures",
     "by": "Gemeente Valkenburg aan de Geul",
-    "from": "2026-09-24",
+    "from": "2026-11-13",
     "to": "2026-11-15",
     "sev": "medium"
+   },
+   {
+    "km": 10.9,
+    "lat": 50.955,
+    "lon": 5.786,
+    "type": "RoadOrCarriagewayOrLaneManagement",
+    "cause": "roadMaintenance",
+    "mgmt": "carriagewayClosures",
+    "by": "Gemeente Stein",
+    "from": "2026-11-13",
+    "to": "2026-12-18",
+    "sev": "high"
    }
   ],
-  "fetched": "2026-11-13T04:20:05.324Z"
+  "fetched": "2026-11-14T04:17:48.452Z"
  },
  "rail": {
   "src": "Rijden de Treinen, current disruptions (NS and regional operators)",
-  "total": 1,
+  "total": 0,
   "items": [],
-  "asof": "2026-11-13T04:20:06.163Z",
-  "fetched": "2026-11-13T04:20:06.164Z"
+  "asof": "2026-11-14T04:17:49.313Z",
+  "fetched": "2026-11-14T04:17:49.313Z"
  },
  "notices": {
   "src": "Officiële bekendmakingen (overheid.nl SRU), gemeente Heerlen notices that name Hoensbroek, last three weeks; street postcodes stripped",
   "count": 27,
   "items": [
+   {
+    "id": "gmb-2026-532089",
+    "date": "2026-11-13",
+    "t": "Markt Hoensbroek. Aanvraag evenementenvergunning: Oranjefestival Hoensbroek 2027",
+    "url": "https://zoek.officielebekendmakingen.nl/gmb-2026-532089.html",
+    "en": "Markt Hoensbroek. Event permit application: Oranjefestival Hoensbroek 2027"
+   },
    {
     "id": "gmb-2026-525111",
     "date": "2026-11-11",
@@ -538,89 +545,89 @@
     "en": "Heerlerweg 156, Hoensbroek. Environmental permit refused: opening a gym"
    }
   ],
-  "fetched": "2026-11-13T04:20:07.321Z"
+  "fetched": "2026-11-14T04:17:50.826Z"
  },
  "news": {
   "src": "L1 Nieuws (L1 and 1Limburg), newest headlines, English by the morning run",
   "items": [
    {
-    "id": "3271343",
-    "t": "Weer nieuwe computer science-opleiding: Zuyd blijft overeind bij demografische uitdagingen",
-    "url": "https://www.l1nieuws.nl/nieuws/3271343/weer-nieuwe-computer-science-opleiding-zuyd-blijft-overeind-bij-demografische-uitdagingen",
-    "en": "Another new computer science course: Zuyd holds its ground despite demographic challenges"
+    "id": "3272231",
+    "t": "Gewonde bij steekpartij op Vrijthof Maastricht",
+    "url": "https://www.l1nieuws.nl/nieuws/3272231/gewonde-bij-steekpartij-op-vrijthof-maastricht",
+    "en": "One injured in a stabbing on the Vrijthof in Maastricht"
    },
    {
-    "id": "3267169",
-    "t": "Student uit Gaza doet aangifte tegen universitair hoofddocent: 'Doxing en smaad'",
-    "url": "https://www.l1nieuws.nl/nieuws/3267169/student-uit-gaza-doet-aangifte-tegen-universitair-hoofddocent-doxing-en-smaad",
-    "en": "Student from Gaza files a police report against an associate professor: 'Doxing and defamation'"
+    "id": "3272207",
+    "t": "Gratis nachtbus moet uitgaan in Venlo aantrekkelijker maken",
+    "url": "https://www.l1nieuws.nl/nieuws/3272207/gratis-nachtbus-moet-uitgaan-in-venlo-aantrekkelijker-maken",
+    "en": "Free night bus is meant to make going out in Venlo more attractive"
    },
    {
-    "id": "3271497",
-    "t": "Jouw gebouw, maar toch mag je krakers er niet zelf uitzetten",
-    "url": "https://www.l1nieuws.nl/nieuws/3271497/jouw-gebouw-maar-toch-mag-je-krakers-er-niet-zelf-uitzetten",
-    "en": "Your building, but you still may not evict squatters yourself"
+    "id": "3272071",
+    "t": "Verdachte van dood in Swolgen blijft aangehouden: woning verzegeld",
+    "url": "https://www.l1nieuws.nl/nieuws/3272071/verdachte-van-dood-in-swolgen-blijft-aangehouden-woning-verzegeld",
+    "en": "Suspect in death in Swolgen stays in custody; house sealed"
    },
    {
-    "id": "3269798",
-    "t": "Wie zoet is krijgt lekkers: maar wat als je dat lekkers niet verdraagt?",
-    "url": "https://www.l1nieuws.nl/nieuws/3269798/wie-zoet-is-krijgt-lekkers-maar-wat-als-je-dat-lekkers-niet-verdraagt",
-    "en": "Good children get sweets: but what if you cannot tolerate the sweets?"
+    "id": "3271817",
+    "t": "Geliefde coronapastoor krijgt zes jaar na dood monument in Banholt: 'Maar dood is hij allesbehalve'",
+    "url": "https://www.l1nieuws.nl/nieuws/3271817/geliefde-coronapastoor-krijgt-zes-jaar-na-dood-monument-in-banholt-maar-dood-is-hij-allesbehalve",
+    "en": "Beloved Covid-era priest gets a monument in Banholt six years after his death: 'But he is anything but dead'"
    },
    {
-    "id": "3271641",
-    "t": "Lichaam vermiste vrachtwagenchauffeur gevonden",
-    "url": "https://www.l1nieuws.nl/nieuws/3271641/lichaam-vermiste-vrachtwagenchauffeur-gevonden",
-    "en": "Body of missing lorry driver found"
+    "id": "3272173",
+    "t": "Sinterklaas moet nog komen, Kerststad Valkenburg is al gestart",
+    "url": "https://www.l1nieuws.nl/nieuws/3272173/sinterklaas-moet-nog-komen-kerststad-valkenburg-is-al-gestart",
+    "en": "Sinterklaas has yet to arrive, but Christmas Town Valkenburg has already opened"
    },
    {
-    "id": "3271437",
-    "t": "Rechter wijst verzoek vrijlating brandstichter vakantieverblijf voor jongeren met beperking af",
-    "url": "https://www.l1nieuws.nl/nieuws/3271437/rechter-wijst-verzoek-vrijlating-brandstichter-vakantieverblijf-voor-jongeren-met-beperking-af",
-    "en": "Judge rejects release request from arsonist of holiday home for young people with disabilities"
+    "id": "3272189",
+    "t": "'Golf aan woninginbraken in Limburg': OM eist tot acht jaar cel",
+    "url": "https://www.l1nieuws.nl/nieuws/3272189/golf-aan-woninginbraken-in-limburg-om-eist-tot-acht-jaar-cel",
+    "en": "'Wave of burglaries in Limburg': prosecutors demand up to eight years in prison"
    },
    {
-    "id": "3271493",
-    "t": "Autoverhuurbedrijf met 26 medewerkers failliet verklaard, Vynova krijgt uitstel van betaling",
-    "url": "https://www.l1nieuws.nl/nieuws/3271493/autoverhuurbedrijf-met-26-medewerkers-failliet-verklaard-vynova-krijgt-uitstel-van-betaling",
-    "en": "Car rental firm with 26 staff declared bankrupt; Vynova granted suspension of payments"
+    "id": "3272049",
+    "t": "Onzekerheid over komst Sinterklaas zorgt voor spanning",
+    "url": "https://www.l1nieuws.nl/nieuws/3272049/onzekerheid-over-komst-sinterklaas-zorgt-voor-spanning",
+    "en": "Uncertainty over Sinterklaas's arrival causes tension"
    },
    {
-    "id": "3271395",
-    "t": "Achtervolging met gestolen motoren eindigt in Roosteren: vier mannen aangehouden",
-    "url": "https://www.l1nieuws.nl/nieuws/3271395/achtervolging-met-gestolen-motoren-eindigt-in-roosteren-vier-mannen-aangehouden",
-    "en": "Chase with stolen motorbikes ends in Roosteren: four men arrested"
+    "id": "3272052",
+    "t": "VVD zegt op te komen voor ondernemers, maar ondernemer Wim Cox twijfelt",
+    "url": "https://www.l1nieuws.nl/nieuws/3272052/vvd-zegt-op-te-komen-voor-ondernemers-maar-ondernemer-wim-cox-twijfelt",
+    "en": "VVD says it stands up for business owners, but business owner Wim Cox has doubts"
    },
    {
-    "id": "3271305",
-    "t": "Man uit Herten zou 245 meisjes online hebben misbruikt met zelfgemaakt spel: twaalf jaar cel geëist",
-    "url": "https://www.l1nieuws.nl/nieuws/3271305/man-uit-herten-zou-245-meisjes-online-hebben-misbruikt-met-zelfgemaakt-spel-twaalf-jaar-cel-geeist",
-    "en": "Man from Herten accused of abusing 245 girls online with a self-made game: prosecutors seek twelve years"
+    "id": "3271620",
+    "t": "Een eeuw chemie in Limburg: Chemelot-top waarschuwt voor de toekomst",
+    "url": "https://www.l1nieuws.nl/nieuws/3271620/een-eeuw-chemie-in-limburg-chemelot-top-waarschuwt-voor-de-toekomst",
+    "en": "A century of chemicals in Limburg: Chemelot chiefs warn about the future"
    },
    {
-    "id": "3271207",
-    "t": "Broers uit Weert op lijst meest gezochte criminelen na gewelddadige overval op bejaard koppel",
-    "url": "https://www.l1nieuws.nl/nieuws/3271207/broers-uit-weert-op-lijst-meest-gezochte-criminelen-na-gewelddadige-overval-op-bejaard-koppel",
-    "en": "Brothers from Weert on most-wanted list after violent robbery of elderly couple"
+    "id": "3272109",
+    "t": "Toch treinen tussen Roermond en Sittard door tijdelijke oplossing",
+    "url": "https://www.l1nieuws.nl/nieuws/3272109/toch-treinen-tussen-roermond-en-sittard-door-tijdelijke-oplossing",
+    "en": "Trains run between Roermond and Sittard after all, thanks to a temporary fix"
    },
    {
-    "id": "3271120",
-    "t": "Explosie bij appartementencomplex in Venlo, entree beschadigd",
-    "url": "https://www.l1nieuws.nl/nieuws/3271120/explosie-bij-appartementencomplex-in-venlo-entree-beschadigd",
-    "en": "Explosion at apartment block in Venlo, entrance damaged"
+    "id": "3271946",
+    "t": "Gruwelijke marteling Venlo: verdachte zat maanden vast, toch vraagt OM vrijspraak",
+    "url": "https://www.l1nieuws.nl/nieuws/3271946/gruwelijke-marteling-venlo-verdachte-zat-maanden-vast-toch-vraagt-om-vrijspraak",
+    "en": "Gruesome torture in Venlo: suspect was held for months, yet prosecutors ask for acquittal"
    },
    {
-    "id": "3270970",
-    "t": "Kerst valt vroeg bij Peter en Gergana in Venlo, en met goede reden",
-    "url": "https://www.l1nieuws.nl/nieuws/3270970/kerst-valt-vroeg-bij-peter-en-gergana-in-venlo-en-met-goede-reden",
-    "en": "Christmas comes early for Peter and Gergana in Venlo, and for good reason"
+    "id": "3272055",
+    "t": "KLM doet aangifte na powerbankincident Camiel Eurlings",
+    "url": "https://www.l1nieuws.nl/nieuws/3272055/klm-doet-aangifte-na-powerbankincident-camiel-eurlings",
+    "en": "KLM files a police report after a power-bank incident involving Camiel Eurlings"
    }
   ],
-  "asof": "2026-11-13T04:20:08.347Z",
-  "fetched": "2026-11-13T04:20:08.347Z"
+  "asof": "2026-11-14T04:17:51.971Z",
+  "fetched": "2026-11-14T04:17:51.971Z"
  },
- "updated": "2026-11-13",
- "asof": "2026-11-13T04:20:08.347Z",
+ "updated": "2026-11-14",
+ "asof": "2026-11-14T04:17:51.971Z",
  "town": "Hoensbroek",
  "errors": [],
  "note": "Parkstad daily-life feeds. The tool rewrites air, power, maas, sky, roads, rail, notices and news; the run writes flu, noise, woord (Limburgs word of the day, appended), culture (dated local events, confirmed), admin (dated household admin), roda (next fixtures) and shops. Town-centre coordinates only; no address or postcode is stored. strikes: announced or threatened strikes and action days that touch daily life in Parkstad, the Netherlands, Belgium, Germany or French rail links, written by the run; the page shows the next ones and feeds them to the planner. protests: demonstrations announced or notified in the major Dutch, Belgian and NRW cities and in Maastricht, Heerlen, Liège and Aachen, written by the run; nearest first on the page.",
@@ -1010,6 +1017,26 @@
     [
      "e-WLD, lemma regenboog (Heerlen, Hoensbroek)",
      "https://www.e-wld.nl/lemma/search/?search=regenboog"
+    ]
+   ]
+  },
+  {
+   "date": "2026-11-14",
+   "word": "nieëvel",
+   "meaning_nl": "nevel, mist",
+   "meaning_en": "mist, fog",
+   "example": "d'r nieëvel; de nieëvele",
+   "example_en": "the mist; the mists",
+   "uitspraak": {
+    "ipa": "[ˈniəvəl]",
+    "say": "NEE-uh-vul",
+    "tip": "The ieë is a glide from a long ee into a short uh, two moves in one syllable, not the flat ee of Dutch nevel; e-WLD gives no tone mark for the word, so none is given."
+   },
+   "note": "e-WLD records d'r nieëvel (with the plural de nieëvele) for Heerlen and nīēëvel for Hoensbroek, under the concept mist, nevel; Hoensbroek also uses damp for haze. The examples are e-WLD's Heerlen records, article included.",
+   "src": [
+    [
+     "e-WLD, begrip mist, nevel (Heerlen: nieëvel; Hoensbroek: nīēëvel, damp)",
+     "https://www.e-wld.nl/lemma/search/?search=mist*"
     ]
    ]
   }

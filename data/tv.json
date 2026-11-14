@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13",
+ "updated": "2026-11-14",
  "note": "Shows Nick follows. The run refreshes last and next from the TVMaze API (https://api.tvmaze.com/shows/<tvmaze>?embed[]=previousepisode&embed[]=nextepisode) and keeps the renewal note current from press reports. Dates are the broadcaster's local air date.",
  "shows": [
   {

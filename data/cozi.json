@@ -1,27 +1,20 @@
 {
- "updated": "2026-11-13",
- "fetched": "2026-11-13",
+ "updated": "2026-11-14",
+ "fetched": "2026-11-14",
  "stale": false,
  "src": "Family Cozi calendar (read-only feed; link kept in the task prompt)",
  "window": [
-  "2026-11-13",
-  "2027-03-13"
+  "2026-11-14",
+  "2027-03-14"
  ],
  "dropped": {
   "recurring": 31,
   "medical": 4,
   "birthday": 0,
   "empty": 0,
-  "outside": 407
+  "outside": 409
  },
  "items": [
-  {
-   "id": "31a4a8ae61",
-   "date": "2026-11-12",
-   "t": "Leave",
-   "who": "me",
-   "end": "2026-11-13"
-  },
   {
    "id": "8c47cceb85",
    "date": "2026-11-13",
@@ -29,13 +22,6 @@
    "who": "all",
    "end": "2026-11-15",
    "where": "GK"
-  },
-  {
-   "id": "463de4de32",
-   "date": "2026-11-13",
-   "t": "Drivers License Appt",
-   "who": "family",
-   "time": "10:00–11:00"
   },
   {
    "id": "7fbf5a9eae",

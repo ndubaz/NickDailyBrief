@@ -146,16 +146,6 @@
    "field": "tech"
   },
   {
-   "field": "climate",
-   "org": "NBER",
-   "title": "The Impact of Climate Change on Fisheries (NBER Working Paper 35994)",
-   "authors": "Fabio Cevenini, Christopher Costello, Carlo Fezzi",
-   "date": "2026-11-09",
-   "url": "https://www.nber.org/papers/w35994",
-   "for": "",
-   "note": "2.5 million revenue observations from all European fishing vessels, 2013–2022; projected losses up to €560 million a year by 2100 in the warmest scenario. Only the abstract was read."
-  },
-  {
    "field": "economics",
    "org": "ECB working papers",
    "title": "The effects of geopolitical risk on sovereign debt holders in the euro area (ECB Working Paper 3303)",
@@ -164,16 +154,6 @@
    "url": "https://www.ecb.europa.eu/pub/pdf/scpwps/ecb.wp3303~10146acd61.en.pdf",
    "for": "",
    "note": "Confidential Eurosystem holdings data and local projections for Belgium, Spain, France, Italy: domestic holders steady, foreign holders sell on geopolitical risk shocks. Results are impulse responses with 68% bands, few headline numbers."
-  },
-  {
-   "field": "ir",
-   "org": "Nature Human Behaviour",
-   "title": "A natural field experiment on the effectiveness of economic sanctions before and after the Russian invasion of Ukraine",
-   "authors": "Michael G. Findley et al.",
-   "date": "2026-11-09",
-   "url": "https://www.nature.com/articles/s41562-026-02591-5",
-   "for": "",
-   "note": "Only the feed title and lead author were read."
   },
   {
    "field": "military",
@@ -204,6 +184,16 @@
    "url": "https://warontherocks.com/how-purges-are-affecting-chinese-military-readiness-and-taiwan-contingencies/",
    "for": "",
    "note": "Feed title only; not yet read."
+  },
+  {
+   "field": "military",
+   "org": "Modern War Institute (West Point)",
+   "title": "Autonomy and Combined Arms Maneuver: The Elements Remain, but How We Deliver Them Is Changing Forever",
+   "authors": "James Mingus",
+   "date": "2026-11-11",
+   "url": "https://mwi.westpoint.edu/autonomy-and-combined-arms-maneuver-the-elements-remain-but-how-we-deliver-them-is-changing-forever/",
+   "for": "",
+   "note": "Feed title only; not read. MWI was used on 14 Nov, so not before 25 Nov."
   }
  ],
  "covered": [
@@ -366,6 +356,30 @@
    "title": "AI as Shared Business Infrastructure: Firm Growth and the Distribution of Gains (NBER Working Paper 36003)",
    "authors": "Panle Jia Barwick, Lu Fang, Jinhan Liu, Huilan Xu, Zhe Yuan",
    "url": "https://www.nber.org/papers/w36003"
+  },
+  {
+   "date": "2026-11-14",
+   "field": "military",
+   "org": "Modern War Institute (West Point)",
+   "title": "Combat Power, Sustained: A Hub-and-Mesh Architecture for Contested Logistics",
+   "authors": "Matthew M. Andrews",
+   "url": "https://mwi.westpoint.edu/combat-power-sustained-a-hub-and-mesh-architecture-for-contested-logistics/"
+  },
+  {
+   "date": "2026-11-14",
+   "field": "ir",
+   "org": "Nature Human Behaviour",
+   "title": "A natural field experiment on the effectiveness of economic sanctions before and after the Russian invasion of Ukraine",
+   "authors": "Michael G. Findley, Daniel L. Nielson, J. C. Sharman",
+   "url": "https://www.nature.com/articles/s41562-026-02591-5"
+  },
+  {
+   "date": "2026-11-14",
+   "field": "climate",
+   "org": "NBER",
+   "title": "The Impact of Climate Change on Fisheries (NBER Working Paper 35994)",
+   "authors": "Fabio Cevenini, Christopher Costello, Carlo Fezzi",
+   "url": "https://www.nber.org/papers/w35994"
   }
  ],
  "fields": {

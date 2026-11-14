@@ -708,6 +708,57 @@
      3
     ]
    ]
+  },
+  {
+   "id": "2026-11-13-ggml-llama-cpp-v1",
+   "date": "2026-11-13",
+   "kind": "tool",
+   "t": "llama.cpp and ggml reach v1.0.0 with semantic versioning",
+   "lab": "ggml-org",
+   "n": "150+ model architecture variants supported",
+   "src": [
+    [
+     51,
+     "llama.cpp v1.0.0: A stronger foundation for the local AI ecosystem",
+     "Hugging Face blog (ggml-org)",
+     "https://huggingface.co/blog/ggml-org/llama-cpp-v1",
+     1
+    ]
+   ]
+  },
+  {
+   "id": "2026-11-12-ibm-granite-llmon",
+   "date": "2026-11-12",
+   "kind": "model",
+   "t": "IBM releases Granite 4.1 3B and 8B LLMON preview models",
+   "lab": "IBM",
+   "n": "47% more prompt-injection attacks avoided than best frontier model on OPI (IBM figure)",
+   "src": [
+    [
+     52,
+     "LLMON: An LLM-Native Markup Language, now in Granite 4.1 3B and 8B",
+     "Hugging Face blog (IBM Granite)",
+     "https://huggingface.co/blog/ibm-granite/llmon-an-llm-native-markup-language-now-in-granite",
+     1
+    ]
+   ]
+  },
+  {
+   "id": "2026-11-13-depue-blackwell-china-weights",
+   "date": "2026-11-13",
+   "kind": "result",
+   "t": "Weights analysis links Kimi K3 and DeepSeek V4 to Blackwell training",
+   "lab": "Unemployment Labs",
+   "n": "Epoch: about 2 million advanced chips entered China in 2024-25",
+   "src": [
+    [
+     53,
+     "Export-banned Nvidia chips are behind China's most powerful AI models",
+     "TechCrunch",
+     "https://techcrunch.com/2026/11/13/export-banned-nvidia-chips-are-behind-chinas-most-powerful-ai-models-uh-oh-jensen/",
+     3
+    ]
+   ]
   }
  ],
  "sota": {
